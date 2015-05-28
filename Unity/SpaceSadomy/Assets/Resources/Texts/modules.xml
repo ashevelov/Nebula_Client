@@ -1,0 +1,19 @@
+﻿<!--
+  module_group
+    max_energy - максимальная энергия в процентах от мощности реактора, на которую может быть нагружен модуль без включения режима перегрева
+    overheat_interval - время в секундах как часто проверяется модуль на событие перегрев
+    overheat_speed - количество процентов, которое добавляется к вероятности перегрева на очередном цикле проверки на событие "Перегрев"
+  module
+    type - тип модуля
+    max_energy - максимальная энергия в процентах от мощности реактора, которую потребляет модуль при 100% эффективности работы
+    min_damage  -
+    max_damage  -значения минимального и максимального урона, наносимого модулем в процентах от урона, вычиляемого по оружию и боеприпасам
+-->
+<modules>
+  <module_group type="battle" max_energy="20" overheat_interval="5" overheat_speed="10" abbr="BATTLE" >
+    <module type="thermal" min_energy="1.0" max_energy="6.66" min_damage="10" max_damage="100" min_efficiency_percent="5.0" abbr="THERM"/>
+    <module type="electromagnetic" min_energy="1.0" max_energy="6.66" min_damage="10" max_damage="100" min_efficiency_percent="5.0" abbr="EM"/>
+    <module type="explosive" min_energy="1.0" max_energy="6.66" min_damage="10" max_damage="100" min_efficiency_percent="5.0" abbr="EXPL"/>
+    <module type="kinetic" min_energy="1.0" max_energy="6.66" min_damage="10" max_damage="100" min_efficiency_percent="5.0" abbr="KIN"/>
+  </module_group>
+</modules>

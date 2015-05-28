@@ -1,0 +1,23 @@
+﻿<world_events>
+  <world id="1">
+    <event id="evt_1" name="First steps...">
+      <data text_start=" Listen up, rookie! It's an honor to defend your country! Stand straight, you fat-assed dolt! Look like you mean business! Show me with your eyes that you're a killer! From what God-forsaken hole did they send you, you lazy maggot! Now listen up, these are your orders: Fly low, hug the tree line, and don't put it in the swamps by mistake. Take it straight to the plant in System 1. It's been over-run by wild Borgusands. Your task is simple: clear all hostiles from the area and return to base. If you really want to die, fine, but not a scratch to the ship or I'll kill you again. It's worth more than your useless skin and ten year's of your monkey pay combined! Well? Why are you still standing here? Go! Go! Go!"
+            text_end="I don't see any reason to rejoice, you hairless ape! I'll check every inch of your ship, and if I find even one molecule of dirt, you're going to be on latrine detail for the rest of your service!"
+            text_hint="kill pirates to close gates"
+            voice_start="Audio/male_start"
+            voice_end="Audio/male_finish" 
+            owner="Textures/Icons/Npc/general001" />
+    </event>
+  </world>
+  <world id="2"></world>
+  <world id="3"></world>
+  <world id="4"></world>
+  <world id="5"></world>
+  <world id="6"></world>
+  <world id="7"></world>
+  <world id="8"></world>
+  <world id="9"></world>
+  <world id="10"></world>
+  <world id="11"></world>
+  <world id="12"></world>
+</world_events>

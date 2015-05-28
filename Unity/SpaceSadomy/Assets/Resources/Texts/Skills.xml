@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<ArrayOfUseSkill xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UseSkill xsi:type="WeaponDamage">
+    <ID>AS001</ID>
+    <lvl>1</lvl>
+    <progress>0</progress>
+    <expForFirstLevel>50</expForFirstLevel>
+    <skillFactor>0</skillFactor>
+    <cooldownDefault>40</cooldownDefault>
+    <timeDefault>10</timeDefault>
+  </UseSkill>
+  <UseSkill xsi:type="WeaponSpeed">
+    <ID>AS002</ID>
+    <lvl>1</lvl>
+    <progress>0</progress>
+    <expForFirstLevel>50</expForFirstLevel>
+    <skillFactor>1</skillFactor>
+    <cooldownDefault>30</cooldownDefault>
+    <timeDefault>10</timeDefault>
+  </UseSkill>
+  <UseSkill xsi:type="ArmorExtender">
+    <ID>AS003</ID>
+    <lvl>1</lvl>
+    <progress>0</progress>
+    <expForFirstLevel>40</expForFirstLevel>
+    <skillFactor>1</skillFactor>
+    <cooldownDefault>20</cooldownDefault>
+    <timeDefault>18</timeDefault>
+  </UseSkill>
+  <UseSkill xsi:type="ArmorResist">
+    <ID>AS004</ID>
+    <lvl>1</lvl>
+    <progress>0</progress>
+    <expForFirstLevel>40</expForFirstLevel>
+    <skillFactor>1</skillFactor>
+    <cooldownDefault>60</cooldownDefault>
+    <timeDefault>30</timeDefault>
+  </UseSkill>
+  <UseSkill xsi:type="Afterburner">
+    <ID>AS005</ID>
+    <lvl>1</lvl>
+    <progress>0</progress>
+    <expForFirstLevel>80</expForFirstLevel>
+    <skillFactor>1</skillFactor>
+    <cooldownDefault>30</cooldownDefault>
+    <timeDefault>6</timeDefault>
+  </UseSkill>
+</ArrayOfUseSkill>

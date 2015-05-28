@@ -1,0 +1,7 @@
+E:\unity\ClientModel\ClientModel\bin\Debug\ClientModel.Results.dgml
+E:\unity\ClientModel\ClientModel\obj\Debug\ClientModelLayers.layerdiagram.dgql
+E:\unity\ClientModel\ClientModel\obj\Debug\ClientModelLayers.layerdiagram.dgml
+E:\unity\ClientModel\ClientModel\obj\Debug\Initial.dgml
+E:\unity\ClientModel\ClientModel\obj\Debug\Initial.dgml.back
+E:\unity\ClientModel\ClientModel\obj\Debug\Validate.dgql
+E:\unity\ClientModel\ClientModel\obj\Debug\Validated.dgml

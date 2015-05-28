@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="60faa773-9951-4c1c-aaea-a4f5eb441fdb" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="f789add3-47d1-4f0a-bb35-975787c6ca1f" name="Presentation layer">
+      <childLayers>
+        <layer Id="feb0a54a-c4e5-4419-be31-0ec8dcb73e51" name="UI Components (UIC)">
+          <description>Отображение UI и взаимодействие с ним</description>
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="16fcdf95-9df0-4880-9a34-5ab4362f7390" direction="Bidirectional">
+              <layerMoniker Id="1d31f524-fb0c-4325-ac44-d4d9ce56af5f" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="b5df19dd-01a3-4683-a121-afc516435600" name="Game Play Components (GPC)">
+          <description>Визуальная составляющая игры (игровые сцены, движение обектов, эффекты и т.д.) </description>
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="53953bdf-809e-4839-922b-1bbcb72900ce" direction="Bidirectional">
+              <layerMoniker Id="59611e5e-e5df-41fa-8a37-4ad86902bbd6" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="1d31f524-fb0c-4325-ac44-d4d9ce56af5f" name="UI Process Components(UIP)">
+          <description>Получение и обработка данны для UI</description>
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="02dbde69-1a2b-4b40-affe-afab39ec38fd" direction="Bidirectional">
+              <layerMoniker Id="ec65d49e-1fab-4873-bb88-5fc810d2aac6" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="59611e5e-e5df-41fa-8a37-4ad86902bbd6" name="Game Play Process Components (GPP)">
+          <description>Обрабатывае процессов геймплея (добавление обектов в космос, обновление позиций объектов и т.д.) </description>
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="b822534a-61f9-4fc9-ad60-3a96c65ce92a" direction="Bidirectional">
+              <layerMoniker Id="ec65d49e-1fab-4873-bb88-5fc810d2aac6" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="2dd044ae-cada-4fe9-96af-1ab78f034993" name="Game logic Layer">
+      <childLayers>
+        <layer Id="ec65d49e-1fab-4873-bb88-5fc810d2aac6" name="Game Logic Interfeces (GLI)">
+          <description>Стредства взаимодействия компонентов из Presentation Layer с процессами игровой логики</description>
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="39451243-1da9-472a-861f-aff5e79f9cf8" direction="Bidirectional">
+              <layerMoniker Id="f6ef38cc-cdb2-4f9b-813b-f485774a6567" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+        <layer Id="f6ef38cc-cdb2-4f9b-813b-f485774a6567" name="Game Logic Process Components (GLP)">
+          <description>Игровая логика. Информация о корабле игрока, его инвентарь, скилы и другое содержится и изменяется здесь</description>
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="c58ca8d2-4b74-451c-97d8-f3d451503573" direction="Bidirectional">
+              <layerMoniker Id="ce84ee16-740b-4020-a5ab-7c67abe3b280" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="59e20678-13a2-427b-a3ce-e4c5d286d180" name="Layer Server Interaction">
+      <childLayers>
+        <layer Id="ce84ee16-740b-4020-a5ab-7c67abe3b280" name="Server Interaction Components  (SIC)">
+          <description>Взаимодействие с сервером. Отправка получение запросов, обратобка событий</description>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

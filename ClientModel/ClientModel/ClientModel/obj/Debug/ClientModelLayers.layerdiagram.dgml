@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1)" Category="File" FilePath="E:\unity\ClientModel\ClientModel\ClientModelLayers.layerdiagram" Label="ClientModelLayers.layerdiagram" />
+    <Node Id="60faa773-9951-4c1c-aaea-a4f5eb441fdb" Category="Dsl.LayerModel" Dsl.DiagramPath="E:\unity\ClientModel\ClientModel\ClientModelLayers.layerdiagram" Dsl.QualifiedName="" Label="ClientModelLayers" />
+    <Node Id="f789add3-47d1-4f0a-bb35-975787c6ca1f" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Presentation layer" Label="Presentation layer" />
+    <Node Id="feb0a54a-c4e5-4419-be31-0ec8dcb73e51" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Presentation layer.UI Components (UIC)" Label="UI Components (UIC)" />
+    <Node Id="b5df19dd-01a3-4683-a121-afc516435600" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Presentation layer.Game Play Components (GPC)" Label="Game Play Components (GPC)" />
+    <Node Id="1d31f524-fb0c-4325-ac44-d4d9ce56af5f" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Presentation layer.UI Process Components(UIP)" Label="UI Process Components(UIP)" />
+    <Node Id="59611e5e-e5df-41fa-8a37-4ad86902bbd6" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Presentation layer.Game Play Process Components (GPP)" Label="Game Play Process Components (GPP)" />
+    <Node Id="2dd044ae-cada-4fe9-96af-1ab78f034993" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Game logic Layer" Label="Game logic Layer" />
+    <Node Id="ec65d49e-1fab-4873-bb88-5fc810d2aac6" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Game logic Layer.Game Logic Interfeces (GLI)" Label="Game Logic Interfeces (GLI)" />
+    <Node Id="f6ef38cc-cdb2-4f9b-813b-f485774a6567" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Game logic Layer.Game Logic Process Components (GLP)" Label="Game Logic Process Components (GLP)" />
+    <Node Id="59e20678-13a2-427b-a3ce-e4c5d286d180" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Layer Server Interaction" Label="Layer Server Interaction" />
+    <Node Id="ce84ee16-740b-4020-a5ab-7c67abe3b280" Category="Dsl.Layer" Dsl.ForbiddenNamespaceDependencies="" Dsl.ForbiddenNamespace="" Dsl.RequiredNamespace="" Dsl.QualifiedName="Layer Server Interaction.Server Interaction Components  (SIC)" Label="Server Interaction Components  (SIC)" />
+  </Nodes>
+  <Links>
+    <Link Source="60faa773-9951-4c1c-aaea-a4f5eb441fdb" Target="f789add3-47d1-4f0a-bb35-975787c6ca1f" Category="Dsl.LayerModelHasLayers" />
+    <Link Source="60faa773-9951-4c1c-aaea-a4f5eb441fdb" Target="2dd044ae-cada-4fe9-96af-1ab78f034993" Category="Dsl.LayerModelHasLayers" />
+    <Link Source="60faa773-9951-4c1c-aaea-a4f5eb441fdb" Target="59e20678-13a2-427b-a3ce-e4c5d286d180" Category="Dsl.LayerModelHasLayers" />
+    <Link Source="f789add3-47d1-4f0a-bb35-975787c6ca1f" Target="feb0a54a-c4e5-4419-be31-0ec8dcb73e51" Category="Dsl.LayerHasChildLayers" />
+    <Link Source="f789add3-47d1-4f0a-bb35-975787c6ca1f" Target="b5df19dd-01a3-4683-a121-afc516435600" Category="Dsl.LayerHasChildLayers" />
+    <Link Source="f789add3-47d1-4f0a-bb35-975787c6ca1f" Target="1d31f524-fb0c-4325-ac44-d4d9ce56af5f" Category="Dsl.LayerHasChildLayers" />
+    <Link Source="f789add3-47d1-4f0a-bb35-975787c6ca1f" Target="59611e5e-e5df-41fa-8a37-4ad86902bbd6" Category="Dsl.LayerHasChildLayers" />
+    <Link Source="2dd044ae-cada-4fe9-96af-1ab78f034993" Target="ec65d49e-1fab-4873-bb88-5fc810d2aac6" Category="Dsl.LayerHasChildLayers" />
+    <Link Source="2dd044ae-cada-4fe9-96af-1ab78f034993" Target="f6ef38cc-cdb2-4f9b-813b-f485774a6567" Category="Dsl.LayerHasChildLayers" />
+    <Link Source="59e20678-13a2-427b-a3ce-e4c5d286d180" Target="ce84ee16-740b-4020-a5ab-7c67abe3b280" Category="Dsl.LayerHasChildLayers" />
+    <Link Source="feb0a54a-c4e5-4419-be31-0ec8dcb73e51" Target="1d31f524-fb0c-4325-ac44-d4d9ce56af5f" Category="Dsl.DependencyFromLayerToLayer" Dsl.Direction="Bidirectional" />
+    <Link Source="b5df19dd-01a3-4683-a121-afc516435600" Target="59611e5e-e5df-41fa-8a37-4ad86902bbd6" Category="Dsl.DependencyFromLayerToLayer" Dsl.Direction="Bidirectional" />
+    <Link Source="1d31f524-fb0c-4325-ac44-d4d9ce56af5f" Target="ec65d49e-1fab-4873-bb88-5fc810d2aac6" Category="Dsl.DependencyFromLayerToLayer" Dsl.Direction="Bidirectional" />
+    <Link Source="59611e5e-e5df-41fa-8a37-4ad86902bbd6" Target="ec65d49e-1fab-4873-bb88-5fc810d2aac6" Category="Dsl.DependencyFromLayerToLayer" Dsl.Direction="Bidirectional" />
+    <Link Source="ec65d49e-1fab-4873-bb88-5fc810d2aac6" Target="f6ef38cc-cdb2-4f9b-813b-f485774a6567" Category="Dsl.DependencyFromLayerToLayer" Dsl.Direction="Bidirectional" />
+    <Link Source="f6ef38cc-cdb2-4f9b-813b-f485774a6567" Target="ce84ee16-740b-4020-a5ab-7c67abe3b280" Category="Dsl.DependencyFromLayerToLayer" Dsl.Direction="Bidirectional" />
+  </Links>
+  <Categories>
+    <Category Id="Dsl.DependencyFromLayerToLayer" Label="Зависимость от слоя к слою" CanLinkedNodesBeDataDriven="True" CanBeDataDriven="True" IncomingActionLabel="Зависимость из слоев" OutgoingActionLabel="Зависимость в слои" />
+    <Category Id="Dsl.Layer" Label="Слой" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Слой" />
+    <Category Id="Dsl.LayerHasChildLayers" Label="Слой имеет дочерние слои" IsContainment="True" CanLinkedNodesBeDataDriven="True" CanBeDataDriven="True" IncomingActionLabel="Родительский слой" OutgoingActionLabel="Дочерние слои" />
+    <Category Id="Dsl.LayerModel" Label="Модель слоев" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Модель слоев" />
+    <Category Id="Dsl.LayerModelHasLayers" Label="Модель слоев имеет дочерние слои" IsContainment="True" CanLinkedNodesBeDataDriven="True" CanBeDataDriven="True" IncomingActionLabel="Модель слоев" OutgoingActionLabel="Слои" />
+    <Category Id="File" Label="Файл" CanBeDataDriven="True" NavigationActionLabel="Файлы" DefaultAction="Microsoft.Contains" />
+  </Categories>
+  <Properties>
+    <Property Id="FilePath" Label="Путь файла" Description="Путь файла" DataType="System.String" />
+    <Property Id="Label" Label="Метка" Description="Отображаемая метка аннотируемого объекта" DataType="System.String" />
+    <Property Id="Dsl.DiagramPath" DataType="System.String" />
+    <Property Id="Dsl.QualifiedName" DataType="System.String" />
+    <Property Id="Dsl.ForbiddenNamespaceDependencies" DataType="System.String" />
+    <Property Id="Dsl.ForbiddenNamespace" DataType="System.String" />
+    <Property Id="Dsl.RequiredNamespace" DataType="System.String" />
+    <Property Id="Dsl.Direction" DataType="System.String" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Сборка" ValueType="Uri" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=file:///E:/unity/ClientModel/ClientModel/ClientModelLayers.layerdiagram" />
+  </IdentifierAliases>
+</DirectedGraph>

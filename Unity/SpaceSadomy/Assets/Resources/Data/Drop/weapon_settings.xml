@@ -1,0 +1,436 @@
+﻿<settings>
+  <inputs weapon_type="damage" workshop="DarthTribe">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+  
+  <inputs weapon_type="damage" workshop="RedEye">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="40.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="10.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="6.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="12" type="float" />
+    <input key="CritDamageWeight" value="28" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.04" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.06" type="float" />
+    <input key="kCritDamageWeight" value="1.04" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Evasive">
+    <input key="DamageBaseValueWeight" value="2.0" type="float" />
+    <input key="RangeBaseValueWeight" value="10.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="8.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="7" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="3" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="8" type="float" />
+    <input key="CritDamageWeight" value="34" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.07" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="BigBang">
+    <input key="DamageBaseValueWeight" value="4.0" type="float" />
+    <input key="RangeBaseValueWeight" value="10.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="3.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="6" type="float" />
+    <input key="DamageValueWeight" value="1.2" type="float" />
+    <input key="RangeValueWeight" value="3" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="11" type="float" />
+    <input key="CritDamageWeight" value="38" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.05" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.07" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Equilibrium">
+    <input key="DamageBaseValueWeight" value="2.0" type="float" />
+    <input key="RangeBaseValueWeight" value="20.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="5.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="6.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="9" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="7" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="18" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.04" type="float" />
+    <input key="kCritDamageWeight" value="1.04" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="heal" workshop="Equilibrium">
+    <input key="DamageBaseValueWeight" value="1.0" type="float" />
+    <input key="RangeBaseValueWeight" value="20.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="5.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="8.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="10" type="float" />
+    <input key="DamageValueWeight" value="0.5" type="float" />
+    <input key="RangeValueWeight" value="7" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="30" type="float" />
+    <input key="CritDamageWeight" value="25" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.02" type="float" />
+    <input key="kCritDamageWeight" value="1.02" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Serenity">
+    <input key="DamageBaseValueWeight" value="3.0" type="float" />
+    <input key="RangeBaseValueWeight" value="20.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="7.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="7.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="9" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="5" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="18" type="float" />
+    <input key="CritDamageWeight" value="38" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.04" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.04" type="float" />
+    <input key="kCritDamageWeight" value="1.07" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+  
+  <!--********************************BORGUZANDS******************************-->
+  <inputs weapon_type="damage" workshop="Rakhgals">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Phelpars">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Zoards">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Lerjees">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <!--***************************CRIPTIZIDS***************************-->
+  <inputs weapon_type="damage" workshop="Yshuar">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="KrolRo">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Arlen">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Dyneira">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+
+  <inputs weapon_type="damage" workshop="Molvice">
+    <input key="DamageBaseValueWeight" value="5.0" type="float" />
+    <input key="RangeBaseValueWeight" value="30.0" type="float" />
+    <input key="ReloadBaseValueWeight" value="6.0" type="float" />
+    <input key="LightRecharge" value="1.0" type="float" />
+    <input key="HeavyRecharge" value="5.0" type="float" />
+    <input key="HeavyDamageEnergyBase" value="8" type="float" />
+    <input key="DamageValueWeight" value="1" type="float" />
+    <input key="RangeValueWeight" value="8" type="float" />
+    <input key="HeavyDamageEnergy" value="2" type="float" />
+    <input key="CritChanceWeight" value="15" type="float" />
+    <input key="CritDamageWeight" value="35" type="float" />
+    <input key="kDamageWeight" value="1.01" type="float" />
+    <input key="kRangeWeight" value="1.03" type="float" />
+    <input key="kHeavyDamageEnergy" value="0.99" type="float" />
+    <input key="kCritChanceWeight" value="1.05" type="float" />
+    <input key="kCritDamageWeight" value="1.05" type="float" />
+    <input key="rand_min" value="0.8" type="float" />
+    <input key="rand_max" value="1.2" type="float" />
+    <input key="heavy_mult" value="1.2" type="float" />
+    <input key="light_mult" value="1.0" type="float" />
+    <input key="total_points" value="16" type="int" />
+  </inputs>
+  
+  <!--********************************************************************-->
+  <difficulty_table>
+    <difficulty name="easy"   value="0.1"   />
+    <difficulty name="easy2"  value="0.25"  />
+    <difficulty name="medium" value="0.5"   />
+    <difficulty name="hard"   value="1.0"   />
+    <difficulty name="boss"   value="1.2"   />
+    <difficulty name="boss2" value="1.5"  />
+    <difficulty name="boss3" value="2.0"  />
+    <difficulty name="none"   value="1.0"   />
+  </difficulty_table>
+  
+</settings>
+
+<!--<inputs> 
+  <input name="base_heavy_damage_mult"                value="10.0" type="float"   />
+  <input name="heavy_damage_factor"                   value="1.02" type="float"   />
+  <input name="heavy_cooldown_value"                  value="0.5"  type="float"   />
+  <input name="heavy_energy_factor"                   value="1.03" type="float"   />
+  <input name="base_light_damage_mult"                value="1.0"  type="float"   />
+  <input name="light_damage_factor"                   value="1.02" type="float"   />
+  <input name="light_cooldown_value"                  value="0.5"  type="float"   />
+  <input name="light_energy_factor"                   value="0"    type="float"   />
+  <input name="base_crit_chance_mult"                 value="0.05" type="float"   />
+  <input name="crit_chance_factor"                    value="1.03" type="float"   />
+  <input name="additional_crit_chance_value"          value="0.005"  type="float"   />
+  <input name="optimal_distance_factor"               value="1.03" type="float"   />
+  <input name="base_optimal_distance_mult"            value="30.0" type="float"   />
+  <input name="additional_optimal_distance_mult"      value="8.0"  type="float"   />
+  <input name="additional_heavy_damage_value"         value="3.0"  type="float"   />
+  <input name="additional_light_damage_value"         value="1.0"  type="float"   />
+  <input name="point_count"                           value="20"   type="int"   />
+  <input name="random_mult_min" value="0.8" type="float" />
+  <input name="random_mult_max" value="1.2" type="float" />
+  <input name="base_heavy_energy_mult"  value="40" type="float" />
+  <input name="additional_heavy_energy_value" value="6.0" type="float" />
+  <input name="crit_damage_mult" value="3.0" type="float" />
+
+  <difficulty_table>
+    <difficulty name="easy"   value="0.1"   />
+    <difficulty name="easy2"  value="0.25"  />
+    <difficulty name="medium" value="0.5"   />
+    <difficulty name="hard"   value="1.0"   />
+    <difficulty name="boss"   value="1.2"   />
+    <difficulty name="boss2" value="1.5"  />
+    <difficulty name="boss3" value="2.0"  />
+    <difficulty name="none"   value="1.0"   />
+  </difficulty_table>
+</inputs>-->

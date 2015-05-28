@@ -1,0 +1,525 @@
+﻿<!--<sets>
+  <set id="S001" name="first set" min_level="1" max_level="10" ultra_skill="U0001" >
+    <module type="ES" slots_count="1" />
+    <module type="CB" slots_count="0" />
+    <module type="DF" slots_count="0" />
+    <module type="CM" slots_count="0" />
+    <module type="DM" slots_count="0" />
+  </set>
+  <set id="S002" name="second set" min_level="1" max_level="10" ultra_skill="U0002" >
+    <module type="ES" slots_count="2" />
+    <module type="CB" slots_count="0" />
+    <module type="DF" slots_count="0" />
+    <module type="CM" slots_count="0" />
+    <module type="DM" slots_count="0" />
+  </set>
+  <set id="S003" name="third set" min_level="1" max_level="10" ultra_skill="U0003" >
+    <module type="ES" slots_count="1" />
+    <module type="CB" slots_count="1" />
+    <module type="DF" slots_count="0" />
+    <module type="CM" slots_count="0" />
+    <module type="DM" slots_count="0" />
+  </set>
+</sets>-->
+
+<!--
+<sets>
+  <set id="S001" name="Alpha" unlock_level="1" skill="SA010001"
+       sx1_type="hold" sx1_factor="1.2" sx2_type="hold" sx2_factor="1.2"
+       sx4_type="hold" sx4_factor="1.3">
+    <description count="1" text="Increase hold on 1.2" />
+    <description count="2" text="Increase hold on 1.2" />
+    <description count="4" text="Increase hold on 1.3" />
+    <description count="5" text="Add skill Resurrect HP" />
+  </set>
+  <set id="S002" name="Beta" unlock_level="1" skill="SA010002"
+       sx1_type="hold" sx1_factor="1.2" sx2_type="hold" sx2_factor="1.2"
+       sx4_type="hold" sx4_factor="1.3">
+    <description count="1" text="Increase hold on 1.2" />
+    <description count="2" text="Increase hold on 1.2" />
+    <description count="4" text="Increase hold on 1.3" />
+    <description count="5" text="Add skill Increase Max Health and Max Speed" />
+  </set>
+  <set id="S003" name="Gamma" unlock_level="1" skill="SA010003"
+     sx1_type="hold" sx1_factor="1.2" sx2_type="hold" sx2_factor="1.2"
+     sx4_type="hold" sx4_factor="1.3">
+    <description count="1" text="Increase hold on 1.2" />
+    <description count="2" text="Increase hold on 1.2" />
+    <description count="4" text="Increase hold on 1.3" />
+    <description count="5" text="Add skill Block Weapon" />   
+  </set>
+  <set id="S004" name="Eta" unlock_level="1" skill="SA010004"
+     sx1_type="hold" sx1_factor="1.2" sx2_type="hold" sx2_factor="1.2"
+     sx4_type="hold" sx4_factor="1.3">
+    <description count="1" text="Increase hold on 1.2" />
+    <description count="2" text="Increase hold on 1.2" />
+    <description count="4" text="Increase hold on 1.3" />
+    <description count="5" text="Add skill Block Skill" />
+  </set>
+  <set id="S005" name="Theta" unlock_level="1" skill="SA010005"
+   sx1_type="hold" sx1_factor="1.2" sx2_type="hold" sx2_factor="1.2"
+   sx4_type="hold" sx4_factor="1.3">
+    <description count="1" text="Increase hold on 1.2" />
+    <description count="2" text="Increase hold on 1.2" />
+    <description count="4" text="Increase hold on 1.3" />
+    <description count="5" text="Add skill Resurrect health And Increase Resist" />    
+  </set>
+  <set id="S006" name="Mu" unlock_level="1" skill="SA010006"
+   sx1_type="hold" sx1_factor="1.2" sx2_type="hold" sx2_factor="1.2"
+   sx4_type="hold" sx4_factor="1.3">
+    <description count="1" text="Increase hold on 1.2" />
+    <description count="2" text="Increase hold on 1.2" />
+    <description count="4" text="Increase hold on 1.3" />
+    <description count="5" text="Add skill Resurrect health For Autoattack" />
+  </set>
+  <set id="S007" name="Omega" unlock_level="1" skill="SA020001"
+   sx1_type="hold" sx1_factor="1.2" sx2_type="hold" sx2_factor="1.2"
+   sx4_type="hold" sx4_factor="1.3">
+    <description count="1" text="Increase hold on 1.2" />
+    <description count="2" text="Increase hold on 1.2" />
+    <description count="4" text="Increase hold on 1.3" />
+    <description count="5" text="Add skill Decrease Enemy Speed" /> 
+  </set>
+</sets>
+-->
+
+<sets>
+  <set id="ST1001" name="ST1001_NAME" unlock_level="5" drop_prob="0.3" workshop="DarthTribe">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="heavy_attack_damage" type="float" value="10" item_count="2"/>
+      <entry bonus_type="heavy_attack_damage" type="float" value="10" item_count="4"/>
+      <entry bonus_type="skill" type="string" value="SA010001" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST1002" name="ST1002_NAME" unlock_level="10" drop_prob="0.25" workshop="DarthTribe">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="crit_chance" type="float" value="0.05" item_count="2"/>
+      <entry bonus_type="crit_chance" type="float" value="0.05" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010002" item_count="5" />
+    </bonuses> 
+  </set>
+  <set id="ST1003" name="ST1003_NAME" unlock_level="15" drop_prob="0.2" workshop="DarthTribe">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hp" type="float" value="50" item_count="2"/>
+      <entry bonus_type="hp" type="float" value="50" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010003" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST1004" name="ST1004_NAME" unlock_level="20" drop_prob="0.15" workshop="DarthTribe">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hold" type="float" value="5" item_count="2"/>
+      <entry bonus_type="hold" type="float" value="8" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010004" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST1005" name="ST1005_NAME" unlock_level="25" drop_prob="0.1" workshop="DarthTribe">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="crit_damage" type="float" value="0.05" item_count="2"/>
+      <entry bonus_type="crit_damage" type="float" value="0.1" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010005" item_count="5" />
+    </bonuses>
+  </set>
+<!--===================================================================================-->
+  <set id="ST2001" name="ST2001_NAME" unlock_level="5" drop_prob="0.3" workshop="RedEye">
+    <templates>
+      <module id="ES200000" />
+      <module id="CB200000" />
+      <module id="DF200000" />
+      <module id="CM200000" />
+      <module id="DM200000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="crit_damage" type="float" value="0.05" item_count="2"/>
+      <entry bonus_type="crit_damage" type="float" value="0.05" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010006" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST2002" name="ST2002_NAME" unlock_level="10" drop_prob="0.25" workshop="RedEye">
+    <templates>
+      <module id="ES200000" />
+      <module id="CB200000" />
+      <module id="DF200000" />
+      <module id="CM200000" />
+      <module id="DM200000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hp" type="float" value="60" item_count="2"/>
+      <entry bonus_type="hp" type="float" value="30" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA020001" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST2003" name="ST2003_NAME" unlock_level="15" drop_prob="0.2" workshop="RedEye">
+    <templates>
+      <module id="ES200000" />
+      <module id="CB200000" />
+      <module id="DF200000" />
+      <module id="CM200000" />
+      <module id="DM200000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="resistance" type="float" value="30" item_count="2"/>
+      <entry bonus_type="resistance" type="float" value="20" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA020002" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST2004" name="ST2004_NAME" unlock_level="20" drop_prob="0.15" workshop="RedEye">
+    <templates>
+      <module id="ES200000" />
+      <module id="CB200000" />
+      <module id="DF200000" />
+      <module id="CM200000" />
+      <module id="DM200000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="heavy_attack_damage" type="float" value="10" item_count="2"/>
+      <entry bonus_type="heavy_attack_damage" type="float" value="15" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA020003" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST2005" name="ST2005_NAME" unlock_level="25" drop_prob="0.1" workshop="RedEye">
+    <templates>
+      <module id="ES200000" />
+      <module id="CB200000" />
+      <module id="DF200000" />
+      <module id="CM200000" />
+      <module id="DM200000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hold" type="float" value="5" item_count="2"/>
+      <entry bonus_type="hold" type="float" value="8" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA030001" item_count="5" />
+    </bonuses>
+  </set>
+ <!--===========================================================================================-->
+
+  <set id="ST3001" name="ST3001_NAME" unlock_level="5" drop_prob="0.3" workshop="Evasive">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hp" type="float" value="20" item_count="2"/>
+      <entry bonus_type="hp" type="float" value="50" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA030002" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST3002" name="ST3002_NAME" unlock_level="10" drop_prob="0.25" workshop="Evasive">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="resistance" type="float" value="25" item_count="2"/>
+      <entry bonus_type="resistance" type="float" value="40" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA030003" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST3003" name="ST3003_NAME" unlock_level="15" drop_prob="0.2" workshop="Evasive">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hold" type="float" value="5" item_count="2"/>
+      <entry bonus_type="hold" type="float" value="5" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA030004" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST3004" name="ST3004_NAME" unlock_level="20" drop_prob="0.15" workshop="Evasive">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="optimal_distance" type="float" value="10" item_count="2"/>
+      <entry bonus_type="optimal_distance" type="float" value="5" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA030005" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST3005" name="ST3005_NAME" unlock_level="25" drop_prob="0.1" workshop="Evasive">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="crit_damage" type="float" value="0.05" item_count="2"/>
+      <entry bonus_type="crit_damage" type="float" value="0.1" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA030006" item_count="5" />
+    </bonuses>
+  </set>
+  <!--===========================================================================================-->
+
+  <set id="ST4001" name="ST4001_NAME" unlock_level="5" drop_prob="0.3" workshop="BigBang">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hold" type="float" value="3" item_count="2"/>
+      <entry bonus_type="hold" type="float" value="2" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA040001" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST4002" name="ST4002_NAME" unlock_level="10" drop_prob="0.25" workshop="BigBang">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="optimal_distance" type="float" value="20" item_count="2"/>
+      <entry bonus_type="optimal_distance" type="float" value="25" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA040002" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST4003" name="ST4003_NAME" unlock_level="15" drop_prob="0.2" workshop="BigBang">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="crit_damage" type="float" value="0.05" item_count="2"/>
+      <entry bonus_type="crit_damage" type="float" value="0.08" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA040003" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST4004" name="ST4004_NAME" unlock_level="20" drop_prob="0.15" workshop="BigBang">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hp" type="float" value="50" item_count="2"/>
+      <entry bonus_type="hp" type="float" value="60" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA040004" item_count="5" />
+    </bonuses>
+  </set>
+
+  <set id="ST4005" name="ST4005_NAME" unlock_level="25" drop_prob="0.1" workshop="BigBang">
+    <templates>
+      <module id="ES100000" />
+      <module id="CB100000" />
+      <module id="DF100000" />
+      <module id="CM100000" />
+      <module id="DM100000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="resistance" type="float" value="30" item_count="2"/>
+      <entry bonus_type="resistance" type="float" value="20" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA040005" item_count="5" />
+    </bonuses>
+  </set>
+  <!--===========================================================================================-->
+
+  <set id="ST5001" name="ST5001_NAME" unlock_level="5" drop_prob="0.3" workshop="Equilibrium">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hold" type="float" value="3" item_count="2"/>
+      <entry bonus_type="hold" type="float" value="3" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA040006" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST5002" name="ST5002_NAME" unlock_level="10" drop_prob="0.25" workshop="Equilibrium">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="heavy_attack_damage" type="float" value="10" item_count="2"/>
+      <entry bonus_type="heavy_attack_damage" type="float" value="5" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA050001" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST5003" name="ST5003_NAME" unlock_level="15" drop_prob="0.2" workshop="Equilibrium">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hp" type="float" value="50" item_count="2"/>
+      <entry bonus_type="hp" type="float" value="20" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA050002" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST5004" name="ST5004_NAME" unlock_level="20" drop_prob="0.15" workshop="Equilibrium">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="optimal_distance" type="float" value="30" item_count="2"/>
+      <entry bonus_type="optimal_distance" type="float" value="30" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA050003" item_count="5" />
+    </bonuses>
+  </set>
+  
+  <set id="ST5005" name="ST5005_NAME" unlock_level="25" drop_prob="0.1" workshop="Equilibrium">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="heal" type="float" value="10" item_count="2"/>
+      <entry bonus_type="heal" type="float" value="10" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA050004" item_count="5" />
+    </bonuses>
+  </set>
+  <!--===========================================================================================-->
+  <set id="ST6001" name="ST6001_NAME" unlock_level="5" drop_prob="0.3" workshop="Serenity">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hp" type="float" value="50" item_count="2"/>
+      <entry bonus_type="hp" type="float" value="30" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA050005" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST6002" name="ST6002_NAME" unlock_level="10" drop_prob="0.25" workshop="Serenity">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="speed" type="float" value="30" item_count="2"/>
+      <entry bonus_type="speed" type="float" value="15" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA050006" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST6003" name="ST6003_NAME" unlock_level="15" drop_prob="0.2" workshop="Serenity">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="hold" type="float" value="10" item_count="2"/>
+      <entry bonus_type="hold" type="float" value="10" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010001" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST6004" name="ST6004_NAME" unlock_level="20" drop_prob="0.15" workshop="Serenity">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="resistance" type="float" value="50" item_count="2"/>
+      <entry bonus_type="resistance" type="float" value="20" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010002" item_count="5" />
+    </bonuses>
+  </set>
+  <set id="ST6005" name="ST6005_NAME" unlock_level="25" drop_prob="0.1" workshop="Serenity">
+    <templates>
+      <module id="ES300000" />
+      <module id="CB300000" />
+      <module id="DF300000" />
+      <module id="CM300000" />
+      <module id="DM300000" />
+    </templates>
+    <bonuses>
+      <entry bonus_type="crit_chance" type="float" value="0.1" item_count="2"/>
+      <entry bonus_type="crit_chance" type="float" value="0.05" item_count="4"/>
+      <entry bonus_type="skill"       type="string" value="SA010003" item_count="5" />
+    </bonuses>
+  </set>
+  
+</sets>

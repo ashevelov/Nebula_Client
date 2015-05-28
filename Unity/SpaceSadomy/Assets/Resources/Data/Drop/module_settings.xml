@@ -1,0 +1,1865 @@
+﻿<settings>
+  
+  <difficulty_table>
+    <difficulty name="easy"   value="0.1"   />
+    <difficulty name="easy2"  value="0.25"  />
+    <difficulty name="medium" value="0.5"   />
+    <difficulty name="hard"   value="1.0"   />
+    <difficulty name="boss"   value="1.2"   />
+    <difficulty name="boss2" value="1.5"  />
+    <difficulty name="boss3" value="2.0"  />
+    <difficulty name="none"   value="1.0"   />
+  </difficulty_table>
+
+  <weapon_slots_count_prob>
+    <slots count="0" prob="0.15"  />
+    <slots count="1" prob="0.4"   />
+    <slots count="2" prob="0.3"   />
+    <slots count="3" prob="0.15"  />
+  </weapon_slots_count_prob>
+
+  <resist_reduction_factor>
+    <slots count="0" factor="1"     />
+    <slots count="1" factor="0.95"  />
+    <slots count="2" factor="0.9"   />
+    <slots count="3" factor="0.85"  />
+  </resist_reduction_factor>
+
+  <module_slots_count_range>
+    <module type="ES">
+      <entry min_level="1"  max_level="9"       min_count="0" max_count="1"/>
+      <entry min_level="10" max_level="19"      min_count="0" max_count="1" />
+      <entry min_level="20" max_level="100000"  min_count="0" max_count="1" />
+    </module>
+    <module type="CB">
+      <entry min_level="1"  max_level="9"       min_count="0" max_count="1"/>
+      <entry min_level="10" max_level="19"      min_count="0" max_count="2" />
+      <entry min_level="20" max_level="100000"  min_count="0" max_count="2" />
+    </module>
+    <module type="DM">
+      <entry min_level="1"  max_level="9"       min_count="0" max_count="1"/>
+      <entry min_level="10" max_level="19"      min_count="0" max_count="2" />
+      <entry min_level="20" max_level="100000"  min_count="0" max_count="3" />
+    </module>
+    <module type="DF">
+      <entry min_level="1"  max_level="9"       min_count="0" max_count="1"/>
+      <entry min_level="10" max_level="19"      min_count="0" max_count="2" />
+      <entry min_level="20" max_level="100000"  min_count="0" max_count="3" />
+    </module>
+    <module type="CM">
+      <entry min_level="1"  max_level="9"       min_count="0" max_count="1"/>
+      <entry min_level="10" max_level="19"      min_count="0" max_count="2" />
+      <entry min_level="20" max_level="100000"  min_count="0" max_count="3" />
+    </module>
+  </module_slots_count_range>
+  
+  
+  <workshop name="DarthTribe">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+  
+  <workshop name="RedEye">
+    <input key="HPBaseValue"                  type="float" value="320"  />
+    <input key="SpeedBaseValue"               type="float" value="20"  />
+    <input key="EnergyBaseValue"              type="float" value="12"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.06" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="15"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="7"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="14"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="33"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.05"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="7"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="13"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.06"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="15"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.08"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>
+  </workshop>
+
+  <workshop name="Evasive">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="40" />
+    <input key="EnergyBaseValue"              type="float" value="11"/>
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.03" />
+    <input key="SpeedBaseFactor"              type="float" value="1.06" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="6"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="15"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.07"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.03"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="6"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="16"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.03"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.06"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="6"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="17"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.04"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.06"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.01"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="6"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="13"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.01"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.04"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.06"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.02"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="6"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.01"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.05"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.07"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.08"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.01"    />
+      </module>
+    </module_types>
+  </workshop>
+
+  <workshop name="BigBang">
+    <input key="HPBaseValue"                  type="float"    value="240"  />
+    <input key="SpeedBaseValue"               type="float"    value="30"  />
+    <input key="EnergyBaseValue"              type="float"    value="9"  />
+    <input key="EnergyRestorationBaseValue"   type="float"    value="1"  />
+    <input key="HoldCountBase"                type="float"    value="4"  />
+    <input key="HPBaseFactor"                 type="float"    value="1.04" />
+    <input key="SpeedBaseFactor"              type="float"    value="1.04" />
+    <input key="EnergyFactor"                 type="float"    value="1.01" />
+    <input key="EnergyRestoration"            type="float"    value="1.01" />
+    <input key="HoldCountFactor"              type="float"    value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="4"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.02"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.05"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.05"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.02"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.05"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.07"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.05"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.02"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.05"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.01"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="10"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="8"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.02"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.05"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.06"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.05"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.07"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.01"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="2"       />
+        <input key="SpeedPointsValue"                     type="float"      value="4"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.02"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.05"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.07"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.01"    />
+      </module>
+    </module_types>
+  </workshop>
+
+  <workshop name="Equilibrium">
+    <input key="HPBaseValue"                  type="float"    value="180"  />
+    <input key="SpeedBaseValue"               type="float"    value="22"  />
+    <input key="EnergyBaseValue"              type="float"    value="13"  />
+    <input key="EnergyRestorationBaseValue"   type="float"    value="1"  />
+    <input key="HoldCountBase"                type="float"    value="4"  />
+    <input key="HPBaseFactor"                 type="float"    value="1.06" />
+    <input key="SpeedBaseFactor"              type="float"    value="1.01" />
+    <input key="EnergyFactor"                 type="float"    value="1.01" />
+    <input key="EnergyRestoration"            type="float"    value="1.01" />
+    <input key="HoldCountFactor"              type="float"    value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="10"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.01"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="18"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.01"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.00"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.10"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="6"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.01"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.00"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.02"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="10"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="5"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="15"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="33"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.01"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.00"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.06"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.02"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="5"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.01"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.07"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.08"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.02"    />
+      </module>
+    </module_types>
+  </workshop>
+
+  <workshop name="Serenity">
+    <input key="HPBaseValue"                  type="float"    value="320"  />
+    <input key="SpeedBaseValue"               type="float"    value="18"  />
+    <input key="EnergyBaseValue"              type="float"    value="8"  />
+    <input key="EnergyRestorationBaseValue"   type="float"    value="1"  />
+    <input key="HoldCountBase"                type="float"    value="5"  />
+    <input key="HPBaseFactor"                 type="float"    value="1.05" />
+    <input key="SpeedBaseFactor"              type="float"    value="1.01" />
+    <input key="EnergyFactor"                 type="float"    value="1.01" />
+    <input key="EnergyRestoration"            type="float"    value="1.01" />
+    <input key="HoldCountFactor"              type="float"    value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="10"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="16"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="11"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="8"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="13"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.06"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.03"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="10"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="10"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="14"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="33"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.06"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.04"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.05"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="12"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="17"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.06"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.04"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="10"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.08"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.01"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>
+  </workshop>
+  
+  <workshop name="Rakhgals">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="Phelpars">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="Zoards">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="Lerjees">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="Yshuar">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="KrolRo">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="Arlen">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="Dyneira">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+  <workshop name="Molvice">
+    <input key="HPBaseValue"                  type="float" value="240"  />
+    <input key="SpeedBaseValue"               type="float" value="24"  />
+    <input key="EnergyBaseValue"              type="float" value="10"  />
+    <input key="EnergyRestorationBaseValue"   type="float" value="1"  />
+    <input key="HoldCountBase"                type="float" value="4"  />
+    <input key="HPBaseFactor"                 type="float" value="1.05" />
+    <input key="SpeedBaseFactor"              type="float" value="1.01" />
+    <input key="EnergyFactor"                 type="float" value="1.01" />
+    <input key="EnergyRestoration"            type="float" value="1.01" />
+    <input key="HoldCountFactor"              type="float" value="1.05" />
+    <input key="rand_min"                     type="float" value="0.8" />
+    <input key="rand_max"                     type="float" value="1.2" />
+    
+    <module_types>
+      <module type="ES">
+        <input key="HPPointsValue"                        type="float"      value="3"       />
+        <input key="SpeedPointsValue"                     type="float"      value="2"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="1"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="10"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.03"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.06"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CB">
+        <input key="HPPointsValue"                        type="float"      value="5"       />
+        <input key="SpeedPointsValue"                     type="float"      value="3"       />
+        <input key="ResistancePointsValue"                type="float"      value="4"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="12"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.10"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.02"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.05"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.01"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.01"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="3"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="6"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="34"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.06"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="DF">
+        <input key="HPPointsValue"                        type="float"      value="6"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="2"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="4"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="9"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="32"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.04"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.02"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+      <module type="CM">
+        <input key="HPPointsValue"                        type="float"      value="4"       />
+        <input key="SpeedPointsValue"                     type="float"      value="1"       />
+        <input key="ResistancePointsValue"                type="float"      value="6"       />
+        <input key="HoldCountPointsValue"                 type="float"      value="1"       />
+        <input key="DamageBonusPointsValue"               type="float"      value="1"       />
+        <input key="OptimalDistanceBonusPointsValue"      type="float"      value="2"       />
+        <input key="CriticalChanceBonusPointsValue"       type="float"      value="11"       />
+        <input key="CriticalDamageBonusPointsValue"       type="float"      value="31"       />
+        <input key="EnergyPointsValue"                    type="float"      value="2"       />
+        <input key="EnergyRestorationPointsValue"         type="float"      value="1"       />
+        <input key="HPPointsFactor"                       type="float"      value="1.05"    />
+        <input key="SpeedPointsFactor"                    type="float"      value="1.01"    />
+        <input key="ResistancePointsFactor"               type="float"      value="1.04"    />
+        <input key="DamageBonusPointsFactor"              type="float"      value="1.02"    />
+        <input key="OptimalDistanceBonusPointsFactor"     type="float"      value="1.05"    />
+        <input key="CriticalChanceBonusPointsFactor"      type="float"      value="1.03"    />
+        <input key="CriticalDamageBonusPointsFactor"      type="float"      value="1.03"    />
+      </module>
+    </module_types>  
+  </workshop>
+
+</settings>
+
+<!--<settings>
+  <element name="MODULE_FACTOR_HP"                value="1.05" />
+  <element name="MODULE_HP_BASE_VALUE"            value="20.0" />
+  <element name="MODULE_FACTOR_SPEED"             value="1.01" />
+  <element name="MODULE_SPEED_BASE_VALUE"         value="24.0" />
+  <element name="MODULE_FACTOR_LOW_RESIST_0_SLOT" value="1.00" />
+  <element name="MODULE_FACTOR_LOW_RESIST_1_SLOT" value="0.95" />
+  <element name="MODULE_FACTOR_LOW_RESIST_2_SLOT" value="0.90" />
+  <element name="MODULE_FACTOR_LOW_RESIST_3_SLOT" value="0.85" />
+  <add_weights>
+    <type SLOT_TYPE="ES">
+      <element name="WEIGHT_HP"           value="3" />
+      <element name="FACTOR_HP"           value="1.05" />
+      <element name="WEIGHT_SPEED"        value="2" />
+      <element name="FACTOR_SPEED"        value="1.02" />
+      <element name="WEIGHT_RESIST"       value="2" />
+      <element name="FACTOR_RESIST"       value="1.02" />
+      <element name="WEIGHT_HOLD"         value="2" />
+      <element name="FACTOR_HOLD"         value="1.02" />
+      <element name="WEIGHT_DAMAGE_BONUS" value="2" />
+      <element name="FACTOR_DAMAGE_BONUS" value="1.02" />
+      <element name="WEIGHT_COOLDOWN"     value="2" />
+      <element name="FACTOR_COOLDOWN"     value="1.02" />
+      <element name="WEIGHT_DISTANCE"     value="2" />
+      <element name="FACTOR_DISTANCE"     value="1.02" />
+      <element name="WEIGHT_CRIT_CHANCE"  value="2" />
+      <element name="FACTOR_CRIT_CHANCE"  value="1.03" />
+      <element name="WEIGHT_CRIT_DAMAGE"  value="2" />
+      <element name="FACTOR_CRIT_DAMAGE"  value="1.03" />
+    </type>
+    <type SLOT_TYPE="CB">
+      <element name="WEIGHT_HP"           value="5" />
+      <element name="FACTOR_HP"           value="1.05" />
+      <element name="WEIGHT_SPEED"        value="3" />
+      <element name="FACTOR_SPEED"        value="1.02" />
+      <element name="WEIGHT_RESIST"       value="2" />
+      <element name="FACTOR_RESIST"       value="1.02" />
+      <element name="WEIGHT_HOLD"         value="4" />
+      <element name="FACTOR_HOLD"         value="1.02" />
+      <element name="WEIGHT_DAMAGE_BONUS" value="2" />
+      <element name="FACTOR_DAMAGE_BONUS" value="1.02" />
+      <element name="WEIGHT_COOLDOWN"     value="2" />
+      <element name="FACTOR_COOLDOWN"     value="1.02" />
+      <element name="WEIGHT_DISTANCE"     value="2" />
+      <element name="FACTOR_DISTANCE"     value="1.02" />
+      <element name="WEIGHT_CRIT_CHANCE"  value="2" />
+      <element name="FACTOR_CRIT_CHANCE"  value="1.03" />
+      <element name="WEIGHT_CRIT_DAMAGE"  value="2" />
+      <element name="FACTOR_CRIT_DAMAGE"  value="1.03" />
+    </type>
+    <type SLOT_TYPE="DF">
+      <element name="WEIGHT_HP"           value="6" />
+      <element name="FACTOR_HP"           value="1.05" />
+      <element name="WEIGHT_SPEED"        value="1" />
+      <element name="FACTOR_SPEED"        value="1.02" />
+      <element name="WEIGHT_RESIST"       value="3" />
+      <element name="FACTOR_RESIST"       value="1.02" />
+      <element name="WEIGHT_HOLD"         value="4" />
+      <element name="FACTOR_HOLD"         value="1.02" />
+      <element name="WEIGHT_DAMAGE_BONUS" value="2" />
+      <element name="FACTOR_DAMAGE_BONUS" value="1.02" />
+      <element name="WEIGHT_COOLDOWN"     value="2" />
+      <element name="FACTOR_COOLDOWN"     value="1.02" />
+      <element name="WEIGHT_DISTANCE"     value="2" />
+      <element name="FACTOR_DISTANCE"     value="1.02" />
+      <element name="WEIGHT_CRIT_CHANCE"  value="2" />
+      <element name="FACTOR_CRIT_CHANCE"  value="1.03" />
+      <element name="WEIGHT_CRIT_DAMAGE"  value="2" />
+      <element name="FACTOR_CRIT_DAMAGE"  value="1.03" />
+    </type>
+    <type SLOT_TYPE="CM">
+      <element name="WEIGHT_HP"           value="4" />
+      <element name="FACTOR_HP"           value="1.05" />
+      <element name="WEIGHT_SPEED"        value="1" />
+      <element name="FACTOR_SPEED"        value="1.02" />
+      <element name="WEIGHT_RESIST"       value="3" />
+      <element name="FACTOR_RESIST"       value="1.02" />
+      <element name="WEIGHT_HOLD"         value="3" />
+      <element name="FACTOR_HOLD"         value="1.02" />
+      <element name="WEIGHT_DAMAGE_BONUS" value="2" />
+      <element name="FACTOR_DAMAGE_BONUS" value="1.02" />
+      <element name="WEIGHT_COOLDOWN"     value="2" />
+      <element name="FACTOR_COOLDOWN"     value="1.02" />
+      <element name="WEIGHT_DISTANCE"     value="2" />
+      <element name="FACTOR_DISTANCE"     value="1.02" />
+      <element name="WEIGHT_CRIT_CHANCE"  value="2" />
+      <element name="FACTOR_CRIT_CHANCE"  value="1.03" />
+      <element name="WEIGHT_CRIT_DAMAGE"  value="2" />
+      <element name="FACTOR_CRIT_DAMAGE"  value="1.03" />
+    </type>
+    <type SLOT_TYPE="DM">
+      <element name="WEIGHT_HP"           value="4" />
+      <element name="FACTOR_HP"           value="1.05" />
+      <element name="WEIGHT_SPEED"        value="1" />
+      <element name="FACTOR_SPEED"        value="1.02" />
+      <element name="WEIGHT_RESIST"       value="3" />
+      <element name="FACTOR_RESIST"       value="1.02" />
+      <element name="WEIGHT_HOLD"         value="4" />
+      <element name="FACTOR_HOLD"         value="1.02" />
+      <element name="WEIGHT_DAMAGE_BONUS" value="2" />
+      <element name="FACTOR_DAMAGE_BONUS" value="1.02" />
+      <element name="WEIGHT_COOLDOWN"     value="2" />
+      <element name="FACTOR_COOLDOWN"     value="1.02" />
+      <element name="WEIGHT_DISTANCE"     value="2" />
+      <element name="FACTOR_DISTANCE"     value="1.02" />
+      <element name="WEIGHT_CRIT_CHANCE"  value="2" />
+      <element name="FACTOR_CRIT_CHANCE"  value="1.03" />
+      <element name="WEIGHT_CRIT_DAMAGE"  value="2" />
+      <element name="FACTOR_CRIT_DAMAGE"  value="1.03" />
+    </type>
+  </add_weights>
+</settings>-->

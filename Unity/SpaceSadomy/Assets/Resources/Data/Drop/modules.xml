@@ -1,0 +1,107 @@
+﻿<modules>
+  
+  <!--Darth Tribe Modules-->
+  <module id="ES000001" name="ES000001_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000001" name="CB000001_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000001" name="DF000001_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000001" name="CM000001_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000001" name="DM000001_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000004" name="ES000004_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="ES" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000004" name="CB000004_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="CB" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006" />
+  <module id="DF000004" name="DF000004_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="DF" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006" />
+  <module id="CM000004" name="CM000004_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="CM" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006" />
+  <module id="DM000004" name="DM000004_NAME" description="MODULE_DESC" workshop="DarthTribe"  type="DM" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006" />
+                                             
+  <!--Red Eye Modules-->                     
+  <module id="ES000002" name="ES000002_NAME" description="MODULE_DESC" workshop="RedEye"  type="ES" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000002" name="CB000002_NAME" description="MODULE_DESC" workshop="RedEye"  type="CB" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006" />
+  <module id="DF000002" name="DF000002_NAME" description="MODULE_DESC" workshop="RedEye"  type="DF" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006" />
+  <module id="CM000002" name="CM000002_NAME" description="MODULE_DESC" workshop="RedEye"  type="CM" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006" />
+  <module id="DM000002" name="DM000002_NAME" description="MODULE_DESC" workshop="RedEye"  type="DM" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006" />
+                                             
+  <!--Equilubrium Modules-->                 
+  <module id="ES000003" name="ES000003_NAME" description="MODULE_DESC" workshop="Equilibrium"  type="ES" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000003" name="CB000003_NAME" description="MODULE_DESC" workshop="Equilibrium"  type="CB" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006" />
+  <module id="DF000003" name="DF000003_NAME" description="MODULE_DESC" workshop="Equilibrium"  type="DF" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006" />
+  <module id="CM000003" name="CM000003_NAME" description="MODULE_DESC" workshop="Equilibrium"  type="CM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006" />
+  <module id="DM000003" name="DM000003_NAME" description="MODULE_DESC" workshop="Equilibrium"  type="DM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006" />
+                                             
+  <!--Evasive Modules-->                     
+  <module id="ES000005" name="ES000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="ES" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000005" name="CB000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="CB" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006" />
+  <module id="DF000005" name="DF000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="DF" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006" />
+  <module id="CM000005" name="CM000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="CM" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006" />
+  <module id="DM000005" name="DM000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="DM" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006" />
+                                            
+  <!--Serenity Modules-->                    
+  <module id="ES000006" name="ES000006_NAME" description="MODULE_DESC" workshop="Serenity" type="ES" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000006" name="CB000006_NAME" description="MODULE_DESC" workshop="Serenity" type="CB" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006" />
+  <module id="DF000006" name="DF000006_NAME" description="MODULE_DESC" workshop="Serenity" type="DF" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006" />
+  <module id="CM000006" name="CM000006_NAME" description="MODULE_DESC" workshop="Serenity" type="CM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006" />
+  <module id="DM000006" name="DM000006_NAME" description="MODULE_DESC" workshop="Serenity" type="DM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006" />
+                                             
+  <!--Big Bang Modules-->                    
+  <module id="ES000007" name="ES000007_NAME" description="MODULE_DESC" workshop="BigBang"  type="ES" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000007" name="CB000007_NAME" description="MODULE_DESC" workshop="BigBang"  type="CB" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006" />
+  <module id="DF000007" name="DF000007_NAME" description="MODULE_DESC" workshop="BigBang"  type="DF" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006" />
+  <module id="CM000007" name="CM000007_NAME" description="MODULE_DESC" workshop="BigBang"  type="CM" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006" />
+  <module id="DM000007" name="DM000007_NAME" description="MODULE_DESC" workshop="BigBang"  type="DM" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006" />
+                                             
+  <!--Borguzands-->                          
+  <module id="ES000008" name="ES000008_NAME" description="MODULE_DESC" workshop="Rakhgals"  type="ES" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000008" name="CB000008_NAME" description="MODULE_DESC" workshop="Rakhgals"  type="CB" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000008" name="DF000008_NAME" description="MODULE_DESC" workshop="Rakhgals"  type="DF" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000008" name="CM000008_NAME" description="MODULE_DESC" workshop="Rakhgals"  type="CM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000008" name="DM000008_NAME" description="MODULE_DESC" workshop="Rakhgals"  type="DM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000009" name="ES000009_NAME" description="MODULE_DESC" workshop="Phelpars"  type="ES" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000009" name="CB000009_NAME" description="MODULE_DESC" workshop="Phelpars"  type="CB" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000009" name="DF000009_NAME" description="MODULE_DESC" workshop="Phelpars"  type="DF" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000009" name="CM000009_NAME" description="MODULE_DESC" workshop="Phelpars"  type="CM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000009" name="DM000009_NAME" description="MODULE_DESC" workshop="Phelpars"  type="DM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000010" name="ES000010_NAME" description="MODULE_DESC" workshop="Zoards"  type="ES" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000010" name="CB000010_NAME" description="MODULE_DESC" workshop="Zoards"  type="CB" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000010" name="DF000010_NAME" description="MODULE_DESC" workshop="Zoards"  type="DF" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000010" name="CM000010_NAME" description="MODULE_DESC" workshop="Zoards"  type="CM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000010" name="DM000010_NAME" description="MODULE_DESC" workshop="Zoards"  type="DM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000011" name="ES000011_NAME" description="MODULE_DESC" workshop="Lerjees"  type="ES" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000011" name="CB000011_NAME" description="MODULE_DESC" workshop="Lerjees"  type="CB" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000011" name="DF000011_NAME" description="MODULE_DESC" workshop="Lerjees"  type="DF" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000011" name="CM000011_NAME" description="MODULE_DESC" workshop="Lerjees"  type="CM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000011" name="DM000011_NAME" description="MODULE_DESC" workshop="Lerjees"  type="DM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <!--Criptizides-->                         
+  <module id="ES000012" name="ES000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000012" name="CB000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000012" name="DF000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000012" name="CM000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000012" name="DM000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000013" name="ES000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000013" name="CB000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000013" name="DF000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000013" name="CM000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000013" name="DM000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000014" name="ES000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000014" name="CB000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000014" name="DF000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000014" name="CM000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000014" name="DM000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000015" name="ES000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000015" name="CB000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000015" name="DF000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000015" name="CM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000015" name="DM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+                                             
+  <module id="ES000016" name="ES000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES" skills="SA020001,SA020002,SA020003" />
+  <module id="CB000016" name="CB000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" skills="SA010001,SA010002,SA010003,SA010004,SA010005,SA010006"/>
+  <module id="DF000016" name="DF000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" skills="SA050001,SA050002,SA050003,SA050004,SA050005,SA050006"/>
+  <module id="CM000016" name="CM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" skills="SA030001,SA030002,SA030003,SA030004,SA030005,SA030006"/>
+  <module id="DM000016" name="DM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" skills="SA040001,SA040002,SA040003,SA040004,SA040005,SA040006"/>
+
+</modules>

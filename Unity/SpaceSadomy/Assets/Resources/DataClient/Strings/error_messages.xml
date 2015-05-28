@@ -1,0 +1,94 @@
+﻿<strings>
+  <string key="EM0000">
+    Операция выполнена успешно
+  </string>
+  <string key="EM0001">
+    Weapon is not ready yet
+  </string>
+  <string key="EM0002">
+    The target is too far
+  </string>
+  <string key="EM0003">
+    Not enough power for heavy attack
+  </string>
+  <string key="EM0004">
+    Your gun is blocked by the enemy
+  </string>
+  <string key="EM0005">
+    Error: Object does not exist
+  </string>
+  <string key="EM0006">
+    This object can not be attacked
+  </string>
+  <string key="EM0007">
+    You cannot attack the player of your race
+  </string>
+  <string key="EM0008">
+    Goal has been destroyed
+  </string>
+  <string key="EM0009">
+    Your ship is destroyed, you cannot attack
+  </string>
+  <string key="EM0010">
+    Area is not found
+  </string>
+  <string key="EM0011">
+    Object is not found
+  </string>
+  <string key="EM0012">
+    The object has the wrong type
+  </string>
+  <string key="EM0013">
+    The owner of the object is not found
+  </string>
+  <string key="EM0014">
+    The container doesn't contain specified element
+  </string>
+  <string key="EM0015">
+    There is not enough space in the inventory
+  </string>
+  <string key="EM0016">
+    Targeted items in a container are not found
+  </string>
+  <string key="EM0017">
+    An unknown error of inventory adding
+  </string>
+  <string key="EM0018">
+    Объект не найден в складе станции
+  </string>
+  <string key="EM0019">
+    Объект не подходит для использования в вашей мастерской
+  </string>
+  <string key="EM0020">
+    Для действия необходимо удалить {count} предметов из инвентаря
+  </string>
+  <string key="EM0021">
+    Ошибка удаления объекта со склада станции
+  </string>
+  <string key="EM0022">
+    Ошибка добавления предмета на склад станции
+  </string>
+  <string key="EM0023">
+    Недостаточно места на станции
+  </string>
+  <string key="EM0024">
+    Ошибка добавления предмета в инвентарь станции
+  </string>
+  <string key="EM0025">
+    Сообщение не найдено
+  </string>
+  <string key="EM0026">
+    Получатели сообщений не совпадают
+  </string>
+  <string key="EM0027">
+    Тип получателей сообщения не совпадает
+  </string>
+  <string key="EM0028">Отправитель и получатель один и тот же</string>
+  <string key="EM0029">Ошибка удаления аттачмента</string>
+  <string key="EM0030">Ошибка получения аттачмента</string>
+  <string key="EM0031">Неподдерживаемый тип аттачмента</string>
+  <string key="EM0032">Недостаточно места в инвентаре корабля для аттачмента</string>
+  <string key="EM0033">Недостаточно места на станции для аттачмента типа 'Модуль'</string>
+  <string key="EM0034">Unknown error</string>
+  <string key="EM0035">Save Manager creation error</string>
+</strings>

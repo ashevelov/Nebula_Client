@@ -1,0 +1,107 @@
+﻿<strings>
+  <string key="decreasePrecision">
+    Fall's probability reduced
+  </string>
+  <string key="increaseDamage">
+    Damage increased
+  </string>
+  <string key="increaseCooldown">
+    Weapon's reloading interval increased
+  </string>
+  <string key="overheatingGuns">
+    Weapons in overheating mode (damage increased)
+  </string>
+  <string key="blockResist">
+    Damage resistance is blocked (derivable damage increased)
+  </string>
+  <string key="decreaseResists">
+    Damage resistance is reduced (derivable damage increased)
+  </string>
+  <string key="decreaseCooldown">
+    Weapon's reloading time reduced (firing rate increased)
+  </string>
+  <string key="increaseHP">
+    Strength regeneration
+  </string>
+  <string key="decreaseDamage">
+    Gun's damage reduced
+  </string>
+  <string key="increasePrecision">
+    Probability of hitting the target increased
+  </string>
+  <string key="increaseMaxHP">
+    Maximum margin of the ship's safety increased
+  </string>
+  <string key="descreaseMaxHP">
+    Maximum margin of the ship's safety reduced
+  </string>
+  <string key="increaseMaxSpeed">
+    Maximum of the ship's speed increased
+  </string>
+  <string key="decreaseMaxSpeed">
+    Maximum of the ship's speed reduced
+  </string>
+  <string key="blockWeapon">
+    The weapon is locked (damage 0)
+  </string>
+  <string key="blockSkill">
+    Skill is locked (efficiency is 0)
+  </string>
+  <string key="resurrectHP_Points">
+    Strength regeneration of the ship in course of time
+  </string>
+  <string key="increaseResist">
+    Damage resistance is increased
+  </string>
+  <string key="resurrectHP_Percent_By_Shoot">
+    Restoring of strength during the shot
+  </string>
+  <string key="increaseOptimalDistance">
+    The optimal distance for shot is increased
+  </string>
+  <string key="decreaseOptimalDistance">
+    The optimal distance for shot is reduced
+  </string>
+  <string key="additionalDamage2EnemiesOnAreaPerFire">
+    Additional damage on the field
+  </string>
+  <string key="increaseCriticalChance">
+    Chance for a critical shot is increased
+  </string>
+  <string key="decreaseCriticalChance">
+    Chance for a critical shot is reduced
+  </string>
+  <string key="increaseCriticalDamage">
+    Damage from a critical hit is increased
+  </string>
+  <string key="decreaseCriticalDamage">
+    Damage from a critical hit is reduced
+  </string>
+  <string key="increaseDamageOnPlayerAndAlliesOnArea_Persistent">
+    Damage of the player and allies on the field is increased
+  </string>
+  <string key="increaseGlobalCooldown">
+    Recharge time of all skills is increase
+  </string>
+  <string key="decreaseGlobalCooldown">
+    Recharge time of all skills is reduced
+  </string>
+  <string key="increaseInputDamage">
+    Incoming damage increased
+  </string>
+  <string key="decreseMaxSpeedOnArea">
+    Уменьшение максимальной скорости по области
+  </string>
+  <string key="decreaseOptimalDistanceOnArea">
+    Уменьшение оптимального прицельного расстояния по области
+  </string>
+  <string key="decreaseCooldownOnArea">
+    Уменьшение кулдауна оружия по области
+  </string>
+  <string key="decreaseCriticalChanceOnTarget_Persistent">
+    Уменьшение вероятности критического урона
+  </string>
+  <string key="decreaseResistOnTarget_Persistent">
+    Уменьшение сопротивления урону
+  </string>
+</strings>

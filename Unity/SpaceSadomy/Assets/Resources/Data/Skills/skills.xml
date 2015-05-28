@@ -1,0 +1,291 @@
+﻿<skills>
+  <skill id="SA010001" require_weapon_slot="false" name="Экстренный ремонт"
+         durability="0"  type="OneUse"     energy="10"       cooldown="15"
+         slot_type="CB"  description="При разрушении корабля до {color=#008000ff}20%{/color} люзиумные капсулы заделывают дыры в броне, восстанавливая её на {color=#008000ff}15%{/color}
+         &#10; &#10; Затраты энергии: {color=#FFA500ff}10{/color} единиц" alias="sa11">
+    <inputs>
+      <input key="health_edge" value="0.2" type="float" />
+      <input key="health_mult" value="0.15" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA010002" require_weapon_slot="false" name="Подзарядка"
+         durability="15" type="Durable"    energy="7"        cooldown="7"
+         slot_type="CB"  description="Дополнительная энергия из генератора подается на двигатели корабля, увеличивая скорость до {color=#008000ff}10%{/color}, и на обшивку, восстанавливая до {color=#008000ff}10%{/color} полученных повреждений
+         &#10; &#10; Время действия: {color=#FFA500ff}15{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}7{/color} единиц" alias="sa12">
+    <inputs>
+      <input key="health_mod" value="0.1" type="float" />
+      <input key="speed_mod" value="0.1" type="float"  />
+    </inputs>
+  </skill>
+  <skill id="SA010003" require_weapon_slot="false" name="Электромагнитные помехи"
+         durability="0"  type="Persistent" energy="10"   cooldown="5"
+         slot_type="CB"  description="Пучок направленных электромагнитных волн выводит из строя {color=#008000ff}1{/color} орудие противника
+         &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+         &#10; Затраты энергии: {color=#FFA500ff}10{/color} единиц" alias="sa13">
+    <inputs>
+      <input key="range" value="200" type="float" />
+    </inputs>
+  </skill>
+  <skill id="SA010004" require_weapon_slot="false" name="Искажение"
+         durability="15" type="Durable"    energy="9"    cooldown="10"
+         slot_type="CB"  description="Создаваемые вокруг корабля-цели помехи прерывают действие одного из навыков с вероятностью {color=#008000ff}20%{/color}
+         &#10; &#10; Время действия: {color=#FFA500ff}15{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa14">
+    <inputs>
+      <input key="block_skill_prob" value="0.2" type="float" />
+      <input key="range" value="200" type="float" />
+    </inputs>
+  </skill>
+  
+  <skill id="SA010005" require_weapon_slot="false" name="Ремонтные дроны"
+         durability="5"  type="Durable"    energy="9"    cooldown="10"
+         slot_type="CB"  description="За {color=#008000ff}5{/color} секунд автономной работы ремонтные дроны восстанавливают до {color=#008000ff}50{/color} ед. брони и покрывают её защитным слоем, поглощающим до {color=#008000ff}5%{/color} урона в течение {color=#008000ff}20{/color} секунд
+         &#10; &#10; Время действия: {color=#FFA500ff}5{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa15">
+    <inputs>
+      <input key="resurrect_hp" value="10" type="float" />
+      <input key="resist_mod" value="0.05" type="float" />
+      <input key="resist_durability" value="20" type="float" />
+    </inputs>
+  </skill>
+  <skill id="SA010006" require_weapon_slot="true"  name="Регенерация"
+         durability="0"  type="Persistent"  energy="8"    cooldown="2"
+         slot_type="CB" description="Часть энергии каждого выстрела перенаправляется на обшивку корабля, восстанавливая по {color=#008000ff}1%{/color} полученных повреждений за выстрел
+         &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+         &#10; Затраты энергии: {color=#FFA500ff}8{/color} единиц" alias="sa16">
+    <inputs>
+      <input key="health_mod_by_shoot" value="0.01" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA020001" require_weapon_slot="false" name="П-генератор"
+         durability="20" type="Durable"    energy="12"   cooldown="10"
+         slot_type="ES"  description="Бортовой генератор помех блокирует часть систем, снижая скорость вражеских кораблей до {color=#008000ff}30%{/color}
+         &#10; &#10; Время действия: {color=#FFA500ff}20{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}12{/color} единиц" alias="sa21">
+    <inputs>
+      <input key="range" value="100" type="float" />
+      <input key="speed_mod" value="0.3" type="float" />
+    </inputs>
+  </skill>
+  <skill id="SA020002" require_weapon_slot="false" name="Мегадрайв"
+         durability="0"  type="Persistent" energy="9"    cooldown="5"
+         slot_type="ES"  description="Работа систем в повышенном режиме позволяет увеличить скорость корабля до {color=#008000ff}20%{/color}
+         &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+         &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa22">
+    <inputs>
+      <input key="speed_mod" value="0.2" type="float" />
+    </inputs>
+  </skill>
+  <skill id="SA020003" require_weapon_slot="false" name="Гипердрайв"
+         durability="10" type="Durable"    energy="15"   cooldown="15"
+         slot_type="ES"  description="Работа систем в предельном режиме позволяет увеличить скорость корабля в {color=#008000ff}2{/color} раза
+         &#10; &#10; Время действия: {color=#FFA500ff}10{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}15{/color} единиц" alias="sa23">
+    <inputs>
+      <input key="speed_mod" value="1.0" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA030001" require_weapon_slot="false" name="Космическая пыль"
+         durability="0"  type="Persistent"    energy="7"     cooldown="5"
+         slot_type="CM" description="Грамотное использование космических объектов снижает дальность стрельбы противника на {color=#008000ff}20%{/color}
+         &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+         &#10; Затраты энергии: {color=#FFA500ff}7{/color} единиц" alias="sa31">
+    <inputs>
+      <input key="distance_mod" value="0.2" type="float" />
+      <input key="range" value="200" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA030002" require_weapon_slot="false" name="Затмение"
+         durability="15"  type="Durable"    energy="8"   cooldown="15"
+         slot_type="CM" description="Знание базовых законов физики позволяет уменьшить шансы противника на точный выстрел на {color=#008000ff}20%{/color}, а также снизить наносимый им урон на {color=#008000ff}5%{/color}
+         &#10; &#10; Время действия: {color=#FFA500ff}15{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}8{/color} единиц" alias="sa32">
+    <inputs>
+      <input key="range" value="200" type="float" />
+      <input key="cooldown_mod" value="0.2" type="float" />
+      <input key="damage_mod" value="0.05" type="float"  />
+    </inputs>
+  </skill>
+
+  <skill id="SA030003" require_weapon_slot="false" name="Вирус"
+       durability="0"  type="OneUse"    energy="13"   cooldown="20"
+       slot_type="CM" description="Сбой в бортовом компьютере противника не позволяет ему оперативно реагировать на электронные атаки. Время действия атак увеличивается на {color=#008000ff}80%{/color}
+       &#10; &#10; Затраты энергии: {color=#FFA500ff}13{/color} единиц" alias="sa33">
+    <inputs>
+      <input key="range" value="200" type="float" />
+      <input key="neg_dur_mult" value="0.2" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA030004" require_weapon_slot="true" name="Захват цели"
+         durability="30" type="Durable" energy="7" cooldown="10"
+         slot_type="CM" description="Усовершенствованные системы наведения повышают точность стрельбы на {color=#008000ff}10%{/color}. Корабль выпускает ракету с взрывающимся зарядом, которая наносит {color=#008000ff}140%{/color} от общего урона и увеличивает последующий урон от обычных выстрелов до {color=#008000ff}5%{/color}
+         &#10; &#10; Время действия: {color=#FFA500ff}30{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}7{/color} единиц" alias="sa34">
+    <inputs>
+      <input key="range" value="200" type="float" />
+      <input key="hit_shot_damage_mult" value="1.4" type="float" />
+      <input key="hit_prob_mod" value="0.1" type="float" />
+      <input key="damage_mod" value="0.05" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA030005" require_weapon_slot="false" name="Нейрошунт"
+         durability="0" type="Persistent" energy="9" cooldown="8"
+         slot_type="CM" description="Прямое подключение к бортовому компьютеру снижает задержки на обработку информации и позволяет перехватывать управление орудийными установками на кораблях союзников, увеличивая их скорострельность на {color=#008000ff}20%{/color}
+         &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+         &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa35">
+    <inputs>
+      <input key="cooldown_mod" value="0.2" type="float" />
+      <input key="radius" value="200" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA030006" require_weapon_slot="false" name="Залп"
+       durability="0" type="Persistent" energy="9" cooldown="8"
+       slot_type="CM" description="Мощные выстрелы наносят повреждения противнику и всем его союзникам, оказавшимся в радиусе поражения
+       &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+       &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa36">
+    <inputs>
+      <input key="additional_damage" value="0.05" type="float" />
+      <input key="radius" value="100" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA040001" require_weapon_slot="false" name="Самонаводящиеся ракеты"
+         durability="10" type="Durable" energy="12" cooldown="10"
+         slot_type="DM" description="Механические повреждения орудий противника снижают их эффективность на {color=#008000ff}20%{/color}
+         &#10; &#10; Время действия: {color=#FFA500ff}10{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}12{/color} единиц" alias="sa41">
+    <inputs>
+      <input key="damage_mod" value="0.2" type="float" />
+      <input key="range" value="500" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA040002" require_weapon_slot="false" name="Продвинутая наводка"
+         durability="15" type="Durable" energy="8" cooldown="20"
+         slot_type="DM" description="Усовершенствованные системы наведения увеличивают шанс попасть в наиболее уязвимую часть противника и нанести ему критический урон на {color=#008000ff}30%{/color}
+         &#10; &#10; Время действия: {color=#FFA500ff}15{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}8{/color} единиц" alias="sa42">
+    <inputs>
+      <input key="critchance_mod" value="0.3" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA040003" require_weapon_slot="false" name="Электронное противодействие"
+         durability="0" type="Persistent" energy="10" cooldown="15"
+         slot_type="DM" description="Бортовой компьютер создаёт мощную волну помех, воздействующих непосредственно на электронные системы управления орудиями противника. Шанс критического попадания из орудий противника снижается в {color=#008000ff}2{/color} раза
+         &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+         &#10; Затраты энергии: {color=#FFA500ff}10{/color} единиц" alias="sa43">
+    <inputs>
+      <input key="critchance_mod" value="0.5" type="float" />
+      <input key="range" value="500" type="float" />
+    </inputs>
+  </skill>
+  <skill id="SA040004" require_weapon_slot="true" name="Торпедный огонь"
+       durability="15" type="Durable" energy="9" cooldown="10"
+       slot_type="DM" description="Мощные выстрелы наносят на {color=#008000ff}30%{/color} больше урона, замедляя противника на {color=#008000ff}10%{/color} на {color=#008000ff}7{/color} секунд. Первый выстрел наносит {color=#008000ff}120%{/color} от общего урона
+       &#10; &#10; Время действия: {color=#FFA500ff}15{/color} секунд
+       &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa44">
+    <inputs>
+      <input key="range" value="1000" type="float" />
+      <input key="hit_shot_damage_mult" value="1.4" type="float" />
+      <input key="source_damage_mod" value="0.3" type="float" />
+      <input key="target_speed_mod" value="0.1" type="float" />
+      <input key="target_speed_mod_duration" value="7" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA040005" require_weapon_slot="false" name="Нейросеть"
+       durability="0" type="Persistent" energy="6" cooldown="5"
+       slot_type="DM" description="Объединение бортовых компьютеров союзников в общую сеть позволяет эффективно работать в группе и вести направленный огонь по целям, вследствие чего фактический урон каждого корабля повышается на {color=#008000ff}10%{/color}
+       &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+       &#10; Затраты энергии: {color=#FFA500ff}6{/color} единиц" alias="sa45">
+    <inputs>
+      <input key="damage_mod" value="0.1" type="float" />
+      <input key="radius" value="100" type="float" />
+    </inputs>
+    
+  </skill>
+
+  <skill id="SA040006" require_weapon_slot="false" name="Предельный режим"
+       durability="10" type="Durable" energy="8" cooldown="10"
+       slot_type="DM" description="Орудийные модули работают в предельном режиме: урон повышается до {color=#008000ff}50%{/color}. Избыток потребления энергии орудийной установкой компенсируется за счёт скорости: корабль не может разогнаться свыше {color=#008000ff}70%{/color} от своей максимальной скорости
+       &#10; &#10; Время действия: {color=#FFA500ff}10{/color} секунд
+       &#10; Затраты энергии: {color=#FFA500ff}8{/color} единиц" alias="sa46">
+    <inputs>
+      <input key="damage_mod" value="0.5" type="float" />
+      <input key="speed_mod" value="0.3" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA050001" require_weapon_slot="false" name="Резонанс"
+         durability="30" type="Durable" energy="9" cooldown="15"
+         slot_type="DF" description="Настройка на частоту бортового компьютера противника позволяет временно перегрузить вычислительную мощность последнего, вследствие чего время обработки вражеских атак и их восстановления увеличивается на {color=#008000ff}20%{/color}
+         &#10; &#10; Время действия: {color=#FFA500ff}30{/color} секунд
+         &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa51">
+    <inputs>
+      <input key="global_cooldown_mod" value="0.2" type="float" />
+      <input key="range" value="200" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA050002" require_weapon_slot="false" name="Защитная связь"
+       durability="20" type="Durable" energy="8" cooldown="15"
+       slot_type="DF" description="Объединение бортовых компьютеров союзников в общую сеть позволяет более экономно распределять энергию, вследствие чего сопротивление урону у кораблей союзников увеличивается на {color=#008000ff}30%{/color}
+       &#10; &#10; Время действия: {color=#FFA500ff}20{/color} секунд
+       &#10; Затраты энергии: {color=#FFA500ff}8{/color} единиц" alias="sa52">
+    <inputs>
+      <input key="resist_mod" value="0.3" type="float" />
+      <input key="radius" value="200" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA050003" require_weapon_slot="false" name="Утечка"
+     durability="0" type="Persistent" energy="6" cooldown="10"
+     slot_type="DF" description="Снижение мощности энергетической сети корабля противника уменьшает его сопротивление урону на {color=#008000ff}20%{/color}
+     &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
+     &#10; Затраты энергии: {color=#FFA500ff}6{/color} единиц" alias="sa53">
+    <inputs>
+      <input key="resist_mod" value="0.2" type="float" />
+      <input key="range" value="100" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA050004" require_weapon_slot="false" name="Энергораспределение"
+   durability="10" type="Durable" energy="10" cooldown="5"
+   slot_type="DF" description="Перераспределение энергии увеличивает сопротивление урону на {color=#008000ff}80%{/color} за счет снижения мощности орудийных установок на {color=#008000ff}15%{/color}
+   &#10; &#10; Время действия: {color=#FFA500ff}10{/color} секунд
+   &#10; Затраты энергии: {color=#FFA500ff}10{/color} единиц" alias="sa54">
+    <inputs>
+      <input key="resist_mod" value="0.8" type="float" />
+      <input key="damage_mod" value="0.15" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA050005" require_weapon_slot="false" name="Превосходящие технологии"
+    durability="20" type="Durable" energy="10" cooldown="15"
+    slot_type="DF" description="Превосходство в вычислительных мощностях бортового компьютера и улучшенные системы сопротивления урону позволяют вам видеть слабые места в обороне противника и передавать эту информацию союзникам, если величина сопротивления вашего корабля урону больше. Урон по выбранному противнику со стороны ваших союзников возрастает на {color=#008000ff}10%{/color}
+    &#10; &#10; Время действия: {color=#FFA500ff}20{/color} секунд
+    &#10; Затраты энергии: {color=#FFA500ff}10{/color} единиц" alias="sa55">
+    <inputs>
+      <input key="increase_input_damage_mod" value="0.1" type="float" />
+      <input key="range" value="200" type="float" />
+    </inputs>
+  </skill>
+
+  <skill id="SA050006" require_weapon_slot="false" name="Фаервол"
+  durability="0" type="OneUse" energy="5" cooldown="15"
+  slot_type="DF" description="Фаервол на бортовом компьютере блокирует {color=#008000ff}1{/color} негативный эффект, связанный с ухудшением работы двигательных систем корабля
+  &#10; &#10; Затраты энергии: {color=#FFA500ff}5{/color} единиц" alias="sa56">
+    <inputs>
+    </inputs>
+  </skill>
+  
+</skills>

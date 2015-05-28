@@ -1,0 +1,58 @@
+﻿<zones>
+  <zone id="PW1" scene="PW1" display_name="PW1_NAME"/>
+  <zone id="PW2" scene="PW2" display_name="PW2_NAME"/>
+  <zone id="PW3" scene="PW3" display_name="PW3_NAME"/>
+  <zone id="PW4" scene="PW4" display_name="PW4_NAME"/>
+  
+  <zone id="H1" scene="H1"    display_name="H1_NAME"/>
+  <zone id="H2" scene="H2"    display_name="H2_NAME"/>
+  <zone id="H3" scene="H3"    display_name="H3_NAME"/>
+  <zone id="H4" scene="H4"    display_name="H4_NAME"/>
+  <zone id="H5" scene="H5"    display_name="H5_NAME"/>
+  <zone id="H6" scene="H6"    display_name="H6_NAME"/>
+  <zone id="H7" scene="H7"    display_name="H7_NAME"/>
+  <zone id="H8" scene="H8"    display_name="H8_NAME"/>
+  <zone id="H9" scene="H9"    display_name="H9_NAME"/>
+  <zone id="H10" scene="H10"  display_name="H10_NAME"/>
+  <zone id="H11" scene="H11"  display_name="H11_NAME"/>
+  <zone id="H12" scene="H12"  display_name="H12_NAME"/>
+  <zone id="H13" scene="H13"  display_name="H13_NAME"/>
+  <zone id="H14" scene="H14"  display_name="H14_NAME"/>
+  <zone id="H15" scene="H15"  display_name="H15_NAME"/>
+
+  <zone id="B1"  scene="B1"   display_name="B1_NAME"/>
+  <zone id="B2"  scene="B2"   display_name="B2_NAME"/>
+  <zone id="B3"  scene="B3"   display_name="B3_NAME"/>
+  <zone id="B4"  scene="B4"   display_name="B4_NAME"/>
+  <zone id="B5"  scene="B5"   display_name="B5_NAME"/>
+  <zone id="B6"  scene="B6"   display_name="B6_NAME"/>
+  <zone id="B7"  scene="B7"   display_name="B7_NAME"/>
+  <zone id="B8"  scene="B8"   display_name="B8_NAME"/>
+  <zone id="B9"  scene="B9"   display_name="B9_NAME"/>
+  <zone id="B10" scene="B10"  display_name="B10_NAME"/>
+  <zone id="B11" scene="B11"  display_name="B11_NAME"/>
+  <zone id="B12" scene="B12"  display_name="B12_NAME"/>
+  <zone id="B13" scene="B13"  display_name="B13_NAME"/>
+  <zone id="B14" scene="B14"  display_name="B14_NAME"/>
+  <zone id="B15" scene="B15"  display_name="B15_NAME"/>
+
+  <zone id="E1"  scene="E1"   display_name="E1_NAME"/>
+  <zone id="E2"  scene="E2"   display_name="E2_NAME"/>
+  <zone id="E3"  scene="E3"   display_name="E3_NAME"/>
+  <zone id="E4"  scene="E4"   display_name="E4_NAME"/>
+  <zone id="E5"  scene="E5"   display_name="E5_NAME"/>
+  <zone id="E6"  scene="E6"   display_name="E6_NAME"/>
+  <zone id="E7"  scene="E7"   display_name="E7_NAME"/>
+  <zone id="E8"  scene="E8"   display_name="E8_NAME"/>
+  <zone id="E9"  scene="E9"   display_name="E9_NAME"/>
+  <zone id="E10" scene="E10"  display_name="E10_NAME"/>
+  <zone id="E11" scene="E11"  display_name="E11_NAME"/>
+  <zone id="E12" scene="E12"  display_name="E12_NAME"/>
+  <zone id="E13" scene="E13"  display_name="E13_NAME"/>
+  <zone id="E14" scene="E14"  display_name="E14_NAME"/>
+  <zone id="E15" scene="E15"  display_name="E15_NAME"/>
+
+  <zone id="N1"  scene="N1"  display_name="N1_NAME"/>
+  <zone id="N2"  scene="N2"  display_name="N2_NAME"/>
+  <zone id="N3"  scene="N3"  display_name="N3_NAME"/>
+</zones>

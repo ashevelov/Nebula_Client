@@ -1,0 +1,135 @@
+﻿<draggable_group zorder="1" name="select_inventory_object" width="305.9" height="500" left="980" top="140" visible="false" drag_height="70">
+  <box zorder="0" name="background" width="100pc" height="100pc" skin="game" style="box" />
+  <box name="drag_box" width="100pc" height="30" align="uppercenter" skin="game" style="box" />
+  <button zorder="1" name="close"  width="30" height="30" align="upperright" text="X" skin="game" style="button">
+    <event name="CLOSE_SELECT_INVENTORY_OBJECT">
+      <parameters></parameters>
+    </event>
+  </button>
+  
+  <!--
+  <scrollview name="scroll" left="0" top="25" height="475" width="300" element_size="300,50" view_position="0,0" direction="vertical">
+    <item_template>
+      <button name="select_button" left="0" top="0" width="300" height="50" text="" skin="game" style="button">
+        <event name="SIO_SELECT_OBJECT">
+          <parameters></parameters>
+        </event>
+      </button>
+    </item_template>
+  </scrollview>
+  -->
+
+  <button name="0" left="9" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="0_tex" left="9" top="40" width="70" height="75" texture="UI/Textures/Univ" zorder="1"/>
+
+  <button name="1" left="82" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="1_tex" left="82" top="40" width="75" height="70" texture="UI/Textures/Univ" zorder="1"/>
+
+  <button name="2" left="155" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="2_tex" left="155" top="40" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+
+
+  <button name="3" left="227" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="3_tex" left="227" top="40" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+
+  <button name="4" left="9" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="4_tex" left="9" top="113" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="5" left="82" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="5_tex" left="82" top="113" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="6" left="155" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="6_tex" left="155" top="113" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="7" left="227" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="7_tex" left="227" top="113" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+
+  <button name="8" left="9" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="8_tex" left="9" top="186" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="9" left="82" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="9_tex" left="82" top="186" width="70" height="70" texture="UI/Textures/Univ5" zorder="1"/>
+  
+  <button name="10" left="155" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="10_tex" left="155" top="186" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="11" left="227" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="11_tex" left="227" top="186" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+
+  <button name="12" left="9" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="12_tex" left="9" top="259" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="13" left="82" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="13_tex" left="82" top="259" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="14" left="155" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="14_tex" left="155" top="259" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+  <button name="15" left="227" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SIO_SELECT_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="15_tex" left="227" top="259" width="70" height="70" texture="UI/Textures/Univ" zorder="1"/>
+  
+</draggable_group>

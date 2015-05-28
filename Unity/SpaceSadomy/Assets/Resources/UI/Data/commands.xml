@@ -1,0 +1,27 @@
+﻿<resizable_group name="commands" zorder="0" width="400" height="500" min_size="100,100" max_size="1600,900" left="100" top="100" visible="false" drag_height="20" handle_size="20,20">
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_box" width="100pc" height="20" align="uppercenter" skin="game" style="box" />
+  <texture width="20" height="20" align="downright" texture="UI/Textures/red" />
+  <button name="close_button" width="30" height="30" align="upperright" text="X" skin="game" style="button">
+    <event name="COMMANDS_CLOSE_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+
+  <button name="add_slots" left="5" top="25" width="150" height="30" text="add slots" skin="game" style="button">
+    <event name="ADD_SLOTS_CLICKED">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="use_skill" left="5" top="60" width="150" height="30" text="use skill" skin="game" style="button">
+    <event name="CMDS_USE_SKILL_CLICKED">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="test_out" left="5" top="95" width="150" height="30" text="TestOut()" skin="game" style="button">
+    <event name="CMDS_TEST_OUT">
+      <parameters></parameters>
+    </event>
+  </button>
+  <label name="debug" left="200" top="25" skin="game" style="font_middle_left" />
+</resizable_group>

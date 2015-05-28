@@ -1,0 +1,5 @@
+﻿<toggle name="sample_toggle" zorder="10" left="200" top="200" width="200" height="100" skin="game" style="item_toggle" visible="true">
+  <event name="SAMPLE_TOGGLE">
+    <parameters></parameters>
+  </event>
+</toggle>

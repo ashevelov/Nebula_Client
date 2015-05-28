@@ -1,0 +1,213 @@
+﻿using UnityEngine;
+using System.Collections;
+using Common;
+using Game.Space;
+using Game.Network;
+using Nebula.Client;
+
+namespace Nebula {
+    public class ProtectionStation : BaseSpaceObject {
+
+        private float updateNextTime;
+
+        public override void Start() {
+            base.Start();
+            this.updateNextTime = Time.time;
+        }
+
+        public override void OnDestroy() {
+            print("ProtectionStation.OnDetsroy()");
+            //this.DestroySkillAndBonusesEffects();
+        }
+
+        public override void Update() {
+            if (this.Item != null) {
+                this.UpdateProperties();
+            }
+            base.Update();
+        }
+
+        private void UpdateProperties() {
+            if (Time.time > this.updateNextTime) {
+                this.updateNextTime = Time.time + 1.0f;
+                this.Item.GetProperties(new string[] { GroupProps.BONUSES, GroupProps.PROTECTION_STATION });
+            }
+        }
+    }
+
+
+    #region Item
+    public class ProtectionStationItem : NpcItem, IDamagable, IBonusHolder {
+        private BaseSpaceObject component;
+        private ActorBonuses bonuses;
+        private readonly ClientNpcShipWeapon weapon;
+
+
+        private float health;
+        private float maxHealth;
+        private BotItemSubType subType;
+        private bool destroyed;
+        private string prefab;
+        private float speed;
+        private Race race;
+
+        public ProtectionStationItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
+            : base(id, type, game, subType, name) {
+            this.bonuses = new ActorBonuses();
+            this.weapon = new ClientNpcShipWeapon();
+        }
+
+        #region Overrides
+        public override BaseSpaceObject Component {
+            get { return this.component; }
+        }
+
+        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue) {
+            base.OnSettedProperty(group, propName, newValue, oldValue);
+            switch (group) {
+                case GroupProps.PROTECTION_STATION:
+                    {
+                        switch (propName) {
+                            case GenericEventProps.info:
+                                {
+                                    Hashtable info = newValue as Hashtable;
+                                    this.health = info.GetValue<float>(GenericEventProps.health, 0.0f);
+                                    this.maxHealth = info.GetValue<float>(GenericEventProps.max_health, 0.0f);
+                                    this.subType = (BotItemSubType)info.GetValue<byte>(GenericEventProps.sub_type, (byte)0);
+                                    this.destroyed = (bool)info.GetValue<bool>(GenericEventProps.destoyed, false);
+                                    this.prefab = info.GetValue<string>(GenericEventProps.prefab, string.Empty);
+                                    this.speed = info.GetValue<float>(GenericEventProps.speed, 0.0f);
+                                    this.race = (Race)info.GetValue<byte>(GenericEventProps.race, (byte)Race.None);
+                                    this.SetShipDestroyed(this.destroyed);
+                                }
+                                break;
+                            case GenericEventProps.weapon:
+                                {
+                                    Hashtable info = newValue as Hashtable;
+                                    this.weapon.ParseInfo(info);
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                case GroupProps.BONUSES:
+                    {
+                        switch (propName) {
+                            case Props.BONUSES:
+                                {
+                                    Hashtable info = newValue as Hashtable;
+                                    if (info != null) {
+                                        this.bonuses.Replace(info);
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        public override void OnSettedGroupProperties(string group, Hashtable properties) {
+            base.OnSettedGroupProperties(group, properties);
+            foreach (DictionaryEntry entry in properties) {
+                this.OnSettedProperty(group, entry.Key.ToString(), entry.Value, null);
+            }
+        }
+
+        public override void UseSkill(Hashtable skillProperties) {
+
+        }
+
+        /*
+        public override void CreateView(GameObject prefab)
+        {
+            Debug.Log("ProtectionStationItem.CreateView(GameObject prefab, bool hasDropContainer)".Color(Color.yellow).Bold());
+            //create base view
+            base.CreateView(prefab);
+            //set component
+            this.component = this.View.AddComponent<ProtectionStation>();
+            //initialize component
+            this.component.Initialize(this.Game, this);
+        }*/
+
+        public override void Create(GameObject obj) {
+            base.Create(obj);
+            this.component = this._view.AddComponent<ProtectionStation>();
+            this.component.Initialize(this.Game, this);
+        }
+        #endregion
+
+        #region IDamagable
+        public bool IsDead() {
+            return this.destroyed;
+        }
+
+        public bool IsPowerShieldEnabled() {
+            //no power shield
+            return false;
+        }
+
+        public float GetHealth() {
+            return this.health;
+        }
+
+        public float GetMaxHealth() {
+            return this.maxHealth;
+        }
+
+        public float GetHealth01() {
+            if (this.maxHealth == 0.0f)
+                return 0.0f;
+            return Mathf.Clamp01(this.health / this.maxHealth);
+        }
+
+        public float GetOptimalDistance() {
+            return this.weapon.OptimalDistance;
+        }
+
+        public float GetRange() {
+            return this.weapon.Range;
+        }
+
+        public float GetFarHitProb() {
+            return this.weapon.FarProb;
+        }
+
+        public float GetNearHitProb() {
+            return this.weapon.NearProb;
+        }
+
+        public float GetMaxHitSpeed() {
+            return this.weapon.MaxHitSpeed;
+        }
+
+        public float GetSpeed() {
+            return this.speed;
+        }
+
+        public float GetNearDist() {
+            return this.weapon.NearDist;
+        }
+
+        public float GetFarDist() {
+            return this.weapon.FarDist;
+        }
+        #endregion
+
+        #region IBonusHolder
+        public ActorBonuses Bonuses {
+            get { return this.bonuses; }
+        }
+        #endregion
+
+        public float Health { get { return this.health; } }
+        public float MaxHealth { get { return this.maxHealth; } }
+        public string Prefab { get { return this.prefab; } }
+        public Race Race { get { return this.race; } }
+
+        public override void AdditionalUpdate() {
+
+        }
+    }
+    #endregion
+}

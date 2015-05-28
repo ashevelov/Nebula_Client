@@ -1,0 +1,8 @@
+﻿<group name="event_task_view" zorder="0" width="400" height="50pc" align="middleleft" visible="true">
+  <scrollview name="event_scroll" width="380" height="100pc" element_size="100pc,0" view_position="0,0" direction="vertical" align="middleright">
+    <item_template name="event_element">
+      <label name="event_name" skin="game" style="title_upper_left" top="0" width="100pc"/>
+      <label name="event_task" skin="game" style="font_upper_left" top="30" width="100pc" />
+    </item_template>
+  </scrollview>
+</group>

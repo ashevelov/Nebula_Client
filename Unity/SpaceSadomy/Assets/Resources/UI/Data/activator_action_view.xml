@@ -1,0 +1,7 @@
+﻿<group name="activator_action_view" zorder="0" width="100pc" height="100pc" block_mouse="false" align="center" visible="false">
+  <button name="activate_button" width="300" height="50" top="70pc" text="Activate (E)" skin="game" style="transparent_button" align="hcenter">
+    <event name="AAV_ACTIVATE_BUTTON_CLICK">
+      <parameters/>
+    </event>
+  </button>
+</group>

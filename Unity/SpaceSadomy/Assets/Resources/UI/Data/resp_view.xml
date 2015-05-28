@@ -1,0 +1,7 @@
+﻿<group name="resp" width="100pc" height="15pc" align="downcenter" visible="false">
+  <button name="resp_button" width="10pc" height="50pc"  align="center" text="[E] Respawn" skin="game" style="transparent_button">
+    <event name="RESP_BUTTON_CLICK">
+      <parameters/>
+    </event>
+  </button>
+</group>

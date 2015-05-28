@@ -1,0 +1,124 @@
+﻿<resizable_group name="ship_panel" zorder="1" height="600" width="930" align="downright" drag_height="20" visible="false" handle_size="310,10" min_size="310,100" max_size="310,1000">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" top="0" left="0" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="30px" align="uppercenter" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button">
+    <event name="SHIP_PANEL_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+
+  <!--<texture name="ship_image" top="30" left="310" width="620" height="430" texture="UI/Textures/Controls/item_not_selected" />-->
+
+  <group name="info_panle" left="5" top="35" width="300" height="580" texture="UI/Textures/Controls/item_not_selected">
+    <!--<texture name="back" width="280" height="100pc" texture="UI/Textures/Controls/item_not_selected" />-->
+    <scrollview name="info_panel" left="0" top="0" width="300" height="100pc" element_size="280,20" view_position="0,0" direction="vertical"  vertical_thumb="verticalscrollbar">
+     
+      <item_template name="param_panel">
+        
+        <!--<box name="panel_back" width="100pc" height="100pc" align="center" skin="game" style="box" />-->
+        <!--<label name="name_panel" top="5" width="280" height="20" skin="game" text="name" style="font_middle_center" />-->
+        
+        <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,0" end="275,0" line_width="2" />
+        <toggle name="show_info_toggle" width="100pс" height="25px" align="uppercenter" text="" skin="game" style="font_middle_center">
+          <event name="SHIP_PANEL_SHOW_INFO_TOGGLE">
+            <parameters>
+            </parameters>
+          </event>
+        </toggle>
+        
+        <scrollview name="info" left="0" top="20" width="280" height="570" element_size="280,20" view_position="0,0" direction="vertical">
+          <box name="panel_back" width="100pc" height="100pc" align="center" skin="game" style="box" />
+          <item_template name="param_info">
+            <label name="name" left="0" top="5" width="280" height="20" skin="game" style="font_middle_left" >Max Energy:</label>
+            <label name="param" left="0" top="5" width="280" height="20" skin="game" text="asfdjksadfh" style="font_middle_right" text_color="green" />
+        </item_template>
+        </scrollview>
+      
+      </item_template>
+      
+    </scrollview>
+  </group>
+  
+  
+  
+<!--params--><!-- 
+  <group name="info_panle" left="5" top="25" width="200" height="570" texture="UI/Textures/Controls/item_not_selected"> 
+    <texture name="back" width="200" height="570" texture="UI/Textures/Controls/item_not_selected" />
+    <scrollview name="info" left="0" top="0" width="200" height="570" element_size="200,30" view_position="0,0" direction="vertical">
+      <item_template name="param_info">
+        <label name="param" left="0" top="5" width="200" height="30" skin="game" style="font_middle_center" />
+      </item_template>
+    </scrollview>
+  </group>
+--><!--/params-->
+
+<!--ship icon-->
+  <group name="ship_view" left="310" top="30" width="620" height="580">
+    <texture name="back" width="620" height="580" texture="UI/Textures/Controls/item_not_selected" />
+    <texture name="ship_image" left="5" top="5" width="620" height="580" texture="UI/Textures/Controls/item_not_selected" />
+
+
+    <!--<button name="cb_btn" left="50" top="450" width="75" height="75" skin="game" style="box">
+      <event name="SHIP_PANEL_CB_BTN">
+        <parameters>
+        </parameters>
+      </event>
+    </button>-->
+    <texture name="cb_icon" left="50" top="450" width="75" height="75" texture="UI/Textures/Modules/CB100000" zorder="1" />
+
+    <!--<button name="df_btn" left="160" top="450" width="75" height="75" skin="game" style="box">
+      <event name="SHIP_PANEL_DF_BTN">
+        <parameters>
+        </parameters>
+      </event>
+    </button>-->
+    <texture name="df_icon" left="160" top="450" width="75" height="75" texture="UI/Textures/Modules/DF100000" zorder="1" />
+
+    <!--<button name="dm_btn" left="270" top="450" width="75" height="75" skin="game" style="box">
+      <event name="SHIP_PANEL_DM_BTN">
+        <parameters>
+        </parameters>
+      </event>
+    </button>-->
+    <texture name="dm_icon" left="270" top="450" width="75" height="75" texture="UI/Textures/Modules/DM100000" zorder="1" />
+
+    <!--<button name="cm_btn" left="380" top="450" width="75" height="75" skin="game" style="box">
+      <event name="SHIP_PANEL_CM_BTN">
+        <parameters>
+        </parameters>
+      </event>
+    </button>-->
+    <texture name="cm_icon" left="380" top="450" width="75" height="75" texture="UI/Textures/Modules/CM100000" zorder="1" />
+
+    <!--<button name="es_btn" left="490" top="450" width="75" height="75" skin="game" style="box">
+      <event name="SHIP_PANEL_ES_BTN">
+        <parameters>
+        </parameters>
+      </event>
+    </button>-->
+    <texture name="es_icon" left="490" top="450" width="75" height="75" texture="UI/Textures/Modules/ES100000" zorder="1" />
+
+    <!--<button name="weapon_btn" left="255" top="50" width="75" height="75" skin="game" style="box">
+      <event name="SHIP_PANEL_WEAPON_BTN">
+        <parameters>
+        </parameters>
+      </event>
+    </button>-->
+    <texture name="weapon_icon" left="255" top="50" width="75" height="75" texture="UI/Textures/Modules/W0001" zorder="1" />
+  
+  </group>
+<!--/ship icon--><!--
+  
+--><!--ship fit--><!--
+
+  <group name="fit_panel" left="210" top="430" width="585" height="165">
+    <texture name="back" width="585" height="165" texture="UI/Textures/Controls/item_not_selected" />
+
+  </group>
+  
+--><!--/ship fit-->
+  
+  
+</resizable_group>

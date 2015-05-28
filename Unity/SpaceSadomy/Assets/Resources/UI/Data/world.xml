@@ -1,0 +1,3 @@
+﻿<group name="world" top="80" left="0" width="100pc" height="80pc" visible="false">
+  <box width="100pc" height="100pc" skin="game" style="box" />
+</group>

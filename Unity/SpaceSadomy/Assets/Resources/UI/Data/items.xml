@@ -1,0 +1,22 @@
+﻿<resizable_group name="items" zorder="2" width="200" height="50pc" align="middleleft" min_size="100,450" max_size="400,900" handle_size="20,20" drag_height="20" visible="false">
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <box name="handle_area" width="20px" height="20px" align="downright" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="x" skin="game" style="button">
+    <event name="ITEMS_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+
+  <scrollview name="scroll_items" left="0" top="30" width="400" height="450" element_size="400,50" view_position="0,0" direction="vertical">
+    <item_template name="item_element">
+      <toggle name="titem" width="400" height="50" skin="game" style="button" value="false" text="">
+        <event name="ITEMS_ITEM_TOGGLE_CHANGED">
+          <parameters></parameters>
+        </event>
+      </toggle>
+    </item_template>
+  </scrollview>
+  
+</resizable_group>

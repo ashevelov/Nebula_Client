@@ -1,0 +1,13 @@
+﻿
+<resizable_group zorder="0" name="container_view" left="0" top="0" width="542" height="400" min_size="536,300" max_size="536,1080" handle_size="30,30" drag_height="95" visible="false">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box zorder="0" name="background" width="100pc" height="100pc" skin="game" style="box" />
+  <box name="drag_box" width="100pc" height="30" align="uppercenter" skin="game" style="box" />
+  <button zorder="1" name="close_button" width="30" height="30" align="upperright" text="X" skin="game" style="button">
+    <event name="CONTAINER_VIEW_CLOSE_BUTTON_CLICK">
+      <parameters/>
+      >
+    </event>
+  </button>
+  <group zorder="2" name="content" left="5" top="35" width="512" height="0" />
+</resizable_group>

@@ -1,0 +1,54 @@
+﻿<!--<group name="chat" zorder="2" width="600" height="300"  visible="true" drag_height="20" align="downleft">
+  
+  <label name="new_messages" left="5" top="15" skin="game" style="font_middle_left">
+    <animations>
+      <animation type="color_from_to" name="change_color" interval="1.0" mode="pingpong" from="white" to="orange" />
+    </animations>
+  </label>
+  
+  <group name="chat_parent" width="100pc" height="100pc" align="center">
+    
+    <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+
+    <button name="close_button" width="30" height="30" align="upperright" text="X" skin="game" style="button">
+      <event name="CHAT_CLOSE_CLICK">
+        <parameters></parameters>
+      </event>
+    </button>
+  
+    <scrollview name="chat_scroll" left="0" top="30"  width="100pc" height="220"
+                element_size="100pc,50" view_position="0,0" direction="vertical" 
+      vertical_thumb="verticalscrollbar" skin="game">
+      <item_template name="chat_element">
+        <label name="chat_message" skin="game" style="chat_text" width="100pc"/>
+      </item_template>
+    </scrollview>
+  
+    <combobox  name="chat_group" left="0" top="255" width="80" height="30" skin="game" button_style="button" list_style="combo_item" box_style="box"
+              align="none" enabled="true" visible="true" margin="0,0,0,5">
+      <items>
+        <item text="zone" />
+        <item text="all" />
+        <item text="whisper" />
+        <item text="echo" />
+      </items>
+      <event name="CHAT_GROUP_CHANGED">
+        <parameters></parameters>
+      </event>
+    </combobox>
+  
+    <textfield name="input_message" left="85" top="265" width="465" height="30" skin="game" style="textfield" enter_event="CHAT_MSG_KEY_ENTER" force_focus="true">
+      <event name="CHAT_INPUT_MESSAGE_CHANGED">
+        <parameters></parameters>
+      </event>
+    </textfield>
+  
+    <button name="send_button" left="555" top="265" width="40" height="30" skin="game" style="button" text=">>">
+      <event name="SEND_MESSAGE_CLICK">
+        <parameters></parameters>
+      </event>
+    </button>
+  </group>
+</group>-->
+
+

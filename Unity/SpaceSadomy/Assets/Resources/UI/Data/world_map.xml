@@ -1,0 +1,14 @@
+﻿<resizable_group name="world_map" zorder="0" top="450" left="800" height="1000" width="1000" align="none" visible="false">
+  <box name="background" top="0" left="0" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <box name="handle_area" width="20px" height="20px" align="downright" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="x" skin="game" style="button">
+    <event name="WORLD_MAP_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+  <group name="map" zorder="1" left="0" top="20" width="1000" height="1000" visible="true">
+    
+  </group>
+</resizable_group>

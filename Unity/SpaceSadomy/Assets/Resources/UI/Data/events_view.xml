@@ -1,0 +1,60 @@
+﻿<draggable_group zorder="0" name="events" left="50" top="50" height="780" width="1400" visible="false" drag_height="30">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box"/>
+  <box name="drag_bkg" width="100pc" height="30" align="uppercenter" skin="game" style="box" />
+  
+  <button name="close_button" width="30" height="30" skin="game" style="button" text="X" align="upperright">
+    <event name="EVENT_CLOSE_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <tree_view name="events_tree" left="10" top="40" width="500" height="730" visible="true">
+    <tree_node opened="true" child_offset="20">
+      <node_toggle>
+        <toggle name="tree_toggle" skin="game" style="toggle" text="" value="true" width="20" height="20">
+          <event name="tree_toggle_dump">
+            <parameters></parameters>
+          </event>
+        </toggle>
+      </node_toggle>
+      <content>
+        <group width="480" height="60" visible="true">
+          <button name="event_button" text="" width="450" height="50" skin="game" style="button" align="upperleft">
+            <event name="event_button_clicked">
+              <parameters></parameters>
+            </event>
+          </button>
+        </group>
+      </content>
+    </tree_node>
+  </tree_view>
+  <line name="sep_1" texture="UI/Textures/item_color_orange" start="520,40" end="520,770" line_width="1" />
+
+  <group name="event_info" left="550" top="40" width="840" height="730" visible="true">
+    <box name="event_info_background" width="100pc" height="100pc" skin="game" style="box" />
+    <label name="event_name" left="20" top="20" skin="game" style="font_middle_left">
+      This is event title
+    </label>
+
+    <label name="event_description" left="20" top="50" width="800" height="300" skin="game" style="font_upper_left">
+      However, if you use double-quotes in that @-string like that, Notepad++ doesn't realize that and will switch out the syntax colouring as if it were not quoted or quoted, depending on the case.
+      And what's better is this: anywhere you insert a $variable, it DOES get interpreted! (if you need the dollar sign in the text, you escape it with a tick mark like this: `$not-a-variable
+    </label>
+
+    <label name="reward_label" left="20" top="400" skin="game" style="font_middle_left">
+      Reward for:
+    </label>
+    <label name="exp_label" left="40" top="420" skin="game" style="font_middle_left">
+      Exp:
+    </label>
+    <label name="exp_count" left="100" top="420" skin="game" style="font_middle_left">
+      150
+    </label>
+    <label name="coins_label" left="40" top="440" skin="game" style="font_middle_left">
+      Exp:
+    </label>
+    <label name="coins_count" left="100" top="440" skin="game" style="font_middle_left">
+      150
+    </label>
+  </group>
+</draggable_group>

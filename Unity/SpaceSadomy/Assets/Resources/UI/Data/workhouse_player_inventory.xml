@@ -1,0 +1,22 @@
+﻿<group name="workhouse_player_inventory" zorder="200" width="20pc" height="100pc" visible="false" enabled="false" align="middleright">
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="crafting_back" />
+  <scrollview name="scroll_items" left="0" top="0" width="100pc" height="80pc" element_size="320,50" view_position="0,0" direction="vertical">
+    <item_template name="item">
+
+      <toggle name="select_item" left="0" top="0" width="320" height="45" skin="game" style="item_toggle" text="">
+        <event name="WPI_TOGGLE_CHANGED">
+          <parameters></parameters>
+        </event>
+      </toggle>
+      <texture name="icon" left="0" top="0" width="40" height="40" texture=""       />
+      <label    name="type" left="60" top="15" skin="game" style="font_middle_left"    />
+      <label    name="name" left="150" top="15"  skin="game" style="font_middle_left"  />
+      <label    name="count" left="300" top="15" skin="game" style="font_middle_left"  />
+    </item_template>
+  </scrollview>
+  <button name="action_button" left="10pc" top="85pc" width="200" height="30" text="" skin="game" style="button">
+    <event name="WPI_ACTION_BUTTON">
+      <parameters></parameters>
+    </event>
+  </button>
+</group>

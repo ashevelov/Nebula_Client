@@ -1,0 +1,15 @@
+﻿<settings>
+  <spectator_camera value="false" />
+  <log_filters value="PLAYER"  now_not_used="SKILLS,RPC,NPC,USER,PLAYER,UI,DEFAULT"/>
+
+  <inputs>
+    <input key="ASTEROID_ACTIVATE_DISTANCE" value="100" type="float" />
+  </inputs>
+
+  <default_zones>
+    <zone race="Humans"       id="H1" />
+    <zone race="Borguzands"   id="B1"   />
+    <zone race="Criptizoids"  id="E1"  />
+    <zone race="None"         id="N1" />
+  </default_zones>
+</settings>

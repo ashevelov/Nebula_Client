@@ -1,0 +1,53 @@
+﻿<group name="hud" width="290" height="60" align="uppercenter" visible="true" enabled="true">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box width="100pc" height="100pc" align="center" skin="game" style="box" />
+
+  <toggle name="toggle_map" left="5" top="5" width="40" height="50" skin="game" style="toggle" value="false" text="" tooltip="skill_0" tooltip_placement="down" tooltip_width="150">
+    <event name="HUD_TOGGLE_MAP_CHANGED">
+      <parameters></parameters>
+    </event>
+  </toggle>
+  <texture name="skill_tex_5" left="6" top="11" width="38" height="38" texture="UI/Textures/ButtonIcons/003" zorder="1"/>
+  
+  <toggle name="toggle_inventory" left="45" top="5" width="40" height="50" skin="game" style="toggle" text="" tooltip="skill_1" tooltip_placement="down" tooltip_width="150">
+    <event name="HUD_TOGGLE_INVENTORY">
+      <parameters></parameters>
+    </event>
+  </toggle>
+  <texture name="skill_tex_5" left="46" top="11" width="38" height="38" texture="UI/Textures/ButtonIcons/006" zorder="1"/>
+  
+  <toggle name="toggle_ship_panel" left="85" top="5" width="40" height="50" skin="game" style="toggle" text="" tooltip="skill_2" tooltip_placement="down" tooltip_width="150">
+    <event name="HUD_TOGGLE_SHIP_PANEL">
+      <parameters></parameters>
+    </event>
+  </toggle>
+  <texture name="skill_tex_5" left="86" top="11" width="38" height="38" texture="UI/Textures/ButtonIcons/001" zorder="1"/>
+  
+  <button name="options" left="125" top="5" width="40" height="50" skin="game" style="toggle" text="" tooltip="skill_3" tooltip_placement="down" tooltip_width="150">
+    <event name="HUD_OPTIONS">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="skill_tex_5" left="126" top="11" width="38" height="38" texture="UI/Textures/ButtonIcons/002" zorder="1"/>
+  
+  <button name="station" left="165" top="5" width="40" height="50" skin="game" style="toggle" text="" tooltip="skill_4" tooltip_placement="down" tooltip_width="150">
+    <event name="HUD_ENTER_STATION">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="skill_tex_5" left="166" top="11" width="38" height="38" texture="UI/Textures/ButtonIcons/004" zorder="1"/>
+  
+  <toggle name="toggle_quests" left="205" top="5" width="40" height="50" skin="game" style="toggle" value="false" text="" tooltip="skill_5" tooltip_placement="down" tooltip_width="150">
+    <event name="HUD_TOGGLE_QUESTS">
+      <parameters></parameters>
+    </event>
+  </toggle>
+  <texture name="skill_tex_5" left="206" top="11" width="38" height="38" texture="UI/Textures/ButtonIcons/005" zorder="1"/>
+
+  <toggle name="toggle_help" left="245" top="5" width="40" height="50" skin="game" style="toggle" value="false" text="">
+    <event name="HUD_TOGGLE_HELP">
+      <parameters></parameters>
+    </event>
+  </toggle>
+  <texture name="skill_tex_5" left="246" top="11" width="38" height="38" texture="UI/Textures/ButtonIcons/007" zorder="1"/>
+</group> 

@@ -1,0 +1,22 @@
+﻿<resizable_group name="item_info_on_player" zorder="2" top="200" left="600" height="670" width="450" align="none" drag_height="20" visible="false">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" top="0" left="0" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button">
+    <event name="ITEM_INFO_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+  <label name="name" left="0" top="30" width="100pc" height="25" skin="game" style="font_upper_center_25_1" />
+  <label name="on_player" left="0" top="55" width="100pc" height="25" skin="game" style="font_upper_center_25_1" />
+  <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,100" end="445,100" line_width="2" />
+  <scrollview name="info" left="0" top="110" width="450" height="570" element_size="450,40" view_position="0,0" direction="vertical">
+    <item_template name="zone">
+      <label name="name" left="5" top="5" width="440" height="10" skin="game" style="font_middle_left" />
+      <label name="param" left="5" top="5" width="440" height="10" skin="game" style="font_middle_right"  text_color="yellow"/>
+    </item_template>
+  </scrollview>
+  <label name="skill_name" left="5" top="500" width="440" height="30" skin="game" style="font_middle_right"  text_color="yellow"/>
+  <label name="skill_description" left="5" top="540" width="440" height="100" skin="game" style="font_middle_right" />
+</resizable_group>

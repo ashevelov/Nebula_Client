@@ -1,0 +1,31 @@
+﻿<resizable_group name="quests" zorder="0" width="1000" height="700" align="center" min_size="500,500" max_size="1000,700" handle_size="20,20" drag_height="20" visible="false">
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <box name="handle_area" width="20px" height="20px" align="downright" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button">
+    <event name="QUESTS_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+
+  <scrollview name="scroll_quests" left="0" top="30" width="200" height="680" element_size="200,100" view_position="0,0" direction="vertical">
+    <item_template name="quest_info">
+      <toggle name="tquest" width="200" height="50" skin="game" style="button" value="false" text="">
+        <event name="QUEST_TOGGLE_CHANGED">
+          <parameters></parameters>
+        </event>
+      </toggle>
+    </item_template>
+  </scrollview>
+
+  <texture name="owner" left="220" top="30" width="300" height="300" texture="" />
+  <label name="description" left="600" top="30" width="370" height="400" skin="game" style="font_middle_center" />
+  <label name="status" left="600" top="450" width="370" height="25" skin="game" style="font_middle_center" />
+  <button name="play_sound" width="40px" height="40px" align="downright" text="(C•" skin="game" style="button">
+    <event name="PLAY_NPC_SOUND">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+</resizable_group>

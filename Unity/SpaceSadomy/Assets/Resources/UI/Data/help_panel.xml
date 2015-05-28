@@ -1,0 +1,14 @@
+﻿<group name="help_panel" left ="0" top="0" width="1800" height="900" visible="false" enabled="true" align="center">
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button" zorder="5">
+    <event name="HELP_PANEL_CLOSE_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <scrollview name="help_scroll" left="0" top="0" width="1800" height="100pc" element_size="1760,100" view_position="0,0" direction="vertical"  vertical_thumb="verticalscrollbar" skin="game">
+    <item_template name="help_element">
+      <texture name="icon" left="0" top="0" width="50" height="50" texture="UI/Textures/transparent" />
+      <label name="help_label" left="55" top="50" width="1700" skin="game" style="font_middle_left"></label>
+    </item_template>
+  </scrollview>
+</group> 

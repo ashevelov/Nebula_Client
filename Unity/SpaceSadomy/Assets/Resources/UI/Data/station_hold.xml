@@ -1,0 +1,1245 @@
+﻿<draggable_group zorder="1" name="station_hold" width="455" height="925" left="980" top="140" visible="false" drag_height="70">
+  <box zorder="0" name="background" width="100pc" height="100pc" skin="game" style="box" />
+  <box name="drag_box" width="100pc" height="30" align="uppercenter" skin="game" style="box" />
+  <button zorder="1" name="close"  width="30" height="30" align="upperright" text="X" skin="game" style="button">
+    <event name="CLOSE_STATION_HOLD">
+      <parameters></parameters>
+    </event>
+  </button>
+
+  <button name="0" left="9" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="0_tex" left="9" top="40" width="70" height="70" texture="UI/Textures/item_blue"/>
+  <label name="0_label" left="9" top="40" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="1" left="82" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="1_tex" left="82" top="40" width="70" height="70" texture="UI/Textures/item_blue"/>
+  <label name="1_label" left="82" top="40" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="2" left="155" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="2_tex" left="155" top="40" width="70" height="70" texture="UI/Textures/light_orange"/>
+  <label name="2_label" left="155" top="40" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="3" left="228" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="3_tex" left="228" top="40" width="70" height="70" texture="UI/Textures/light_yellow"/>
+  <label name="3_label" left="228" top="40" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="4" left="301" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="4_tex" left="301" top="40" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="4_label" left="301" top="40" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="5" left="374" top="40" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="5_tex" left="374" top="40" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="5_label" left="374" top="40" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="6" left="9" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="6_tex" left="9" top="113" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="6_label" left="9" top="113" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="7" left="82" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="7_tex" left="82" top="113" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="7_label" left="82" top="113" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="8" left="155" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="8_tex" left="155" top="113" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="8_label" left="155" top="113" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="9" left="228" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="9_tex" left="228" top="113" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="9_label" left="228" top="113" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="10" left="301" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="10_tex" left="301" top="113" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="10_label" left="301" top="113" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="11" left="374" top="113" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="11_tex" left="374" top="113" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="11_label" left="374" top="113" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="12" left="9" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="12_tex" left="9" top="186" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="12_label" left="9" top="186" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="13" left="82" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="13_tex" left="82" top="186" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="13_label" left="82" top="186" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="14" left="155" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="14_tex" left="155" top="186" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="14_label" left="155" top="186" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="15" left="228" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="15_tex" left="228" top="186" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="15_label" left="228" top="186" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="16" left="301" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="16_tex" left="301" top="186" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="16_label" left="301" top="186" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="17" left="374" top="186" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="17_tex" left="374" top="186" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="17_label" left="374" top="186" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="18" left="9" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="18_tex" left="9" top="259" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="18_label" left="9" top="259" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="19" left="82" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="19_tex" left="82" top="259" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="19_label" left="82" top="259" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="20" left="155" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="20_tex" left="155" top="259" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="20_label" left="155" top="259" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="21" left="228" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="21_tex" left="228" top="259" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="21_label" left="228" top="259" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="22" left="301" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="22_tex" left="301" top="259" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="22_label" left="301" top="259" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="23" left="374" top="259" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="23_tex" left="374" top="259" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="23_label" left="374" top="259" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="24" left="9" top="332" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="24_tex" left="9" top="332" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="24_label" left="9" top="332" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="25" left="82" top="332" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="25_tex" left="82" top="332" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="25_label" left="82" top="332" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="26" left="155" top="332" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="26_tex" left="155" top="332" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="26_label" left="155" top="332" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="27" left="228" top="332" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="27_tex" left="228" top="332" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="27_label" left="228" top="332" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="28" left="301" top="332" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="28_tex" left="301" top="332" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="28_label" left="301" top="332" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="29" left="374" top="332" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="29_tex" left="374" top="332" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="29_label" left="374" top="332" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="30" left="9" top="405" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="30_tex" left="9" top="405" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="30_label" left="9" top="405" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="31" left="82" top="405" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="31_tex" left="82" top="405" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="31_label" left="82" top="405" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="32" left="155" top="405" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="32_tex" left="155" top="405" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="32_label" left="155" top="405" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="33" left="228" top="405" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="33_tex" left="228" top="405" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="33_label" left="228" top="405" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="34" left="301" top="405" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="34_tex" left="301" top="405" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="34_label" left="301" top="405" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="35" left="374" top="405" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="35_tex" left="374" top="405" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="35_label" left="374" top="405" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="36" left="9" top="478" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="36_tex" left="9" top="478" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="36_label" left="9" top="478" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="37" left="82" top="478" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="37_tex" left="82" top="478" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="37_label" left="82" top="478" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="38" left="155" top="478" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="38_tex" left="155" top="478" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="38_label" left="155" top="478" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="39" left="228" top="478" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="39_tex" left="228" top="478" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="39_label" left="228" top="478" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="40" left="301" top="478" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="40_tex" left="301" top="478" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="40_label" left="301" top="478" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="41" left="374" top="478" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="41_tex" left="374" top="478" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="41_label" left="374" top="478" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="42" left="9" top="551" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="42_tex" left="9" top="551" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="42_label" left="9" top="551" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="43" left="82" top="551" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="43_tex" left="82" top="551" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="43_label" left="82" top="551" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="44" left="155" top="551" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="44_tex" left="155" top="551" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="44_label" left="155" top="551" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="45" left="228" top="551" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="45_tex" left="228" top="551" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="45_label" left="228" top="551" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="46" left="301" top="551" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="46_tex" left="301" top="551" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="46_label" left="301" top="551" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="47" left="374" top="551" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="47_tex" left="374" top="551" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="47_label" left="374" top="551" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="48" left="9" top="624" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="48_tex" left="9" top="624" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="48_label" left="9" top="624" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="49" left="82" top="624" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="49_tex" left="82" top="624" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="49_label" left="82" top="624" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="50" left="155" top="624" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="50_tex" left="155" top="624" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="50_label" left="155" top="624" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="51" left="228" top="624" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="51_tex" left="228" top="624" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="51_label" left="228" top="624" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="52" left="301" top="624" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="52_tex" left="301" top="624" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="52_label" left="301" top="624" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="53" left="374" top="624" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="53_tex" left="374" top="624" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="53_label" left="374" top="624" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="54" left="9" top="697" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="54_tex" left="9" top="697" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="54_label" left="9" top="697" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="55" left="82" top="697" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="55_tex" left="82" top="697" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="55_label" left="82" top="697" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="56" left="155" top="697" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="56_tex" left="155" top="697" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="56_label" left="155" top="697" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="57" left="228" top="697" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="57_tex" left="228" top="697" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="57_label" left="228" top="697" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="58" left="301" top="697" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="58_tex" left="301" top="697" width="70" height="70" texture="UI/Textures/transparent"/>
+  <label name="58_label" left="228" top="697" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="59" left="374" top="697" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="59_tex" left="374" top="697" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="59_label" left="374" top="697" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="60" left="9" top="770" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="60_tex" left="9" top="770" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="60_label" left="9" top="770" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="61" left="82" top="770" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="61_tex" left="82" top="770" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="61_label" left="82" top="770" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="62" left="155" top="770" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="62_tex" left="155" top="770" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="62_label" left="155" top="770" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="63" left="228" top="770" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="63_tex" left="228" top="770" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="63_label" left="228" top="770" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="64" left="301" top="770" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="64_tex" left="301" top="770" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="64_label" left="301" top="770" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="65" left="374" top="770" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="65_tex" left="374" top="770" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="65_label" left="374" top="770" width="70" height="70" skin="game" style="font_lower_right" />
+
+
+  <button name="66" left="9" top="843" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="66_tex" left="9" top="843" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="66_label" left="9" top="843" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="67" left="82" top="843" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="67_tex" left="82" top="843" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="67_label" left="82" top="843" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="68" left="155" top="843" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="68_tex" left="155" top="843" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="68_label" left="155" top="843" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="69" left="228" top="843" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="69_tex" left="228" top="843" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="69_label" left="228" top="843" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="70" left="301" top="843" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="70_tex" left="301" top="843" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="70_label" left="301" top="843" width="70" height="70" skin="game" style="font_lower_right" />
+
+  <button name="71" left="374" top="843" width="70" height="70" text="" skin="game" style="button">
+    <event name="SH_SELECT_CLICK" event_type="LeftClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_RIGHT_SELECT_CLICK" event_type="RightClick">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_ENTER" event_type="OnEnter">
+      <parameters></parameters>
+    </event>
+    <event name="SH_ON_MOUSE_EXIT" event_type="OnExit">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="71_tex" left="374" top="843" width="70" height="70" texture="UI/Textures/UI/Textures/transparent"/>
+  <label name="71_label" left="374" top="843" width="70" height="70" skin="game" style="font_lower_right" />
+  
+</draggable_group>

@@ -1,0 +1,52 @@
+﻿<group name="add_character_menu" zorder="2" width="20pc" height="50pc" align="center" visible="false" enabled="true">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" zorder="0" width="100pc" height="100pc" skin="game" style="box" visible="true" align="center" enabled="true" />
+  <button name="close" width="20" height="20" align="upperright" skin="game" style="button" text="X">
+    <event name="ACM_CLOSE">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+
+  <group name="race_group" width="100pc" height="80pc" align="center" visible="true">
+    <label left="50pc"  top="5pc" skin="game" style="font_middle_center">Select race</label>
+    
+    <button name="create_humans" left="30pc" top="10pc" width="40pc" height="10pc" skin="game" style="button" text="HUMANS">
+      <event name="ACM_CREATE_RACE">
+        <parameters></parameters>
+      </event>
+    </button>
+    <button name="create_borguzands" left="30pc" top="25pc" width="40pc" height="10pc" skin="game" style="button" text="BORGUZANDS">
+      <event name="ACM_CREATE_RACE">
+        <parameters></parameters>
+      </event>
+    </button>
+    <button name="create_criptizoids" left="30pc" top="40pc" width="40pc" height="10pc" skin="game" style="button" text="CRIPTIZOIDS">
+      <event name="ACM_CREATE_RACE">
+        <parameters></parameters>
+      </event>
+    </button>
+  </group>
+  
+  <group name="workshop_group" width="100pc" height="80pc" align="center" visible="false">
+    
+    <label left="50pc" top="5pc" skin="game" style="font_middle_center">Select workshop</label>
+    
+    <button name="create_darthribe" left="30pc" top="10pc" width="40pc" height="10pc" skin="game" style="button" text="Darth Try">
+      <event name="ACM_CREATE_CHARACTER">
+        <parameters></parameters>
+      </event>
+    </button>
+    <button name="create_redeye" left="30pc" top="25pc" width="40pc" height="10pc" skin="game" style="button" text="Red Eye">
+      <event name="ACM_CREATE_CHARACTER">
+        <parameters></parameters>
+      </event>
+    </button>
+    <button name="create_equilibrium" left="30pc" top="40pc" width="40pc" height="10pc" skin="game" style="button" text="Equilibrium">
+      <event name="ACM_CREATE_CHARACTER">
+        <parameters></parameters>
+      </event>
+    </button>
+  </group>
+  
+</group>

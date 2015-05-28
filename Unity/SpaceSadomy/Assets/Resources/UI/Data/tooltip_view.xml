@@ -1,0 +1,6 @@
+﻿<group name="tooltip_view" zorder="11" left="0" top="0" width="300" height="200" visible="false">
+  <box name="background" width="100pc" height="100pc" skin="game" style="target_info_box" align="center" />
+  <label name="tooltip_text" width="99pc" height="0" skin="game" style="tooltip_text" align="center">
+    Some tooltip text for testing purpose on several lines for view how lines rendered
+  </label>
+</group>

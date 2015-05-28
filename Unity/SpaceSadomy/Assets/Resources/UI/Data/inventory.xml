@@ -1,0 +1,20 @@
+﻿<!--<resizable_group name="inventory" zorder="1" left="650" top="150" width="640" height="700" min_size="200,200" max_size="640,700" handle_size="20,20" drag_height="20" visible="false" >
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <box name="handle_area" width="20px" height="20px" align="downright" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button">
+    <event name="INVENTORY_CLOSE_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  
+  <scrollview name="scroll_info" left="10" top="25" width="100pc" height="100pc" element_size="70,70" view_position="0,0" direction="vertical" arrangement="horizontal">
+    <item_template name="element_info">
+      <texture name="item_color" left="0" top="5"   width="60" height="60" texture="UI/Textures/item_color_green" zorder="1" />
+      <texture name="icon" left="0" top="5"   width="60" height="60" texture="UI/Textures/weapon" zorder="1" />
+      <label name="name"      left="5"   top="55" skin="game" style="font_middle_left" zorder="2" />
+    </item_template>
+  </scrollview>
+  
+</resizable_group>-->

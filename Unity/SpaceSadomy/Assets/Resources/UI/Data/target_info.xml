@@ -1,0 +1,47 @@
+﻿<group name="target_info" zorder="0" left="400" top="0" width="400" height="120"   visible="true" >
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+
+  <group name="combat_npc" zorder="1" left="0" top="0" width="270" height="90" align="upperleft" visible="false">
+    <box  zorder="0"  name="background" width="100pc" height="100pc" align="center" skin="game" style="target_info_box" />
+    <texture name="icon" left="0" top="0" width="60" height="60" visible="true" texture="UI/Textures/green" />
+    <line name="sep_1" texture="UI/Textures/item_color_orange" start="65,0" end="65,90" line_width="1" />
+    
+    <label name="name" left="70" top="20" skin="game" style="font_middle_left_tiny">Name</label>
+
+    <label name="distance_key" left="70" top="40" skin="game" style="font_middle_left_tiny">Distance:</label>
+    <label name="distance" left="130" top="40" skin="game" style="font_middle_left_tiny">1234</label>
+    
+    <label name="level_key" left="70" top="60" skin="game" style="font_middle_left_tiny">Level:</label>
+    <label name="level_value" left="130" top="60" skin="game" style="font_middle_left_tiny">10</label>
+    
+    <label name="health_key" left="70" top="80" skin="game" style="font_middle_left_tiny">HP:</label>
+    <!--<simple_progress name="health" left="120" top="80" width="130" height="3"  empty="UI/Textures/red" filled="UI/Textures/green" 
+                     value="0.5" tooltip_width="tiny" tooltip_placement="right" tooltip="empty"/>-->
+    <label name="health_value" left="100" top="80" skin="game" style="font_middle_left_tiny"></label>
+    
+    <label name="hit_chance_label" left="200" top="80" skin="game" style="font_middle_left_tiny">HIT%:</label>
+    <label name="hit_chance_value" left="240" top="80" skin="game" style="font_middle_left_tiny"></label>
+    <!--<simple_progress name="hit_chance" left="120" top="100" width="130" height="3" empty="UI/Textures/red" filled="UI/Textures/green" 
+                     value="0.5" tooltip_width="tiny" tooltip_placement="right" tooltip="empty"/>-->
+    
+  <!--
+    <line name="sep_1" texture="UI/Textures/item_color_orange" start="255,0" end="255,120" line_width="1" />
+    <label name="description" left="260" top="200" skin="game" style="font_upper_left_tiny" width="135" height="0">some description</label> 
+    -->
+  </group>
+  
+  <group name="asteroid" zorder="1" left="0" top="0" width="100pc" height="100pc" align="center" visible="false">
+    <box  zorder="0"  name="background" width="100pc" height="100pc" align="center" skin="game" style="target_info_box" />
+    <texture name="icon" left="0" top="0" width="60" height="60" visible="true" texture="UI/Textures/green" />
+    <line name="sep_1" texture="UI/Textures/item_color_orange" start="65,0" end="65,120" line_width="1" />
+    <label name="name" left="70" top="20" skin="game" style="font_middle_left_tiny">Name</label>
+    <label name="distance_key" left="70" top="40" skin="game" style="font_middle_left_tiny">Distance:</label>
+    <label name="distance" left="130" top="40" skin="game" style="font_middle_left_tiny">1234</label>
+    <line name="sep_1" texture="UI/Textures/item_color_orange" start="200,0" end="200,120" line_width="1" />
+    <group name="content" left="70" top="60" width="100pc" height="40">
+      
+    </group>
+    <label name="description" left="205" top="20" skin="game" style="font_upper_left_tiny" width="190" height="0">some description</label> 
+  </group>
+
+</group>

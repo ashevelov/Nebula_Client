@@ -1,0 +1,241 @@
+﻿<draggable_group name="test_sheet" width="900" height="600" align="center" visible="false" zorder="10" drag_height="20" >
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_box" width="100pc" height="20" align="uppercenter" skin="game" style="box" />
+  <button name="button_close" width="20" height="20" text="X" align="upperright">
+    <event name="TEST_SHEET_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+
+  <!--
+  <slider name="sx_slider" left="5" top="25" width="250" height="30" left_value="0" right_value="10" value="0">
+    <event name="SX_SLIDER_VALUE_CHANGED">
+      <parameters></parameters>
+    </event>
+  </slider>
+  <label name="sx_value" skin="game" style="font_middle_left" left="5" top="100">0.0</label>
+  
+  <textfield name="command" left="5" top="130" width="200" height="60" style="textfield" skin="game" text="input command..." />
+  <button name="exec_command" left="5" top="195" width="50" height="30" style="button" skin="game" text="Exec">
+    <event name="TEST_SHEET_EXEC_COMMAND_CLICKED">
+      <parameters></parameters>
+    </event>
+  </button>
+  -->
+
+  <button name="get_inventory" left="10" top="30" width="200" height="40" skin="game" style="button" text="INVENTORY">
+    <event name="GET_INVENTORY_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="add_inventory" left="10" top="80" width="200" height="40" skin="game" style="button" text="ADD INVENTORY">
+    <event name="ADD_INVENTORY_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+
+  <button name="enter_1" left="220" top="30" width="100" height="30" skin="game" style="button" text="NGC-01">
+    <event name="NGC_01_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_2" left="220" top="70" width="100" height="30" skin="game" style="button" text="NGC-02">
+    <event name="NGC_02_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_3" left="220" top="110" width="100" height="30" skin="game" style="button" text="NGC-03">
+    <event name="NGC_03_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_4" left="220" top="150" width="100" height="30" skin="game" style="button" text="NGC-04">
+    <event name="NGC_04_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_5" left="220" top="190" width="100" height="30" skin="game" style="button" text="NGC-05">
+    <event name="NGC_05_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_6" left="220" top="230" width="100" height="30" skin="game" style="button" text="NGC-06">
+    <event name="NGC_06_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_7" left="220" top="270" width="100" height="30" skin="game" style="button" text="NGC-07">
+    <event name="NGC_07_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_8" left="220" top="310" width="100" height="30" skin="game" style="button" text="NGC-08">
+    <event name="NGC_08_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_9" left="330" top="30" width="100" height="30" skin="game" style="button" text="NGC-09">
+    <event name="NGC_09_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_10" left="330" top="70" width="100" height="30" skin="game" style="button" text="NGC-10">
+    <event name="NGC_10_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_11" left="330" top="110" width="100" height="30" skin="game" style="button" text="NGC-11">
+    <event name="NGC_11_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="enter_12" left="330" top="150" width="100" height="30" skin="game" style="button" text="NGC-12">
+    <event name="NGC_12_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+
+  <button name="gen_es" left="350" top="190" width="200" height="30" skin="game" style="button" text="Generate ES module">
+    <event name="GEN_ES_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="gen_cb" left="350" top="230" width="200" height="30" skin="game" style="button" text="Generate CB module">
+    <event name="GEN_CB_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="gen_df" left="350" top="270" width="200" height="30" skin="game" style="button" text="Generate DF module">
+    <event name="GEN_DF_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="gen_cm" left="350" top="310" width="200" height="30" skin="game" style="button" text="Generate CM module">
+    <event name="GEN_CM_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="gen_dm" left="350" top="350" width="200" height="30" skin="game" style="button" text="Generate DM module">
+    <event name="GEN_DM_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+
+  <button name="get_bonuses" left="560" top="30" width="100" height="30" skin="game" style="button" text="BUFFS">
+    <event name="TV_GET_BUFFS">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="get_target_bonuses" left="560" top="70" width="100" height="30" skin="game" style="button" text="TARG BUFFS">
+    <event name="TV_GET_TARG_BUFFS">
+      <parameters></parameters>
+    </event>
+  </button>
+  
+  <button name="SK0121" left="560" top="110" width="100" height="30" skin="game" style="button" text="SK0121">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0107" left="560" top="150" width="100" height="30" skin="game" style="button" text="SK0107">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0108" left="560" top="190" width="100" height="30" skin="game" style="button" text="SK0108">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0120" left="560" top="230" width="100" height="30" skin="game" style="button" text="SK0120">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0119" left="560" top="270" width="100" height="30" skin="game" style="button" text="SK0119">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0102" left="560" top="310" width="100" height="30" skin="game" style="button" text="SK0102">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0105" left="560" top="350" width="100" height="30" skin="game" style="button" text="SK0105">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0117" left="560" top="390" width="100" height="30" skin="game" style="button" text="SK0117">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0114" left="560" top="430" width="100" height="30" skin="game" style="button" text="SK0114">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0112" left="560" top="470" width="100" height="30" skin="game" style="button" text="SK0112">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0101" left="560" top="510" width="100" height="30" skin="game" style="button" text="SK0101">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0104" left="560" top="550" width="100" height="30" skin="game" style="button" text="SK0104">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0121" left="670" top="30" width="100" height="30" skin="game" style="button" text="SK0121">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK1103" left="670" top="70" width="100" height="30" skin="game" style="button" text="SK1103">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0115" left="670" top="110" width="100" height="30" skin="game" style="button" text="SK0115">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0109" left="670" top="150" width="100" height="30" skin="game" style="button" text="SK0109">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0106" left="670" top="190" width="100" height="30" skin="game" style="button" text="SK0106">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0116" left="670" top="230" width="100" height="30" skin="game" style="button" text="SK0116">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0110" left="670" top="270" width="100" height="30" skin="game" style="button" text="SK0110">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0111" left="670" top="310" width="100" height="30" skin="game" style="button" text="SK0111">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="SK0118" left="670" top="350" width="100" height="30" skin="game" style="button" text="SK0118">
+    <event name="TV_USE_SKILL_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+</draggable_group>

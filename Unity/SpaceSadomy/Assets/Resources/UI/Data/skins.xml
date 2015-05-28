@@ -1,0 +1,5 @@
+﻿<skins default="main">
+  <skin name="debug"  path="UI/Skins/debug" />
+  <skin name="game"   path="UI/Skins/game"  />
+  <skin name="main"   path="UI/Skins/main"  />
+</skins>

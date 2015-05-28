@@ -1,0 +1,31 @@
+﻿<resizable_group name="star_info" zorder="0" top="200" left="600" height="500" width="400" align="none" drag_height="20" visible="false">
+  <box name="background" top="0" left="0" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <box name="handle_area" width="20px" height="20px" align="downright" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button">
+    <event name="STAR_INFO_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+  <label name="fraction" left="0" top="25" width="400" height="25" align="uppercenter" skin="game" style="font_middle_center" />
+  <scrollview name="info" left="0" top="65" width="400" height="300" element_size="400,150" view_position="0,0" direction="vertical">
+    <item_template name="zone">
+      <box name="back" top="1pc" width="100pc" height="98pc" align="uppercenter" skin="game" style="item_toggle" />
+      <label name="name" left="0" top="15" width="400" height="10" skin="game" style="font_middle_center" />
+      <button name="warp" width="40px" height="30px" align="middleright" text="->>" skin="game" style="button">
+        <event name="WARP_TO_ZONE">
+          <parameters>
+          </parameters>
+        </event>
+      </button>
+      <button name="route" width="40px" height="30px" align="downright" text="-•-" skin="game" style="button">
+        <event name="STAR_INFO_ROUTE">
+          <parameters>
+          </parameters>
+        </event>
+      </button>
+      <label name="description" left="15" top="10" width="350" height="100" skin="game" style="font_middle_center" />
+    </item_template>
+  </scrollview>
+</resizable_group>

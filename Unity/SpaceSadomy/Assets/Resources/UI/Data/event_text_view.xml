@@ -1,0 +1,18 @@
+﻿<group name="event_text_view" zorder="10" left="0" top="0" width="300" height="300" visible="true">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="back" width="100pc" height="100pc" skin="game" style="box" align="center" />
+  <button name="close" width="30" height="30" skin="game" style="button" text="X" align="upperright">
+    <event name="EVENT_TEXT_VIEW_CLOSE_CLICK">
+      <parameters/>
+    </event>
+  </button>
+  <label name="event_text"  width="90pc" height="0" align="center" skin="game" style="font_middle_center">
+    This is sample text for event which show when event added, updated or completed. Analogue of dialogs
+  </label>
+
+  <animations>
+    <animation name="fade_in" type="alpha_from_to" from="0.0" to="1.0" interval="1.0" />
+    <animation name="fade_out" type="alpha_from_to" from="1.0" to="0.0" interval="1.0" />   
+  </animations>
+  
+</group>

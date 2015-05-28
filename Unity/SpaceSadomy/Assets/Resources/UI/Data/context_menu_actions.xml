@@ -1,0 +1,14 @@
+﻿<group name="context_menu_actions" zorder="6" top="200" left="600" height="200" width="300" align="none" visible="false">
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <scrollview name="scroll" left="0" top="0" width="300" height="550" element_size="300,30" view_position="0,0" direction="vertical">
+    <item_template name="context_menu_action">
+      <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,0" end="295,0" line_width="2" />
+      <button name="action_button" width="300" height="30" align="upperright" text="" skin="game" style="context_menu_button">
+        <event name="CONTEXT_MENU_ACTION_CLICK">
+          <parameters>
+          </parameters>
+        </event>
+      </button>
+    </item_template>
+  </scrollview>
+</group>

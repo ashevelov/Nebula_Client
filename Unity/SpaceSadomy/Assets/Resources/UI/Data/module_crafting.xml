@@ -1,0 +1,43 @@
+﻿<draggable_group name="module_crafting" zorder="0" width="411.11" height="504" visible="false" enabled="true" align="center" drag_height="70">
+  
+  <box zorder="0" name="background" width="100pc" height="100pc" skin="game" style="box" />
+  <box name="drag_box" width="100pc" height="30" align="uppercenter" skin="game" style="box" />
+  
+  <button zorder="1" name="close"  width="30" height="30" align="upperright" text="X" skin="game" style="button">
+    <event name="CRAFTING_CLOSE">
+      <parameters></parameters>
+    </event>
+  </button>
+  
+  <scrollview name="crafting_scroll" left="17" top="53.66" width="100pc" height="413" element_size="375.2,135.33" view_position="0,0" direction="vertical">
+    <item_template>
+      <group name="" width="375.2" height="135.33" align="uppercenter">
+        <box name="elem_back" width="100pc" height="100pc" align="center" skin="game" style="box" />
+      
+        <button name="select_scheme" left="14" top="25.62"  width="66.5" height="67.9" skin="game" style="button" text="">
+          <event name="SELECT_SCHEME">
+            <parameters></parameters>
+          </event>
+        </button>
+        <texture name="0_tex" left="10" top="20" width="70" height="75" texture="UI/Textures/ButtonIcons/015" zorder="1"/>
+        
+        <texture name="selected_scheme" left="14" top="25.62" width="66.5" height="67.9" texture="UI/Textures/UI/Textures/transparent" />
+        <button name="craft_module" left="266" top="38.5" width="85" height="44" skin="game" style="button" text="Create">
+          <event name="CRAFT_MODULE">
+            <parameters></parameters>
+          </event>
+        </button>
+        <label name="name" left="93.31" top="28" skin="game" style="title_left">Module title</label>
+        <label name="level" left="93.31" top="45.5" skin="game" style="font_middle_left">Level</label>
+        <label name="level_value" left="175" top="45.5" skin="game" style="font_middle_left">5</label>
+        <label name="weapon_slots" left="93.31" top="90" skin="game" style="font_middle_left">Weapon Slots</label>
+        <label name="weapon_slots_count" left="175" top="63" skin="game" style="font_middle_left">1</label>
+        <label name="first_res_name" left="91" top="123.66" skin="game" style="font_middle_left">A:</label>
+        <label name="first_res_count" left="140" top="123.66" skin="game" style="font_middle_left">4</label>
+        <label name="second_res_name" left="196" top="123.66" skin="game" style="font_middle_left">B:</label>
+        <label name="second_res_count" left="245" top="123.66" skin="game" style="font_middle_left">4</label>
+      </group>
+    </item_template>
+  </scrollview>
+  
+</draggable_group>

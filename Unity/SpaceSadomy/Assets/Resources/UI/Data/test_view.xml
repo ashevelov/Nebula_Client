@@ -1,0 +1,100 @@
+﻿<draggable_group zorder="0" name="test_view" width="80pc" height="80pc" visible="false" align="center" drag_height="30">
+
+  <!--
+  <box name="drag" width="100pc" height="30" skin="game" style="box" align="uppercenter" />
+  
+  <box name="background" width="100pc" height="100pc" skin="game" style="box" align="center" /> -->
+  
+  <button name="close" width="30" height="30" text="X" align="upperright" skin="game" style="button">
+    <event name="TEST_VIEW_CLOSE_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+
+  <label name="Max_Energy_Key" left="5" top="50" skin="game" style="font_middle_left">Max Energy:</label>
+  <label name="Max_Energy_Value" left="250" top="50" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+  
+  <label name="Current_Energy_Key" left="5" top="70" skin="game" style="font_middle_left">Current Energy:</label>
+  <label name="Current_Energy_Value" left="250" top="70" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+
+  <label name="Energy_Restoration_Key" left="5" top="90" skin="game" style="font_middle_left">Energy Restoration(sec):</label>
+  <label name="Energy_Restoration_Value" left="250" top="90" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+
+  <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,110" end="340,110" line_width="1" />
+
+  <label name="Max_HP_Key" left="5" top="130" skin="game" style="font_middle_left">Max HP:</label>
+  <label name="Max_HP_Value" left="250" top="130" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+
+  <label name="Current_HP_Key" left="5" top="150" skin="game" style="font_middle_left">Current HP:</label>
+  <label name="Current_HP_Value" left="250" top="150" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+
+  <label name="Restor_HP_Sec_Key" left="5" top="170" skin="game" style="font_middle_left">Restoration HP(sec):</label>
+  <label name="Restor_HP_Sec_Value" left="250" top="170" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+
+  <label name="Restor_HP_Shot_Key" left="5" top="190" skin="game" style="font_middle_left">Restoration HP(for shot):</label>
+  <label name="Restor_HP_Shot_Value" left="250" top="190" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+
+  <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,210" end="340,210" line_width="1" />
+
+  <label name="Damage_Resist_Key" left="5" top="230" skin="game" style="font_middle_left">Damage Resist:</label>
+  <label name="Damage_Resist_Value" left="250" top="230" skin="game" style="font_middle_left" text_color="green">Max Energy:</label>
+
+  <label name="Damage_Resist_Blocked_Key" left="5" top="250" skin="game" style="font_middle_left">Damage Resist Blocked:</label>
+  <label name="Damage_Resist_Blocked_Value" left="250" top="250" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,270" end="340,270" line_width="1" />
+
+  <label name="Max_Speed_Key" left="5" top="290" skin="game" style="font_middle_left">Max Speed:</label>
+  <label name="Max_Speed_Value" left="250" top="290" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Current_Speed_Key" left="5" top="310" skin="game" style="font_middle_left">Current Speed:</label>
+  <label name="Current_Speed_Value" left="250" top="310" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,330" end="340,330" line_width="1" />
+
+  <label name="Weapon_Optimal_Distance_Key" left="5" top="350" skin="game" style="font_middle_left">Weapon Optimal Distance:</label>
+  <label name="Weapon_Optimal_Distance_Value" left="250" top="350" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Weapon_Cooldown_Key" left="5" top="370" skin="game" style="font_middle_left">Weapon Cooldown:</label>
+  <label name="Weapon_Cooldown_Value" left="250" top="370" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Weapon_Damage_Key" left="5" top="390" skin="game" style="font_middle_left">Weapon Damage:</label>
+  <label name="Weapon_Damage_Value" left="250" top="390" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Weapon_Precision_Key" left="5" top="410" skin="game" style="font_middle_left">Weapon Precision:</label>
+  <label name="Weapon_Precision_Value" left="250" top="410" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Weapon_Area_Damage_Key" left="5" top="430" skin="game" style="font_middle_left">Area Damage:</label>
+  <label name="Weapon_Area_Damage_Value" left="250" top="430" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Weapon_Critical_Chance_Key" left="5" top="450" skin="game" style="font_middle_left">Critical Chance:</label>
+  <label name="Weapon_Critical_Chance_Value" left="250" top="450" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Weapon_Critical_Damage_Key" left="5" top="470" skin="game" style="font_middle_left">Critical Damage:</label>
+  <label name="Weapon_Critical_Damage_Value" left="250" top="470" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Weapon_Blocked_Key" left="5" top="490" skin="game" style="font_middle_left">Weapon Blocked:</label>
+  <label name="Weapon_Blocked_Value" left="250" top="490" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <line name="sep_1" texture="UI/Textures/item_color_orange" start="5,510" end="340,510" line_width="1" />
+
+  <line name="sep_2" texture="UI/Textures/item_color_orange" start="360,40" end="360,550" line_width="1" />
+
+  <label name="Skill_Block_Prob_Key" left="370" top="50" skin="game" style="font_middle_left">Skill Block(%):</label>
+  <label name="Skill_Block_Prob_Value" left="615" top="50" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Inventory_Slots_Count_Key" left="370" top="70" skin="game" style="font_middle_left">Inventory Slots:</label>
+  <label name="Inventory_Slots_Count_Value" left="615" top="70" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <label name="Inventory_Slots_Used_Key" left="370" top="90" skin="game" style="font_middle_left">Inventory Slots Used:</label>
+  <label name="Inventory_Slots_Used_Value" left="615" top="90" skin="game" style="font_middle_left" text_color="green">[NO]</label>
+
+  <line name="sep_2" texture="UI/Textures/item_color_orange" start="725,40" end="725,550" line_width="1" />
+  
+  <label name="Item_Statistics" left="740" top="40" skin="game" style="font_upper_left" />
+  <label name="Num_GameObjects" left="740" top="300" skin="game" style="font_middle_left" />
+  <label name="Num_BaseSpaceObjects" left="740" top="320" skin="game" style="font_middle_left" />
+  <label name="Num_SUAsteroids" left="740" top="340" skin="game" style="font_middle_left" />
+  <label name="Num_PlasmaObjects" left="740" top="360" skin="game" style="font_middle_left" />
+  
+</draggable_group>

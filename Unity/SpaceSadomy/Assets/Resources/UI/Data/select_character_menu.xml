@@ -1,0 +1,30 @@
+﻿<group name="select_character_menu" zorder="1" left="70pc" top="0pc" width="30pc" height="100pc" align="middleright" visible="false" enabled="true">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" zorder="1" width="100pc" height="100pc" skin="game" style="box" visible="true" align="center" enabled="true" />
+  <scrollview name="scroll_characters" zorder="2" width="100pc" height="100pc" element_size="570,60" view_position="0,0" direction="vertical">
+    <item_template left="10" top="5" name="character_item">
+      <button name="select_button" zorder="1" left="10" top="5" width="550" height="50" skin="game" style="button" text="">
+        <event name="SCH_SELECT">
+          <parameters></parameters>
+        </event>
+      </button>
+      <label name="name" zorder="2" left="15" top="15" skin="game" style="font_middle_left"/>
+      <label name="race" zorder="2" left="310" top="15" skin="game" style="font_middle_left" />
+      <label name="level" zorder="2" left="110" top="15" skin="game" style="font_middle_left"/>
+      <label name="workshop" zorder="2" left="15" top="35" skin="game" style="font_middle_left"/>
+    </item_template>
+  </scrollview>
+
+  <button name="add_new" zorder="3" left="40pc" top="85pc" width="20pc" height="5pc" visible="true" enabled="true" skin="game" style="button" text="Create New"
+          tooltip="addcharacter" tooltip_placement="left">
+    <event name="SCH_ADD_NEW">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="play" zorder="3" left="40pc" top="95pc" width="20pc" height="5pc" visible="true" enabled="true" skin="game" style="button" text="Play"
+          tooltip="play" tooltip_placement="left">
+    <event name="SCH_PLAY">
+      <parameters></parameters>
+    </event>
+  </button>
+</group>

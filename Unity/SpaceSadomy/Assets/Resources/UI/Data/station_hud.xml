@@ -1,0 +1,35 @@
+﻿<group name="station_hud" width="90" height="375" align="middleleft" visible="false">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" width="100pc" height="375" skin="game" style="box" align="center"/>
+  <button name="craft_module" left="5" top="15" width="75" height="75" text="" skin="game" style="button"
+          tooltip="craft_module" tooltip_placement="right">
+    <event name="SH_CRAFT_MODULE">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="craft_module_tex" left="5" top="15" width="75" height="75" texture="UI/Textures/ButtonIcons/015" zorder="1"/>
+  
+  <button name="station_hold" left="5" top="105" width="75" height="75" text="" skin="game" style="button"
+          tooltip="station_hold" tooltip_placement="right">
+    <event name="SH_STATION_HOLD">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="station_hold_tex" left="5" top="105" width="75" height="75" texture="UI/Textures/ButtonIcons/013" zorder="1"/>
+  
+  <button name="station_hold" left="5" top="195" width="75" height="75" text="" skin="game" style="button"
+          tooltip="market" tooltip_placement="right">
+    <event name="SH_STATION_HOLD">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="station_hold_tex" left="5" top="195" width="75" height="75" texture="UI/Textures/ButtonIcons/014" zorder="1"/>
+  
+  <button name="exit_station" left="5" top="285" width="75" height="75" text="" skin="game" style="button"
+          tooltip="exit_station" tooltip_placement="right">
+    <event name="SH_EXIT_STATION">
+      <parameters></parameters>
+    </event>
+  </button>
+  <texture name="exit_station_tex" left="5" top="285" width="75" height="75" texture="UI/Textures/ButtonIcons/016" zorder="1"/>
+</group>

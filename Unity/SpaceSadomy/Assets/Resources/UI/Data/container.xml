@@ -1,0 +1,75 @@
+﻿<resizable_group name="container" zorder="0" left="1000" top="20" width="600" height="700" min_size="600,200" max_size="600,700" handle_size="20,20" drag_height="20" visible="false" >
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <box name="handle_area" width="20px" height="20px" align="downright" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button">
+    <event name="CONTAINER_CLOSE_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+
+  <button name="weapon_tab" left="0" top="25" width="40" height="20" text="W" skin="game" style="button">
+    <event name="WEAPON_TAB_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="scheme_tab" left="45" top="25" width="40" height="20" text="S" skin="game" style="button">
+    <event name="SCHEME_TAB_CLICK">
+      <parameters></parameters>
+    </event>
+  </button>
+  
+  <tab name="inv_tab" left="0" top="50" width="100pc" height="525" zorder="0">
+    <group name="weapon" left="0" top="0" width="100pc" height="625">
+  
+      <label left="60"  top="0" skin="game" style="font_middle_left">NAME</label>
+      <label left="400" top="0" skin="game" style="font_middle_left">DMG</label>
+      <label left="450" top="0" skin="game" style="font_middle_left">DIST</label>
+      <label left="500" top="0" skin="game" style="font_middle_left">CD</label>
+  
+      <scrollview name="scroll_info_weapon" left="0" top="25" width="100pc" height="600" element_size="600,80" view_position="0,0" direction="vertical">
+        <item_template name="element_info">
+          <toggle name="select_item" left="0" top="5" width="600" height="70" skin="game" style="item_toggle" text="">
+            <event name="CONTAINER_ITEM_TOGGLED_WEAPON">
+              <parameters></parameters>
+            </event>
+          </toggle>
+          <texture name="icon" left="0" top="15" width="50" height="50" texture="UI/Textures/weapon" />
+          <label name="name"      left="60"   top="15" skin="game" style="font_middle_left" />
+          <label name="level" left="200" top="15" skin="game" style="font_middle_left" />
+          <texture name="workshop" left="250" top="15" width="50" height="50" texture="UI/Textures/weapon" />
+          <label name="damage"    left="400"  top="15" skin="game" style="font_middle_left" />
+          <label name="distance"  left="450"  top="15" skin="game" style="font_middle_left" />
+          <label name="cooldown"  left="500"  top="15" skin="game" style="font_middle_left" />
+        </item_template>
+      </scrollview>
+    </group>
+
+    <group name="scheme" left="0" top="0" width="100pc" height="625">
+      <label left="60" top="0" skin="game" style="font_middle_left">NAME</label>
+
+      <scrollview name="scroll_info_scheme" left="0" top="25" width="100pc" height="600" element_size="600,80" view_position="0,0" direction="vertical">
+        <item_template name="element_info">
+          <toggle name="select_item" left="0" top="5" width="600" height="70" skin="game" style="item_toggle" text="">
+            <event name="CONTAINER_ITEM_TOGGLED_SCHEME">
+              <parameters></parameters>
+            </event>          
+          </toggle>
+          <texture name="icon" left="0" top="15" width="50" height="50" texture="UI/Textures/scheme" />
+          <label name="name"      left="60"   top="15" skin="game" style="font_middle_left" />
+          <label name="level" left="200" top="15" skin="game" style="font_middle_left" />
+        </item_template>
+      </scrollview>
+    </group>
+  </tab>
+  <button name="take_selected" width="100" height="50" left="20" top="650" text="(E) Take" skin="game" style="button">
+    <event name="CONTAINER_TAKE_SELECTED_CLICKED">
+      <parameters></parameters>
+    </event>
+  </button>
+  <button name="take_all" width="100" height="50" left="130" top="650" text="(R) Take All" skin="game" style="button">
+    <event name="CONTAINER_TAKE_ALL_CLICKED">
+      <parameters></parameters>
+    </event>
+  </button>
+</resizable_group>

@@ -1,0 +1,36 @@
+﻿<group
+  name="player_info"
+  zorder="0"
+  left="0"
+  top="5"
+  width="400"
+  height="100"
+  visible="false">
+  
+  <!--<box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" zorder="2"/>-->
+  
+  <texture name="race" left="0" top="0" width="50" height="50" texture="UI/Textures/transparent" />
+  <label name="level" left="40" top="40" skin="game" style="font_upper_left" />
+  
+  <label name="name" left="60" top="0" skin="game" style="font_upper_left">Name</label>
+  <label name="raceName" left="150" top="0" skin="game" style="font_upper_left">Race</label>
+  <label name="workshop" left="250" top="0" skin="game" style="font_upper_left">Workshop</label>
+  
+  <label name="zone" left="60" top="20"  skin="game" style="font_upper_left">Zone</label>
+  <label name="coord" left="180" top="20" skin="game" style="font_upper_left">Coord</label>
+  <simple_progress name="level_progress" left="60" top="40" width="230" height="7" empty="UI/Textures/red" filled="UI/Textures/green"
+                   tooltip="empty" tooltip_placement="down" value="0">
+    <animations>
+      <animation name="level_progress" type="float_from_to" from="0" to="0" interval="0.3" />
+    </animations>
+  </simple_progress>
+  <label name="exp" left="175" top="40" skin="game" style="font_upper_center_tiny">Exp</label>
+  <!--
+  <animations>
+    <animation name="fade_in" type="alpha_from_to" from="0.0" to="1.0" interval="1.0" />
+    <animation name="fade_out" type="alpha_from_to" from="1.0" to="0.0" interval="1.0" />
+    
+  </animations>
+  -->
+  
+</group>

@@ -1,0 +1,76 @@
+gui
+
+group
+	zorder, name, left, top, width, height, align, visible, enabled
+
+scrollview
+	zorder, name, left, top, width, height, visible, align, element_size, view_position, direction, arrangement, skin, vertical_thumb, horizontal_thumb
+		item_template
+			name
+draggable_group
+	zorder, name, left, top, width, height, visible, align, drag_height
+
+resizable_group
+	zorder, name, left, top, width, height, visible, align, min_size, max_size, handle_size, drag_height
+
+drag_progress
+	zorder, name, left, top, width, height, visible, align, value, empty, filled
+
+button
+	zorder, name, left, top, width, height, skin, style, visible, text, align
+
+toggle 
+	zorder, name, left, top, width, height, skin, style, visible, text, align, enabled, value
+
+label
+	zorder, name, left, top, width, height, skin, style, visible, align
+
+box
+	zorder, name, left, top, width, height, skin, style, visible, align
+
+texture
+	zorder, name, left, top, width, height, visible, texture, material, align
+slider
+	zorder, name, left, top, width, height, skin, style, thumb_style, visible, align, left_value, right_value, value
+
+//this simple progress which not allow change value by mouse, only show info
+simple_progress
+	zorder, name, left, top, width, height, visible, align, value, empty, filled, enabled
+
+combobox
+	zorder,
+	name,
+	left,
+	top,
+	width,
+	height,
+	skin,
+	button_style,
+	box_style,
+	list_style,
+	align,
+	enabled,
+	visible
+	<items><item text="sdfasdad" /></items>
+	<event name="EVT"><parameters></parameters></event>
+
+tab
+	zorder (int)
+	name (string)
+	left (px, pc)
+	top (px, pc)
+	width 
+	height
+	visible
+	align
+	enabled
+	tooltip
+	tooltip_placement
+
+
+align { none, middleleft, upperleft, uppercenter, upperright, middleright, downright, downcenter, downleft, center}
+direction { vertical, horizontal }
+arrangement { vertical, horizontal, non }
+
+<animation name="alpha_anim" type="alpha_from_to" from="0.0" to="1.0" interval="5.0" /> 
+<animation name="float_anim" type="float_from_to" from="0" to="0" interval="0.3">

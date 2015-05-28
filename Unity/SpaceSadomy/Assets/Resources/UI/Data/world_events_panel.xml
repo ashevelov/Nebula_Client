@@ -1,0 +1,16 @@
+﻿<group name="world_events_panel" zorder="0" width="250" height="500" align="upperright" visible="false">
+  <box name="background" width="100pc" height="100pc" align="center" skin="game" style="box" />
+
+  <scrollview name="world_events" left="0" top="5" width="250" height="680" element_size="250,200" view_position="0,0" direction="vertical">
+    <item_template name="world_event">
+      <label name="name" left="0" top="0" width="200" height="25" skin="game" style="font_middle_center" />
+      <toggle name="t_show" width="20" height="20" align="upperright" skin="game" style="button" value="false" text="V">
+        <event name="WOLD_EVENT_DESCRIPTION_SHOW">
+          <parameters></parameters>
+        </event>
+      </toggle>
+      <label name="description" left="15" top="10" width="220" height="100" skin="game" style="font_middle_center" />
+      <label name="status" left="15" top="130" width="220" height="25" skin="game" style="font_middle_center" />
+    </item_template>
+  </scrollview>
+</group>

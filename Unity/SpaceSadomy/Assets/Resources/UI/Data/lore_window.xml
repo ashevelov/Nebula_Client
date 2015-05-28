@@ -1,0 +1,14 @@
+﻿<resizable_group name="lore_window" zorder="2" top="200" left="600" height="400" width="500" align="none" drag_height="20" visible="false">
+  <texture name="glass" width="100pc" height="100pc" texture="UI/Textures/transparent" material="Glass" zorder="0" />
+  <box name="background" top="0" left="0" width="100pc" height="100pc" align="center" skin="game" style="box" />
+  <box name="drag_area" width="100pc" height="20px" align="uppercenter" skin="game" style="box" />
+  <button name="close_button" width="30px" height="30px" align="upperright" text="X" skin="game" style="button">
+    <event name="LORE_WINDOW_CLOSE_CLICK">
+      <parameters>
+      </parameters>
+    </event>
+  </button>
+  <label name="title" left="0" top="30" width="500" height="25" skin="game" style="font_upper_center_25_1" />
+  <line name="line" texture="UI/Textures/item_color_orange" start="5,60" end="495,60" line_width="2" />
+  <label name="text" left="0" top="70" width="500" height="25" skin="game" style="font_upper_center_25_1" />
+</resizable_group>

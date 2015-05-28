@@ -1,0 +1,66 @@
+﻿<group name="control_panel" zorder="0" left="0" top="0" width="470" height="90" align="DownCenter" drag_height="20" visible="true" >
+  
+  <box width="670" height="100pc" left="0" align="vdown" skin="game" style="box" />
+
+  <toggle name="light_shot_toggle" left="5"  top="2" width="50" height="50" skin="game" style="toggle" text="">
+    <event name="CONTROL_PANEL_BUTTON_LIGHT_ATTACK">
+      <parameters/>
+    </event>
+  </toggle>
+  <texture name="tex_light_attack" left="10" top="7" width="40" height="40" texture="UI/Textures/ButtonIcons/010"  zorder="1"/>
+  
+  <!--<ring_progress name="light_shot_ready_progress" value="0.5" left="10"  top="12.5" width="70" height="70" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>-->
+
+  <toggle name="heavy_shot_toggle" left="55" top="2" width="50" height="50" skin="game" style="toggle" text="">
+    <event name="CONTROL_PANEL_BUTTON_HEAVY_ATTACK">
+      <parameters />
+    </event>
+  </toggle>
+  <texture name="tex_heavy_attack" left="60" top="7" width="40" height="40" texture="UI/Textures/ButtonIcons/010"  zorder="1"/>
+  <!--<ring_progress name="heavy_shot_ready_progress" value="1" left="80"  top="12.5" width="70" height="70" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>-->
+  
+ 
+  <line name="sep1" start="107,2" end="107,52" line_width="2" texture="UI/Textures/item_color_orange" />
+
+  
+  <ring_progress name="skill_progress_0" value="1" left="110" top="2" width="50" height="50" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>
+  <ring_progress name="skill_progress_1" value="1" left="160" top="2" width="50" height="50" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>
+  <ring_progress name="skill_progress_2" value="1" left="210" top="2" width="50" height="50" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>
+  <ring_progress name="skill_progress_3" value="1" left="260" top="2" width="50" height="50" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>
+  <ring_progress name="skill_progress_4" value="1" left="310" top="2" width="50" height="50" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>
+  <ring_progress name="skill_progress_5" value="1" left="360" top="2" width="50" height="50" filled="UI/Textures/ring_progress" material="UI/Materials/AlphaCutOff" zorder="2"/>
+
+  <label top="0" left="30" style="font_upper_center_20_1" skin="game" zorder="10">1</label>
+  <label top="0" left="80" style="font_upper_center_20_1" skin="game" zorder="10">2</label>
+  <label top="0" left="135" style="font_upper_center_20_1" skin="game" zorder="10">3</label>
+  <label top="0" left="185" style="font_upper_center_20_1" skin="game" zorder="10">4</label>
+  <label top="0" left="235" style="font_upper_center_20_1" skin="game" zorder="10">5</label>
+  <label top="0" left="285" style="font_upper_center_20_1" skin="game" zorder="10">6</label>
+  <label top="0" left="335" style="font_upper_center_20_1" skin="game" zorder="10">7</label>
+  <label top="0" left="385" style="font_upper_center_20_1" skin="game" zorder="10">8</label>
+
+  
+  
+  
+  <texture name="skill_tex_0" left="115" top="7" width="40" height="40" texture="UI/Textures/green" zorder="1"/>
+  <texture name="skill_tex_1" left="165" top="7" width="40" height="40" texture="UI/Textures/green" zorder="1"/>
+  <texture name="skill_tex_2" left="215" top="7" width="40" height="40" texture="UI/Textures/green" zorder="1"/>
+  <texture name="skill_tex_3" left="265" top="7" width="40" height="40" texture="UI/Textures/green" zorder="1"/>
+  <texture name="skill_tex_4" left="315" top="7" width="40" height="40" texture="UI/Textures/green" zorder="1"/>
+  <texture name="skill_tex_5" left="365" top="7" width="40" height="40" texture="UI/Textures/green" zorder="1"/>
+
+  <toggle name="toggle_move" left="415" top="2" width="50" height="50" skin="game" style="toggle" text="" tooltip="move_tip" tooltip_placement="right">
+    <event name="CONTROL_PANEL_BUTTON_MOVE_CLICKED">
+      <parameters/>
+    </event>
+  </toggle>
+  <texture name="toggle_move_tex" left="420" top="7" width="40" height="40" texture="UI/Textures/ButtonIcons/012" zorder="1"/>
+  
+
+  <box left="5" top="55" width="460" height="30" skin="game" style="control_progress_back" />
+  <simple_progress name="health_progress" value="1.0" left="5" top="55" width="460" height="15" empty="UI/Textures/transparent" filled="UI/Textures/space_hp" tooltip="health_progress" tooltip_placement="right"/>
+  <simple_progress name="energy_progress" value="1.0" left="5" top="70" width="460" height="15" empty="UI/Textures/transparent" filled="UI/Textures/space_energi" tooltip="energy_progress" tooltip_placement="right"/>
+  
+  <!--<simple_progress name="reload_progress" value="0.5" left="85" top="80" width="200" height="7" empty="UI/Textures/transparent" filled="UI/Textures/transparent" />-->
+
+</group>

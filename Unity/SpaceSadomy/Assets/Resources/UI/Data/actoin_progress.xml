@@ -1,0 +1,4 @@
+﻿<group name="actoin_progress" zorder="0" width="256" height="32" align="center" visible="false">
+  <box name="background" top="0" left="0" width="100pc" height="100pc" align="center" skin="game" style="action_progress_back" />
+  <simple_progress name="progress" value="0.5" left="5" top="11" width="247" height="17" empty="UI/Textures/transparent" filled="UI/Textures/craft_line" />
+</group>

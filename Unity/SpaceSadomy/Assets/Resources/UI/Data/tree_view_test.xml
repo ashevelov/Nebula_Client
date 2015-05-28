@@ -1,0 +1,23 @@
+﻿<group name="test_tree_view"  left="10" top="10" width="1500" height="1000" visible="false" zorder="10050">
+  <box name="bkg" skin="game" style="box" width="100pc" height="100pc" align="center" />
+  <tree_view zorder="110" name="treeview" left="0" top="0" width="100pc" height="100pc" visible="true" enabled="true" child_offset="20">
+  
+    <tree_node opened="true" child_offset="20" >
+      <node_toggle>
+        <toggle name="tree_toggle" skin="game" style="toggle" text="" value="true" width="50" height="50">
+          <event name="hm">
+            <parameters></parameters>
+          </event>
+        </toggle>
+      </node_toggle>
+      <content>
+        <button name="button" text="content text" width="300" height="50" skin="game" style="button">
+          <event name="event_button_clicked">
+            <parameters></parameters>
+          </event>
+        </button>
+      </content>
+    </tree_node>
+  
+  </tree_view>
+</group>

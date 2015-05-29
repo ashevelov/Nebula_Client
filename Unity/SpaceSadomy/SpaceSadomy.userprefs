@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Nebula\UI\MainCanvas.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Client\Presentation Layer\UIC\ICargo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Client\Presentation Layer\UIC\IView.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Core\WorldObjects\BaseSpaceObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Nebula\UI\MainCanvas.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Space\UI\Unity_UI\ShipInfoPanel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Map\MapController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Space\UI\SolarMapObject.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="E:\unity\SpaceSadomy\Assets\Scripts\Core\Player\ShipModel.cs" line="48" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

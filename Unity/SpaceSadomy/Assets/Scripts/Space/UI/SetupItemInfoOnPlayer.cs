@@ -165,7 +165,7 @@ namespace Game.Space.UI {
                 scrollView.AddChild(template.Copy as UIScrollItemTemplate);
 
                 nameText._text = "Speed: ";
-                paramLabel._text = ((int)info.Speed) + "";
+                paramLabel._text = ((int)info.speed) + "";
                 scrollView.AddChild(template.Copy as UIScrollItemTemplate);
 
                 nameText._text = "Damage bonus: ";

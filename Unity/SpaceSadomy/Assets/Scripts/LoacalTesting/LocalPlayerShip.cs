@@ -191,13 +191,13 @@ namespace LocalTest
             if (Input.GetKey(KeyCode.W))
             {
                 //ui_my.speedProgress.progress = Mathf.Clamp(ui_my.speedProgress.progress + Time.deltaTime * 0.5f, 0, 1);
-                player.curent_speed = player.Speed * ((player.fastTravel) ? 10f : 1f);
+                player.curent_speed = player.speed * ((player.fastTravel) ? 10f : 1f);
                 
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 //ui_my.speedProgress.progress = Mathf.Clamp(ui_my.speedProgress.progress - Time.deltaTime * 0.5f, 0, 1);
-                player.curent_speed = - player.Speed * ((player.fastTravel) ? 10f : 1f) *0.3f;
+                player.curent_speed = - player.speed * ((player.fastTravel) ? 10f : 1f) *0.3f;
             }
             else
             {
@@ -407,8 +407,8 @@ namespace LocalTest
                     }
                 }
                 speedProgress.rect.y = (Screen.height / Utils.GameMatrix().m00) - speedProgress.rect.height;
-                string speedProg = "Speed: "+((int)(player.curent_speed)) + " / " + (int)player.Speed;
-                //player.curent_speed = player.Speed * speedProgress.Draw(speedProg.Color("black").Size(20)) * ((player.fastTravel)? 10f : 1f);
+                string speedProg = "speed: "+((int)(player.curent_speed)) + " / " + (int)player.speed;
+                //player.curent_speed = player.speed * speedProgress.Draw(speedProg.Color("black").Size(20)) * ((player.fastTravel)? 10f : 1f);
             }
         }
 

@@ -11,7 +11,7 @@ public class SGT_Inspector_Star : SGT_Inspector<SGT_Star>
 		SGT_EditorGUI.BeginGroup("Star");
 		{
 			Target.StarObserver = SGT_EditorGUI.ObjectField("Observer", "The camera rendering this.", Target.StarObserver, true);
-			Target.StarLutSize  = (SGT_SquareSize)SGT_EditorGUI.EnumField("LUT Size", "The texture look up table resolution. Use a higher value for smoother results, at the cost of GPU memory and texture sampling Speed.", Target.StarLutSize);
+			Target.StarLutSize  = (SGT_SquareSize)SGT_EditorGUI.EnumField("LUT Size", "The texture look up table resolution. Use a higher value for smoother results, at the cost of GPU memory and texture sampling speed.", Target.StarLutSize);
 		}
 		SGT_EditorGUI.EndGroup();
 		

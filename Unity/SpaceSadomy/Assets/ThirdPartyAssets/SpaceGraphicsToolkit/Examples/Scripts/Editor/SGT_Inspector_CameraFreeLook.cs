@@ -13,7 +13,7 @@ public class SGT_Inspector_CameraFreeLook : SGT_Inspector<SGT_CameraFreeLook>
 		
 		SGT_EditorGUI.BeginIndent();
 		{
-			Target.RotationSpeed     = SGT_EditorGUI.FloatField("Speed", "The Speed at which the camera can rotate.", Target.RotationSpeed);
+			Target.RotationSpeed     = SGT_EditorGUI.FloatField("Speed", "The speed at which the camera can rotate.", Target.RotationSpeed);
 			Target.RotationDampening = SGT_EditorGUI.FloatField("Dampening", "How sharp the rotation is. A higher value means the rotation will reach its destination quickly.", Target.RotationDampening);
 			Target.RotationRequires  = (SGT_CameraFreeLook.LookKey)SGT_EditorGUI.EnumField("Requires", "Which mouse button must be held down for looking?", Target.RotationRequires);
 		}

@@ -7,11 +7,11 @@
 // Script for the rotational behaviour of planets.
 
 // INSTRUCTIONS:
-// This script is attached to the planet prefabs and rotation Speed around its own axis can be configured.
-// The SpaceSceneConstructionKit window will automatically configure random rotation Speed.
+// This script is attached to the planet prefabs and rotation speed around its own axis can be configured.
+// The SpaceSceneConstructionKit window will automatically configure random rotation speed.
 
 // PARAMETERS:
-//  planetRotation	(The rotational vector (axis and Speed) of the planet)
+//  planetRotation	(The rotational vector (axis and speed) of the planet)
 
 // Version History
 // 1.02 - Prefixed with SU_Planet to avoid naming conflicts.
@@ -21,7 +21,7 @@ using UnityEngine;
 using System.Collections;
 
 public class SU_Planet : MonoBehaviour {
-	// Planet rotation vector specifying axis and rotational Speed
+	// Planet rotation vector specifying axis and rotational speed
 	public Vector3 planetRotation;
 	// Private variables
 	private Transform _cacheTransform;

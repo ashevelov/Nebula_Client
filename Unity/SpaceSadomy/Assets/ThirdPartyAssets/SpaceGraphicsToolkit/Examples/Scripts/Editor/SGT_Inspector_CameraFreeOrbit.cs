@@ -13,7 +13,7 @@ public class SGT_Inspector_CameraFreeOrbit : SGT_Inspector<SGT_CameraFreeOrbit>
 		
 		SGT_EditorGUI.BeginIndent();
 		{
-			Target.RotationSpeed     = SGT_EditorGUI.FloatField("Speed", "The Speed at which the camera can rotate.", Target.RotationSpeed);
+			Target.RotationSpeed     = SGT_EditorGUI.FloatField("Speed", "The speed at which the camera can rotate.", Target.RotationSpeed);
 			Target.RotationDampening = SGT_EditorGUI.FloatField("Dampening", "How sharp the rotation is. A higher value means the rotation will reach its destination quickly.", Target.RotationDampening);
 			Target.RotationRoll      = SGT_EditorGUI.BoolField("Roll", "Allow the orbit to be rotated when right click is held and dragged?", Target.RotationRoll);
 		}

@@ -27,7 +27,7 @@ public class LoginShipBot : MonoBehaviour {
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(_derection - transform.position), maneuverability);
         _rg.velocity += transform.forward * speed * Time.deltaTime;
         _rg.velocity -= _rg.velocity / 2 * Time.deltaTime;
-        //transform.position += transform.forward * Speed * Time.deltaTime;
+        //transform.position += transform.forward * speed * Time.deltaTime;
 
 	}
 

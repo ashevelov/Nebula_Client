@@ -46,7 +46,7 @@ public class SU_CameraFollow : MonoBehaviour {
 	public Transform target;
 		
 	// Distance to follow from (this is the minimum distance, 
-	// depending on damping the distance will increase at Speed)
+	// depending on damping the distance will increase at speed)
 	public float distance = 60.0f;	
 	// Height for chase mode camera
 	public float chaseHeight = 15.0f;

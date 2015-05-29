@@ -990,9 +990,9 @@ namespace Nebula {
                     var oldPosition = (float[])eventData[(byte)ParameterCode.OldPosition];
                     float[] rotation = eventData.Contains((byte)ParameterCode.Rotation) ? (float[])eventData[(byte)ParameterCode.Rotation] : null;
                     float[] oldRotation = eventData.Contains((byte)ParameterCode.OldRotation) ? (float[])eventData[(byte)ParameterCode.OldRotation] : null;
-                    float Speed = eventData.Contains(ParameterCode.Speed.toByte()) ? (float)eventData[ParameterCode.Speed.toByte()] : 0f;
+                    float speed = eventData.Contains(ParameterCode.Speed.toByte()) ? (float)eventData[ParameterCode.Speed.toByte()] : 0f;
 
-                    item.SetPositions(position, oldPosition, rotation, oldRotation, Speed);
+                    item.SetPositions(position, oldPosition, rotation, oldRotation, speed);
                     //Debug.Log("foreign item moved received");
                 }
             }
@@ -1028,7 +1028,7 @@ namespace Nebula {
                     Hashtable groupProps = entry.Value as Hashtable;
                     if (groupProps == null)
                     {
-                        game.Engine.LogError(game, string.Format("ID entry for group: {0} of item: {1} not hashtable but: {2}", entry.Key.ToString(), item.Id, entry.Value.GetType()));
+                        game.Engine.LogError(game, string.Format("Property entry for group: {0} of item: {1} not hashtable but: {2}", entry.Key.ToString(), item.Id, entry.Value.GetType()));
                         continue;
                     }
                     item.SetProperties(entry.Key.ToString(), groupProps);
@@ -1064,7 +1064,7 @@ namespace Nebula {
                     Hashtable groupProps = entry.Value as Hashtable;
                     if (groupProps == null)
                     {
-                        game.Engine.LogError(game, string.Format("ID entry for group: {0} of item: {1} not hashtable but: {2}", entry.Key.ToString(), item.Id, entry.Value.GetType()));
+                        game.Engine.LogError(game, string.Format("Property entry for group: {0} of item: {1} not hashtable but: {2}", entry.Key.ToString(), item.Id, entry.Value.GetType()));
                         continue;
                     }
                     item.SetProperties(entry.Key.ToString(), groupProps);

@@ -21,7 +21,7 @@
 //   parentCamera	(reference to the parent (usually Main) camera so the space camera can rotate in sync)
 //                  (if no camera is specified the script will assume and try to att mainCamera)
 //   inheritFOV		(true/false if FOV (field of view) of space camera should change with the parent camera
-//   relativeSpeed  (relative Speed if you wish to travel through the space scene)
+//   relativeSpeed  (relative speed if you wish to travel through the space scene)
 //                  (use with caution as you will go through planets and beyond nebulas unless you create boundaries yourself.)
 
 // Version History
@@ -38,7 +38,7 @@ public class SU_SpaceSceneCamera : Singleton<SU_SpaceSceneCamera> {
 	public Camera parentCamera;
 	// Whether or not SpaceCamera should change FOV if parent camera FOV is changed
 	public bool inheritFOV = true;
-	// Relative Speed if you wish to move within the space scene, 
+	// Relative speed if you wish to move within the space scene, 
 	// use with caution as you will go through planets and beyond nebulas unless you create boundaries yourself.
 	public float relativeSpeed = 0.0f;
 	
@@ -83,7 +83,7 @@ public class SU_SpaceSceneCamera : Singleton<SU_SpaceSceneCamera> {
 			if (inheritFOV) GetComponent<Camera>().fieldOfView = parentCamera.fieldOfView;
 			
 			// Update the relative position of the space camera so you can travel in the space scene if necessary
-			// Note! You will fly out of bounds of the space scene if your relative Speed is high unless you restrict the movement in your own code.
+			// Note! You will fly out of bounds of the space scene if your relative speed is high unless you restrict the movement in your own code.
 			_transformCache.position = _originalPosition + (_transformCacheParentCamera.position * relativeSpeed);
 		}
 	}

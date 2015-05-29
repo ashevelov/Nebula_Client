@@ -145,11 +145,11 @@ public class NetworkTransformInterpolation : MonoBehaviour {
                     speed = distance / timeDif;
                     dif = dif.normalized;
                     Vector3 expectedPosition = bufferedStates[0].Position + dif * extrapolationLength * speed;
-                    transform.position = Vector3.SmoothDamp(transform.position, expectedPosition, ref smoothVel2, Mathf.Min(timeDif, 1.0f)); //Vector3.Lerp(transform.position, expectedPosition, Time.deltaTime * Speed);
+                    transform.position = Vector3.SmoothDamp(transform.position, expectedPosition, ref smoothVel2, Mathf.Min(timeDif, 1.0f)); //Vector3.Lerp(transform.position, expectedPosition, Time.deltaTime * speed);
                 }
                 else
                 {
-                    //transform.position = Vector3.Lerp(transform.position, bufferedStates[0].Position, Time.deltaTime * Speed);
+                    //transform.position = Vector3.Lerp(transform.position, bufferedStates[0].Position, Time.deltaTime * speed);
                     transform.position = bufferedStates[0].Position;
 
                 }

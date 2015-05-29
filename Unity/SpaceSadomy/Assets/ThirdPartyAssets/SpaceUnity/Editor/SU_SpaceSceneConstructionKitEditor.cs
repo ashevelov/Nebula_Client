@@ -962,7 +962,7 @@ public class SU_SpaceSceneConstructionKitEditor : EditorWindow {
 				
 				if (_numberOfMoonsToAdd > 0) {
 					for (int _n = 1; _n <= _numberOfMoonsToAdd; _n++) {
-						// Select a random orbit Speed (from the filtered shortlist of orbit speeds)
+						// Select a random orbit speed (from the filtered shortlist of orbit speeds)
 						float _moonOrbitSpeed = _planetMoonRotationScales[UnityEngine.Random.Range(0,_planetMoonRotationScales.Count)];
 						// Select a random distance (from the filtered shortlist of distances)						
 						float _moonDistance = _planetMoonDistanceScales[UnityEngine.Random.Range(0,_planetMoonDistanceScales.Count)];
@@ -972,7 +972,7 @@ public class SU_SpaceSceneConstructionKitEditor : EditorWindow {
 						GameObject _planetMoonInstantiated  = (GameObject)PrefabUtility.InstantiatePrefab((GameObject) _planetMoonPrefab);
 						// Reference the child "MoonObject"
 						Transform _planetMoonMesh = _planetMoonInstantiated.transform.Find("MoonObject");
-						// Set the orbit Speed of the SU_Moon.cs script
+						// Set the orbit speed of the SU_Moon.cs script
 						_planetMoonInstantiated.GetComponent<SU_Moon>().orbitSpeed = _moonOrbitSpeed;
 						// Set the parent of the instantiated transform to previously instantiated planet
 						_planetMoonInstantiated.transform.parent = _planetInstantiated.transform;

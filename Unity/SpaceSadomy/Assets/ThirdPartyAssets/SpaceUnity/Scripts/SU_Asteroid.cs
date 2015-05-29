@@ -10,8 +10,8 @@
 // Drag this script onto an asteroid (or use the existing Asteroid prefab) and configure properties.
 
 // PARAMETERS:
-//   rotationSpeed	(rotational Speed of the asteroid)
-//   driftSpeed		(drift/movement Speed of the asteroid)
+//   rotationSpeed	(rotational speed of the asteroid)
+//   driftSpeed		(drift/movement speed of the asteroid)
 
 // Version History
 // 1.02 - Prefixed with SU_Asteroid to avoid naming conflicts.
@@ -34,11 +34,11 @@ public class SU_Asteroid : MonoBehaviour {
 	public Transform meshMediumPoly;
 	public Transform meshHighPoly;
 	
-	// Rotation Speed
+	// Rotation speed
 	public float rotationSpeed = 0.0f;
 	// Vector3 axis to rotate around
 	public Vector3 rotationalAxis = Vector3.up;	
-	// Drift/movement Speed
+	// Drift/movement speed
 	public float driftSpeed = 0.0f;
 	// Vector3 direction for drift/movement
 	public Vector3 driftAxis = Vector3.up;
@@ -72,7 +72,7 @@ public class SU_Asteroid : MonoBehaviour {
 		if (_cacheTransform != null) {
 			// Rotate around own axis
 			_cacheTransform.Rotate(rotationalAxis * rotationSpeed * Time.deltaTime);
-			// Move in world space according to drift Speed
+			// Move in world space according to drift speed
             _cacheTransform.Translate(driftAxis * driftSpeed * Time.deltaTime, UnityEngine.Space.World);
 		}
 	}

@@ -9,7 +9,7 @@ public struct SpiralSettings
     public float turnDist;		// distance between spiral turns
     public float vertDist;			// vertical turn distance
     public float originOffset;	// size of hole in middle of spiral
-    public float turnSpeed;		// Speed that spiral rotates.
+    public float turnSpeed;		// speed that spiral rotates.
     public float fade;				// fade particles along the arms
     public float size;				// change particle size along arms
 }
@@ -61,7 +61,7 @@ public class ParticleSpiralEffect : MonoBehaviour
     // <0 => arms will start before the center and cross there.
     public float originOffset = 0.0f;
 
-    // Rotation Speed for the effect.
+    // Rotation speed for the effect.
     // Spiral rotation only works when "Simulate in Worldspace" is
     // turned off for the emitter.
     public float turnSpeed = 0;

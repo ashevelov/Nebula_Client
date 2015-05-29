@@ -11,9 +11,9 @@ public class SGT_Inspector_CameraMove : SGT_Inspector<SGT_CameraMove>
 		SGT_EditorGUI.BeginGroup("Move");
 		{
 			Target.MovePlane         = (SGT_CameraMove.MovementPlane)SGT_EditorGUI.EnumField("Plane", "The axes the camera moves on.", Target.MovePlane);
-			Target.MoveSpeed         = SGT_EditorGUI.FloatField("Speed", "The maximum Speed the camera can move.", Target.MoveSpeed);
-			Target.MoveSmooth        = SGT_EditorGUI.FloatField("Smooth", "The amount the movement Speed is smoothed.", Target.MoveSmooth);
-			Target.MoveShiftSpeedMul = SGT_EditorGUI.FloatField("Shift Speed Mul", "The amount the Speed is multiplied by when holding shift.", Target.MoveShiftSpeedMul);
+			Target.MoveSpeed         = SGT_EditorGUI.FloatField("Speed", "The maximum speed the camera can move.", Target.MoveSpeed);
+			Target.MoveSmooth        = SGT_EditorGUI.FloatField("Smooth", "The amount the movement speed is smoothed.", Target.MoveSmooth);
+			Target.MoveShiftSpeedMul = SGT_EditorGUI.FloatField("Shift Speed Mul", "The amount the speed is multiplied by when holding shift.", Target.MoveShiftSpeedMul);
 		}
 		SGT_EditorGUI.EndGroup();
 		

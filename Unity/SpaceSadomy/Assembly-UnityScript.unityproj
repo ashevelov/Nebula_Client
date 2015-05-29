@@ -478,20 +478,20 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity_5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Common">
- <HintPath>E:/unity/SpaceSadomy/Assets/Plugins/Common.dll</HintPath>
- </Reference>
  <Reference Include="GameMath">
- <HintPath>E:/unity/SpaceSadomy/Assets/Plugins/GameMath.dll</HintPath>
- </Reference>
- <Reference Include="Photon3Unity3D">
- <HintPath>E:/unity/SpaceSadomy/Assets/Plugins/Photon3Unity3D.dll</HintPath>
- </Reference>
- <Reference Include="Space.Game">
- <HintPath>E:/unity/SpaceSadomy/Assets/Plugins/Space.Game.dll</HintPath>
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/GameMath.dll</HintPath>
  </Reference>
  <Reference Include="SpaceClient">
- <HintPath>E:/unity/SpaceSadomy/Assets/Plugins/SpaceClient.dll</HintPath>
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/SpaceClient.dll</HintPath>
+ </Reference>
+ <Reference Include="Photon3Unity3D">
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="Common">
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/Common.dll</HintPath>
+ </Reference>
+ <Reference Include="Space.Game">
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/Space.Game.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

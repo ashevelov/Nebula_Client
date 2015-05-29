@@ -28,12 +28,12 @@ public class HitChanceExplorer : EditorWindow
         this.optimalDistance = EditorGUILayout.Slider("Optimal Dst.", this.optimalDistance, 0, 1000, GUILayout.MinWidth(this.sliderMinWidth));
         this.range = EditorGUILayout.Slider("Range", this.range, 0, 1000, GUILayout.MinWidth(this.sliderMinWidth));
 
-        this.maxSpeed = EditorGUILayout.Slider("Max Speed(max target Speed with 100% of hit)", this.maxSpeed, 0, 1000, GUILayout.MinWidth(this.sliderMinWidth));
+        this.maxSpeed = EditorGUILayout.Slider("Max speed(max target speed with 100% of hit)", this.maxSpeed, 0, 1000, GUILayout.MinWidth(this.sliderMinWidth));
 
         EditorGUILayout.Space();
         EditorGUILayout.Space();
 
-        this.targetSpeed = EditorGUILayout.Slider("Target Speed", this.targetSpeed, 0, 1000, GUILayout.MinWidth(this.sliderMinWidth));
+        this.targetSpeed = EditorGUILayout.Slider("Target speed", this.targetSpeed, 0, 1000, GUILayout.MinWidth(this.sliderMinWidth));
         //this.targetDistance = EditorGUILayout.Slider("Target distance", this.targetDistance, 0, 10000, GUILayout.MinWidth(this.sliderMinWidth));
 
         EditorGUILayout.Space();

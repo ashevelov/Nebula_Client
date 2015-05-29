@@ -318,9 +318,9 @@ namespace Game.Space.UI {
 
                 nameText._text = "Speed: ";
 
-                delta = +(int)(info.Speed - playerModule.Speed);
+                delta = +(int)(info.speed - playerModule.speed);
                 paramLabel.SetTextColor(delta < 0 ? Color.red : Color.green);
-                paramLabel._text = ((int)info.Speed) + "    " + (delta < 0 ? "" : "+") + "" + delta;
+                paramLabel._text = ((int)info.speed) + "    " + (delta < 0 ? "" : "+") + "" + delta;
                 scrollView.AddChild(template.Copy as UIScrollItemTemplate);
 
                 nameText._text = "Damage bonus: ";

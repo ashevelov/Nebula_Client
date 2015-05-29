@@ -152,7 +152,7 @@ namespace Nebula {
                     this._destroyed = (bool)entry.Value;
                     this._owner.SetShipDestroyed(this._destroyed);
                 }
-                else if(entry.Key.ToString() == "Speed" )
+                else if(entry.Key.ToString() == "speed" )
                 {
                     this._speed = (float)entry.Value;
                 }

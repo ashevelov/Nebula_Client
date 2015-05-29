@@ -126,7 +126,7 @@ public class SGT_Inspector_Starfield : SGT_Inspector<SGT_Starfield>
 			Target.StarRadiusMin      = SGT_EditorGUI.FloatField("Radius Min", "The minimum radius of a star.", Target.StarRadiusMin);
 			Target.StarRadiusMax      = SGT_EditorGUI.FloatField("Radius Max", "The maximum radius of a star.", Target.StarRadiusMax);
 			Target.StarPulseRadiusMax = SGT_EditorGUI.FloatField("Pulse Radius Max", "The maximum amount a star's radius can change while pulsing (note: the final radius will always fall between the Star Radius Min/Max).", Target.StarPulseRadiusMax);
-			Target.StarPulseRateMax   = SGT_EditorGUI.FloatField("Pulse Rate Max", "The maximum rate (Speed) at which the stars can pulse.", Target.StarPulseRateMax);
+			Target.StarPulseRateMax   = SGT_EditorGUI.FloatField("Pulse Rate Max", "The maximum rate (speed) at which the stars can pulse.", Target.StarPulseRateMax);
 		}
 		SGT_EditorGUI.EndGroup();
 		

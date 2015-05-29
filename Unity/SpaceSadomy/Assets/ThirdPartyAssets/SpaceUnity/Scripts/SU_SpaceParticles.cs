@@ -23,7 +23,7 @@
 //   distanceFade   (Start fading from % (0.0-1.0) of range (should be lower than distanceSpawn))
 
 // HINTS:
-// You can also modify the particle system of the prefab to modify particle texture, size, Speed, colors, etc.
+// You can also modify the particle system of the prefab to modify particle texture, size, speed, colors, etc.
 
 // Version History
 // 1.02 - Prefixed with SU_SpaceParticles to avoid naming conflicts.
@@ -46,9 +46,9 @@ public class SU_SpaceParticles : MonoBehaviour {
 	public float maxParticleSize = 1.0f;	
 	// Multiplier of size
 	public float sizeMultiplier = 1.0f;	
-	// Minimum drift/movement Speed of particles
+	// Minimum drift/movement speed of particles
 	public float minParticleDriftSpeed = 0.0f;
-	// Maximum drift/movement Speed of particles
+	// Maximum drift/movement speed of particles
 	public float maxParticleDriftSpeed = 1.0f;
 	// Multiplier of driftSpeed
 	public float driftSpeedMultiplier = 1.0f;	

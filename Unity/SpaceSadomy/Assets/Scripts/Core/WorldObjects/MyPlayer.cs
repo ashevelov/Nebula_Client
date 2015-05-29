@@ -178,7 +178,7 @@ public class MyPlayer : BaseSpaceObject {
         MyItem myItem = Item as MyItem;
         if (myItem.Target.HasTargetAndTargetGameObjectValid)
         {
-            //print(string.Format("STATE JUMP2TARGET, lin Speed: {0} rot Speed: {1}", _linearSpeed, myItem.Ship.AngleSpeed));
+            //print(string.Format("STATE JUMP2TARGET, lin speed: {0} rot speed: {1}", _linearSpeed, myItem.Ship.AngleSpeed));
             Vector3 dir = (myItem.Target.Item.View.transform.position - transform.position).normalized;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * Game.Ship.AngleSpeed);
             //_linearSpeed = Mathf.Lerp(_linearSpeed, Game.Ship.LinearSpeed, Time.deltaTime * Game.Ship.Acceleration);

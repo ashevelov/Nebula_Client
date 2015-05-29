@@ -7,12 +7,12 @@
 // Script for the rotational and orbiting behaviours of moons.
 
 // INSTRUCTIONS:
-// This script is attached to the moon prefabs and orbit Speed and rotation Speed around its own axis can be configured.
-// The SpaceSceneConstructionKit window will automatically configure random orbit and rotation Speed.
+// This script is attached to the moon prefabs and orbit speed and rotation speed around its own axis can be configured.
+// The SpaceSceneConstructionKit window will automatically configure random orbit and rotation speed.
 
 // PARAMETERS:
-//  orbitSpeed		(The rotational Speed of moon orbiting the planet)
-//  rotationSpeed	(The rotational Speed of moon around its own axis)
+//  orbitSpeed		(The rotational speed of moon orbiting the planet)
+//  rotationSpeed	(The rotational speed of moon around its own axis)
 
 // HINTS:
 // This script relies on the fact that the moon is actually a parent object at the same position as the parent planet.
@@ -28,9 +28,9 @@ using System.Collections;
 
 public class SU_Moon : MonoBehaviour {
 	
-	// Orbit Speed of moon around its parent planet
+	// Orbit speed of moon around its parent planet
 	public float orbitSpeed = 0.0f;
-	// Rotational Speed of moon around its own acis
+	// Rotational speed of moon around its own acis
 	public float rotationSpeed = 0.0f;	
 	
 	// Private Variables

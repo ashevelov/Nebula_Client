@@ -20,9 +20,9 @@ namespace Nebula
         //player weapon, contains info ( weapon type, ready to fire or not, weapon reload interval), all it's return from server 'weapon_state' properties request
         private ClientPlayerShipWeapon weapon;
 
-        //min linear Speed of moving in not VARP mode
+        //min linear speed of moving in not VARP mode
         private float _minLinearSpeed;
-        //max linear Speed of moving in not VARP mode
+        //max linear speed of moving in not VARP mode
         private float _maxLinearSpeed;
 
         private ShipPowerShield _powerShield;

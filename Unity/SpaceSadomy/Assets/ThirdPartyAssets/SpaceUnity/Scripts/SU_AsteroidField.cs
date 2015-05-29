@@ -12,8 +12,8 @@
 // Alternatively, drag this script onto the game object that should be the center of the asteroid field.
 
 // PARAMETERS:
-//   rotationSpeed	(rotational Speed of the asteroid)
-//   driftSpeed		(drift/movement Speed of the asteroid)
+//   rotationSpeed	(rotational speed of the asteroid)
+//   driftSpeed		(drift/movement speed of the asteroid)
 
 // Version History
 // 1.03 - Added compiler conditional code for major versions 4.1, 4.2, 4.3
@@ -65,15 +65,15 @@ public class SU_AsteroidField : MonoBehaviour {
 	public bool isRigidbody = false;
 	
 	// NON-RIGIDBODY ASTEROIDS ---
-	// Minimum rotational Speed of asteroid
+	// Minimum rotational speed of asteroid
 	public float minAsteroidRotationSpeed = 0.0f;
-	// Maximum rotational Speed of asteroid
+	// Maximum rotational speed of asteroid
 	public float maxAsteroidRotationSpeed = 1.0f;
-	// Rotation Speed multiplier
+	// Rotation speed multiplier
 	public float rotationSpeedMultiplier = 1.0f;
-	// Minimum drift/movement Speed of asteroid
+	// Minimum drift/movement speed of asteroid
 	public float minAsteroidDriftSpeed = 0.0f;
-	// Maximum drift/movement Speed of asteroid
+	// Maximum drift/movement speed of asteroid
 	public float maxAsteroidDriftSpeed = 1.0f;
 	// Multiplier of driftSpeed
 	public float driftSpeedMultiplier = 1.0f;
@@ -82,17 +82,17 @@ public class SU_AsteroidField : MonoBehaviour {
 	// RIGIDBODY ASTEROIDS -------
 	// Mass of asteroid (scaled between minAsterodiScale/maxAsteroidScale)
 	public float mass = 1.0f;
-	// Minimum angular velocity of asteroid (rotational Speed)
+	// Minimum angular velocity of asteroid (rotational speed)
 	public float minAsteroidAngularVelocity = 0.0f;
-	// Maximum angular velocity of asteroid (rotational Speed)
+	// Maximum angular velocity of asteroid (rotational speed)
 	public float maxAsteroidAngularVelocity = 1.0f;
-	// Angular velocity (rotational Speed) multiplier
+	// Angular velocity (rotational speed) multiplier
 	public float angularVelocityMultiplier = 1.0f;
-	// Minimum velocity of asteroid (drift/movement Speed)
+	// Minimum velocity of asteroid (drift/movement speed)
 	public float minAsteroidVelocity = 0.0f;
-	// Maximum velocity of asteroid (drift/movement Speed)
+	// Maximum velocity of asteroid (drift/movement speed)
 	public float maxAsteroidVelocity = 1.0f;	
-	// Velocity (drift/movement Speed) multiplier
+	// Velocity (drift/movement speed) multiplier
 	public float velocityMultiplier = 1.0f;	
 	// ----------------------------
 	
@@ -327,9 +327,9 @@ public class SU_AsteroidField : MonoBehaviour {
 				if (_newAsteroid.GetComponent<Rigidbody>() != null) {
 					// Set the mass to mass specified in AsteroidField mutiplied by scale
 					_newAsteroid.GetComponent<Rigidbody>().mass = mass * _newScale;
-					// Set the velocity (Speed) of the rigidbody to within the min/max velocity range multiplier by velocityMultiplier
+					// Set the velocity (speed) of the rigidbody to within the min/max velocity range multiplier by velocityMultiplier
 					_newAsteroid.GetComponent<Rigidbody>().velocity = _newAsteroid.transform.forward * Random.Range(minAsteroidVelocity, maxAsteroidVelocity) * velocityMultiplier;
-					// Set the angular velocity (rotational Speed) of the rigidbody to within the min/max velocity range multiplier by velocityMultiplier
+					// Set the angular velocity (rotational speed) of the rigidbody to within the min/max velocity range multiplier by velocityMultiplier
 					_newAsteroid.GetComponent<Rigidbody>().angularVelocity = new Vector3(Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f)) * Random.Range(minAsteroidAngularVelocity, maxAsteroidAngularVelocity) * angularVelocityMultiplier;
 				} else {
 					Debug.LogWarning("AsteroidField is set to spawn rigidbody asterodids but one or more asteroid prefabs do not have rigidbody component attached.");
@@ -344,7 +344,7 @@ public class SU_AsteroidField : MonoBehaviour {
 				}
 				// If the asteroid has the Asteroid script attached to it...
 				if (_newAsteroid.GetComponent<SU_Asteroid>() != null) {
-					// Set rotation and drift axis and Speed				
+					// Set rotation and drift axis and speed				
 					_newAsteroid.GetComponent<SU_Asteroid>().rotationSpeed = Random.Range(minAsteroidRotationSpeed, maxAsteroidRotationSpeed);
 					_newAsteroid.GetComponent<SU_Asteroid>().rotationalAxis = new Vector3(Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 					_newAsteroid.GetComponent<SU_Asteroid>().driftSpeed = Random.Range(minAsteroidDriftSpeed, maxAsteroidDriftSpeed);

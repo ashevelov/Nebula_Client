@@ -14,7 +14,7 @@ public class NetworkEventController : Game.Space.Singleton<NetworkEventControlle
     private Dictionary<string, Hashtable> _serverPropertiesGroups = new Dictionary<string, Hashtable>();
     private Dictionary<string, Hashtable> _clientPropertieGroups = new Dictionary<string, Hashtable>();
 
-    #region ID Groups interface
+    #region Property Groups interface
     public Dictionary<string, Hashtable> GetServerPropertyGroups
     {
         get { return _serverPropertiesGroups; }

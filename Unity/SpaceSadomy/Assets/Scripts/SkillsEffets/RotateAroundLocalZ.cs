@@ -15,7 +15,7 @@ public class RotateAroundLocalZ : MonoBehaviour {
 
     void Start()
     {
-        //cache transform for optimization Speed
+        //cache transform for optimization speed
         this.cachedTransform = transform;
     }
 

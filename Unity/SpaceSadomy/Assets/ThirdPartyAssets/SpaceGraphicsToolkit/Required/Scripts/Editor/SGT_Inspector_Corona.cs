@@ -14,7 +14,7 @@ public class SGT_Inspector_Corona : SGT_Inspector<SGT_Corona>
 			Target.CoronaTexture   = SGT_EditorGUI.ObjectField("Texture", "Each corona plane is textured with this. The texture should be a radial corona texture, where the centre of the image represents the centre of the corona.", Target.CoronaTexture, true);
 			Target.CoronaColour    = SGT_EditorGUI.ColourField("Colour", "This colour is multiplied by the corona texture. Set this to white to use the corona texture only.", Target.CoronaColour);
 			Target.CoronaFalloff   = SGT_EditorGUI.FloatField("Falloff", "This specifies the relationship between the corona plane viewing angle and the corona plane's opacity. A lower value means the corona plane will be visible from most angles. A higher value means the corona plane will only be visible when viewed directly.", Target.CoronaFalloff, 1.0f, 5.0f);
-			Target.CoronaPerPixel  = SGT_EditorGUI.BoolField("Per Pixel", "Calculate the falloff in the pixel shader. This will produce more accurate results, at the cost of pixel shader Speed. This is ideal if your camera approches the corona.", Target.CoronaPerPixel);
+			Target.CoronaPerPixel  = SGT_EditorGUI.BoolField("Per Pixel", "Calculate the falloff in the pixel shader. This will produce more accurate results, at the cost of pixel shader speed. This is ideal if your camera approches the corona.", Target.CoronaPerPixel);
 			Target.CoronaObserver  = SGT_EditorGUI.ObjectField("Observer", "The camera that will render this.", Target.CoronaObserver, true);
 			Target.CoronaAutoRegen = SGT_EditorGUI.BoolField("Auto Regen", null, Target.CoronaAutoRegen);
 			

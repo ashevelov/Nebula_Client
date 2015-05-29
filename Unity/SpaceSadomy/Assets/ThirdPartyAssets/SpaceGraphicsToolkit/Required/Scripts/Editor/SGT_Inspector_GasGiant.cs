@@ -12,7 +12,7 @@ public class SGT_Inspector_GasGiant : SGT_Inspector<SGT_GasGiant>
 		{
 			Target.GasGiantLightSource = SGT_EditorGUI.ObjectField("Light Source", "The GameObject that represents the light source for this gas giant.", Target.GasGiantLightSource, true);
 			Target.GasGiantObserver    = SGT_EditorGUI.ObjectField("Observer", "The camera that is rendering this gas giant.", Target.GasGiantObserver, true);
-			Target.GasGiantLutSize     = (SGT_SquareSize)SGT_EditorGUI.EnumField("LUT Size", "The texture look up table resolution. Use a higher value for smoother results, at the cost of GPU memory and texture sampling Speed.", Target.GasGiantLutSize);
+			Target.GasGiantLutSize     = (SGT_SquareSize)SGT_EditorGUI.EnumField("LUT Size", "The texture look up table resolution. Use a higher value for smoother results, at the cost of GPU memory and texture sampling speed.", Target.GasGiantLutSize);
 			Target.GasGiantMesh        = SGT_EditorGUI.ObjectField("Mesh", "This should be an inside-out sphere with a radius of 1.", Target.GasGiantMesh, true);
 			Target.GasGiantRenderQueue = SGT_EditorGUI.IntField("Render Queue", "The render queue used by the gas giant mesh.", Target.GasGiantRenderQueue);
 		}

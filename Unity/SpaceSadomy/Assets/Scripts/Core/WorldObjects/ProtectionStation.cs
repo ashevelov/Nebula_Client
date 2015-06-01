@@ -4,6 +4,8 @@ using Common;
 using Game.Space;
 using Game.Network;
 using Nebula.Client;
+using ServerClientCommon;
+using Nebula.Mmo.Games;
 
 namespace Nebula {
     public class ProtectionStation : BaseSpaceObject {
@@ -30,7 +32,7 @@ namespace Nebula {
         private void UpdateProperties() {
             if (Time.time > this.updateNextTime) {
                 this.updateNextTime = Time.time + 1.0f;
-                this.Item.GetProperties(new string[] { GroupProps.BONUSES, GroupProps.PROTECTION_STATION });
+                this.Item.GetProperties();
             }
         }
     }
@@ -62,57 +64,6 @@ namespace Nebula {
             get { return this.component; }
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue) {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group) {
-                case GroupProps.PROTECTION_STATION:
-                    {
-                        switch (propName) {
-                            case GenericEventProps.info:
-                                {
-                                    Hashtable info = newValue as Hashtable;
-                                    this.health = info.GetValue<float>(GenericEventProps.health, 0.0f);
-                                    this.maxHealth = info.GetValue<float>(GenericEventProps.max_health, 0.0f);
-                                    this.subType = (BotItemSubType)info.GetValue<byte>(GenericEventProps.sub_type, (byte)0);
-                                    this.destroyed = (bool)info.GetValue<bool>(GenericEventProps.destoyed, false);
-                                    this.prefab = info.GetValue<string>(GenericEventProps.prefab, string.Empty);
-                                    this.speed = info.GetValue<float>(GenericEventProps.speed, 0.0f);
-                                    this.race = (Race)info.GetValue<byte>(GenericEventProps.race, (byte)Race.None);
-                                    this.SetShipDestroyed(this.destroyed);
-                                }
-                                break;
-                            case GenericEventProps.weapon:
-                                {
-                                    Hashtable info = newValue as Hashtable;
-                                    this.weapon.ParseInfo(info);
-                                }
-                                break;
-                        }
-                    }
-                    break;
-                case GroupProps.BONUSES:
-                    {
-                        switch (propName) {
-                            case Props.BONUSES:
-                                {
-                                    Hashtable info = newValue as Hashtable;
-                                    if (info != null) {
-                                        this.bonuses.Replace(info);
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                    break;
-            }
-        }
-
-        public override void OnSettedGroupProperties(string group, Hashtable properties) {
-            base.OnSettedGroupProperties(group, properties);
-            foreach (DictionaryEntry entry in properties) {
-                this.OnSettedProperty(group, entry.Key.ToString(), entry.Value, null);
-            }
-        }
 
         public override void UseSkill(Hashtable skillProperties) {
 

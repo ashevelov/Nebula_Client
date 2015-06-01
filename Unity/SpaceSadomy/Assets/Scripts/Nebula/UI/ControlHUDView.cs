@@ -120,7 +120,7 @@ namespace Nebula.UI {
             }
             this.RaceImage.overrideSprite = SpriteCache.RaceSprite(PlayerInfo().Race);
             this.WorkshopImage.overrideSprite = SpriteCache.WorkshopSprite(PlayerInfo().Workshop);
-            this.NameLevelText.text = string.Format("{0}, {1}", PlayerInfo().Name, PlayerInfo().Level.ToString().Color("orange"));
+            this.NameLevelText.text = string.Format("{0}, {1}", PlayerInfo().Name, "" /*PlayerInfo().Level.ToString().Color("orange")*/);
             this.RaceWorkshopText.text = string.Format("{0}, {1}", StringCache.Race(PlayerInfo().Race).Color(Utils.RaceColor(PlayerInfo().Race)), StringCache.Workshop(PlayerInfo().Workshop));
 
             string coordStr = string.Empty;
@@ -134,7 +134,7 @@ namespace Nebula.UI {
                 Mathf.RoundToInt(G.Game.CombatStats.CurrentEnergy),
                 Mathf.RoundToInt(G.Game.CombatStats.MaxEnergy),
                 Mathf.RoundToInt(PlayerInfo().Exp),
-                DataResources.Instance.Leveling.ExpForLevel(PlayerInfo().Level + 1));
+                ""/*DataResources.Instance.Leveling.ExpForLevel(PlayerInfo().Level + 1)*/);
         }
 
         public void OnSkillButtonClick(int skillIndex) {
@@ -181,7 +181,7 @@ namespace Nebula.UI {
             if (G.PlayerItem == null) {
                 return false;
             }
-            if (G.Game.State != GameState.WorldEntered) {
+            if (G.Game.CurrentStrategy != GameState.NebulaGameWorldEntered) {
                 return false;
             }
             return true;

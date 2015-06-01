@@ -14,11 +14,11 @@ public class SelectCharacterShip : Singleton<HangarShip>
 
     void Start()
     {
-        if (G.Game.UserInfo.HasSelectedCharacter())
-        {
-            slots = G.Game.UserInfo.GetSelectedCharacter().Model;
-            this.RebuildModel();
+        if (MmoEngine.Get.SelectCharacterGame.PlayerCharacters.HasSelectedCharacter()) {
+            slots = MmoEngine.Get.SelectCharacterGame.PlayerCharacters.SelectedCharacter().Model;
+            RebuildModel();
         }
+
     }
 
     private void RebuildModel()
@@ -26,40 +26,33 @@ public class SelectCharacterShip : Singleton<HangarShip>
 
         Dictionary<ShipModelSlotType, string> s = new Dictionary<ShipModelSlotType, string>();
 
-        if (G.Game.UserInfo.GetSelectedCharacter() != null)
-        {
-            foreach (var m in G.Game.UserInfo.GetSelectedCharacter().Model)
-            {
-                if (string.IsNullOrEmpty(m.Value))
-                {
-                    Debug.LogError("null for {0}".f(m.Key));
-                    continue;
-                }
-                try
-                {
-                    s.Add(m.Key, DataResources.Instance.ModuleData(m.Value).Model);
-                }
-                catch (System.Exception e)
-                {
-                    Debug.Log(e.StackTrace);
-                }
+        if(false == MmoEngine.Get.SelectCharacterGame.PlayerCharacters.HasSelectedCharacter()) {
+            return;
+        }
+        foreach (var m in MmoEngine.Get.SelectCharacterGame.PlayerCharacters.SelectedCharacter().Model) {
+            if (string.IsNullOrEmpty(m.Value)) {
+                Debug.LogError("null for {0}".f(m.Key));
+                continue;
             }
-
-            for (int i = 0; i < this.transform.childCount; i++)
-            {
-                Destroy(this.transform.GetChild(i).gameObject);
+            try {
+                s.Add(m.Key, DataResources.Instance.ModuleData(m.Value).Model);
+            } catch (System.Exception e) {
+                Debug.Log(e.StackTrace);
             }
+        }
 
-            var obj = ShipModel.Init(s, false);
-            obj.transform.parent = this.transform;
-            obj.transform.localPosition = Vector3.zero;
-            obj.transform.localScale = Vector3.one;
-            obj.transform.localRotation = Quaternion.identity;
+        for (int i = 0; i < this.transform.childCount; i++) {
+            Destroy(this.transform.GetChild(i).gameObject);
+        }
 
-            foreach (var pmt in obj.GetComponentsInChildren<PlayerModuleType>())
-            {
-                pmt.gameObject.AddComponent<StationShipModule>().slotType = pmt.SlotType;
-            }
+        var obj = ShipModel.Init(s, false);
+        obj.transform.parent = this.transform;
+        obj.transform.localPosition = Vector3.zero;
+        obj.transform.localScale = Vector3.one;
+        obj.transform.localRotation = Quaternion.identity;
+
+        foreach (var pmt in obj.GetComponentsInChildren<PlayerModuleType>()) {
+            pmt.gameObject.AddComponent<StationShipModule>().slotType = pmt.SlotType;
         }
     }
 
@@ -78,33 +71,22 @@ public class SelectCharacterShip : Singleton<HangarShip>
                 oldPos = Input.mousePosition;
             }
 
-            //if (G.Game.UserInfo.HasSelectedCharacter())
-            //{
-            //    foreach (var m in G.Game.UserInfo.GetSelectedCharacter().Model)
-            //    {
+            if(false == MmoEngine.Get.SelectCharacterGame.PlayerCharacters.HasSelectedCharacter()) {
+                return;
+            }
 
-            //        //Dbg.Print("{0}:{1}".f(m.Key, m.Value), "USER");
-            //    }
-            //}
+            var character = MmoEngine.Get.SelectCharacterGame.PlayerCharacters.SelectedCharacter();
 
-            if (G.Game.UserInfo.HasSelectedCharacter())
-            {
-                if (slots == null)
-                {
-                    slots = G.Game.UserInfo.GetSelectedCharacter().Model;
+            if (slots == null) {
+                slots = character.Model;
+                this.RebuildModel();
+            } else {
+                if (false == this.CompareSlots(character.Model)) {
+                    slots = character.Model;
                     this.RebuildModel();
-                }
-                else
-                {
-                    if (false == this.CompareSlots(G.Game.UserInfo.GetSelectedCharacter().Model))
-                    {
-                        slots = G.Game.UserInfo.GetSelectedCharacter().Model;
-                        this.RebuildModel();
-                    }
                 }
             }
         }
-        //G.Game.Ship.ShipModel.
     }
 
     bool CompareSlots(Dictionary<ShipModelSlotType, string> newSlots)

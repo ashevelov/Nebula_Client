@@ -1,15 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
-using Game.Space.UI;
-using Game.Space;
-using Common;
-using Nebula.UI;
-using System;
-using System.Collections.Generic;
+﻿using Common;
 using Nebula.Client;
+using Nebula.Mmo.Games;
+using Nebula.UI;
+using ServerClientCommon;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-namespace Nebula
-{
+namespace Nebula {
     public class PirateStationItem : NpcItem, IDamagable, ICombatObjectInfo, Nebula.UI.ISelectedObjectContextMenuViewSource {
         private BaseSpaceObject component;
         private TextureSubCache<string> texSubCache = new TextureSubCache<string>();
@@ -20,152 +18,104 @@ namespace Nebula
 
 
         public PirateStationItem(string id, byte type, NetworkGame game, BotItemSubType botSubType, string name)
-            : base(id, type, game, botSubType, name)
-        {
+            : base(id, type, game, botSubType, name) {
             this.eventInfo = ClientItemEventInfo.Default;
         }
 
-        public override void Create(GameObject obj)
-        {
+        public override void Create(GameObject obj) {
             base.Create(obj);
             this.component = this.View.AddComponent<PirateStation>();
             this.Component.Initialize(this.Game, this);
         }
 
-        public override BaseSpaceObject Component
-        {
+        public override BaseSpaceObject Component {
             get { return this.component; }
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group)
-            {
-                case "default":
-                    {
-                        switch (propName)
-                        {
-                            case "cur_health":
-                                {
-                                    this.currentHealth = (float)newValue;
-                                }
-                                break;
-                        }
-                    }
+
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.CurrentHealth:
+                    this.currentHealth = (float)newValue;
                     break;
-                case "me":
+                case PS.Ship:
                     {
-                        switch (propName)
-                        {
-                            case "ship":
-                                {
-                                    Hashtable shipInfo = (Hashtable)newValue;
-                                    foreach (DictionaryEntry entry in shipInfo)
+                        Hashtable shipInfo = (Hashtable)newValue;
+                        foreach (DictionaryEntry entry in shipInfo) {
+                            switch ((SPC)(int)entry.Key) {
+                                case SPC.MaxHealth:
                                     {
-                                        switch (entry.Key.ToString())
-                                        {
-                                            case "max_health":
-                                                {
-                                                    this.maximumHealth = (float)entry.Value;
-                                                }
-                                                break;
-                                            case "destroyed":
-                                                {
-                                                    //Debug.Log("DESTROYED TYPE:" + newValue.GetType().ToString());
-                                                    //Debug.Log("DESTROYED VALUE: " + newValue);
-                                                    this.SetShipDestroyed((bool)entry.Value);
-                                                }
-                                                break;
-                                        }
+                                        this.maximumHealth = (float)entry.Value;
                                     }
-                                }
-                                break;
+                                    break;
+                                case SPC.Destroyed:
+                                    {
+                                        //Debug.Log("DESTROYED TYPE:" + newValue.GetType().ToString());
+                                        //Debug.Log("DESTROYED VALUE: " + newValue);
+                                        this.SetShipDestroyed((bool)entry.Value);
+                                    }
+                                    break;
+                            }
                         }
                     }
                     break;
-                case GroupProps.event_info:
+                case PS.FromEvent:
                     {
-                        switch (propName)
-                        {
-                            case Props.from_event:
-                                {
-                                    this.eventInfo.SetFromEvent((bool)newValue);
-                                }
-                                break;
-                            case Props.event_id:
-                                {
-                                    this.eventInfo.SetEventId((string)newValue);
-                                }
-                                break;
-                            case Props.event_world_id:
-                                {
-                                    this.eventInfo.SetEventWorldId((string)newValue);
-                                }
-                                break;
-                        }
+                        this.eventInfo.SetFromEvent((bool)newValue);
+                    }
+                    break;
+                case PS.EventId:
+                    {
+                        this.eventInfo.SetEventId((string)newValue);
+                    }
+                    break;
+                case PS.EventWorldId:
+                    {
+                        this.eventInfo.SetEventWorldId((string)newValue);
                     }
                     break;
             }
         }
 
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            base.OnSettedGroupProperties(group, properties);
-            foreach (DictionaryEntry entry in properties)
-            {
-                object oldProp = this.GetProperty(group, entry.Key.ToString());
-                this.OnSettedProperty(group, entry.Key.ToString(), entry.Value, oldProp);
-            }
-        }
 
         public override void UseSkill(Hashtable skillProperties) { }
 
         public override void AdditionalUpdate() { }
 
         #region IDamagable
-        public bool IsDead()
-        {
+        public bool IsDead() {
             return this.ShipDestroyed;
         }
 
-        public bool IsPowerShieldEnabled()
-        {
+        public bool IsPowerShieldEnabled() {
             return false;
         }
 
-        public float GetHealth()
-        {
+        public float GetHealth() {
             return this.currentHealth;
         }
 
-        public float GetMaxHealth()
-        {
+        public float GetMaxHealth() {
             return this.maximumHealth;
         }
 
-        public float GetHealth01()
-        {
+        public float GetHealth01() {
             return (this.maximumHealth == 0f) ? 0f : Mathf.Clamp01(this.GetHealth() / this.GetMaxHealth());
         }
 
-        public float GetOptimalDistance()
-        {
+        public float GetOptimalDistance() {
             return 0f;
         }
 
-        public float GetRange()
-        {
+        public float GetRange() {
             return 0f;
         }
 
-        public float GetMaxHitSpeed()
-        {
+        public float GetMaxHitSpeed() {
             return 0f;
         }
 
-        public float GetSpeed()
-        {
+        public float GetSpeed() {
             return 0f;
         }
 
@@ -184,48 +134,39 @@ namespace Nebula
         #endregion
 
         #region ICombatObjectInfo
-        public int Level
-        {
+        public int Level {
             get { return 1; }
         }
 
-        public float CurrentHealth
-        {
+        public float CurrentHealth {
             get { return this.GetHealth(); }
         }
 
-        public float MaxHealth
-        {
+        public float MaxHealth {
             get { return this.GetMaxHealth(); }
         }
 
-        public float HitProb
-        {
+        public float HitProb {
             get { return G.GetHitProbTo(this); }
         }
 
-        public Sprite Icon
-        {
+        public Sprite Icon {
             get { return SpriteCache.TargetSprite("station"); }
         }
 
-        public ObjectInfoType InfoType
-        {
+        public ObjectInfoType InfoType {
             get { return ObjectInfoType.PirateStation; }
         }
 
-        public string Description
-        {
+        public string Description {
             get { return string.Empty; }
         }
 
-        public Color Relation
-        {
+        public Color Relation {
             get { return Color.red; }
         }
 
-        public float DistanceToPlayer
-        {
+        public float DistanceToPlayer {
             get { return G.DistanceTo(this); }
         }
         #endregion

@@ -7,7 +7,7 @@ namespace Nebula.UI {
     using Nebula.Client.Inventory;
     using UnityEngine.UI;
     using Common;
-    
+    using Nebula.Mmo.Games;
 
     public class InventoryView : BaseView {
 
@@ -29,7 +29,7 @@ namespace Nebula.UI {
             StartCoroutine(CorUpdateInventory());
 
             if(this.InventoryType == InventoryType.ship) {
-                if(G.Game.State != GameState.Workshop) {
+                if(G.Game.CurrentStrategy != GameState.NebulaGameWorldEntered) {
                     if(this.MoveButton != null ) {
                         Destroy(this.MoveButton.gameObject);
                     }
@@ -50,7 +50,7 @@ namespace Nebula.UI {
 
         private IEnumerator CorUpdateInventory() {
             while(true) {
-                yield return new WaitForSeconds(NetworkGame.INVENTORY_UPDATE_INTERVAL);
+                yield return new WaitForSeconds(Settings.INVENTORY_UPDATE_INTERVAL);
                 this.UpdateInventory();
             }
         }
@@ -96,7 +96,7 @@ namespace Nebula.UI {
                 newItems = G.Game.Station.StationInventory.OrderedItems();
             }
 
-
+            
             List<ItemChangeEntry> changes = new List<ItemChangeEntry>();
 
             //first search new and modified items in new item list

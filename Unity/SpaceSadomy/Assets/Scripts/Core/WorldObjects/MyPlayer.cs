@@ -4,6 +4,7 @@ using Common;
 using Game.Network;
 using Nebula;
 using UnityEngine.EventSystems;
+using Nebula.Mmo.Games;
 
 public class MyPlayer : BaseSpaceObject {
     //private float _linearSpeed = 10.0f;
@@ -110,7 +111,7 @@ public class MyPlayer : BaseSpaceObject {
         //{
         //    _rigidbody = transform.GetComponent<Rigidbody>();
         //}
-        var game = MmoEngine.Get.Game;
+        var game = G.Game;
         //MyItem myItem = Item as MyItem;
         if (_targetDirection == Vector3.zero)
             _targetDirection = transform.forward;
@@ -418,7 +419,7 @@ public class MyPlayer : BaseSpaceObject {
         base.Initialize(game, item);
         if (Game.Avatar != null)
         {
-            Operations.GetProperties(Game, Game.Avatar.Id, Game.Avatar.Type, null, new string[] { GroupProps.SHIP_BASE_STATE, GroupProps.MECHANICAL_SHIELD_STATE, GroupProps.POWER_FIELD_SHIELD_STATE });
+            Operations.GetProperties(Game, Game.Avatar.Id, Game.Avatar.Type, null);
         }
     }
 

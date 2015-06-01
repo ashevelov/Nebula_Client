@@ -47,9 +47,9 @@ namespace Nebula.UI {
             NameText.text = StringCache.Get(weaponTemplate.Name).Color(Utils.GetColor(weapon.Color));
 
             string levelColor = "green";
-            if (weapon.Level > G.Game.PlayerInfo.Level) {
-                levelColor = "red";
-            }
+            //if (weapon.Level > G.Game.PlayerInfo.Level) {
+            //    levelColor = "red";
+            //}
             LevelText.text = weapon.Level.ToString().Color(levelColor);
 
             string workshopName = StringCache.Workshop(weaponTemplate.Workshop);

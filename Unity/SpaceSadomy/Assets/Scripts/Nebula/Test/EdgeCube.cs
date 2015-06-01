@@ -33,7 +33,7 @@ public class EdgeCube : MonoBehaviour {
         {
             if (spaceObj.Item.IsMine)
             {
-                MmoEngine.Get.Game.TryEnterWorkshop( WorkshopStrategyType.Angar);
+                G.Game.EnterWorkshop( WorkshopStrategyType.Angar);
             }
         }
     }
@@ -46,7 +46,7 @@ public class EdgeCube : MonoBehaviour {
         {
             if (baseSpaceObj.Item.IsMine)
             {
-                MmoEngine.Get.Game.TryExitWorkshop();
+                Operations.ExitWorkshop(G.Game);
             }
         }
     }

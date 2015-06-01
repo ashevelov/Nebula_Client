@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Nebula;
+using Nebula.Mmo.Games;
 
 public class VarpGate : MonoBehaviour {
 
@@ -33,10 +34,8 @@ public class VarpGate : MonoBehaviour {
             {
                 if (baseSpaceObject.Item.IsMine)
                 {
-                    var game = MmoEngine.Get.Game;
-                    //game.Avatar.ChangeWorld(worldName);
-                    //function moved
-                    NRPC.ChangeWorld(worldName);
+                    var game = G.Game;
+                    NetworkGame.ChangeWorld(worldName);
                 }
             }
             else {

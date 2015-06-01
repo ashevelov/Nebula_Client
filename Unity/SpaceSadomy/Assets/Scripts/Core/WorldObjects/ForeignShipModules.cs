@@ -16,9 +16,9 @@ namespace Nebula {
             prefabs = new Dictionary<ShipModelSlotType, string>();
         }
 
-        public void ParseProp(string propName, object value) {
-            switch (propName) {
-                case Props.SHIP_MODULES_PREFABS:
+        public void ParseProp(byte propName, object value) {
+            switch ((PS)propName) {
+                case PS.ModulePrefabs:
                     //Debug.Log("received modules for foreign player");
                     Hashtable info = value as Hashtable;
                     if (info != null) {
@@ -28,11 +28,6 @@ namespace Nebula {
             }
         }
 
-        public void ParseProps(Hashtable properties) {
-            foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
-            }
-        }
 
         private void ParsePrefabs(Hashtable prefabsInfo) {
             this.prefabs.Clear();

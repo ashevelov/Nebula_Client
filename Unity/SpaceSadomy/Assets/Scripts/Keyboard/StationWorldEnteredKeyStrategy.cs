@@ -11,6 +11,6 @@ public class StationWorldEnteredKeyStrategy : KeyStrategy
 
     public override void HandleDown()
     {
-        G.Game.TryEnterWorkshop( WorkshopStrategyType.Angar );
+        G.Game.EnterWorkshop( WorkshopStrategyType.Angar );
     }
 }

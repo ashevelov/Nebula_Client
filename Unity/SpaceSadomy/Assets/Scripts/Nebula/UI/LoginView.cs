@@ -30,7 +30,8 @@
         //Handler for login button
         public void OnLoginButtonClicked() {
             if (this.CheckInputFields()) {
-                G.Game.Login(LoginField.text.Trim(), PasswordField.text.Trim(), DisplayNameField.text.Trim());
+                //G.Game.Login(LoginField.text.Trim(), PasswordField.text.Trim(), DisplayNameField.text.Trim());
+                NRPC.Login(MmoEngine.Get.LoginGame, LoginField.text.Trim(), "qwerty", "");
             }
         }
 	}

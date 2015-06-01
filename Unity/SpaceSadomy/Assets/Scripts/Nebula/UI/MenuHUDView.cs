@@ -45,7 +45,7 @@ namespace Nebula.UI {
             if (G.Game == null) {
                 return;
             }
-            G.Game.TryEnterWorkshop(WorkshopStrategyType.Angar);
+            G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
         }
 
         public void OnHelpButton() { 

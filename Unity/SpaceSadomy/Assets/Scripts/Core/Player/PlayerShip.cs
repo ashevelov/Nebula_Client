@@ -25,9 +25,6 @@ namespace Nebula
         //max linear speed of moving in not VARP mode
         private float _maxLinearSpeed;
 
-        private ShipPowerShield _powerShield;
-        private ShipMechanicalShield _mechanicalShield;
-
 		private PlayerBonuses _bonuses;
 		//private PlayerSkills _skills;
         private ClientShipModel _shipModel;
@@ -54,8 +51,6 @@ namespace Nebula
 			_bonuses = new PlayerBonuses();
 			//_skills = new PlayerSkills();
             this.weapon = new ClientPlayerShipWeapon();
-            _powerShield = new ShipPowerShield(owner);
-            _mechanicalShield = new ShipMechanicalShield();
             _shipModel = new ClientShipModel();
 
 		}
@@ -130,10 +125,7 @@ namespace Nebula
         {
             get { return _maxLinearSpeed; }
         }
-        public ShipPowerShield PowerShield
-        {
-            get { return _powerShield;  }
-        }
+
 
         public float AngleSpeed {
             get {
@@ -161,11 +153,6 @@ namespace Nebula
             }
         }
 
-        public ShipMechanicalShield MechanicalShield
-        {
-            get { return _mechanicalShield; }
-        }
-
 
         public float Health01 {
             get {
@@ -188,7 +175,7 @@ namespace Nebula
        
 
 
-        public void ParseProp(string propName, object value )
+        public void ParseProp(byte propName, object value )
         {
             if(this.Owner() == null )
             {
@@ -196,21 +183,21 @@ namespace Nebula
                 return;
             }
 
-            switch (propName)
+            switch ((PS)propName)
             {
-                case Props.SHIP_BASE_STATE_HEALTH:
+                case PS.CurrentHealth:
                     {
                         float _old = _currentHealth;
                         _currentHealth = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_MAX_HEALTH:
+                case PS.MaxHealth:
                     {
                         float _old = _maxHealth;
                         _maxHealth = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_DESTROYED:
+                case PS.Destroyed:
                     {
                         this.Owner().SetShipDestroyed((bool)value);
 
@@ -230,41 +217,42 @@ namespace Nebula
                     }
                     break;
 
-                case Props.SHIP_BASE_STATE_CURRENT_LINEAR_SPEED:
+                case PS.CurrentLinearSpeed:
                     {
                         float _old = _linearSpeed;
                         _linearSpeed = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_ACCELERATION:
+                case PS.Acceleration:
                     {
                         float _old = _acceleration;
+                        Debug.Log(value.GetType());
                         _acceleration = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_MIN_LINEAR_SPEED:
+                case PS.MinLinearSpeed:
                     {
                         float old = _minLinearSpeed;
                         _minLinearSpeed = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_MAX_LINEAR_SPEED:
+                case PS.MaxLinearSpeed:
                     {
                         float old = _maxLinearSpeed;
                         _maxLinearSpeed = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_ANGLE_SPEED:
+                case PS.AngleSpeed:
                     {
                         _angleSpeed = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_ENERGY:
+                case PS.CurrentEnergy:
                     {
                         _energy = (float)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_MAX_ENERGY:
+                case PS.MaxEnergy:
                     {
                         _maxEnergy = (float)value;
                     }
@@ -274,7 +262,7 @@ namespace Nebula
 
         public void ParseProps(Hashtable properties) {
             foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
+                ParseProp((byte)entry.Key, entry.Value);
             }
         }
 

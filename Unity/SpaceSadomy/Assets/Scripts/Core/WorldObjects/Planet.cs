@@ -124,7 +124,7 @@ public class Planet : BaseSpaceObject
         if(Time.time > this.updatePropertiesNextTime)
         {
             this.updatePropertiesNextTime = Time.time + 10f;
-            this.Item.GetProperties(new string[] { GroupProps.planet });
+            this.Item.GetProperties();
         }
     }
 

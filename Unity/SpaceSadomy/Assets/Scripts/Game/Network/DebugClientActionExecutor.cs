@@ -2,6 +2,7 @@
 namespace Nebula
 {
     using Common;
+    using Nebula.Mmo.Games;
 
     public class DebugClientActionExecutor 
     {

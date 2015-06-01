@@ -4,6 +4,8 @@
     using UnityEngine;
     using System.Collections;
     using Nebula;
+    using ServerClientCommon;
+
 
     /// <summary>
     /// Hold server message
@@ -28,25 +30,25 @@
         public System.Collections.Hashtable GetInfo()
         {
             Hashtable info = new Hashtable();
-            info.Add(GenericEventProps.ChatMessageId, this.Id);
-            info.Add(GenericEventProps.ChatMessageGroup, this.Group.toByte());
-            info.Add(GenericEventProps.ChatMessage, this.Message);
-            info.Add(GenericEventProps.ChatSourceLogin, this.Sender);
-            info.Add(GenericEventProps.ChatMessageSourceName, this.SenderName);
-            info.Add(GenericEventProps.ChatReceiverLogin, this.Receiver);
-            info.Add(GenericEventProps.ChatMessageTime, this.Time);
+            info.Add((int)SPC.ChatMessageId, this.Id);
+            info.Add((int)SPC.ChatMessageGroup, this.Group.toByte());
+            info.Add((int)SPC.ChatMessage, this.Message);
+            info.Add((int)SPC.ChatSourceLogin, this.Sender);
+            info.Add((int)SPC.ChatSourceName, this.SenderName);
+            info.Add((int)SPC.ChatReceiverLogin, this.Receiver);
+            info.Add((int)SPC.ChatMessageTime, this.Time);
             return info;
         }
 
         public void ParseInfo(System.Collections.Hashtable info)
         {
-            this.Id = info.GetValue<string>(GenericEventProps.ChatMessageId, string.Empty);
-            this.Group = (ChatGroup)info.GetValue<byte>(GenericEventProps.ChatMessageGroup, (byte)0);
-            this.Message = info.GetValue<string>(GenericEventProps.ChatMessage, string.Empty);
-            this.Sender = info.GetValue<string>(GenericEventProps.ChatSourceLogin, string.Empty);
-            this.SenderName = info.GetValue<string>(GenericEventProps.ChatMessageSourceName, string.Empty);
-            this.Receiver = info.GetValue<string>(GenericEventProps.ChatReceiverLogin, string.Empty);
-            this.Time = info.GetValue<float>(GenericEventProps.ChatMessageTime, 0.0f);
+            this.Id = info.GetValue<string>((int)SPC.ChatMessageId, string.Empty);
+            this.Group = (ChatGroup)info.GetValue<byte>((int)SPC.ChatMessageGroup, (byte)0);
+            this.Message = info.GetValue<string>((int)SPC.ChatMessage, string.Empty);
+            this.Sender = info.GetValue<string>((int)SPC.ChatSourceLogin, string.Empty);
+            this.SenderName = info.GetValue<string>((int)SPC.ChatSourceName, string.Empty);
+            this.Receiver = info.GetValue<string>((int)SPC.ChatReceiverLogin, string.Empty);
+            this.Time = info.GetValue<float>((int)SPC.ChatMessageTime, 0.0f);
         }
 
         public string DecoratedMessage 
@@ -76,13 +78,13 @@
                         break;
                     case ChatGroup.me:
                         {
-                            string meName = (MmoEngine.Get.Game.Avatar != null) ? MmoEngine.Get.Game.Avatar.Name : "?";
+                            string meName = (G.Game.Avatar != null) ? G.Game.Avatar.Name : "?";
                             decoratedMessage = string.Format("[{0}][@{1}][@{2}:]{3}", string.Empty, meName, this.SenderName, this.Message.Color(Color.clear));
                         }
                         break;
                     case ChatGroup.whisper:
                         {
-                            string meName = (MmoEngine.Get.Game.Avatar != null) ? MmoEngine.Get.Game.Avatar.Name : "?";
+                            string meName = (G.Game.Avatar != null) ? G.Game.Avatar.Name : "?";
                             decoratedMessage = string.Format("[{0}][@{1}][@{2}:]{3}", string.Empty, meName, this.SenderName, this.Message.Color(Color.blue));
                         }
                         break;

@@ -72,7 +72,7 @@ public class Chest : BaseSpaceObject {
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                G.Game.TryEnterWorkshop(WorkshopStrategyType.Angar);
+                G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
             }
         }
     }

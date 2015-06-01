@@ -25,11 +25,11 @@
             }
 
             this.SchemeLevelText.text = scheme.Level.ToString();
-            if(G.Game.PlayerInfo.Level  < scheme.Level) {
-                this.SchemeLevelText.color = Color.red;
-            } else {
-                this.SchemeLevelText.color = Color.green;
-            }
+            //if(G.Game.PlayerInfo.Level  < scheme.Level) {
+            //    this.SchemeLevelText.color = Color.red;
+            //} else {
+            //    this.SchemeLevelText.color = Color.green;
+            //}
 
             string workshopName = StringCache.Workshop(scheme.Workshop);
             string raceName = StringCache.Race(DataResources.Instance.ResRaces().RaceForWorkshop(scheme.Workshop));

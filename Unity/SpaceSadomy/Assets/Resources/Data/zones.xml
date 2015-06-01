@@ -48,7 +48,8 @@
       <npc_group id="H1_NPC_G_1" />
     </npc_groups>
     <npcs>
-      <npc id="1_pga_01" race="Humans" type="point_guard_aggressive" position="-791,643,1447" rotation="0,0,0"        respawn_interval="60"  workshop="DarthTribe"    difficulty="medium" />
+      <npc id="1_pga_01" race="Borguzands" type="test_mob" position="0,0,0" rotation="0,0,0" respawn_interval="10"  workshop="Rakhgals" difficulty="medium" />
+      
       <npc id="1_pga_02" race="Humans" type="point_guard_aggressive" position="-772,643,1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
       <npc id="1_pga_03" race="Humans" type="point_guard_aggressive" position="-818,669.1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
       <npc id="1_pga_04" race="Humans" type="point_guard_aggressive" position="-816,669,1522" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
@@ -93,7 +94,37 @@
       <npc id="1_hrbf_028" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
       <npc id="1_hrbf_029" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
       <npc id="1_hrbf_030" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-
+      <npc id="1_hrbf_031" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_032" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_033" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_034" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_035" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_036" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_037" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_038" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_039" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_040" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_041" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_042" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_043" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_044" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_045" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <!--<npc id="1_hrbf_046" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_047" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_048" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_049" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_050" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_051" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_052" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_053" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_054" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_055" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_056" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_057" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_058" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_059" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_060" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />-->
+      
       <npc id="1_brbf_001" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
       <npc id="1_brbf_002" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
       <npc id="1_brbf_003" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
@@ -124,77 +155,102 @@
       <npc id="1_brbf_028" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
       <npc id="1_brbf_029" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
       <npc id="1_brbf_030" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      
+      <npc id="1_brbf_031" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_032" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_033" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_034" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_035" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_036" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_037" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_038" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_039" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_040" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_041" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_042" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_043" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_044" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_045" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <!--<npc id="1_brbf_046" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_047" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_048" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_049" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_050" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_051" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_052" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_053" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_054" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_055" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_056" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_057" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_058" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_059" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_060" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />-->
     </npcs>
     <asteroids>
       
 
-      <asteroid force_create="true" index="0" data_id="CraftAsteroid0002" respawn="60.0" position="1131.1,-161.4,255.0" rotation="317.2,293.6,77.4"   />
-      <asteroid force_create="true" index="1" data_id="CraftAsteroid0001" respawn="60.0" position="1178.5,192.0,514.5" rotation="344.0,48.1,61.2"     />
-      <asteroid force_create="true" index="2" data_id="CraftAsteroid0003" respawn="60.0" position="1014.7,74.5,388.6" rotation="47.9,129.1,128.7"     />
-      <asteroid force_create="true" index="3" data_id="CraftAsteroid0002" respawn="60.0" position="1294.1,-175.2,289.0" rotation="315.3,294.5,225.8" />
-      <asteroid force_create="true" index="4" data_id="CraftAsteroid0002" respawn="60.0" position="1040.0,4.2,346.3" rotation="68.3,312.4,105.8"      />
-      <asteroid force_create="true" index="5" data_id="CraftAsteroid0003" respawn="60.0" position="1446.1,-195.3,315.8" rotation="35.6,35.2,71.0"     />
-      <asteroid force_create="true" index="6" data_id="CraftAsteroid0001" respawn="60.0" position="1167.0,-76.0,220.0" rotation="327.1,287.6,129.1"   />
-      <asteroid force_create="true" index="7" data_id="CraftAsteroid0001" respawn="60.0" position="1116.9,-44.1,333.1" rotation="57.1,258.9,178.5" />
-      <asteroid force_create="true" index="8" data_id="CraftAsteroid0003" respawn="60.0" position="1195.0,-169.0,250.0" rotation="17.7,187.0,83.7" />
-      <asteroid force_create="true" index="9" data_id="CraftAsteroid0001" respawn="60.0" position="1043.0,151.0,461.0" rotation="332.1,240.5,243.9" />
-      <asteroid force_create="true" index="10" data_id="CraftAsteroid0002" respawn="60.0" position="1161.9,191.5,509.7" rotation="311.0,255.4,307.3" />
-      <asteroid force_create="true" index="11" data_id="CraftAsteroid0001" respawn="60.0" position="1259.8,-223.4,246.2" rotation="43.2,111.0,268.8" />
-      <asteroid force_create="true" index="12" data_id="CraftAsteroid0002" respawn="60.0" position="1354.0,225.6,585.0" rotation="50.9,133.9,143.5" />
+      <asteroid force_create="true" index="0" data_id="CraftAsteroid0002" respawn="60.0"  position="378,-64,-168" rotation="317.2,293.6,77.4"   />
+      <asteroid force_create="true" index="1" data_id="CraftAsteroid0001" respawn="60.0"  position="-404,-100,-223" rotation="344.0,48.1,61.2"     />
+      <asteroid force_create="true" index="2" data_id="CraftAsteroid0003" respawn="60.0"  position="-340,-322,495" rotation="47.9,129.1,128.7"     />
+      <asteroid force_create="true" index="3" data_id="CraftAsteroid0002" respawn="60.0"  position="284,-189,314" rotation="315.3,294.5,225.8" />
+      <asteroid force_create="true" index="4" data_id="CraftAsteroid0002" respawn="60.0"  position="336,325,424" rotation="68.3,312.4,105.8"      />
+      <asteroid force_create="true" index="5" data_id="CraftAsteroid0003" respawn="60.0"  position="-171,383,-476" rotation="35.6,35.2,71.0"     />
+      <asteroid force_create="true" index="6" data_id="CraftAsteroid0001" respawn="60.0"  position="460,-421,333" rotation="327.1,287.6,129.1"   />
+      <asteroid force_create="true" index="7" data_id="CraftAsteroid0001" respawn="60.0"  position="356,344,430" rotation="57.1,258.9,178.5" />
+      <asteroid force_create="true" index="8" data_id="CraftAsteroid0003" respawn="60.0"  position="418,-165,418" rotation="17.7,187.0,83.7" />
+      <asteroid force_create="true" index="9" data_id="CraftAsteroid0001" respawn="60.0"  position="323,-212,-431" rotation="332.1,240.5,243.9" />
+      <asteroid force_create="true" index="10" data_id="CraftAsteroid0002" respawn="60.0" position="-27,54,416" rotation="311.0,255.4,307.3" />
+      <asteroid force_create="true" index="11" data_id="CraftAsteroid0001" respawn="60.0" position="-255,444,-282" rotation="43.2,111.0,268.8" />
+      <asteroid force_create="true" index="12" data_id="CraftAsteroid0002" respawn="60.0" position="-11,-166,-410" rotation="50.9,133.9,143.5" />
+      <asteroid index="13" data_id="CraftAsteroid0009" respawn="120.0" position="206,-111,50" rotation="348.5,124.4,132.9" force_create="true" />
+      <asteroid index="14" data_id="CraftAsteroid0002" respawn="120.0" position="289,-162,111" rotation="326.3,237.7,95.0" force_create="true" />
+      <asteroid index="15" data_id="CraftAsteroid0010" respawn="120.0" position="183,-481,28" rotation="315.8,134.0,244.5" force_create="true" />
+      <asteroid index="16" data_id="CraftAsteroid0009" respawn="120.0" position="143,115,-69" rotation="51.9,215.7,56.9" force_create="true" />
+      <asteroid index="17" data_id="CraftAsteroid0002" respawn="120.0" position="-151,-36,-405" rotation="291.3,72.2,60.2" force_create="true" />
+      <asteroid index="18" data_id="CraftAsteroid0008" respawn="120.0" position="-31,-352,446" rotation="335.3,158.9,65.6" force_create="true" />
+      <asteroid index="19" data_id="CraftAsteroid0001" respawn="120.0" position="-458,85,19" rotation="63.0,254.9,187.8" force_create="true" />
+      <asteroid index="20" data_id="CraftAsteroid0001" respawn="120.0" position="65,446,58" rotation="341.9,298.3,145.1" force_create="true" />
+      <asteroid index="21" data_id="CraftAsteroid0010" respawn="120.0" position="-7,-306,255" rotation="328.3,227.8,335.2" force_create="true" />
+      <asteroid index="22" data_id="CraftAsteroid0003" respawn="120.0" position="185,-163,-363" rotation="335.0,234.5,199.0" force_create="true" />
+      <asteroid index="23" data_id="CraftAsteroid0005" respawn="120.0" position="45,183,469" rotation="312.9,13.8,120.5" force_create="true" />
+      <asteroid index="24" data_id="CraftAsteroid0007" respawn="120.0" position="-4,-277,96" rotation="355.7,281.1,350.6" force_create="true" />
+      <asteroid index="25" data_id="CraftAsteroid0006" respawn="120.0" position="341,413,343" rotation="25.2,61.9,8.5" force_create="true" />
+      <asteroid index="26" data_id="CraftAsteroid0002" respawn="120.0" position="375,269,153" rotation="27.7,131.3,340.8" force_create="true" />
+      <asteroid index="27" data_id="CraftAsteroid0009" respawn="120.0" position="474,-250,233" rotation="277.5,334.2,113.6" force_create="true" />
+      <asteroid index="28" data_id="CraftAsteroid0005" respawn="120.0" position="251,-221,-44" rotation="1.3,130.0,124.2" force_create="true" />
+      <asteroid index="29" data_id="CraftAsteroid0007" respawn="120.0" position="493,-15,494" rotation="59.3,331.8,305.5" force_create="true" />
+      <asteroid index="30" data_id="CraftAsteroid0004" respawn="120.0" position="-70,-424,371" rotation="46.0,61.3,85.8" force_create="true" />
+      <asteroid index="31" data_id="CraftAsteroid0006" respawn="120.0" position="-321,-359,-57" rotation="22.7,43.0,31.8" force_create="true" />
+      <asteroid index="32" data_id="CraftAsteroid0008" respawn="120.0" position="492,-203,-356" rotation="349.8,166.1,254.6" force_create="true" />
+      <asteroid index="33" data_id="CraftAsteroid0003" respawn="120.0" position="355,498,181" rotation="11.0,288.5,353.7" force_create="true" />
+      <asteroid index="34" data_id="CraftAsteroid0009" respawn="120.0" position="-107,-402,431" rotation="329.0,295.5,150.0" force_create="true" />
+      <asteroid index="35" data_id="CraftAsteroid0002" respawn="120.0" position="-39,353,-259" rotation="341.1,256.7,76.8" force_create="true" />
+      <asteroid index="36" data_id="CraftAsteroid0010" respawn="120.0" position="-2,126,-265" rotation="274.7,331.7,305.4" force_create="true" />
+      <asteroid index="37" data_id="CraftAsteroid0001" respawn="120.0" position="-397,-334,315" rotation="65.1,19.7,189.0" force_create="true" />
+      <asteroid index="38" data_id="CraftAsteroid0009" respawn="120.0" position="366,90,196" rotation="288.4,353.7,257.2" force_create="true" />
+      <asteroid index="39" data_id="CraftAsteroid0001" respawn="120.0" position="324,240,415" rotation="348.8,27.3,354.1" force_create="true" />
+      <asteroid index="40" data_id="CraftAsteroid0005" respawn="120.0" position="-200,191,352" rotation="49.6,63.9,304.9" force_create="true" />
 
-
-
-      <asteroid index="13" data_id="CraftAsteroid0009" respawn="120.0" position="-780.3,643.7,1447.3" rotation="348.5,124.4,132.9" force_create="true" />
-      <asteroid index="14" data_id="CraftAsteroid0002" respawn="120.0" position="-770.6,771.3,1224.5" rotation="326.3,237.7,95.0" force_create="true" />
-      <asteroid index="15" data_id="CraftAsteroid0010" respawn="120.0" position="-1052.8,410.1,1570.3" rotation="315.8,134.0,244.5" force_create="true" />
-      <asteroid index="16" data_id="CraftAsteroid0009" respawn="120.0" position="-854.6,532.6,1461.4" rotation="51.9,215.7,56.9" force_create="true" />
-      <asteroid index="17" data_id="CraftAsteroid0002" respawn="120.0" position="-862.1,774.7,1218.2" rotation="291.3,72.2,60.2" force_create="true" />
-      <asteroid index="18" data_id="CraftAsteroid0008" respawn="120.0" position="-1031.1,846.5,1123.2" rotation="335.3,158.9,65.6" force_create="true" />
-      <asteroid index="19" data_id="CraftAsteroid0001" respawn="120.0" position="-1240.3,853.4,1112.9" rotation="63.0,254.9,187.8" force_create="true" />
-      <asteroid index="20" data_id="CraftAsteroid0001" respawn="120.0" position="-1306.8,450.4,1512.2" rotation="341.9,298.3,145.1" force_create="true" />
-      <asteroid index="21" data_id="CraftAsteroid0010" respawn="120.0" position="-1132.1,413.2,1561.7" rotation="328.3,227.8,335.2" force_create="true" />
-      <asteroid index="22" data_id="CraftAsteroid0003" respawn="120.0" position="-1293.0,530.0,1496.3" rotation="335.0,234.5,199.0" force_create="true" />
-      <asteroid index="23" data_id="CraftAsteroid0005" respawn="120.0" position="-1125.8,358.2,1617.3" rotation="312.9,13.8,120.5" force_create="true" />
-      <asteroid index="24" data_id="CraftAsteroid0007" respawn="120.0" position="-853.4,851.9,1126.5" rotation="355.7,281.1,350.6" force_create="true" />
-      <asteroid index="25" data_id="CraftAsteroid0006" respawn="120.0" position="-1399.4,441.2,1516.9" rotation="25.2,61.9,8.5" force_create="true" />
-      <asteroid index="26" data_id="CraftAsteroid0002" respawn="120.0" position="-1244.3,446.9,1520.0" rotation="27.7,131.3,340.8" force_create="true" />
-      <asteroid index="27" data_id="CraftAsteroid0009" respawn="120.0" position="-856.5,877.7,1057.8" rotation="277.5,334.2,113.6" force_create="true" />
-      <asteroid index="28" data_id="CraftAsteroid0005" respawn="120.0" position="-1406.7,497.0,1455.2" rotation="1.3,130.0,124.2" force_create="true" />
-      <asteroid index="29" data_id="CraftAsteroid0007" respawn="120.0" position="-766.2,723.0,1276.7" rotation="59.3,331.8,305.5" force_create="true" />
-      <asteroid index="30" data_id="CraftAsteroid0004" respawn="120.0" position="-1256.3,386.4,1579.8" rotation="46.0,61.3,85.8" force_create="true" />
-      <asteroid index="31" data_id="CraftAsteroid0006" respawn="120.0" position="-731.1,550.2,1466.5" rotation="22.7,43.0,31.8" force_create="true" />
-      <asteroid index="32" data_id="CraftAsteroid0008" respawn="120.0" position="-1355.1,365.8,1559.9" rotation="349.8,166.1,254.6" force_create="true" />
-      <asteroid index="33" data_id="CraftAsteroid0003" respawn="120.0" position="-713.7,689.1,1346.8" rotation="11.0,288.5,353.7" force_create="true" />
-      <asteroid index="34" data_id="CraftAsteroid0009" respawn="120.0" position="-797.5,820.7,1176.5" rotation="329.0,295.5,150.0" force_create="true" />
-      <asteroid index="35" data_id="CraftAsteroid0002" respawn="120.0" position="-909.7,597.4,1407.4" rotation="341.1,256.7,76.8" force_create="true" />
-      <asteroid index="36" data_id="CraftAsteroid0010" respawn="120.0" position="-933.6,851.6,1081.1" rotation="274.7,331.7,305.4" force_create="true" />
-      <asteroid index="37" data_id="CraftAsteroid0001" respawn="120.0" position="-1144.9,494.6,1506.6" rotation="65.1,19.7,189.0" force_create="true" />
-      <asteroid index="38" data_id="CraftAsteroid0009" respawn="120.0" position="-1124.5,860.5,1095.2" rotation="288.4,353.7,257.2" force_create="true" />
-      <asteroid index="39" data_id="CraftAsteroid0001" respawn="120.0" position="-960.7,398.5,1588.4" rotation="348.8,27.3,354.1" force_create="true" />
-      <asteroid index="40" data_id="CraftAsteroid0005" respawn="120.0" position="-967.9,808.6,1185.3" rotation="49.6,63.9,304.9" force_create="true" />
-
-      <asteroid index="41" data_id="CraftAsteroid0006" respawn="120.0" position="-700.0,1660.0,-3435.0" rotation="3.1,112.9,327.3" force_create="true" />
-      <asteroid index="42" data_id="CraftAsteroid0008" respawn="120.0" position="-568.5,35.8,-2856.9" rotation="45.1,289.1,314.5" force_create="true" />
-      <asteroid index="43" data_id="CraftAsteroid0003" respawn="120.0" position="-1025.0,-282.5,-2596.1" rotation="11.5,280.7,293.5" force_create="true" />
-      <asteroid index="44" data_id="CraftAsteroid0010" respawn="120.0" position="-649.3,1850.6,-3343.3" rotation="7.5,103.2,122.5" force_create="true" />
-      <asteroid index="45" data_id="CraftAsteroid0008" respawn="120.0" position="-1107.4,-318.9,-2570.8" rotation="19.7,171.7,221.6" force_create="true" />
-      <asteroid index="46" data_id="CraftAsteroid0006" respawn="120.0" position="-2755.3,915.9,-2353.3" rotation="349.0,296.4,349.9" force_create="true" />
-      <asteroid index="47" data_id="CraftAsteroid0005" respawn="120.0" position="-2648.3,269.9,-2207.1" rotation="30.7,93.7,313.6" force_create="true" />
-      <asteroid index="48" data_id="CraftAsteroid0009" respawn="120.0" position="-1132.5,-266.5,-2782.4" rotation="1.2,270.7,16.4" force_create="true" />
-      <asteroid index="49" data_id="CraftAsteroid0006" respawn="120.0" position="-265.6,685.5,-3145.3" rotation="357.4,192.8,182.1" force_create="true" />
-      <asteroid index="50" data_id="CraftAsteroid0002" respawn="120.0" position="-1793.9,-161.8,-2378.9" rotation="10.8,84.8,195.0" force_create="true" />
-      <asteroid index="51" data_id="CraftAsteroid0005" respawn="120.0" position="-1770.0,-369.0,-2392.0" rotation="301.2,167.1,166.9" force_create="true" />
-      <asteroid index="52" data_id="CraftAsteroid0009" respawn="120.0" position="-917.2,-102.9,-2697.5" rotation="355.3,298.0,251.3" force_create="true" />
-      <asteroid index="53" data_id="CraftAsteroid0004" respawn="120.0" position="-354.7,1153.1,-3247.1" rotation="359.1,275.3,53.6" force_create="true" />
-      <asteroid index="54" data_id="CraftAsteroid0004" respawn="120.0" position="-2522.3,223.7,-2237.4" rotation="344.5,52.7,322.1" force_create="true" />
-      <asteroid index="55" data_id="CraftAsteroid0001" respawn="120.0" position="-834.9,1930.1,-3302.0" rotation="1.4,275.0,224.3" force_create="true" />
-      <asteroid index="56" data_id="CraftAsteroid0006" respawn="120.0" position="-696.1,2083.1,-3393.1" rotation="325.3,353.8,282.0" force_create="true" />
-      <asteroid index="57" data_id="CraftAsteroid0008" respawn="120.0" position="-864.0,-211.6,-2685.0" rotation="56.8,313.1,191.2" force_create="true" />
-      <asteroid index="58" data_id="CraftAsteroid0009" respawn="120.0" position="-504.2,340.4,-2965.3" rotation="60.1,96.1,174.8" force_create="true" />
-      <asteroid index="59" data_id="CraftAsteroid0009" respawn="120.0" position="-261.2,765.0,-3169.3" rotation="3.5,273.7,43.1" force_create="true" />
-      <asteroid index="60" data_id="CraftAsteroid0005" respawn="120.0" position="-1343.0,2312.0,-3283.0" rotation="31.4,229.2,119.0" force_create="true" />
-
+      <asteroid index="41" data_id="CraftAsteroid0006" respawn="120.0" position="-358,-383,107" rotation="3.1,112.9,327.3" force_create="true" />
+      <asteroid index="42" data_id="CraftAsteroid0008" respawn="120.0" position="-401,-182,-417" rotation="45.1,289.1,314.5" force_create="true" />
+      <asteroid index="43" data_id="CraftAsteroid0003" respawn="120.0" position="-345,349,116" rotation="11.5,280.7,293.5" force_create="true" />
+      <asteroid index="44" data_id="CraftAsteroid0010" respawn="120.0" position="199,-480,271" rotation="7.5,103.2,122.5" force_create="true" />
+      <asteroid index="45" data_id="CraftAsteroid0008" respawn="120.0" position="471,82,-347" rotation="19.7,171.7,221.6" force_create="true" />
+      <asteroid index="46" data_id="CraftAsteroid0006" respawn="120.0" position="301,-209,-74" rotation="349.0,296.4,349.9" force_create="true" />
+      <asteroid index="47" data_id="CraftAsteroid0005" respawn="120.0" position="-284,-3,357" rotation="30.7,93.7,313.6" force_create="true" />
+      <asteroid index="48" data_id="CraftAsteroid0009" respawn="120.0" position="260,-173,410" rotation="1.2,270.7,16.4" force_create="true" />
+      <asteroid index="49" data_id="CraftAsteroid0006" respawn="120.0" position="-444,-188,49" rotation="357.4,192.8,182.1" force_create="true" />
+      <asteroid index="50" data_id="CraftAsteroid0002" respawn="120.0" position="246,-332,55" rotation="10.8,84.8,195.0" force_create="true" />
+      <asteroid index="51" data_id="CraftAsteroid0005" respawn="120.0" position="-272,56,-193" rotation="301.2,167.1,166.9" force_create="true" />
+      <asteroid index="52" data_id="CraftAsteroid0009" respawn="120.0" position="329,-249,480" rotation="355.3,298.0,251.3" force_create="true" />
+      <asteroid index="53" data_id="CraftAsteroid0004" respawn="120.0" position="-176,-137,35" rotation="359.1,275.3,53.6" force_create="true" />
+      <asteroid index="54" data_id="CraftAsteroid0004" respawn="120.0" position="-341,-156,277" rotation="344.5,52.7,322.1" force_create="true" />
+      <asteroid index="55" data_id="CraftAsteroid0001" respawn="120.0" position="118,-96,-354" rotation="1.4,275.0,224.3" force_create="true" />
+      <asteroid index="56" data_id="CraftAsteroid0006" respawn="120.0" position="-456,395,-492" rotation="325.3,353.8,282.0" force_create="true" />
+      <asteroid index="57" data_id="CraftAsteroid0008" respawn="120.0" position="43,-476,-49" rotation="56.8,313.1,191.2" force_create="true" />
+      <asteroid index="58" data_id="CraftAsteroid0009" respawn="120.0" position="-9,-415,-304" rotation="60.1,96.1,174.8" force_create="true" />
+      <asteroid index="59" data_id="CraftAsteroid0009" respawn="120.0" position="494,-118,290" rotation="3.5,273.7,43.1" force_create="true" />
+      <asteroid index="60" data_id="CraftAsteroid0005" respawn="120.0" position="197,-457,-493" rotation="31.4,229.2,119.0" force_create="true" />
     </asteroids>
     <activators>
       

@@ -4,7 +4,7 @@ namespace Nebula.UI {
     using System.Collections;
     using System.Collections.Generic;
     using Nebula.Client;
-    
+    using Nebula.Mmo.Games;
 
     public class EventTasksView : BaseView {
 
@@ -21,7 +21,7 @@ namespace Nebula.UI {
 
         private IEnumerator C_UpdateEventViewLoop() {
             while(true ) {
-                yield return new WaitForSeconds(NetworkGame.EVENTS_UPDATE_INTERVAL);
+                yield return new WaitForSeconds(Settings.EVENTS_UPDATE_INTERVAL);
                 this.UpdateEventView();
             }
         }

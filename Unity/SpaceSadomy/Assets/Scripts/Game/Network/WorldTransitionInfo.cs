@@ -34,6 +34,11 @@ namespace Nebula
             _nextWorld = next;
         }
 
+        public void SetPrevAndNextWorld(string prev, string next) {
+            SetNextWorld(prev);
+            SetNextWorld(next);
+        }
+
         public bool HasPrevWorld() {
             return string.IsNullOrEmpty(_prevWorld) == false;
         }

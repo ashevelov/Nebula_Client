@@ -13,7 +13,7 @@ public class DropContainer : MonoBehaviour {
     void Update() {
 
         if (_item != null) {
-            var game = MmoEngine.Get.Game;
+            var game = G.Game;
             transform.position = _item.Position.toVector();
             transform.rotation = Quaternion.Euler(_item.Rotation.toVector());
 
@@ -26,7 +26,7 @@ public class DropContainer : MonoBehaviour {
                     if (hit.transform.tag == "container" && this.name == hit.transform.name)
                     {
 
-                        var player = MmoEngine.Get.Game.Avatar;
+                        var player = G.Game.Avatar;
 
                         if (!game.Ship.Destroyed && !player.ShipDestroyed)
                         {

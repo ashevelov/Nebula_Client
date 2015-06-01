@@ -1,25 +1,22 @@
-﻿using UnityEngine;
-using System.Collections;
-using Common;
+﻿using Common;
+using Nebula.Mmo.Games;
 using Nebula.UI;
-using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace Nebula
-{
+namespace Nebula {
     public class InvasionPortalItem : NpcItem, Nebula.UI.ISelectedObjectContextMenuViewSource {
 
         private BaseSpaceObject _component;
         private int _model;
 
-        public override BaseSpaceObject Component
-        {
+        public override BaseSpaceObject Component {
             get { return _component; }
         }
 
         public InvasionPortalItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
-            : base(id, type, game, subType, name)
-        {
+            : base(id, type, game, subType, name) {
         }
         /*
         public override void CreateView(GameObject prefab)
@@ -29,55 +26,31 @@ namespace Nebula
             _component.Initialize(Game, this);
         }*/
 
-        public override void Create(GameObject obj)
-        {
+        public override void Create(GameObject obj) {
             base.Create(obj);
             _component = _view.AddComponent<InvasionPortal>();
             _component.Initialize(Game, this);
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group)
-            {
-                case GroupProps.SHIP_BASE_STATE:
-                    switch (propName)
-                    {
-                        case Props.SHIP_BASE_STATE_MODEL:
-                            _model = (int)newValue;
-                            break;
-                    }
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.Model:
+                    _model = (int)newValue;
                     break;
             }
         }
 
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            if (group == GroupProps.SHIP_BASE_STATE)
-            {
-                if (properties.ContainsKey(Props.SHIP_BASE_STATE_MODEL))
-                {
-                    _model = (int)properties[Props.SHIP_BASE_STATE_MODEL];
-                }
-            }
-            base.OnSettedGroupProperties(group, properties);
+
+        public override void UseSkill(Hashtable skillProperties) {
         }
 
-        public override void UseSkill(Hashtable skillProperties)
-        {
-        }
-
-        public int Model
-        {
-            get
-            {
+        public int Model {
+            get {
                 return _model;
             }
         }
 
-        public override void AdditionalUpdate()
-        {
+        public override void AdditionalUpdate() {
 
         }
 

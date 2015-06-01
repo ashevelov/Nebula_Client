@@ -76,6 +76,7 @@ namespace Nebula.UI {
         void OnEnable() { 
             Events.GameStateChanged += Events_GameStateChanged;
             Events.CooperativeGroupUpdated += Events_CooperativeGroupUpdated;
+            Events.GameBehaviourChanged += Events_GameBehaviourChanged;
         }
 
 
@@ -83,21 +84,29 @@ namespace Nebula.UI {
         void OnDisable() {
             Events.GameStateChanged -= Events_GameStateChanged;
             Events.CooperativeGroupUpdated -= Events_CooperativeGroupUpdated;
+            Events.GameBehaviourChanged -= Events_GameBehaviourChanged;
+        }
+        private void Events_GameBehaviourChanged(Mmo.Games.GameType gameType, GameState gameState) {
+            if(gameType == Mmo.Games.GameType.Login && gameState == GameState.LoginConnected) {
+                Show(CanvasPanelType.LoginView);
+            } else {
+                Destroy(CanvasPanelType.LoginView);
+            }
         }
 
         void Events_GameStateChanged(GameState oldState, GameState newState) {
-            if (newState == GameState.Connected) {
-                if (!this.Exists(CanvasPanelType.LoginView)) {
-                    Show(CanvasPanelType.LoginView);
-                }
-            } else {
-                if (this.Exists(CanvasPanelType.LoginView)) {
-                    Destroy(CanvasPanelType.LoginView);
-                }
-            }
+            //if (newState == GameState.Connected) {
+            //    if (!this.Exists(CanvasPanelType.LoginView)) {
+            //        Show(CanvasPanelType.LoginView);
+            //    }
+            //} else {
+            //    if (this.Exists(CanvasPanelType.LoginView)) {
+            //        Destroy(CanvasPanelType.LoginView);
+            //    }
+            //}
 
             //show station HUD at station mode
-            if(newState == GameState.Workshop) {
+            if(newState == GameState.NebulaGameWorkshopEntered) {
                 Show(CanvasPanelType.StationHUD);
             } else {
                 if (Exists(CanvasPanelType.StationHUD)) {

@@ -1,11 +1,11 @@
 ﻿using Common;
+using ServerClientCommon;
 using System.Collections;
 
 namespace Nebula {
 
     public class ForeignShip : IServerPropertyParser {
 
-        private int _model;
         private float _maxHealth;
         private float _health;
         private Weapon _weapon;
@@ -50,11 +50,6 @@ namespace Nebula {
             }
         }
 
-        public int Model {
-            get {
-                return _model;
-            }
-        }
 
         public float Speed {
             get {
@@ -84,49 +79,37 @@ namespace Nebula {
             }
         }
 
-        public void ParseProp(string propName, object value)
+        public void ParseProp(byte propName, object value)
         {
-            switch (propName) 
-            { 
-                case Props.SHIP_BASE_STATE_MODEL:
-                    _model = (int)value;
-                    break;
-                case Props.SHIP_BASE_STATE_MAX_HEALTH:
+            switch ((PS)propName) 
+            {
+                case PS.MaxHealth:
                     _maxHealth = (float)value;
                     break;
-                case Props.SHIP_BASE_STATE_HEALTH:
+                case PS.CurrentHealth:
                     _health = (float)value;
                     break;
-                case Props.SHIP_BASE_STATE_DESTROYED:
+                case PS.Destroyed:
                     {
                         bool old = _destroyed;
                         _destroyed = (bool)value;
                         _owner.SetShipDestroyed(_destroyed);
                     }
                     break;
-                case Props.SHIP_BASE_STATE_CURRENT_LINEAR_SPEED:
+                case PS.CurrentLinearSpeed:
                     _speed = (float)value;
                     break;
-                case Props.SHIP_BASE_STATE_MODEL_INFO:
+                case PS.ModelInfo:
+
                     {
                         this.modelInfo = (Hashtable)value;
                     }
                     break;
-                case Props.SHIP_BASE_STATE_WORKSHOP:
+                case PS.Workshop:
                     {
                         this.workshop = (Workshop)(byte)value;
                     }
                     break;
-                case "cur_health":
-                    this._health = (float)value;
-                    break;
-            }
-        }
-
-        public void ParseProps(System.Collections.Hashtable properties)
-        {
-            foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
             }
         }
 
@@ -134,29 +117,29 @@ namespace Nebula {
         {
             foreach(DictionaryEntry entry in info )
             {
-                if(entry.Key.ToString() == "model" )
+                if((int)entry.Key == (int)SPC.Model )
                 {
                     this.modelInfo = (entry.Value as Hashtable);
                 }
-                else if(entry.Key.ToString() == "max_health")
+                else if((int)entry.Key == (int)SPC.MaxHealth)
                 {
                     this._maxHealth = (float)entry.Value;
                 }
-                else if(entry.Key.ToString() == "cur_health")
+                else if((int)entry.Key == (int)SPC.CurHealth)
                 {
                     this._health = (float)entry.Value;
                     //Debug.Log("Current health received: {0:F1}".f(this._health));
                 }
-                else if(entry.Key.ToString() == "destroyed")
+                else if((int)entry.Key == (int)SPC.Destroyed)
                 {
                     this._destroyed = (bool)entry.Value;
                     this._owner.SetShipDestroyed(this._destroyed);
                 }
-                else if(entry.Key.ToString() == "speed" )
+                else if((int)entry.Key == (int)SPC.Speed )
                 {
                     this._speed = (float)entry.Value;
                 }
-                else if(entry.Key.ToString() == "workshop")
+                else if((int)entry.Key == (int)SPC.Workshop)
                 {
                     this.workshop = (Workshop)(byte)entry.Value;
                 }

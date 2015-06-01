@@ -1,6 +1,10 @@
 ﻿using Common;
 using Game.Network;
+using Nebula.Mmo.Games;
+using ServerClientCommon;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Nebula {
     public static class NRPC {
@@ -36,7 +40,7 @@ namespace Nebula {
                 return;
             }
 
-            if(game.State != GameState.WorldEntered) {
+            if(game.CurrentStrategy != GameState.NebulaGameWorldEntered) {
                 return;
             }
             if(false == player.Target.HasTargetAndTargetGameObjectValid) {
@@ -44,11 +48,11 @@ namespace Nebula {
             }
 
             Hashtable fireProperties = new Hashtable {
-                {GenericEventProps.source_id, player.Id },
-                {GenericEventProps.source_type, player.Type },
-                {GenericEventProps.target_id, player.Target.Item.Id },
-                {GenericEventProps.target_type, player.Target.Item.Type },
-                {GenericEventProps.shot_type, (byte)shotType }
+                {(int)SPC.Source, player.Id },
+                {(int)SPC.SourceType, player.Type },
+                {(int)SPC.Target, player.Target.Item.Id },
+                {(int)SPC.TargetType, player.Target.Item.Type },
+                {(int)SPC.ShotType, (byte)shotType }
             };
 
             Operations.RaiseGenericEvent(game, player.Id, player.Type, (byte)CustomEventCode.Fire, fireProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
@@ -238,7 +242,7 @@ namespace Nebula {
             if (false == CheckGame(out game)) {
                 return;
             }
-            Operations.ExecAction(game, game.AvatarId, "GetUserInfo", new object[] { game.LoginInfo.gameRefId });
+            Operations.ExecAction(game, game.AvatarId, "GetUserInfo", new object[] { game.Engine.LoginGame.GameRefId });
         }
 
         public static void DeleteCharacter(string characterId) {
@@ -246,7 +250,7 @@ namespace Nebula {
             if (false == CheckGame(out game)) {
                 return;
             }
-            Operations.ExecAction(game, game.AvatarId, "DeleteCharacter", new object[] { game.LoginInfo.gameRefId, characterId });
+            Operations.ExecAction(game, game.AvatarId, "DeleteCharacter", new object[] { game.Engine.LoginGame.GameRefId, characterId });
         }
 
         public static void RequestStation() {
@@ -257,21 +261,21 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "GetStation", new object[] { });
         }
 
-        public static void SelectCharacter(string characterId, string login, string password) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.SelectCharacter(game, characterId, login, password);
-        }
+        //public static void SelectCharacter(string characterId, string login, string password) {
+        //    NetworkGame game = null;
+        //    if (false == CheckGame(out game)) {
+        //        return;
+        //    }
+        //    Operations.SelectCharacter(game, characterId, login, password);
+        //}
 
-        public static void AddCharacter(Race race, Workshop workshop) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.AddCharacter(game, race.toByte(), workshop);
-        }
+        //public static void AddCharacter(Race race, Workshop workshop) {
+        //    NetworkGame game = null;
+        //    if (false == CheckGame(out game)) {
+        //        return;
+        //    }
+        //    Operations.AddCharacter(game, race.toByte(), workshop);
+        //}
 
 
 
@@ -287,19 +291,19 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "OnActivate", new object[] { activatorId });
         }
 
-        /// <summary>
-        /// Load other world
-        /// </summary>
-        /// <param name="nextWorld"></param>
-        public static void ChangeWorld(string nextWorld) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
+        ///// <summary>
+        ///// Load other world
+        ///// </summary>
+        ///// <param name="nextWorld"></param>
+        //public static void ChangeWorld(string nextWorld) {
+        //    NetworkGame game = null;
+        //    if (false == CheckGame(out game)) {
+        //        return;
+        //    }
 
-            game.WorldTransition.SetNextWorld(nextWorld);
-            Operations.ExitWorld(game);
-        }
+        //    game.WorldTransition.SetNextWorld(nextWorld);
+        //    Operations.ExitWorld(game);
+        //}
 
         public static void ExitToSelectCharacterMenu() {
             NetworkGame game = null;
@@ -318,12 +322,12 @@ namespace Nebula {
 
             Hashtable chatMessageProperties = new Hashtable
             {
-                {GenericEventProps.ChatMessageGroup, (byte)chatGroup},
-                {GenericEventProps.ChatMessage, message },
-                {GenericEventProps.ChatSourceLogin, game.LoginInfo.loginName },
-                {GenericEventProps.ChatMessageSourceName, game.LoginInfo.displayName },
-                {GenericEventProps.ChatMessageId, System.Guid.NewGuid().ToString() },
-                {GenericEventProps.ChatReceiverLogin, receiverLogin }
+                {(int)SPC.ChatMessageGroup, (byte)chatGroup},
+                {(int)SPC.ChatMessage, message },
+                {(int)SPC.ChatSourceLogin, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
+                {(int)SPC.ChatSourceName, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
+                {(int)SPC.ChatMessageId, System.Guid.NewGuid().ToString() },
+                {(int)SPC.ChatReceiverLogin, receiverLogin }
             };
             Operations.RaiseGenericEvent(game, game.AvatarId, ItemType.Avatar.toByte(), (byte)CustomEventCode.ChatMessage, chatMessageProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
         }
@@ -713,6 +717,21 @@ namespace Nebula {
                 return;
             }
             Operations.ExecAction(game, game.AvatarId, "CraftItEasy", new object[] { });
+        }
+
+        //---------------MASTER OPERATIONS---------------------
+        public static void GetServerList(BaseGame game) {
+            game.SendOperation((byte)OperationCode.GetServerList, new Dictionary<byte, object>(), true, Settings.ItemChannel);
+        }
+        //-------------LOGIN OPERATIONS-----------------------------
+        public static void Login(BaseGame game, string facebookId, string token, string displayName = "") {
+            Debug.Log("sending login operation");
+            Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                {(byte)ParameterCode.LoginId, facebookId },
+                { (byte)ParameterCode.AccessToken, token },
+                { (byte)ParameterCode.DisplayName, displayName}
+            };
+            game.SendOperation((byte)OperationCode.Login, parameters, true, Settings.ItemChannel);
         }
     }
 }

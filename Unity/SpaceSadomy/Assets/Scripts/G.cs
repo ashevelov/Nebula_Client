@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Nebula.Client;
 using Nebula;
+using Nebula.Mmo.Games;
 
 public class G  
 {
@@ -23,7 +24,7 @@ public class G
         get
         {
             if (MmoEngine.Get)
-                return MmoEngine.Get.Game;
+                return MmoEngine.Get.NebulaGame;
             else
                 return null;
         }
@@ -33,7 +34,7 @@ public class G
     {
         get
         {
-            return MmoEngine.Get.Game.Avatar;
+            return G.Game.Avatar;
         }
     }
 
@@ -41,9 +42,9 @@ public class G
     {
         get
         {
-            if (MmoEngine.Get.Game.Avatar != null)
+            if (G.Game.Avatar != null)
             {
-                return MmoEngine.Get.Game.Avatar.Component as MyPlayer;
+                return G.Game.Avatar.Component as MyPlayer;
             }
             return null;
         }

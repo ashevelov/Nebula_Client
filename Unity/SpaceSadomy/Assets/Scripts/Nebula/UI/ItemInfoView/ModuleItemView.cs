@@ -58,11 +58,11 @@ namespace Nebula.UI {
             } 
 
             this.LevelText.text = module.level.ToString();
-            if(G.Game.PlayerInfo.Level < module.level) {
-                this.LevelText.color = Color.red;
-            } else {
-                this.LevelText.color = Color.green;
-            }
+            //if(G.Game.PlayerInfo.Level < module.level) {
+            //    this.LevelText.color = Color.red;
+            //} else {
+            //    this.LevelText.color = Color.green;
+            //}
 
             string workshopName = StringCache.Workshop(module.workshop);
             string raceName = StringCache.Race(DataResources.Instance.ResRaces().RaceForWorkshop(module.workshop));

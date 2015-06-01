@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Common;
+using Nebula.Mmo.Games;
 
 namespace Nebula
 {

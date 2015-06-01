@@ -7,6 +7,7 @@ using UButton = UnityEngine.UI.Button;
 using UToggle = UnityEngine.UI.Toggle;
 using Game.Network;
 using Common;
+using Nebula.Mmo.Games;
 
 namespace Nebula.UI {
     public class ChatPanel : BaseView {
@@ -28,7 +29,7 @@ namespace Nebula.UI {
 
         void Start() {
             //populate list at start
-            foreach(var message in G.Game.Chat.Messages() ) {
+            foreach(var message in G.Game.Engine.GameData.Chat.Messages() ) {
                 this.CreateTextForMessage(message);
             }
             this.startCompleted = true;
@@ -86,7 +87,7 @@ namespace Nebula.UI {
             switch (command.Trim().ToLower()) {
                 case "$addore": {
                         NRPC.CmdAddOres();
-                        G.Game.Chat.PastLocalMessage("Command: #add_ore");
+                        G.Game.Engine.GameData.Chat.PastLocalMessage("Command: #add_ore");
                         break;
                     }
                 case "$tgm": {
@@ -101,7 +102,7 @@ namespace Nebula.UI {
                         }
                         Vector3 position = G.Game.Avatar.Target.Item.View.transform.position;
                         G.Game.Avatar.View.transform.position = position;
-                        G.Game.Chat.PastLocalMessage("Command: #mtt");
+                        G.Game.Engine.GameData.Chat.PastLocalMessage("Command: #mtt");
                         break;
                     }
                 case "$testbuffs":
@@ -130,12 +131,17 @@ namespace Nebula.UI {
                     }
                 case "$station":
                     {
-                        G.Game.TryEnterWorkshop(WorkshopStrategyType.Angar);
+                        G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
                         break;
                     }
                 case "$menu":
                     {
                         NRPC.ExitToSelectCharacterMenu();
+                        break;
+                    }
+                case "$buff":
+                    {
+                        NetworkGame.SetRandomBuff();
                         break;
                     }
             }

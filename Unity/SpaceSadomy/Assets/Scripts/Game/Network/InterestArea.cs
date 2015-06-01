@@ -1,4 +1,5 @@
 ﻿namespace Nebula {
+    using Nebula.Mmo.Games;
     using System;
 
     public class InterestArea

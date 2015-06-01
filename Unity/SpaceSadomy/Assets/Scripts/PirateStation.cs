@@ -31,7 +31,7 @@ public class PirateStation : BaseSpaceObject
         if(Time.time > this.updatePropsTime)
         {
             this.updatePropsTime = Time.time + 2;
-            this.Item.GetProperties(new string[] { "me", "default", GroupProps.event_info, GroupProps.DEFAULT_STATE });
+            this.Item.GetProperties();
         }
     }
 }

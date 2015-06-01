@@ -6,12 +6,6 @@ namespace Nebula {
     public class Weapon : IServerPropertyParser {
 
         private float _damage;
-
-
-        //private float _rangeMin;
-        //private float _rangeMax;
-        //private float _minHitProb;
-
         private float _optimalDistance;
         private float _range;
         private float _nearProb;
@@ -23,50 +17,37 @@ namespace Nebula {
             _damage = damage;
         }
 
-        public float OptimalDistance
-        {
-            get
-            {
+        public float OptimalDistance {
+            get {
                 return _optimalDistance;
             }
         }
-        public float Range
-        {
-            get
-            {
+        public float Range {
+            get {
                 return _range;
             }
         }
-        public float NearProb
-        {
-            get
-            {
+        public float NearProb {
+            get {
                 return _nearProb;
             }
         }
 
-        public float FarProb
-        {
-            get
-            {
+        public float FarProb {
+            get {
                 return _farProb;
             }
         }
-        public float MaxHitSpeed
-        {
-            get
-            {
+        public float MaxHitSpeed {
+            get {
                 return _maxHitSpeed;
             }
         }
-        public float MaxFireDistance
-        {
-            get
-            {
+        public float MaxFireDistance {
+            get {
                 return _maxFireDistance;
             }
         }
-
 
         public float Damage {
             get {
@@ -74,40 +55,35 @@ namespace Nebula {
             }
         }
 
-
-
-
-        public void ParseProp(string propName, object value)
-        {
-            switch (propName) { 
-                case Props.SHIP_WEAPON_STATE_BASE_DAMAGE:
+        public void ParseProp(byte propName, object value) {
+            switch ((PS)propName) {
+                case PS.BaseDamage:
                     _damage = (float)value;
                     break;
-                case Props.SHIP_WEAPON_STATE_OPTIMAL_DISTANCE:
+                case PS.OptimalDistance:
                     _optimalDistance = (float)value;
                     break;
-                case Props.SHIP_WEAPON_STATE_RANGE:
+                case PS.WeaponRange:
                     _range = (float)value;
                     break;
-                case Props.SHIP_WEAPON_STATE_PROB_NEAR2OPTIMALDISTANCE:
+                case PS.ProbNear2OptimalDistance:
                     _nearProb = (float)value;
                     break;
-                case Props.SHIP_WEAPON_STATE_PROB_FAR2OPTIMALDISTANCE:
+                case PS.ProbFar2OptimalDistance:
                     _farProb = (float)value;
                     break;
-                case Props.SHIP_WEAPON_STATE_MAX_HIT_SPEED:
+                case PS.MaxHitSpeed:
                     _maxHitSpeed = (float)value;
                     break;
-                case Props.SHIP_WEAPON_STATE_MAX_FIRE_DISTANCE:
+                case PS.MaxFireDistance:
                     _maxFireDistance = (float)value;
                     break;
             }
         }
 
-        public void ParseProps(System.Collections.Hashtable properties)
-        {
+        public void ParseProps(Hashtable properties) {
             foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
+                ParseProp((byte)entry.Key, entry.Value);
             }
         }
     }

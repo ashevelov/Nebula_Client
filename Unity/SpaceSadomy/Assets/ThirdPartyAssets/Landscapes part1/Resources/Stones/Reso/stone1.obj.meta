@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 2ac02fb9d1bc06a458e9cf73b145f23d
-timeCreated: 1433146505
-licenseType: Pro
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: default
     100002: //RootNode
@@ -40,13 +38,11 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
-    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 180
     splitTangentsAcrossUV: 1
@@ -69,5 +65,3 @@ ModelImporter:
   animationType: 1
   additionalBone: 0
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 

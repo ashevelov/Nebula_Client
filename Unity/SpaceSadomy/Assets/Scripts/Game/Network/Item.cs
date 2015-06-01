@@ -6,6 +6,7 @@ namespace Nebula
     using UnityEngine;
     using System.Collections;
     using Common;
+    using Nebula.Mmo.Games;
 
     public abstract class Item
     {
@@ -20,7 +21,7 @@ namespace Nebula
         public float[] PreviousRotation { get; private set; }
         public int PropertyRevision { get; set; }
         public event Action<Item> Moved;
-        private Dictionary<string, Hashtable> _properties;
+        private Dictionary<byte, object> properties;
         protected GameObject _view;
         protected NetworkTransformInterpolation _transformInterpolation;
         protected bool _subscribed;
@@ -33,8 +34,11 @@ namespace Nebula
         {
             get
             {
-                object objRace = this.GetProperty(GroupProps.DEFAULT_STATE, Props.DEFAULT_STATE_RACE);
-                return (objRace == null) ? Race.None : (Race)(byte)objRace;
+                if(ContainsProperty((byte)PS.Race)) {
+                    return (Race)GetProperty<byte>((byte)PS.Race);
+                } else {
+                    return Race.None;
+                }
             }
         }
 
@@ -48,115 +52,48 @@ namespace Nebula
             _subscribed = subscribed;
         }
 
-        private void HandleDefaultProperties(string propName, object newValue) {
-            if (IsMine == false)
-            {
-                if (propName == Props.DEFAULT_STATE_INTEREST_AREA_ATTACHED)
-                {
-                    SetInterestAreaAttached((bool)newValue);
+
+        public void SetProperty(byte propName, object value )
+        {
+            object oldValue = null;
+            if(properties.ContainsKey(propName)) {
+                oldValue = properties[propName];
+            }
+            properties[propName] = value;
+            if(!IsMine) {
+                if(propName == (byte)PS.InterestAreaAttached) {
+                    SetInterestAreaAttached((bool)value);
                     MakeVisibleToSubscribedInterestAreas();
                 }
             }
+            OnPropertySetted(propName, oldValue, value);
         }
 
-        public virtual void OnSettedProperty(string group, string propName, object newValue, object oldValue) {
-            HandleDefaultProperties(propName, newValue);
-        }
-
-        public virtual void OnSettedGroupProperties(string group, Hashtable properties) {
-            if (group == GroupProps.DEFAULT_STATE) {
-                foreach (DictionaryEntry entry in properties) {
-                    HandleDefaultProperties(entry.Key.ToString(), entry.Value);
-                }
-            }
-        } 
-
-        public void SetProperty(string group, string propName, object value )
+        public void SetProperties(Hashtable inProperties)
         {
-            if (_properties.ContainsKey(group))
-            {
-                Hashtable existingProperties = _properties[group];
-                object oldValue = null;
-                if (existingProperties.ContainsKey(propName))
-                {
-                    oldValue = existingProperties[propName];
-                    existingProperties.Remove(propName);
-                }
-                existingProperties.Add(propName, value);
-                OnSettedProperty(group, propName, value, oldValue);
-            }
-            else
-            {
-                Hashtable newProperties = new Hashtable { { propName, value } };
-                _properties.Add(group, newProperties);
-                OnSettedProperty(group, propName, value, null);
+            foreach(DictionaryEntry entry in inProperties) {
+                SetProperty((byte)entry.Key, entry.Value);
             }
         }
 
-        public void SetProperties(string group, Hashtable properties)
+        public virtual void OnPropertySetted(byte key, object oldValue, object newValue) {
+
+        }
+
+        public bool ContainsProperty(byte name)
         {
-            /*if (IsMine) {
-                Debug.Log(string.Format("set mine properties, group: {0}  count: {1}", group, properties.Count));
-            }*/
-
-            if (_properties.ContainsKey(group))
-            {
-                Hashtable existingProperties = _properties[group];
-                foreach (DictionaryEntry entry in properties)
-                {
-                    object oldValue = null;
-                    if (existingProperties.ContainsKey(entry.Key))
-                    {
-                        oldValue = existingProperties[entry.Key];
-                        existingProperties.Remove(entry.Key);
-                    }
-                    existingProperties.Add(entry.Key, entry.Value);
-                    //OnSettedProperty(group, entry.Key.ToString(), entry.Value, oldValue);
-                }
-                OnSettedGroupProperties(group, existingProperties);
-            }
-            else
-            {
-                Hashtable newProperties = new Hashtable(properties);
-                _properties.Add(group, newProperties);
-                /*foreach(DictionaryEntry entry in newProperties )
-                {
-                    OnSettedProperty(group, entry.Key.ToString(), entry.Value, null);
-                }*/
-                OnSettedGroupProperties(group, properties);
-            }
+            return properties.ContainsKey(name);
         }
 
-        public bool ContainsProperty(string group, string name)
+        public T GetProperty<T>(byte name)
         {
-            if (this._properties.ContainsKey(group))
-            {
-                Hashtable props = this._properties[group];
-                if (props.ContainsKey(name))
-                    return true;
+
+            if(properties.ContainsKey(name)) {
+                return (T)properties[name];
             }
-            return false;
+            return default(T);
         }
 
-        public object GetProperty(string group, string name)
-        {
-            if (false == this.ContainsProperty(group, name))
-                return null;
-            else
-            {
-                Hashtable props = this._properties[group];
-                foreach (DictionaryEntry e in props)
-                {
-                    if (e.Key.ToString() == name)
-                    {
-                        return e.Value;
-                    }
-                }
-                return null;
-            }
-        }
-
-        [CLSCompliant(false)]
         public NetworkGame Game
         {
             get
@@ -202,31 +139,23 @@ namespace Nebula
         {
             get
             {
-                int counter = 0;
-                Hashtable rawProperties = new Hashtable();
-                foreach(var pair in _properties )
-                {
-                    foreach (DictionaryEntry entry in pair.Value)
-                    {
-                        string key = string.Empty;
-                        if (rawProperties.ContainsKey(entry.Key))
-                        {
-                            key = entry.Key.ToString() + counter.ToString();
-                            counter++;
-                        }
-                        else
-                        {
-                            key = entry.Key.ToString();
-                        }
-                        rawProperties.Add(key, entry.Value);
-                    }
+                Hashtable result = new Hashtable();
+                foreach(var pair in properties) {
+                    result.Add(pair.Key, pair.Value);
                 }
-                return rawProperties;
+                return result;
+            }
+        }
+
+        public Dictionary<byte, object> props {
+            get {
+                return properties;
             }
         }
 
 
-        [CLSCompliant(false)]
+
+
         protected Item(string id, byte type, NetworkGame game, string name)
         {
             this.id = id;
@@ -235,7 +164,7 @@ namespace Nebula
             this.type = type;
             this.visibleInterestAreas = new List<byte>();
             this.subscribedInterestAreas = new List<byte>();
-            _properties = new Dictionary<string, Hashtable>();
+            properties = new Dictionary<byte, object>();
         }
 
 
@@ -260,14 +189,14 @@ namespace Nebula
             return true;
         }
 
-        public void GetInitialProperties(string[] groups)
+        public void GetInitialProperties()
         {
-            Operations.GetProperties(this.game, this.id, this.type, null, (groups == null ) ? new string[]{} : groups );
+            Operations.GetProperties(this.game, this.id, this.type, null );
         }
 
-        public void GetProperties(string[] groups )
+        public void GetProperties( )
         {
-            Operations.GetProperties(this.game, this.id, this.type, this.PropertyRevision, (groups == null) ? new string[] { } : groups);
+            Operations.GetProperties(this.game, this.id, this.type, this.PropertyRevision);
         }
 
         public void MakeVisibleToSubscribedInterestAreas()

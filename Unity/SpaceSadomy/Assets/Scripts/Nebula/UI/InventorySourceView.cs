@@ -6,7 +6,7 @@ namespace Nebula.UI {
     using UnityEngine.UI;
     using Nebula.Client.Inventory;
     using Common;
-    
+    using Nebula.Mmo.Games;
 
     public class InventorySourceView : BaseView {
 
@@ -19,6 +19,8 @@ namespace Nebula.UI {
         private List<ClientInventoryItem> currentItems = new List<ClientInventoryItem>();
         private ClientInventoryItem selectedItem;
         private IInventoryItemsSource source;
+
+
 
         public override void Setup(object objData) {
             base.Setup(objData);
@@ -41,7 +43,7 @@ namespace Nebula.UI {
 
         private IEnumerator CorUpdateInventory() {
             while (true) {
-                yield return new WaitForSeconds(NetworkGame.INVENTORY_UPDATE_INTERVAL);
+                yield return new WaitForSeconds(Settings.INVENTORY_UPDATE_INTERVAL);
                 this.UpdateInventory();
             }
         }

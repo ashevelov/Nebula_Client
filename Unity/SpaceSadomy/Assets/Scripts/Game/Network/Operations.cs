@@ -3,26 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 
 using Common;
-
+using ExitGames.Client.Photon;
+using Nebula.Mmo.Games;
+using UnityEngine;
 
 namespace Nebula
 {
-    /// <summary>
-    /// The operations.
-    /// </summary>
-    [CLSCompliant(false)]
     public static class Operations
     {
 
+        /*
         public static void SelectCharacter(NetworkGame game, string characterId, string login, string password)
         {
             var data = new Dictionary<byte, object>
-        {
-            { ParameterCode.GameRefId.toByte(), game.LoginInfo.gameRefId },
-            {ParameterCode.CharacterId.toByte(), characterId },
-            {ParameterCode.Login.toByte(), login },
-            {ParameterCode.Password.toByte(), password }
-        };
+            {
+                { ParameterCode.GameRefId.toByte(), game.LoginInfo.gameRefId },
+                {ParameterCode.CharacterId.toByte(), characterId },
+                {ParameterCode.Login.toByte(), login },
+                {ParameterCode.Password.toByte(), password }
+            };
 
             game.SendOperation(OperationCode.SelectCharacter, data, true, Settings.ItemChannel);
         }
@@ -48,6 +47,7 @@ namespace Nebula
         };
             game.SendOperation(OperationCode.Login, data, true, Settings.ItemChannel);
         }
+        */
         /// <summary>
         /// The add interest area.
         /// </summary>
@@ -207,7 +207,10 @@ namespace Nebula
         /// The view Distance Exit.
         /// </param>
         public static void EnterWorld(
-            NetworkGame NetworkGame, string worldName, Dictionary<string, Hashtable> properties, float[] position, float[] rotation, float[] viewDistanceEnter, float[] viewDistanceExit, string gameRefID)
+            NetworkGame NetworkGame, string worldName, 
+            Hashtable properties, float[] position, float[] rotation, float[] viewDistanceEnter, 
+            float[] viewDistanceExit, string gameRefID, string characterId, Workshop workshop,
+            Race race, Hashtable model, string characterName)
         {
             //UnityEngine.Debug.Log("try enter to world: " + worldName);
             var data = new Dictionary<byte, object>
@@ -216,11 +219,16 @@ namespace Nebula
                     { (byte)ParameterCode.Position, position }, 
                     { (byte)ParameterCode.ViewDistanceEnter, viewDistanceEnter }, 
                     { (byte)ParameterCode.ViewDistanceExit, viewDistanceExit },
-                    {(byte)ParameterCode.GameRefId, gameRefID }
+                    {(byte)ParameterCode.GameRefId, gameRefID },
+                    {(byte)ParameterCode.CharacterId, characterId },
+                    { (byte)ParameterCode.WorkshopId, (byte)workshop },
+                    { (byte)ParameterCode.Race, (byte)race},
+                    { (byte)ParameterCode.Model, model },
+                    { (byte)ParameterCode.DisplayName, characterName }
                 };
             if (properties != null)
             {
-                data.Add((byte)ParameterCode.Properties, properties.toHash());
+                data.Add((byte)ParameterCode.Properties, properties);
             }
 
             if (rotation != null)
@@ -273,25 +281,17 @@ namespace Nebula
         /// <param name="knownRevision">
         /// The known revision.
         /// </param>
-        public static void GetProperties(NetworkGame NetworkGame, string itemId, byte itemType, int? knownRevision, string[] groups)
+        public static void GetProperties(NetworkGame NetworkGame, string itemId, byte itemType, int? knownRevision)
         {
 
             var data = new Dictionary<byte, object> { 
-        { (byte)ParameterCode.ItemId, itemId }, 
-        { (byte)ParameterCode.ItemType, itemType } };
+                { (byte)ParameterCode.ItemId, itemId }, 
+                { (byte)ParameterCode.ItemType, itemType }
+            };
 
             if (knownRevision.HasValue)
             {
                 data.Add((byte)ParameterCode.PropertiesRevision, knownRevision.Value);
-            }
-
-            if (groups != null)
-            {
-                data.Add((byte)ParameterCode.Groups, groups);
-            }
-            else
-            {
-                data.Add((byte)ParameterCode.Groups, new string[] { });
             }
 
             NetworkGame.SendOperation(OperationCode.GetProperties, data, true, Settings.ItemChannel);
@@ -364,7 +364,8 @@ namespace Nebula
             {(byte)ParameterCode.ItemId, itemid },
             {(byte)ParameterCode.Action, action },
             {(byte)ParameterCode.Parameters, parameters }
-        };
+            };
+            //Debug.Log(string.Format("<color=green>exec action = {0}</color>", action));
             NetworkGame.SendOperation(OperationCode.ExecAction, data, true, Settings.ItemChannel);
         }
 
@@ -474,12 +475,12 @@ namespace Nebula
         /// <param name="sendReliable">
         /// The send Reliable.
         /// </param>
-        public static void SetProperties(NetworkGame NetworkGame, string itemId, byte? itemType, Dictionary<string, Hashtable> propertiesSet, ArrayList propertiesUnset, bool sendReliable)
+        public static void SetProperties(NetworkGame NetworkGame, string itemId, byte? itemType,Hashtable propertiesSet, ArrayList propertiesUnset, bool sendReliable)
         {
             var data = new Dictionary<byte, object>();
             if (propertiesSet != null)
             {
-                data.Add((byte)ParameterCode.PropertiesSet, propertiesSet.toHash());
+                data.Add((byte)ParameterCode.PropertiesSet, propertiesSet);
             }
 
             if (propertiesUnset != null)

@@ -1,57 +1,48 @@
 ﻿using Common;
-using UnityEngine;
-using System.Text;
-using Game.Space;
-using System.Collections;
-using Game.Network;
 using Nebula;
 using Nebula.UI;
-using System;
+using ServerClientCommon;
+using System.Collections;
+using System.Text;
+using UnityEngine;
 
 public class Asteroid : BaseSpaceObject {
 
     private float updateContentTime;
 
     private float activateDistance;
-    public override void Start()
-    {
+    public override void Start() {
         base.Start();
         this.activateDistance = G.Game.Settings.Inputs.GetValue<float>("ASTEROID_ACTIVATE_DISTANCE", 0f);
     }
 
 
-    private void OnRightMouseClickOnScreenView()
-    {
+    private void OnRightMouseClickOnScreenView() {
         print("Right mouse click on Asteroid: {0}".f(this.Item.Id));
-        if(G.Game.Avatar == null)
-        {
+        if (G.Game.Avatar == null) {
             Dbg.Print("Avatar is null", "NPC");
             return;
         }
-        if(!G.Game.Avatar.Component)
-        {
+        if (!G.Game.Avatar.Component) {
             Dbg.Print("Avatar component is null", "NPC");
             return;
         }
-        if(G.Game.Avatar.ShipDestroyed)
-        {
+        if (G.Game.Avatar.ShipDestroyed) {
             Dbg.Print("Avatar ship destroyed", "NPC");
             return;
         }
-        if(this.Item == null )
-        {
+        if (this.Item == null) {
             Dbg.Print("Asteroid item is null", "NPC");
             return;
         }
         float distance = Vector3.Distance(G.Game.Avatar.Component.Position, this.Position);
-        
-        if(distance > this.activateDistance)
-        {
+
+        if (distance > this.activateDistance) {
             Dbg.Print("Your on distance {0:F1}, but need at least {1:F1}. Need closer to asteroid".f(distance, this.activateDistance), "NPC");
-            G.Game.ServiceMessageReceiver.AddMessage(new Hashtable 
-            { 
-                { GenericEventProps.type, ServiceMessageType.Error.toByte() }, 
-                { GenericEventProps.message, "Your on distance {0:F1}, but need at least {1:F1}. Need closer to asteroid".f(distance, this.activateDistance) } 
+            G.Game.ServiceMessageReceiver.AddMessage(new Hashtable
+            {
+                { (int)SPC.Type, ServiceMessageType.Error.toByte() },
+                { (int)SPC.Message, "Your on distance {0:F1}, but need at least {1:F1}. Need closer to asteroid".f(distance, this.activateDistance) }
             });
             return;
         }
@@ -60,22 +51,19 @@ public class Asteroid : BaseSpaceObject {
     }
 
 
-    public override void Update()
-    {
-        if (this.Item != null)
-        {
+    public override void Update() {
+        if (this.Item != null) {
             this.UpdateProperties();
         }
         base.Update();
     }
 
     public override void OnDestroy() {
-        Debug.LogFormat("Asteroid {0} OnDestroy()", this.Item.Id);
+        //Debug.LogFormat("Asteroid {0} OnDestroy()", this.Item.Id);
     }
 
 
-    void OnTriggerEnter(Collider other)
-    {
+    void OnTriggerEnter(Collider other) {
         print("Asteroid.OnTriggerEnter()");
         //var bso = other.GetComponent<BaseSpaceObject>();
         //if (bso)
@@ -98,20 +86,17 @@ public class Asteroid : BaseSpaceObject {
 
 
 
-    private string GetInfoText()
-    {
+    private string GetInfoText() {
         AsteroidItem aItem = this.Item as AsteroidItem;
         System.Text.StringBuilder sb = new StringBuilder();
         sb.AppendLine("ASTEROID: " + aItem.Name);
-        foreach (var c in aItem.Content)
-        {
+        foreach (var c in aItem.Content) {
             sb.AppendLine(string.Format("{0}:{1}-{2}", c.Material.MaterialType, c.Material.Name, c.Count));
         }
         return sb.ToString();
     }
 
-    void OnTriggerExit(Collider other)
-    {
+    void OnTriggerExit(Collider other) {
         //var bso = other.GetComponent<BaseSpaceObject>();
         //if (bso)
         //{
@@ -127,24 +112,15 @@ public class Asteroid : BaseSpaceObject {
 
     private float additionalContentUpdate;
 
-    private void UpdateProperties()
-    {
-        if (Time.time > this.updateContentTime)
-        {
-            this.updateContentTime = Time.time + 10.0f;
-            this.Item.GetProperties(new string[]{GroupProps.ASTEROID});
-        }
-        if(Time.time > this.additionalContentUpdate)
-        {
-            this.additionalContentUpdate = Time.time + 1;
-            this.Item.GetProperties(new string[] { GroupProps.event_info, GroupProps.DEFAULT_STATE });
+    private void UpdateProperties() {
+        if (Time.time > this.additionalContentUpdate) {
+            this.additionalContentUpdate = Time.time + 5;
+            this.Item.GetProperties();
         }
     }
 
-    void OnDrawGizmos()
-    {
-        if(Application.isPlaying)
-        {
+    void OnDrawGizmos() {
+        if (Application.isPlaying) {
             Gizmos.DrawWireSphere(transform.position, this.activateDistance);
         }
     }

@@ -8,6 +8,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using ServerClientCommon;
+using Nebula.Mmo.Games;
 
 namespace Nebula
 {
@@ -52,72 +54,38 @@ namespace Nebula
             get { return this.component; }
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            Debug.Log("asteroid property setted");
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group)
-            {
-                case GroupProps.ASTEROID:
-                    switch (propName)
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.AsteroidContent:
                     {
-                        case Props.ASTEROID_CONTENT:
-                            {
-                                this.SetAsteroidContent(newValue);
-                            }
-                            break;
-                        case Props.ASTEROID_DATA:
-                            {
-                                this.ReplaceName(newValue.ToString());
-                            }
-                            break;
+                        this.SetAsteroidContent(newValue);
+                    }
+                    break;
+                case PS.AsteroidData:
+                    {
+                        this.ReplaceName(newValue.ToString());
                     }
                     break;
             }
         }
 
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            /*
-            Debug.Log("asteroid properties setted");
-            StringBuilder sb = new StringBuilder();
-            CommonUtils.ConstructHashString(properties, 1, ref sb);
-            Debug.Log(group + " : " + sb.ToString());
-            */
-            base.OnSettedGroupProperties(group, properties);
-            switch (group)
-            {
-                case GroupProps.ASTEROID:
-                    {
-                        foreach (DictionaryEntry entry in properties)
-                        {
-                            if (entry.Key.ToString() == Props.ASTEROID_CONTENT)
-                            {
-                                this.SetAsteroidContent(entry.Value);
-                            }
-                            if (entry.Key.ToString() == Props.ASTEROID_DATA)
-                            {
-                                this.ReplaceName(entry.Value.ToString());
-                            }
-                        }
-                    }
-                    break;
-            }
-        }
 
-        private void SetAsteroidContent(object newValue)
+        public void SetAsteroidContent(object newValue)
         {
             object[] contentArray = newValue as object[];
             this.content.Clear();
             foreach (object obj in contentArray)
             {
                 Hashtable objInfo = obj as Hashtable;
-                int count = objInfo.GetValue<int>(GenericEventProps.count, 0);
-                MaterialInventoryObjectInfo material = new MaterialInventoryObjectInfo(objInfo.GetValue<Hashtable>(GenericEventProps.info, new Hashtable()));
+                int count = objInfo.GetValue<int>((int)SPC.Count, 0);
+                MaterialInventoryObjectInfo material = new MaterialInventoryObjectInfo(objInfo.GetValue<Hashtable>((int)SPC.Info, new Hashtable()));
                 AsteroidContent c = new AsteroidContent { Count = count, Material = material };
                 this.content.Add(c);
             }
+            Events.EvtInventoryItemSourceUpdated(this);
         }
+
+       
 
         public List<AsteroidContent> Content
         {

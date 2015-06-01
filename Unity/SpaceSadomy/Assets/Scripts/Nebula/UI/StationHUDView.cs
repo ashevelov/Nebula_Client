@@ -28,7 +28,7 @@
         }
 
         public void OnExitStationButtonClicked() {
-            G.Game.TryExitWorkshop();
+            Operations.ExitWorkshop(G.Game);
         }
     }
 }

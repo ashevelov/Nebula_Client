@@ -33,7 +33,7 @@ public class DummyEnemy : BaseSpaceObject {
         if (Time.time > this.updatePropertiesNextTime)
         {
             this.updatePropertiesNextTime = Time.time + 5.0f;
-            this.Item.GetProperties(new string[] { GroupProps.SHIP_BASE_STATE,  GroupProps.DEFAULT_STATE, GroupProps.BONUSES });
+            this.Item.GetProperties();
         }
     }
 

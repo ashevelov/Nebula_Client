@@ -12,7 +12,7 @@ public class NetworkTransformInterpolation : MonoBehaviour {
 
     private InterpolationMode mode = InterpolationMode.CUSTOM;
     private float interpolationBackTime = 0.05f;
-    private float extrapolationForwardTime = 0.5f;
+    private float extrapolationForwardTime = 1.5f;
 
     ExtrapolationData[] bufferedStates = new ExtrapolationData[20];
     int statesCount = 0;
@@ -82,6 +82,10 @@ public class NetworkTransformInterpolation : MonoBehaviour {
             return false;
         return true;
     }
+
+    private bool AlmostZero(Vector3 vec) {
+        return Mathf.Abs(vec.x) < 0.00001f && Mathf.Abs(vec.y) < 0.00001f && Mathf.Abs(vec.z) < 0.00001f;
+    }
     void Update()
     {
         if (mode == InterpolationMode.CUSTOM)
@@ -94,11 +98,17 @@ public class NetworkTransformInterpolation : MonoBehaviour {
             }
             else if (_current != null && _prev != null) 
             {
-
+                Vector3 oldPos = transform.position;
                 transform.position = Vector3.SmoothDamp(transform.position, _current.Position, ref smoothVel, extrapolationForwardTime);
                 if (this.CheckVector(_current.Rotation))
                 {
-                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(_current.Rotation), Time.deltaTime * _rotationSpeed);
+                    Vector3 dir = (transform.position - oldPos).normalized;
+
+                    if (!AlmostZero(dir)) {
+                        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * _rotationSpeed); //Quaternion.Slerp(transform.rotation, Quaternion.Euler(_current.Rotation), Time.deltaTime * _rotationSpeed);
+                    } else {
+                        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(_current.Rotation), Time.deltaTime * _rotationSpeed);
+                    }
                 }
 
             }

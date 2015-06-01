@@ -5,8 +5,12 @@
     using Common;
     using Nebula.Client.Inventory.Objects;
     using Nebula.Client;
+    using Nebula.Mmo.Games;
+    using Nebula.UI;
 
     public static class Events {
+
+        public static event System.Action<GameType, GameState> GameBehaviourChanged;
 
         public static event System.Action<string, string, Hashtable> ServerItemPropertiesReceived;
         public static event System.Action<StatusCode> ClientStatusCodeChanged;
@@ -14,6 +18,8 @@
         public static event System.Action<ChatMessage> ChatMessageReceived;
         public static event System.Action<ChatMessage> NewChatMessageAdded;
         public static event System.Action<ClientCooperativeGroup> CooperativeGroupUpdated;
+        public static event System.Action PlayerCharactersReceived;
+        public static event System.Action<IInventoryItemsSource> InventoryItemSourceUpdated;
 
         /// <summary>
         /// Fire when receive response from Request Search Groups
@@ -106,6 +112,24 @@
         public static void EvtSearchGroupResultUpdated() {
             if(SearchGroupResultUpdated != null) {
                 SearchGroupResultUpdated();
+            }
+        }
+
+        public static void EvtGameBehaviourChanged(GameType gameType, GameState gameState) {
+            if(GameBehaviourChanged != null) {
+                GameBehaviourChanged(gameType, gameState);
+            }
+        }
+
+        public static void EvtPlayerCharactersReceived() {
+            if(PlayerCharactersReceived != null) {
+                PlayerCharactersReceived();
+            }
+        }
+
+        public static void EvtInventoryItemSourceUpdated(IInventoryItemsSource source) {
+            if(InventoryItemSourceUpdated != null) {
+                InventoryItemSourceUpdated(source);
             }
         }
     }

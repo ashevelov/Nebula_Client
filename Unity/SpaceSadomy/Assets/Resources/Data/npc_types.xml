@@ -47,6 +47,7 @@
     <input key="phi_speed" value="0.01" type="float" />
     <input key="theta_speed" value="0.01" type="float" />
   </npc_type>
+  
   <npc_type type="point_guard_aggressive" attack_targets="AllPlayers" idle_type="WanderAroundPoint">
     <input key="chase_max_distance" value="200" type="float" />
     <input key="attack_start_distance" value="100" type="float" />
@@ -57,6 +58,18 @@
     <input key="wander_radius" value="500" type="float" />
     <input key="reach_distance" value="10" type="float" />
   </npc_type>
+
+  <npc_type type="test_mob" attack_targets="None" idle_type="WanderAroundPoint">
+    <input key="chase_max_distance" value="200" type="float" />
+    <input key="attack_start_distance" value="100" type="float" />
+    <input key="attack_end_distance" value="150" type="float" />
+    <input key="weapon_type" value="Rocket" type="weapontype" />
+    <input key="speed" value="1.5" type="float" />
+    <input key="rotation_speed" value="0.5" type="float" />
+    <input key="wander_radius" value="100" type="float" />
+    <input key="reach_distance" value="10" type="float" />
+  </npc_type>
+  
   <npc_type type="humans_race_bot_fighter" attack_targets="BotFighterOtherRace" idle_type="PatrolBetweenTwoAreas">
     <input key="chase_max_distance" value="400" type="float" />
     <input key="attack_start_distance" value="200" type="float" />

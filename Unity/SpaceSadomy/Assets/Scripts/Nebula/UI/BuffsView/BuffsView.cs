@@ -5,7 +5,7 @@ namespace Nebula.UI {
     using System.Collections.Generic;
     using Nebula.Client.Res;
     using Common;
-    
+    using Nebula.Mmo.Games;
 
     public class BuffsView : BaseView {
 
@@ -32,7 +32,7 @@ namespace Nebula.UI {
 
         private IEnumerator C_UpdateBuffsView() {
             while(true) {
-                yield return new WaitForSeconds(NetworkGame.BUFFS_UPDATE_INTERVAL);
+                yield return new WaitForSeconds(Settings.BUFFS_UPDATE_INTERVAL);
                 this.UpdateBuffsView();
             }
         }

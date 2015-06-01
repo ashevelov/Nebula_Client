@@ -4,6 +4,8 @@ using Game.Space;
 using Nebula.UI;
 using System.Collections;
 using UnityEngine;
+using ServerClientCommon;
+using Nebula.Mmo.Games;
 
 public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 {
@@ -333,10 +335,10 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <param name="fireProperties"></param>
     public virtual void Fire(BaseSpaceObject target, Hashtable fireProperties)
     {
-        float damage = fireProperties.GetValue<float>(GenericEventProps.actual_damage, 0.0f);
-        bool hitted = fireProperties.GetValue<bool>(GenericEventProps.is_hitted, false);
-        byte workshop = fireProperties.GetValue<byte>(GenericEventProps.workshop, Workshop.DarthTribe.toByte());
-        ShotType shotType = (ShotType)fireProperties.GetValue<byte>(GenericEventProps.shot_type, (byte)0);
+        float damage = fireProperties.GetValue<float>((int)SPC.ActualDamage, 0.0f);
+        bool hitted = fireProperties.GetValue<bool>((int)SPC.IsHitted, false);
+        byte workshop = fireProperties.GetValue<byte>((int)SPC.Workshop, Workshop.DarthTribe.toByte());
+        ShotType shotType = (ShotType)fireProperties.GetValue<byte>((int)SPC.ShotType, (byte)0);
 
         if(shotType == ShotType.Light)
         {
@@ -368,19 +370,17 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     {
         if(this.item.IsMine)
         {
-            if(this.game.State == GameState.WorldEntered)
-            {
+            if(game.CurrentStrategy == GameState.NebulaGameWorldEntered) {
                 MouseOrbitRotateZoom.Get.StartGrayScale();
                 if (MainCanvas.Get) {
                     MainCanvas.Get.Destroy(CanvasPanelType.ControlHUDView);
                     MainCanvas.Get.Destroy(CanvasPanelType.MenuHUDView);
-					MainCanvas.Get.Destroy(CanvasPanelType.ChatView);
-					MainCanvas.Get.Destroy(CanvasPanelType.TargetObjectView);
-					MainCanvas.Get.Destroy(CanvasPanelType.SelectedObjectContextMenuView);
+                    MainCanvas.Get.Destroy(CanvasPanelType.ChatView);
+                    MainCanvas.Get.Destroy(CanvasPanelType.TargetObjectView);
+                    MainCanvas.Get.Destroy(CanvasPanelType.SelectedObjectContextMenuView);
 
                     MainCanvas.Get.ToggleView(CanvasPanelType.ShipDestroyView);
                 }
-                //G.UI.RespView.SetVisible(true);
             }
         }
         else
@@ -479,11 +479,11 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <param name="skillProperties"></param>
     public virtual void UseSkill(Hashtable skillProperties)
     {
-        Hashtable skillData = skillProperties.GetValue<Hashtable>(GenericEventProps.data, new Hashtable());
-        string skillId = skillData.GetValue<string>(GenericEventProps.id, string.Empty);
-        string targetId = skillProperties.GetValue<string>(GenericEventProps.target, string.Empty);
-        byte targetType = skillProperties.GetValue<byte>(GenericEventProps.target_type, (byte)0);
-        bool isOn = skillProperties.GetValue<bool>(GenericEventProps.is_on, true);
+        Hashtable skillData = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
+        string skillId = skillData.GetValue<string>((int)SPC.Id, string.Empty);
+        string targetId = skillProperties.GetValue<string>((int)SPC.Target, string.Empty);
+        byte targetType = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
+        bool isOn = skillProperties.GetValue<bool>((int)SPC.IsOn, true);
 
         switch(skillId)
         {
@@ -678,24 +678,6 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         //called when power field state changed
     }
 
-    public bool TryGetPowerShieldState(Transform target, out bool result)
-    {
-        result = false;
-        if (transform.GetComponent<BaseSpaceObject>())
-        {
-            var spaceObj = transform.GetComponent<BaseSpaceObject>();
-            if (spaceObj.Item != null)
-            {
-                if (spaceObj.Item is IDamagable)
-                {
-                    result = (spaceObj.Item as IDamagable).IsPowerShieldEnabled();
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     public GameObject GetObject()
     {
         if (item != null && item.IsDestroyed == false)
@@ -857,8 +839,8 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     private bool TryGetSkillTarget(Hashtable properties, out BaseSpaceObject result)
     {
         result = null;
-        string targetId = properties.GetValue<string>(GenericEventProps.target, string.Empty);
-        byte targetType = properties.GetValue<byte>(GenericEventProps.target_type, (byte)0);
+        string targetId = properties.GetValue<string>((int)SPC.Target, string.Empty);
+        byte targetType = properties.GetValue<byte>((int)SPC.TargetType, (byte)0);
         Item targetItem;
         if (Game.TryGetItem(targetType, targetId, out targetItem))
         {
@@ -879,12 +861,12 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 
     private void ShowWeaponDamageSkill(Hashtable skillProperties)
     {
-        string targetId = skillProperties.GetValue<string>(GenericEventProps.target, string.Empty);
-        byte targetType = skillProperties.GetValue<byte>(GenericEventProps.target_type, (byte)0);
-        float damage = skillProperties.GetValue<float>(GenericEventProps.actual_damage, 0.0f);
+        string targetId = skillProperties.GetValue<string>((int)SPC.Target, string.Empty);
+        byte targetType = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
+        float damage = skillProperties.GetValue<float>((int)SPC.ActualDamage, 0.0f);
 
         Item targetItem;
-        if (MmoEngine.Get.Game.TryGetItem(targetType, targetId, out targetItem))
+        if (G.Game.TryGetItem(targetType, targetId, out targetItem))
         {
 
             if (ValidateTarget(targetItem))
@@ -1024,15 +1006,12 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     {
         bool isTorpedo = (shotType == ShotType.Heavy);
 
-        bool powerShield;
-        TryGetPowerShieldState(target, out powerShield);
-
         for (int i = 0; i < count; i++)
         {
             GameObject missile = Instantiate(PrefabCache.Get(path), transform.position, transform.rotation) as GameObject;
             if (isHitted)
             {
-                missile.GetComponent<Missile>().SetTarget(target, isTorpedo, 30, powerShield);
+                missile.GetComponent<Missile>().SetTarget(target, isTorpedo, 30, false);
             }
             else
             {
@@ -1043,7 +1022,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 					go.transform.position = target.position + new Vector3(Random.Range(-2.5f, 2.5f),
 					                                                      Random.Range(-2.5f, 2.5f),
 					                                                      Random.Range(-2.5f, 2.5f));
-                    missile.GetComponent<Missile>().SetTarget(go.transform, isTorpedo, 30, powerShield);
+                    missile.GetComponent<Missile>().SetTarget(go.transform, isTorpedo, 30, false);
                     Destroy(go, 8);
                 }
             }
@@ -1069,9 +1048,6 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// </summary>
     private IEnumerator cor_PulseLaser(float time, string path, Transform target, int count, bool isHitted)
     {
-        bool powerShield;
-        TryGetPowerShieldState(target, out powerShield);
-
         for (int i = 0; i < count; i++)
         {
 
@@ -1085,7 +1061,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 
             if (isHitted)
             {
-                PulseLaser.Init(laser_turel.transform, target, powerShield, isHitted);
+                PulseLaser.Init(laser_turel.transform, target, false, isHitted);
             }
             else
             {
@@ -1094,7 +1070,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                                                                       Random.Range(-250, 250),
                                                                       Random.Range(-250, 250));
                 //missile.GetComponent<Missile>().SetTarget(go.transform, 20, powerShield);
-                PulseLaser.Init(laser_turel.transform, go.transform, powerShield, isHitted);
+                PulseLaser.Init(laser_turel.transform, go.transform, false, isHitted);
                 Destroy(go, 8);
             }
             yield return new WaitForSeconds(time);

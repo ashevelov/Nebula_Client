@@ -27,7 +27,7 @@ public class InvasionPortalEnemy : BaseSpaceObject {
         if (Time.time > _updatePropertiesNextTime)
         {
             _updatePropertiesNextTime = Time.time + 1.0f;
-            Item.GetProperties(new string[] { GroupProps.SHIP_BASE_STATE, GroupProps.SHIP_WEAPON_STATE, GroupProps.DEFAULT_STATE, GroupProps.BONUSES });
+            Item.GetProperties();
         }
     }
 }

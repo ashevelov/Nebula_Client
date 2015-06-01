@@ -40,21 +40,21 @@ namespace Nebula {
         }
 
 
-        public void ParseProp(string propName, object value) {
-            switch (propName) {
-                case Props.MECHANICAL_SHIELD_ENABLED:
+        public void ParseProp(byte propName, object value) {
+            switch ((PS)propName) {
+                case PS.MechanicalShieldEnabled:
                     {
                         bool _old = _enabled;
                         _enabled = (bool)value;
                     }
                     break;
-                case Props.MECHANICAL_SHIELD_CURRENT_DAMAGE_ABSORB:
+                case PS.MechanicalShieldCurrentDamageAbsorb:
                     {
                         float _old = _currentDamageAbsorbAllow;
                         _currentDamageAbsorbAllow = (float)value;
                     }
                     break;
-                case Props.MECHANICAL_SHIELD_FULL_DAMAGE_ABSORB:
+                case PS.MechanicalShieldFullDamageAbsorb:
                     {
                         float _old = _fullDamageAbsorb;
                         _fullDamageAbsorb = (float)value;
@@ -65,7 +65,7 @@ namespace Nebula {
 
         public void ParseProps(Hashtable properties) {
             foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
+                ParseProp((byte)entry.Key, entry.Value);
             }
         }
     }

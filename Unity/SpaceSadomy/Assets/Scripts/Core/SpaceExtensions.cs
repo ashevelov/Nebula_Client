@@ -94,6 +94,14 @@ public static class SpaceExtensions {
         return false;
     }
 
+    public static bool GetBool(this Hashtable hashTable, int key) {
+        if (hashTable.ContainsKey(key)) {
+            return (bool)hashTable[key];
+        }
+        Debug.LogError(string.Format("hash not cointains key: {0}", key));
+        return false;
+    }
+
     public static bool TryGetEnum<T>(Hashtable hashTable, string key, out T value)
     {
         value = default(T);

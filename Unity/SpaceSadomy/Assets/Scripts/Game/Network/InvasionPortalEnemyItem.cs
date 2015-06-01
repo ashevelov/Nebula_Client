@@ -1,14 +1,12 @@
-﻿using UnityEngine;
-using System.Collections;
-using Game.Space;
-using Common;
-using Nebula.UI;
-using System;
-using System.Collections.Generic;
+﻿using Common;
 using Nebula.Client;
+using Nebula.Mmo.Games;
+using Nebula.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-namespace Nebula
-{
+namespace Nebula {
     public class InvasionPortalEnemyItem : NpcItem, IDamagable, IBonusHolder,
         Nebula.UI.ISelectedObjectContextMenuViewSource {
 
@@ -16,22 +14,18 @@ namespace Nebula
         private ForeignShip _ship;
         private ActorBonuses bonuses;
 
-        public override BaseSpaceObject Component
-        {
+        public override BaseSpaceObject Component {
             get { return _component; }
         }
 
-        public ForeignShip Ship
-        {
-            get
-            {
+        public ForeignShip Ship {
+            get {
                 return _ship;
             }
         }
 
         public InvasionPortalEnemyItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
-            : base(id, type, game, subType, name)
-        {
+            : base(id, type, game, subType, name) {
             _ship = new ForeignShip(this);
             this.bonuses = new ActorBonuses();
         }
@@ -44,153 +38,119 @@ namespace Nebula
             _component.Initialize(Game, this);
         }*/
 
-        public override void Create(GameObject obj)
-        {
+        public override void Create(GameObject obj) {
             base.Create(obj);
             _component = _view.AddComponent<InvasionPortalEnemy>();
             _component.Initialize(Game, this);
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group)
-            {
-                case GroupProps.SHIP_BASE_STATE:
-                    _ship.ParseProp(propName, newValue);
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.Model:
+                case PS.MaxHealth:
+                case PS.CurrentHealth:
+                case PS.Destroyed:
+                case PS.CurrentLinearSpeed:
+                case PS.ModelInfo:
+                case PS.Workshop:
+                    _ship.ParseProp(key, newValue);
                     break;
-                case GroupProps.DEFAULT_STATE:
+                case PS.BaseDamage:
+                case PS.OptimalDistance:
+                case PS.WeaponRange:
+                case PS.ProbNear2OptimalDistance:
+                case PS.ProbFar2OptimalDistance:
+                case PS.MaxHitSpeed:
+                case PS.MaxFireDistance:
+                    _ship.Weapon.ParseProp(key, newValue);
                     break;
-                case GroupProps.SHIP_WEAPON_STATE:
-                    _ship.Weapon.ParseProp(propName, newValue);
-                    break;
-                case GroupProps.BONUSES:
+                case PS.Bonuses:
                     {
-                        if (propName == Props.BONUSES)
-                        {
-                            Hashtable bons = newValue as Hashtable;
-                            if (bons != null)
-                            {
-                                this.bonuses.Replace(bons);
-                            }
+                        Hashtable bons = newValue as Hashtable;
+                        if(bons != null ) {
+                            bonuses.Replace(bons);
                         }
                     }
                     break;
+
             }
         }
 
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            base.OnSettedGroupProperties(group, properties);
-            switch (group)
-            {
-                case GroupProps.SHIP_BASE_STATE:
-                    _ship.ParseProps(properties);
-                    break;
-                case GroupProps.SHIP_WEAPON_STATE:
-                    _ship.Weapon.ParseProps(properties);
-                    break;
-                case GroupProps.BONUSES:
-                    {
-                        Hashtable bons = properties.GetValue<Hashtable>(Props.BONUSES, new Hashtable());
-                        this.bonuses.Replace(bons);
-                    }
-                    break;
-            }
-        }
-        public bool IsDead()
-        {
+        public bool IsDead() {
             return _ship.Destroyed;
         }
-        public override void UseSkill(Hashtable skillProperties)
-        {
-            if (Component && (false == IsDead()))
-            {
+        public override void UseSkill(Hashtable skillProperties) {
+            if (Component && (false == IsDead())) {
                 Component.UseSkill(skillProperties);
             }
         }
-        public bool IsPowerShieldEnabled()
-        {
+        public bool IsPowerShieldEnabled() {
             return false;
         }
 
 
-        public float GetHealth()
-        {
+        public float GetHealth() {
             return _ship.Health;
         }
 
-        public float GetMaxHealth()
-        {
+        public float GetMaxHealth() {
             return _ship.MaxHealth;
         }
 
 
 
 
-        public float GetHealth01()
-        {
+        public float GetHealth01() {
             if (_ship.MaxHealth == 0.0f)
                 return 0.0f;
             return Mathf.Clamp01(_ship.Health / _ship.MaxHealth);
         }
 
 
-        public float GetOptimalDistance()
-        {
+        public float GetOptimalDistance() {
             return _ship.Weapon.OptimalDistance;
         }
 
-        public float GetRange()
-        {
+        public float GetRange() {
             return _ship.Weapon.Range;
         }
 
-        public float GetFarHitProb()
-        {
+        public float GetFarHitProb() {
             return _ship.Weapon.FarProb;
         }
 
-        public float GetNearHitProb()
-        {
+        public float GetNearHitProb() {
             return _ship.Weapon.NearProb;
         }
 
-        public float GetMaxHitSpeed()
-        {
+        public float GetMaxHitSpeed() {
             return _ship.Weapon.MaxHitSpeed;
         }
 
-        public float GetMaxFireDistance()
-        {
+        public float GetMaxFireDistance() {
             return _ship.Weapon.MaxFireDistance;
         }
 
-        public float GetSpeed()
-        {
+        public float GetSpeed() {
             return _ship.Speed;
         }
 
 
-        public float GetNearDist()
-        {
+        public float GetNearDist() {
             Debug.LogError("not implemented 5");
             return 0;
         }
 
-        public float GetFarDist()
-        {
+        public float GetFarDist() {
             Debug.LogError("not implemented 6");
             return 0;
         }
 
-        public ActorBonuses Bonuses
-        {
+        public ActorBonuses Bonuses {
             get { return this.bonuses; }
         }
 
-        public override void AdditionalUpdate()
-        {
+        public override void AdditionalUpdate() {
 
         }
 

@@ -5,18 +5,20 @@ using Common;
 using System.Collections.Generic;
 using Nebula.Game.Network.Items;
 using Nebula;
+using Nebula.Mmo.Games;
+using Nebula.Client.Res;
 
 public class LevelGame : Game.Space.Singleton<LevelGame> {
 
     void Start()
     {
-        bool existWorld = MmoEngine.Get.Game.HasWorld;
+        bool existWorld = G.Game.Engine.GameData.HasWorld;
         if(existWorld )
         {
-            switch(MmoEngine.Get.Game.World.LevelType)
+            switch(G.Game.Engine.GameData.World.LevelType)
             {
                 case LevelType.Space:
-                    MmoEngine.Get.Game.Avatar.GetProperties(new string[]{});
+                    G.Game.Avatar.GetProperties();
                     StartCoroutine(CreatePlayerShip());
                     break;
                 case LevelType.Map:
@@ -35,7 +37,7 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
     private IEnumerator CreatePlayerShip()
     {
         Debug.Log("<color=orange>Starting Coroutine for CREATING MY PLAYER SHIP</color>");
-        var game = MmoEngine.Get.Game;
+        var game = G.Game;
         while (game.Ship.ShipModel.HasAllModules() == false)
         {
             Debug.Log("Wait FOR MY PLAYER MODULES");
@@ -54,9 +56,9 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
             Debug.Log("EXCEPTION");
             throw new System.Exception("must be all 5 modules!!");
         }
-        MmoEngine.Get.Game.Avatar.Create(ShipModel.Init(prefabs, true));
+        G.Game.Avatar.Create(ShipModel.Init(prefabs, true));
         G.Game.SetSpawnPosition(G.PlayerItem);
-        MouseOrbitRotateZoom.Get.SetTarget(MmoEngine.Get.Game.Avatar.View.transform);
+        MouseOrbitRotateZoom.Get.SetTarget(G.Game.Avatar.View.transform);
     }
 
     private IEnumerator _CreateActorShip(NetworkGame engine, Item actor)
@@ -65,9 +67,9 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
         {
             //Debug.Log("CreateActorShip: Wait for player Avatar");
             yield return new WaitForEndOfFrame();
-        } while (MmoEngine.Get.Game.Avatar == null);
+        } while (G.Game.Avatar == null);
 
-        while (MmoEngine.Get.Game.ExistAvatarView == false)
+        while (G.Game.ExistAvatarView == false)
         {
             //Debug.Log("CreateActorShip: Wait for player avatar view");
             yield return new WaitForEndOfFrame();
@@ -94,12 +96,6 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
                             yield return new WaitForEndOfFrame();
                         invasionPortal.Create(Instantiate(GetShipModelPrefab(invasionPortal.Model)) as GameObject);
                     }
-                    else if (actor is InvasionPortalEnemyItem) {
-                        InvasionPortalEnemyItem enemy = actor as InvasionPortalEnemyItem;
-                        while (enemy.Ship.Model == 0)
-                            yield return new WaitForEndOfFrame();
-                        enemy.Create(Instantiate(GetShipModelPrefab(1)) as GameObject);
-                    }
                     else if (actor is DummyEnemyItem)
                     {
                         DummyEnemyItem de = actor as DummyEnemyItem;
@@ -122,13 +118,13 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
                             yield return new WaitForEndOfFrame();
                         }
 
-                        Dictionary<ShipModelSlotType, string> prefabs = new Dictionary<ShipModelSlotType, string>();
-                        foreach (DictionaryEntry entry in sItem.Ship.ModelInfo)
-                        {
-                            prefabs.Add((ShipModelSlotType)(byte)entry.Key, (string)entry.Value);
-                        }
+                        //Dictionary<ShipModelSlotType, string> prefabs = new Dictionary<ShipModelSlotType, string>();
+                        //foreach (DictionaryEntry entry in sItem.Ship.ModelInfo)
+                        //{
+                        //    prefabs.Add((ShipModelSlotType)(byte)(int)entry.Key, (string)entry.Value);
+                        //}
 
-                        sItem.Create(ShipModel.Init(prefabs, false));
+                        sItem.Create(ShipModel.Init(GetPrefabs(sItem.Ship.ModelInfo), false));
                     }
                     else if (actor is ProtectionStationItem)
                     {
@@ -172,6 +168,16 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
                 break;
         }
 
+    }
+
+    private Dictionary<ShipModelSlotType, string> GetPrefabs(Hashtable input) {
+        Dictionary<ShipModelSlotType, string> result = new Dictionary<ShipModelSlotType, string>();
+        foreach(DictionaryEntry entry in input) {
+            ShipModelSlotType type = (ShipModelSlotType)(byte)(int)entry.Key;
+            ResModuleData moduleData = DataResources.Instance.ModuleData(entry.Value.ToString());
+            result.Add(type, moduleData.Model);
+        }
+        return result;
     }
 
     //create chest view in scene

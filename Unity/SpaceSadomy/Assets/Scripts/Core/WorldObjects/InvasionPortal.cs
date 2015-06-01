@@ -1,37 +1,30 @@
-﻿using UnityEngine;
-using System.Collections;
-using Common;
+﻿using Common;
+using UnityEngine;
 
 public class InvasionPortal : BaseSpaceObject {
 
     private float _updatePropertiesNextTime;
 
-    public override void Start()
-    {
+    public override void Start() {
         base.Start();
     }
 
-    public override void OnDestroy()
-    {
+    public override void OnDestroy() {
 
     }
 
-    public override void Update()
-    {
-        if (Item != null)
-        {
+    public override void Update() {
+        if (Item != null) {
             UpdateProperties();
         }
         base.Update();
     }
 
 
-    private void UpdateProperties()
-    {
-        if (Time.time > _updatePropertiesNextTime)
-        {
+    private void UpdateProperties() {
+        if (Time.time > _updatePropertiesNextTime) {
             _updatePropertiesNextTime = Time.time + 1.0f;
-            Item.GetProperties(new string[] { GroupProps.SHIP_BASE_STATE});
+            Item.GetProperties();
         }
     }
 }

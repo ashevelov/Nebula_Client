@@ -8,7 +8,7 @@ public class ShipDestroyPanel : Nebula.UI.BaseView
 
     public void ToStation()
     {
-        G.Game.TryEnterWorkshop(WorkshopStrategyType.Angar);
+        G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
         MainCanvas.Get.Destroy(CanvasPanelType.ShipDestroyView);
     }
 }

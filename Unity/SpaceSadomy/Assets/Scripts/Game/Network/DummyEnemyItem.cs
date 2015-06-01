@@ -3,6 +3,7 @@ using Game.Space;
 using System.Collections;
 using UnityEngine;
 using Nebula.Client;
+using Nebula.Mmo.Games;
 
 namespace Nebula
 {
@@ -36,49 +37,25 @@ namespace Nebula
             this.component.Initialize(this.Game, this);
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group)
-            {
-                case GroupProps.SHIP_BASE_STATE:
-                    this.ship.ParseProp(propName, newValue);
-                    break;
-                case GroupProps.DEFAULT_STATE:
-                    break;
-                case GroupProps.SHIP_WEAPON_STATE:
-                    break;
-                case GroupProps.BONUSES:
-                    {
-                        if (propName == Props.BONUSES)
-                        {
-                            Hashtable bons = newValue as Hashtable;
-                            if (bons != null)
-                            {
-                                this.bonuses.Replace(bons);
-                            }
-                        }
-                    }
-                    break;
-            }
-        }
 
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            base.OnSettedGroupProperties(group, properties);
-            switch (group)
-            {
-                case GroupProps.SHIP_BASE_STATE:
-                    this.ship.ParseProps(properties);
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.Model:
+                case PS.MaxHealth:
+                case PS.CurrentHealth:
+                case PS.Destroyed:
+                case PS.CurrentLinearSpeed:
+                case PS.ModelInfo:
+                case PS.Workshop:
+                    ship.ParseProp(key, newValue);
                     break;
-                case GroupProps.SHIP_WEAPON_STATE:
-                    break;
-                case GroupProps.BONUSES:
+                case PS.Bonuses:
                     {
-                        Hashtable bonusesProps = properties.GetValue<Hashtable>(Props.BONUSES, new Hashtable());
-                        this.bonuses.Replace(bonusesProps);
+                        Hashtable bonusesProps = newValue as Hashtable;
+                        bonuses.Replace(bonusesProps);
                     }
                     break;
+
             }
         }
 

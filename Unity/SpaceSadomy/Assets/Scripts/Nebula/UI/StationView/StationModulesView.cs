@@ -6,7 +6,7 @@ namespace Nebula.UI {
     using System.Collections.Generic;
     using Nebula.Client;
     using Common;
-    
+    using Nebula.Mmo.Games;
 
     public class StationModulesView : MonoBehaviour {
 
@@ -44,7 +44,7 @@ namespace Nebula.UI {
 
         private IEnumerator C_UpdateModules() {
             while(true) {
-                yield return new WaitForSeconds(NetworkGame.STATION_UPDATE_INTERVAL);
+                yield return new WaitForSeconds(Settings.STATION_UPDATE_INTERVAL);
                 this.UpdateModules();
             }
         }

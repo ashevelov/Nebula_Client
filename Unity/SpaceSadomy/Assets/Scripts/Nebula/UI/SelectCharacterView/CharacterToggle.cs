@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Game.Space;
 using Common;
 using Nebula.Client;
+using Nebula.Mmo.Games;
 
 namespace Nebula.UI {
     public class CharacterToggle : MonoBehaviour {
@@ -32,7 +33,7 @@ namespace Nebula.UI {
             this.CharacterRaceImage.overrideSprite = SpriteCache.RaceSprite((Race)this.character.Race);
             this.CharacterRace.text = StringCache.Race((Race)this.character.Race);
             this.CharacterWorkshop.text = StringCache.Workshop((Workshop)this.character.HomeWorkshop);
-            this.CharacterLevel.text = this.character.CharacterLevel.ToString();
+            //this.CharacterLevel.text = this.character.CharacterLevel.ToString();
 
             if (G.Game == null) {
                 return;
@@ -58,7 +59,7 @@ namespace Nebula.UI {
             }
 
             if (!G.Game.IsSelectedCharacter(this.character.CharacterId)) {
-                NRPC.SelectCharacter(this.character.CharacterId, G.Game.LoginInfo.loginName, G.Game.LoginInfo.password);
+                SelectCharacterGame.SelectCharacter(MmoEngine.Get.LoginGame.GameRefId, character.CharacterId);
             } else if (G.Game.IsSelectedCharacter(this.character.CharacterId) && (!this.SelectionToggle.isOn)) {
                 this.SelectionToggle.isOn = true;
             } else if (!G.Game.IsSelectedCharacter(this.character.CharacterId) && (this.SelectionToggle.isOn)) {

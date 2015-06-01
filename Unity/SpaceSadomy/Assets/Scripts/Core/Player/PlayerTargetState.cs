@@ -68,20 +68,20 @@ namespace Nebula {
         }
 
 
-        public void ParseProp(string propName, object value) {
-            switch (propName) {
-                case Props.DEFAULT_STATE_HAS_TARGET:
+        public void ParseProp(byte propName, object value) {
+            switch ((PS)propName) {
+                case PS.HasTarget:
                     {
                         _hasTarget = (bool)value;
                         //Debug.Log("receive target value: " + _hasTarget);
                     }
                     break;
-                case Props.DEFAULT_STATE_TARGET_ID:
+                case PS.TargetId:
                     {
                         _targetId = (string)value;
                     }
                     break;
-                case Props.DEFAULT_STATE_TARGET_TYPE:
+                case PS.TargetType:
                     {
                         _targetType = (byte)value;
                     }
@@ -104,7 +104,7 @@ namespace Nebula {
 
             if (_hasTarget && !string.IsNullOrEmpty(_targetId)) {
                 if (oldHasTarget == false || oldTargetId != _targetId) {
-                    if (MmoEngine.Get.Game.TryGetItem(_targetType, _targetId, out _targetItem) == false) {
+                    if (G.Game.TryGetItem(_targetType, _targetId, out _targetItem) == false) {
                         Debug.Log("target not founded");
                         _targetItem = null;
                     }
@@ -124,13 +124,13 @@ namespace Nebula {
             string oldTargetId = _targetId;
 
             foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
+                ParseProp((byte)entry.Key, entry.Value);
             }
 
             //try find target item
             if (_hasTarget && !string.IsNullOrEmpty(_targetId)) {
                 if (oldHasTarget == false || oldTargetId != _targetId) {
-                    if (MmoEngine.Get.Game.TryGetItem(_targetType, _targetId, out _targetItem) == false) {
+                    if (G.Game.TryGetItem(_targetType, _targetId, out _targetItem) == false) {
                         Debug.Log("target not founded");
                         _targetItem = null;
                     }
@@ -147,11 +147,11 @@ namespace Nebula {
         }
 
         public Hashtable GetTargetInfo() {
-            var game = MmoEngine.Get.Game;
+            var game = G.Game;
 
             Hashtable result = new Hashtable();
             if (HasTargetAndTargetGameObjectValid) {
-                MyItem avatar = MmoEngine.Get.Game.Avatar;
+                MyItem avatar = G.Game.Avatar;
                 string name = string.Format("{0}({1})", _targetItem.Id.Substring(0, 3), _targetItem.Name);
                 float distance = Vector3.Distance(avatar.GetPosition(), _targetItem.GetPosition());
                 float speed = (_targetItem is IDamagable) ? ((IDamagable)_targetItem).GetSpeed() : 0;
@@ -199,8 +199,8 @@ namespace Nebula {
                     {
                         ForeignPlayerItem fPlayer = this.Item as ForeignPlayerItem;
                         if (fPlayer != null) {
-                            Race fRace = (Race)(byte)fPlayer.GetProperty(GroupProps.DEFAULT_STATE, Props.DEFAULT_STATE_RACE);
-                            Race thisRace = (Race)(byte)this._owner.GetProperty(GroupProps.DEFAULT_STATE, Props.DEFAULT_STATE_RACE);
+                            Race fRace = fPlayer.Race;
+                            Race thisRace = _owner.Race;
                             if (thisRace == fRace)
                                 return ClassRelation.Friend;
                         }

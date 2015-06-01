@@ -1,7 +1,5 @@
-﻿using UnityEngine;
+﻿using Common;
 using System.Collections;
-using Common;
-using Game.Network;
 
 namespace Nebula {
     public class AIStateData : IServerPropertyParser {
@@ -22,9 +20,9 @@ namespace Nebula {
         public PlayerState ActionState { get { return _actionState; } }
 
 
-        public void ParseProp(string propName, object value) {
-            switch (propName) {
-                case Props.SHIP_BASE_STATE_CONTROL_STATE:
+        public void ParseProp(byte propName, object value) {
+            switch ((PS)propName) {
+                case PS.ControlState: 
                     _prevControlState = _controlState;
                     _controlState = (PlayerState)(byte)value;
                     if (_owner.Component) {
@@ -39,7 +37,7 @@ namespace Nebula {
 
         public void ParseProps(Hashtable properties) {
             foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
+                ParseProp((byte)entry.Key, entry.Value);
             }
         }
 

@@ -20,11 +20,11 @@
             this.LevelText.text = module.level.ToString();
 
             //set color of level according to player level
-            if(G.Game.PlayerInfo.Level >= module.level) {
-                this.LevelText.color = Color.green;
-            } else {
-                this.LevelText.color = Color.red;
-            }
+            //if(G.Game.PlayerInfo.Level >= module.level) {
+            //    this.LevelText.color = Color.green;
+            //} else {
+            //    this.LevelText.color = Color.red;
+            //}
 
             //set module icon
             this.ModuleIcon.overrideSprite = SpriteCache.SpriteModule(module.templateId);

@@ -3,6 +3,7 @@ using System.Collections;
 using Common;
 using UnityEngine.UI;
 using Nebula.Client.Res;
+using Nebula.Mmo.Games;
 
 namespace Nebula.UI {
     public class SelectWorkshopView : BaseView {
@@ -62,7 +63,8 @@ namespace Nebula.UI {
         }
 
         public void OnCreateCharacterButtonClicked() {
-            NRPC.AddCharacter(this.raceRes.Id, this.selectedWorkshop);
+            //NRPC.AddCharacter(this.raceRes.Id, this.selectedWorkshop);
+            SelectCharacterGame.CreateCharacter(MmoEngine.Get.LoginGame.GameRefId, raceRes.Id, selectedWorkshop, "");
             MainCanvas.Get.Show(CanvasPanelType.SelectCharacterView);
             MainCanvas.Get.Show(CanvasPanelType.CreateCharacterOrPlayView);
             MainCanvas.Get.Destroy(CanvasPanelType.SelectWorkshopView);

@@ -141,6 +141,7 @@ public class ShipModel : MonoBehaviour {
 	                break;
 	        }
 		}
+        //Debug.LogFormat("try instantiate: {0}", t);
         GameObject go = Instantiate(Resources.Load(t) as GameObject) as GameObject;
         go.transform.parent = parent;
         if (hungar || !engineParticles)

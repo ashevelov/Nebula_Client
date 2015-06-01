@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Nebula.Client;
+using Nebula.Mmo.Games;
 
 namespace Nebula
 {
@@ -85,42 +86,16 @@ namespace Nebula
             base.DestroyView();
         }
 
-
-        public override void OnSettedGroupProperties(string group, System.Collections.Hashtable properties)
-        {
-            base.OnSettedGroupProperties(group, properties);
-
-            if (group == GroupProps.target_info)
-            {
-                foreach (DictionaryEntry entry in properties)
-                {
-                    object oldValue = this.GetProperty(group, entry.Key.ToString());
-                    this.OnSettedProperty(group, entry.Key.ToString(), entry.Value, oldValue);
-                }
-            }
-        }
-
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-
-            switch (group)
-            {
-                case GroupProps.target_info:
-                    {
-                        switch (propName)
-                        {
-                            case Props.has_target:
-                                this.targetInfo.SetHasTarget((bool)newValue);
-                                break;
-                            case Props.target_id:
-                                this.targetInfo.SetTargetId((string)newValue);
-                                break;
-                            case Props.target_type:
-                                this.targetInfo.SetTargetType((byte)newValue);
-                                break;
-                        }
-                    }
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.HasTarget:
+                    targetInfo.SetHasTarget((bool)newValue);
+                    break;
+                case PS.TargetId:
+                    targetInfo.SetTargetId((string)newValue);
+                    break;
+                case PS.TargetType:
+                    targetInfo.SetTargetType((byte)newValue);
                     break;
             }
         }

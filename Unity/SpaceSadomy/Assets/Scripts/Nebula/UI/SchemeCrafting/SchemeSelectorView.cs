@@ -24,10 +24,7 @@
                 Debug.LogWarning("Not found scheme items");
                 return;
             } else {
-                typedItems = new Dictionary<string, ClientInventoryItem>();
-                foreach(DictionaryEntry entry in (G.Game.Inventory.Items[InventoryObjectType.Scheme] as Hashtable)) {
-                    typedItems.Add(entry.Key.ToString(), entry.Value as ClientInventoryItem);
-                }
+                typedItems = G.Game.Inventory[InventoryObjectType.Scheme];
             }
 
             List<ClientInventoryItem> slottedItems = new List<ClientInventoryItem>();

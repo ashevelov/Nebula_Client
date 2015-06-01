@@ -25,7 +25,7 @@ public class Station : MonoBehaviour
             uiInstance.GetComponent<Nebula.UI.LocalScreenObjectView>().Setup(this.transform, "Station", ItemTypeName.STATION, () => {
                 ConfirmationDialog.Setup("Go to station?", () =>
                 {
-                    G.Game.TryEnterWorkshop(WorkshopStrategyType.Angar);
+                    G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
                 });
             });
         }

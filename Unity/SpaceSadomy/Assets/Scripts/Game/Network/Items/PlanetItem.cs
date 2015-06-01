@@ -1,71 +1,43 @@
-﻿using UnityEngine;
-using System.Collections;
-using Game.Network;
-using Common;
-using Game.Space;
+﻿using Common;
 using Nebula.Client;
+using Nebula.Mmo.Games;
+using System.Collections;
+using UnityEngine;
 
-namespace Nebula.Game.Network.Items
-{
-    public class PlanetItem : NpcItem
-    {
+namespace Nebula.Game.Network.Items {
+    public class PlanetItem : NpcItem {
         private readonly ClientPlanetInfo planetInfo;
 
         public PlanetItem(string id, byte type, NetworkGame game, string name)
-            : base(id, type, game, BotItemSubType.Planet, name)
-        {
+            : base(id, type, game, BotItemSubType.Planet, name) {
             this.planetInfo = new ClientPlanetInfo();
         }
 
-        public override void Create(GameObject obj)
-        {
+        public override void Create(GameObject obj) {
             base.Create(obj);
             this.SetComponent(this.View.AddComponent<Planet>());
             this.Component.Initialize(this.Game, this);
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch(group)
-            {
-                case GroupProps.planet:
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.PlanetInfo:
                     {
-                        switch(propName)
-                        {
-                            case Props.planet_info:
-                                {
-                                    Hashtable info = newValue as Hashtable;
-                                    if(info != null )
-                                    {
-                                        this.planetInfo.ParseInfo(info);
-                                    }
-                                }
-                                break;
+                        Hashtable info = newValue as Hashtable;
+                        if(info != null ) {
+                            planetInfo.ParseInfo(info);
                         }
                     }
                     break;
             }
         }
 
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            base.OnSettedGroupProperties(group, properties);
-            foreach(DictionaryEntry propertyEntry in properties)
-            {
-                string propertyName = propertyEntry.Key.ToString();
-                var oldPropertyValue = this.GetProperty(group, propertyName);
-                this.OnSettedProperty(group, propertyName, propertyEntry.Value, oldPropertyValue);
-            }
-        }
 
-        public ClientPlanetInfo PlanetInfo()
-        {
+        public ClientPlanetInfo PlanetInfo() {
             return this.planetInfo;
         }
 
-        public override void DestroyView()
-        {
+        public override void DestroyView() {
             base.DestroyView();
         }
 

@@ -4,7 +4,6 @@ using System.Collections;
 public interface IDamagable {
 
     bool IsDead();
-    bool IsPowerShieldEnabled();
     float GetHealth();
     float GetMaxHealth();
     float GetHealth01();

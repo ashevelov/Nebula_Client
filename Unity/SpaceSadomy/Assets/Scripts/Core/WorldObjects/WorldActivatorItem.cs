@@ -3,6 +3,8 @@ using System.Collections;
 using Common;
 using Game.Network;
 using Nebula;
+using ServerClientCommon;
+using Nebula.Mmo.Games;
 
 namespace Game.Space
 {
@@ -41,47 +43,38 @@ namespace Game.Space
             get { return this.component; }
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group)
-            {
-                case "me":
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+            switch((PS)key) {
+                case PS.Info:
                     {
-                        switch (propName)
-                        {
-                            case "info":
-                                {
-                                    Hashtable infoProperties = newValue as Hashtable;
-                                    foreach (DictionaryEntry entry in infoProperties)
+                        Hashtable infoProperties = newValue as Hashtable;
+                        foreach (DictionaryEntry entry in infoProperties) {
+                            switch ((SPC)(int)entry.Key) {
+                                case SPC.Radius:
                                     {
-                                        switch (entry.Key.ToString())
-                                        {
-                                            case "radius":
-                                                {
-                                                    radius = (float)entry.Value;
-                                                    this.OnActivatorRadiusPropertyReceived();
-                                                }
-                                                break;
-                                            case "active":
-                                                {
-                                                    active = (bool)entry.Value;
-                                                }
-                                                break;
-                                            case "type":
-                                                {
-                                                    activatorType = (int)entry.Value;
-                                                }
-                                                break;
-                                        }
+                                        radius = (float)entry.Value;
+                                        this.OnActivatorRadiusPropertyReceived();
                                     }
-                                }
-                                break;
+                                    break;
+                                case SPC.Active:
+                                    {
+                                        active = (bool)entry.Value;
+                                    }
+                                    break;
+                                case SPC.Type:
+                                    {
+                                        activatorType = (int)entry.Value;
+                                    }
+                                    break;
+                            }
                         }
+                        break;
+
                     }
-                    break;
             }
         }
+
+
 
         private void OnActivatorRadiusPropertyReceived()
         {
@@ -95,16 +88,6 @@ namespace Game.Space
                 }
                 sphereCollider.radius = this.Radius * .5f;
                 //Debug.Log("set activator sphere radius to: {0}".f(sphereCollider.radius));
-            }
-        }
-
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            base.OnSettedGroupProperties(group, properties);
-            foreach (DictionaryEntry entry in properties)
-            {
-                object oldProp = this.GetProperty(group, entry.Key.ToString());
-                this.OnSettedProperty(group, entry.Key.ToString(), entry.Value, oldProp);
             }
         }
 
@@ -143,7 +126,7 @@ namespace Game.Space
             if (Time.time > this.nextUpdateTime)
             {
                 this.nextUpdateTime = Time.time + 5.0f;
-                this.GetProperties(new string[] { "me", GroupProps.event_info, GroupProps.DEFAULT_STATE });
+                this.GetProperties();
             }
         }
     }

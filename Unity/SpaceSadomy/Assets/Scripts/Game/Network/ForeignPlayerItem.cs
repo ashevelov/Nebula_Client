@@ -13,6 +13,8 @@ namespace Nebula
     using System;
     using System.Collections.Generic;
     using Nebula.Client;
+    using Nebula.Mmo.Games;
+
 
     //Item for other human players
     public class ForeignPlayerItem : ForeignItem, IDamagable, IBonusHolder, ICombatObjectInfo, Nebula.UI.ISelectedObjectContextMenuViewSource {
@@ -53,75 +55,41 @@ namespace Nebula
             get { return _component; }
         }
 
-        public override void OnSettedProperty(string group, string propName, object newValue, object oldValue)
-        {
-            base.OnSettedProperty(group, propName, newValue, oldValue);
-            switch (group)
-            {
-                case GroupProps.SHIP_BASE_STATE:
-                    _ship.ParseProp(propName, newValue);
+        public override void OnPropertySetted(byte key, object oldValue, object newValue) {
+           switch((PS)key) {
+                case PS.Model:
+                case PS.MaxHealth:
+                case PS.CurrentHealth:
+                case PS.Destroyed:
+                case PS.CurrentLinearSpeed:
+                case PS.ModelInfo:
+                case PS.Workshop:
+                    _ship.ParseProp(key, newValue);
                     break;
-                case GroupProps.SHIP_WEAPON_STATE:
-                    _ship.Weapon.ParseProp(propName, newValue);
+                case PS.BaseDamage:
+                case PS.OptimalDistance:
+                case PS.WeaponRange:
+                case PS.ProbNear2OptimalDistance:
+                case PS.ProbFar2OptimalDistance:
+                case PS.MaxHitSpeed:
+                case PS.MaxFireDistance:
+                    _ship.Weapon.ParseProp(key, newValue);
                     break;
-                case GroupProps.SHIP_MODULES:
-                    modules.ParseProp(propName, newValue);
+                case PS.ModulePrefabs:
+                    modules.ParseProp(key, newValue);
                     break;
-                case GroupProps.BONUSES:
+                case PS.Bonuses:
                     {
-                        if (propName == Props.BONUSES)
-                        {
-                            Hashtable bons = newValue as Hashtable;
-                            if (bons != null)
-                            {
-                                this.bonuses.Replace(bons);
-                            }
+                        Hashtable bons = newValue as Hashtable;
+                        if(bons != null ) {
+                            bonuses.Replace(bons);
                         }
                     }
                     break;
-                case GroupProps.DEFAULT_STATE:
-                    if (propName == Props.DEFAULT_STATE_LEVEL)
-                        this.level = (int)newValue;
+                case PS.Level:
+                    level = (int)newValue;
                     break;
-            }
-        }
 
-        public override void OnSettedGroupProperties(string group, Hashtable properties)
-        {
-            base.OnSettedGroupProperties(group, properties);
-            switch (group)
-            {
-                case GroupProps.SHIP_BASE_STATE:
-                    {
-                        _ship.ParseProps(properties);
-                    }
-                    break;
-                case GroupProps.SHIP_WEAPON_STATE:
-                    {
-                        _ship.Weapon.ParseProps(properties);
-                    }
-                    break;
-                case GroupProps.POWER_FIELD_SHIELD_STATE:
-                    {
-                        _ship.PowerField.ParseProps(properties);
-                    }
-                    break;
-                case GroupProps.SHIP_MODULES:
-                    {
-                        modules.ParseProps(properties);
-                    }
-                    break;
-                case GroupProps.BONUSES:
-                    {
-                        Hashtable bons = properties.GetValue<Hashtable>(Props.BONUSES, new Hashtable());
-                        this.bonuses.Replace(bons);
-                    }
-                    break;
-                case GroupProps.DEFAULT_STATE:
-                    foreach (DictionaryEntry entry in properties)
-                        if (entry.Key.ToString() == Props.DEFAULT_STATE_LEVEL)
-                            this.level = (int)entry.Value;
-                    break;
             }
         }
 
@@ -261,15 +229,7 @@ namespace Nebula
         {
             if (Time.time - lastUpdateCall > updatePropertiesInterval)
             {
-                this.GetProperties(new string[] { GroupProps.SHIP_BASE_STATE, 
-                GroupProps.SHIP_WEAPON_STATE, 
-                GroupProps.MECHANICAL_SHIELD_STATE, 
-                GroupProps.POWER_FIELD_SHIELD_STATE, 
-                GroupProps.DEFAULT_STATE,
-                GroupProps.SHIP_MODULES, 
-                GroupProps.BONUSES,
-                GroupProps.target_info
-            });
+                GetProperties();
             }
         }
 

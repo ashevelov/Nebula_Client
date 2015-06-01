@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Common;
+using ServerClientCommon;
 
 namespace Nebula
 {
@@ -93,13 +94,13 @@ namespace Nebula
             float time = this.GenerateTimeForLocalMessage();
 
             Hashtable messageHash = new Hashtable {
-                {GenericEventProps.ChatMessageId, id },
-                {GenericEventProps.ChatMessageGroup, ChatGroup.local.toByte() },
-                {GenericEventProps.ChatMessage, message },
-                {GenericEventProps.ChatSourceLogin, string.Empty },
-                {GenericEventProps.ChatMessageSourceName, string.Empty },
-                {GenericEventProps.ChatReceiverLogin, string.Empty },
-                {GenericEventProps.ChatMessageTime, time }
+                {(int)SPC.ChatMessageId, id },
+                {(int)SPC.ChatMessageGroup, ChatGroup.local.toByte() },
+                {(int)SPC.ChatMessage, message },
+                {(int)SPC.ChatSourceLogin, string.Empty },
+                {(int)SPC.ChatSourceName, string.Empty },
+                {(int)SPC.ChatReceiverLogin, string.Empty },
+                {(int)SPC.ChatMessageTime, time }
             };
             this.AddMessage(new ChatMessage(messageHash));
         }

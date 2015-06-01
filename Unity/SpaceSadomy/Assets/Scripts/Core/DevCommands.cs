@@ -1,4 +1,6 @@
-﻿using Nebula;
+﻿using Common;
+using Nebula;
+using Nebula.Mmo.Games;
 
 namespace Game.Space.UI
 {
@@ -48,7 +50,7 @@ namespace Game.Space.UI
                 switch (args[0])
                 {
                     case "raider":
-                        MmoEngine.Get.Game.Avatar.CreateRaiderAtMe();
+                        MmoEngine.Get.NebulaGame.Avatar.CreateRaiderAtMe();
                         break;
                 }
             }
@@ -58,27 +60,29 @@ namespace Game.Space.UI
             if (args.Length > 0) {
                 switch (args[0]) { 
                     case "raider":
-                        MmoEngine.Get.Game.Avatar.DestroyAnyRaider();
+                        MmoEngine.Get.NebulaGame.Avatar.DestroyAnyRaider();
                         break;
                 }
             }
         }
 
         private static void ExitCommand() {
-            var game = MmoEngine.Get.Game;
-            if (game.HasWorld) {
-                game.ExitWorld();
+            var game = MmoEngine.Get.NebulaGame;
+            if (game.Engine.GameData.HasWorld) {
+                if(game.Avatar != null ) {
+                    game.Avatar.RequestTarget(string.Empty, (byte)ItemType.Avatar, false);
+                }
+                Operations.ExitWorld(game);
             }
         }
 
         private static void ChangeCommand( string[] args) {
             if (args.Length > 0)
             {
-                var game = MmoEngine.Get.Game;
-                if (game.HasWorld)
+                var game = MmoEngine.Get.NebulaGame;
+                if (game.Engine.GameData.HasWorld)
                 {
-                    //game.Avatar.ChangeWorld(args[0]);
-                    NRPC.ChangeWorld(args[0]);
+                    NetworkGame.ChangeWorld(args[0]);
                 }
             }
         }

@@ -89,7 +89,7 @@
 
                 MainCanvas.Get.Show(CanvasPanelType.ActionProgressView, data);
             } else {
-                G.Game.Chat.PastLocalMessage("You don't has required materials for crafting modules...");
+                G.Game.Engine.GameData.Chat.PastLocalMessage("You don't has required materials for crafting modules...");
             }
         }
 

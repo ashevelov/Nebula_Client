@@ -37,7 +37,7 @@ public class EventSpaceObjectManager : MonoBehaviour
 
         if (this.updateTimer <= 0f)
         {
-            string worldId = G.Game.World.Name;
+            string worldId = G.Game.Engine.GameData.World.Name;
 
             eventsToAdd.Clear();
             deleteObjects.Clear();

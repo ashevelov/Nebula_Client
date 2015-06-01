@@ -6,7 +6,7 @@ using Common;
 public class StandardNpcCombatObject : BaseSpaceObject {
 
     private float updatePropertiesNextTime;
-    private float defaultPropertiesUpdateInterval = 1.0f;
+    private float defaultPropertiesUpdateInterval = 2.0f;
     private float updateDefaultPropertiesLastTime;
 
     public override void Start()
@@ -35,17 +35,10 @@ public class StandardNpcCombatObject : BaseSpaceObject {
     {
         float curTime = Time.time;
 
-        if(curTime > this.updatePropertiesNextTime)
-        {
-            this.updatePropertiesNextTime = Time.time + 5.0f;
-            this.Item.GetProperties(new string[] { "me" } );
-        }
-
         if(curTime > this.updateDefaultPropertiesLastTime + this.defaultPropertiesUpdateInterval)
         {
             this.updateDefaultPropertiesLastTime = curTime;
-            this.Item.GetProperties(new string[] { "default", GroupProps.target_info, GroupProps.event_info,
-                GroupProps.DEFAULT_STATE});
+            this.Item.GetProperties();
         }
     }
 }

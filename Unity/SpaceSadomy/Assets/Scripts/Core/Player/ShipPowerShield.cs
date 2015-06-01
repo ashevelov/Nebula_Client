@@ -1,8 +1,5 @@
-﻿using UnityEngine;
+﻿using Common;
 using System.Collections;
-using Game.Space;
-using Common;
-using Game.Network;
 
 namespace Nebula {
     public class ShipPowerShield : IServerPropertyParser {
@@ -41,15 +38,15 @@ namespace Nebula {
             }
         }
 
-        public void ParseProp(string propName, object value) {
-            switch (propName) {
-                case Props.POWER_FIELD_SHIELD_CURRENT_POWER_PERCENT:
+        public void ParseProp(byte propName, object value) {
+            switch ((PS)propName) {
+                case PS.PowerFieldShieldCurrentPowerPercent:
                     {
                         float _old = _fieldPower;
                         _fieldPower = (float)value;
                     }
                     break;
-                case Props.POWER_FIELD_SHIELD_ENABLED:
+                case PS.PowerFieldShieldEnabled:
                     {
                         bool _old = _enabled;
                         _enabled = (bool)value;
@@ -58,13 +55,13 @@ namespace Nebula {
                         }
                     }
                     break;
-                case Props.POWER_FIELD_SHIELD_FULL_DAMAGE_ABSORB:
+                case PS.PowerFieldShieldFullDamageAbsorb:
                     {
                         float _old = _fullDamage;
                         _fullDamage = (float)value;
                     }
                     break;
-                case Props.POWER_FIELD_SHIELD_RECOVER_SPEED:
+                case PS.PowerFieldShieldRecoverSpeed:
                     {
                         float _old = _fieldRecoverSpeed;
                         _fieldRecoverSpeed = (float)value;
@@ -75,7 +72,7 @@ namespace Nebula {
 
         public void ParseProps(Hashtable properties) {
             foreach (DictionaryEntry entry in properties) {
-                ParseProp(entry.Key.ToString(), entry.Value);
+                ParseProp((byte)entry.Key, entry.Value);
             }
         }
     }

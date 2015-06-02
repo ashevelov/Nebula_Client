@@ -496,6 +496,53 @@
                         </stereotypeInstanceHasPropertyInstances>
                       </propertyInstances>
                     </stereotypeInstance>
+                    <stereotypeInstance Id="7d88d8e1-2755-4202-9b28-ac2838a2374a" name="TextTemplateBindings" profile="TextTemplateBindings">
+                      <elementDefinition Id="06e641b2-4eee-4d54-a45d-2a801ff9853d" />
+                      <propertyInstances>
+                        <stereotypeInstanceHasPropertyInstances Id="aa883c10-8b4b-433a-89d7-e9b33ad023b1">
+                          <propertyInstance Id="031149c9-caa4-4fcd-b707-121baa5b1259" name="Alias">
+                            <elementDefinition Id="9db2f0c6-e5db-4d36-9ba1-d405a87470c2" />
+                          </propertyInstance>
+                          <elementDefinition Id="19128d37-701f-45c6-8228-193b1c0525aa" />
+                        </stereotypeInstanceHasPropertyInstances>
+                        <stereotypeInstanceHasPropertyInstances Id="7362389e-3333-4ff2-9333-59ee06ed4489">
+                          <propertyInstance Id="f8e5a0a3-4225-4cec-b395-34b94ed959e3" name="TemplateFilePath">
+                            <elementDefinition Id="9bf7eae8-5b22-4e37-823a-c5e57e6c7ddc" />
+                          </propertyInstance>
+                          <elementDefinition Id="02e1b406-f104-4c98-b7f9-f6a668fff08b" />
+                        </stereotypeInstanceHasPropertyInstances>
+                        <stereotypeInstanceHasPropertyInstances Id="19a46b8f-c8f6-4c03-aa72-c74f6f3a182c">
+                          <propertyInstance Id="d164fb11-6a19-4804-bda5-7608680c4ece" name="ProjectPath">
+                            <elementDefinition Id="317612ed-77e5-44bb-91a7-f2576b0006e7" />
+                          </propertyInstance>
+                          <elementDefinition Id="e2677815-26ed-4b50-a33c-d8f365abd5ad" />
+                        </stereotypeInstanceHasPropertyInstances>
+                        <stereotypeInstanceHasPropertyInstances Id="17b1e964-0d4b-483e-a8e0-8908e9847dfd">
+                          <propertyInstance Id="3c398aaf-3427-44e8-8e8f-ebecfcb0212c" name="TargetDirectory">
+                            <elementDefinition Id="6cd9c178-8db1-4da0-9c1f-0fa8651d6776" />
+                          </propertyInstance>
+                          <elementDefinition Id="bee9a2f9-0349-4a03-8b57-0585939d05fb" />
+                        </stereotypeInstanceHasPropertyInstances>
+                        <stereotypeInstanceHasPropertyInstances Id="e1fd2037-f8a5-44b3-9334-ecf1906099b0">
+                          <propertyInstance Id="23c4e3e6-f4c0-41e7-b906-efc1f1a8823b" name="TargetName">
+                            <elementDefinition Id="ae983e54-e526-4f3a-93e9-e8d8e0a0bc46" />
+                          </propertyInstance>
+                          <elementDefinition Id="268f5e99-9721-45a6-acbb-82e31ed82791" />
+                        </stereotypeInstanceHasPropertyInstances>
+                        <stereotypeInstanceHasPropertyInstances Id="db4d7960-5549-46ce-8823-f4b8f0f379b2">
+                          <propertyInstance Id="50809027-44e8-4677-98f7-7a1dc72bbb2f" name="Overwrite">
+                            <elementDefinition Id="df2f7922-7a4c-46f1-8e0d-676827c07c69" />
+                          </propertyInstance>
+                          <elementDefinition Id="8b42f759-bcdf-4581-bc48-d34415595499" />
+                        </stereotypeInstanceHasPropertyInstances>
+                        <stereotypeInstanceHasPropertyInstances Id="d5666c7d-aa89-4f26-8661-e092f53924ef">
+                          <propertyInstance Id="f05714fe-2394-4b8e-8496-fd9837336463" name="Parameters">
+                            <elementDefinition Id="ab6d5487-2c2a-4dc9-8296-2d71a920fc58" />
+                          </propertyInstance>
+                          <elementDefinition Id="f851d59b-f7b2-4a95-afba-2a18d19b27e2" />
+                        </stereotypeInstanceHasPropertyInstances>
+                      </propertyInstances>
+                    </stereotypeInstance>
                   </appliedStereotypesInternal>
                   <elementDefinition Id="2acf2e01-b071-4684-a2bd-65fa21144dcd" />
                   <type_NamedElement>

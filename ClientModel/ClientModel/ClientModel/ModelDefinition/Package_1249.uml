@@ -571,6 +571,55 @@
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
+              <stereotypeInstance
+                Id="06e641b2-4eee-4d54-a45d-2a801ff9853d"
+                name="TextTemplateBindings"
+                profile="TextTemplateBindings">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="19128d37-701f-45c6-8228-193b1c0525aa">
+                    <propertyInstance
+                      Id="9db2f0c6-e5db-4d36-9ba1-d405a87470c2"
+                      name="Alias" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02e1b406-f104-4c98-b7f9-f6a668fff08b">
+                    <propertyInstance
+                      Id="9bf7eae8-5b22-4e37-823a-c5e57e6c7ddc"
+                      name="TemplateFilePath" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2677815-26ed-4b50-a33c-d8f365abd5ad">
+                    <propertyInstance
+                      Id="317612ed-77e5-44bb-91a7-f2576b0006e7"
+                      name="ProjectPath" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bee9a2f9-0349-4a03-8b57-0585939d05fb">
+                    <propertyInstance
+                      Id="6cd9c178-8db1-4da0-9c1f-0fa8651d6776"
+                      name="TargetDirectory" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="268f5e99-9721-45a6-acbb-82e31ed82791">
+                    <propertyInstance
+                      Id="ae983e54-e526-4f3a-93e9-e8d8e0a0bc46"
+                      name="TargetName" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b42f759-bcdf-4581-bc48-d34415595499">
+                    <propertyInstance
+                      Id="df2f7922-7a4c-46f1-8e0d-676827c07c69"
+                      name="Overwrite" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f851d59b-f7b2-4a95-afba-2a18d19b27e2">
+                    <propertyInstance
+                      Id="ab6d5487-2c2a-4dc9-8296-2d71a920fc58"
+                      name="Parameters" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
             </appliedStereotypesInternal>
             <type_NamedElement>
               <primitiveTypeMoniker

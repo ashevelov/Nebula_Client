@@ -51,7 +51,7 @@ public class MmoEngine : Singleton<MmoEngine>
             masterGame = new MasterGame(this, settings);
             var masterPeer = new MasterPeer(masterGame, ConnectionProtocol.Udp);
             masterGame.SetPeer(masterPeer);
-            masterGame.Connect("52.10.78.38", 5055, "Master");
+            masterGame.Connect("52.10.78.38", 5105, "Master");
             SetActiveGame(GameType.Master);
 
             loginGame = new LoginGame(this, settings);

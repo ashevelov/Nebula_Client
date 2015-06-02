@@ -46,21 +46,21 @@
           <propertyInstance
             Id="fc080824-28e8-4968-99c2-c325e82a5b37"
             name="TemplateFilePath"
-            value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+            value="ClassTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances
           Id="ebef4e70-c4bf-4f77-8cfb-3dd712a748ad">
           <propertyInstance
             Id="94d15611-8cc7-4304-92c4-7730da195a5a"
             name="ProjectPath"
-            value="ClassTemplate=..\..\SpaceSadomy\Assembly-CSharp-vs.csproj|EnumTemplate=..\ClientModelLib\ClientModelLib.csproj|InterfaceTemplate=..\ClientModelLib\ClientModelLib.csproj|StructTemplate=..\ClientModelLib\ClientModelLib.csproj" />
+            value="ClassTemplate=..\..\..\Unity\SpaceSadomy\Assembly-CSharp-vs.csproj|EnumTemplate=..\..\..\Unity\SpaceSadomy\Assembly-CSharp-vs.csproj|InterfaceTemplate=..\..\..\Unity\SpaceSadomy\Assembly-CSharp-vs.csproj|StructTemplate=..\..\..\Unity\SpaceSadomy\Assembly-CSharp-vs.csproj" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances
           Id="232af3fe-eff2-471b-a559-b6692003fb21">
           <propertyInstance
             Id="0c68d3fe-a26c-4f45-8973-0a99fb12188a"
             name="TargetDirectory"
-            value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}" />
+            value="ClassTemplate=Assets\Scripts\Client\{PackageStructure}|EnumTemplate=Assets\Scripts\Client\{PackageStructure}|InterfaceTemplate=Assets\Scripts\Client\{PackageStructure}|StructTemplate=Assets\Scripts\Client\{PackageStructure}" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances
           Id="b0c5a061-8458-472f-8a97-50bcdda5af62">

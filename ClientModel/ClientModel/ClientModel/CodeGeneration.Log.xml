@@ -1,33 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<?xml-stylesheet type="text/xsl" href="file:///D:/INSTAL PROGRAMM/VISUAL STUDIO/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
 <Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Журнал создания кода/преобразования текста">
   <MessageClass Name="Message" Label="Сообщение" Option="Показывать информационные сообщения" />
   <MessageClass Name="Warning" Label="Предупреждение" Option="Показывать предупреждения" />
   <MessageClass Name="Error" Label="Ошибка" Option="Показывать ошибки" />
   <MessageClass Name="Property" Label="Свойство" Option="Показывать метаданные" />
   <MessageClass Name="Diagnostic" Label="Сообщение" Option="Показывать диагностические сообщения" />
-  <Message Timestamp="2015-05-27T12:49:58" Importance="High" Text="Запущено создание кода или преобразование текста." />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Diagnostic" Text="Имя = InterfaceTemplate" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Diagnostic" Text="Перезаписать = True" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Diagnostic" Text="ProjectPath = ..\ClientModelLib\ClientModelLib.csproj" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Medium" Text="Привязка шаблона текста, принадлежащая ClientModel: &quot;InterfaceTemplate&quot; применит InterfaceTemplate.t4 к: &quot;ClientModel::UIC::IView&quot; -  (Interface), &quot;ClientModel::UIC::IModuleInfo&quot; -  (Interface), &quot;ClientModel::UIC::IShipInfo&quot; -  (Interface), &quot;ClientModel::UIC::ICargo&quot; -  (Interface), &quot;ClientModel::UIC::IValue&lt;T&gt;&quot; -  (Interface), &quot;ClientModel::UIC::IShipInfoProperties&quot; -  (Interface), &quot;ClientModel::UIC::ICargoProperties&quot; -  (Interface), &quot;ClientModel::UIC::ICargoItem&quot; -  (Interface), &quot;ClientModel::UIC::IAllModulesInfo&quot; -  (Interface), &quot;ClientModel::UIC::IWeaponInfo&quot; -  (Interface), &quot;ClientModel::UIC::IViewProperties&quot; -  (Interface) " />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Medium" Text="&quot;ClientModel::UIC::IView&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IView.cs" />
-  <Message Timestamp="2015-05-27T12:49:59" Importance="Medium" Text="&quot;ClientModel::UIC::IModuleInfo&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IModuleInfo.cs" />
-  <Message Timestamp="2015-05-27T12:50:00" Importance="Medium" Text="&quot;ClientModel::UIC::IShipInfo&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IShipInfo.cs" />
-  <Message Timestamp="2015-05-27T12:50:00" Importance="Medium" Text="&quot;ClientModel::UIC::ICargo&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\ICargo.cs" />
-  <Error Timestamp="2015-05-27T12:50:00" Importance="High" Text="&quot;ClientModel::UIC::IValue&lt;T&gt;&quot; -  (Interface): не удается создать файл, Путь содержит недопустимые знаки. - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IValue&lt;T&gt;.cs" />
-  <Message Timestamp="2015-05-27T12:50:00" Importance="Diagnostic" Text="&quot;ClientModel::UIC::IValue&lt;T&gt;&quot; -  (Interface): файлы не созданы, поскольку метод AppliesToElement шаблона &quot;InterfaceTemplate.t4&quot; возвратил значение false." />
-  <Message Timestamp="2015-05-27T12:50:00" Importance="Medium" Text="&quot;ClientModel::UIC::IShipInfoProperties&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IShipInfoProperties.cs" />
-  <Message Timestamp="2015-05-27T12:50:01" Importance="Medium" Text="&quot;ClientModel::UIC::ICargoProperties&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\ICargoProperties.cs" />
-  <Message Timestamp="2015-05-27T12:50:01" Importance="Medium" Text="&quot;ClientModel::UIC::ICargoItem&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\ICargoItem.cs" />
-  <Message Timestamp="2015-05-27T12:50:01" Importance="Medium" Text="&quot;ClientModel::UIC::IAllModulesInfo&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IAllModulesInfo.cs" />
-  <Message Timestamp="2015-05-27T12:50:02" Importance="Medium" Text="&quot;ClientModel::UIC::IWeaponInfo&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IWeaponInfo.cs" />
-  <Message Timestamp="2015-05-27T12:50:02" Importance="Medium" Text="&quot;ClientModel::UIC::IViewProperties&quot; -  (Interface) : успешно (файл создан) - E:\unity\ClientModel\ClientModelLib\GeneratedCode\UIC\IViewProperties.cs" />
-  <Message Timestamp="2015-05-27T12:50:02" Importance="Diagnostic" Text="Выбрано 1 элементов, не связанных с шаблоном." />
-  <Message Timestamp="2015-05-27T12:50:02" Importance="Diagnostic" Text="&quot;ClientModel::UIC&quot; -  (Package): нет привязанных шаблонов." />
-  <Message Timestamp="2015-05-27T12:50:02" Importance="High" Text="Создание кода завершено. Ошибок: 1. Предупреждений: 0." />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="High" Text="Запущено создание кода или преобразование текста." />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Diagnostic" Text="Имя = InterfaceTemplate" />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Diagnostic" Text="Перезаписать = True" />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Diagnostic" Text="ProjectPath = ..\..\..\Unity\SpaceSadomy\Assembly-CSharp-vs.csproj" />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Diagnostic" Text="TargetDirectory = Assets\Scripts\Client\{PackageStructure}" />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Diagnostic" Text="TemplateFilePath = D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2015-06-02T23:56:34" Importance="Medium" Text="Привязка шаблона текста, принадлежащая ClientModel: &quot;InterfaceTemplate&quot; применит InterfaceTemplate.t4 к: &quot;ClientModel::UIC::IPlayerInfo&quot; -  (Interface) " />
+  <Message Timestamp="2015-06-02T23:56:39" Importance="Medium" Text="&quot;ClientModel::UIC::IPlayerInfo&quot; -  (Interface) : успешно (файл создан) - D:\Work\NebulaClientGit\Unity\SpaceSadomy\Assets\Scripts\Client\UIC\IPlayerInfo.cs" />
+  <Message Timestamp="2015-06-02T23:56:39" Importance="High" Text="Создание кода завершено. Ошибок: 0. Предупреждений: 0." />
 </Log>

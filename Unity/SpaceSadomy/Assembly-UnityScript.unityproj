@@ -68,7 +68,6 @@
      <Compile Include="Assets\ThirdPartyAssets\Landscapes part1\Standard Assets\Image Effects (Pro Only)\CameraInfo.js" />
      <Compile Include="Assets\ThirdPartyAssets\Landscapes part1\Standard Assets\Image Effects (Pro Only)\TiltShift.js" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\StarAtmosphere\VariantOuter.shader" />
-     <None Include="Assets\Scripts\Client\Presentation Layer\UIC\UIC.cd" />
      <None Include="Assets\Resources\Data\start_player_modules.xml" />
      <None Include="Assets\Resources\UI\Data\player_info.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Ring\VariantStretchedShadowScattering.shader" />

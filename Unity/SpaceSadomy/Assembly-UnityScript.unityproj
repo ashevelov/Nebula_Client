@@ -257,6 +257,7 @@
      <None Include="Assets\ThirdPartyAssets\Realistic Effects Pack\Shaders\Explosion.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereOuterNormal.shader" />
      <None Include="Assets\Resources\DataClient\races.xml" />
+     <None Include="Assets\Scripts\Client\UICDiagram.cd" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Fog\Variant.shader" />
      <None Include="Assets\ThirdPartyAssets\Glowing Things\FunkyVertexLit.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Ring\VariantLitScattering.shader" />

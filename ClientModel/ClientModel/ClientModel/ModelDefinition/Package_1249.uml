@@ -781,5 +781,12 @@
         </ownedAttributes>
       </Interface>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="c0429530-3914-447a-ab92-66a6b52ca190"
+        name="IControlPanel"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

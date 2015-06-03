@@ -34,7 +34,7 @@
           <elementDefinition Id="c3ca924f-48a0-48c8-8540-9d8dc87694b1" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="227d9582-f9c0-449e-bec8-cfb0b275ebad">
-          <propertyInstance Id="d089a5f3-d559-4547-8e3b-fd4e2f58e209" name="TemplateFilePath" value="ClassTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=D:\INSTAL PROGRAMM\VISUAL STUDIO\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+          <propertyInstance Id="d089a5f3-d559-4547-8e3b-fd4e2f58e209" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
             <elementDefinition Id="fc080824-28e8-4968-99c2-c325e82a5b37" />
           </propertyInstance>
           <elementDefinition Id="4d54b2ed-08d3-4538-87d3-f4cf3f5c362b" />
@@ -660,6 +660,11 @@
                   </type_NamedElement>
                 </property>
               </ownedAttributes>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="02de33c4-f73d-4a44-90ad-d47428fdbb82" name="IControlPanel" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="c0429530-3914-447a-ab92-66a6b52ca190" />
             </Interface>
           </packageHasNamedElement>
         </packagedElements>

@@ -12,6 +12,13 @@
             <OperationElementListCompartment Id="dca5adbc-4670-453b-91c0-f04075a455d8" absoluteBounds="9.765, 5.1055815318226809, 1.4700000000000002, 0.20117186754941985" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </interfaceShape>
+        <interfaceShape Id="5481846d-8197-41c1-a6f4-6d51195bd5dd" absoluteBounds="3.875, 3.375, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+          <interfaceMoniker Id="02de33c4-f73d-4a44-90ad-d47428fdbb82" LastKnownName="IControlPanel" />
+          <nestedChildShapes>
+            <AttributeElementListCompartment Id="01092cb9-9e2a-49bc-b323-98f27cbb1f9f" absoluteBounds="3.89, 3.765, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="67cbebf6-418c-4bf0-988e-b55347d348d3" absoluteBounds="3.89, 3.9761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </interfaceShape>
       </nestedChildShapes>
     </packageShape>
   </nestedChildShapes>

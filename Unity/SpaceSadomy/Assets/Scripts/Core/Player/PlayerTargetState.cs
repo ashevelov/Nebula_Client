@@ -178,42 +178,42 @@ namespace Nebula {
             }
         }
 
-        public ClassRelation GetRelation() {
-            if (this.HasTarget == false)
-                return ClassRelation.Unknown;
+        //public ClassRelation GetRelation() {
+        //    if (this.HasTarget == false)
+        //        return ClassRelation.Unknown;
 
-            switch (this.Item.Type.toItemType()) {
-                case ItemType.Bot:
-                    {
-                        switch (((NpcItem)this._targetItem).SubType) {
-                            case BotItemSubType.StandardCombatNpc:
-                                return ClassRelation.Enemy;
-                            case BotItemSubType.None:
-                                return ClassRelation.Unknown;
-                        }
-                    }
-                    return ClassRelation.Unknown;
-                case ItemType.Asteroid:
-                    return ClassRelation.Neutral;
-                case ItemType.Avatar:
-                    {
-                        ForeignPlayerItem fPlayer = this.Item as ForeignPlayerItem;
-                        if (fPlayer != null) {
-                            Race fRace = fPlayer.Race;
-                            Race thisRace = _owner.Race;
-                            if (thisRace == fRace)
-                                return ClassRelation.Friend;
-                        }
-                    }
-                    return ClassRelation.Enemy;
-                case ItemType.Chest:
-                    return ClassRelation.Neutral;
-                case ItemType.Ghost:
-                    return ClassRelation.Neutral;
-                default:
-                    return ClassRelation.Unknown;
-            }
-        }
+        //    switch (this.Item.Type.toItemType()) {
+        //        case ItemType.Bot:
+        //            {
+        //                switch (((NpcItem)this._targetItem).SubType) {
+        //                    case BotItemSubType.StandardCombatNpc:
+        //                        return ClassRelation.Enemy;
+        //                    case BotItemSubType.None:
+        //                        return ClassRelation.Unknown;
+        //                }
+        //            }
+        //            return ClassRelation.Unknown;
+        //        case ItemType.Asteroid:
+        //            return ClassRelation.Neutral;
+        //        case ItemType.Avatar:
+        //            {
+        //                ForeignPlayerItem fPlayer = this.Item as ForeignPlayerItem;
+        //                if (fPlayer != null) {
+        //                    Race fRace = fPlayer.Race;
+        //                    Race thisRace = _owner.Race;
+        //                    if (thisRace == fRace)
+        //                        return ClassRelation.Friend;
+        //                }
+        //            }
+        //            return ClassRelation.Enemy;
+        //        case ItemType.Chest:
+        //            return ClassRelation.Neutral;
+        //        case ItemType.Ghost:
+        //            return ClassRelation.Neutral;
+        //        default:
+        //            return ClassRelation.Unknown;
+        //    }
+        //}
 
         public float DistanceTo() {
             if (false == this._hasTarget || false == this._targetItem.View)

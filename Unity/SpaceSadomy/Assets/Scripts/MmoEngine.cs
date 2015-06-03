@@ -51,7 +51,11 @@ public class MmoEngine : Singleton<MmoEngine>
             masterGame = new MasterGame(this, settings);
             var masterPeer = new MasterPeer(masterGame, ConnectionProtocol.Udp);
             masterGame.SetPeer(masterPeer);
+#if LOCAL
+            masterGame.Connect("192.168.1.28", 5105, "Master");
+#else
             masterGame.Connect("52.10.78.38", 5105, "Master");
+#endif
             SetActiveGame(GameType.Master);
 
             loginGame = new LoginGame(this, settings);
@@ -171,7 +175,7 @@ public class MmoEngine : Singleton<MmoEngine>
         }
     }
 
-    #region View distance now not used function
+#region View distance now not used function
     //private void DecreaseViewDistance()
     //{
     //    /*
@@ -193,7 +197,7 @@ public class MmoEngine : Singleton<MmoEngine>
     //    viewDistance[1] = Math.Min(this.engine.WorldData.Height, viewDistance[1] + (this.engine.WorldData.TileDimensions[1] / 2));
     //    cam.SetViewDistance(viewDistance);*/
     //} 
-    #endregion
+#endregion
 
     public void OnServersReceived(ClientServerCollection serverCollection) {
 

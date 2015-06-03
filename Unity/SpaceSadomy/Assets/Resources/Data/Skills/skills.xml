@@ -90,7 +90,7 @@
   </skill>
 
   <skill id="SA030001" require_weapon_slot="false" name="Космическая пыль"
-         durability="0"  type="Persistent"    energy="7"     cooldown="5"
+         durability="30"  type="Durable"    energy="7"     cooldown="5"
          slot_type="CM" description="Грамотное использование космических объектов снижает дальность стрельбы противника на {color=#008000ff}20%{/color}
          &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
          &#10; Затраты энергии: {color=#FFA500ff}7{/color} единиц" alias="sa31">
@@ -118,7 +118,7 @@
        &#10; &#10; Затраты энергии: {color=#FFA500ff}13{/color} единиц" alias="sa33">
     <inputs>
       <input key="range" value="200" type="float" />
-      <input key="neg_dur_mult" value="0.2" type="float" />
+      <input key="neg_dur_mult" value="1.2" type="float" />
     </inputs>
   </skill>
 
@@ -136,7 +136,7 @@
   </skill>
 
   <skill id="SA030005" require_weapon_slot="false" name="Нейрошунт"
-         durability="0" type="Persistent" energy="9" cooldown="8"
+         durability="30" type="Durable" energy="9" cooldown="8"
          slot_type="CM" description="Прямое подключение к бортовому компьютеру снижает задержки на обработку информации и позволяет перехватывать управление орудийными установками на кораблях союзников, увеличивая их скорострельность на {color=#008000ff}20%{/color}
          &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
          &#10; Затраты энергии: {color=#FFA500ff}9{/color} единиц" alias="sa35">
@@ -248,12 +248,12 @@
   </skill>
 
   <skill id="SA050003" require_weapon_slot="false" name="Утечка"
-     durability="0" type="Persistent" energy="6" cooldown="10"
+     durability="20" type="Durable" energy="6" cooldown="10"
      slot_type="DF" description="Снижение мощности энергетической сети корабля противника уменьшает его сопротивление урону на {color=#008000ff}20%{/color}
      &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
      &#10; Затраты энергии: {color=#FFA500ff}6{/color} единиц" alias="sa53">
     <inputs>
-      <input key="resist_mod" value="0.2" type="float" />
+      <input key="resist_mod" value="-0.2" type="float" />
       <input key="range" value="100" type="float" />
     </inputs>
   </skill>

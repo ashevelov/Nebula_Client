@@ -1,0 +1,34 @@
+﻿<fractions>
+  <fraction name="PlayerHumans">
+    <relations>
+      <relation to="PlayerHumans"     value="Friend"  />
+      <relation to="PlayerCriptizids" value="Enemy"   />
+      <relation to="PlayerBorguzands" value="Enemy"   />
+      <relation to="Pirate"           value="Enemy"   />
+    </relations>
+  </fraction>
+  <fraction name="PlayerCriptizids">
+    <relations>
+      <relation to="PlayerHumans"     value="Enemy"  />
+      <relation to="PlayerCriptizids" value="Friend"   />
+      <relation to="PlayerBorguzands" value="Enemy"   />
+      <relation to="Pirate"           value="Enemy"   />
+    </relations>  
+  </fraction>
+  <fraction name="PlayerBorguzands">
+    <relations>
+      <relation to="PlayerHumans"     value="Enemy"  />
+      <relation to="PlayerCriptizids" value="Enemy"   />
+      <relation to="PlayerBorguzands" value="Friend"   />
+      <relation to="Pirate"           value="Enemy"   />
+    </relations>
+  </fraction>
+  <fraction name="Pirate">
+    <relations>
+      <relation to="PlayerHumans"     value="Enemy"  />
+      <relation to="PlayerCriptizids" value="Enemy"   />
+      <relation to="PlayerBorguzands" value="Enemy"   />
+      <relation to="Pirate"           value="Friend"   />
+    </relations>
+  </fraction>
+</fractions>

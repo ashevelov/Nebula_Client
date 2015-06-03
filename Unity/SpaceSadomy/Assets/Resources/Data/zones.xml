@@ -50,65 +50,65 @@
     <npcs>
       <npc id="1_pga_01" race="Borguzands" type="test_mob" position="0,0,0" rotation="0,0,0" respawn_interval="10"  workshop="Rakhgals" difficulty="medium" />
       
-      <npc id="1_pga_02" race="Humans" type="point_guard_aggressive" position="-772,643,1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
-      <npc id="1_pga_03" race="Humans" type="point_guard_aggressive" position="-818,669.1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
-      <npc id="1_pga_04" race="Humans" type="point_guard_aggressive" position="-816,669,1522" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_05" race="Humans" type="point_guard_aggressive" position="1286,107,1223" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_06" race="Humans" type="point_guard_aggressive" position="1266,114,1274" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_07" race="Humans" type="point_guard_aggressive" position="-783,636,1522" rotation="-2,119,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_08" race="Humans" type="point_guard_aggressive" position="-730,636,1530" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_09" race="Humans" type="point_guard_aggressive" position="-730,636,1587" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_10" race="Humans" type="point_guard_aggressive" position="-754,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_11" race="Humans" type="point_guard_aggressive" position="-793,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_12" race="Humans" type="point_guard_aggressive" position="-819,636,1548" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_13" race="Humans" type="point_guard_aggressive" position="-819,636,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_14" race="Humans" type="point_guard_aggressive" position="-819,577,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
+      <npc id="1_pga_02" race="Humans" type="point_guard_aggressive" position="-772,643,1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"   difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_03" race="Humans" type="point_guard_aggressive" position="-818,669.1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"   difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_04" race="Humans" type="point_guard_aggressive" position="-816,669,1522" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe"     difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_05" race="Humans" type="point_guard_aggressive" position="1286,107,1223" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe"     difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_06" race="Humans" type="point_guard_aggressive" position="1266,114,1274" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe"     difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_07" race="Humans" type="point_guard_aggressive" position="-783,636,1522" rotation="-2,119,-3" respawn_interval="60" workshop="DarthTribe"      difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_08" race="Humans" type="point_guard_aggressive" position="-730,636,1530" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe"     difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_09" race="Humans" type="point_guard_aggressive" position="-730,636,1587" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe"     difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_10" race="Humans" type="point_guard_aggressive" position="-754,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe"      difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_11" race="Humans" type="point_guard_aggressive" position="-793,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe"      difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_12" race="Humans" type="point_guard_aggressive" position="-819,636,1548" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe"      difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_13" race="Humans" type="point_guard_aggressive" position="-819,636,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe"       difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_14" race="Humans" type="point_guard_aggressive" position="-819,577,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe"       difficulty="medium"   fraction="Pirate"/>
 
-      <npc id="1_hrbf_001" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_002" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_003" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_004" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_005" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_006" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_007" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_008" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_009" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_010" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_011" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_012" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_013" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_014" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_015" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_016" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_017" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_018" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_019" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_020" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_021" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_022" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_023" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_024" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_025" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_026" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_027" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_028" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_029" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_030" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_031" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_032" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_033" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_034" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_035" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_036" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_037" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_038" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_039" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_040" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_041" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_042" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_043" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_044" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_045" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_hrbf_001" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_002" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_003" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_004" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_005" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_006" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_007" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_008" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_009" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_010" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_011" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_012" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_013" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_014" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_015" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_016" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_017" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_018" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_019" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_020" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_021" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_022" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_023" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_024" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_025" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_026" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_027" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_028" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_029" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_030" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_031" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_032" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_033" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_034" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_035" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_036" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_037" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_038" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_039" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_040" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_041" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_042" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_043" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_044" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_045" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
       <!--<npc id="1_hrbf_046" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
       <npc id="1_hrbf_047" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
       <npc id="1_hrbf_048" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
@@ -125,51 +125,51 @@
       <npc id="1_hrbf_059" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
       <npc id="1_hrbf_060" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />-->
       
-      <npc id="1_brbf_001" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_002" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_003" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_004" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_005" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_006" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_007" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_008" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_009" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_010" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_011" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_012" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_013" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_014" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_015" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_016" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_017" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_018" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_019" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_020" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_021" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_022" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_023" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_024" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_025" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_026" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_027" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_028" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_029" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_030" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_031" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_032" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_033" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_034" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_035" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_036" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_037" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_038" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_039" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_040" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_041" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_042" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_043" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_044" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_045" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
+      <npc id="1_brbf_001" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_002" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_003" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_004" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_005" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_006" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_007" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_008" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_009" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_010" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_011" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_012" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_013" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_014" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_015" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_016" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_017" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_018" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_019" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_020" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_021" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_022" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"    fraction="Pirate"/>
+      <npc id="1_brbf_023" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_024" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_025" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_026" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_027" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_028" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_029" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_030" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"   fraction="Pirate"/>
+      <npc id="1_brbf_031" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_032" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_033" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_034" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_035" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_036" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_037" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_038" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_039" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_040" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_041" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_042" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_043" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_044" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
+      <npc id="1_brbf_045" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"        fraction="Pirate"/>
       <!--<npc id="1_brbf_046" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
       <npc id="1_brbf_047" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
       <npc id="1_brbf_048" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
@@ -438,16 +438,16 @@
     </npc_groups>
     <npcs>
 
-      <npc id="1_rgo_01" race="Humans" type="resource_guard_orbit" difficulty="easy" position="285.7,-579.8,192.9" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"/>
-      <npc id="1_rgo_02" race="Humans" type="resource_guard_orbit" difficulty="easy" position="1526.2,316.2,568.6" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"/>
-      <npc id="1_rgo_03" race="Humans" type="resource_guard_orbit" difficulty="easy" position="3574.0,604.6,432.3" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"/>
-      <npc id="1_rgo_04" race="Humans" type="resource_guard_orbit" difficulty="easy" position="3203.7,-312.1,-527.0" rotation="0,0,0" respawn_interval="10"   workshop="DarthTribe"/>
-      <npc id="1_rgo_05" race="Humans" type="resource_guard_orbit" difficulty="easy" position="1203.5,-1272.9,-1201.9" rotation="0,0,0" respawn_interval="10" workshop="DarthTribe"/>
-      <npc id="1_rgo_06" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2207.4,-615.6,-1691.2" rotation="0,0,0" respawn_interval="10"  workshop="DarthTribe"/>
-      <npc id="1_rgo_07" race="Humans" type="resource_guard_orbit" difficulty="easy" position="1453.1,187.1,-674.3" rotation="0,0,0" respawn_interval="10"    workshop="DarthTribe"/>
-      <npc id="1_rgo_08" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2442.1,1769.1,106.8" rotation="0,0,0" respawn_interval="10"    workshop="DarthTribe"/>
-      <npc id="1_rgo_09" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2114.0,251.9,-69.2" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"/>
-      <npc id="1_rgo_10" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2099.5,-106.1,1097.5" rotation="0,0,0" respawn_interval="10"   workshop="DarthTribe"/>
+      <npc id="1_rgo_01" race="Humans" type="resource_guard_orbit" difficulty="easy" position="285.7,-579.8,192.9" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_02" race="Humans" type="resource_guard_orbit" difficulty="easy" position="1526.2,316.2,568.6" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_03" race="Humans" type="resource_guard_orbit" difficulty="easy" position="3574.0,604.6,432.3" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_04" race="Humans" type="resource_guard_orbit" difficulty="easy" position="3203.7,-312.1,-527.0" rotation="0,0,0" respawn_interval="10"   workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_05" race="Humans" type="resource_guard_orbit" difficulty="easy" position="1203.5,-1272.9,-1201.9" rotation="0,0,0" respawn_interval="10" workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_06" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2207.4,-615.6,-1691.2" rotation="0,0,0" respawn_interval="10"  workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_07" race="Humans" type="resource_guard_orbit" difficulty="easy" position="1453.1,187.1,-674.3" rotation="0,0,0" respawn_interval="10"    workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_08" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2442.1,1769.1,106.8" rotation="0,0,0" respawn_interval="10"    workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_09" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2114.0,251.9,-69.2" rotation="0,0,0" respawn_interval="10"     workshop="DarthTribe"   fraction="Pirate"/>
+      <npc id="1_rgo_10" race="Humans" type="resource_guard_orbit" difficulty="easy" position="2099.5,-106.1,1097.5" rotation="0,0,0" respawn_interval="10"   workshop="DarthTribe"   fraction="Pirate"/>
 
       
     </npcs>
@@ -533,81 +533,81 @@
       <npc_group id="B_NPC_G_2_COMMON" />
     </npc_groups>
     <npcs>
-      <npc id="1_pga_01" race="Humans" type="point_guard_aggressive" position="-791,643,1447" rotation="0,0,0"        respawn_interval="60"  workshop="DarthTribe"    difficulty="medium" />
-      <npc id="1_pga_02" race="Humans" type="point_guard_aggressive" position="-772,643,1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
-      <npc id="1_pga_03" race="Humans" type="point_guard_aggressive" position="-818,669.1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
-      <npc id="1_pga_04" race="Humans" type="point_guard_aggressive" position="-816,669,1522" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_05" race="Humans" type="point_guard_aggressive" position="1286,107,1223" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_06" race="Humans" type="point_guard_aggressive" position="1266,114,1274" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_07" race="Humans" type="point_guard_aggressive" position="-783,636,1522" rotation="-2,119,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_08" race="Humans" type="point_guard_aggressive" position="-730,636,1530" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_09" race="Humans" type="point_guard_aggressive" position="-730,636,1587" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_10" race="Humans" type="point_guard_aggressive" position="-754,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_11" race="Humans" type="point_guard_aggressive" position="-793,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_12" race="Humans" type="point_guard_aggressive" position="-819,636,1548" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_13" race="Humans" type="point_guard_aggressive" position="-819,636,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_14" race="Humans" type="point_guard_aggressive" position="-819,577,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
+      <npc id="1_pga_01" race="Humans" type="point_guard_aggressive" position="-791,643,1447" rotation="0,0,0"        respawn_interval="60"  workshop="DarthTribe"    difficulty="medium"   fraction="Pirate"/>
+      <npc id="1_pga_02" race="Humans" type="point_guard_aggressive" position="-772,643,1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"      fraction="Pirate"/>
+      <npc id="1_pga_03" race="Humans" type="point_guard_aggressive" position="-818,669.1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"      fraction="Pirate"/>
+      <npc id="1_pga_04" race="Humans" type="point_guard_aggressive" position="-816,669,1522" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"         fraction="Pirate"/>
+      <npc id="1_pga_05" race="Humans" type="point_guard_aggressive" position="1286,107,1223" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"         fraction="Pirate"/>
+      <npc id="1_pga_06" race="Humans" type="point_guard_aggressive" position="1266,114,1274" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"         fraction="Pirate"/>
+      <npc id="1_pga_07" race="Humans" type="point_guard_aggressive" position="-783,636,1522" rotation="-2,119,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"          fraction="Pirate"/>
+      <npc id="1_pga_08" race="Humans" type="point_guard_aggressive" position="-730,636,1530" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"         fraction="Pirate"/>
+      <npc id="1_pga_09" race="Humans" type="point_guard_aggressive" position="-730,636,1587" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"         fraction="Pirate"/>
+      <npc id="1_pga_10" race="Humans" type="point_guard_aggressive" position="-754,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"          fraction="Pirate"/>
+      <npc id="1_pga_11" race="Humans" type="point_guard_aggressive" position="-793,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"          fraction="Pirate"/>
+      <npc id="1_pga_12" race="Humans" type="point_guard_aggressive" position="-819,636,1548" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"          fraction="Pirate"/>
+      <npc id="1_pga_13" race="Humans" type="point_guard_aggressive" position="-819,636,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"           fraction="Pirate"/>
+      <npc id="1_pga_14" race="Humans" type="point_guard_aggressive" position="-819,577,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"           fraction="Pirate"/>
 
-      <npc id="1_hrbf_001" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_002" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_003" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_004" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_005" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_006" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_007" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_008" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_009" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_010" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_011" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_012" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_013" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_014" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_015" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_016" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_017" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_018" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_019" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_020" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_021" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_022" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_023" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_024" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_025" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_026" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_027" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_028" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_029" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_030" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_001" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_002" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_003" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_004" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_005" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_006" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_007" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_008" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_009" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_010" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_011" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_012" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_013" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_014" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_015" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_016" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_017" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_018" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_019" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_020" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_021" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_022" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_023" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_024" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_025" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_026" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_027" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_028" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_029" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_030" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
+      <npc id="1_hrbf_001" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_002" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_003" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_004" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_005" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_006" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_007" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_008" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_009" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_010" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_011" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_012" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_013" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_014" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_015" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_016" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_017" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_018" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_019" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_020" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_021" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_022" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_023" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_024" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_025" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_026" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_027" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_028" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_029" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_030" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_brbf_001" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_002" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_003" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_004" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_005" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_006" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_007" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_008" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_009" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_010" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_011" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_012" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_013" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_014" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_015" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_016" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_017" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_018" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_019" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_020" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_021" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_022" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_023" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_024" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_025" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_026" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_027" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_028" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_029" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_030" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
 
     </npcs>
     <asteroids>
@@ -892,81 +892,81 @@
       <npc_group id="C_NPC_G_7_COMMON" />
     </npc_groups>
     <npcs>
-      <npc id="1_pga_01" race="Humans" type="point_guard_aggressive" position="-791,643,1447" rotation="0,0,0"        respawn_interval="60"  workshop="DarthTribe"    difficulty="medium" />
-      <npc id="1_pga_02" race="Humans" type="point_guard_aggressive" position="-772,643,1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
-      <npc id="1_pga_03" race="Humans" type="point_guard_aggressive" position="-818,669.1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"/>
-      <npc id="1_pga_04" race="Humans" type="point_guard_aggressive" position="-816,669,1522" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_05" race="Humans" type="point_guard_aggressive" position="1286,107,1223" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_06" race="Humans" type="point_guard_aggressive" position="1266,114,1274" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_07" race="Humans" type="point_guard_aggressive" position="-783,636,1522" rotation="-2,119,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_08" race="Humans" type="point_guard_aggressive" position="-730,636,1530" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_09" race="Humans" type="point_guard_aggressive" position="-730,636,1587" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_10" race="Humans" type="point_guard_aggressive" position="-754,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_11" race="Humans" type="point_guard_aggressive" position="-793,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_12" race="Humans" type="point_guard_aggressive" position="-819,636,1548" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_13" race="Humans" type="point_guard_aggressive" position="-819,636,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
-      <npc id="1_pga_14" race="Humans" type="point_guard_aggressive" position="-819,577,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"/>
+      <npc id="1_pga_01" race="Humans" type="point_guard_aggressive" position="-791,643,1447" rotation="0,0,0"        respawn_interval="60"  workshop="DarthTribe"    difficulty="medium" fraction="Pirate"/>
+      <npc id="1_pga_02" race="Humans" type="point_guard_aggressive" position="-772,643,1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"    fraction="Pirate"/>
+      <npc id="1_pga_03" race="Humans" type="point_guard_aggressive" position="-818,669.1491" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"  difficulty="medium"    fraction="Pirate"/>
+      <npc id="1_pga_04" race="Humans" type="point_guard_aggressive" position="-816,669,1522" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"       fraction="Pirate"/>
+      <npc id="1_pga_05" race="Humans" type="point_guard_aggressive" position="1286,107,1223" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"       fraction="Pirate"/>
+      <npc id="1_pga_06" race="Humans" type="point_guard_aggressive" position="1266,114,1274" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"       fraction="Pirate"/>
+      <npc id="1_pga_07" race="Humans" type="point_guard_aggressive" position="-783,636,1522" rotation="-2,119,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"        fraction="Pirate"/>
+      <npc id="1_pga_08" race="Humans" type="point_guard_aggressive" position="-730,636,1530" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"       fraction="Pirate"/>
+      <npc id="1_pga_09" race="Humans" type="point_guard_aggressive" position="-730,636,1587" rotation="22,-130,-3" respawn_interval="60" workshop="DarthTribe" difficulty="medium"       fraction="Pirate"/>
+      <npc id="1_pga_10" race="Humans" type="point_guard_aggressive" position="-754,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"        fraction="Pirate"/>
+      <npc id="1_pga_11" race="Humans" type="point_guard_aggressive" position="-793,636,1587" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"        fraction="Pirate"/>
+      <npc id="1_pga_12" race="Humans" type="point_guard_aggressive" position="-819,636,1548" rotation="43,161,-6" respawn_interval="60" workshop="DarthTribe" difficulty="medium"        fraction="Pirate"/>
+      <npc id="1_pga_13" race="Humans" type="point_guard_aggressive" position="-819,636,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"         fraction="Pirate"/>
+      <npc id="1_pga_14" race="Humans" type="point_guard_aggressive" position="-819,577,1463" rotation="13,11,-4" respawn_interval="60" workshop="DarthTribe" difficulty="medium"         fraction="Pirate"/>
 
-      <npc id="1_hrbf_001" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_002" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_003" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_004" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_005" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_006" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_007" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_008" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_009" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_010" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_011" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_012" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_013" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_014" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_015" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_016" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_017" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_018" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_019" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_020" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_021" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_022" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_hrbf_023" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_024" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_025" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_026" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_027" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_hrbf_028" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_029" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_hrbf_030" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_001" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_002" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_003" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_004" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_005" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_006" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_007" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_008" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_009" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_010" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_011" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_012" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_013" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_014" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_015" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_016" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_017" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_018" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_019" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_020" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_021" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_022" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe" />
-      <npc id="1_brbf_023" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_024" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_025" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_026" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_027" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_028" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
-      <npc id="1_brbf_029" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye" />
-      <npc id="1_brbf_030" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" />
+      <npc id="1_hrbf_001" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_002" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_003" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_004" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_005" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_006" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_007" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_008" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_009" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_010" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_011" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_012" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_013" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_014" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_015" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_016" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_017" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_018" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_019" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_020" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_021" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_022" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium"     fraction="Pirate"/>
+      <npc id="1_hrbf_023" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_024" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_025" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_026" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_027" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"          fraction="Pirate"/>
+      <npc id="1_hrbf_028" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_029" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_hrbf_030" race="Humans" type="humans_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"      fraction="Pirate"/>
+      <npc id="1_brbf_001" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_002" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_003" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_004" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_005" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_006" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_007" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_008" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_009" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_010" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_011" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_012" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_013" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_014" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_015" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_016" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_017" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_018" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_019" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_020" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_021" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_022" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="DarthTribe"  fraction="Pirate"/>
+      <npc id="1_brbf_023" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_024" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_025" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_026" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_027" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_028" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
+      <npc id="1_brbf_029" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="RedEye"      fraction="Pirate"/>
+      <npc id="1_brbf_030" race="Humans" type="borguzands_race_bot_fighter" position="0,0,0" rotation="0,0,0" respawn_interval="5" difficulty="medium" workshop="Equilibrium" fraction="Pirate"/>
 
     </npcs>
     <asteroids>

@@ -14,7 +14,7 @@ public class PlayerInfoProcess : MonoBehaviour {
         playerInfo.MaxEnegry = 300;
         playerInfo.MaxEXP = 300;
 
-        playerInfo.Name = "VASA";
+        playerInfo.Name = "KPAXMAJI";
 
         StartCoroutine(UpdateInfo());
 	}
@@ -29,6 +29,8 @@ public class PlayerInfoProcess : MonoBehaviour {
 
         playerInfo.Speed = count;
         playerInfo.Position = (count / 2) + " , " + count + " , " + (count * 2);
+
+        playerInfo.CurentExp = count * 5;
 
         StartCoroutine(UpdateInfo());
     }

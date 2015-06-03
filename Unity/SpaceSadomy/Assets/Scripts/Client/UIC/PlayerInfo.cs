@@ -79,13 +79,19 @@ namespace UIC
         #region EXP
 
 
-        public Text expProgress;
+        public Text expText;
+        public Image progressExp;
+
+
+        float _maxExp;
+        float _curentExp;
         
         public int MaxEXP
         {
             set
             {
-
+                _maxExp = value;
+                UpdateProgressExp();
             }
         }
 
@@ -93,12 +99,17 @@ namespace UIC
         {
             set
             {
+                _curentExp = value;
+                UpdateProgressExp();
             }
         }
 
 
         void UpdateProgressExp()
         {
+            float percent = _curentExp / _maxExp;
+            expText.text = ((int)(percent * 100))+"%";
+            progressExp.fillAmount = percent;
         }
 
         #endregion

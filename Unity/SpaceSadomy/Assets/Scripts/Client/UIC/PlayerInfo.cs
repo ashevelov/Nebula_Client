@@ -79,37 +79,17 @@ namespace UIC
         #region EXP
 
 
-        public Text expText;
+        public Text lvl;
         public Image progressExp;
 
-
-        float _maxExp;
-        float _curentExp;
-        
-        public int MaxEXP
+        public float ProgressExp
         {
-            set
-            {
-                _maxExp = value;
-                UpdateProgressExp();
-            }
+            set { progressExp.fillAmount = value; }
         }
 
-        public int CurentExp
+        public int Level
         {
-            set
-            {
-                _curentExp = value;
-                UpdateProgressExp();
-            }
-        }
-
-
-        void UpdateProgressExp()
-        {
-            float percent = _curentExp / _maxExp;
-            expText.text = ((int)(percent * 100))+"%";
-            progressExp.fillAmount = percent;
+            set { lvl.text = value.ToString(); }
         }
 
         #endregion
@@ -154,6 +134,20 @@ namespace UIC
         {
             info.text = _playerName +  "  /  " + _speed +"  /  "+ _position;
         }
+        #endregion
+
+        #region Avatar
+
+        public Image ava;
+
+        public Sprite Avatar
+        {
+            set
+            {
+                ava.sprite = value;
+            }
+        }
+
         #endregion
     }
 }

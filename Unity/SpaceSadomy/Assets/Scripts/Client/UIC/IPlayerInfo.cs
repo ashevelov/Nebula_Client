@@ -1,17 +1,12 @@
 ﻿namespace UIC
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using UnityEngine;
 
 	public interface IPlayerInfo 
 	{
 		int MaxHP { set; }
 
 		int MaxEnegry { set; }
-
-		int MaxEXP { set; }
 
         string Position { set; }
 
@@ -21,9 +16,13 @@
 
 		int CurentEnergy { set; }
 
-		int CurentExp { set; }
+        int CurentHP { set; }
 
-		int CurentHP { set; }
+        float ProgressExp { set; }
+
+        int Level { set; }
+
+        Sprite Avatar { set; }
 
 	}
 }

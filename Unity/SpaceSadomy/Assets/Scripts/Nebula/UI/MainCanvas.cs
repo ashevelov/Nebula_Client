@@ -60,6 +60,7 @@ namespace Nebula.UI {
             panelPathDictionary.Add(CanvasPanelType.MessageBox,                         "Prefabs/UI/Message_Box_View");
             panelPathDictionary.Add(CanvasPanelType.GroupView,                          "Prefabs/UI/Group_View");
             panelPathDictionary.Add(CanvasPanelType.ShipDestroyView,                    "Prefabs/UI/ShipDestroyView");
+            panelPathDictionary.Add(CanvasPanelType.PlayerInfo,                         "Prefabs/UI/PlayerInfo");
             
 
             Show(CanvasPanelType.TargetObjectView);
@@ -244,6 +245,7 @@ namespace Nebula.UI {
         StationHUD,
         MessageBox,
         GroupView,
-        ShipDestroyView
+        ShipDestroyView,
+        PlayerInfo
     }
 }

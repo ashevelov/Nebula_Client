@@ -10,10 +10,12 @@ namespace UIC
         public List<Button> buttons;
         public List<Image> skillProgress;
         public List<Image> skillIcon;
-        private List<System.Action> actions = new List<System.Action>();
+        private List<System.Action> actions = new List<System.Action>() { null, null, null, null, null, null, null, null, null };
+
+        float[] _progress = new float[9];
         public void UpdateButton(int index, float progress, Sprite icon = null, System.Action action = null)
         {
-            skillProgress[index].fillAmount = progress;
+            _progress[index] = progress;
 
             if (icon != null)
             {
@@ -22,6 +24,14 @@ namespace UIC
             if (action != null)
             {
                 actions[index] = action;
+            }
+        }
+
+        void Update()
+        {
+            for(int i=0; i<skillProgress.Count; i++)
+            {
+                skillProgress[i].fillAmount += Time.deltaTime * _progress[i] / 0.5f;
             }
         }
 

@@ -7,7 +7,6 @@ namespace UIC
     public class PlayerInfo : MonoBehaviour, IPlayerInfo
     {
 
-
         #region HP
 
         public Text maxHP;

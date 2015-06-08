@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Nebula.UI;
 using ServerClientCommon;
 using Nebula.Mmo.Games;
+using UnityEngine;
 
 namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class RequestContainerOperation : BaseGenericOperation
@@ -51,6 +52,10 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
                 }
             }
 
+            if (inventoryItems.Count > 0) {
+                Debug.LogFormat("received count in container = {0}", inventoryItems.Count);
+            }
+
             if(string.IsNullOrEmpty(containerId))
             {
                 return;
@@ -67,6 +72,9 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
                 return;
             }
 
+            if (inventoryItems.Count > 0) {
+                Debug.Log("Container item found".Color("green"));
+            }
             (item as IInventoryItemsSource).SetItems(inventoryItems);
             game.Engine.GameData.CurrentObjectContainer.Reset();
             game.Engine.GameData.CurrentObjectContainer.SetContainer(containerId, containerType, containerList);

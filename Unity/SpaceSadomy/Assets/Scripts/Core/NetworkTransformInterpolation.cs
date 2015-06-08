@@ -44,7 +44,7 @@ public class NetworkTransformInterpolation : MonoBehaviour {
         {
             if (_current != null)
             {
-                if (Almost(_current.Position, data.Position))
+                if (Almost(_current.Position, data.Position) && Almost(_current.Rotation, data.Rotation))
                     return;
             }
             _prev = _current;
@@ -105,7 +105,8 @@ public class NetworkTransformInterpolation : MonoBehaviour {
                     Vector3 dir = (transform.position - oldPos).normalized;
 
                     if (!AlmostZero(dir)) {
-                        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * _rotationSpeed); //Quaternion.Slerp(transform.rotation, Quaternion.Euler(_current.Rotation), Time.deltaTime * _rotationSpeed);
+                        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * _rotationSpeed); //
+                        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(_current.Rotation), Time.deltaTime * _rotationSpeed);
                     } else {
                         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(_current.Rotation), Time.deltaTime * _rotationSpeed);
                     }

@@ -260,8 +260,6 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                 return ItemTypeName.PLAYER;
             case ItemType.Chest:
                 return ItemTypeName.MISC;
-            case ItemType.Ghost:
-                return ItemTypeName.UNKNOWN;
             case ItemType.Bot:
                 {
                     NpcItem npc = this.Item as NpcItem;
@@ -283,9 +281,11 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                             return ItemTypeName.PLANET;
                         case BotItemSubType.StandardCombatNpc:
                             return ItemTypeName.BOT_ENEMY;
+                            
                     }
                     return ItemTypeName.UNKNOWN;
                 }
+            case ItemType.Event: return ItemTypeName.EVENT;
         }
         return ItemTypeName.UNKNOWN;
     }

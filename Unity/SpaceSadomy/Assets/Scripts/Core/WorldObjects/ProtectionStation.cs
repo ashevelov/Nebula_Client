@@ -53,8 +53,8 @@ namespace Nebula {
         private float speed;
         private Race race;
 
-        public ProtectionStationItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
-            : base(id, type, game, subType, name) {
+        public ProtectionStationItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name, object[] inComponents)
+            : base(id, type, game, subType, name, inComponents) {
             this.bonuses = new ActorBonuses();
             this.weapon = new ClientNpcShipWeapon();
         }

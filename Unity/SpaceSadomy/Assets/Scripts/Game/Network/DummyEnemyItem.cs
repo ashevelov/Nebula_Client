@@ -15,8 +15,8 @@ namespace Nebula
         private ActorBonuses bonuses;
 
 
-        public DummyEnemyItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
-            : base(id, type, game, subType, name)
+        public DummyEnemyItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name, object[] inComponents)
+            : base(id, type, game, subType, name, inComponents)
         {
             this.ship = new ForeignShip(this);
             this.bonuses = new ActorBonuses();

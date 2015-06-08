@@ -8,8 +8,8 @@ namespace Nebula.Game.Network.Items {
     public class PlanetItem : NpcItem {
         private readonly ClientPlanetInfo planetInfo;
 
-        public PlanetItem(string id, byte type, NetworkGame game, string name)
-            : base(id, type, game, BotItemSubType.Planet, name) {
+        public PlanetItem(string id, byte type, NetworkGame game, string name, object[] inComponents)
+            : base(id, type, game, BotItemSubType.Planet, name, inComponents) {
             this.planetInfo = new ClientPlanetInfo();
         }
 

@@ -50,7 +50,7 @@ namespace Nebula.UI {
             panelPathDictionary.Add(CanvasPanelType.ItemInfoView,                       "Prefabs/UI/ItemInfoView/Item_Info_View");
             panelPathDictionary.Add(CanvasPanelType.InventorySourceView,                "Prefabs/UI/Inventory_Source_View");
             panelPathDictionary.Add(CanvasPanelType.ShipInfoView,                       "Prefabs/UI/ShipInfoVeiw");
-            panelPathDictionary.Add(CanvasPanelType.EventTasksView,                     "Prefabs/UI/Event_Tasks_View");
+            //panelPathDictionary.Add(CanvasPanelType.EventTasksView,                     "Prefabs/UI/Event_Tasks_View");
             panelPathDictionary.Add(CanvasPanelType.BuffsView,                          "Prefabs/UI/Buffs_View");
             panelPathDictionary.Add(CanvasPanelType.SchemeSelectorView,                 "Prefabs/UI/Scheme_Selector_View");
             panelPathDictionary.Add(CanvasPanelType.ActionProgressView,                 "Prefabs/UI/Action_Progress_View");
@@ -60,7 +60,6 @@ namespace Nebula.UI {
             panelPathDictionary.Add(CanvasPanelType.MessageBox,                         "Prefabs/UI/Message_Box_View");
             panelPathDictionary.Add(CanvasPanelType.GroupView,                          "Prefabs/UI/Group_View");
             panelPathDictionary.Add(CanvasPanelType.ShipDestroyView,                    "Prefabs/UI/ShipDestroyView");
-            panelPathDictionary.Add(CanvasPanelType.PlayerInfo,                         "Prefabs/UI/PlayerInfo");
             
 
             Show(CanvasPanelType.TargetObjectView);
@@ -236,7 +235,7 @@ namespace Nebula.UI {
         ItemInfoView,
         InventorySourceView,
         ShipInfoView,
-        EventTasksView,
+       // EventTasksView,
         BuffsView,
         SchemeSelectorView,
         ActionProgressView,
@@ -245,7 +244,6 @@ namespace Nebula.UI {
         StationHUD,
         MessageBox,
         GroupView,
-        ShipDestroyView,
-        PlayerInfo
+        ShipDestroyView
     }
 }

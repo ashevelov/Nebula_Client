@@ -15,8 +15,8 @@ namespace Nebula
         private Chest _component;
         private List<ClientInventoryItem> items = new List<ClientInventoryItem>();
 
-        public ChestItem(string id, byte type, NetworkGame game, string name)
-            : base(id, type, game, name)
+        public ChestItem(string id, byte type, NetworkGame game, string name, object[] inComponents)
+            : base(id, type, game, name, inComponents)
         { 
             
         }

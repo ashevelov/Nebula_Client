@@ -26,7 +26,7 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
 
                 NetworkGame ngame = game as NetworkGame;
                 string asteroidID = returnHash.Value<string>((int)SPC.ContainerId, string.Empty);
-                byte asteroidType = returnHash.Value<byte>((int)SPC.ContainerType, (byte)ItemType.Ghost);
+                byte asteroidType = returnHash.Value<byte>((int)SPC.ContainerType, (byte)ItemType.Avatar);
                 if(string.IsNullOrEmpty(asteroidID)) {
                     Debug.LogError("empty asteroid id");
                     return;

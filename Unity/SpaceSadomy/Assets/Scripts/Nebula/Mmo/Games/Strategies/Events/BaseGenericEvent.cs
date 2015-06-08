@@ -8,5 +8,9 @@
         protected Hashtable Properties(EventData eventData) {
             return (Hashtable)eventData.Parameters[ParameterCode.EventData.toByte()];
         }
+
+        protected object Data(EventData eventData) {
+            return eventData.Parameters[(byte)ParameterCode.EventData];
+        }
     }
 }

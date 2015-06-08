@@ -9,6 +9,7 @@ namespace Nebula.UI {
         private IObjectInfo prevObjectInfo;
 
 
+
         void Start() {
             SetTargetsTo(null);
         }

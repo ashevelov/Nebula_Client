@@ -38,10 +38,11 @@ namespace Nebula.Mmo.Games.Strategies {
 
             GenericContainerEvent generic = new GenericContainerEvent();
             generic.AddStrategy(CustomEventCode.Fire, new FireEvent());
-            generic.AddStrategy(CustomEventCode.WorldEventStageChanged, new WorldEventStageChangedEvent());
-            generic.AddStrategy(CustomEventCode.WorldEventStartedWithStage, new WorldEventStartedWithStageEvent());
-            generic.AddStrategy(CustomEventCode.WorldEventCompletedWithStage, new WorldEventCompletedWithStageEvent());
-            generic.AddStrategy(CustomEventCode.WorldEventMakeTransition, new WorldEventMakeTransitionEvent());
+            //generic.AddStrategy(CustomEventCode.WorldEventStageChanged, new WorldEventStageChangedEvent());
+            //generic.AddStrategy(CustomEventCode.WorldEventStartedWithStage, new WorldEventStartedWithStageEvent());
+            //generic.AddStrategy(CustomEventCode.WorldEventCompletedWithStage, new WorldEventCompletedWithStageEvent());
+            //generic.AddStrategy(CustomEventCode.WorldEventMakeTransition, new WorldEventMakeTransitionEvent());
+            generic.AddStrategy(CustomEventCode.GameEvent, new GameEventStatusEvent());
             generic.AddStrategy(CustomEventCode.ChatMessage, new ChatMessageEvent());
             generic.AddStrategy(CustomEventCode.InventoryItemsAdded, new InventoryItemsAddedEvent());
             generic.AddStrategy(CustomEventCode.InventoryUpdated, new InventoryUpdatedEvent());
@@ -67,7 +68,7 @@ namespace Nebula.Mmo.Games.Strategies {
             GenericMultiOperation multiOp = new GenericMultiOperation();
 
             container.AddRPCActionStrategy("GetSkillBinding", new GetSkillBindingOperation());
-            container.AddRPCActionStrategy("RequestWorldEvents", new RequestWorldEventsOperation());
+            //container.AddRPCActionStrategy("RequestWorldEvents", new RequestWorldEventsOperation());
             container.AddRPCActionStrategy("RequestContainer", new RequestContainerOperation());
             container.AddRPCActionStrategy("GetInventory", new GetInventoryOperation());
             container.AddRPCActionStrategy("AddFromContainer", new AddFromContainerOperation());
@@ -105,7 +106,7 @@ namespace Nebula.Mmo.Games.Strategies {
             container.AddRPCActionStrategy("RemoveMailMessage", multiOp);
             container.AddRPCActionStrategy("SetTarget", multiOp);
             container.AddRPCActionStrategy("TestBuffs", multiOp);
-            container.AddRPCActionStrategy("ToggleGodMode", multiOp);
+            container.AddRPCActionStrategy("TGM", multiOp);
             container.AddRPCActionStrategy("AddScheme", multiOp);
             container.AddRPCActionStrategy("DestroyInventoryItem", multiOp);
             container.AddRPCActionStrategy("TransformObjectAndMoveToHold", multiOp);

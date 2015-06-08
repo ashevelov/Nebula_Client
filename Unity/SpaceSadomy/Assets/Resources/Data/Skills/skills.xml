@@ -179,7 +179,7 @@
   </skill>
 
   <skill id="SA040003" require_weapon_slot="false" name="Электронное противодействие"
-         durability="0" type="Persistent" energy="10" cooldown="15"
+         durability="30" type="Durable" energy="10" cooldown="15"
          slot_type="DM" description="Бортовой компьютер создаёт мощную волну помех, воздействующих непосредственно на электронные системы управления орудиями противника. Шанс критического попадания из орудий противника снижается в {color=#008000ff}2{/color} раза
          &#10; &#10; {color=#FFA500ff}Поддерживаемое действие{/color}
          &#10; Затраты энергии: {color=#FFA500ff}10{/color} единиц" alias="sa43">

@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity_5/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity_5/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +84,7 @@
      <None Include="Assets\ThirdPartyAssets\SpaceUnity\Read First (Planet Expansion Pack 01).txt" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantNormal.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Thruster\Flame.shader" />
+     <None Include="Assets\Resources\DataClient\Strings\game_events_strings.xml" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereOuterNormalSpecularDetail.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantDetail.shader" />
@@ -472,30 +473,31 @@
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereOuter.shader" />
      <None Include="Assets\Resources\UI\Data\star_info.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\CGInclude\StarSurface.cginc" />
+     <None Include="Assets\Resources\DataClient\prefabs_db.xml" />
      <None Include="Assets\Resources\DataClient\buffs.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Thruster\BasicFlame.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphere.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity_5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Common">
- <HintPath>D:/Work/NebulaClientGit/Unity/SpaceSadomy/Assets/Plugins/Common.dll</HintPath>
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/Common.dll</HintPath>
  </Reference>
  <Reference Include="GameMath">
- <HintPath>D:/Work/NebulaClientGit/Unity/SpaceSadomy/Assets/Plugins/GameMath.dll</HintPath>
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/GameMath.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>D:/Work/NebulaClientGit/Unity/SpaceSadomy/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="ServerClientCommon">
- <HintPath>D:/Work/NebulaClientGit/Unity/SpaceSadomy/Assets/Plugins/ServerClientCommon.dll</HintPath>
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/ServerClientCommon.dll</HintPath>
  </Reference>
  <Reference Include="SpaceClient">
- <HintPath>D:/Work/NebulaClientGit/Unity/SpaceSadomy/Assets/Plugins/SpaceClient.dll</HintPath>
+ <HintPath>E:/unity/GitNebula/Unity/SpaceSadomy/Assets/Plugins/SpaceClient.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>D:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Program Files/Unity_5/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

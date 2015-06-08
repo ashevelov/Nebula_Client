@@ -7,6 +7,7 @@ namespace Nebula
     using System.Collections;
     using Common;
     using Nebula.Mmo.Games;
+    using Nebula.Mmo.Items.Components;
 
     public abstract class Item
     {
@@ -28,6 +29,7 @@ namespace Nebula
         private string _name;
         private bool _shipDestroyed;
         private float movedSpeed = 0f;
+        public ComponentID[] componentIDS { get; private set; }
 
 
         public Race Race
@@ -94,6 +96,15 @@ namespace Nebula
             return default(T);
         }
 
+        public bool TryGetProperty<T>(byte name, out T value) {
+            if(properties.ContainsKey(name)) {
+                value = (T)properties[name];
+                return true;
+            }
+            value = default(T);
+            return false;
+        }
+
         public NetworkGame Game
         {
             get
@@ -154,9 +165,9 @@ namespace Nebula
         }
 
 
+        protected Dictionary<ComponentID, MmoBaseComponent> components { get; set; }
 
-
-        protected Item(string id, byte type, NetworkGame game, string name)
+        protected Item(string id, byte type, NetworkGame game, string name, object[] inComponents)
         {
             this.id = id;
             _name = StringCache.Get(name);
@@ -165,6 +176,31 @@ namespace Nebula
             this.visibleInterestAreas = new List<byte>();
             this.subscribedInterestAreas = new List<byte>();
             properties = new Dictionary<byte, object>();
+
+            if (inComponents != null) {
+                componentIDS = new ComponentID[inComponents.Length];
+                for(int i = 0; i < inComponents.Length; i++ ) {
+                    componentIDS[i] = (ComponentID)(int)inComponents[i];
+                }
+            } else {
+                componentIDS = new ComponentID[] { };
+            }
+
+            components = new Dictionary<ComponentID, MmoBaseComponent>();
+            foreach(var cID in componentIDS) {
+                var component = MmoBaseComponent.CreateNew(cID);
+                if (component != null) {
+                    components.Add(cID, component);
+                    component.SetItem(this);
+                }
+            }
+        }
+
+        public MmoBaseComponent GetMmoComponent(ComponentID cID ) {
+            if(components.ContainsKey(cID)) {
+                return components[cID];
+            }
+            return null;
         }
 
 
@@ -258,43 +294,6 @@ namespace Nebula
                 this.Moved(this);
             }
         }
-
-
-        //don't use now
-        /*
-        public virtual void CreateView(GameObject prefab)
-        {
-            if (!_existView)
-            {
-                if (_view)
-                {
-                    GameObject.Destroy(_view);
-                    _view = null;
-                }
-
-                _view = GameObject.Instantiate(prefab,
-                    (Position != null) ? Position.toVector() : Vector3.zero,
-                    (Rotation != null ? Quaternion.Euler(Rotation.toVector()) : Quaternion.identity)) as GameObject;
-
-                if (false == string.IsNullOrEmpty(this.Id) )
-                {
-                    _view.name = "1A_player" + (this.IsMine ? "MY" : ((this.Id.Length >= 3 ) ?  this.Id.Substring(0, 3) : this.Id ) ) + "(" + this.Type.toItemType().ToString() + ")";
-                    if (this.type.toItemType() == ItemType.Bot)
-                    {
-                        var npc = this as NpcItem;
-                        _view.name += "_" + npc.SubType.ToString();
-                    }
-                }
-                else
-                {
-                    Debug.Log("id of view is null or empty");
-                    _view.name = "1A_playerNULL" + "(" + this.Type.toItemType().ToString() + ")"; 
-                }
-
-                _transformInterpolation = _view.AddComponent<NetworkTransformInterpolation>();
-                _existView = true;
-            }
-        }*/
 
         public virtual void Create(GameObject obj)
         {

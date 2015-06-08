@@ -3,6 +3,7 @@ using System.Collections;
 using Game.Space;
 using Common;
 using Game.Space.UI;
+using Nebula;
 
 public class Chest : BaseSpaceObject {
 
@@ -40,8 +41,8 @@ public class Chest : BaseSpaceObject {
         {
             if(G.Game.Avatar != null && !G.Game.Avatar.IsDestroyed)
             {
-                this.nextUpdateTime = Time.time + 1;
-                G.Game.Avatar.RequestContainer(this.Item.Id, this.Item.Type.toItemType());
+                this.nextUpdateTime = Time.time + 2;
+                NRPC.RequestContainer(Item.Id, (ItemType)Item.Type);
             }
         }
     }

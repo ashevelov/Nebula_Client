@@ -110,11 +110,11 @@
                 if (retHash != null) {
                     //get container id, type, item id
                     string containerId = retHash.GetValue<string>((int)SPC.ContainerId, string.Empty);
-                    byte containerType = retHash.GetValue<byte>((int)SPC.ContainerType, ItemType.Ghost.toByte());
+                    byte containerType = retHash.GetValue<byte>((int)SPC.ContainerType, ItemType.Avatar.toByte());
                     string containerContentItemId = retHash.GetValue<string>((int)SPC.ContainerItemId, string.Empty);
 
                     //check that return  values valid
-                    if ((!string.IsNullOrEmpty(containerId)) && (containerType != (byte)ItemType.Ghost) && (!string.IsNullOrEmpty(containerContentItemId))) {
+                    if ((!string.IsNullOrEmpty(containerId)) && (containerType != (byte)ItemType.Avatar) && (!string.IsNullOrEmpty(containerContentItemId))) {
                         //try get container item
                         Item containerItem = null;
                         if (G.Game.TryGetItem(containerType, containerId, out containerItem)) {

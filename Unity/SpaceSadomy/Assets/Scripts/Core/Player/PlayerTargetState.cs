@@ -50,18 +50,45 @@ namespace Nebula {
 
         public Item Item {
             get {
-                return _targetItem;
+                if(!_hasTarget) {
+                    _targetItem = null;
+                    return _targetItem;
+                } else {
+                    if(string.IsNullOrEmpty(_targetId)) {
+                        _targetItem = null;
+                        return _targetItem;
+                    } else {
+                        if((_targetItem == null) || (_targetItem.Id != _targetId)) {
+                            if (G.Game.TryGetItem(_targetType, _targetId, out _targetItem) == false) {
+                                Debug.Log("target not founded");
+                                _targetItem = null;
+                                
+                            }
+                        }
+                        return _targetItem;
+                    }
+                }
             }
         }
 
         public bool HasTargetAndTargetGameObjectValid {
             get {
                 if (HasTarget) {
+                    _targetItem = Item;
+
                     if (_targetItem != null) {
                         if (_targetItem.View && _targetItem.Component) {
                             return true;
+                        } else {
+                            if(!_targetItem.View) {
+                                Debug.Log(""); ;
+                            }
                         }
+                    } else {
+                        Debug.Log("Target item is null");
                     }
+                } else {
+                    Debug.Log("HasTarget Is False");
                 }
                 return false;
             }
@@ -95,56 +122,11 @@ namespace Nebula {
         }
 
         public void SetTarget(bool hasTarget, string targetId, byte targetType) {
-            bool oldHasTarget = _hasTarget;
-            string oldTargetId = _targetId;
-
             this._hasTarget = hasTarget;
             this._targetId = targetId;
             this._targetType = targetType;
-
-            if (_hasTarget && !string.IsNullOrEmpty(_targetId)) {
-                if (oldHasTarget == false || oldTargetId != _targetId) {
-                    if (G.Game.TryGetItem(_targetType, _targetId, out _targetItem) == false) {
-                        Debug.Log("target not founded");
-                        _targetItem = null;
-                    }
-                }
-            } else if (oldHasTarget && !(_hasTarget)) {
-                this.ResetTarget();
-            }
-
-            if (this.targetUpdated != null) {
-                this.targetUpdated();
-            }
-
         }
 
-        public void ParseProps(Hashtable properties) {
-            bool oldHasTarget = _hasTarget;
-            string oldTargetId = _targetId;
-
-            foreach (DictionaryEntry entry in properties) {
-                ParseProp((byte)entry.Key, entry.Value);
-            }
-
-            //try find target item
-            if (_hasTarget && !string.IsNullOrEmpty(_targetId)) {
-                if (oldHasTarget == false || oldTargetId != _targetId) {
-                    if (G.Game.TryGetItem(_targetType, _targetId, out _targetItem) == false) {
-                        Debug.Log("target not founded");
-                        _targetItem = null;
-                    }
-                }
-            } else if (oldHasTarget && !(_hasTarget)) {
-                this.ResetTarget();
-            }
-
-            if (this.targetUpdated != null) {
-                this.targetUpdated();
-            }
-
-
-        }
 
         public Hashtable GetTargetInfo() {
             var game = G.Game;
@@ -177,43 +159,6 @@ namespace Nebula {
                 return (true == this._hasTarget) && (ItemType.Asteroid == this._targetType.toEnum<ItemType>());
             }
         }
-
-        //public ClassRelation GetRelation() {
-        //    if (this.HasTarget == false)
-        //        return ClassRelation.Unknown;
-
-        //    switch (this.Item.Type.toItemType()) {
-        //        case ItemType.Bot:
-        //            {
-        //                switch (((NpcItem)this._targetItem).SubType) {
-        //                    case BotItemSubType.StandardCombatNpc:
-        //                        return ClassRelation.Enemy;
-        //                    case BotItemSubType.None:
-        //                        return ClassRelation.Unknown;
-        //                }
-        //            }
-        //            return ClassRelation.Unknown;
-        //        case ItemType.Asteroid:
-        //            return ClassRelation.Neutral;
-        //        case ItemType.Avatar:
-        //            {
-        //                ForeignPlayerItem fPlayer = this.Item as ForeignPlayerItem;
-        //                if (fPlayer != null) {
-        //                    Race fRace = fPlayer.Race;
-        //                    Race thisRace = _owner.Race;
-        //                    if (thisRace == fRace)
-        //                        return ClassRelation.Friend;
-        //                }
-        //            }
-        //            return ClassRelation.Enemy;
-        //        case ItemType.Chest:
-        //            return ClassRelation.Neutral;
-        //        case ItemType.Ghost:
-        //            return ClassRelation.Neutral;
-        //        default:
-        //            return ClassRelation.Unknown;
-        //    }
-        //}
 
         public float DistanceTo() {
             if (false == this._hasTarget || false == this._targetItem.View)

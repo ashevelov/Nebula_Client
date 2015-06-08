@@ -42,7 +42,13 @@ namespace Nebula.UI {
             var image = this.GetComponent<UnityEngine.UI.Image>();
             image.overrideSprite = SpriteCache.ItemType(bso.GetItemTypeName());
 
-            image.color = Utils.RaceColor(item.Race);
+            //set green color for event
+            if (bso.GetItemTypeName() == ItemTypeName.EVENT) {
+                image.color = Color.green;
+            } else {
+
+                image.color = Utils.RaceColor(item.Race);
+            }
 
             
         }

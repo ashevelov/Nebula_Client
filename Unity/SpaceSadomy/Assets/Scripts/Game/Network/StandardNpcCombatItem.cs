@@ -16,8 +16,8 @@ namespace Nebula {
         private TextureSubCache<string> texSubCache = new TextureSubCache<string>();
         private ClientItemEventInfo eventInfo;
 
-        public StandardNpcCombatItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
-            : base(id, type, game, subType, name) {
+        public StandardNpcCombatItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name, object[] inComponents)
+            : base(id, type, game, subType, name, inComponents) {
             this.ship = new ForeignShip(this);
             this.bonuses = new ActorBonuses();
             this.eventInfo = ClientItemEventInfo.Default;

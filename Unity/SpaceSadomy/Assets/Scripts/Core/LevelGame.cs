@@ -7,6 +7,8 @@ using Nebula.Game.Network.Items;
 using Nebula;
 using Nebula.Mmo.Games;
 using Nebula.Client.Res;
+using Nebula.Mmo.Items;
+using Nebula.Mmo.Items.Components;
 
 public class LevelGame : Game.Space.Singleton<LevelGame> {
 
@@ -65,13 +67,12 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
     {
         do
         {
-            //Debug.Log("CreateActorShip: Wait for player Avatar");
             yield return new WaitForEndOfFrame();
+
         } while (G.Game.Avatar == null);
 
         while (G.Game.ExistAvatarView == false)
         {
-            //Debug.Log("CreateActorShip: Wait for player avatar view");
             yield return new WaitForEndOfFrame();
         }
 
@@ -118,12 +119,6 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
                             yield return new WaitForEndOfFrame();
                         }
 
-                        //Dictionary<ShipModelSlotType, string> prefabs = new Dictionary<ShipModelSlotType, string>();
-                        //foreach (DictionaryEntry entry in sItem.Ship.ModelInfo)
-                        //{
-                        //    prefabs.Add((ShipModelSlotType)(byte)(int)entry.Key, (string)entry.Value);
-                        //}
-
                         sItem.Create(ShipModel.Init(GetPrefabs(sItem.Ship.ModelInfo), false));
                     }
                     else if (actor is ProtectionStationItem)
@@ -133,10 +128,7 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
                             yield return new WaitForEndOfFrame();
                         protectionStation.Create(Instantiate(PrefabCache.Get(protectionStation.Prefab)) as GameObject);
                     }
-                    else if(actor is PirateStationItem)
-                    {
-                        (actor as PirateStationItem).Create(Instantiate(PrefabCache.Get("Prefabs/WorldObjects/ProtectionStation")) as GameObject);
-                    }
+
                     else if(actor is PlanetItem)
                     {
                         var planetItem = actor as PlanetItem;
@@ -154,6 +146,27 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
                         //Debug.Log("Create Activator");
                         this.CreateActivator(activator);
                     }
+                    else if(actor.GetMmoComponent(ComponentID.Model) != null ) {
+                        Debug.Log("try create pirate station".Color("green"));
+                        MmoModelComponent model = actor.GetMmoComponent(ComponentID.Model) as MmoModelComponent;
+
+                        if(string.IsNullOrEmpty(model.modelId)) {
+                            updateList.Add(actor);
+                        }
+                        while (string.IsNullOrEmpty(model.modelId)) {
+                            yield return null;
+                        }
+                        updateList.Remove(actor);
+
+                        Debug.Log("pirate station model received".Color("green"));
+                        string prefabPath = null;
+                        if(!DataResources.Instance.prefabsDb.TryGetPath(model.modelId, out prefabPath)) {
+                            Debug.LogErrorFormat("prefab path= {0} not founded", model.modelId);
+                            yield break;
+                        }
+                        GameObject prefab = PrefabCache.Get(prefabPath);
+                        actor.Create(Instantiate(prefab) as GameObject);
+                    }
                 }
                 break;
             case ItemType.Chest:
@@ -166,8 +179,21 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
                     this.CreateAsteroid(actor);
                 }
                 break;
+            case ItemType.Event: { CreateEvent(actor); }
+                break;
         }
 
+    }
+
+    private float updateTimer = 1;
+    private List<Item> updateList = new List<Item>();
+
+    void Update() {
+        updateTimer -= Time.deltaTime;
+        if(updateTimer < 0 ) {
+            updateTimer = 1;
+            foreach (var it in updateList) { it.GetProperties();  }
+        }
     }
 
     private Dictionary<ShipModelSlotType, string> GetPrefabs(Hashtable input) {
@@ -185,6 +211,11 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
     {
         ChestItem chestItem = item as ChestItem;
         chestItem.Create(Instantiate(PrefabCache.Get("Prefabs/WorldObjects/chest")) as GameObject);
+    }
+
+    private void CreateEvent(Item item) {
+        EventItem eventItem = item as EventItem;
+        eventItem.Create(new GameObject("event=" + eventItem.Id));
     }
 
     private void CreateActivator(Item item)

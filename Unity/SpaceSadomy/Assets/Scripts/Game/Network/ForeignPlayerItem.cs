@@ -32,8 +32,8 @@ namespace Nebula
         private bool initiallyCreatedFlag = false;
         private TextureSubCache<string> texSubCache = new TextureSubCache<string>();
 
-        public ForeignPlayerItem(string id, byte type, NetworkGame game, string name)
-            : base(id, type, game, name)
+        public ForeignPlayerItem(string id, byte type, NetworkGame game, string name, object[] inComponents)
+            : base(id, type, game, name, inComponents)
         {
             _ship = new ForeignShip(this);
             modules = new ForeignShipModules();

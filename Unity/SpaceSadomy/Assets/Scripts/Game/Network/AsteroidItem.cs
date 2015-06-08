@@ -28,8 +28,8 @@ namespace Nebula
 
         private BaseSpaceObject component;
 
-        public AsteroidItem(string id, byte type, NetworkGame game, string name)
-            : base(id, type, game, name)
+        public AsteroidItem(string id, byte type, NetworkGame game, string name, object[] inComponents)
+            : base(id, type, game, name, inComponents)
         {
 
         }

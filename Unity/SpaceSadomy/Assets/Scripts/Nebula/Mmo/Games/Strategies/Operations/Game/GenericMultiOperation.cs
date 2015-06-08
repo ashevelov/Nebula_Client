@@ -16,7 +16,7 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
             this.handlers.Add("RemoveMailMessage", HandleRemoveMailMessage);
             this.handlers.Add("SetTarget", this.HandleSetTarget);
             this.handlers.Add("TestBuffs", this.HandleTestBuffs);
-            this.handlers.Add("ToggleGodMode", this.HandleToggleGodMode);
+            this.handlers.Add("TGM", this.HandleToggleGodMode);
             this.handlers.Add("AddScheme", this.HandleAddScheme);
             this.handlers.Add("DestroyInventoryItem", this.HadleDestroyInventoryItem);
             this.handlers.Add("AddInventorySlots", HandleAddInventorySlots);
@@ -117,10 +117,10 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
             }
         }
 
+        //Handler for TGM() function response of type {{ACTION_RESULT.RESULT, SUCCESS|FAIL}, {ACTION_RESULT.RETURN, (bool)god } }
         private void HandleToggleGodMode(NetworkGame game, OperationResponse response) {
-            Hashtable retHash = this.Return(response) as Hashtable;
-            bool isGod = retHash.GetBool((int)SPC.IsGod);
-            G.Game.Engine.GameData.Chat.PastLocalMessage("Gode Mode Turned: {0}".f(isGod));
+            bool god = (bool)Return(response);
+            G.Game.Engine.GameData.Chat.PastLocalMessage("Gode Mode Turned: {0}".f(god));
         }
 
         //Handler for test RPC 'AddScheme()'

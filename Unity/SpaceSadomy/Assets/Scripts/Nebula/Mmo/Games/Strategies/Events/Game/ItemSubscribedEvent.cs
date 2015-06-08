@@ -8,6 +8,7 @@
     using Nebula;
     using Nebula.Mmo.Games;
     using global::Game.Space;
+    using Nebula.Mmo.Items;
 
     public class ItemSubscribedEvent : BaseEventHandler {
 
@@ -24,6 +25,14 @@
             float[] rotation = eventData.Contains((byte)ParameterCode.Rotation) ? (float[])eventData[(byte)ParameterCode.Rotation] : null;
             byte subType = eventData.Contains((byte)ParameterCode.SubType) ? (byte)eventData[(byte)ParameterCode.SubType] : (byte)0;
             Hashtable itemProperties = eventData.Contains((byte)ParameterCode.Properties) ? (Hashtable)eventData[(byte)ParameterCode.Properties] : new Hashtable();
+            object[] components = (object[])eventData[(byte)ParameterCode.Components];
+
+            //System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            //builder.Append(itemId + ": ");
+            //foreach(var componentObj in components) {
+            //    builder.Append(((ComponentID)(int)componentObj).ToString() + ", ");
+            //}
+            //Debug.Log(builder.ToString());
 
             string displayName = eventData.Contains((byte)ParameterCode.Username) ? (string)eventData[(byte)ParameterCode.Username] : string.Empty;
 
@@ -67,7 +76,7 @@
             } else {
                 switch ((ItemType)itemType) {
                     case ItemType.Avatar:
-                        item = new ForeignPlayerItem(itemId, itemType, game, displayName);
+                        item = new ForeignPlayerItem(itemId, itemType, game, displayName, components);
                         item.SetPositions(position, position, rotation, rotation, 0);
                         game.AddItem(item);
                         item.AddSubscribedInterestArea(cameraId);
@@ -77,9 +86,10 @@
                     case ItemType.Bot:
 
                         switch ((BotItemSubType)subType) {
+
                             case BotItemSubType.StandardCombatNpc:
                                 {
-                                    item = new StandardNpcCombatItem(itemId, itemType, game, BotItemSubType.StandardCombatNpc, displayName);
+                                    item = new StandardNpcCombatItem(itemId, itemType, game, BotItemSubType.StandardCombatNpc, displayName, components);
                                     item.SetPositions(position, position, rotation, rotation, 0);
                                     item.SetSubscribed(true);
                                     item.SetProperties(itemProperties);
@@ -90,19 +100,21 @@
                                 break;
                             case BotItemSubType.PirateStation:
                                 {
-                                    item = new PirateStationItem(itemId, itemType, game, BotItemSubType.PirateStation, displayName);
-                                    item.SetPositions(position, position, rotation, rotation, 0);
-                                    item.SetSubscribed(true);
-                                    item.SetProperties(itemProperties);
-                                    game.AddItem(item);
-                                    item.AddSubscribedInterestArea(cameraId);
-                                    item.GetProperties();
+                                    //item = new PirateStationItem(itemId, itemType, game, BotItemSubType.PirateStation, displayName, components);
+                                    //item.SetPositions(position, position, rotation, rotation, 0);
+                                    //item.SetSubscribed(true);
+                                    //item.SetProperties(itemProperties);
+                                    //game.AddItem(item);
+                                    //item.AddSubscribedInterestArea(cameraId);
+                                    //item.GetProperties();
+
+                                    CreateMmoItem(itemId, itemType, game, displayName, position, rotation, cameraId, itemProperties, components);
                                 }
                                 break;
                             case BotItemSubType.Planet:
                                 {
                                     Debug.Log("<color=orange>Planet subscribed</color>");
-                                    item = new PlanetItem(itemId, itemType, game, displayName);
+                                    item = new PlanetItem(itemId, itemType, game, displayName, components);
                                     item.SetPositions(position, position, rotation, rotation, 0);
                                     item.SetSubscribed(true);
                                     item.SetProperties(itemProperties);
@@ -113,30 +125,52 @@
                                 break;
                             case BotItemSubType.Activator:
                                 {
-                                    CreateActivator(itemId, itemType, game, displayName, position, rotation, cameraId);
+                                    CreateActivator(itemId, itemType, game, displayName, position, rotation, cameraId, components);
                                 }
                                 break;
+
                         }
                         break;
                     case ItemType.Chest:
                         {
-                            CreateChest(itemId, itemType, game, displayName, position, rotation, cameraId);
+                            CreateChest(itemId, itemType, game, displayName, position, rotation, cameraId, components);
                         }
                         break;
                     case ItemType.Asteroid:
                         {
-                            CreateAsteroid(itemId, itemType, game, displayName, position, rotation, cameraId);
+                            CreateAsteroid(itemId, itemType, game, displayName, position, rotation, cameraId, components);
                         }
                         break;
-
+                    case ItemType.Event: { CreateEvent(itemId, itemType, game, displayName, position, rotation, cameraId, itemProperties, components); }
+                        break;
                 }
 
 
             }
         }
 
-        private void CreateChest(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId) {
-            Item item = new ChestItem(id, type, game, name);
+        private void CreateMmoItem(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId, Hashtable properties, object[] components) {
+            Item item = new MmoItem(id, type, game, name, components);
+            item.SetPositions(position, position, rotation, rotation, 0);
+            item.SetSubscribed(true);
+            item.SetProperties(properties);
+            game.AddItem(item);
+            item.AddSubscribedInterestArea(areaId);
+            item.GetProperties();
+        }
+
+        private void CreateEvent(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId, Hashtable properties, object[] components) {
+            Item item = new EventItem(id, type, game, name, components);
+            item.SetPositions(position, position, rotation, rotation, 0);
+            item.SetSubscribed(true);
+            item.SetProperties(properties);
+            game.AddItem(item);
+            item.AddSubscribedInterestArea(areaId);
+            item.GetProperties();
+        }
+
+        private void CreateChest(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId, object[] components) {
+            Item item = new ChestItem(id, type, game, name, components);
             item.SetPositions(position, position, rotation, rotation, 0);
             item.SetSubscribed(true);
             game.AddItem(item);
@@ -144,9 +178,9 @@
             item.GetProperties();
         }
 
-        private void CreateActivator(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId) {
+        private void CreateActivator(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId, object[] components) {
             Debug.Log("Activator subscribed");
-            var item = new WorldActivatorItem(id, type, game, name);
+            var item = new WorldActivatorItem(id, type, game, name, components);
             item.SetPositions(position, position, rotation, rotation, 0);
             item.SetSubscribed(true);
             game.AddItem(item);
@@ -154,8 +188,8 @@
             item.GetProperties();
         }
 
-        private void CreateAsteroid(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId) {
-            Item item = new AsteroidItem(id, type, game, name);
+        private void CreateAsteroid(string id, byte type, NetworkGame game, string name, float[] position, float[] rotation, byte areaId, object[] components) {
+            Item item = new AsteroidItem(id, type, game, name, components);
             item.SetPositions(position, position, rotation, rotation, 0);
             item.SetSubscribed(true);
             game.AddItem(item);

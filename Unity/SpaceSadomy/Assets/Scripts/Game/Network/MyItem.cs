@@ -15,9 +15,8 @@ namespace Nebula {
         private BaseSpaceObject _component;
         private bool shiftPressed = false;
 
-        [CLSCompliant(false)]
-        public MyItem(string id, byte type, NetworkGame game, string name)
-            : base(id, type, game, name) {
+        public MyItem(string id, byte type, NetworkGame game, string name, object[] inComponents)
+            : base(id, type, game, name, inComponents) {
             _name = name;
             _aiState = new AIStateData(this);
             //_ship = new PlayerShip( this );
@@ -228,6 +227,11 @@ namespace Nebula {
                 case PS.MaxEnergy:
                     Game.Ship.ParseProp(key, newValue);
                     break;
+                case PS.TargetId:
+                case PS.HasTarget:
+                case PS.TargetType:
+                    Target.ParseProp(key, newValue);
+                    break;
             }
         }
 
@@ -283,9 +287,7 @@ namespace Nebula {
         }
 
 
-        public void RequestContainer(string id, ItemType type) {
-            Operations.ExecAction(Game, Id, "RequestContainer", new object[] { id, (byte)type });
-        }
+
 
 
 

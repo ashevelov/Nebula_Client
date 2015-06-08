@@ -34,7 +34,7 @@ namespace Nebula.Mmo.Games {
         private readonly IServiceMessageReceiver serviceMessageReceiver;
         private readonly ClientWorkhouseStation station;
         private readonly ClientWorld clientWorld;
-        private readonly ClientWorldEventConnection worldEventConnection;
+        //private readonly ClientWorldEventConnection worldEventConnection;
         private readonly ClientPlayerSkills skills;
         private readonly ClientShipCombatStats combatStats;
         private readonly DebugClientActionExecutor debugRPCExecutor;
@@ -78,7 +78,7 @@ namespace Nebula.Mmo.Games {
                 });
             //this.userInfo = new ClientUserInfo();
             this.clientWorld = new ClientWorld();
-            this.worldEventConnection = new ClientWorldEventConnection();
+            //this.worldEventConnection = new ClientWorldEventConnection();
             this.skills = new ClientPlayerSkills();
             this.combatStats = new ClientShipCombatStats();
             this.debugRPCExecutor = new DebugClientActionExecutor(this);
@@ -95,7 +95,7 @@ namespace Nebula.Mmo.Games {
         }
 
         public void CreateAvatar(string gameRefId) {
-            _avatar = new MyItem(gameRefId, (byte)ItemType.Avatar, this, "");
+            _avatar = new MyItem(gameRefId, (byte)ItemType.Avatar, this, "", new object[] { });
             _ship = new PlayerShip(_avatar);
             _avatar.AddVisibleInterestArea(0);
             AddItem(_avatar);
@@ -238,10 +238,10 @@ namespace Nebula.Mmo.Games {
             }
         }
 
-        public List<ClientWorldEventInfo> ActiveWorldEvents()
-        {
-            return this.worldEventConnection.ActiveEvents();
-        }
+        //public List<ClientWorldEventInfo> ActiveWorldEvents()
+        //{
+        //    return this.worldEventConnection.ActiveEvents();
+        //}
 
 
         #region Properties
@@ -366,13 +366,13 @@ namespace Nebula.Mmo.Games {
             }
         }
 
-        public ClientWorldEventConnection WorldEventConnection
-        {
-            get
-            {
-                return this.worldEventConnection;
-            }
-        }
+        //public ClientWorldEventConnection WorldEventConnection
+        //{
+        //    get
+        //    {
+        //        return this.worldEventConnection;
+        //    }
+        //}
 
         public ClientPlayerSkills Skills
         {
@@ -438,10 +438,10 @@ namespace Nebula.Mmo.Games {
             return Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacterId;
         }
 
-        public ClientWorldEventInfo GetEvent(string worldId, string eventId)
-        {
-            return this.WorldEventConnection.GetEvent(worldId, eventId);
-        }
+        //public ClientWorldEventInfo GetEvent(string worldId, string eventId)
+        //{
+        //    return this.WorldEventConnection.GetEvent(worldId, eventId);
+        //}
 
         public float ShipWeaponLightShotTimer01()
         {
@@ -469,10 +469,10 @@ namespace Nebula.Mmo.Games {
         }
 
 
-        public void SetEvent(Hashtable eventInfo)
-        {
-            this.WorldEventConnection.SetEvent(eventInfo);
-        }
+        //public void SetEvent(Hashtable eventInfo)
+        //{
+        //    this.WorldEventConnection.SetEvent(eventInfo);
+        //}
 
         public void SetPlayerInfo(Hashtable info)
         {
@@ -664,10 +664,10 @@ namespace Nebula.Mmo.Games {
                     this.nextUpdateSkillsTime = Time.time + Settings.REQUEST_SKILLS_INTERVAL;
                     NRPC.RequestSkills();
                 }
-                if (Time.time > this.nextUpdateEventsTime) {
-                    this.nextUpdateEventsTime = Time.time + Settings.REQUEST_EVENTS_INTERVAL;
-                    NRPC.RequestEvents();
-                }
+                //if (Time.time > this.nextUpdateEventsTime) {
+                //    this.nextUpdateEventsTime = Time.time + Settings.REQUEST_EVENTS_INTERVAL;
+                //    NRPC.RequestEvents();
+                //}
                 if (Time.time > this.nextChatUpdate) {
                     this.nextChatUpdate = Time.time + Settings.CHAT_UPDATE_INTERVAL;
                     NRPC.GetChatUpdate();
@@ -849,7 +849,7 @@ namespace Nebula.Mmo.Games {
                     MainCanvas.Get.Show(CanvasPanelType.ControlHUDView);
                     MainCanvas.Get.Show(CanvasPanelType.MenuHUDView);
                     MainCanvas.Get.Show(CanvasPanelType.ChatView);
-                    MainCanvas.Get.Show(CanvasPanelType.EventTasksView);
+                    //MainCanvas.Get.Show(CanvasPanelType.EventTasksView);
                 }
             } else {
                 if (MainCanvas.Get != null) {
@@ -858,7 +858,7 @@ namespace Nebula.Mmo.Games {
 					MainCanvas.Get.Destroy(CanvasPanelType.ChatView);
 					MainCanvas.Get.Destroy(CanvasPanelType.SelectedObjectContextMenuView);
 					MainCanvas.Get.Destroy(CanvasPanelType.TargetObjectView);
-                    MainCanvas.Get.Destroy(CanvasPanelType.EventTasksView);
+                    //MainCanvas.Get.Destroy(CanvasPanelType.EventTasksView);
                 }
             }
         }

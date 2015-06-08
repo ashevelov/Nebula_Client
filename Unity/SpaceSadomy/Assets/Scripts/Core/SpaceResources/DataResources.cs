@@ -48,6 +48,8 @@ public class DataResources  {
     private ResRaces races;
     private ResSchemes schemes;
     private ResMiscInventoryItems miscInventoryItems;
+    public ResGameEvents gameEvents { get; private set; }
+    public ResPrefabsDB prefabsDb { get; private set; }
 
 
     private List<ResLoreData> lore;
@@ -76,6 +78,9 @@ public class DataResources  {
             this.races = ResLoader.LoadRaces(Resources.Load<TextAsset>("DataClient/races").text);
             this.schemes = ResLoader.LoadSchemes(Resources.Load<TextAsset>("DataClient/schemes").text);
             this.miscInventoryItems = ResLoader.LoadMiscInventoryItems(Resources.Load<TextAsset>("Data/misc_inventory_items").text);
+            gameEvents = ResLoader.LoadGameEvents(Resources.Load<TextAsset>("Data/zones").text);
+            prefabsDb = ResLoader.LoadPrefabsDB(Resources.Load<TextAsset>("DataClient/prefabs_db").text);
+
             this.loaded = true;
         }
     }

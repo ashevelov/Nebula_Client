@@ -1,4 +1,5 @@
-﻿namespace Nebula.Mmo.Games.Strategies.Events.Game {
+﻿/*
+namespace Nebula.Mmo.Games.Strategies.Events.Game {
     using UnityEngine;
     using ExitGames.Client.Photon;
     using Common;
@@ -69,4 +70,4 @@
 
     }
 
-}
+}*/

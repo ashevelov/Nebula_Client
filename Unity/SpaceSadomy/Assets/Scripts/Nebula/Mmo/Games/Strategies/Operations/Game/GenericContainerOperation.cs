@@ -2,6 +2,7 @@
 using ExitGames.Client.Photon;
 using Nebula.Mmo.Games;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class GenericContainerOperation : BaseOperationHandler
@@ -9,9 +10,20 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
         private Dictionary<string, BaseGenericOperation> actionStrategies = new Dictionary<string, BaseGenericOperation>();
 
         public override void Handle(BaseGame game, OperationResponse response) {
-            string action = Action(response);
-            if (this.actionStrategies.ContainsKey(action)) {
-                this.actionStrategies[action].Handle(game, response);
+            try {
+                if (response.ReturnCode == (short)ReturnCode.Ok) {
+                    string action = Action(response);
+                    if (this.actionStrategies.ContainsKey(action)) {
+                        this.actionStrategies[action].Handle(game, response);
+                    }
+                } else {
+                    Debug.LogError(response.DebugMessage);
+
+                }
+            }catch(System.Exception exception) {
+                Debug.LogErrorFormat("Exception in action response: {0}", Action(response));
+                Debug.LogError(exception.Message);
+                Debug.LogError(exception.StackTrace);
             }
         }
 

@@ -108,14 +108,14 @@ public class G
         }
     }
 
-    public static List<ClientWorldEventInfo> ActiveWorldEvents()
-    {
-        if (IsPlayerValid())
-        {
-            return Game.ActiveWorldEvents();
-        }
-        return new List<ClientWorldEventInfo>();
-    }
+    //public static List<ClientWorldEventInfo> ActiveWorldEvents()
+    //{
+    //    if (IsPlayerValid())
+    //    {
+    //        return Game.ActiveWorldEvents();
+    //    }
+    //    return new List<ClientWorldEventInfo>();
+    //}
 
     public static bool ChatVisible()
     {

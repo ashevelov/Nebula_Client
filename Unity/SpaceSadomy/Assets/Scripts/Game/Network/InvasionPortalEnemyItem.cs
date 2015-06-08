@@ -24,8 +24,8 @@ namespace Nebula {
             }
         }
 
-        public InvasionPortalEnemyItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
-            : base(id, type, game, subType, name) {
+        public InvasionPortalEnemyItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name, object[] inComponents)
+            : base(id, type, game, subType, name, inComponents) {
             _ship = new ForeignShip(this);
             this.bonuses = new ActorBonuses();
         }

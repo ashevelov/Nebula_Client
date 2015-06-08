@@ -16,8 +16,8 @@ namespace Game.Space
         private int activatorType;
         private float nextUpdateTime;
 
-        public WorldActivatorItem(string id, byte type, NetworkGame game, string name)
-            : base(id, type, game, BotItemSubType.Activator, name)
+        public WorldActivatorItem(string id, byte type, NetworkGame game, string name, object[] inComponents)
+            : base(id, type, game, BotItemSubType.Activator, name, inComponents)
         {
             this.active = false;
             this.activatorType = -1;

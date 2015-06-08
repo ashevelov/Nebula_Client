@@ -37,13 +37,16 @@ namespace Nebula {
             NetworkGame game = null;
             MyItem player = null;
             if(false == CheckGameAndPlayer(out game, out player)) {
+                Debug.Log("FIRE: check Game And Player Not succedd");
                 return;
             }
 
             if(game.CurrentStrategy != GameState.NebulaGameWorldEntered) {
+                Debug.Log("FIRE: check strategy fail");
                 return;
             }
             if(false == player.Target.HasTargetAndTargetGameObjectValid) {
+                Debug.Log("FIRE: check target fail");
                 return;
             }
 
@@ -144,13 +147,13 @@ namespace Nebula {
         /// <summary>
         /// Request world events
         /// </summary>
-        public static void RequestEvents() {
+        /*public static void RequestEvents() {
             NetworkGame game = null;
             if (false == CheckGame(out game)) {
                 return;
             }
             Operations.ExecAction(game, game.AvatarId, "RequestWorldEvents", new object[] { });
-        }
+        }*/
 
         /// <summary>
         /// Request from server current skill binding
@@ -467,6 +470,16 @@ namespace Nebula {
             }
             Operations.ExecAction(game, game.AvatarId, "CmdAddOres", new object[] { });
         }
+
+
+        public static void RequestContainer(string id, ItemType type) {
+            NetworkGame game = null;
+            if (false == CheckGame(out game)) {
+                return;
+            }
+            Operations.ExecAction(game, game.AvatarId, "RequestContainer", new object[] { id, (byte)type });
+        }
+
 
         public static void AddAllFromContainer(string containerItemId, byte containerItemType) {
             NetworkGame game = null;

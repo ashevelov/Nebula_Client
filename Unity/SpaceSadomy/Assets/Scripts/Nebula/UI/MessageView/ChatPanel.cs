@@ -91,7 +91,7 @@ namespace Nebula.UI {
                         break;
                     }
                 case "$tgm": {
-                        Operations.ExecAction(G.Game, G.Game.AvatarId, "ToggleGodMode", new object[] { });
+                        Operations.ExecAction(G.Game, G.Game.AvatarId, "TGM", new object[] { });
                         //G.Game.Chat.PastLocalMessage("Command: #tgm");
                         break;
                     }

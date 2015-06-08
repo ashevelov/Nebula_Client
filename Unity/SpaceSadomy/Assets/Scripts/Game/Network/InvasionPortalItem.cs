@@ -15,8 +15,8 @@ namespace Nebula {
             get { return _component; }
         }
 
-        public InvasionPortalItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name)
-            : base(id, type, game, subType, name) {
+        public InvasionPortalItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name, object[] inComponents)
+            : base(id, type, game, subType, name, inComponents) {
         }
         /*
         public override void CreateView(GameObject prefab)

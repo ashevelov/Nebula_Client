@@ -52,5 +52,11 @@ namespace UIC
         {
             set { targetDistance.text = System.Math.Round(value, 2) + "км"; }
         }
+
+        public Text lvl;
+        public int Level
+        {
+            set { lvl.text = value.ToString(); }
+        }
     }
 }

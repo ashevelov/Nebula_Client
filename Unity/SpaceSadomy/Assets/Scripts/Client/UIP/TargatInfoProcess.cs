@@ -7,13 +7,16 @@ public class TargatInfoProcess : MonoBehaviour {
 
     public ITargetInfo uicPanel;
 
+    private IObjectInfo objectInfo;
+
     void Start()
     {
+        StartCoroutine(UpdateInfo());
     }
 
     public void SetObject(IObjectInfo objectInfo)
     {
-        StartCoroutine(UpdateInfo(objectInfo));
+        this.objectInfo = objectInfo;
     }
 
     private void CombatUpdate(ICombatObjectInfo info)
@@ -22,6 +25,7 @@ public class TargatInfoProcess : MonoBehaviour {
         uicPanel.MaxHP = (int)info.MaxHealth;
         uicPanel.CurentHP = (int)info.CurrentHealth;
         uicPanel.Distance = info.DistanceToPlayer;
+        uicPanel.Level = info.Level;
     }
 
 
@@ -31,18 +35,15 @@ public class TargatInfoProcess : MonoBehaviour {
         uicPanel.Distance = info.DistanceToPlayer;
     }
 
-    IEnumerator UpdateInfo(IObjectInfo objectInfo)
+    IEnumerator UpdateInfo()
     {
         if (CheckCondition())
         {
-
             if (uicPanel == null)
             {
                 uicPanel = FindObjectOfType<TargetInfo>();
-
                 uicPanel.MaxHP = 50000;
                 uicPanel.CurentHP = 50000;
-                //uicPanel.Avatar = SpriteCache.RaceSprite(G.Game.PlayerInfo.Race);
             }
 
             if (objectInfo is ICombatObjectInfo)
@@ -55,11 +56,13 @@ public class TargatInfoProcess : MonoBehaviour {
             }
         }
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine(UpdateInfo(objectInfo));
+        StartCoroutine(UpdateInfo());
     }
 
     public bool CheckCondition()
     {
+        if (objectInfo == null)
+            return false;
         return true;
     }
 }

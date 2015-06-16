@@ -81,17 +81,14 @@ public class Planet : BaseSpaceObject
         }
         if (G.Game.Avatar == null)
         {
-            Dbg.Print("Avatar is null", "NPC");
             return;
         }
         if (!G.Game.Avatar.Component)
         {
-            Dbg.Print("Avatar component is null", "NPC");
             return;
         }
         if (G.Game.Avatar.ShipDestroyed)
         {
-            Dbg.Print("Avatar ship destroyed", "NPC");
             return;
         }
 

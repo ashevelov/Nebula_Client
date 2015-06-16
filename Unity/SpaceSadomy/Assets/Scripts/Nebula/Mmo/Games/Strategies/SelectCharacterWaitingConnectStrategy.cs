@@ -17,7 +17,7 @@
                     {
                         Debug.Log("Select character peer connect");
                         game.SetStrategy(GameState.SelectCharacterConnected);
-                        SelectCharacterGame.GetCharacters(game.Engine.LoginGame.GameRefId);
+                        SelectCharacterGame.GetCharacters(game.Engine.LoginGame.GameRefId, game.Engine.LoginGame.login);
                         break;
                     }
                 case StatusCode.Disconnect:

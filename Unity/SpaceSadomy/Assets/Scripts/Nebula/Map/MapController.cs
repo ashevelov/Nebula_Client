@@ -766,7 +766,6 @@ private void TapInStar(RaycastHit hit)
     {
         var serializer = new XmlSerializer(typeof(T));
         TextAsset ta = (TextAsset)Resources.Load(path) as TextAsset;
-        Dbg.Print(path);
         TextReader reader = new StringReader(ta.text);
 
         return (T)serializer.Deserialize(reader);

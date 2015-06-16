@@ -55,17 +55,14 @@ public class Chest : BaseSpaceObject {
         }
         if (G.Game.Avatar == null)
         {
-            Dbg.Print("Avatar is null", "NPC");
             return;
         }
         if (!G.Game.Avatar.Component)
         {
-            Dbg.Print("Avatar component is null", "NPC");
             return;
         }
         if (G.Game.Avatar.ShipDestroyed)
         {
-            Dbg.Print("Avatar ship destroyed", "NPC");
             return;
         }
         float distance = Vector3.Distance(G.Game.Avatar.Component.Position, transform.position);

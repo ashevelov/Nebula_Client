@@ -22,7 +22,7 @@ public class SelectCharacterLevelLogic : MonoBehaviour {
             yield return null;
         }
         Debug.Log(string.Format("get characters request").Color("green"));
-        SelectCharacterGame.GetCharacters(MmoEngine.Get.LoginGame.GameRefId);
+        SelectCharacterGame.GetCharacters(MmoEngine.Get.LoginGame.GameRefId, MmoEngine.Get.LoginGame.login);
     }
 	
 }

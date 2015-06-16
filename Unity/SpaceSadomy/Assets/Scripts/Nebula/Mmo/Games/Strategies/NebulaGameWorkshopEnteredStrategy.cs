@@ -49,6 +49,9 @@ namespace Nebula.Mmo.Games.Strategies {
             genericOperation.AddRPCActionStrategy("RequestOpenedGroups", multi);
             genericOperation.AddRPCActionStrategy("JoinToOpenedGroup", multi);
             genericOperation.AddRPCActionStrategy("CraftItEasy", multi);
+            genericOperation.AddRPCActionStrategy("DestroyInventoryItems", multi);
+            genericOperation.AddRPCActionStrategy("AddInventoryItem", multi);
+
             AddOperationHandler((byte)OperationCode.ExecAction, genericOperation);
         }
 

@@ -20,25 +20,20 @@ public class Asteroid : BaseSpaceObject {
     private void OnRightMouseClickOnScreenView() {
         print("Right mouse click on Asteroid: {0}".f(this.Item.Id));
         if (G.Game.Avatar == null) {
-            Dbg.Print("Avatar is null", "NPC");
             return;
         }
         if (!G.Game.Avatar.Component) {
-            Dbg.Print("Avatar component is null", "NPC");
             return;
         }
         if (G.Game.Avatar.ShipDestroyed) {
-            Dbg.Print("Avatar ship destroyed", "NPC");
             return;
         }
         if (this.Item == null) {
-            Dbg.Print("Asteroid item is null", "NPC");
             return;
         }
         float distance = Vector3.Distance(G.Game.Avatar.Component.Position, this.Position);
 
         if (distance > this.activateDistance) {
-            Dbg.Print("Your on distance {0:F1}, but need at least {1:F1}. Need closer to asteroid".f(distance, this.activateDistance), "NPC");
             G.Game.ServiceMessageReceiver.AddMessage(new Hashtable
             {
                 { (int)SPC.Type, ServiceMessageType.Error.toByte() },

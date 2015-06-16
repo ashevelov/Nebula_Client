@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using Common;
-using Game.Space;
 
 public class DummyEnemy : BaseSpaceObject {
 
@@ -14,9 +11,7 @@ public class DummyEnemy : BaseSpaceObject {
 
     public override void OnDestroy()
     {
-        Dbg.Print("DummyEnemy.OnDestroy()");
-        
-        //this.DestroySkillAndBonusesEffects();
+
     }
 
     public override void Update()
@@ -36,6 +31,5 @@ public class DummyEnemy : BaseSpaceObject {
             this.Item.GetProperties();
         }
     }
-
  
 }

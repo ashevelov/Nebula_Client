@@ -1,10 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using Common;
-using Game.Network;
+﻿using Common;
 using Nebula;
-using UnityEngine.EventSystems;
 using Nebula.Mmo.Games;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MyPlayer : BaseSpaceObject {
     //private float _linearSpeed = 10.0f;
@@ -80,8 +78,6 @@ public class MyPlayer : BaseSpaceObject {
 
     public override void OnDestroy() 
     {
-        Dbg.Print("MyPlayer.OnDestroy()");
-        //this.DestroySkillAndBonusesEffects();
     }
 
     private void BeginWaitForState() { 

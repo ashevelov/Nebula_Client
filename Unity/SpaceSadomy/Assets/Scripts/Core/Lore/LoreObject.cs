@@ -1,10 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
-using Game.Space;
-using Common;
-using System.Collections.Generic;
-using Game.Space.UI;
+﻿using Game.Space.UI;
 using Nebula;
+using Nebula.Test;
+using UnityEngine;
 
 public class LoreObject : MonoBehaviour
 {

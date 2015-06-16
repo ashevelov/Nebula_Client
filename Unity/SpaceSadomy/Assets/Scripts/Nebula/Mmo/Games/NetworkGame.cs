@@ -38,7 +38,7 @@ namespace Nebula.Mmo.Games {
         private readonly ClientPlayerSkills skills;
         private readonly ClientShipCombatStats combatStats;
         private readonly DebugClientActionExecutor debugRPCExecutor;
-        private readonly ClientMailBox mailBox = new ClientMailBox();
+        //private readonly ClientMailBox mailBox = new ClientMailBox();
         private readonly ClientCooperativeGroup cooperativeGroup = new ClientCooperativeGroup();
         private readonly ClientSearchGroupsResult searchGroupsResult = new ClientSearchGroupsResult();
         private Vector3 lastPosition = Vector3.zero;
@@ -404,10 +404,10 @@ namespace Nebula.Mmo.Games {
             }
         }
 
-        public ClientMailBox MailBox()
-        {
-            return this.mailBox;
-        }
+        //public ClientMailBox MailBox()
+        //{
+        //    return this.mailBox;
+        //}
 
         public ClientSearchGroupsResult SearchGroupsResult() {
             return this.searchGroupsResult;
@@ -561,7 +561,6 @@ namespace Nebula.Mmo.Games {
             {
                 if (typedItems.Remove(item.Id))
                 {
-                    Dbg.Print("<color=orange><b>item removed successfully</b></color>");
                     if (typedItems.Count == 0)
                     {
                         _itemCache.Remove(item.Type);
@@ -687,8 +686,7 @@ namespace Nebula.Mmo.Games {
                         nextPlayerBonusesUpdate = Time.time + 0.3f;
                         this.Avatar.GetBonuses();
                     }
-                } else
-                    Dbg.Print("AVATAR NULL", "PLAYER");
+                } 
             }
 
             if(currentState == GameState.NebulaGameWorldEntered) {

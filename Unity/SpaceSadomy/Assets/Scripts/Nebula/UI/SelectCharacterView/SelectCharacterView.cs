@@ -11,7 +11,7 @@ namespace Nebula.UI {
         private float updateTogglesTimer;
 
         void Start() {
-            SelectCharacterGame.GetCharacters(MmoEngine.Get.LoginGame.GameRefId);
+            SelectCharacterGame.GetCharacters(MmoEngine.Get.LoginGame.GameRefId, MmoEngine.Get.LoginGame.login);
             this.updateTogglesTimer = UPDATE_TOGGLES_INTERVAL;
         }
 

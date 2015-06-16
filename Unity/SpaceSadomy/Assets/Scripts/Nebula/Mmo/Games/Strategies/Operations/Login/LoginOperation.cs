@@ -13,7 +13,9 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Login {
             }
 
             string gameRefId = (string)response.Parameters[(byte)ParameterCode.GameRefId];
-            game.Engine.OnGameRefIdReceived(gameRefId);
+            string login = (string)response.Parameters[(byte)ParameterCode.Login];
+
+            game.Engine.OnGameRefIdReceived(gameRefId, login);
         }
     }
 }

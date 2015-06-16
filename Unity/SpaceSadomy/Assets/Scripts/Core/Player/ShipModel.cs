@@ -45,13 +45,6 @@ public class ShipModel : MonoBehaviour {
 
     public static GameObject Init(Dictionary<ShipModelSlotType, string> modulesID, bool isPlayer, bool engineParticles = true)
     {
-        if (isPlayer)
-        {
-            foreach (var mp in modulesID)
-            {
-                Dbg.Print("{0}:{1}".f(mp.Key, mp.Value), "MODEL");
-            }
-        }
         GameObject _ship = new GameObject("ship_model");
         ShipModel _shipModel = _ship.AddComponent<ShipModel>();
         _shipModel.engineParticles = engineParticles;

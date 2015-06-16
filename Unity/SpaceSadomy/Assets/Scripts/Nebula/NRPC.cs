@@ -166,21 +166,8 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "GetSkillBinding", new object[] { });
         }
 
-        public static void TakeMailAttachment(string messageId, string attachmentId) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "TakeMailAttachment", new object[] { messageId, attachmentId });
-        }
 
-        public static void RemoveMailMessage(string messageId) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "RemoveMailMessage", new object[] { messageId });
-        }
+
 
         /// <summary>
         /// Request move asteroid content to inventory
@@ -238,6 +225,22 @@ namespace Nebula {
                 return;
             }
             Operations.ExecAction(game, game.AvatarId, "DestroyInventoryItem", new object[] { inventoryType.toByte(), type.toByte(), itemID });
+        }
+
+        public static void DestroyInventoryItems(InventoryType inventoryType, Hashtable inventoryItems) {
+            NetworkGame game = null;
+            if (false == CheckGame(out game)) {
+                return;
+            }
+            Operations.ExecAction(game, game.AvatarId, "DestroyInventoryItems", new object[] { (byte)inventoryType, inventoryItems });
+        }
+
+        public static void AddInventoryItem(Hashtable rawItem) {
+            NetworkGame game = null;
+            if (false == CheckGame(out game)) {
+                return;
+            }
+            Operations.ExecAction(game, game.AvatarId, "AddInventoryItem", new object[] { rawItem });
         }
 
         public static void RequestUserInfo() {
@@ -737,12 +740,12 @@ namespace Nebula {
             game.SendOperation((byte)OperationCode.GetServerList, new Dictionary<byte, object>(), true, Settings.ItemChannel);
         }
         //-------------LOGIN OPERATIONS-----------------------------
-        public static void Login(BaseGame game, string facebookId, string token, string displayName = "") {
+        public static void Login(BaseGame game, string facebookId, string token, string login) {
             Debug.Log("sending login operation");
             Dictionary<byte, object> parameters = new Dictionary<byte, object> {
                 {(byte)ParameterCode.LoginId, facebookId },
                 { (byte)ParameterCode.AccessToken, token },
-                { (byte)ParameterCode.DisplayName, displayName}
+                { (byte)ParameterCode.DisplayName, login}
             };
             game.SendOperation((byte)OperationCode.Login, parameters, true, Settings.ItemChannel);
         }

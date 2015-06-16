@@ -1,14 +1,21 @@
-﻿namespace Nebula.Mmo.Games
-{
-    using UnityEngine;
-    using System.Collections;
-    using System;
-    using System.Collections.Generic;
+﻿namespace Nebula.Mmo.Games {
     using Nebula.Mmo.Games.Strategies;
+    using System.Collections.Generic;
 
     public class LoginGame : BaseGame {
 
         private string gameRefId;
+        public string login { get; private set; }
+
+        private static LoginGame instance = null;
+
+        public static LoginGame Instance() {
+            if (instance == null) {
+                instance = MmoEngine.Get.LoginGame;
+            }
+            return instance;
+        }
+        
 
         public LoginGame(MmoEngine engine, Settings settings) 
             : base(engine, settings) {
@@ -33,6 +40,10 @@
 
         public void SetGameRefId(string grID) {
             gameRefId = grID;
+        }
+
+        public void SetLogin(string inLogin) {
+            login = inLogin;
         }
 
         public string GameRefId {

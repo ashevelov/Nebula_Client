@@ -52,7 +52,7 @@ public class MmoEngine : Singleton<MmoEngine>
             var masterPeer = new MasterPeer(masterGame, ConnectionProtocol.Udp);
             masterGame.SetPeer(masterPeer);
 #if LOCAL
-            masterGame.Connect("192.168.1.28", 5105, "Master");
+            masterGame.Connect("192.168.1.107", 5105, "Master");
 #else
             masterGame.Connect("52.10.78.38", 5105, "Master");
 #endif
@@ -219,13 +219,15 @@ public class MmoEngine : Singleton<MmoEngine>
         } 
     }
 
-    public void OnGameRefIdReceived(string grID) {
+    public void OnGameRefIdReceived(string grID, string login) {
         if(string.IsNullOrEmpty(grID)) {
             Debug.LogError("Invalid game ref id received");
         } else {
             Debug.LogFormat("game ref id received = {0}", grID);
         }
         LoginGame.SetGameRefId(grID);
+        LoginGame.SetLogin(login);
+
         if (LoginGame.IsGameRefIdValid()) {
             SetActiveGame(GameType.SelectCharacter);
             var selectCharacterServer = MasterGame.GetServer(ServerType.character);
@@ -279,9 +281,10 @@ public class MmoEngine : Singleton<MmoEngine>
 
     void OnGUI() {
         //DrawAvatarProperties();
-        DrawWeaponProperties();
-        DrawShipProperties();
-        DrawBonuses();
+        //DrawWeaponProperties();
+        //DrawShipProperties();
+        //DrawBonuses();
+        GUI.Label(new Rect(5, Screen.height - 30, 0, 0), "loaded scene: " + Application.loadedLevelName, skin.GetStyle("font_upper_left"));
     }
 
     private void DrawGameStates() {

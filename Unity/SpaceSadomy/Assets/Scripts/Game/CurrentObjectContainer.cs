@@ -1,11 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using Common;
+﻿using Common;
 using Nebula.Client.Inventory;
+using System.Collections.Generic;
 
-namespace Game.Space
-{
+namespace Game.Space {
     public class CurrentObjectContainer 
     {
         private List<IInventoryObjectInfo> _containerList;
@@ -132,7 +129,6 @@ namespace Game.Space
             foreach (var e in _containerList) {
                 result += string.Format("{0},", e.ToString());
             }
-            Dbg.Print("Received container: " + result);
         }
     }
 }

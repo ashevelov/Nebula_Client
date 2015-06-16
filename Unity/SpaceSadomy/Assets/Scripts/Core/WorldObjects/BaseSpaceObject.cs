@@ -6,6 +6,7 @@ using System.Collections;
 using UnityEngine;
 using ServerClientCommon;
 using Nebula.Mmo.Games;
+using Nebula.Test;
 
 public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 {

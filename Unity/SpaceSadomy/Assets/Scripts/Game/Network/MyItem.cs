@@ -139,8 +139,6 @@ namespace Nebula {
 
         public void Respawn() {
 
-
-            Dbg.Print("Respane()", "PLAYER");
             if (false == ExistsView) {
                 var prefabs = this.Game.Ship.ShipModel.SlotPrefabs();
                 Debug.Log("Prefabs before creation");
@@ -166,8 +164,7 @@ namespace Nebula {
                     }
                 }
 
-            } else
-                Dbg.Print("ExistView == true", "PLAYER");
+            }
         }
 
 

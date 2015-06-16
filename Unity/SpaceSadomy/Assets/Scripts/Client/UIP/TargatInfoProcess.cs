@@ -17,6 +17,7 @@ public class TargatInfoProcess : MonoBehaviour {
     public void SetObject(IObjectInfo objectInfo)
     {
         this.objectInfo = objectInfo;
+        this.gameObject.SetActive(this.objectInfo != null);
     }
 
     private void CombatUpdate(ICombatObjectInfo info)

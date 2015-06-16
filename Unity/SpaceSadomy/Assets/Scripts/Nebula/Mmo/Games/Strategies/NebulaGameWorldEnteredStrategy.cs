@@ -51,7 +51,7 @@ namespace Nebula.Mmo.Games.Strategies {
             generic.AddStrategy(CustomEventCode.PlayerInfoUpdated, new PlayerInfoUpdatedEvent());
             generic.AddStrategy(CustomEventCode.SkillsUpdated, new SkillsUpdatedEvent());
             generic.AddStrategy(CustomEventCode.ItemShipDestroyed, new ItemShipDestroyedEvent());
-            generic.AddStrategy(CustomEventCode.MailBoxUpdated, new MailBoxUpdatedEvent());
+            //generic.AddStrategy(CustomEventCode.MailBoxUpdated, new MailBoxUpdatedEvent());
 
             GenericMultiEvent multiEvent = new GenericMultiEvent();
             generic.AddStrategy(CustomEventCode.CooperativeGroupRequest, multiEvent);
@@ -120,6 +120,8 @@ namespace Nebula.Mmo.Games.Strategies {
             container.AddRPCActionStrategy("SetGroupOpened", multiOp);
             container.AddRPCActionStrategy("RequestOpenedGroups", multiOp);
             container.AddRPCActionStrategy("JoinToOpenedGroup", multiOp);
+            container.AddRPCActionStrategy("DestroyInventoryItems", multiOp);
+            container.AddRPCActionStrategy("AddInventoryItem", multiOp);
 
             AddOperationHandler((byte)OperationCode.ExecAction, container);
             AddOperationHandler((byte)OperationCode.SetViewDistance, new SetViewDistanceOperation());

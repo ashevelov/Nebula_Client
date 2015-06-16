@@ -33,15 +33,28 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
             this.handlers.Add("MoveItemFromStationToInventory", HandlerMoveItemFromStationToInventory);
             this.handlers.Add("TransformObjectAndMoveToHold", HandleTransformObjectAndMoveToHold);
             this.handlers.Add("CraftItEasy", HandleCraftItEasy);
+            this.handlers.Add("DestroyInventoryItems", HandleDestroyInventoryItems);
+            this.handlers.Add("AddInventoryItem", HandleAddInventoryItem);
         }
 
         public override void Handle(BaseGame game, OperationResponse response) {
             HandleOperation((NetworkGame)game, response);
         }
+
+
         private void HandleOperation(NetworkGame game, OperationResponse response) {
             if (this.handlers.ContainsKey(Action(response))) {
                 this.handlers[Action(response)](game, response);
             }
+        }
+
+        private void HandleAddInventoryItem(NetworkGame game, OperationResponse response) {
+            if(Status(response) != ACTION_RESULT.SUCCESS) {
+                Debug.LogErrorFormat("Error of adding raw item to inventory: {0}", Message(response));
+                return;
+            }
+            Debug.Log("successfully added to inventory");
+            NRPC.RequestInventory();
         }
 
         private void HandlerMoveItemFromInventoryToStation(NetworkGame game, OperationResponse response) {
@@ -62,6 +75,15 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
                 string itemId = (string)ResponseReturn(response);
                 global::Nebula.Events.EvtObjectTransformedAndMovedToHold(itemId);
             }
+        }
+
+        private void HandleDestroyInventoryItems(NetworkGame game, OperationResponse response) {
+            if(Status(response) != ACTION_RESULT.SUCCESS) {
+                Debug.LogError("Error when removing elements from inventory occured");
+                return;
+            }
+            var removedItems = Return(response) as Hashtable;
+            Debug.LogFormat("remove = {0} items from inventory", removedItems.Count);
         }
 
         private void HandleTakeMailAttachment(NetworkGame game, OperationResponse response) {

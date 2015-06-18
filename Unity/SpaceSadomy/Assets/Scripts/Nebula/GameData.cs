@@ -1,6 +1,7 @@
 ﻿using Common;
 using Game.Space;
 using Nebula.Client.Mail;
+using Nebula.Client.Notifications;
 using UnityEngine;
 
 namespace Nebula {
@@ -10,9 +11,11 @@ namespace Nebula {
         public Chat Chat { get; private set; }
         public CurrentObjectContainer CurrentObjectContainer { get; private set; }
         public MailBox mailBox { get; private set; }
+        public CharacterNotifications notifications { get; private set; }
 
         public GameData() {
             mailBox = new MailBox();
+            notifications = new CharacterNotifications();
         }
 
         public void SetNewWorld(string worldID, Vector3 cornerMin, Vector3 cornerMax, Vector3 tileDimensions, LevelType levelType) {

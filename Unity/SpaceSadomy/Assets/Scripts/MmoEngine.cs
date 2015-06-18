@@ -36,6 +36,7 @@ public class MmoEngine : Singleton<MmoEngine>
         }
     }
          
+
     public void Start() {
         try {
             Application.runInBackground = true;

@@ -75,75 +75,79 @@ namespace Nebula.UI {
                 return;
             }
 
-            if (messageText.StartsWith("$")) {
-                this.ComputeCommand(messageText);
+            if(ComputeCommand(messageText)) {
                 return;
             }
             //simple case
             NRPC.SendChatMessage(this.SelectChatGroupView.SelectedChatGroup(), messageText, string.Empty);
         }
 
-        private void ComputeCommand(string command) {
+        private bool ComputeCommand(string command) {
             switch (command.Trim().ToLower()) {
                 case "$addore": {
                         NRPC.CmdAddOres();
                         G.Game.Engine.GameData.Chat.PastLocalMessage("Command: #add_ore");
-                        break;
+                        return true;
                     }
                 case "$tgm": {
                         Operations.ExecAction(G.Game, G.Game.AvatarId, "TGM", new object[] { });
                         //G.Game.Chat.PastLocalMessage("Command: #tgm");
-                        break;
+                        return true;
                     }
                 case "$mtt":{
                         if(G.Game.Avatar == null || (!G.Game.Avatar.Target.HasTarget) || (G.Game.Avatar.Target.Item == null) ||
                             (G.Game.Avatar.Target.Item.View == null )) {
-                            return;
+                            return true;
                         }
                         Vector3 position = G.Game.Avatar.Target.Item.View.transform.position;
                         G.Game.Avatar.View.transform.position = position;
                         G.Game.Engine.GameData.Chat.PastLocalMessage("Command: #mtt");
-                        break;
+                        return true;
                     }
                 case "$testbuffs":
                     {
                         NRPC.TestBuffs();
-                        break;
+                        return true;
                     }
                 case "$addscheme": {
                         NRPC.EA_AddScheme();
-                        break;
+                        return true;
                     }
                 case "$sselector":
                     {
                         MainCanvas.Get.Show(CanvasPanelType.SchemeSelectorView, CommonUtils.RandomSlotType());
-                        break;
+                        return true;
                     }
                 case "$craft":
                     {
                         MainCanvas.Get.Show(CanvasPanelType.SchemeCraftView);
-                        break;
+                        return true;
                     }
                 case "$addslots":
                     {
                         NRPC.AddInventorySlots();
-                        break;
+                        return true;
                     }
                 case "$station":
                     {
                         G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
-                        break;
+                        return true;
                     }
                 case "$menu":
                     {
                         NRPC.ExitToSelectCharacterMenu();
-                        break;
+                        return true;
                     }
                 case "$buff":
                     {
                         NetworkGame.SetRandomBuff();
-                        break;
+                        return true;
                     }
+                case "notify": { SelectCharacterGame.Instance().InvokeMethod("SetYesNoNotification", null);
+                        return true;
+                    }
+                default:
+                    return false;
             }
         }
 

@@ -147,7 +147,8 @@ namespace Nebula.Mmo.Games {
                 (Workshop)Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().HomeWorkshop,
                 (Race)Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().Race,
                 Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().ModelHash(),
-                Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName);
+                Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName,
+                Engine.LoginGame.login);
         }
 
 

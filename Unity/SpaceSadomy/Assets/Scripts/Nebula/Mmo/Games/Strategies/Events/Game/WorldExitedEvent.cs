@@ -45,7 +45,8 @@
                     (Workshop)ngame.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().HomeWorkshop,
                     (Race)ngame.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().Race,
                     ngame.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().ModelHash(),
-                    ngame.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName);
+                    ngame.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName,
+                    ngame.Engine.LoginGame.login);
 
             } else {
 

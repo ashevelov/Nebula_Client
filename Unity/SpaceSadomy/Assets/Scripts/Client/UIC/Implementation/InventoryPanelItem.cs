@@ -9,6 +9,11 @@ namespace UIC
         public static InventoryPanelItem Create(IInventoryItem item)
         {
             InventoryPanelItem invItem = Instantiate(Resources.Load("Prefabs/UIC/InventoryPanelItem") as GameObject).GetComponent<InventoryPanelItem>();
+            InventoryItem itm = item as InventoryItem;
+            invItem.Name = itm.Name;
+            invItem.Type = itm.Type;
+            invItem.Count = itm.Count;
+            invItem.Price = itm.Price;
             return invItem;
         }
 
@@ -34,7 +39,13 @@ namespace UIC
         public Text itemPrice;
         public int Price
         {
-            set { itemPrice.text = value.ToString(); }
+            set
+            {
+                if (value == 0)
+                    itemPrice.text = "-";
+                else
+                    itemPrice.text = value.ToString();
+            }
         }
 
         public string id { get; set; }

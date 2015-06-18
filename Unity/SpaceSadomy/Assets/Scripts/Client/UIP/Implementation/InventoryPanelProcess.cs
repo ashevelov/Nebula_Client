@@ -27,7 +27,7 @@ public class InventoryPanelProcess : MonoBehaviour {
                 var foundedItem = this.currentItems.Find(it => it.Object.Id == item.Object.Id);
                 if (foundedItem == null)
                 {
-                    uicPanel.AddItem(new InventoryItem(item.Object.Id, "name hz", item.Object.Type.ToString(), item.Count, 9999));
+                    uicPanel.AddItem(new InventoryItem(item.Object.Id, "name hz", item.Object.Type.ToString(), item.Count, 0));
                 }
                 else if (foundedItem.Count != item.Count)
                 {
@@ -46,7 +46,6 @@ public class InventoryPanelProcess : MonoBehaviour {
             }
 
             this.currentItems = newItems;
-            uicPanel.AddItem(new InventoryPanelItem());
         }
 
         yield return new WaitForSeconds(0.5f);
@@ -62,5 +61,14 @@ public class InventoryPanelProcess : MonoBehaviour {
         if (G.Game == null || G.Game.PlayerInfo == null || G.PlayerComponent == null)
             return false;
         return true;
+    }
+
+    private void AddItem(ClientInventoryItem clientItem)
+    {
+        string id = clientItem.Object.Id;
+        string name = "name hz";
+        string type = clientItem.Object.Type.ToString();
+        int count = clientItem.Count;
+        uicPanel.AddItem(new InventoryItem(id, name, type, count, 0));
     }
 }

@@ -210,7 +210,7 @@ namespace Nebula
             NetworkGame NetworkGame, string worldName, 
             Hashtable properties, float[] position, float[] rotation, float[] viewDistanceEnter, 
             float[] viewDistanceExit, string gameRefID, string characterId, Workshop workshop,
-            Race race, Hashtable model, string characterName)
+            Race race, Hashtable model, string characterName, string login)
         {
             //UnityEngine.Debug.Log("try enter to world: " + worldName);
             var data = new Dictionary<byte, object>
@@ -219,12 +219,13 @@ namespace Nebula
                     { (byte)ParameterCode.Position, position }, 
                     { (byte)ParameterCode.ViewDistanceEnter, viewDistanceEnter }, 
                     { (byte)ParameterCode.ViewDistanceExit, viewDistanceExit },
-                    {(byte)ParameterCode.GameRefId, gameRefID },
-                    {(byte)ParameterCode.CharacterId, characterId },
+                    { (byte)ParameterCode.GameRefId, gameRefID },
+                    { (byte)ParameterCode.CharacterId, characterId },
                     { (byte)ParameterCode.WorkshopId, (byte)workshop },
                     { (byte)ParameterCode.Race, (byte)race},
                     { (byte)ParameterCode.Model, model },
-                    { (byte)ParameterCode.DisplayName, characterName }
+                    { (byte)ParameterCode.DisplayName, characterName },
+                    { (byte)ParameterCode.Login, login }
                 };
             if (properties != null)
             {

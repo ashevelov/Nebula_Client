@@ -2,10 +2,13 @@
     using Common;
     using Nebula.Client;
     using Nebula.Client.Inventory;
+    using Nebula.Client.Notifications;
     using Nebula.Mmo.Games.Strategies;
+    using ServerClientCommon;
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using ExitGames.Client.Photon;
 
     public class SelectCharacterGame : BaseGame {
 
@@ -30,6 +33,11 @@
                 { GameState.SelectCharacterConnected, new SelectCharacterConnectedStrategy() }
             };
             SetStrategy(GameState.SelectCharacterDisconnected);
+        }
+
+        public override void OnEvent(EventData eventData) {
+            Debug.LogFormat("SelectCharacterGame event received = {0}", (SelectCharacterEventCode)eventData.Code);
+            base.OnEvent(eventData);
         }
 
         public override void Connect(string ipAddress, int port, string application) {
@@ -114,7 +122,82 @@
 
         public void GetMails() { Operations.GetMails(); }
 
+        public void RegisterClient() {
+            Operations.RegisterClientOnCharacterServer(Engine.LoginGame.GameRefId);
+        }
+
+        public void InvokeMethod(string methodName, object[] arguments) {
+            Operations.InvokeMethod(methodName, arguments);
+        }
+
+        public void GetNotifications() {
+            if(playerCharacters == null ) {
+                Debug.LogError("player characters must be not null");
+                return;
+            }
+            if(string.IsNullOrEmpty(playerCharacters.SelectedCharacterId)) {
+                Debug.LogError("player must have selected character");
+                return;
+            }
+            Operations.GetNotifications(playerCharacters.SelectedCharacterId);
+        }
+
+        public void HandleNotification(Notification notification, bool response) {
+            if((true == response) && notification.handled) {
+                Debug.LogWarningFormat("Noyification = {0} already handled", notification.id);
+                return;
+            }
+            if((NotficationRespondAction)notification.respondAction == NotficationRespondAction.Delete && 
+                (response == true)) {
+                Debug.LogWarning("Not allowed positive response for YesDelete notifications");
+                return;
+            }
+
+            if(playerCharacters == null ) {
+                Debug.LogWarning("player characters is null");
+                return;
+            }
+            if(string.IsNullOrEmpty(playerCharacters.SelectedCharacterId)) {
+                Debug.LogWarning("invalid selected character");
+                return;
+            }
+
+            Operations.HandleNotification(playerCharacters.SelectedCharacterId, notification.id, response);
+        }
+
         public static class Operations {
+
+            public static void HandleNotification(string characterID, string notificationID, bool response) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.CharacterId, characterID },
+                    { (byte)ParameterCode.NotificationId, notificationID },
+                    { (byte)ParameterCode.Result, response }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.HandleNotification,
+                    parameters, true, Settings.ItemChannel);
+            }
+            public static void GetNotifications(string characterID ) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.CharacterId, characterID}
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.GetNotifications, parameters, true, Settings.ItemChannel);
+            }
+
+            public static void InvokeMethod(string methodName, object[] arguments) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    {(byte)ParameterCode.Action, methodName },
+                    { (byte)ParameterCode.Arguments, arguments }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.InvokeMethod, parameters, true, Settings.ItemChannel);
+            }
+
+            public static void RegisterClientOnCharacterServer(string gameRefId) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    {(byte)ParameterCode.GameRefId, gameRefId }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.RegisterClient, parameters, true, Settings.ItemChannel);
+            }
+
             public static void WriteMailMessage(string targetLogin, string title, string body, IInventoryObjectInfo[] inAttachments) {
                 object[] attachments = null;
                 if(inAttachments == null || inAttachments.Length == 0 ) {

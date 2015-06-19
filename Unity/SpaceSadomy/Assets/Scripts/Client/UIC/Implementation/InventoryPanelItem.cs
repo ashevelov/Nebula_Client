@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UIP;
+
 namespace UIC
 {
     public class InventoryPanelItem : MonoBehaviour, IInventoryItem
@@ -14,6 +16,9 @@ namespace UIC
             invItem.Type = itm.Type;
             invItem.Count = itm.Count;
             invItem.Price = itm.Price;
+            invItem.Color = itm.Color;
+            invItem.Icon = itm.Icon;
+            invItem.itemInfo = item.itemInfo;
             return invItem;
         }
 
@@ -49,5 +54,32 @@ namespace UIC
         }
 
         public string id { get; set; }
+
+
+        public IItemInfo itemInfo { get; set; }
+
+        public Image itemIcon;
+        public Sprite Icon
+        {
+            set { itemIcon.sprite = value; }
+        }
+
+        public string Color
+        {
+            set { itemName.color = ToColor(value); }
+        }
+
+        private UnityEngine.Color ToColor(string stColor)
+        {
+            switch(stColor)
+            {
+                case "white" : return UnityEngine.Color.white;
+                case "blue" : return UnityEngine.Color.blue;
+                case "yellow" : return UnityEngine.Color.yellow;
+                case "green" : return UnityEngine.Color.green;
+                case "orange" : return new UnityEngine.Color (255,111,0);
+            }
+            return UnityEngine.Color.white;
+        }
     }
 }

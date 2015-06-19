@@ -57,7 +57,7 @@
                     messageY += 100;
                 }
 
-
+                //----------------------------------------------------------------------------------------------
                 float halfWinWidth = winWidth * 0.5f;
                 float lblX = halfWinWidth;
                 float writeX = halfWinWidth + 50;
@@ -117,6 +117,7 @@
             pos.y += 20;
             GUI.Label(new Rect(pos.x, pos.y, 0, 0), "Body: " + message.body, mLabelStyle);
             pos.y += 20;
+            
             float attachmentX = pos.x;
             if (message.attachments == null) {
                 return;
@@ -130,7 +131,9 @@
         private void DrawAttachment(Vector2 pos, MailMessage message, MailAttachment attachment) {
             try {
                 //PrintAttachment(attachment);
-                var obj = attachment.ParseAttachedObject();
+                IPlacingType obj = attachment.ParseAttachedObject();
+
+
                 if (obj.placingType == (int)PlacingType.Inventory) {
                     if (GUI.Button(new Rect(pos.x, pos.y, 20, 20), "I")) {
                         IInventoryObjectBase inventoryObject = obj as IInventoryObjectBase;

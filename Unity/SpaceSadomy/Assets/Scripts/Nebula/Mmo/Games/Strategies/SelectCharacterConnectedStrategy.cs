@@ -7,6 +7,8 @@
 
         public SelectCharacterConnectedStrategy() {
             AddEventHandler((byte)SelectCharacterEventCode.NotificationUpdate, new UpdateNotificationsEvent());
+            AddEventHandler((byte)SelectCharacterEventCode.CharactersUpdate, new UpdateCharacterEvent());
+
             //operation handlers
             AddOperationHandler((byte)SelectCharacterOperationCode.GetCharacters, new GetCharactersOperation());
             AddOperationHandler((byte)SelectCharacterOperationCode.CreateCharacter, new CreateCharacterOperation());

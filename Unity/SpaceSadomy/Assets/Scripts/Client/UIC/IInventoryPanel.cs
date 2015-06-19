@@ -1,4 +1,6 @@
 ﻿using System;
+using UIP;
+
 namespace UIC
 {
     interface IInventoryPanel

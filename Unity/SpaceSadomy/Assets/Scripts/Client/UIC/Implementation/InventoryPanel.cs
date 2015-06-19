@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UIP;
 
 namespace UIC
 {
@@ -10,15 +11,23 @@ namespace UIC
         // scroll list inventory items
 
         public RectTransform scrollContent;
+        private ToggleGroup toggleGroup;
 
         private List<InventoryPanelItem> items = new List<InventoryPanelItem>();
 
         public void AddItem(IInventoryItem item)
         {
+            if (toggleGroup == null)
+            {
+                toggleGroup = scrollContent.GetComponent<ToggleGroup>();
+            }
             InventoryPanelItem invItem = InventoryPanelItem.Create(item);
             RectTransform rctTransform = invItem.transform as RectTransform;
             rctTransform.parent = scrollContent;
             rctTransform.localScale = Vector3.one;
+            Toggle toggle = invItem.GetComponent<Toggle>();
+            toggle.group = toggleGroup;
+            toggle.onValueChanged.AddListener((b)=>{this. UpdateInfo(invItem);});
             items.Add(invItem);
             UpdatePositions();
         }
@@ -74,10 +83,44 @@ namespace UIC
         // item info
 
         public Image itemIcon;
+        public Text descroption;
+        public Image skillIcon;
+        public Text skillDescription;
+        public ParamPanel[] parameters;
 
-        public void UpdateInfo(string selectItemId)
+
+        public void UpdateInfo(InventoryPanelItem inventoryItem)
         {
+            //InventoryItem inventoryItem = new InventoryItem("", null, "", "", "", 0, 0, null);
+            itemIcon.sprite = inventoryItem.itemInfo.Icon;
+            descroption.text = inventoryItem.itemInfo.Description;
             
+            Vector3 pos = Vector3.zero;
+            int index = 0;
+            foreach (KeyValuePair<string, string> param in inventoryItem.itemInfo.Parametrs)
+            {
+                parameters[index].gameObject.SetActive(true);
+                parameters[index].Init(param.Key, param.Value);
+                index++;
+            }
+            while (index < parameters.Length)
+            {
+                parameters[index].gameObject.SetActive(false);
+                index++;
+            }
+
+            if (inventoryItem.itemInfo.SkillIcon != null)
+            {
+                skillIcon.gameObject.SetActive(true);
+                skillDescription.gameObject.SetActive(true);
+                skillIcon.sprite = inventoryItem.itemInfo.SkillIcon;
+                skillDescription.text = inventoryItem.itemInfo.SkillDescription;
+            }
+            else
+            {
+                skillIcon.gameObject.SetActive(false);
+                skillDescription.gameObject.SetActive(false);
+            }
         }
 
 

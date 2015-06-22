@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Common;
 using Game.Network;
 using Nebula.Client;
+using Nebula.Mmo.Items;
 
 namespace Nebula
 {
@@ -280,49 +281,16 @@ namespace Nebula
             this.needRespawnFlagSetted = false;
         }
 
-        public float WeaponLightShotTimer01()
-        {
-            if(this.Weapon == null )
-            {
-                return 0f;
-            }
-            return this.Weapon.LightTimer01;
-        }
 
-        public float WeaponHeavyShotTimer01()
-        {
-            if(this.Weapon == null )
-            {
-                return 0f;
-            }
-            return this.Weapon.HeavyTimer01;
-        }
 
-        public float HeavyShotEnergy()
-        {
-            if(this.Weapon == null )
-            {
-                return 0f;
-            }
-            if(!this.Weapon.HasWeapon)
-            {
-                return 0f;
-            }
-            return this.Weapon.WeaponObject.HeavyEnergy;
-        }
+
 
         public float LightShotEnergy()
         {
             return 0f;
         }
 
-        public float ShotEnergy(ShotType shotType)
-        {
-            if (shotType == ShotType.Heavy)
-                return HeavyShotEnergy();
-            else
-                return LightShotEnergy();
-        }
+
     }
 
 

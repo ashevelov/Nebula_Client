@@ -5,6 +5,7 @@
     using Nebula.Client.Inventory.Objects;
     using System.Collections.Generic;
     using Nebula.Client.Inventory;
+    using Nebula.Resources;
 
     public class SchemeSelectorView : BaseView {
 

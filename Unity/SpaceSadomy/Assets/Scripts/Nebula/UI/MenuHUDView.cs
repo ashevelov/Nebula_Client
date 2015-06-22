@@ -5,8 +5,19 @@ using Common;
 namespace Nebula.UI {
     public class MenuHUDView : BaseView {
 
+        public GameObject hud;
+
         public void OnMapButton() {
-            MapController.ShowHide();
+            if (MapController.ShowHide())
+            {
+                hud.SetActive(false);
+                MainCanvas.Get.Destroy(CanvasPanelType.ControlHUDView);
+            }
+            else
+            {
+                hud.SetActive(true);
+                MainCanvas.Get.Show(CanvasPanelType.ControlHUDView);
+            }
         }
 
         public void OnInventoryButton() { 

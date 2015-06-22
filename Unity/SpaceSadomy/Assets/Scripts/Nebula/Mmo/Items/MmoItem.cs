@@ -30,10 +30,6 @@
             
         }
 
-        public override void UseSkill(Hashtable skillProperties) {
-            
-        }
-
         public override BaseSpaceObject Component {
             get {
                 return mmoObject;

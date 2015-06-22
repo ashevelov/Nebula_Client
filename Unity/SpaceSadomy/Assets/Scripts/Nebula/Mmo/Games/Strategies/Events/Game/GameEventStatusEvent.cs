@@ -4,6 +4,7 @@
     using ExitGames.Client.Photon;
     using ServerClientCommon;
     using Nebula.Client.Res;
+    using Nebula.Resources;
 
     public class GameEventStatusEvent : BaseGenericEvent {
 

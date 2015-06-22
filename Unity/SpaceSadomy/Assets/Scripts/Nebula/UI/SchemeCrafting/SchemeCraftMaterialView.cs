@@ -2,6 +2,7 @@
     using UnityEngine;
     using System.Collections;
     using UnityEngine.UI;
+    using Nebula.Resources;
 
     public class SchemeCraftMaterialView : MonoBehaviour {
 

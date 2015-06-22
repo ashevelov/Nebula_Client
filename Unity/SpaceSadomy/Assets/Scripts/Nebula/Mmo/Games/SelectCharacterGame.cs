@@ -9,6 +9,8 @@
     using System.Collections.Generic;
     using UnityEngine;
     using ExitGames.Client.Photon;
+    using Nebula.Mmo.Items.Components;
+    using Nebula.Client.Guilds;
 
     public class SelectCharacterGame : BaseGame {
 
@@ -165,7 +167,213 @@
             Operations.HandleNotification(playerCharacters.SelectedCharacterId, notification.id, response);
         }
 
+        public void GetGuild() {
+            Operations.GetGuild(Engine.LoginGame.GameRefId, playerCharacters.SelectedCharacterId);
+        }
+
+        public void CreateGuild(string guildName) {
+            Operations.CreateGuild(
+                Engine.LoginGame.GameRefId,
+                Engine.LoginGame.login,
+                playerCharacters.SelectedCharacterId,
+                playerCharacters.SelectedCharacter().Exp,
+                guildName);
+        }
+
+        //invites to guild current target character
+        public void InviteToGuild() {
+            if(Engine.NebulaGame.Avatar == null ) {
+                Debug.Log("avatar is null");
+                return;
+            }
+            if(false == Engine.NebulaGame.Avatar.Target.HasTarget) {
+                Debug.Log("don't have target");
+                return;
+            }
+
+            var targetItem = Engine.NebulaGame.Avatar.Target.Item;
+            if (targetItem == null ) {
+                Debug.Log("target item is null");
+                return;
+            }
+
+            if(targetItem.Type != (byte)ItemType.Avatar) {
+                Debug.Log("target item is not player");
+                return;
+            }
+            var characterComponent = targetItem.GetMmoComponent(ComponentID.Character) as MmoCharacterComponent;
+            if(characterComponent == null ) {
+                Debug.Log("target item don't has character component");
+                return;
+            }
+
+            string targetLogin = characterComponent.login;
+            string targetCharacterID = characterComponent.characterID;
+
+            if(string.IsNullOrEmpty(targetLogin)) {
+                Debug.Log("target login is empty");
+                return;
+            }
+            if(string.IsNullOrEmpty(targetCharacterID)) {
+                Debug.Log("target character is empty");
+                return;
+            }
+            if(string.IsNullOrEmpty(playerCharacters.SelectedCharacter().guildID)) {
+                Debug.Log("my guild ID is empty");
+                return;
+            }
+            if(Engine.GameData.guild == null ) {
+                Debug.Log("mu guild is null");
+                return;
+            }
+            if(string.IsNullOrEmpty(Engine.GameData.guild.ownerCharacterID)) {
+                Debug.Log("my guild id is empty");
+                return;
+            }
+            if(Engine.GameData.guild.ownerCharacterID != playerCharacters.SelectedCharacter().guildID) {
+                Debug.Log("my guild ids inconsistent");
+                return;
+            }
+
+            var myMember = Engine.GameData.guild.GetMember(playerCharacters.SelectedCharacterId);
+            if(myMember == null ) {
+                Debug.Log("My guild member is null");
+                return;
+            }
+            if(!myMember.GrantedAddMember()) {
+                Debug.Log("Me don't have access to invite members");
+                return;
+            }
+            Operations.InviteToGuild(Engine.LoginGame.login, playerCharacters.SelectedCharacterId, targetLogin, targetCharacterID, Engine.GameData.guild.ownerCharacterID);
+        }
+
+        public void ExitGuild() {
+            if(Engine.GameData.guild == null  ) {
+                Debug.Log("guild is null");
+                return;
+            }
+            if(string.IsNullOrEmpty(Engine.GameData.guild.ownerCharacterID)) {
+                Debug.Log("guild is empty");
+                return;
+            }
+            if(Engine.GameData.guild.ownerCharacterID == playerCharacters.SelectedCharacterId) {
+                Debug.Log("you are owner exit from guild not allowed");
+                return;
+            }
+            Operations.ExitGuild(Engine.LoginGame.login, playerCharacters.SelectedCharacterId, Engine.GameData.guild.ownerCharacterID);
+        }
+
+        public void SetGuildDescription(string description) {
+            if(Engine.GameData.guild == null ) {
+                Debug.Log("guild is null");
+                return;
+            }
+            if(string.IsNullOrEmpty(Engine.GameData.guild.ownerCharacterID)) {
+                Debug.Log("guild is empty");
+                return;
+            }
+            if(string.IsNullOrEmpty(playerCharacters.SelectedCharacter().guildID)) {
+                Debug.Log("guild is not setted at character");
+                return;
+            }
+
+            var myMember = Engine.GameData.guild.GetMember(playerCharacters.SelectedCharacterId);
+            if(myMember == null ) {
+                Debug.Log("my guild member not founded");
+                return;
+            }
+            if(!myMember.GrantedSetDescription()) {
+                Debug.Log("you don't granted access to set description");
+                return;
+            }
+            Operations.SetGuildDescription(playerCharacters.SelectedCharacterId, playerCharacters.SelectedCharacter().guildID, description);
+        }
+
+        public void ChangeGuildMemberStatus(GuildMember member, GuildMemberStatus targetStatus) {
+            if (Engine.GameData.guild == null) {
+                Debug.Log("guild is null");
+                return;
+            }
+            if (string.IsNullOrEmpty(Engine.GameData.guild.ownerCharacterID)) {
+                Debug.Log("guild is empty");
+                return;
+            }
+            if (string.IsNullOrEmpty(playerCharacters.SelectedCharacter().guildID)) {
+                Debug.Log("guild is not setted at character");
+                return;
+            }
+
+            var myMember = Engine.GameData.guild.GetMember(playerCharacters.SelectedCharacterId);
+            if (myMember == null) {
+                Debug.Log("my guild member not founded");
+                return;
+            }
+
+            if(!myMember.GrantedChangeStatusFromTo((GuildMemberStatus)member.guildStatus, targetStatus )) {
+                Debug.LogFormat("not granted change status from {0} to {1}", (GuildMemberStatus)member.guildStatus, targetStatus);
+                return;
+            }
+            Operations.ChangeGuildMemberStatus(playerCharacters.SelectedCharacter().guildID, playerCharacters.SelectedCharacterId, member.characterID, targetStatus);
+        }
+
         public static class Operations {
+
+            public static void ChangeGuildMemberStatus(string guildID, string sourceCharacterID, string targetCharacterID, GuildMemberStatus status) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.GuildId, guildID },
+                    { (byte)ParameterCode.SourceCharacterId, sourceCharacterID },
+                    { (byte)ParameterCode.CharacterId, targetCharacterID },
+                    { (byte)ParameterCode.Status, (int)status }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.ChangeGuildMemberStatus, parameters, true, Settings.ItemChannel);
+            }
+            public static void SetGuildDescription(string characterID, string guildID, string description ) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.CharacterId, characterID },
+                    { (byte)ParameterCode.GuildId, guildID },
+                    { (byte)ParameterCode.Info, description  }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.SetGuildDescription, parameters, true, Settings.ItemChannel);
+            }
+
+            public static void ExitGuild(string login, string characterID, string guildID) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.Login, login },
+                    { (byte)ParameterCode.CharacterId, characterID },
+                    { (byte)ParameterCode.GuildId, guildID }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.ExitGuild, parameters, true, Settings.ItemChannel);
+            }
+
+            public static void InviteToGuild(string sourceLogin, string sourceCharacter, string targetLogin, string targetCharacter, string guildID ) {
+                Dictionary<byte, object> parameteres = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.SourceLogin, sourceLogin },
+                    { (byte)ParameterCode.SourceCharacterId, sourceCharacter },
+                    { (byte)ParameterCode.TargetLogin, targetLogin },
+                    { (byte)ParameterCode.CharacterId, targetCharacter },
+                    { (byte)ParameterCode.GuildId, guildID }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.InviteToGuild, parameteres, true, Settings.ItemChannel);
+            }
+
+            public static void CreateGuild(string gameRefID, string login, string characterID, int exp, string guildName) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.GameRefId, gameRefID },
+                    { (byte)ParameterCode.Login, login },
+                    { (byte)ParameterCode.CharacterId, characterID },
+                    { (byte)ParameterCode.Exp, exp },
+                    { (byte)ParameterCode.DisplayName, guildName }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.CreateGuild, parameters, true, Settings.ItemChannel);
+            }
+
+            public static void GetGuild(string gameRefID, string characterID ) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.CharacterId, characterID },
+                    { (byte)ParameterCode.GameRefId, gameRefID }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.GetGuild, parameters, true, Settings.ItemChannel);
+            }
 
             public static void HandleNotification(string characterID, string notificationID, bool response) {
                 Dictionary<byte, object> parameters = new Dictionary<byte, object> {

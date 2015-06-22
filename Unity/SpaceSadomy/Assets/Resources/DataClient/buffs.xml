@@ -1,109 +1,35 @@
 ﻿<buffs>
-  <buff type="decreasePrecision" icon="Buffs/decreasePrecision" is_debuff="true">
-    decreasePrecision
+  <buff type="decrease_speed_on_pc" icon="Buffs/decreasePrecision" is_debuff="true">
+    decrease_speed_on_pc
   </buff>
-  <buff type="increaseDamage" icon="Buffs/increaseDamage" is_debuff="false">
-    increaseDamage
+  <buff type="increase_speed_on_pc" icon="Buffs/increaseDamage" is_debuff="false">
+    increase_speed_on_pc
   </buff>
-  <buff type="increaseCooldown" icon="Skills/SA010003" is_debuff="true">
-    increaseCooldown
+  <buff type="decrease_speed_on_cnt" icon="Skills/SA010003" is_debuff="true">
+    decrease_speed_on_cnt
   </buff>
-  <buff type="overheatingGuns" icon="Buffs/increaseDamage" is_debuff="false">
-    overheatingGuns
+  <buff type="increase_speed_on_cnt" icon="Buffs/increaseDamage" is_debuff="false">
+    increase_speed_on_cnt
   </buff>
-  <buff type="blockResist" icon="Buffs/blockResist" is_debuff="true">
-    blockResist
+  <buff type="increase_damage_on_pc" icon="Buffs/blockResist" is_debuff="false">
+    increase_damage_on_pc
   </buff>
-  <buff type="decreaseResists" icon="Buffs/decreaseResists" is_debuff="true">
-    decreaseResists
+  <buff type="decrease_damage_on_pc" icon="Buffs/decreaseResists" is_debuff="true">
+    decrease_damage_on_pc
   </buff>
-  <buff type="decreaseCooldown" icon="Buffs/decreaseCooldown" is_debuff="false">
-    decreaseCooldown
+  <buff type="increase_damage_on_cnt" icon="Buffs/decreaseCooldown" is_debuff="false">
+    increase_damage_on_cnt
   </buff>
-  <buff type="increaseHP" icon="Skills/SA020002" is_debuff="false">
-    increaseHP
+  <buff type="decrease_damage_on_cnt" icon="Skills/SA020002" is_debuff="true">
+    decrease_damage_on_cnt
   </buff>
-  <buff type="decreaseDamage" icon="Buffs/decreaseDamage" is_debuff="true">
-    decreaseDamage
+  <buff type="damage_immunity" icon="Buffs/decreaseDamage" is_debuff="false">
+    damage_immunity
   </buff>
-  <buff type="increasePrecision" icon="Buffs/increasePrecision" is_debuff="false">
-    increasePrecision
+  <buff type="increase_max_energy_on_cnt" icon="Buffs/increasePrecision" is_debuff="false">
+    increase_max_energy_on_cnt
   </buff>
-  <buff type="increaseMaxHP" icon="Buffs/increaseMaxHP" is_debuff="false">
-    increaseMaxHP
-  </buff>
-  <buff type="descreaseMaxHP" icon="Skills/SA030003" is_debuff="true">
-    descreaseMaxHP
-  </buff>
-  <buff type="increaseMaxSpeed" icon="Buffs/increaseMaxSpeed" is_debuff="false">
-    increaseMaxSpeed
-  </buff>
-  <buff type="decreaseMaxSpeed" icon="Buffs/decreaseMaxSpeed" is_debuff="true">
-    decreaseMaxSpeed
-  </buff>
-  <buff type="blockWeapon" icon="Buffs/blockWeapon" is_debuff="true">
-    blockWeapon
-  </buff>
-  <buff type="blockSkill" icon="Buffs/blockSkill" is_debuff="true">
-    blockSkill
-  </buff>
-  <buff type="resurrectHP_Points" icon="Skills/SA040002" is_debuff="false">
-    resurrectHP_Points
-  </buff>
-  <buff type="increaseResist" icon="Buffs/increaseResist" is_debuff="false">
-    increaseResist
-  </buff>
-  <buff type="resurrectHP_Percent_By_Shoot" icon="Buffs/resurrectHP_Percent_By_Shoot" is_debuff="false">
-    resurrectHP_Percent_By_Shoot
-  </buff>
-  <buff type="increaseOptimalDistance" icon="Skills/SA040005" is_debuff="false">
-    increaseOptimalDistance
-  </buff>
-  <buff type="decreaseOptimalDistance" icon="Buffs/decreaseOptimalDistance" is_debuff="true">
-    decreaseOptimalDistance
-  </buff>
-  <buff type="additionalDamage2EnemiesOnAreaPerFire" icon="Buffs/additionalDamage2EnemiesOnAreaPerFire" is_debuff="false">
-    additionalDamage2EnemiesOnAreaPerFire
-  </buff>
-  <buff type="increaseCriticalChance" icon="Buffs/increaseCriticalChance" is_debuff="false">
-    increaseCriticalChance
-  </buff>
-  <buff type="decreaseCriticalChance" icon="Buffs/decreaseCriticalChance" is_debuff="true">
-    decreaseCriticalChance
-  </buff>
-  <buff type="increaseCriticalDamage" icon="Skills/SA050004" is_debuff="false">
-    increaseCriticalDamage
-  </buff>
-  <buff type="decreaseCriticalDamage" icon="Skills/SA050005" is_debuff="true">
-    decreaseCriticalDamage
-  </buff>
-  <buff type="increaseDamageOnPlayerAndAlliesOnArea_Persistent" icon="Buffs/additionalDamage2EnemiesOnAreaPerFire" is_debuff="false">
-    increaseDamageOnPlayerAndAlliesOnArea_Persistent
-  </buff>
-  <buff type="increaseGlobalCooldown" icon="Skills/SA010001" is_debuff="true">
-    increaseGlobalCooldown
-  </buff>
-  <buff type="decreaseGlobalCooldown" icon="Skills/SA010002" is_debuff="false">
-    decreaseGlobalCooldown
-  </buff>
-  <buff type="increaseInputDamage" icon="Skills/SA010003" is_debuff="true">
-    increaseInputDamage
-  </buff>
-
-  <!--Legacy buffs-->
-  <buff type="decreseMaxSpeedOnArea" icon="Skills/SA010003" is_debuff="true">
-    decreseMaxSpeedOnArea
-  </buff>
-  <buff type="decreaseOptimalDistanceOnArea" icon="Skills/SA010003" is_debuff="true">
-    decreaseOptimalDistanceOnArea
-  </buff>
-  <buff type="decreaseCooldownOnArea" icon="Skills/SA010003" is_debuff="true">
-    decreaseCooldownOnArea
-  </buff>
-  <buff type="decreaseCriticalChanceOnTarget_Persistent" icon="Skills/SA010003" is_debuff="true">
-    decreaseCriticalChanceOnTarget_Persistent
-  </buff>
-  <buff type="decreaseResistOnTarget_Persistent" icon="Skills/SA010003" is_debuff="true">
-    decreaseResistOnTarget_Persistent
+  <buff type="decrease_max_energy_on_cnt" icon="Buffs/increaseMaxHP" is_debuff="true">
+    decrease_max_energy_on_cnt
   </buff>
 </buffs>

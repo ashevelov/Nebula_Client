@@ -4,6 +4,7 @@
     using Common;
     using UnityEngine.UI;
     using Nebula.Client.Inventory.Objects;
+    using Nebula.Resources;
 
     public class MaterialItemView : BaseItemView {
 

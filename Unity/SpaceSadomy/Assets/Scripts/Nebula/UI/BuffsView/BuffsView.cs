@@ -6,6 +6,7 @@ namespace Nebula.UI {
     using Nebula.Client.Res;
     using Common;
     using Nebula.Mmo.Games;
+    using Nebula.Resources;
 
     public class BuffsView : BaseView {
 

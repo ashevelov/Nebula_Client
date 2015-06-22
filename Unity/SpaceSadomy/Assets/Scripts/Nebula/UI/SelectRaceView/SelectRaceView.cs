@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using Nebula.Client.Res;
 using Common;
+using Nebula.Resources;
 
 namespace Nebula.UI {
     public class SelectRaceView : BaseView {

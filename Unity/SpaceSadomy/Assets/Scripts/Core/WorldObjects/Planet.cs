@@ -2,8 +2,8 @@
 using System.Collections;
 using Common;
 using Game.Space;
-using Nebula.Game.Network.Items;
 using System.Collections.Generic;
+using Nebula.Mmo.Items;
 
 public class Planet : BaseSpaceObject
 {

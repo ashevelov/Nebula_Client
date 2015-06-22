@@ -10,6 +10,7 @@ using Nebula.UI;
 using ServerClientCommon;
 using Nebula.Mmo.Games;
 using UnityEngine;
+using Nebula.Mmo.Items;
 
 namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class RequestContainerOperation : BaseGenericOperation

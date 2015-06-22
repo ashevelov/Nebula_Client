@@ -1,5 +1,6 @@
 ﻿namespace Nebula.UI {
     using Nebula.Client;
+    using Nebula.Resources;
     using UnityEngine;
     using UnityEngine.UI;
 

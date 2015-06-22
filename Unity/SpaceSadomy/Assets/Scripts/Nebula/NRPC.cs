@@ -1,6 +1,7 @@
 ﻿using Common;
 using Game.Network;
 using Nebula.Mmo.Games;
+using Nebula.Mmo.Items;
 using ServerClientCommon;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,33 +34,32 @@ namespace Nebula {
         }
 
         //Request fire from player to target
-        public static void RequestFire( ShotType shotType ) {
-            NetworkGame game = null;
-            MyItem player = null;
-            if(false == CheckGameAndPlayer(out game, out player)) {
-                Debug.Log("FIRE: check Game And Player Not succedd");
-                return;
-            }
+        //public static void RequestFire() {
+        //    NetworkGame game = null;
+        //    MyItem player = null;
+        //    if(false == CheckGameAndPlayer(out game, out player)) {
+        //        Debug.Log("FIRE: check Game And Player Not succedd");
+        //        return;
+        //    }
 
-            if(game.CurrentStrategy != GameState.NebulaGameWorldEntered) {
-                Debug.Log("FIRE: check strategy fail");
-                return;
-            }
-            if(false == player.Target.HasTargetAndTargetGameObjectValid) {
-                Debug.Log("FIRE: check target fail");
-                return;
-            }
+        //    if(game.CurrentStrategy != GameState.NebulaGameWorldEntered) {
+        //        Debug.Log("FIRE: check strategy fail");
+        //        return;
+        //    }
+        //    if(false == player.Target.HasTargetAndTargetGameObjectValid) {
+        //        Debug.Log("FIRE: check target fail");
+        //        return;
+        //    }
 
-            Hashtable fireProperties = new Hashtable {
-                {(int)SPC.Source, player.Id },
-                {(int)SPC.SourceType, player.Type },
-                {(int)SPC.Target, player.Target.Item.Id },
-                {(int)SPC.TargetType, player.Target.Item.Type },
-                {(int)SPC.ShotType, (byte)shotType }
-            };
+        //    Hashtable fireProperties = new Hashtable {
+        //        {(int)SPC.Source, player.Id },
+        //        {(int)SPC.SourceType, player.Type },
+        //        {(int)SPC.Target, player.Target.Item.Id },
+        //        {(int)SPC.TargetType, player.Target.Item.Type },
+        //    };
 
-            Operations.RaiseGenericEvent(game, player.Id, player.Type, (byte)CustomEventCode.Fire, fireProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
-        }
+        //    Operations.RaiseGenericEvent(game, player.Id, player.Type, (byte)CustomEventCode.Fire, fireProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
+        //}
 
         public static void RequestUseSkill(int index) {
             NetworkGame game = null;

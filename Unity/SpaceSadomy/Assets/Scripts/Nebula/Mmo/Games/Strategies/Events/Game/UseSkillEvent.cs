@@ -2,6 +2,7 @@
     using Common;
     using ExitGames.Client.Photon;
     using Nebula.Mmo.Games;
+    using Nebula.Mmo.Items;
     using ServerClientCommon;
     using System.Collections;
     using UnityEngine;
@@ -22,7 +23,7 @@
             string sourceItemId = skillProperties.GetValue<string>((int)SPC.Source, string.Empty);
             byte sourceItemType = skillProperties.GetValue<byte>((int)SPC.SourceType, (byte)0);
             Hashtable skillData = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
-            string skillId = skillData.GetValue<string>((int)SPC.Id, string.Empty);
+            int skillId = skillData.GetValue<int>((int)SPC.Id, -1);
 
             Item sourceItem;
             if (!((NetworkGame)game).TryGetItem(sourceItemType, sourceItemId, out sourceItem)) {
@@ -30,7 +31,7 @@
                 return;
             }
 
-            sourceItem.UseSkill(skillProperties);
+            sourceItem.SkillUsed(skillProperties);
         }
     }
 

@@ -6,6 +6,7 @@ using Common;
 using Nebula.UI;
 using Nebula.Mmo.Games;
 using ServerClientCommon;
+using Nebula.Mmo.Items;
 
 namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class MoveAsteroidItemToInventoryOperation : BaseGenericOperation

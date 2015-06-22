@@ -1,4 +1,5 @@
 ﻿namespace Nebula.Test {
+    using Nebula.Resources;
     using UnityEngine;
 
     public class TestZoneNames : MonoBehaviour {

@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace Nebula
 {
+    using Nebula.Resources;
+    using UResources = UnityEngine.Resources;
+
     public class Settings
     {
 
@@ -46,7 +49,7 @@ namespace Nebula
             result.SendInterval = IntervalSend;
             result.SendReliable = SendReliable;
 
-            string settingsText = Resources.Load<TextAsset>("settings").text;
+            string settingsText = UResources.Load<TextAsset>("settings").text;
             result.ParseSettings(settingsText);
 
             return result;

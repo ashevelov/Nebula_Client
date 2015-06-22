@@ -8,6 +8,7 @@ using UToggle = UnityEngine.UI.Toggle;
 using Game.Network;
 using Common;
 using Nebula.Mmo.Games;
+using Nebula.Resources;
 
 namespace Nebula.UI {
     public class ChatPanel : BaseView {

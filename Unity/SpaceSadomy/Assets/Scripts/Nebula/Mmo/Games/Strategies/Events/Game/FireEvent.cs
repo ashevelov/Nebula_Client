@@ -3,6 +3,7 @@
     using ExitGames.Client.Photon;
     using Nebula.Client;
     using Nebula.Mmo.Games;
+    using Nebula.Resources;
     using ServerClientCommon;
     using System.Collections.Generic;
 

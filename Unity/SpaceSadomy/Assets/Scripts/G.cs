@@ -8,6 +8,7 @@ using UnityEngine;
 using Nebula.Client;
 using Nebula;
 using Nebula.Mmo.Games;
+using Nebula.Mmo.Items;
 
 public class G  
 {
@@ -131,16 +132,6 @@ public class G
         return Game.CurrentWorldId();
     }
 
-    public static float GameShipWeaponLightShotTimer01()
-    {
-        return Game.ShipWeaponLightShotTimer01();
-    }
-
-    public static float GameShipWeaponHeavyShotTimer01()
-    {
-        return Game.ShipWeaponHeavyShotTimer01();
-    }
-
     public static ClientPlayerSkill GamePlayerSkill(int index)
     {
         return Game.PlayerSkill(index);
@@ -180,10 +171,6 @@ public class G
     //    Game.PlayerRequestUseSkill(index);
     //}
 
-    public static float GamePlayerShipWeaponShotEnergy(ShotType shotType )
-    {
-        return Game.ShotEnergy(shotType);
-    }
 
     public static float GamePlayerShipEnergy()
     {

@@ -1,14 +1,14 @@
-﻿using UnityEngine;
-using System.Collections;
-using Nebula.UI;
-using System;
-using Nebula.Mmo.Objects;
-using Nebula.Mmo.Games;
-using System.Collections.Generic;
-using Common;
-using ServerClientCommon;
-
+﻿
 namespace Nebula.Mmo.Items {
+    using UnityEngine;
+    using System.Collections;
+    using Nebula.UI;
+    using System;
+    using Nebula.Mmo.Objects;
+    using Nebula.Mmo.Games;
+    using System.Collections.Generic;
+    using Common;
+    using ServerClientCommon;
 
     public class EventItem : Item, ISelectedObjectContextMenuViewSource {
 
@@ -31,10 +31,6 @@ namespace Nebula.Mmo.Items {
             }
         }
 
-
-        public override void UseSkill(Hashtable skillProperties) {
-            throw new NotImplementedException();
-        }
 
         public override void AdditionalUpdate() {
             

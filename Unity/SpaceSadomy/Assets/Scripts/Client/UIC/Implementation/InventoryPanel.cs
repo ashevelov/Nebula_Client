@@ -47,6 +47,8 @@ namespace UIC
             int index = 0;
             for (int i = 0; i < items.Count; i++)
             {
+                Debug.Log("remove item = " + id);
+                Debug.Log("remove items[i].id = " + items[i].id);
                 if (items[i].id == id)
                 {
                     index = i;
@@ -121,15 +123,33 @@ namespace UIC
                 skillIcon.gameObject.SetActive(false);
                 skillDescription.gameObject.SetActive(false);
             }
+            SetItemActions(inventoryItem.Actions);
         }
 
 
         // action buttons
-        public void SetEquipAction(System.Action<string> action)
+
+        public Button[] actionButtons;
+        public void SetItemActions ( Dictionary<string, System.Action> actions)
         {
 
+            int index = 0;
+            if(actions != null)
+            {
+                foreach(KeyValuePair<string, System.Action> action in actions)
+                {
+                    Debug.Log("action.Key --------------" +action.Key);
+                    actionButtons[index].interactable = true;
+                    actionButtons[index].onClick.AddListener(() => action.Value());
+                    actionButtons[index].GetComponentInChildren<Text>().text = action.Key;
+                    index++;
+                }
+            }
+            while (index < actionButtons.Length)
+            {
+                actionButtons[index].interactable = false;
+                index++;
+            }
         }
-
-
     }
 }

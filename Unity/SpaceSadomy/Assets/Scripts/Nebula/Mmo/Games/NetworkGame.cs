@@ -6,6 +6,7 @@ using Nebula.Client;
 using Nebula.Client.Inventory;
 using Nebula.Client.Mail;
 using Nebula.Mmo.Games.Strategies;
+using Nebula.Mmo.Items;
 using Nebula.UI;
 using ServerClientCommon;
 using System.Collections;
@@ -439,41 +440,18 @@ namespace Nebula.Mmo.Games {
             return Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacterId;
         }
 
-        //public ClientWorldEventInfo GetEvent(string worldId, string eventId)
-        //{
-        //    return this.WorldEventConnection.GetEvent(worldId, eventId);
-        //}
-
-        public float ShipWeaponLightShotTimer01()
-        {
-            return this.Ship.WeaponLightShotTimer01();
-        }
-
-        public float ShipWeaponHeavyShotTimer01()
-        {
-            return this.Ship.WeaponHeavyShotTimer01();
-        }
-
         public ClientPlayerSkill PlayerSkill(int index)
         {
             return this.Skills.Skill(index);
         }
 
-        public float ShotEnergy(ShotType shotType)
-        {
-            return this.Ship.ShotEnergy(shotType);
-        }
+
 
         public float ShipEnergy()
         {
             return this.Ship.Energy;
         }
 
-
-        //public void SetEvent(Hashtable eventInfo)
-        //{
-        //    this.WorldEventConnection.SetEvent(eventInfo);
-        //}
 
         public void SetPlayerInfo(Hashtable info)
         {

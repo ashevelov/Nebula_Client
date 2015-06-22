@@ -6,6 +6,7 @@
 //
 using Common;
 using Nebula;
+using Nebula.Mmo.Items;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;

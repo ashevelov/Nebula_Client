@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UIC;
+using Nebula.Resources;
 
 public class PlayerInfoProcess : MonoBehaviour {
 

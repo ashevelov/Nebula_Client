@@ -1,13 +1,14 @@
 ﻿using Game.Space;
 namespace Nebula.UI {
 
-	using UnityEngine;
-	using System.Collections;
-	using UnityEngine.UI;
-	using System.Collections.Generic;
+    using UnityEngine;
+    using System.Collections;
+    using UnityEngine.UI;
+    using System.Collections.Generic;
     using Common;
+    using Nebula.Resources;
 
-	public class MainCanvas : Singleton<MainCanvas> {
+    public class MainCanvas : Singleton<MainCanvas> {
 
 	    private static bool alreadyCreated = false;
 		private readonly ObjectSubCache<GameObject, CanvasPanelType> panelPrefabs = new ObjectSubCache<GameObject, CanvasPanelType>();

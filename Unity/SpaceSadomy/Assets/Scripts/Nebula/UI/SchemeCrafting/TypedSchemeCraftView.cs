@@ -5,6 +5,7 @@
     using UnityEngine.UI;
     using Nebula.Client.Res;
     using Common;
+    using Nebula.Resources;
 
     public class TypedSchemeCraftView : MonoBehaviour {
 

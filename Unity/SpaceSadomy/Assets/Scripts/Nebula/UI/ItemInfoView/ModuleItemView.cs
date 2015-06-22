@@ -8,6 +8,7 @@ namespace Nebula.UI {
     using UnityEngine.UI;
     using System.Collections.Generic;
     using Nebula.Client.Res;
+    using Nebula.Resources;
 
     public class ModuleItemView : BaseItemView {
 
@@ -97,7 +98,7 @@ namespace Nebula.UI {
                     Debug.LogError("Not found skill {0}".f(module.skill));
                     return;
                 }
-                this.SkillIconImage.overrideSprite = SpriteCache.SpriteSkill(module.skill);
+                this.SkillIconImage.overrideSprite = SpriteCache.SpriteSkill(module.skill.ToString());
                 this.SkillNameText.text = StringCache.Get(skillData.name);
                 this.SkillDescriptionText.text = StringCache.Get(skillData.description);
             }
@@ -148,14 +149,14 @@ namespace Nebula.UI {
                             Debug.LogError("Set bonus x5 not skill bonus at set {0}".f(module.set));
                             return;
                         }
-                        string bonusSkillId = bonus.GetValue<string>();
+                        int bonusSkillId = bonus.GetValue<int>();
                         var skillData = DataResources.Instance.SkillData(bonusSkillId);
                         if(skillData == null ) {
                             Debug.LogError("Not found bonus skill {0} for set {1}".f(bonusSkillId, module.set));
                             return;
                         }
 
-                        this.BonusSkillX5IconImage.overrideSprite = SpriteCache.SpriteSkill(bonusSkillId);
+                        this.BonusSkillX5IconImage.overrideSprite = SpriteCache.SpriteSkill(bonusSkillId.ToString());
                         string desc = StringCache.Get(skillData.name) + System.Environment.NewLine + StringCache.Get(skillData.description);
                         this.BonusX5Text.text = desc;
 

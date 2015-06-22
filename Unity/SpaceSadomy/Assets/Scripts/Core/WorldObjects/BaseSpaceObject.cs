@@ -7,6 +7,8 @@ using UnityEngine;
 using ServerClientCommon;
 using Nebula.Mmo.Games;
 using Nebula.Test;
+using Nebula.Resources;
+using Nebula.Mmo.Items;
 
 public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 {
@@ -62,173 +64,29 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         this.selfTransform = transform;
         this.childrensActive = true;
 
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.blockWeapon, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA010003")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = Vector3.zero;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.blockSkill, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA010004")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = Vector3.zero;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseResist, parent =>
-            {
-                Debug.Log("called effect maker for increaseResist");
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/INCR_RESIST")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = Vector3.zero;
-                inst.transform.localRotation = Quaternion.identity;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.resurrectHP_Points, parent =>
-            {
-                Debug.Log("called effect maker for resurrectHP");
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/RESURRECT_HP")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = new Vector3(20, 0, 0);
-                inst.transform.localRotation = Quaternion.identity;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.resurrectHP_Percent_By_Shoot, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA010006")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = Vector3.zero;
-                inst.transform.localRotation = Quaternion.identity;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreseMaxSpeedOnArea, parent =>
-            {
-                var skill = DataResources.Instance.SkillData("SA020001");
-                float range = skill.inputs.GetValue<float>("range", 0.0f);
-
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA020001_AREA")) as GameObject;
-                inst.transform.position = parent.transform.position;
-                inst.transform.localScale = Vector3.one * 2 * range;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseMaxSpeed, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA020001")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = Vector3.zero;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseMaxSpeed, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA020002")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = Vector3.zero;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseOptimalDistance, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030001")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = Vector3.zero;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseOptimalDistanceOnArea, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030001_USE"), parent.transform.position, parent.transform.rotation) as GameObject;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseCooldown, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030002_1_Increase_Cooldown")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = new Vector3(0, 0, -1.5f);
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseDamage, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030002_2_Decrease_Damage")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.transform.localPosition = new Vector3(0, 0, 1.5f);
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increasePrecision, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030004_1_Increase_Precision")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.ResetTransform();
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseDamage, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030004_2_Increase_Damage")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.ResetTransform();
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseCooldownOnArea, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030005_USE"), parent.transform.position, parent.transform.rotation) as GameObject;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseCooldown, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030005_Decrease_Cooldown"), parent.transform.position, parent.transform.rotation) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.ResetTransform();
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.additionalDamage2EnemiesOnAreaPerFire, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030006_USE"), parent.transform.position, parent.transform.rotation) as GameObject;
-                inst.transform.parent = parent.transform;
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseCriticalChance, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA040002_Increase_Crit_Chance")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.ResetTransform();
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseCriticalChance, parent =>
-        {
-            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/Decrease_Crit_Chance")) as GameObject;
+        /*
+        #region BONUS EFFECTS
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.blockWeapon, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA010003")) as GameObject;
             inst.transform.parent = parent.transform;
-            inst.ResetTransform();
+            inst.transform.localPosition = Vector3.zero;
             return inst;
         });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseDamageOnPlayerAndAlliesOnArea_Persistent, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA040005_USE")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.ResetTransform();
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseGlobalCooldown, parent =>
-            {
-                GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/Increase_Global_Cooldown")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.ResetTransform();
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseResists, parent =>
-        {
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.blockSkill, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA010004")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseResist, parent => {
             Debug.Log("called effect maker for increaseResist");
-            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/DECR_RESIST")) as GameObject;
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/INCR_RESIST")) as GameObject;
             inst.transform.parent = parent.transform;
-            inst.ResetTransform();
+            inst.transform.localPosition = Vector3.zero;
+            inst.transform.localRotation = Quaternion.identity;
             return inst;
         });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseInputDamage, parent =>
-            {
-                var inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/Increase_Input_Damage")) as GameObject;
-                inst.transform.parent = parent.transform;
-                inst.ResetTransform();
-                return inst;
-            });
-        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseMaxHP, parent =>
-        {
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.resurrectHP_Points, parent => {
             Debug.Log("called effect maker for resurrectHP");
             GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/RESURRECT_HP")) as GameObject;
             inst.transform.parent = parent.transform;
@@ -236,6 +94,130 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
             inst.transform.localRotation = Quaternion.identity;
             return inst;
         });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.resurrectHP_Percent_By_Shoot, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA010006")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            inst.transform.localRotation = Quaternion.identity;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreseMaxSpeedOnArea, parent => {
+            var skill = DataResources.Instance.SkillData("SA020001");
+            float range = skill.inputs.GetValue<float>("range", 0.0f);
+
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA020001_AREA")) as GameObject;
+            inst.transform.position = parent.transform.position;
+            inst.transform.localScale = Vector3.one * 2 * range;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseMaxSpeed, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA020001")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseMaxSpeed, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA020002")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseOptimalDistance, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030001")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseOptimalDistanceOnArea, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030001_USE"), parent.transform.position, parent.transform.rotation) as GameObject;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseCooldown, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030002_1_Increase_Cooldown")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = new Vector3(0, 0, -1.5f);
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseDamage, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030002_2_Decrease_Damage")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = new Vector3(0, 0, 1.5f);
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increasePrecision, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030004_1_Increase_Precision")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseDamage, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030004_2_Increase_Damage")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseCooldownOnArea, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030005_USE"), parent.transform.position, parent.transform.rotation) as GameObject;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseCooldown, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030005_Decrease_Cooldown"), parent.transform.position, parent.transform.rotation) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.additionalDamage2EnemiesOnAreaPerFire, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA030006_USE"), parent.transform.position, parent.transform.rotation) as GameObject;
+            inst.transform.parent = parent.transform;
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseCriticalChance, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA040002_Increase_Crit_Chance")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseCriticalChance, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/Decrease_Crit_Chance")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseDamageOnPlayerAndAlliesOnArea_Persistent, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/SA040005_USE")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseGlobalCooldown, parent => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/Increase_Global_Cooldown")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.decreaseResists, parent => {
+            Debug.Log("called effect maker for increaseResist");
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/DECR_RESIST")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseInputDamage, parent => {
+            var inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/Increase_Input_Damage")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.ResetTransform();
+            return inst;
+        });
+        this.bonusEffectViewManager.SetEffectMaker(BonusType.increaseMaxHP, parent => {
+            Debug.Log("called effect maker for resurrectHP");
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Prefabs/Effects/Skills/RESURRECT_HP")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = new Vector3(20, 0, 0);
+            inst.transform.localRotation = Quaternion.identity;
+            return inst;
+        }); 
+        #endregion
+        */
     }
 
     /// <summary>
@@ -339,31 +321,8 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         float damage = fireProperties.GetValue<float>((int)SPC.ActualDamage, 0.0f);
         bool hitted = fireProperties.GetValue<bool>((int)SPC.IsHitted, false);
         byte workshop = fireProperties.GetValue<byte>((int)SPC.Workshop, Workshop.DarthTribe.toByte());
-        ShotType shotType = (ShotType)fireProperties.GetValue<byte>((int)SPC.ShotType, (byte)0);
-
-        if(shotType == ShotType.Light)
-        {
-            //here start light attack
-        }
-        else if(shotType == ShotType.Heavy)
-        {
-            //here start heavy attack
-        }
-
-        if(Item.IsMine)
-        {
-            Debug.Log("<color=green>Make shot of type: {0}</color>".f(shotType));
-        }
-
-        this.EmitAmmo(target.transform, hitted, damage, workshop, shotType);
-
+        this.EmitAmmo(target.transform, hitted, damage, workshop);
         StartCoroutine(AddDamageMassage(target, damage, 1, 0.2f, Color.white, hitted));
-
-        /*
-        if (hitted)
-        {
-            MouseOrbitRotateZoom.Get.ShowBloodSplat();
-        }*/
     }
 
     //called when item ship destroyed
@@ -480,12 +439,16 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <param name="skillProperties"></param>
     public virtual void UseSkill(Hashtable skillProperties)
     {
-        Hashtable skillData = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
-        string skillId = skillData.GetValue<string>((int)SPC.Id, string.Empty);
-        string targetId = skillProperties.GetValue<string>((int)SPC.Target, string.Empty);
-        byte targetType = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
-        bool isOn = skillProperties.GetValue<bool>((int)SPC.IsOn, true);
+        Hashtable skillData         = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
+        int skillId                 = skillData.GetValue<int>((int)SPC.Id, -1);
+        string targetId             = skillProperties.GetValue<string>((int)SPC.Target, string.Empty);
+        byte targetType             = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
+        bool isOn                   = skillProperties.GetValue<bool>((int)SPC.IsOn, true);
+        bool success                = skillProperties.GetValue<bool>((int)SPC.IsSuccess, false);
 
+        
+
+        /*
         switch(skillId)
         {
             case "SA010001":
@@ -670,31 +633,17 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                     }
                 }
                 break;
-        }
+        }*/
 
     }
 
-    public void OnPowerShieldStateChanged(bool shieldEnabled)
-    {
-        //called when power field state changed
-    }
-
-    public GameObject GetObject()
-    {
-        if (item != null && item.IsDestroyed == false)
-        {
+    public GameObject GetObject() {
+        if (item != null && item.IsDestroyed == false) {
             return gameObject;
-        }
-        else
-        {
+        } else {
             return null;
         }
     }
-
-    //public virtual void OnKilled()
-    //{
-
-    //}
 
     public float Speed()
     {
@@ -751,7 +700,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <summary>
     /// Make emitting action. overrides derived classes if needed
     /// </summary>
-    protected virtual void EmitAmmo(Transform target, bool isHitted, float damage, byte sourceWorkshop, ShotType shotType = ShotType.Light)
+    protected virtual void EmitAmmo(Transform target, bool isHitted, float damage, byte sourceWorkshop)
     {
         //print(string.Format("Emit Ammo with damage: {0}", damage).Bold().Color("orange"));
 
@@ -761,49 +710,19 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
             switch (sourceWorkshop.toEnum<Workshop>())
             {
 			case Workshop.DarthTribe:
-                    //StartCoroutine(cor_Launch(0.2f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
-                    if (shotType == ShotType.Light)
-                    {
-                        StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted, shotType));
-                    }
-                    else
-                    {
-                        StartCoroutine(cor_Launch(0.2f, "Prefabs/Items/Weapons/Missiles/Torpedo", target, 1, isHitted, shotType));
-                    }
-					break;
+                    StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
+                    break;
 				case Workshop.Equilibrium:
-                    if (shotType == ShotType.Light)
-                    {
-                        StartCoroutine(cor_LaunchPlasma(0.2f, "Prefabs/Effects/PlasmaLight", target, 3, isHitted));
-                    }
-                    else
-                    {
-                        StartCoroutine(cor_LaunchPlasma(0.2f, "Prefabs/Effects/PlasmaHavy", target, 1, isHitted));
-                    }
-					break;
+                    StartCoroutine(cor_LaunchPlasma(0.2f, "Prefabs/Effects/PlasmaLight", target, 3, isHitted));
+                    break;
                 case Workshop.RedEye:
-                    if (shotType == ShotType.Light)
-                    {
-                        StartCoroutine(cor_LaunchLaser(5f, "Prefabs/Effects/NLaser", target, 1, isHitted));
-                    }
-                    else
-                    {
-                        StartCoroutine(cor_LaunchLaser(5f, "Prefabs/Effects/NLaser", target, 1, isHitted));
-                        //GameObject gravityLaser = (GameObject)Instantiate(PrefabCache.Get("Prefabs/LaserGravityWave"), transform.position, Quaternion.identity);
-                        //gravityLaser.GetComponent<LaserGravityWave>().StartEffect(target);
-                    }
-                    
+                    StartCoroutine(cor_LaunchLaser(5f, "Prefabs/Effects/NLaser", target, 1, isHitted));
                     break;
 			default:
-                    if (shotType == ShotType.Light)
                     {
-                        StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted, shotType));
+                        Debug.LogErrorFormat("Not realized shot for workshop: {0}", sourceWorkshop.toEnum<Workshop>());
+                        StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
                     }
-                    else
-                    {
-                        StartCoroutine(cor_Launch(0.2f, "Prefabs/Items/Weapons/Missiles/Torpedo", target, 1, isHitted, shotType));
-                    }
-                    //StartCoroutine(cor_Launch2("Prefabs/Items/Weapons/Missiles/Missile2", target, 3));
                     break;
             }
 
@@ -1003,9 +922,9 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <summary>
     /// Launch missile 1 autoattack
     /// </summary>
-    private IEnumerator cor_Launch(float time, string path, Transform target, int count, bool isHitted, ShotType shotType)
+    private IEnumerator cor_Launch(float time, string path, Transform target, int count, bool isHitted)
     {
-        bool isTorpedo = (shotType == ShotType.Heavy);
+        bool isTorpedo = false;
 
         for (int i = 0; i < count; i++)
         {
@@ -1108,6 +1027,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     }
     #endregion
 
+    /*
     #region OBSOLETE
     private IEnumerator cor_Jamp()
     {
@@ -1184,7 +1104,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         StartCoroutine(cor_Jamp());
     }
     #endregion
-
+    */
 
     /// <summary>
     /// Как проверить что объект принадлежит ивенту или не принадлжежит

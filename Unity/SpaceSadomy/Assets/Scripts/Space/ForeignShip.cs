@@ -1,4 +1,5 @@
 ﻿using Common;
+using Nebula.Mmo.Items;
 using ServerClientCommon;
 using System.Collections;
 
@@ -11,7 +12,6 @@ namespace Nebula {
         private Weapon _weapon;
         private bool _destroyed;
         private Item _owner;
-        private ShipPowerShield _powerShield;
         private float _speed;
         private Hashtable modelInfo;
         private Workshop workshop;
@@ -22,7 +22,6 @@ namespace Nebula {
         {
             _owner = owner;
             _weapon = new Weapon( 0);
-            _powerShield = new ShipPowerShield(owner);
             this.modelInfo = new Hashtable();
         }
 
@@ -57,11 +56,6 @@ namespace Nebula {
             }
         }
 
-        public ShipPowerShield PowerField {
-            get {
-                return _powerShield;
-            }
-        }
 
         public Hashtable ModelInfo
         {

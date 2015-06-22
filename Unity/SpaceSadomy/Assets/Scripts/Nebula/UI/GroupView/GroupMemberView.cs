@@ -5,6 +5,7 @@
     using Nebula.Client;
     using Common;
     using UnityEngine.UI;
+    using Nebula.Resources;
 
     public class GroupMemberView : MonoBehaviour {
 

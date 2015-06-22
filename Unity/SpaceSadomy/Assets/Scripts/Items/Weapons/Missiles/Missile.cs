@@ -1,4 +1,5 @@
 ﻿using Nebula;
+using Nebula.Resources;
 using UnityEngine;
 
 public class Missile : MonoBehaviour {

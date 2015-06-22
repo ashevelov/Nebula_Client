@@ -3,6 +3,7 @@
     using System.Collections;
     using Common;
     using UnityEngine.UI;
+    using Nebula.Resources;
 
     public class GroupMemberBuffView : MonoBehaviour {
 

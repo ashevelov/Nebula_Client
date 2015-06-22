@@ -15,7 +15,7 @@ namespace Nebula.Mmo.Games.Strategies {
     using Nebula.Mmo.Games.Strategies.Events.Game;
     using Nebula.Mmo.Games.Strategies.Operations;
     using Nebula.Mmo.Games.Strategies.Operations.Game;
-
+    using Nebula.Resources;
 
     public class NebulaGameWorldEnteredStrategy : DefaultStrategy
     {

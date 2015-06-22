@@ -7,6 +7,7 @@ using System.IO;
 using Game.Space.UI;
 using Nebula;
 using Nebula.Mmo.Games;
+using Nebula.Resources;
 
 public class MapController : MonoBehaviour {
 
@@ -308,12 +309,13 @@ private void TapInStar(RaycastHit hit)
 
 
 
-    public static void ShowHide()
+    public static bool ShowHide()
     {
         if (!MapExist())
         {
             _map = (GameObject)Instantiate(Resources.Load("Prefabs/map/Map"));
             _map.name = "Map";
+            return true;
             //if(MouseOrbitRotateZoom.Get)
             //{
             //    MouseOrbitRotateZoom.Get.Gray();
@@ -324,10 +326,12 @@ private void TapInStar(RaycastHit hit)
             if (!MapController.Get.localMap)
             {
                 MapController.Get.localMap = !MapController.Get.localMap;
+                return true;
             }
             else
             {
                 Destroy(_map);
+                return false;
                 //if(MouseOrbitRotateZoom.Get)
                 //{
                 //    MouseOrbitRotateZoom.Get.Ungray();

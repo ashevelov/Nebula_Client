@@ -3,12 +3,10 @@
     using System.Collections;
     using ExitGames.Client.Photon;
     using Common;
-
-    using Nebula.Game.Network.Items;
+    using Nebula.Mmo.Items;
     using Nebula;
     using Nebula.Mmo.Games;
     using global::Game.Space;
-    using Nebula.Mmo.Items;
 
     public class ItemSubscribedEvent : BaseEventHandler {
 

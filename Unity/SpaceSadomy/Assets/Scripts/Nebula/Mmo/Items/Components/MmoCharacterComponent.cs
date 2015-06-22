@@ -40,5 +40,28 @@
                 return FractionType.PlayerHumans;
             }
         }
+
+        public string login {
+            get {
+                if(item != null ) {
+                    string login;
+                    if(item.TryGetProperty<string>((byte)PS.Login, out login)) {
+                        return login;
+                    }
+                }
+                return string.Empty;
+            }
+        }
+
+        public string characterID {
+            get {
+                if(item == null ) { return string.Empty; }
+                string cID = string.Empty;
+                if(!item.TryGetProperty<string>((byte)PS.CharacterID, out cID)) {
+                    return string.Empty;
+                }
+                return cID;
+            }
+        }
     }
 }

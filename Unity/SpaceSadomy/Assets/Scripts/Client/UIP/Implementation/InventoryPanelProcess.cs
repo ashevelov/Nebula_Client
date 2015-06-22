@@ -4,6 +4,9 @@ using Nebula.Client.Inventory;
 using System.Collections.Generic;
 using UIC;
 using Nebula.Client.Inventory.Objects;
+using Nebula;
+using Common;
+using Nebula.Resources;
 
 namespace UIP
 {
@@ -77,6 +80,13 @@ namespace UIP
             int count = clientItem.Count;
             IItemInfo info = new ItemInfo();
             info.Icon = SpriteCache.SpriteForItem(clientItem.Object);
+            Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
+
+            actions.Add("del", () =>
+                {
+                    NRPC.DestroyInventoryItem(InventoryType.ship, clientItem.Object.Type, clientItem.Object.Id);
+                });
+
             if(clientItem.Object is MaterialInventoryObjectInfo)
             {
                 MaterialInventoryObjectInfo objectInfo = clientItem.Object as MaterialInventoryObjectInfo;
@@ -92,34 +102,41 @@ namespace UIP
                 Dictionary<string, string> parameters = new Dictionary<string, string>();
                 parameters.Add("Name", weaponTemplate.Name);
                 parameters.Add("Workshop", weaponTemplate.Workshop.ToString());
-                parameters.Add("Damage", objectInfo.HeavyDamage.ToString());
+                parameters.Add("Damage", objectInfo.damage.ToString());
                 parameters.Add("Level", objectInfo.Level.ToString());
                 parameters.Add("Range", objectInfo.Range.ToString());
                 name = weaponTemplate.Name;
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get(weaponTemplate.Description);
+
+                actions.Add("equip", () =>
+                {
+                    NRPC.EquipWeapon(InventoryType.ship, clientItem.Object.Id);
+                });
             }
             else if (clientItem.Object is SchemeInventoryObjectInfo)
             {
                 SchemeInventoryObjectInfo objectInfo = clientItem.Object as SchemeInventoryObjectInfo;
 
                 Dictionary<string, string> parameters = new Dictionary<string, string>();
-                parameters.Add("Name", objectInfo.Name);
+                parameters.Add("Name", "Scheme");
                 parameters.Add("Workshop", objectInfo.Workshop.ToString());
                 parameters.Add("Level", objectInfo.Level.ToString());
 
                 var module = DataResources.Instance.ModuleData(objectInfo.TargetTemplateId);
-                parameters.Add("Module type", StringCache.Get(module.NameId));
+                parameters.Add("Module type", StringCache.Get(module.NameId.Remove(2)));
 
                 foreach(var material in objectInfo.CraftMaterials)
                 {
-                    parameters.Add(StringCache.Get(material.Key), material.Value.ToString());
+                    var materialData = DataResources.Instance.OreData(material.Key);
+                    parameters.Add(StringCache.Get(materialData.Name), material.Value.ToString());
                 }
-                name = objectInfo.Name;
+                name = "Scheme";
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get("SCHEME_DESC");
             }
-            uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info));
+
+            uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info, actions));
         }
     }
 }

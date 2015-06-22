@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Nebula;
-
+using Nebula.Mmo.Items;
 
 public class DropContainer : MonoBehaviour {
 

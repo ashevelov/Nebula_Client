@@ -4,6 +4,7 @@
     using Nebula.Client.Inventory;
     using UAction = UnityEngine.Events.UnityAction<bool>;
     using UnityEngine.UI;
+    using Nebula.Resources;
 
     public class InventoryItemView : MonoBehaviour {
 

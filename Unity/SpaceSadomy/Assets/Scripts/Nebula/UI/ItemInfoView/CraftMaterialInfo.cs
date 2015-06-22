@@ -3,6 +3,7 @@
     using System.Collections;
     using UnityEngine.UI;
     using Common;
+    using Nebula.Resources;
 
     public class CraftMaterialInfo : MonoBehaviour {
 

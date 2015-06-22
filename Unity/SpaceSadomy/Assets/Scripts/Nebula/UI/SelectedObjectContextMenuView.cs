@@ -7,7 +7,7 @@ namespace Nebula.UI {
     using UText = UnityEngine.UI.Text;
     using UButton = UnityEngine.UI.Button;
     using UAction = UnityEngine.Events.UnityAction;
-
+    using Nebula.Mmo.Items;
 
     public class SelectedObjectContextMenuView : BaseView {
         //content layout object

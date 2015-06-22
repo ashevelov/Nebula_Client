@@ -4,7 +4,8 @@ namespace Nebula.UI {
     using UnityEngine;
     using System.Collections;
     using Common;
-    
+    using Nebula.Resources;
+    using Nebula.Mmo.Items;
 
     public class ScreenObjectView : MonoBehaviour {
 

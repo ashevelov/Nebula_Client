@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 using Game.Space;
 using Nebula.Client.Res;
 using Nebula.Client;
+using Nebula.Resources;
 
 namespace Nebula.UI {
     public class ControlHUDView : BaseView {
@@ -92,6 +93,7 @@ namespace Nebula.UI {
         }
 
         private void UpdateAttackButtons() {
+            /*
             if (G.GameShipWeaponLightShotTimer01() < 1f || G.GamePlayerShipWeaponShotEnergy(ShotType.Light) > G.GamePlayerShipEnergy()) {
                 this.LightAttackButton.interactable = false;
                 this.LightAttackImage.fillAmount = G.GameShipWeaponLightShotTimer01();
@@ -106,7 +108,7 @@ namespace Nebula.UI {
             } else {
                 this.HeavyAttackButton.interactable = true;
                 this.HeavyAttackImage.fillAmount = 1f;
-            }
+            }*/
         }
 
         private void UpdateProgresses() {
@@ -142,12 +144,13 @@ namespace Nebula.UI {
         }
 
         public void OnShotButtonClicked(bool isLight) {
+            /*
             NRPC.RequestFire((isLight) ? ShotType.Light : ShotType.Heavy);
             if (isLight) {
                 this.LightAttackButton.interactable = false;
             } else {
                 this.HeavyAttackButton.interactable = false;
-            }
+            }*/
         }
 
         public void OnMoveToggleValueChanged() {

@@ -5,6 +5,7 @@ using Game.Space;
 using Common;
 using Nebula.Client;
 using Nebula.Mmo.Games;
+using Nebula.Resources;
 
 namespace Nebula.UI {
     public class CharacterToggle : MonoBehaviour {

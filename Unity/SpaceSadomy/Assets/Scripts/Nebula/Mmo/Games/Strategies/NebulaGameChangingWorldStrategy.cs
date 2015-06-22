@@ -5,6 +5,7 @@
     using ExitGames.Client.Photon;
     using Common;
     using System.Collections.Generic;
+    using Nebula.Resources;
 
     public class NebulaGameChangingWorldStrategy : DefaultStrategy {
 

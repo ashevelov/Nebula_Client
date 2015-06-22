@@ -4,7 +4,7 @@ namespace Nebula.UI {
     using UnityEngine;
     using System.Collections;
     using Common;
-
+    using Nebula.Resources;
 
     public class LocalScreenObjectView : MonoBehaviour
     {

@@ -12,6 +12,8 @@ using ServerClientCommon;
 using Nebula.Client;
 using System.Collections.Generic;
 using Nebula.Client.Inventory;
+using Nebula.Resources;
+using Nebula.Mmo.Items;
 
 public class MmoEngine : Singleton<MmoEngine>
 {
@@ -70,6 +72,7 @@ public class MmoEngine : Singleton<MmoEngine>
         } catch(Exception exception) {
             Debug.LogException(exception);
         }
+
     }
 
     public void Update()
@@ -285,6 +288,7 @@ public class MmoEngine : Singleton<MmoEngine>
         //DrawWeaponProperties();
         //DrawShipProperties();
         //DrawBonuses();
+        DrawSkills();
         GUI.Label(new Rect(5, Screen.height - 30, 0, 0), "loaded scene: " + Application.loadedLevelName, skin.GetStyle("font_upper_left"));
     }
 
@@ -327,15 +331,7 @@ public class MmoEngine : Singleton<MmoEngine>
         var weapon = NebulaGame.Ship.Weapon;
         Dictionary<SPC, object> weaponProperties = new Dictionary<SPC, object> {
             { SPC.HasWeapon , weapon.HasWeapon},
-            { SPC.HeavyCooldown , weapon.HeavyCooldown},
-            { SPC.HeavyDamage, weapon.HeavyDamage},
-            { SPC.HeavyReady,  weapon.HeavyReady},
-            { SPC.HeavyTimer, weapon.HeavyTimer},
             { SPC.HitProb, weapon.HitProb},
-            { SPC.LightCooldown, weapon.LightCooldown},
-            { SPC.LightDamage, weapon.LightDamage},
-            { SPC.LightReady, weapon.LightReady},
-            { SPC.LightTimer,  weapon.LightTimer},
             { SPC.OptimalDistance, weapon.OptimalDistance},
             { SPC.Range, weapon.Range},
         };
@@ -393,6 +389,21 @@ public class MmoEngine : Singleton<MmoEngine>
             string content = string.Format("{0}={1}", bonusPair.Key, bonusPair.Value);
             GUI.Label(rect, content, labelStyle);
             rect = rect.addOffset(0, 10);
+        }
+    }
+
+    private void DrawSkills() {
+        GUIStyle labelStyle = skin.GetStyle("font_upper_left");
+        Rect rect = new Rect(10, 10, 0, 0);
+        if(NebulaGame == null ) { return;  }
+        if(NebulaGame.Skills == null ) { return; }
+        if(NebulaGame.Skills.Skills == null ) { return; }
+
+        float x = 300;
+        float y = 10;
+        foreach(var pair in NebulaGame.Skills.Skills) {
+            GUI.Label(new Rect(x, y, 0, 0), string.Format("Skill at {0} = {1:X0}", pair.Key, pair.Value.Id), labelStyle);
+            y += 25;
         }
     }
 }

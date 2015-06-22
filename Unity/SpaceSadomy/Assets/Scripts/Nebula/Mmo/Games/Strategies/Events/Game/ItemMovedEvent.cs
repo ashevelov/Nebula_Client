@@ -4,6 +4,7 @@
     using ExitGames.Client.Photon;
     using Common;
     using Nebula.Mmo.Games;
+    using Nebula.Mmo.Items;
 
     public class ItemMovedEvent : BaseEventHandler {
 

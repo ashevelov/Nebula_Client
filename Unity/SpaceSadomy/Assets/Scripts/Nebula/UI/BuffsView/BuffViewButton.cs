@@ -4,6 +4,7 @@
     using UnityEngine.UI;
     using Nebula.Client.Res;
     using Common;
+    using Nebula.Resources;
 
     public class BuffViewButton : MonoBehaviour {
 
@@ -31,7 +32,7 @@
         public BonusType BuffType() {
             if(buff == null ) {
                 Debug.LogError("Buff is null");
-                return BonusType.additionalDamage2EnemiesOnAreaPerFire;
+                return BonusType.damage_immunity;
             }
             return buff.bonusType;
         }

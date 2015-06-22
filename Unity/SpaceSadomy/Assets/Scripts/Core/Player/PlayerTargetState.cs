@@ -3,6 +3,7 @@ using System.Collections;
 using Common;
 using Game.Network;
 using Nebula.UI;
+using Nebula.Mmo.Items;
 
 namespace Nebula {
     public class PlayerTargetState : IServerPropertyParser {

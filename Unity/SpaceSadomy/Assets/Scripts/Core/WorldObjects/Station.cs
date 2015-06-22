@@ -5,6 +5,7 @@ using Common;
 using System.Collections.Generic;
 using Nebula;
 using Nebula.UI;
+using Nebula.Resources;
 
 public class Station : MonoBehaviour
 {

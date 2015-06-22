@@ -5,6 +5,8 @@
     using Common;
     using ServerClientCommon;
     using Nebula.UI;
+    using Nebula.Resources;
+    using Nebula.Mmo.Items;
 
     public class BaseGenericOperation :BaseOperationHandler {
 

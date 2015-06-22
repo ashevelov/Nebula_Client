@@ -4,6 +4,7 @@ using Common;
 using UnityEngine.UI;
 using Nebula.Client.Res;
 using Nebula.Mmo.Games;
+using Nebula.Resources;
 
 namespace Nebula.UI {
     public class SelectWorkshopView : BaseView {

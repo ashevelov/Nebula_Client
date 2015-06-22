@@ -2,6 +2,7 @@
 using System.Collections;
 using UIC;
 using Nebula;
+using Nebula.Resources;
 
 public class ControlPanelProcess : MonoBehaviour {
 
@@ -21,39 +22,47 @@ public class ControlPanelProcess : MonoBehaviour {
             {
                 controlPanel = FindObjectOfType<ControlPanel>();
 
-                controlPanel.UpdateButton(6, 0, null, OnFire);
+                //controlPanel.UpdateButton(6, 0, null, OnFire);
+                controlPanel.UpdateButton(6, 0, null, OnAccelerate);
                 controlPanel.UpdateButton(7, 0, null, OnMove);
-                controlPanel.UpdateButton(8, G.GameShipWeaponLightShotTimer01(), null, OnAccelerate);
             }
             else
             {
                 for (int i = 0; i < 6; i++)
                 {
                     var skill = G.GamePlayerSkill(i);
-                    if (!skill.HasSkill)
+                    if (skill.HasSkill)
                     {
-                        controlPanel.UpdateButton(i, skill.Progress(), SpriteCache.SpriteSkill(skill.Id), () => NRPC.RequestUseSkill(i));
+                        controlPanel.UpdateButton(i, skill.Progress(), SpriteCache.SpriteSkill("H" + skill.Id.ToString("X8")), (indx) =>
+                            {
+                                NRPC.RequestUseSkill(indx);
+                            });
                     }
                     else
                     {
-                        controlPanel.UpdateButton(i, 0, SpriteCache.SpriteSkill("Empty"), () => { });
+                        controlPanel.UpdateButton(i, 0, SpriteCache.SpriteSkill("Empty"), null);
                     }
                 }
-                controlPanel.UpdateButton(8, G.GameShipWeaponLightShotTimer01());
+                //NOW NO WEAPON TIMER
+                //controlPanel.UpdateButton(8, G.GameShipWeaponLightShotTimer01());
             }
         }
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(UpdateInfo());
     }
 
-    void OnFire()
+    void OnFire(int indx)
     {
-        NRPC.RequestFire(Common.ShotType.Light);
+        //request shot don't work
+        //NRPC.RequestFire(Common.ShotType.Light);
+
+        //Now need use
+        //NRPC.RequestUseSkill(skill index)
     }
 
 
     bool move = true;
-    public void OnMove()
+    public void OnMove(int indx)
     {
 
         accelerate = !accelerate;
@@ -67,13 +76,13 @@ public class ControlPanelProcess : MonoBehaviour {
             G.PlayerItem.RequestStop();
         }
     }
-    public void OnStop()
+    public void OnStop(int indx)
     {
         G.PlayerItem.RequestStop();
     }
 
     bool accelerate = false;
-    public void OnAccelerate()
+    public void OnAccelerate(int indx)
     {
         accelerate = !accelerate;
         if (accelerate)

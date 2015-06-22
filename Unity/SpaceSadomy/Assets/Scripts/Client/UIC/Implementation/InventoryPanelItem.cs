@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UIP;
+using System.Collections.Generic;
 
 namespace UIC
 {
@@ -12,6 +13,7 @@ namespace UIC
         {
             InventoryPanelItem invItem = Instantiate(Resources.Load("Prefabs/UIC/InventoryPanelItem") as GameObject).GetComponent<InventoryPanelItem>();
             InventoryItem itm = item as InventoryItem;
+            invItem.id = item.id;
             invItem.Name = itm.Name;
             invItem.Type = itm.Type;
             invItem.Count = itm.Count;
@@ -19,6 +21,7 @@ namespace UIC
             invItem.Color = itm.Color;
             invItem.Icon = itm.Icon;
             invItem.itemInfo = item.itemInfo;
+            invItem.Actions = item.Actions;
             return invItem;
         }
 
@@ -81,5 +84,8 @@ namespace UIC
             }
             return UnityEngine.Color.white;
         }
+
+
+        public Dictionary<string, System.Action> Actions { get; set; }
     }
 }

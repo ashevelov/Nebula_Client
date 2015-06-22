@@ -10,10 +10,10 @@ namespace UIC
         public List<Button> buttons;
         public List<Image> skillProgress;
         public List<Image> skillIcon;
-        private List<System.Action> actions = new List<System.Action>() { null, null, null, null, null, null, null, null, null };
+        private List<System.Action<int>> actions = new List<System.Action<int>>() { null, null, null, null, null, null, null, null, null };
 
         float[] _progress = new float[9];
-        public void UpdateButton(int index, float progress, Sprite icon = null, System.Action action = null)
+        public void UpdateButton(int index, float progress, Sprite icon = null, System.Action<int> action = null)
         {
             _progress[index] = progress;
 
@@ -24,6 +24,11 @@ namespace UIC
             if (action != null)
             {
                 actions[index] = action;
+                skillIcon[index].gameObject.SetActive(true);
+            }
+            else
+            {
+                skillIcon[index].gameObject.SetActive(false);
             }
         }
 
@@ -48,7 +53,7 @@ namespace UIC
         private void ButtonClick(int index)
         {
             if (actions[index] != null)
-                actions[index]();
+                actions[index](index);
         }
     }
 }

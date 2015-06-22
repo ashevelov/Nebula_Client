@@ -4,6 +4,7 @@
     using UnityEngine.UI;
     using Nebula.Client;
     using UnityEngine.Events;
+    using Nebula.Resources;
 
     public class ModuleView : MonoBehaviour {
 

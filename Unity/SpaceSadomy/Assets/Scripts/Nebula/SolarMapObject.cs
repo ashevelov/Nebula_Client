@@ -2,6 +2,7 @@
 using System.Collections;
 using Game.Space;
 using Nebula;
+using Nebula.Resources;
 
 public class SolarMapObject : MonoBehaviour {
 

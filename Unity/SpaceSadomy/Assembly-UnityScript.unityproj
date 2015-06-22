@@ -108,6 +108,7 @@
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\CGInclude\Dust.cginc" />
      <None Include="Assets\Shaders\FillbarCircle.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Corona\VariantCullNear.shader" />
+     <None Include="Assets\Resources\Data\Skills\skill_dropping.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantSpecular.shader" />
      <None Include="Assets\Resources\settings.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereOuterRingShadowDetail.shader" />

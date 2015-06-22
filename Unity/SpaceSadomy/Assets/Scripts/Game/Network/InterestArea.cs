@@ -1,5 +1,6 @@
 ﻿namespace Nebula {
     using Nebula.Mmo.Games;
+    using Nebula.Mmo.Items;
     using System;
 
     public class InterestArea
@@ -7,7 +8,7 @@
         private readonly byte areaId;
         private readonly NetworkGame game;
 
-        [CLSCompliant(false)]
+
         public InterestArea(byte areaId, NetworkGame game, MyItem avatar)
             : this(areaId, game, avatar.Position)
         {
@@ -15,7 +16,7 @@
             avatar.Moved += this.OnItemMoved;
         }
 
-        [CLSCompliant(false)]
+
         public InterestArea(byte areaId, NetworkGame game, float[] position)
         {
             this.game = game;
@@ -24,7 +25,6 @@
         }
         public MyItem AttachedItem { get; private set; }
 
-        [CLSCompliant(false)]
         public NetworkGame Game
         {
             get

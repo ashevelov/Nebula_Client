@@ -6,6 +6,7 @@
     using UnityEngine.UI;
     using Nebula.Client.Res;
     using Nebula.Client;
+    using Nebula.Resources;
 
     public class SchemeSelectButton : MonoBehaviour {
 

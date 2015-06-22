@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 namespace UIC
 {
     public interface IInventoryItem
@@ -11,5 +13,6 @@ namespace UIC
         int Count { set; }
         int Price { set; }
         IItemInfo itemInfo { get; set; }
+        Dictionary<string, Action> Actions { get; set; }
     }
 }

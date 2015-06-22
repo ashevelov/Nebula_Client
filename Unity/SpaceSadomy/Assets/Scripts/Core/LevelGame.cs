@@ -3,12 +3,12 @@ using System.Collections;
 using Game.Space;
 using Common;
 using System.Collections.Generic;
-using Nebula.Game.Network.Items;
 using Nebula;
 using Nebula.Mmo.Games;
 using Nebula.Client.Res;
 using Nebula.Mmo.Items;
 using Nebula.Mmo.Items.Components;
+using Nebula.Resources;
 
 public class LevelGame : Game.Space.Singleton<LevelGame> {
 
@@ -91,25 +91,7 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
             case ItemType.Bot:
                 {
                     
-                    if (actor is InvasionPortalItem) {
-                        InvasionPortalItem invasionPortal = actor as InvasionPortalItem;
-                        while(invasionPortal.Model == 0 )
-                            yield return new WaitForEndOfFrame();
-                        invasionPortal.Create(Instantiate(GetShipModelPrefab(invasionPortal.Model)) as GameObject);
-                    }
-                    else if (actor is DummyEnemyItem)
-                    {
-                        DummyEnemyItem de = actor as DummyEnemyItem;
-                        while(de.Ship.ModelInfo == null || de.Ship.ModelInfo.Count != 5)
-                            yield return new WaitForEndOfFrame();
-                        Dictionary<ShipModelSlotType, string> prefabs = new Dictionary<ShipModelSlotType,string>();
-                        foreach(DictionaryEntry entry in de.Ship.ModelInfo)
-                        {
-                            prefabs.Add((ShipModelSlotType)(byte)entry.Key, (string)entry.Value);
-                        }
-                        de.Create(ShipModel.Init(prefabs, false));
-                    }
-                    else if(actor is StandardNpcCombatItem)
+                    if(actor is StandardNpcCombatItem)
                     {
                         var sItem = actor as StandardNpcCombatItem;
 

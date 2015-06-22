@@ -7,6 +7,7 @@ namespace Nebula.UI {
     using UnityEngine.UI;
     using Common;
     using UButton = UnityEngine.UI.Button;
+    using Nebula.Resources;
 
     public class WeaponItemView : BaseItemView {
 
@@ -64,14 +65,14 @@ namespace Nebula.UI {
             WorkshopText.text = fullName;
 
             this.DescriptionText.text = StringCache.Get(weaponTemplate.Description);
-            this.LightAttackDamageText.text = StringCache.Get("LAD_FMT").f(Mathf.RoundToInt(weapon.LightDamage));
-            this.LightAttackCooldownText.text = StringCache.Get("LAC_FMT").f(weapon.LightCooldown);
-            this.LightAttackCritDamageText.text = StringCache.Get("LACD_FMT").f(Mathf.RoundToInt(weapon.LightCritDamage));
+            //this.LightAttackDamageText.text = StringCache.Get("LAD_FMT").f(Mathf.RoundToInt(weapon.LightDamage));
+            //this.LightAttackCooldownText.text = StringCache.Get("LAC_FMT").f(weapon.LightCooldown);
+            //this.LightAttackCritDamageText.text = StringCache.Get("LACD_FMT").f(Mathf.RoundToInt(weapon.LightCritDamage));
 
-            this.HeavyAttackDamageText.text = StringCache.Get("HAD_FMT").f(Mathf.RoundToInt(weapon.HeavyDamage));
-            this.HeavyAttackCooldownText.text = StringCache.Get("HAC_FMT").f(weapon.HeavyCooldown);
-            this.HeavyAttackCritDamageText.text = StringCache.Get("HACD_FMT").f(weapon.HeavyCritDamage);
-            this.HeavyAttackEnergyText.text = StringCache.Get("HAE_FMT").f(Mathf.RoundToInt(weapon.HeavyEnergy));
+            //this.HeavyAttackDamageText.text = StringCache.Get("HAD_FMT").f(Mathf.RoundToInt(weapon.HeavyDamage));
+            //this.HeavyAttackCooldownText.text = StringCache.Get("HAC_FMT").f(weapon.HeavyCooldown);
+            //this.HeavyAttackCritDamageText.text = StringCache.Get("HACD_FMT").f(weapon.HeavyCritDamage);
+            //this.HeavyAttackEnergyText.text = StringCache.Get("HAE_FMT").f(Mathf.RoundToInt(weapon.HeavyEnergy));
 
             this.CriticalChanceText.text = StringCache.Get("CC_FMT").f(Mathf.RoundToInt(weapon.CritChance * 100));
             this.OptimalDistanceText.text = StringCache.Get("OD_FMT").f(Mathf.RoundToInt(weapon.OptimalDistance));

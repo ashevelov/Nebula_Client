@@ -189,27 +189,15 @@ namespace Nebula.Mmo.Items {
             }
         }
 
-        public ObjectInfoType InfoType {
+        public override ObjectInfoType InfoType {
             get {
                 return ObjectInfoType.StandardCombatNpc;
             }
         }
 
-        public string Description {
+        public override  string Description {
             get {
                 return "This is npc bot item";
-            }
-        }
-
-        public Color Relation {
-            get {
-                return Color.yellow;
-            }
-        }
-
-        public float DistanceToPlayer {
-            get {
-                return G.DistanceTo(this);
             }
         }
     }

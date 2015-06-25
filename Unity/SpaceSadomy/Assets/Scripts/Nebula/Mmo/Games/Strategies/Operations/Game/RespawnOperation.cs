@@ -1,8 +1,6 @@
 ﻿using ExitGames.Client.Photon;
-using Game.Network;
-using Nebula.Mmo.Games;
 
-namespace Nebula.Mmo.Games.Strategies.Operations.Game  {
+namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class RespawnOperation : BaseGenericOperation
     {
         public override void Handle(BaseGame game, OperationResponse response) {

@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 using System.Collections;
 using System.Reflection;
 using System;
 using System.Collections.Generic;
 using Game.Network;
 
-
+[Obsolete("Don't use that class")]
 public class NetworkEventController : Game.Space.Singleton<NetworkEventController> {
 
 	private Hashtable clientHashtable = new Hashtable();
@@ -222,4 +223,4 @@ public class NetworkEventController : Game.Space.Singleton<NetworkEventControlle
 
 
 }
-
+*/

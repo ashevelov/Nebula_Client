@@ -87,13 +87,10 @@
     };
 
         private static readonly Dictionary<ChatGroup, string> chatGroupNameKeys = new Dictionary<ChatGroup, string> {
-        { ChatGroup.all,                "CHAT_GROUP_ALL"            },
-        { ChatGroup.alliance,           "CHAT_GROUP_ALLIANCE"       },
         {ChatGroup.group,               "CHAT_GROUP_GROUP"          },
-        {ChatGroup.me,                  "CHAT_GROUP_ME"             },
         {ChatGroup.whisper,             "CHAT_GROUP_WHISPER"        },
         {ChatGroup.zone,                "CHAT_GROUP_ZONE"           },
-        {ChatGroup.zone_and_alliance,   "CHAT_GROUP_ZONEALLIANCE"   }
+        {ChatGroup.guild,               "CHAT_GROUP_GUILD"          }
     };
 
         private static readonly Dictionary<ShipModelSlotType, string> moduleTypeNameKeys = new Dictionary<ShipModelSlotType, string> {

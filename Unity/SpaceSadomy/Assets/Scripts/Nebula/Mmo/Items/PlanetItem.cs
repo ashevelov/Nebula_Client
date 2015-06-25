@@ -4,6 +4,7 @@ using Nebula.Mmo.Games;
 using System.Collections;
 using UnityEngine;
 using System;
+using Nebula.UI;
 
 namespace Nebula.Mmo.Items {
     public class PlanetItem : NpcItem {
@@ -46,5 +47,16 @@ namespace Nebula.Mmo.Items {
             
         }
 
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.Planet;
+            }
+        }
+
+        public override string Description {
+            get {
+                return string.Empty;
+            }
+        }
     }
 }

@@ -12,10 +12,16 @@ namespace UIC
         public List<Image> skillIcon;
         private List<System.Action<int>> actions = new List<System.Action<int>>() { null, null, null, null, null, null, null, null, null };
 
+        private Vector3 pos;
+
         float[] _progress = new float[9];
-        public void UpdateButton(int index, float progress, Sprite icon = null, System.Action<int> action = null)
+        public void UpdateButton(int index, float cooldown, float progress, Sprite icon = null, System.Action<int> action = null)
         {
             _progress[index] = progress;
+            skillProgress[index].fillAmount = progress;
+            cooldownSpeed[index] = 1/(cooldown+0.001f);
+            Debug.Log(" index = " + index + " cooldown " + progress);
+            
 
             if (icon != null)
             {
@@ -32,11 +38,12 @@ namespace UIC
             }
         }
 
+        private float[] cooldownSpeed = new float[9];
         void Update()
         {
             for(int i=0; i<skillProgress.Count; i++)
             {
-                skillProgress[i].fillAmount += Time.deltaTime * _progress[i] / 0.5f;
+                skillProgress[i].fillAmount -= cooldownSpeed[i] *Time.deltaTime;
             }
         }
 

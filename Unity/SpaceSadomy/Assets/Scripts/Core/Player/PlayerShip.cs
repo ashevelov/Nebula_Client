@@ -1,13 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using Common;
-using Game.Network;
+﻿using Common;
 using Nebula.Client;
 using Nebula.Mmo.Items;
+using System.Collections;
+using UnityEngine;
 
-namespace Nebula
-{
+namespace Nebula {
     public class PlayerShip : IServerPropertyParser
     {
         private MyItem _owner;

@@ -2,6 +2,7 @@
     using UnityEngine;
     using System.Collections;
     using Common;
+    using Nebula.UI;
 
     public class MmoDamagableComponent : MmoBaseComponent {
 

@@ -140,47 +140,16 @@
             get { return SpriteCache.TargetSprite("asteroid"); }
         }
 
-        public ObjectInfoType InfoType
-        {
-            get { return ObjectInfoType.Asteroid; }
-        }
-
-        public string Description
-        {
-            get { return "Asteroid - a type of space resources, which is used for processing and production of valuable ores."; }
-        }
-
-        public Color Relation
-        {
-            get { return Color.white; }
-        }
-
-
-        public float DistanceToPlayer
-        {
-            get
-            {
-                if (G.Game != null)
-                {
-                    if (G.Game.Avatar != null)
-                    {
-                        if (G.Game.Avatar.Component)
-                        {
-                            if (this.component)
-                            {
-                                var playerPos = G.Game.Avatar.Component.transform.position;
-                                var selfPos = this.component.transform.position;
-                                return Vector3.Distance(playerPos, selfPos);
-                            }
-
-                        }
-                    }
-                }
-
-                return float.NaN;
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.Asteroid;
             }
         }
 
+        public override string Description
+        {
+            get { return "Asteroid - a type of space resources, which is used for processing and production of valuable ores."; }
+        }
 
         public void SetItems(List<ClientInventoryItem> items)
         {

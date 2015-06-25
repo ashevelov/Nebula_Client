@@ -1,12 +1,10 @@
-﻿using Game.Network;
-namespace Nebula.UI {
-    using UnityEngine;
-    using System.Collections;
-    using UnityEngine.UI;
-    using System.Collections.Generic;
-    using Nebula.Client;
+﻿namespace Nebula.UI {
     using Common;
-    using Nebula.Mmo.Games;
+    using Nebula.Client;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.UI;
 
     public class StationModulesView : MonoBehaviour {
 

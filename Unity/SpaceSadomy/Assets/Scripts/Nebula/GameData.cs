@@ -23,7 +23,7 @@ namespace Nebula {
 
         public void SetNewWorld(string worldID, Vector3 cornerMin, Vector3 cornerMax, Vector3 tileDimensions, LevelType levelType) {
             World = new WorldData(worldID, cornerMin, cornerMax, tileDimensions, levelType);
-            Chat = new Chat(Settings.MAX_CHAT_MESSAGES_COUNT);
+            Chat = new Chat();
             CurrentObjectContainer = new CurrentObjectContainer();
         }
 

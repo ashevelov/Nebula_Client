@@ -337,5 +337,17 @@ namespace Nebula.Mmo.Items {
         public override void AdditionalUpdate() {
 
         }
+
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.MyPlayer;
+            }
+        }
+
+        public override string Description {
+            get {
+                return string.Empty;
+            }
+        }
     }
 }

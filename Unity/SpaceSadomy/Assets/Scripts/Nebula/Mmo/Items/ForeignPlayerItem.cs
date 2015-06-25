@@ -290,45 +290,16 @@ namespace Nebula.Mmo.Items
             }
         }
 
-        public ObjectInfoType InfoType
+        public override  ObjectInfoType InfoType
         {
             get { return ObjectInfoType.StandardCombatNpc; }
         }
 
-        public string Description
+        public override string Description
         {
             get { return "One of the pilots in space"; }
         }
 
-        public Color Relation
-        {
-            get
-            {
-                if (G.Game != null && G.PlayerItem != null)
-                {
-                    Race playerRace = G.PlayerItem.Race;
-                    if (playerRace == this.Race)
-                        return Color.green;
-                    else
-                        return Color.red;
-                }
-                return Color.yellow;
-            }
-        }
-
-        public float DistanceToPlayer
-        {
-            get
-            {
-                if (G.Game != null && G.Game.Avatar != null && G.Game.Avatar.Component && this._component)
-                {
-                    var playerPosition = G.PlayerComponent.transform.position;
-                    var selfPosition = this._component.transform.position;
-                    return Vector3.Distance(playerPosition, selfPosition);
-                }
-                return float.NaN;
-            }
-        }
         #endregion
     }
 

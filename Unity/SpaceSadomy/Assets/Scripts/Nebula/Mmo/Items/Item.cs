@@ -9,8 +9,9 @@ namespace Nebula.Mmo.Items
     using Nebula.Mmo.Games;
     using Nebula.Mmo.Items.Components;
     using Nebula.Resources;
+    using Nebula.UI;
 
-    public abstract class Item
+    public abstract class Item : IObjectInfo
     {
         private readonly NetworkGame game;
         private readonly string id;
@@ -170,6 +171,7 @@ namespace Nebula.Mmo.Items
 
         protected Item(string id, byte type, NetworkGame game, string name, object[] inComponents)
         {
+            
             this.id = id;
             _name = StringCache.Get(name);
             this.game = game;
@@ -381,6 +383,10 @@ namespace Nebula.Mmo.Items
                 return _shipDestroyed;
             }
         }
+
+        public abstract ObjectInfoType InfoType { get; }
+
+        public abstract string Description { get; }
 
         public virtual void SetShipDestroyed(bool shipDetroyed)
         {

@@ -69,5 +69,17 @@ namespace Nebula.Mmo.Items {
                 return eventProperties.Value<bool>((int)SPC.Active, false);
             }
         }
+
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.Event;
+            }
+        }
+
+        public override string Description {
+            get {
+                return "";
+            }
+        }
     }
 }

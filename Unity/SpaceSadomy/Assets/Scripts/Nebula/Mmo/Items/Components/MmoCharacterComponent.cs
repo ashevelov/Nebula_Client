@@ -5,6 +5,21 @@
 
     public class MmoCharacterComponent : MmoBaseComponent {
 
+        //void test() {
+        //    var mmoCharacter = item.GetMmoComponent(ComponentID.Character) as MmoCharacterComponent;
+        //    if(mmoCharacter != null ) {
+        //        var myMmoCharacter = G.Game.Avatar.GetMmoComponent(ComponentID.Character) as MmoCharacterComponent;
+        //        myMmoCharacter.fraction
+        //    }
+        //}
+
+        void test() {
+            var mmoCharacter = item.GetMmoComponent(ComponentID.Character) as MmoCharacterComponent;
+            if(mmoCharacter != null ) {
+                Debug.Log(mmoCharacter.login);
+            }
+        }
+
         public Workshop workshop {
             get {
                 if(item != null ) {
@@ -31,6 +46,7 @@
 
         public FractionType fraction {
             get {
+                
                 if(item != null ) {
                     int f;
                     if(item.TryGetProperty<int>((byte)PS.Fraction, out f)) {
@@ -50,6 +66,18 @@
                     }
                 }
                 return string.Empty;
+            }
+        }
+
+        public Race race {
+            get {
+                if(item != null ) {
+                    byte r;
+                    if(item.TryGetProperty<byte>((byte)PS.Race, out r)) {
+                        return (Race)r;
+                    }
+                }
+                return Race.None;
             }
         }
 

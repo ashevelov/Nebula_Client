@@ -4,6 +4,7 @@
     using System;
     using Nebula.Mmo.Games;
     using Nebula.Mmo.Objects;
+    using Nebula.UI;
 
     public class MmoItem : Item {
 
@@ -33,6 +34,17 @@
         public override BaseSpaceObject Component {
             get {
                 return mmoObject;
+            }
+        }
+
+        public override string Description {
+            get {
+                return "";
+            }
+        }
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.MmoItem;
             }
         }
     }

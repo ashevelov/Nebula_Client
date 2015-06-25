@@ -7,23 +7,24 @@ namespace Nebula.UI {
 
     public class SelectChatGroupView : MonoBehaviour {
 
-        private ChatGroup selectedChatGroup = ChatGroup.all;
+        private ChatGroup selectedChatGroup = ChatGroup.zone;
+
         private System.Action hideHandler;
 
-        public UToggle AllToggle;
+        //public UToggle AllToggle;
         public UToggle ZoneToggle;
         public UToggle GroupToggle;
         public UToggle AllianceToggle;
-        public UToggle AllianceAndZoneToggle;
+        //public UToggle AllianceAndZoneToggle;
         public UToggle PlayerToggle;
-        public UToggle MeToggle;
+        //public UToggle MeToggle;
 
 
         public void OnAllToggleChanged() {
-            if (this.AllToggle.isOn) {
-                this.SelectGroup(ChatGroup.all);
-                this.Hide();
-            }
+            //if (this.AllToggle.isOn) {
+            //    this.SelectGroup(ChatGroup.all);
+            //    this.Hide();
+            //}
         }
 
         public void OnZoneToggleChanged() {
@@ -42,16 +43,16 @@ namespace Nebula.UI {
 
         public void OnAllianceToggleChanged() {
             if (this.AllianceToggle.isOn) {
-                this.SelectGroup(ChatGroup.alliance);
+                this.SelectGroup(ChatGroup.guild);
                 this.Hide();
             }
         }
 
         public void OnAllianceAndZoneToggleChanged() {
-            if (this.AllianceAndZoneToggle.isOn) {
-                this.SelectGroup(ChatGroup.zone_and_alliance);
-                this.Hide();
-            }
+            //if (this.AllianceAndZoneToggle.isOn) {
+            //    this.SelectGroup(ChatGroup.zone_and_alliance);
+            //    this.Hide();
+            //}
         }
 
         public void OnPlayerToggleChanged() {
@@ -62,10 +63,10 @@ namespace Nebula.UI {
         }
 
         public void OnMeToggleChanged() {
-            if (this.MeToggle.isOn) {
-                this.SelectGroup(ChatGroup.me);
-                this.Hide();
-            }
+            //if (this.MeToggle.isOn) {
+            //    this.SelectGroup(ChatGroup.me);
+            //    this.Hide();
+            //}
         }
 
 

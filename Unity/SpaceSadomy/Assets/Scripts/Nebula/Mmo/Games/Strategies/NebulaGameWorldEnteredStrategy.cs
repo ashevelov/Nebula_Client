@@ -43,7 +43,7 @@ namespace Nebula.Mmo.Games.Strategies {
             //generic.AddStrategy(CustomEventCode.WorldEventCompletedWithStage, new WorldEventCompletedWithStageEvent());
             //generic.AddStrategy(CustomEventCode.WorldEventMakeTransition, new WorldEventMakeTransitionEvent());
             generic.AddStrategy(CustomEventCode.GameEvent, new GameEventStatusEvent());
-            generic.AddStrategy(CustomEventCode.ChatMessage, new ChatMessageEvent());
+            //generic.AddStrategy(CustomEventCode.ChatMessage, new ChatMessageEvent());
             generic.AddStrategy(CustomEventCode.InventoryItemsAdded, new InventoryItemsAddedEvent());
             generic.AddStrategy(CustomEventCode.InventoryUpdated, new InventoryUpdatedEvent());
             generic.AddStrategy(CustomEventCode.ShipModelUpdated, new ShipModelUpdatedEvent());

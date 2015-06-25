@@ -1,11 +1,7 @@
 ﻿using Common;
 using ExitGames.Client.Photon;
-using Game.Network;
-using Game.Space;
 using System.Collections;
 using UnityEngine;
-using Nebula;
-using Nebula.Mmo.Games;
 
 namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class GetBonusesOnTargetOperation : BaseGenericOperation

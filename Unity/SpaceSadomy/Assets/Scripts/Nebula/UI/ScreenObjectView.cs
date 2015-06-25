@@ -1,11 +1,9 @@
-﻿using Game.Network;
-namespace Nebula.UI {
+﻿namespace Nebula.UI {
 
-    using UnityEngine;
-    using System.Collections;
     using Common;
-    using Nebula.Resources;
     using Nebula.Mmo.Items;
+    using Nebula.Resources;
+    using UnityEngine;
 
     public class ScreenObjectView : MonoBehaviour {
 

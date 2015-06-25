@@ -148,6 +148,7 @@ namespace UIC
             while (index < actionButtons.Length)
             {
                 actionButtons[index].interactable = false;
+                actionButtons[index].GetComponentInChildren<Text>().text = "";
                 index++;
             }
         }

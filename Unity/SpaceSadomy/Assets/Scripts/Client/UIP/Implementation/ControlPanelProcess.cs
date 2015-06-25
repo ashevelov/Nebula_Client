@@ -23,8 +23,8 @@ public class ControlPanelProcess : MonoBehaviour {
                 controlPanel = FindObjectOfType<ControlPanel>();
 
                 //controlPanel.UpdateButton(6, 0, null, OnFire);
-                controlPanel.UpdateButton(6, 0, null, OnAccelerate);
-                controlPanel.UpdateButton(7, 0, null, OnMove);
+                controlPanel.UpdateButton(6, 0, 0, null, OnAccelerate);
+                controlPanel.UpdateButton(7, 0, 0, null, OnMove);
             }
             else
             {
@@ -33,21 +33,21 @@ public class ControlPanelProcess : MonoBehaviour {
                     var skill = G.GamePlayerSkill(i);
                     if (skill.HasSkill)
                     {
-                        controlPanel.UpdateButton(i, skill.Progress(), SpriteCache.SpriteSkill("H" + skill.Id.ToString("X8")), (indx) =>
+                        controlPanel.UpdateButton(i, skill.Cooldown, skill.Progress(), SpriteCache.SpriteSkill("H" + skill.Id.ToString("X8")), (indx) =>
                             {
                                 NRPC.RequestUseSkill(indx);
                             });
                     }
                     else
                     {
-                        controlPanel.UpdateButton(i, 0, SpriteCache.SpriteSkill("Empty"), null);
+                        controlPanel.UpdateButton(i, 0, 0, SpriteCache.SpriteSkill("Empty"), null);
                     }
                 }
                 //NOW NO WEAPON TIMER
                 //controlPanel.UpdateButton(8, G.GameShipWeaponLightShotTimer01());
             }
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         StartCoroutine(UpdateInfo());
     }
 

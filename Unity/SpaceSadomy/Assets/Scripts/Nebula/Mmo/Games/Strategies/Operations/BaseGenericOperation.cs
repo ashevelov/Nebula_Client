@@ -76,8 +76,8 @@
                     return;
                 }
 
-                string errorMessage = strings.String(Message(response), Message(response));
-                G.Game.Engine.GameData.Chat.PastLocalMessage(errorMessage);
+                //string errorMessage = strings.String(Message(response), Message(response));
+                //G.Game.Engine.GameData.Chat.PastLocalMessage(errorMessage);
             }
         }
 
@@ -92,7 +92,7 @@
                 if (variablesToReplace != null && variablesToReplace.Count > 0) {
                     errorMessage = errorMessage.ReplaceVariables(variablesToReplace);
                 }
-                G.Game.Engine.GameData.Chat.PastLocalMessage(errorMessage);
+                //G.Game.Engine.GameData.Chat.PastLocalMessage(errorMessage);
             }
         }
 
@@ -100,7 +100,7 @@
             if (Status(response) == ACTION_RESULT.FAIL) {
                 if (string.IsNullOrEmpty(ErrorMessageId(response))) { return; }
                 string errorMessage = strings.String(ErrorMessageId(response), ErrorMessageId(response));
-                G.Game.Engine.GameData.Chat.PastLocalMessage(errorMessage);
+                //G.Game.Engine.GameData.Chat.PastLocalMessage(errorMessage);
             }
         }
 

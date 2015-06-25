@@ -1,8 +1,6 @@
 ﻿using Common;
-using Game.Network;
 using Nebula.Mmo.Games;
 using Nebula.Mmo.Items;
-using ServerClientCommon;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,6 +60,7 @@ namespace Nebula {
         //}
 
         public static void RequestUseSkill(int index) {
+            Debug.LogFormat("request use skill at index = {0}", index);
             NetworkGame game = null;
             MyItem player = null;
             if(false == CheckGameAndPlayer(out game, out player)) {
@@ -320,23 +319,23 @@ namespace Nebula {
             Operations.ExitWorld(game);
         }
 
-        public static void SendChatMessage(ChatGroup chatGroup, string message, string receiverLogin) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
+        //public static void SendChatMessage(ChatGroup chatGroup, string message, string receiverLogin) {
+        //    NetworkGame game = null;
+        //    if (false == CheckGame(out game)) {
+        //        return;
+        //    }
 
-            Hashtable chatMessageProperties = new Hashtable
-            {
-                {(int)SPC.ChatMessageGroup, (byte)chatGroup},
-                {(int)SPC.ChatMessage, message },
-                {(int)SPC.ChatSourceLogin, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
-                {(int)SPC.ChatSourceName, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
-                {(int)SPC.ChatMessageId, System.Guid.NewGuid().ToString() },
-                {(int)SPC.ChatReceiverLogin, receiverLogin }
-            };
-            Operations.RaiseGenericEvent(game, game.AvatarId, ItemType.Avatar.toByte(), (byte)CustomEventCode.ChatMessage, chatMessageProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
-        }
+        //    Hashtable chatMessageProperties = new Hashtable
+        //    {
+        //        {(int)SPC.ChatMessageGroup, (byte)chatGroup},
+        //        {(int)SPC.ChatMessage, message },
+        //        {(int)SPC.ChatSourceLogin, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
+        //        {(int)SPC.ChatSourceName, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
+        //        {(int)SPC.ChatMessageId, System.Guid.NewGuid().ToString() },
+        //        {(int)SPC.ChatReceiverLogin, receiverLogin }
+        //    };
+        //    Operations.RaiseGenericEvent(game, game.AvatarId, ItemType.Avatar.toByte(), (byte)CustomEventCode.ChatMessage, chatMessageProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
+        //}
 
         public static void GetChatUpdate() {
             NetworkGame game = null;

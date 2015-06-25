@@ -39,6 +39,12 @@
     <input key="wander_radius" value="500" type="float" />
     <input key="reach_distance" value="10" type="float" />
   </npc_type>
+
+  <npc_type type="friend"  idle_type="WanderAroundPoint">
+    <input key="rotation_speed" value="0.5" type="float" />
+    <input key="wander_radius" value="50" type="float" />
+    <input key="reach_distance" value="3" type="float" />
+  </npc_type>
   
   <npc_type type="humans_race_bot_fighter"  idle_type="PatrolBetweenTwoAreas">
     <input key="rotation_speed" value="0.5" type="float" />

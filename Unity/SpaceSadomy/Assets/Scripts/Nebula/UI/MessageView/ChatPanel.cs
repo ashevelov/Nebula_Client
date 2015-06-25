@@ -1,14 +1,12 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Common;
+using Nebula.Mmo.Games;
+using Nebula.Mmo.Items.Components;
+using Nebula.Resources;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-using Game.Space;
 using UButton = UnityEngine.UI.Button;
 using UToggle = UnityEngine.UI.Toggle;
-using Game.Network;
-using Common;
-using Nebula.Mmo.Games;
-using Nebula.Resources;
 
 namespace Nebula.UI {
     public class ChatPanel : BaseView {
@@ -30,7 +28,7 @@ namespace Nebula.UI {
 
         void Start() {
             //populate list at start
-            foreach(var message in G.Game.Engine.GameData.Chat.Messages() ) {
+            foreach(var message in G.Game.Engine.GameData.Chat.messages ) {
                 this.CreateTextForMessage(message);
             }
             this.startCompleted = true;
@@ -38,12 +36,12 @@ namespace Nebula.UI {
 
         void OnEnable() {
             //subscribe for new chat message
-            Events.NewChatMessageAdded += Events_NewChatMessageAdded;
+            Events.ChatMessageReceived += Events_NewChatMessageAdded;
         }
 
         void OnDisable() {
             //unsubscribe on disabled
-            Events.NewChatMessageAdded -= Events_NewChatMessageAdded;
+            Events.ChatMessageReceived -= Events_NewChatMessageAdded;
         }
 
         private void CreateTextForMessage(ChatMessage message) {
@@ -79,8 +77,26 @@ namespace Nebula.UI {
             if(ComputeCommand(messageText)) {
                 return;
             }
-            //simple case
-            NRPC.SendChatMessage(this.SelectChatGroupView.SelectedChatGroup(), messageText, string.Empty);
+
+            if (SelectChatGroupView.SelectedChatGroup() != ChatGroup.whisper) {
+                SelectCharacterGame.Instance().SendChatMessage(this.SelectChatGroupView.SelectedChatGroup(), messageText, new List<ChatLinkedObject>(), "", "");
+            } else {
+                if(G.PlayerItem.Target.Item == null ) {
+                    Debug.Log("not set target");
+                    return;
+                }
+                var targetCharacter = G.PlayerItem.Target.Item.GetMmoComponent(ComponentID.Character) as MmoCharacterComponent;
+
+                if(targetCharacter == null ) {
+                    Debug.Log("invalid character");
+                    return;
+                }
+                if(string.IsNullOrEmpty(targetCharacter.login) || string.IsNullOrEmpty(targetCharacter.characterID)) {
+                    Debug.Log("invalid character ID or login");
+                    return;
+                }
+                SelectCharacterGame.Instance().SendChatMessage(ChatGroup.whisper, messageText, new List<ChatLinkedObject>(), targetCharacter.login, targetCharacter.characterID);
+            }
         }
 
         private bool ComputeCommand(string command) {
@@ -166,6 +182,16 @@ namespace Nebula.UI {
                 this.SelectChatGroupView.Hide();
             } else {
                 this.SelectChatGroupView.Show(()=> {
+                    Debug.LogFormat("selected chat group = {0}", SelectChatGroupView.SelectedChatGroup());
+                    if(StringCache.ChatGroupName(this.SelectChatGroupView.SelectedChatGroup()) == null ) {
+                        Debug.Log("Not founded chat group name string");
+                    }
+                    if(ChatChannelButton == null ) {
+                        Debug.Log("Chat Channel Button null");
+                    }
+                    if(ChatChannelButton.GetComponentInChildren<Text>() == null ) {
+                        Debug.Log("text component is null");
+                    }
                     this.ChatChannelButton.GetComponentInChildren<Text>().text = StringCache.ChatGroupName(this.SelectChatGroupView.SelectedChatGroup()); //update text for selected chat channel
                 });
             }

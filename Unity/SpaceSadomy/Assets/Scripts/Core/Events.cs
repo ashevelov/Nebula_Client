@@ -16,7 +16,6 @@
         public static event System.Action<StatusCode> ClientStatusCodeChanged;
         public static event System.Action<GameState, GameState> GameStateChanged;
         public static event System.Action<ChatMessage> ChatMessageReceived;
-        public static event System.Action<ChatMessage> NewChatMessageAdded;
         public static event System.Action<ClientCooperativeGroup> CooperativeGroupUpdated;
         public static event System.Action PlayerCharactersReceived;
         public static event System.Action<IInventoryItemsSource> InventoryItemSourceUpdated;
@@ -72,12 +71,6 @@
             }
         }
 
-        //fire when new message received
-        public static void OnNewChatMessageAdded(ChatMessage message) {
-            if (NewChatMessageAdded != null) {
-                NewChatMessageAdded(message);
-            }
-        }
 
         public static void EvtCraftSchemeSelected(SchemeInventoryObjectInfo scheme) {
             if (CraftSchemeSelected != null) {

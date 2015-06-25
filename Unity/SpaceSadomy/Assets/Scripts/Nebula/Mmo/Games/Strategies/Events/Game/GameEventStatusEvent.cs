@@ -21,11 +21,11 @@
 
             ResGameEventData gameEventData;
             if(DataResources.Instance.gameEvents.TryGetEvent(MmoEngine.Get.GameData.World.Name, eventId, out gameEventData)) {
-                if(active) {
-                    MmoEngine.Get.GameData.Chat.PastLocalMessage(string.Format("Started: {0}", StringCache.Get(gameEventData.descriptionId)));
-                } else {
-                    MmoEngine.Get.GameData.Chat.PastLocalMessage(string.Format("Completed: {0}", StringCache.Get(gameEventData.descriptionId)));
-                }
+                //if(active) {
+                //    MmoEngine.Get.GameData.Chat.PastLocalMessage(string.Format("Started: {0}", StringCache.Get(gameEventData.descriptionId)));
+                //} else {
+                //    MmoEngine.Get.GameData.Chat.PastLocalMessage(string.Format("Completed: {0}", StringCache.Get(gameEventData.descriptionId)));
+                //}
             } else {
                 Debug.LogErrorFormat("not found event {0} at world {1}", eventId, MmoEngine.Get.GameData.World.Name);
             }

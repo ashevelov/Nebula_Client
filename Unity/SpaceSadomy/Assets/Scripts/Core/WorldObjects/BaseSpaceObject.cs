@@ -9,6 +9,7 @@ using Nebula.Mmo.Games;
 using Nebula.Test;
 using Nebula.Resources;
 using Nebula.Mmo.Items;
+using Nebula.Effects;
 
 public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 {
@@ -58,12 +59,59 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <summary>
     /// Virtual start, overrides by derived classes
     /// </summary>
-    public virtual void Start()
-    {
-        
+    public virtual void Start() {
+
         this.selfTransform = transform;
         this.childrensActive = true;
 
+        BonusEffectMaker speedDebuffMaker = (parent) => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/SpeedDebuff")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        };
+
+        BonusEffectMaker damageDebuffMaker = (parent) => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/DamageDebuff")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        };
+
+        BonusEffectMaker damageImmunityMaker = (parent) => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/DamageImmunity")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        };
+
+        BonusEffectMaker speedBuffMaker = (parent) => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/SpeedBuff")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            inst.transform.localRotation = Quaternion.identity;
+            return inst;
+        };
+
+        BonusEffectMaker damageBuffMaker = (parent) => {
+            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/DamageBuff")) as GameObject;
+            inst.transform.parent = parent.transform;
+            inst.transform.localPosition = Vector3.zero;
+            return inst;
+        };
+
+        bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt, speedDebuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_pc, speedDebuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.decrease_damage_on_cnt, damageDebuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.decrease_damage_on_pc, damageDebuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.damage_immunity, damageImmunityMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.increase_speed_on_cnt, speedBuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.increase_speed_on_pc, speedBuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.increase_damage_on_cnt, damageBuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.increase_damage_on_pc, damageBuffMaker);
+
+        //bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt, BonusEffectMaker)
+        //bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt)
         /*
         #region BONUS EFFECTS
         this.bonusEffectViewManager.SetEffectMaker(BonusType.blockWeapon, parent => {
@@ -321,7 +369,9 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         float damage = fireProperties.GetValue<float>((int)SPC.ActualDamage, 0.0f);
         bool hitted = fireProperties.GetValue<bool>((int)SPC.IsHitted, false);
         byte workshop = fireProperties.GetValue<byte>((int)SPC.Workshop, Workshop.DarthTribe.toByte());
-        this.EmitAmmo(target.transform, hitted, damage, workshop);
+        int skillID = fireProperties.Value<int>((int)SPC.Skill, -1);
+
+        this.EmitAmmo(target.transform, hitted, damage, workshop, skillID);
         StartCoroutine(AddDamageMassage(target, damage, 1, 0.2f, Color.white, hitted));
     }
 
@@ -439,14 +489,76 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <param name="skillProperties"></param>
     public virtual void UseSkill(Hashtable skillProperties)
     {
+
+        //Здесь возвращается информация данных скила из ресурсов( на самом деле это не очень надо, потому что ресурсы со скилами мы можем парсить на клиенте прямо из XML)
+        //фактически это дублирование информации
         Hashtable skillData         = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
+
+        //id скила
         int skillId                 = skillData.GetValue<int>((int)SPC.Id, -1);
+
+        //ID объекта цель скила ( если )
         string targetId             = skillProperties.GetValue<string>((int)SPC.Target, string.Empty);
-        byte targetType             = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
+        //Тип объекта цель скила
+        byte targetType = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
+        //По ID и типу мы всегда можем найти в сцене этот объект и создать нужный графический эффект скила, 
+        //если скил действуют на себя, то ID и тип таргета будут ID итема, который владеет этим BaseSpaceObject
+        
+        //Для разовых скилов isOn == false, для поддерживаем true\false в зависимости от включен\вфключен
         bool isOn                   = skillProperties.GetValue<bool>((int)SPC.IsOn, true);
+
+        //успешно или нет скил скастовался (например false возвращается если недостаточно энергии или цель далеко), если успешно то true
         bool success                = skillProperties.GetValue<bool>((int)SPC.IsSuccess, false);
 
+        //если скил скастовался неуспешно то в message иногда возвращается информация о причине неуспешного каста( но не всегда )
+        string message = skillProperties.Value<string>((int)SPC.Message);
+
+        if(!success) {
+            Debug.Log("SKILL NOT SUCCESS");
+            return;
+        }
+
+        Debug.LogFormat("Skill used = {0}, success = {1}", skillId.ToString("X8"), success);
         
+        if("000003E9".FromHex() == skillId) {
+            Item targetItem = null;
+            if(!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
+                Debug.LogError("skill target item not founded");
+                return;
+            }
+            if(!targetItem.View) {
+                Debug.LogError("skill target item don't have view");
+                return;
+            }
+            
+            GameObject effectInstance = Instantiate(PrefabCache.Get("Effects/Beam"), transform.position, transform.rotation) as GameObject;
+            effectInstance.GetComponent<Beam>().StartEffect(gameObject, targetItem.View, 5);
+        }
+
+        if("000003F5".FromHex() == skillId ) {
+            Debug.Log("3F5 skill used");
+            GameObject effectInstance = Instantiate(PrefabCache.Get("Effects/AddHP_3F5"), transform.position, transform.rotation) as GameObject;
+            effectInstance.transform.parent = transform;
+            effectInstance.transform.localPosition = Vector3.zero;
+            effectInstance.transform.localRotation = Quaternion.identity;
+        }
+
+        if("000003FB".FromHex() == skillId) {
+            Item targetItem = null;
+            if (!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
+                Debug.LogError("skill target item not founded");
+                return;
+            }
+            if (!targetItem.View) {
+                Debug.LogError("skill target item don't have view");
+                return;
+            }
+
+            Debug.Log("3FB skill used");
+            GameObject effectInstance = Instantiate(PrefabCache.Get("Effects/Beam_3FB"), transform.position, transform.rotation) as GameObject;
+            effectInstance.GetComponent<Beam3FB>().StartEffect(gameObject, targetItem.View, 5);
+            effectInstance.transform.parent = transform;
+        }
 
         /*
         switch(skillId)
@@ -700,7 +812,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <summary>
     /// Make emitting action. overrides derived classes if needed
     /// </summary>
-    protected virtual void EmitAmmo(Transform target, bool isHitted, float damage, byte sourceWorkshop)
+    protected virtual void EmitAmmo(Transform target, bool isHitted, float damage, byte sourceWorkshop, int skillID = -1)
     {
         //print(string.Format("Emit Ammo with damage: {0}", damage).Bold().Color("orange"));
 
@@ -710,18 +822,36 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
             switch (sourceWorkshop.toEnum<Workshop>())
             {
 			case Workshop.DarthTribe:
-                    StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
+                    if ("000003EE".FromHex() == skillID) {
+                        StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
+                    } else {
+                        StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
+                    }
                     break;
 				case Workshop.Equilibrium:
-                    StartCoroutine(cor_LaunchPlasma(0.2f, "Prefabs/Effects/PlasmaLight", target, 3, isHitted));
+                    if ("000003EE".FromHex() == skillID) {
+                        StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
+                        
+                    } else {
+                        StartCoroutine(cor_LaunchPlasma(0.2f, "Prefabs/Effects/PlasmaLight", target, 3, isHitted));
+                    }
                     break;
                 case Workshop.RedEye:
-                    StartCoroutine(cor_LaunchLaser(5f, "Prefabs/Effects/NLaser", target, 1, isHitted));
+                    if ("000003EE".FromHex() == skillID) {
+                        StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
+                        
+                    } else {
+                        StartCoroutine(cor_LaunchLaser(5f, "Prefabs/Effects/NLaser", target, 1, isHitted));
+                    }
                     break;
 			default:
                     {
-                        Debug.LogErrorFormat("Not realized shot for workshop: {0}", sourceWorkshop.toEnum<Workshop>());
-                        StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
+                        if ("000003EE".FromHex() == skillID) {
+                            StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
+                        } else {
+                            Debug.LogErrorFormat("Not realized shot for workshop: {0}", sourceWorkshop.toEnum<Workshop>());
+                            StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
+                        }
                     }
                     break;
             }

@@ -1,6 +1,4 @@
 ﻿using ExitGames.Client.Photon;
-using Game.Network;
-using Nebula.Mmo.Games;
 
 namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class GetWeaponOperation : BaseGenericOperation

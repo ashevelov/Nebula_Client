@@ -1,13 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-using Common;
-using Game.Network;
-using Nebula;
-using ServerClientCommon;
+﻿using Common;
 using Nebula.Mmo.Games;
+using Nebula.UI;
+using ServerClientCommon;
+using System.Collections;
+using UnityEngine;
 
-namespace Nebula.Mmo.Items
-{
+namespace Nebula.Mmo.Items {
     public class WorldActivatorItem : NpcItem
     {
         private BaseSpaceObject component;
@@ -126,6 +124,18 @@ namespace Nebula.Mmo.Items
             {
                 this.nextUpdateTime = Time.time + 5.0f;
                 this.GetProperties();
+            }
+        }
+
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.Activator;
+            }
+        }
+
+        public override string Description {
+            get {
+                return "";
             }
         }
     }

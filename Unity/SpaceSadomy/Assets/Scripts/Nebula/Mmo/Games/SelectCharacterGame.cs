@@ -316,6 +316,29 @@
             Operations.ChangeGuildMemberStatus(playerCharacters.SelectedCharacter().guildID, playerCharacters.SelectedCharacterId, member.characterID, targetStatus);
         }
 
+        public void SendChatMessage(ChatGroup chatGroup, string message, List<ChatLinkedObject> links = null,  string targetLogin = "", string targetCharacterID = "") {
+            object[] linkArr = null;
+            if(links == null ) {
+                linkArr = new object[] { };
+            } else {
+                linkArr = new object[links.Count];
+                for(int i = 0; i < links.Count; i++ ) {
+                    linkArr[i] = links[i].GetInfo();
+                }
+            }
+
+            Hashtable linkHash = new Hashtable { { (int)SPC.Data, linkArr } };
+            Operations.InvokeMethod("SendChatMessage", new object[] {
+                System.Guid.NewGuid().ToString(),
+                Engine.LoginGame.login,
+                playerCharacters.SelectedCharacterId,
+                (int)chatGroup,
+                message,
+                targetLogin,
+                targetCharacterID,
+                linkHash } );
+        }
+        //====================================
         public static class Operations {
 
             public static void ChangeGuildMemberStatus(string guildID, string sourceCharacterID, string targetCharacterID, GuildMemberStatus status) {

@@ -2,6 +2,8 @@
 using System.Collections;
 using UIC;
 using Nebula.UI;
+using Nebula.Mmo.Items;
+using Nebula.Mmo.Items.Components;
 
 public class TargatInfoProcess : MonoBehaviour {
 
@@ -23,17 +25,30 @@ public class TargatInfoProcess : MonoBehaviour {
     private void CombatUpdate(ICombatObjectInfo info)
     {
         uicPanel.Name = info.Name;
-        uicPanel.MaxHP = (int)info.MaxHealth;
-        uicPanel.CurentHP = (int)info.CurrentHealth;
-        uicPanel.Distance = info.DistanceToPlayer;
+
+        float maxHealth, currentHealth;
+        TryGetHP(info, out currentHealth, out maxHealth);
+        uicPanel.MaxHP = (int)maxHealth;            //(int)info.MaxHealth;
+        uicPanel.CurentHP = (int)currentHealth;     //(int)info.CurrentHealth;
+        uicPanel.Distance = info.DistanceTo(G.Game.Avatar);
         uicPanel.Level = info.Level;
+    }
+
+    private void TryGetHP(IObjectInfo info, out float ch, out float mh) {
+        ch = mh = 50000;
+        Item item = info as Item;
+        if(item == null ) { return; }
+        var damagable = item.GetMmoComponent(Common.ComponentID.Damagable) as MmoDamagableComponent;
+        if(damagable == null) { return; }
+        ch = damagable.health;
+        mh = damagable.maxHealth;
     }
 
 
     private void AsteroidUpdate(IAsteroidObjectInfo info)
     {
         uicPanel.Name = info.Name;
-        uicPanel.Distance = info.DistanceToPlayer;
+        uicPanel.Distance = info.DistanceTo(G.Game.Avatar);
     }
 
     IEnumerator UpdateInfo()

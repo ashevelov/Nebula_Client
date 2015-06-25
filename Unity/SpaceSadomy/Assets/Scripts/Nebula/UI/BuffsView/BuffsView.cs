@@ -1,12 +1,10 @@
-﻿using Game.Network;
-namespace Nebula.UI {
-    using UnityEngine;
+﻿namespace Nebula.UI {
+    using Common;
+    using Nebula.Client.Res;
+    using Nebula.Resources;
     using System.Collections;
     using System.Collections.Generic;
-    using Nebula.Client.Res;
-    using Common;
-    using Nebula.Mmo.Games;
-    using Nebula.Resources;
+    using UnityEngine;
 
     public class BuffsView : BaseView {
 

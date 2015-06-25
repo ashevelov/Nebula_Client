@@ -118,6 +118,7 @@
   <string key="CHAT_GROUP_ALL">All</string>
   <string key="CHAT_GROUP_ALLIANCE">Alliance</string>
   <string key="CHAT_GROUP_GROUP">Group</string>
+  <string key="CHAT_GROUP_GUILD">Guild</string>
   <string key="CHAT_GROUP_ME">Me</string>
   <string key="CHAT_GROUP_WHISPER">Whisper</string>
   <string key="CHAT_GROUP_ZONE">Zone</string>

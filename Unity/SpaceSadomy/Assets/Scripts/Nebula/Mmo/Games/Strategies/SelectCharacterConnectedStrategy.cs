@@ -9,6 +9,7 @@
             AddEventHandler((byte)SelectCharacterEventCode.NotificationUpdate, new UpdateNotificationsEvent());
             AddEventHandler((byte)SelectCharacterEventCode.CharactersUpdate, new UpdateCharacterEvent());
             AddEventHandler((byte)SelectCharacterEventCode.GuildUpdate, new GuildUpdateEvent());
+            AddEventHandler((byte)SelectCharacterEventCode.ChatMessageEvent, new ChatMessageEvent());
 
             //operation handlers
             AddOperationHandler((byte)SelectCharacterOperationCode.GetCharacters, new GetCharactersOperation());

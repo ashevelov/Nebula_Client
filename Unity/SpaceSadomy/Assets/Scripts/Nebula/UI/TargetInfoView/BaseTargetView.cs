@@ -66,23 +66,19 @@ namespace Nebula.UI {
         }
 
         protected void UpdateDistanceText() {
-            this.DistanceText.text = string.Format("Distnce: {0} n.u.", Mathf.RoundToInt(this.objectInfo.DistanceToPlayer));
+            //this.DistanceText.text = string.Format("Distnce: {0} n.u.", Mathf.RoundToInt(this.objectInfo.DistanceToPlayer));
         }
     }
 
-    public enum ObjectInfoType { StandardCombatNpc, Asteroid, Event, PirateStation }
+    public enum ObjectInfoType { StandardCombatNpc, Asteroid, Event, PirateStation, Chest, MmoItem, MyPlayer, Planet, ProtactionStation, Activator }
 
     public interface IObjectInfo {
+
         ObjectInfoType InfoType { get; }
 
         string Name { get; }
 
         string Description { get; }
-
-
-        Color Relation { get; }
-
-        float DistanceToPlayer { get; }
     }
 
     public interface IIconObjectInfo : IObjectInfo {

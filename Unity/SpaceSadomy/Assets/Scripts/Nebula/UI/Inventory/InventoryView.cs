@@ -1,13 +1,10 @@
-﻿using Game.Space;
-using Game.Network;
-namespace Nebula.UI {
-    using UnityEngine;
+﻿namespace Nebula.UI {
+    using Common;
+    using Nebula.Client.Inventory;
     using System.Collections;
     using System.Collections.Generic;
-    using Nebula.Client.Inventory;
+    using UnityEngine;
     using UnityEngine.UI;
-    using Common;
-    using Nebula.Mmo.Games;
 
     public class InventoryView : BaseView {
 

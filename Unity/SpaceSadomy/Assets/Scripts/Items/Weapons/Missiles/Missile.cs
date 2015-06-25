@@ -140,9 +140,11 @@ public class Missile : MonoBehaviour {
             }
 			Destroy(inst, 4);
         }
-        smoke.transform.parent = null;
-        smoke.GetComponent<ParticleSystem>().enableEmission = false;
-        smoke.AddComponent<TimedObjectDestructorManual>().DestroyWithDelay(4.0f);
+        if (smoke) {
+            smoke.transform.parent = null;
+            smoke.GetComponent<ParticleSystem>().enableEmission = false;
+            smoke.AddComponent<TimedObjectDestructorManual>().DestroyWithDelay(4.0f);
+        }
 
         target = null;
         Destroy(gameObject);

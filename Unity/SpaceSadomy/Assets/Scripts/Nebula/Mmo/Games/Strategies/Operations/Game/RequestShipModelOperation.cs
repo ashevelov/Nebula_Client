@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using ExitGames.Client.Photon;
-using Game.Network;
-using Nebula.Mmo.Games;
+﻿using ExitGames.Client.Photon;
 
 namespace Nebula.Mmo.Games.Strategies.Operations.Game {
     public class RequestShipModelOperation : BaseGenericOperation

@@ -288,7 +288,8 @@ public class MmoEngine : Singleton<MmoEngine>
         //DrawWeaponProperties();
         //DrawShipProperties();
         //DrawBonuses();
-        DrawSkills();
+        //DrawSkills();
+        DrawChat();
         GUI.Label(new Rect(5, Screen.height - 30, 0, 0), "loaded scene: " + Application.loadedLevelName, skin.GetStyle("font_upper_left"));
     }
 
@@ -404,6 +405,18 @@ public class MmoEngine : Singleton<MmoEngine>
         foreach(var pair in NebulaGame.Skills.Skills) {
             GUI.Label(new Rect(x, y, 0, 0), string.Format("Skill at {0} = {1:X0}", pair.Key, pair.Value.Id), labelStyle);
             y += 25;
+        }
+    }
+
+    private void DrawChat() {
+        GUIStyle labelStyle = skin.GetStyle("font_upper_left");
+        Rect rect = new Rect(10, 10, 0, 0);
+        if(GameData.Chat == null ) { return; }
+        if(GameData.Chat.messages == null ) { return; }
+
+        for(int i = GameData.Chat.messages.Count - 1; i >= Mathf.Max(0, GameData.Chat.messages.Count - 10); --i) {
+            GUI.Label(rect, GameData.Chat.messages[i].DecoratedMessage, labelStyle);
+            rect = new Rect(rect.x, rect.y + 20, 0, 0);
         }
     }
 }

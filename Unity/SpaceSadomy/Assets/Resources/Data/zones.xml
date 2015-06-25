@@ -48,6 +48,7 @@
       <npc_group id="H1_NPC_G_1" />
     </npc_groups>
     <npcs>
+      <npc id="friend_npc" race="Humans" type="friend" position="20,0,20" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"   difficulty="medium"   fraction="Friend"/>
       <!--<npc id="1_pga_01" race="Borguzands" type="test_mob" position="0,0,0" rotation="0,0,0" respawn_interval="10"  workshop="Rakhgals" difficulty="medium" fraction="Pirate" />
       
       <npc id="1_pga_02" race="Humans" type="test_mob" position="0,0,0" rotation="0,0,0"        respawn_interval="60" workshop="DarthTribe"   difficulty="medium"   fraction="Pirate"/>

@@ -2,6 +2,7 @@
 using System.Collections;
 using UIC;
 using Nebula.Resources;
+using Nebula.Mmo.Items.Components;
 
 public class PlayerInfoProcess : MonoBehaviour {
 
@@ -10,23 +11,24 @@ public class PlayerInfoProcess : MonoBehaviour {
 	void Start () {
         StartCoroutine(UpdateInfo());
 	}
-
+    
     IEnumerator UpdateInfo()
     {        
         if (CheckCondition())
         {
-
+            
+           
             if (playerInfo == null)
             {
                 playerInfo = FindObjectOfType<PlayerInfo>();
-                playerInfo.Name = G.Game.PlayerInfo.Name;
+                        playerInfo.Name = MmoEngine.Get.LoginGame.login;
                 playerInfo.Avatar = SpriteCache.RaceSprite(G.Game.PlayerInfo.Race);
             }
             else
             {
                 playerInfo.MaxHP = (int)G.Game.CombatStats.MaxHP;
                 playerInfo.MaxEnegry = (int)G.Game.CombatStats.MaxEnergy;
-                playerInfo.Speed = (int)G.Game.CombatStats.CurrentSpeed;
+                playerInfo.Speed = (int)(G.Game.CombatStats.CurrentSpeed *100);
                 playerInfo.Position = G.PlayerComponent.transform.position.ToIntString();
                 playerInfo.CurentEnergy = (int)G.Game.CombatStats.CurrentEnergy;
                 playerInfo.CurentHP = (int)G.Game.CombatStats.CurrentHP;

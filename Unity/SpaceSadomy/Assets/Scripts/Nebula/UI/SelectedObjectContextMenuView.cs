@@ -1,13 +1,10 @@
-﻿using Game.Network;
-
-namespace Nebula.UI {
-    using UnityEngine;
-    using System.Collections;
-    using System.Collections.Generic;
-    using UText = UnityEngine.UI.Text;
-    using UButton = UnityEngine.UI.Button;
-    using UAction = UnityEngine.Events.UnityAction;
+﻿namespace Nebula.UI {
     using Nebula.Mmo.Items;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UAction = UnityEngine.Events.UnityAction;
+    using UButton = UnityEngine.UI.Button;
+    using UText = UnityEngine.UI.Text;
 
     public class SelectedObjectContextMenuView : BaseView {
         //content layout object

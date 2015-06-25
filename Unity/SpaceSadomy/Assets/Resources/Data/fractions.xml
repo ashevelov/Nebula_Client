@@ -6,6 +6,7 @@
       <relation to="PlayerBorguzands" value="Enemy"   />
       <relation to="Pirate"           value="Enemy"   />
       <relation to="EventBot"         value="Enemy"   />
+      <relation to="Friend"      value="Friend"  />
     </relations>
   </fraction>
   <fraction name="PlayerCriptizids">
@@ -15,6 +16,7 @@
       <relation to="PlayerBorguzands" value="Enemy"   />
       <relation to="Pirate"           value="Enemy"   />
       <relation to="EventBot"         value="Enemy"   />
+      <relation to="Friend"      value="Friend"  />
     </relations>  
   </fraction>
   <fraction name="PlayerBorguzands">
@@ -24,6 +26,7 @@
       <relation to="PlayerBorguzands" value="Friend"   />
       <relation to="Pirate"           value="Enemy"   />
       <relation to="EventBot"         value="Enemy"   />
+      <relation to="Friend"      value="Friend"  />
     </relations>
   </fraction>
   <fraction name="Pirate">
@@ -33,6 +36,7 @@
       <relation to="PlayerBorguzands" value="Friend"   />
       <relation to="Pirate"           value="Enemy"   />
       <relation to="EventBot"         value="Friend"   />
+      <relation to="Friend"      value="Friend"  />
     </relations>
   </fraction>
   <fraction name="EventBot">
@@ -42,6 +46,17 @@
       <relation to="PlayerBorguzands" value="Enemy"   />
       <relation to="Pirate"           value="Enemy"   />
       <relation to="EventBot"         value="Friend"   />
+      <relation to="Friend"      value="Friend"  />
+    </relations>
+  </fraction>
+  <fraction name="Friend">
+    <relations>
+      <relation to="PlayerHumans"     value="Friend"  />
+      <relation to="PlayerCriptizids" value="Friend"   />
+      <relation to="PlayerBorguzands" value="Friend"   />
+      <relation to="Pirate"           value="Friend"   />
+      <relation to="EventBot"         value="Friend"   />
+      <relation to="Friend"      value="Friend"  />
     </relations>
   </fraction>
 </fractions>

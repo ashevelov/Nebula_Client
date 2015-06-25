@@ -49,7 +49,7 @@
                 }
 
                 var list = new List<string> { strings.String(ErrorMessageId(eventData), ErrorMessageId(eventData)).Trim() };
-                G.Game.Engine.GameData.Chat.PastLocalMessage(list.ToNewLineSeparatedString());
+                //G.Game.Engine.GameData.Chat.PastLocalMessage(list.ToNewLineSeparatedString());
             }
         }
     }

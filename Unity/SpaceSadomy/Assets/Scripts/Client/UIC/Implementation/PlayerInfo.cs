@@ -131,7 +131,7 @@ namespace UIC
 
         void UpdateInfo()
         {
-            info.text = _playerName +  "  /  " + _speed +"  /  "+ _position;
+            info.text = _playerName +  "  /  " + _speed +"m/s  /  "+ _position;
         }
         #endregion
 

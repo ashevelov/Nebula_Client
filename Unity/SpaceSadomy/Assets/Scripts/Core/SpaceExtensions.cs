@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Nebula.Mmo.Items;
+using Nebula.UI;
 
 public static class SpaceExtensions {
 
@@ -306,4 +308,31 @@ public static class SpaceExtensions {
         Common.CommonUtils.ConstructHashString(hash, 1, ref stringBuilder);
         return stringBuilder.ToString();
     } 
+
+    public static float DistanceTo(this Item source, object other) {
+        if(source == null ) { return 0f; }
+        Item otherItem = other as Item;
+        if(otherItem == null) {
+            return 0f;
+        }
+
+        if(!source.View) {
+            return 0f;
+        }
+        if(!(otherItem.View)) {
+            return 0f;
+        }
+
+        var sourcePos = source.View.transform.position;
+        var otherPos = otherItem.View.transform.position;
+        return (sourcePos - otherPos).magnitude;
+    } 
+
+    public static float DistanceTo(this IObjectInfo source, object other) {
+        Item sourceItem = source as Item;
+        if(sourceItem == null ) {
+            return 0f;
+        }
+        return DistanceTo(sourceItem, other);
+    }
 }

@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using Common;
-using Game.Network;
-using Nebula.UI;
+﻿using Common;
 using Nebula.Mmo.Items;
+using Nebula.UI;
+using System.Collections;
+using UnityEngine;
 
 namespace Nebula {
     public class PlayerTargetState : IServerPropertyParser {

@@ -125,5 +125,17 @@
         {
             get { return this.Type.toItemType(); }
         }
+
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.Chest;
+            }
+        }
+
+        public override string Description {
+            get {
+                return "";
+            }
+        }
     }
 }

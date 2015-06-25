@@ -3,6 +3,8 @@ using Nebula.Client;
 using Nebula.Mmo.Games;
 using System.Collections;
 using UnityEngine;
+using Nebula.UI;
+using System;
 
 namespace Nebula.Mmo.Items {
     #region Item
@@ -122,6 +124,18 @@ namespace Nebula.Mmo.Items {
 
         public override void AdditionalUpdate() {
 
+        }
+
+        public override ObjectInfoType InfoType {
+            get {
+                return ObjectInfoType.ProtactionStation;
+            }
+        }
+
+        public override string Description {
+            get {
+                return "";
+            }
         }
     }
     #endregion 

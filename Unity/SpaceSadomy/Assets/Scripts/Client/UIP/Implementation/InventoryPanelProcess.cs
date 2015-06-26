@@ -2,13 +2,14 @@
 using System.Collections;
 using Nebula.Client.Inventory;
 using System.Collections.Generic;
-using UIC;
 using Nebula.Client.Inventory.Objects;
 using Nebula;
 using Common;
 using Nebula.Resources;
+using Client.UIC.Implementation;
+using Client.UIC;
 
-namespace UIP
+namespace Client.UIP.Implementation
 {
     public class InventoryPanelProcess : MonoBehaviour
     {

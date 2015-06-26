@@ -489,7 +489,6 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <param name="skillProperties"></param>
     public virtual void UseSkill(Hashtable skillProperties)
     {
-
         //Здесь возвращается информация данных скила из ресурсов( на самом деле это не очень надо, потому что ресурсы со скилами мы можем парсить на клиенте прямо из XML)
         //фактически это дублирование информации
         Hashtable skillData         = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
@@ -530,7 +529,6 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                 Debug.LogError("skill target item don't have view");
                 return;
             }
-            
             GameObject effectInstance = Instantiate(PrefabCache.Get("Effects/Beam"), transform.position, transform.rotation) as GameObject;
             effectInstance.GetComponent<Beam>().StartEffect(gameObject, targetItem.View, 5);
         }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UIP
+namespace Client.UIP.Implementation
 {
     public class ItemInfo : IItemInfo
     {

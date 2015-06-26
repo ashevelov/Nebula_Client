@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Common;
+using Client.UIP.Implementation;
 
 namespace Nebula.UI {
     public class TargetInfoView : BaseView {

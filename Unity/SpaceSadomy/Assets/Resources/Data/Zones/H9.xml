@@ -1,0 +1,12 @@
+﻿<zones>
+  <zone id="H9" name="H9_NAME" level="9" owned_race="0">
+    <npc_groups>
+      <npc_group id="H_NPC_G_9_COMMON" />
+    </npc_groups>
+    <npcs></npcs>
+    <asteroids></asteroids>
+    <activators></activators>
+    <events></events>
+    <inputs></inputs>
+  </zone>
+</zones>

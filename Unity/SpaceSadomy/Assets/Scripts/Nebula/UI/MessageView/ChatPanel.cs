@@ -52,6 +52,7 @@ namespace Nebula.UI {
             //set text to message string
             obj.GetComponent<Text>().text = message.DecoratedMessage;
             obj.transform.SetParent(this.Content.transform, false);
+            obj.transform.SetSiblingIndex(0);
 
             //if we were before message at end of scroll, set new scroll position to end of scroll
             if (Mathf.Approximately(scrollPosBeforeAddingMessage, 0f) || scrollPosBeforeAddingMessage < 0f) {

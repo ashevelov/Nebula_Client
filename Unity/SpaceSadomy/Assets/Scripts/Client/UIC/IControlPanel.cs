@@ -1,4 +1,4 @@
-﻿namespace UIC
+﻿namespace Client.UIC.Implementation
 {
     using UnityEngine;
 

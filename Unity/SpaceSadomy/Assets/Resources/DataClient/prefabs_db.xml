@@ -1,3 +1,4 @@
 ﻿<prefabs>
-  <prefab id="PS01" path="Prefabs/PirateStation" />
+  <prefab id="PS01" path="Prefabs/PirateStation"  />
+  <prefab id="AST01" path="Prefabs/Asteroid"      />
 </prefabs>

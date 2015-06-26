@@ -1,0 +1,12 @@
+﻿<zones>
+  <zone id="H15" name="H15_NAME" level="15" owned_race="0">
+    <npc_groups>
+      <npc_group id="H_NPC_G_15_COMMON" />
+    </npc_groups>
+    <npcs></npcs>
+    <asteroids></asteroids>
+    <activators></activators>
+    <events></events>
+    <inputs></inputs>
+  </zone>
+</zones>

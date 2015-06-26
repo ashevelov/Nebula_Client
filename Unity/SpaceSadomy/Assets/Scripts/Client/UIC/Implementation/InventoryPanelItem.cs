@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UIP;
 using System.Collections.Generic;
+using Client.UIP;
+using Client.UIP.Implementation;
 
-namespace UIC
+namespace Client.UIC.Implementation
 {
     public class InventoryPanelItem : MonoBehaviour, IInventoryItem
     {

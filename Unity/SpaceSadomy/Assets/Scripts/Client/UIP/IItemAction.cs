@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace UIC
+namespace Client.UIP
 {
     public interface IItemAction
     {

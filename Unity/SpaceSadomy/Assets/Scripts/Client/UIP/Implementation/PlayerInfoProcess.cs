@@ -1,51 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UIC;
 using Nebula.Resources;
 using Nebula.Mmo.Items.Components;
+using Client.UIC.Implementation;
+using Client.UIC;
 
-public class PlayerInfoProcess : MonoBehaviour {
-
-    public IPlayerInfo playerInfo;
-
-	void Start () {
-        StartCoroutine(UpdateInfo());
-	}
-    
-    IEnumerator UpdateInfo()
-    {        
-        if (CheckCondition())
-        {
-            
-           
-            if (playerInfo == null)
-            {
-                playerInfo = FindObjectOfType<PlayerInfo>();
-                        playerInfo.Name = MmoEngine.Get.LoginGame.login;
-                playerInfo.Avatar = SpriteCache.RaceSprite(G.Game.PlayerInfo.Race);
-            }
-            else
-            {
-                playerInfo.MaxHP = (int)G.Game.CombatStats.MaxHP;
-                playerInfo.MaxEnegry = (int)G.Game.CombatStats.MaxEnergy;
-                playerInfo.Speed = (int)(G.Game.CombatStats.CurrentSpeed *100);
-                playerInfo.Position = G.PlayerComponent.transform.position.ToIntString();
-                playerInfo.CurentEnergy = (int)G.Game.CombatStats.CurrentEnergy;
-                playerInfo.CurentHP = (int)G.Game.CombatStats.CurrentHP;
-                playerInfo.Level = DataResources.Instance.Leveling.LevelForExp(G.Game.PlayerInfo.Exp);
-                playerInfo.ProgressExp = DataResources.Instance.Leveling.LevelProgress(G.Game.PlayerInfo.Exp);
-            }
-        }
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(UpdateInfo());
-    }
-
-    public bool CheckCondition()
+namespace Client.UIP.Implementation
+{
+    public class PlayerInfoProcess : MonoBehaviour
     {
-        if (G.Game == null || G.Game.PlayerInfo == null || G.PlayerComponent == null)
-            return false;
-        return true;
-    }
 
-	
+        public IPlayerInfo playerInfo;
+
+        void Start()
+        {
+            StartCoroutine(UpdateInfo());
+        }
+
+        IEnumerator UpdateInfo()
+        {
+            if (CheckCondition())
+            {
+
+
+                if (playerInfo == null)
+                {
+                    playerInfo = FindObjectOfType<PlayerInfo>();
+                    playerInfo.Name = MmoEngine.Get.LoginGame.login;
+                    playerInfo.Avatar = SpriteCache.RaceSprite(G.Game.PlayerInfo.Race);
+                }
+                else
+                {
+                    playerInfo.MaxHP = (int)G.Game.CombatStats.MaxHP;
+                    playerInfo.MaxEnegry = (int)G.Game.CombatStats.MaxEnergy;
+                    playerInfo.Speed = (int)(G.Game.CombatStats.CurrentSpeed * 100);
+                    playerInfo.Position = G.PlayerComponent.transform.position.ToIntString();
+                    playerInfo.CurentEnergy = (int)G.Game.CombatStats.CurrentEnergy;
+                    playerInfo.CurentHP = (int)G.Game.CombatStats.CurrentHP;
+                    playerInfo.Level = DataResources.Instance.Leveling.LevelForExp(G.Game.PlayerInfo.Exp);
+                    playerInfo.ProgressExp = DataResources.Instance.Leveling.LevelProgress(G.Game.PlayerInfo.Exp);
+                }
+            }
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(UpdateInfo());
+        }
+
+        public bool CheckCondition()
+        {
+            if (G.Game == null || G.Game.PlayerInfo == null || G.PlayerComponent == null)
+                return false;
+            return true;
+        }
+
+
+    }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace UIC
+
+namespace Client.UIP
 {
     public interface IInventoryItem
     {

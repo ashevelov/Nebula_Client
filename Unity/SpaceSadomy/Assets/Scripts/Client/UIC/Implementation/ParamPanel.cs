@@ -2,14 +2,18 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ParamPanel : MonoBehaviour {
-
-    public Text name;
-    public Text value;
-
-    public void Init(string name, string value)
+namespace Client.UIC.Implementation
+{
+    public class ParamPanel : MonoBehaviour
     {
-        this.name.text = name;
-        this.value.text = value;
+
+        public Text name;
+        public Text value;
+
+        public void Init(string name, string value)
+        {
+            this.name.text = name;
+            this.value.text = value;
+        }
     }
 }

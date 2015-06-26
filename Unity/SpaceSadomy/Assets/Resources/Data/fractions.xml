@@ -31,10 +31,10 @@
   </fraction>
   <fraction name="Pirate">
     <relations>
-      <relation to="PlayerHumans"     value="Friend"  />
-      <relation to="PlayerCriptizids" value="Friend"   />
-      <relation to="PlayerBorguzands" value="Friend"   />
-      <relation to="Pirate"           value="Enemy"   />
+      <relation to="PlayerHumans"     value="Enemy"  />
+      <relation to="PlayerCriptizids" value="Enemy"   />
+      <relation to="PlayerBorguzands" value="Enemy"   />
+      <relation to="Pirate"           value="Friend"   />
       <relation to="EventBot"         value="Friend"   />
       <relation to="Friend"      value="Friend"  />
     </relations>

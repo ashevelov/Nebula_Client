@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
+  <zone id="H1" name="H1_NAME" level="1" owned_race="0">
+    <planets />
+    <npc_groups />
+    <npcs>
+      <npc id="ASTG_01" name="BOT_AST_NAME" level="1" race="Borguzands" position="299,-501,-421" rotation="331,93,49" respawn_interval="600" workshop="Rakhgals" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="148" />
+      </npc>
+      <npc id="ASTG_02" name="BOT_AST_NAME" level="1" race="Borguzands" position="551,-501,-421" rotation="331,93,49" respawn_interval="600" workshop="Phelpars" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="148" />
+      </npc>
+      <npc id="ASTG_03" name="BOT_AST_NAME" level="1" race="Borguzands" position="462,-550,-205" rotation="331,93,49" respawn_interval="600" workshop="Zoards" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="140" />
+      </npc>
+      <npc id="ASTG_04" name="BOT_AST_NAME" level="1" race="Borguzands" position="237,-550,-69" rotation="331,93,49" respawn_interval="600" workshop="Zoards" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="140" />
+      </npc>
+    </npcs>
+    <asteroids>
+      <asteroid index="1" force_create="True" respawn="600" data_id="CraftAsteroid0001" model="AST01" position="347,-459,-489" rotation="32,141,51" />
+      <asteroid index="2" force_create="True" respawn="600" data_id="CraftAsteroid0002" model="AST01" position="571,-554,-416" rotation="14,49,14" />
+      <asteroid index="3" force_create="True" respawn="600" data_id="CraftAsteroid0003" model="AST01" position="431,-532,-375" rotation="299,270,162" />
+      <asteroid index="4" force_create="True" respawn="600" data_id="CraftAsteroid0001" model="AST01" position="493,-489,-551" rotation="10,250,166" />
+      <asteroid index="5" force_create="True" respawn="600" data_id="CraftAsteroid0001" model="AST01" position="457,-534,-139" rotation="46,65,343" />
+      <asteroid index="6" force_create="True" respawn="600" data_id="CraftAsteroid0002" model="AST01" position="557,-530,-200" rotation="45,276,125" />
+      <asteroid index="7" force_create="True" respawn="600" data_id="CraftAsteroid0002" model="AST01" position="290,-532,-195" rotation="50,289,239" />
+      <asteroid index="9" force_create="True" respawn="600" data_id="CraftAsteroid0002" model="AST01" position="314,-500,-362" rotation="321,272,111" />
+      <asteroid index="8" force_create="True" respawn="600" data_id="CraftAsteroid0002" model="AST01" position="172,-500,-235" rotation="321,272,111" />
+    </asteroids>
+    <events>
+      <event id="E001" cooldown="60" radius="300" description="E001_DESC" position="351,-262,682">
+        <inputs />
+      </event>
+      <event id="E002" cooldown="60" radius="300" description="E001_DESC" position="351,-662,682">
+        <inputs />
+      </event>
+      <event id="E003" cooldown="60" radius="300" description="E001_DESC" position="351,-462,882">
+        <inputs />
+      </event>
+      <event id="E004" cooldown="60" radius="300" description="E001_DESC" position="351,-462,482">
+        <inputs />
+      </event>
+      <event id="E005" cooldown="60" radius="300" description="E001_DESC" position="151,-462,682">
+        <inputs />
+      </event>
+    </events>
+    <inputs>
+      <input key="zone_min" value="-200,-200,-200" type="vector" />
+      <input key="zone_max" value="200,200,200" type="vector" />
+      <input key="reach_radius" value="5" type="float" />
+    </inputs>
+  </zone>
+</zones>

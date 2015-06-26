@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UIP;
 using System;
 
-namespace UIC
+namespace Client.UIP.Implementation
 {
     public class InventoryItem : IInventoryItem
     {

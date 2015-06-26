@@ -1,0 +1,12 @@
+﻿<zones>
+  <zone id="E4" name="E4_NAME" level="4" owned_race="2">
+    <npc_groups>
+      <npc_group id="C_NPC_G_4_COMMON" />
+    </npc_groups>
+    <npcs></npcs>
+    <asteroids></asteroids>
+    <activators></activators>
+    <events></events>
+    <inputs></inputs>
+  </zone>
+</zones>

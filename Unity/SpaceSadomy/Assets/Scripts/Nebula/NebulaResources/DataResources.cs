@@ -72,12 +72,31 @@
                 this.races = ResLoader.LoadRaces(Resources.Load<TextAsset>("DataClient/races").text);
                 this.schemes = ResLoader.LoadSchemes(Resources.Load<TextAsset>("DataClient/schemes").text);
                 this.miscInventoryItems = ResLoader.LoadMiscInventoryItems(Resources.Load<TextAsset>("Data/misc_inventory_items").text);
-                gameEvents = ResLoader.LoadGameEvents(Resources.Load<TextAsset>("Data/zones").text);
+
+                //gameEvents = ResLoader.LoadGameEvents(Resources.Load<TextAsset>("Data/zones").text);
+                LoadGameEvents();
+
                 prefabsDb = ResLoader.LoadPrefabsDB(Resources.Load<TextAsset>("DataClient/prefabs_db").text);
 
                 this.loaded = true;
             }
         }
+
+        private void LoadGameEvents() {
+            gameEvents = new ResGameEvents();
+            TextAsset[] assets = Resources.LoadAll<TextAsset>("Data/Zones");
+            try {
+                foreach(var asset in assets) {
+                    Debug.LogFormat("load events from : {0}", asset.name);
+                    gameEvents.AddEvents(gameEvents.LoadFile(asset.text));
+                }
+            } catch(System.Exception exception) {
+                Debug.Log(exception.Message);
+                Debug.Log(exception.StackTrace);
+            }
+        }
+
+
 
         private Dictionary<string, string> LoadAllStringFromFiles(string directoryPath) {
             Dictionary<string, string> result = new Dictionary<string, string>();

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-namespace UIC
+namespace Client.UIC.Implementation
 {
     public class ControlPanel : MonoBehaviour, IControlPanel
     {

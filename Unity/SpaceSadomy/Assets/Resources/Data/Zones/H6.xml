@@ -1,0 +1,12 @@
+﻿<zones>
+  <zone id="H6" name="H6_NAME" level="6" owned_race="0">
+    <npc_groups>
+      <npc_group id="H_NPC_G_6_COMMON" />
+    </npc_groups>
+    <npcs></npcs>
+    <asteroids></asteroids>
+    <activators></activators>
+    <events></events>
+    <inputs></inputs>
+  </zone>
+</zones>

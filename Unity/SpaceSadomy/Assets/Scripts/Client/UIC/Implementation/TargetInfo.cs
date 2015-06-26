@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-namespace UIC
+namespace Client.UIC.Implementation
 {
     public class TargetInfo : MonoBehaviour, ITargetInfo
     {

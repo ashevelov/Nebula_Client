@@ -1,7 +1,7 @@
-﻿using System;
-using UIP;
+﻿using Client.UIP;
+using System;
 
-namespace UIC
+namespace Client.UIC
 {
     interface IInventoryPanel
     {

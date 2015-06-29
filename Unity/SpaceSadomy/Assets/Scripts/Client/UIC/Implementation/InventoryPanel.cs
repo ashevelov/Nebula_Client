@@ -123,24 +123,24 @@ namespace Client.UIC.Implementation
                 skillIcon.gameObject.SetActive(false);
                 skillDescription.gameObject.SetActive(false);
             }
-            SetItemActions(inventoryItem.Actions);
+            SetItemActions(inventoryItem.Actions, inventoryItem.id);
         }
 
 
         // action buttons
 
         public Button[] actionButtons;
-        public void SetItemActions ( Dictionary<string, System.Action> actions)
+        public void SetItemActions(Dictionary<string, System.Action<string>> actions, string ItemID)
         {
 
             int index = 0;
             if(actions != null)
             {
-                foreach(KeyValuePair<string, System.Action> action in actions)
+                foreach (KeyValuePair<string, System.Action<string>> action in actions)
                 {
                     Debug.Log("action.Key --------------" +action.Key);
                     actionButtons[index].interactable = true;
-                    actionButtons[index].onClick.AddListener(() => action.Value());
+                    actionButtons[index].onClick.AddListener(() => action.Value(ItemID));
                     actionButtons[index].GetComponentInChildren<Text>().text = action.Key;
                     index++;
                 }

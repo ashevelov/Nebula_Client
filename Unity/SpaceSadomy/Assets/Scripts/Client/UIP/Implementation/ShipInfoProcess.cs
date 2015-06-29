@@ -15,6 +15,22 @@ namespace Client.UIP.Implementation
             uicPanel = GetComponent<IShipModuleInfo>();
         }
 
+        public void UpdateAllModulesInfo()
+        {
+            ClientShipCombatStats info = G.Game.CombatStats;
+            names = string.Empty;
+            values = string.Empty;
+
+
+            AddInfo("HP", (int)info.MaxHP);
+            AddInfo("Energy", (int)info.MaxEnergy);
+            AddInfo("Speed", (int)info.MaxSpeed);
+            AddInfo("Damage", (int)info.damage);
+            AddInfo("Resist", (int)info.DamageResist);
+            AddInfo("Optimal Distance", (int)info.WeaponOptimalDistance);
+
+            uicPanel.SetAllParams(names, values);
+        }
 
         public void UpdateCBInfo()
         {
@@ -43,27 +59,50 @@ namespace Client.UIP.Implementation
         }
         public void UpdateWeaponInfo()
         {
-            //ClientShipModule info = G.Game.Ship.ShipModel.cb.Module;
-            //UpdateModuleInfo(info);
+            ClientPlayerShipWeapon info = G.Game.Ship.Weapon;
+
+            names = string.Empty;
+            values = string.Empty;
+
+
+            AddInfo("damage", info.damage);
+            AddInfo("level", info.critDamage);
+            AddInfo("HitProb", (int)info.HitProb);
+            AddInfo("Range", (int)info.Range);
+            AddInfo("Level", (int)info.WeaponObject.Level);
+            AddInfo("Color", (int)info.WeaponObject.Color);
+
+            uicPanel.SetParams(names, values);
+
+            Sprite icon = SpriteCache.SpriteModule(info.WeaponObject.Template);
+            uicPanel.SetIcon(icon);
+
+            Sprite skillIcon = null;
+            string skillDesc = ""; //SpriteCache.SpriteSkill("H" + info.skill.ToString("X8"));
+            uicPanel.SetSkill(skillIcon, skillDesc);
         }
+
+        string names = string.Empty;
+        string values = string.Empty;
 
         private void UpdateModuleInfo(ClientShipModule info)
         {
-            string names = string.Empty;
-            string values = string.Empty;
+            names = string.Empty;
+            values = string.Empty;
 
-            //AddInfo( out names, out values, "Name", info.name);
 
-            names += "Name\n"; values += info.name + "\n";
-            names += "level\n"; values += info.level + "\n";
-            names += "hp\n"; values += (int)info.hp + "\n";
-            names += "energy\n"; values += (int)info.energy + "\n";
-            names += "resist\n"; values += (int)info.resist + "\n";
-            names += "speed\n"; values += (int)info.speed + "\n";
-            names += "damageBonus\n"; values += (int)info.damageBonus + "\n";
-            names += "critChance\n"; values += (int)info.critChance + "\n";
-            names += "critDamage\n"; values += (int)info.critDamage + "\n";
-            names += "hold\n"; values += (int)info.hold + "\n";
+            AddInfo("Name", info.name);
+            AddInfo("level", info.level);
+            AddInfo("hp", (int)info.hp);
+            AddInfo("energy", (int)info.energy);
+            AddInfo("resist", (int)info.resist);
+            AddInfo("speed", (int)info.speed);
+            AddInfo("damageBonus", (int)info.damageBonus);
+            AddInfo("critChance", (int)info.critChance);
+            AddInfo("critDamage", (int)info.critDamage);
+            AddInfo("hold", (int)info.hold);
+            AddInfo("color", (int)info.color);
+
             uicPanel.SetParams(names, values);
 
             Sprite icon = SpriteCache.SpriteModule(info.templateId);
@@ -74,13 +113,14 @@ namespace Client.UIP.Implementation
             uicPanel.SetSkill(skillIcon, skillDesc);
         }
 
-        //private void AddInfo(out string names, out string values, string name, string value)
-        //{
-        //    if (value != "0")
-        //    {
-        //        names += name + "\n";
-        //        values += value + "\n";
-        //    }
-        //}
+        private void AddInfo(string name, object value)
+        {
+            string val = value.ToString();
+            if (val != "0" && val != "")
+            {
+                names += name + "\n";
+                values += val + "\n";
+            }
+        }
     }
 }

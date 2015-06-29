@@ -7,7 +7,7 @@ namespace Client.UIP.Implementation
 {
     public class InventoryItem : IInventoryItem
     {
-        public InventoryItem(string id, Sprite icon, string color, string name, string type, int count, int price, IItemInfo info, Dictionary<string, Action> actions = null)
+        public InventoryItem(string id, Sprite icon, string color, string name, string type, int count, int price, IItemInfo info, Dictionary<string, Action<string>> actions = null)
         {
             this.id = id;
             this.Icon = icon;
@@ -36,6 +36,6 @@ namespace Client.UIP.Implementation
 
         public string Color { get; set; }
 
-        public Dictionary<string, System.Action> Actions { get; set; }
+        public Dictionary<string, System.Action<string>> Actions { get; set; }
     }
 }

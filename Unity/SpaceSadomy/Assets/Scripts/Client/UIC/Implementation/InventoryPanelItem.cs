@@ -87,6 +87,6 @@ namespace Client.UIC.Implementation
         }
 
 
-        public Dictionary<string, System.Action> Actions { get; set; }
+        public Dictionary<string, System.Action<string>> Actions { get; set; }
     }
 }

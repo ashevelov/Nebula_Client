@@ -14,6 +14,6 @@ namespace Client.UIP
         int Count { set; }
         int Price { set; }
         IItemInfo itemInfo { get; set; }
-        Dictionary<string, Action> Actions { get; set; }
+        Dictionary<string, Action<string>> Actions { get; set; }
     }
 }

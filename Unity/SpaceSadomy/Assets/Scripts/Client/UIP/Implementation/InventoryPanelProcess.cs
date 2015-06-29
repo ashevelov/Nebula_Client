@@ -8,6 +8,7 @@ using Common;
 using Nebula.Resources;
 using Client.UIC.Implementation;
 using Client.UIC;
+using Nebula.Client;
 
 namespace Client.UIP.Implementation
 {
@@ -15,6 +16,8 @@ namespace Client.UIP.Implementation
     {
 
         private IInventoryPanel uicPanel;
+
+        public InventoryType inventoryPanelType = InventoryType.ship; 
 
         private List<ClientInventoryItem> currentItems = new List<ClientInventoryItem>();
 
@@ -27,38 +30,99 @@ namespace Client.UIP.Implementation
         {
             if (CheckCondition())
             {
-                List<ClientInventoryItem> newItems = null;
-                newItems = G.Inventory().OrderedItems();
-
-                //first search new and modified items in new item list
-                foreach (var item in newItems)
+                Debug.Log("UpdateInfo2");
+                UpdateItems();
+                if (inventoryPanelType == InventoryType.station)
                 {
-                    var foundedItem = this.currentItems.Find(it => it.Object.Id == item.Object.Id);
-                    if (foundedItem == null)
-                    {
-                        AddItem(item);
-                    }
-                    else if (foundedItem.Count != item.Count)
-                    {
-                        uicPanel.ModifiedItem(item.Object.Id, item.Count);
-                    }
+                    UpdateModules();
                 }
-
-                //then search items not presented in new list ( its removed )
-                foreach (var cItem in currentItems)
-                {
-                    var foundedItem = newItems.Find(it => it.Object.Id == cItem.Object.Id);
-                    if (foundedItem == null)
-                    {
-                        uicPanel.RemoveItem(cItem.Object.Id);
-                    }
-                }
-
-                this.currentItems = newItems;
             }
-
+            Debug.Log("UpdateInfo1");
             yield return new WaitForSeconds(0.5f);
             StartCoroutine(UpdateInfo());
+        }
+
+        private void UpdateItems()
+        {
+            List<ClientInventoryItem> newItems = null;
+            if (inventoryPanelType == InventoryType.station)
+            {
+                newItems = G.Game.Station.StationInventory.OrderedItems();
+
+                Debug.Log("AddInventoryItem " + newItems.Count);
+            }
+            else
+            {
+                newItems = G.Inventory().OrderedItems();
+            }
+
+            //first search new and modified items in new item list
+            foreach (var item in newItems)
+            {
+                var foundedItem = this.currentItems.Find(it => it.Object.Id == item.Object.Id);
+                if (foundedItem == null)
+                {
+                    Debug.Log("AddInventoryItem");
+                    AddInventoryItem(item);
+                }
+                else if (foundedItem.Count != item.Count)
+                {
+                    uicPanel.ModifiedItem(item.Object.Id, item.Count);
+                }
+            }
+
+            //then search items not presented in new list ( its removed )
+            foreach (var cItem in currentItems)
+            {
+                var foundedItem = newItems.Find(it => it.Object.Id == cItem.Object.Id);
+                if (foundedItem == null)
+                {
+                    uicPanel.RemoveItem(cItem.Object.Id);
+                }
+            }
+
+            this.currentItems = newItems;
+        }
+
+        private List<ClientShipModule> newModules = new List<ClientShipModule>();
+        private List<ClientShipModule> currentModules = new List<ClientShipModule>();
+        void UpdateModules()
+        {
+
+            Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
+            Hashtable moduleObjectsHash = null;
+            if (G.Game.Station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash))
+            {
+                foreach (DictionaryEntry entry in moduleObjectsHash)
+                {
+                    moduleObjects.Add(entry.Key.ToString(), entry.Value as IStationHoldableObject);
+                }
+            }
+
+            foreach (var moduleObj in moduleObjects)
+            {
+                newModules.Add(moduleObj.Value as ClientShipModule);
+            }
+
+            foreach (var module in newModules)
+            {
+                var foundedModule = this.currentModules.Find(m => m.Id == module.Id);
+                if (foundedModule == null)
+                {                
+                    Debug.Log("AddModuleItem");
+                    AddModuleItem( module );
+                }
+            }
+
+            foreach (var module in this.currentModules)
+            {
+                var foundedModule = newModules.Find(m => m.Id == module.Id);
+                if (foundedModule == null)
+                {
+                    uicPanel.RemoveItem(module.id);
+                }
+            }
+            //this.currentModules = this.newModules;
         }
 
         public bool CheckCondition()
@@ -67,12 +131,28 @@ namespace Client.UIP.Implementation
             {
                 uicPanel = FindObjectOfType<InventoryPanel>();
             }
-            if (G.Game == null || G.Game.PlayerInfo == null || G.PlayerComponent == null)
-                return false;
+            //if (G.Game == null || G.Game.PlayerInfo == null || G.PlayerComponent == null)
+             //   return false;
             return true;
         }
 
-        private void AddItem(ClientInventoryItem clientItem)
+        private void AddModuleItem(ClientShipModule clientItem)
+        {
+
+            string id = clientItem.id;
+            string name = "name hz";
+            string type = clientItem.Type.ToString();
+            string color = clientItem.color.ToString();
+            int count = 1;
+            IItemInfo info = new ItemInfo();
+            info.Icon = SpriteCache.SpriteModule(clientItem.templateId);
+            Dictionary<string, System.Action<string>> actions = new Dictionary<string, System.Action<string>>();
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info, actions));
+
+        }
+
+        private void AddInventoryItem(ClientInventoryItem clientItem)
         {
             string id = clientItem.Object.Id;
             string name = "name hz";
@@ -81,17 +161,35 @@ namespace Client.UIP.Implementation
             int count = clientItem.Count;
             IItemInfo info = new ItemInfo();
             info.Icon = SpriteCache.SpriteForItem(clientItem.Object);
-            Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
+            Dictionary<string, System.Action<string>> actions = new Dictionary<string, System.Action<string>>();
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-            actions.Add("del", () =>
+
+            
+
+            actions.Add("del", (itemId) =>
                 {
-                    NRPC.DestroyInventoryItem(InventoryType.ship, clientItem.Object.Type, clientItem.Object.Id);
+                    NRPC.DestroyInventoryItem(inventoryPanelType, clientItem.Object.Type, itemId);
                 });
+
+
+            actions.Add("move", (itemId) =>
+            {
+                if (inventoryPanelType == InventoryType.station)
+                {
+                    NRPC.MoveItemFromStationToInventory(clientItem.Object.Type, itemId);
+                }
+                else
+                {
+                    NRPC.MoveItemFromInventoryToStation(clientItem.Object.Type, itemId);
+                }
+            });
+
+            parameters.Add("ID", clientItem.Object.Id);
 
             if(clientItem.Object is MaterialInventoryObjectInfo)
             {
                 MaterialInventoryObjectInfo objectInfo = clientItem.Object as MaterialInventoryObjectInfo;
-                Dictionary<string, string> parameters = new Dictionary<string, string>();
                 parameters.Add("Name", objectInfo.Name);
                 name = objectInfo.Name;
                 info.Parametrs = parameters;
@@ -100,7 +198,6 @@ namespace Client.UIP.Implementation
                 WeaponInventoryObjectInfo objectInfo = clientItem.Object as WeaponInventoryObjectInfo;
                 var weaponTemplate = DataResources.Instance.Weapon(objectInfo.Template);
 
-                Dictionary<string, string> parameters = new Dictionary<string, string>();
                 parameters.Add("Name", weaponTemplate.Name);
                 parameters.Add("Workshop", weaponTemplate.Workshop.ToString());
                 parameters.Add("Damage", objectInfo.damage.ToString());
@@ -110,16 +207,15 @@ namespace Client.UIP.Implementation
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get(weaponTemplate.Description);
 
-                actions.Add("equip", () =>
+                actions.Add("equip", (itemId) =>
                 {
-                    NRPC.EquipWeapon(InventoryType.ship, clientItem.Object.Id);
+                    NRPC.EquipWeapon(inventoryPanelType, itemId);
                 });
             }
             else if (clientItem.Object is SchemeInventoryObjectInfo)
             {
                 SchemeInventoryObjectInfo objectInfo = clientItem.Object as SchemeInventoryObjectInfo;
 
-                Dictionary<string, string> parameters = new Dictionary<string, string>();
                 parameters.Add("Name", "Scheme");
                 parameters.Add("Workshop", objectInfo.Workshop.ToString());
                 parameters.Add("Level", objectInfo.Level.ToString());
@@ -136,6 +232,15 @@ namespace Client.UIP.Implementation
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get("SCHEME_DESC");
             }
+            //else if (clientItem.Object is hol)
+            //{
+            //    MaterialInventoryObjectInfo objectInfo = clientItem.Object as MaterialInventoryObjectInfo;
+            //    Dictionary<string, string> parameters = new Dictionary<string, string>();
+            //    parameters.Add("Name", objectInfo.Name);
+            //    name = objectInfo.Name;
+            //    info.Parametrs = parameters;
+            //}
+           // else
 
             uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info, actions));
         }

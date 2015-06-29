@@ -47,4 +47,14 @@ public class ShipModuleInfoPanel : MonoBehaviour, IShipModuleInfo {
             this.icon.gameObject.SetActive(false);
         }
     }
+
+
+    public Text allModulesNames;
+    public Text allModulesValues;
+
+    public void SetAllParams(string names, string values)
+    {
+        this.allModulesNames.text = names;
+        this.allModulesValues.text = values;
+    }
 }

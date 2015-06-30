@@ -14,16 +14,17 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
         private void HandleOperation(NetworkGame game, OperationResponse response)
         {
             Debug.Log("GetInventory response");
-            StringBuilder builder = new StringBuilder();
-            CommonUtils.ConstructHashString(Result(response), 1, ref builder);
-            Debug.Log(builder.ToString());
+            //StringBuilder builder = new StringBuilder();
+            //CommonUtils.ConstructHashString(Result(response), 1, ref builder);
+            //Debug.Log(builder.ToString());
 
             ClientInventory newInventory = new ClientInventory(Result(response));
-            Debug.Log("new inventory count: " + newInventory.OrderedItems().Count);
-            game.Inventory.Replace(newInventory);
+            //Debug.Log("new inventory count: " + newInventory.OrderedItems().Count);
+            GameData.instance.inventory.Replace(newInventory);
             global::Nebula.Events.EvtPlayerInventoryUpdated();
 
-            Debug.Log("Inventory count: " + game.Inventory.OrderedItems().Count);
+            Debug.Log("Inventory count: " + GameData.instance.inventory.OrderedItems().Count);
+            
             
         }
     }

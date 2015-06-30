@@ -76,7 +76,7 @@
                 float itX = lblX;
                 float itY = writeY;
 
-                var inventory = NetworkGame.Instance().Inventory;
+                var inventory = GameData.instance.inventory;
                 foreach (var item in inventory.OrderedItems()) {
                     if (GUI.Button(new Rect(itX, itY, 20, 20), item.Object.Id[0] + item.Count.ToString())) {
                         AddAttachmnet(item.Object);

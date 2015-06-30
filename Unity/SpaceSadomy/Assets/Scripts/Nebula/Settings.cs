@@ -25,23 +25,14 @@ namespace Nebula
             const int IntervalSend = 30;
             const bool SendReliable = false;
             const bool UseTcp = false;
-#if LOCAL_SERVER
-        const string ServerAddress = "192.168.1.28:5055";
-       //const string ServerAddress = "192.168.1.30:5055";
-#else
-            const string ServerAddress = "52.10.78.38:5055";
-#endif
-        const string ApplicationName = "SpaceServer";
-            //const string WorldName = "Map";
+
 
             Vector3 cornerMin = new Vector3(-50000, -50000, -50000);
             Vector3 cornerMax = new Vector3(50000, 50000, 50000);
             Vector3 tileDimensions = new Vector3(10000, 10000, 10000);
 
             Settings result = new Settings();
-            result.ServerAddress = ServerAddress;
             result.UseTcp = UseTcp;
-            result.ApplicationName = ApplicationName;
 
             result.TileDimensions = tileDimensions;
             result.WorldCornerMin = cornerMin;
@@ -137,29 +128,6 @@ namespace Nebula
             set { _worldCornerMax = value; }
         }
 
-        public string ServerAddress
-        {
-            get
-            {
-                return serverAddress;
-            }
-            set
-            {
-                serverAddress = value;
-            }
-        }
-
-        public string ApplicationName
-        {
-            get
-            {
-                return applicationName;
-            }
-            set
-            {
-                applicationName = value;
-            }
-        }
 
         public string WorldName
         {

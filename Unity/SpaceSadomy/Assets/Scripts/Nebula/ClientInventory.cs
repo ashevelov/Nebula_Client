@@ -6,9 +6,21 @@
     using Nebula.Client.Inventory;
     using ServerClientCommon;
 
-    public class ClientInventory : Dictionary<InventoryObjectType, Dictionary<string, ClientInventoryItem>> {
 
+
+    public class ClientInventory  {
+
+
+        private List<Entry> mEntries = new List<Entry>();
         private int maxSlots;
+
+        public class Entry {
+            public InventoryObjectType objectType { get; set; }
+            public string objectID { get; set; }
+            public ClientInventoryItem item { get; set; }
+        }
+
+        
 
         public ClientInventory() {
             maxSlots = 0;
@@ -30,26 +42,29 @@
 
         public Dictionary<InventoryObjectType, Dictionary<string, ClientInventoryItem>> Items {
             get {
-                return this;
+                Dictionary<InventoryObjectType, Dictionary<string, ClientInventoryItem>> result = new Dictionary<InventoryObjectType, Dictionary<string, ClientInventoryItem>>();
+                foreach(var entry in mEntries) {
+                    if(result.ContainsKey(entry.objectType)) {
+                        result[entry.objectType].Add(entry.objectID, entry.item);
+                    } else {
+                        result.Add(entry.objectType, new Dictionary<string, ClientInventoryItem> { { entry.objectID, entry.item } });
+                    }
+                }
+                return result;
             }
         }
 
         public int SlotsUsed {
             get {
-                int count = 0;
-                foreach(var kv in this) {
-                    count += kv.Value.Count;
-                }
-                return count;
+                return mEntries.Count;
             }
         }
 
         public bool TryGetItem(InventoryObjectType type, string id, out ClientInventoryItem item) {
             item = null;
-            if (ContainsKey(type)) {
-                Dictionary<string, ClientInventoryItem> typedItems = this[type];
-                if(typedItems.ContainsKey(id)) {
-                    item = typedItems[id];
+            foreach(var  entry in mEntries ) {
+                if(entry.objectType == type && entry.objectID == id ) {
+                    item = entry.item;
                     return true;
                 }
             }
@@ -63,19 +78,25 @@
                 return true;
             } else {
                 if(SlotsUsed < MaxSlots ) {
-                    if(ContainsKey(obj.Type)) {
-                        ClientInventoryItem nItem = new ClientInventoryItem();
-                        nItem.Set(obj, count);
-                        this[obj.Type].Add(obj.Id, nItem);
-                    } else {
-                        ClientInventoryItem nItem = new ClientInventoryItem();
-                        nItem.Set(obj, count);
-                        this.Add(obj.Type, new Dictionary<string, ClientInventoryItem> { { obj.Id, nItem } });
-                    }
+                    ClientInventoryItem nItem = new ClientInventoryItem();
+                    nItem.Set(obj, count);
+                    mEntries.Add(new Entry { objectType = obj.Type, objectID = obj.Id, item = nItem });
                     return true;
                 }
             }
             return false;
+        }
+
+        private void Remove(InventoryObjectType type, string id) {
+            int index = -1;
+            for(int i = 0; i < mEntries.Count; i++) {
+                if(type == mEntries[i].objectType && id == mEntries[i].objectID) {
+                    index = i;
+                    break;
+                }
+            }
+
+            if(index >= 0 ) { mEntries.RemoveAt(index); }
         }
 
         public void RemoveItem(InventoryObjectType type, string id, int count) {
@@ -83,7 +104,7 @@
             if(TryGetItem(type, id, out item)) {
                 item.Remove(count);
                 if(!item.Has) {
-                    this[type].Remove(item.Object.Id);
+                    Remove(type, item.Object.Id);
                 }
             }
         }
@@ -114,50 +135,62 @@
             return oldValue;
         }
 
+        public void Clear() {
+            mEntries.Clear();
+        }
+
         public void Replace(ClientInventory newInventory) {
             Clear();
             ChangeMaxSlots(newInventory.MaxSlots);
-            foreach(var pair in newInventory) {
+            foreach(var pair in newInventory.Items) {
                 foreach(var pair2 in pair.Value) {
-                    if(!ContainsKey(pair.Key)) {
-                        Add(pair.Key, new Dictionary<string, ClientInventoryItem>());
-                    }
-                    this[pair.Key].Add(pair2.Key, pair2.Value);
+                    AddItem(pair2.Value.Object, pair2.Value.Count);
                 }
             }
         }
 
         public void ReplaceItem(ClientInventoryItem item) {
-            if (!ContainsKey(item.Object.Type)) {
-                Add(item.Object.Type, new Dictionary<string, ClientInventoryItem>());
+
+            ClientInventoryItem existingItem;
+            if(TryGetItem(item.Object.Type, item.Object.Id, out existingItem)) {
+                existingItem.Set(item.Object, item.Count);
+            } else {
+                AddItem(item.Object, item.Count);
             }
 
-            var typedItems = this[item.Object.Type];
-            if(typedItems.ContainsKey(item.Object.Id)) {
-                typedItems[item.Object.Id].Set(item.Object, item.Count);
-            } else {
-                typedItems.Add(item.Object.Id, item);
+        }
+
+        private List<ClientInventoryItem> GetTypedItems(InventoryObjectType type) {
+            List<ClientInventoryItem> result = new List<ClientInventoryItem>();
+            foreach(var entry in mEntries) {
+                if (entry.objectType == type) {
+                    result.Add(entry.item);
+                }
             }
+            return result;
+        }
+
+        public Dictionary<string, ClientInventoryItem> GetTypedDict(InventoryObjectType type) {
+            Dictionary<string, ClientInventoryItem> typedDict = new Dictionary<string, ClientInventoryItem>();
+            foreach(var entry in mEntries) {
+                if(entry.objectType == type ) {
+                    typedDict.Add(entry.objectID, entry.item);
+                }
+            }
+            return typedDict;
         }
 
         public List<ClientInventoryItem> OrderedItems() {
             List<InventoryObjectType> objectTypes = new List<InventoryObjectType>();
-            foreach(var entry in this) {
-                objectTypes.Add(entry.Key);
+            foreach(var entry in mEntries) {
+                if (!objectTypes.Contains(entry.objectType)) { objectTypes.Add(entry.objectType); }
             }
             objectTypes.Sort();
 
             List<ClientInventoryItem> result = new List<ClientInventoryItem>();
+
             foreach(InventoryObjectType type in objectTypes) {
-                var typedItems = this[type];
-                List<string> ids = new List<string>();
-                foreach(var e in typedItems) {
-                    ids.Add(e.Key);
-                }
-                ids.Sort();
-                foreach(string id in ids) {
-                    result.Add(typedItems[id]);
-                }
+                result.AddRange(GetTypedItems(type));
             }
             return result;
         }

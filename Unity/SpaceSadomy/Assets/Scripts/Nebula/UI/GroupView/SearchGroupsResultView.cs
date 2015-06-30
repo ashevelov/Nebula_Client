@@ -37,7 +37,7 @@
             }
             this.groupViews.Clear();
 
-            foreach(var g in G.Game.SearchGroupsResult().Groups() ) {
+            foreach(var g in GameData.instance.searchGroupResult.Groups() ) {
                 GameObject instance = Instantiate(this.GroupViewPrefab) as GameObject;
                 instance.GetComponent<SearchGroupView>().SetObject(g.Value);
                 instance.transform.SetParent(this.Content, false);
@@ -46,7 +46,7 @@
         }
 
         public void OnRefreshButtonClick() {
-            NRPC.RequestOpenedGroups();
+            //NRPC.RequestOpenedGroups();
         }
     }
 }

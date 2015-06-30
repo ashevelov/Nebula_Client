@@ -35,7 +35,7 @@ public class Asteroid : BaseSpaceObject {
         float distance = Vector3.Distance(G.Game.Avatar.Component.Position, this.Position);
 
         if (distance > this.activateDistance) {
-            G.Game.ServiceMessageReceiver.AddMessage(new Hashtable
+            GameData.instance.sericeMessages.AddMessage(new Hashtable
             {
                 { (int)SPC.Type, ServiceMessageType.Error.toByte() },
                 { (int)SPC.Message, "Your on distance {0:F1}, but need at least {1:F1}. Need closer to asteroid".f(distance, this.activateDistance) }

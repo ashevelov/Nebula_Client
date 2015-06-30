@@ -104,7 +104,7 @@
             if(this.scheme == null ) {
                 return;
             }
-            if(!G.Game.Inventory.HasItem(this.scheme.Type, this.scheme.Id)) {
+            if(!GameData.instance.inventory.HasItem(this.scheme.Type, this.scheme.Id)) {
                 this.SetObject(null);
             }
         }
@@ -112,7 +112,7 @@
         private bool PlayerHasMaterials() {
             bool hasAll = true;
             foreach(var pMaterial in scheme.CraftMaterials) {
-                if(G.Game.Inventory.ItemCount( InventoryObjectType.Material, pMaterial.Key) < pMaterial.Value ) {
+                if(GameData.instance.inventory.ItemCount( InventoryObjectType.Material, pMaterial.Key) < pMaterial.Value ) {
                     hasAll = false;
                     break;
                 }

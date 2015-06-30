@@ -348,7 +348,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         if (this.item.IsMine)
         {
             //print("called update on my player");
-            this.bonusEffectViewManager.Update(this, G.Game.Bonuses);
+            this.bonusEffectViewManager.Update(this, GameData.instance.bonuses);
         }
         else
         {

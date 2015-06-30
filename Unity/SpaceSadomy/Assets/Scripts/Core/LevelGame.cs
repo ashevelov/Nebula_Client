@@ -40,7 +40,7 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
     {
         Debug.Log("<color=orange>Starting Coroutine for CREATING MY PLAYER SHIP</color>");
         var game = G.Game;
-        while (game.Ship.ShipModel.HasAllModules() == false)
+        while (GameData.instance.ship.ShipModel.HasAllModules() == false)
         {
             Debug.Log("Wait FOR MY PLAYER MODULES");
             yield return new WaitForEndOfFrame();
@@ -52,7 +52,7 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
             yield return new WaitForEndOfFrame();
         }
 
-        var prefabs = game.Ship.ShipModel.SlotPrefabs();
+        var prefabs = GameData.instance.ship.ShipModel.SlotPrefabs();
         if (prefabs.Count != 5)
         {
             Debug.Log("EXCEPTION");

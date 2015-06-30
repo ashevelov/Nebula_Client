@@ -10,7 +10,7 @@
         public override void Handle(BaseGame game, EventData eventData) {
             var ngame = game as NetworkGame;
 
-            if (ngame.WorldTransition.HasNextWorld()) {
+            if (GameData.instance.worldTransition.HasNextWorld()) {
 
                 ngame.SetStrategy(GameState.NebulaGameChangingWorld);
 
@@ -18,7 +18,7 @@
                     ngame.Avatar.DestroyView();
                 }
 
-                ngame.Engine.GameData.SetNewWorld(ngame.WorldTransition.NextWorld,
+                ngame.Engine.GameData.SetNewWorld(GameData.instance.worldTransition.NextWorld,
                     ngame.Settings.WorldCornerMin, ngame.Settings.WorldCornerMax, ngame.Settings.TileDimensions, LevelType.Space);
 
                 ngame.ClearItemCache();
@@ -55,7 +55,7 @@
                 }
                 ngame.ClearItemCache();
                 ngame.AddItem(ngame.Avatar);
-                ngame.Ship.Clear();
+                GameData.instance.ship.Clear();
                 ngame.SetStrategy(GameState.NebulaGameConnected);
 
                 LoadScenes.Load("select_character");

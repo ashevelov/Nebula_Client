@@ -21,7 +21,7 @@ public class ShipInfoPanel : MonoBehaviour
     {
         ClearInfo(CBView);
         RectTransform view = CBView;
-        ClientShipModule info = G.Game.Ship.ShipModel.cb.Module;
+        ClientShipModule info = GameData.instance.ship.ShipModel.cb.Module;
         //AddNewParam(view, "Type".Color(info.color.ToString()), info.type.ToString().Color(info.color.ToString()), 0);
         //AddNewParam(view, "Name", info.name, 1);
         //AddNewParam(view, "Min level", info.level.ToString(), 2);
@@ -41,7 +41,7 @@ public class ShipInfoPanel : MonoBehaviour
     public void UpdateDFInfo()
     {
         ClearInfo(DFView);
-        ClientShipModule info = G.Game.Ship.ShipModel.df.Module;
+        ClientShipModule info = GameData.instance.ship.ShipModel.df.Module;
         RectTransform view = DFView;
         //AddNewParam(view, "Type".Color(info.color.ToString()), info.type.ToString().Color(info.color.ToString()), 0);
         //AddNewParam(view, "Name", info.name, 1);
@@ -63,7 +63,7 @@ public class ShipInfoPanel : MonoBehaviour
     public void UpdateDMInfo()
     {
         ClearInfo(DMView);
-        ClientShipModule info = G.Game.Ship.ShipModel.dm.Module;
+        ClientShipModule info = GameData.instance.ship.ShipModel.dm.Module;
         RectTransform view = DMView;
         //AddNewParam(view, "Type".Color(info.color.ToString()), info.type.ToString().Color(info.color.ToString()), 0);
         //AddNewParam(view, "Name", info.name, 1);
@@ -85,7 +85,7 @@ public class ShipInfoPanel : MonoBehaviour
     public void UpdateCMInfo()
     {
         ClearInfo(CMView);
-        ClientShipModule info = G.Game.Ship.ShipModel.cm.Module;
+        ClientShipModule info = GameData.instance.ship.ShipModel.cm.Module;
         RectTransform view = CMView;
         //AddNewParam(view, "Type".Color(info.color.ToString()), info.type.ToString().Color(info.color.ToString()), 0);
         //AddNewParam(view, "Name", info.name, 1);
@@ -106,7 +106,7 @@ public class ShipInfoPanel : MonoBehaviour
     public void UpdateESInfo()
     {
         ClearInfo(ESView);
-        ClientShipModule info = G.Game.Ship.ShipModel.es.Module;
+        ClientShipModule info = GameData.instance.ship.ShipModel.es.Module;
         RectTransform view = ESView;
         //AddNewParam(view, "Type".Color(info.color.ToString()), info.type.ToString().Color(info.color.ToString()), 0);
         //AddNewParam(view, "Name", info.name, 1);
@@ -127,7 +127,7 @@ public class ShipInfoPanel : MonoBehaviour
     public void UpdateWeaponInfo()
     {
         ClearInfo(WeaponView);
-        WeaponInventoryObjectInfo info = G.Game.Ship.Weapon.WeaponObject;
+        WeaponInventoryObjectInfo info = GameData.instance.ship.Weapon.WeaponObject;
         RectTransform view = WeaponView;
         //AddNewParam(view, "Type".Color(info.Color.ToString()), info.Type.ToString().Color(info.Color.ToString()), 0);
         //AddNewParam(view, "Min level", info.Level.ToString(), 1);
@@ -146,7 +146,7 @@ public class ShipInfoPanel : MonoBehaviour
     public void UpdateAllInfo()
     {
         ClearInfo(AllView);
-        ClientShipCombatStats info = G.Game.CombatStats;
+        ClientShipCombatStats info = GameData.instance.stats;
         RectTransform view = AllView;
         //AddNewParam(view, "Ship", "", 0);
         //AddNewParam(view, "Energy", info.MaxEnergy.ToString(), 1);

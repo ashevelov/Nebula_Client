@@ -11,7 +11,7 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
 
         private void HandleOperation(NetworkGame game, OperationResponse response)
         {
-            game.Station.LoadInfo(Result(response));
+            GameData.instance.station.LoadInfo(Result(response));
         }
     }
 }

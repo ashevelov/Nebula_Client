@@ -34,6 +34,7 @@ namespace Client.UIP.Implementation
                 UpdateItems();
                 if (inventoryPanelType == InventoryType.station)
                 {
+                    Debug.Log("UpdateInfo3");
                     UpdateModules();
                 }
             }
@@ -47,7 +48,7 @@ namespace Client.UIP.Implementation
             List<ClientInventoryItem> newItems = null;
             if (inventoryPanelType == InventoryType.station)
             {
-                newItems = G.Game.Station.StationInventory.OrderedItems();
+                newItems = GameData.instance.station.StationInventory.OrderedItems();//G.StationInventory.OrderedItems();
 
                 Debug.Log("AddInventoryItem " + newItems.Count);
             }
@@ -91,7 +92,9 @@ namespace Client.UIP.Implementation
 
             Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
             Hashtable moduleObjectsHash = null;
-            if (G.Game.Station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash))
+               // newItems = G.Game.//G.StationInventory.OrderedItems();
+
+            if (GameData.instance.station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash))
             {
                 foreach (DictionaryEntry entry in moduleObjectsHash)
                 {
@@ -129,7 +132,7 @@ namespace Client.UIP.Implementation
         {
             if (uicPanel == null)
             {
-                uicPanel = FindObjectOfType<InventoryPanel>();
+                uicPanel = GetComponent<InventoryPanel>();
             }
             //if (G.Game == null || G.Game.PlayerInfo == null || G.PlayerComponent == null)
              //   return false;
@@ -165,27 +168,27 @@ namespace Client.UIP.Implementation
             Dictionary<string, string> parameters = new Dictionary<string, string>();
 
 
-            
-
             actions.Add("del", (itemId) =>
                 {
-                    NRPC.DestroyInventoryItem(inventoryPanelType, clientItem.Object.Type, itemId);
+                    Debug.Log("del  item : " + itemId);
+                    NRPC.DestroyInventoryItem(inventoryPanelType, currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
                 });
 
 
             actions.Add("move", (itemId) =>
             {
+                Debug.Log("move  item : " + itemId);
                 if (inventoryPanelType == InventoryType.station)
                 {
-                    NRPC.MoveItemFromStationToInventory(clientItem.Object.Type, itemId);
+                    NRPC.MoveItemFromStationToInventory(currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
                 }
                 else
                 {
-                    NRPC.MoveItemFromInventoryToStation(clientItem.Object.Type, itemId);
+                    NRPC.MoveItemFromInventoryToStation(currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
                 }
             });
 
-            parameters.Add("ID", clientItem.Object.Id);
+            //parameters.Add("ID", clientItem.Object.Id);
 
             if(clientItem.Object is MaterialInventoryObjectInfo)
             {
@@ -209,6 +212,7 @@ namespace Client.UIP.Implementation
 
                 actions.Add("equip", (itemId) =>
                 {
+                    Debug.Log("equip = " + itemId);
                     NRPC.EquipWeapon(inventoryPanelType, itemId);
                 });
             }
@@ -242,7 +246,8 @@ namespace Client.UIP.Implementation
             //}
            // else
 
-            uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info, actions));
+            uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info, new Dictionary<string, System.Action<string>>(actions)));
+            actions = null;
         }
     }
 }

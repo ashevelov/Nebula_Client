@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using Nebula.UI;
 
 public class LoadScenes : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class LoadScenes : MonoBehaviour
             _loadScanes = FindObjectOfType<LoadScenes>();
         }
         _loadScanes._camera.gameObject.SetActive(true);
+        _loadScanes._camera.gameObject.GetComponentInChildren<LoadScreenImage>().SetRandom();
+
         _loadScanes.loadSceneName = Name;
         Application.LoadLevelAsync("LoadScene");
     }
@@ -97,6 +100,6 @@ public class LoadScenes : MonoBehaviour
 	}
 
     private bool IsGameScene() {
-        return loadSceneName != "select_character";
+        return loadSceneName != "select_character" && loadSceneName != "Angar";
     }
 }

@@ -8,7 +8,7 @@
             HandleEvent((NetworkGame)game, eventData);
         }
         private void HandleEvent(NetworkGame game, EventData eventData) {
-            game.ServiceMessageReceiver.AddMessage(Properties(eventData));
+            GameData.instance.sericeMessages.AddMessage(Properties(eventData));
         }
     }
 

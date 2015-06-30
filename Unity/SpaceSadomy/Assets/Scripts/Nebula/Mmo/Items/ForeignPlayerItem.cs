@@ -15,6 +15,8 @@ namespace Nebula.Mmo.Items
     using Nebula.Client;
     using Nebula.Mmo.Games;
     using Nebula.Resources;
+    using Nebula.Mmo.Items.Components;
+
 
 
 
@@ -220,15 +222,18 @@ namespace Nebula.Mmo.Items
 
         public SelectedObjectContextMenuView.InputData ContextViewData() {
             var entries = new List<SelectedObjectContextMenuView.InputEntry> {
-                new SelectedObjectContextMenuView.InputEntry {
-                     ButtonText = "Info",
-                      ButtonAction = ()=> { Debug.Log("Show chest info"); }
-                },
+                //new SelectedObjectContextMenuView.InputEntry {
+                //     ButtonText = "Info",
+                //      ButtonAction = ()=> { Debug.Log("Show chest info"); }
+                //},
                 new SelectedObjectContextMenuView.InputEntry {
                     ButtonText = "Invite To Group",
                     ButtonAction = () => {
                         //here send invite
-                        NRPC.SendInviteToGroup(this.Id);
+                        Debug.Log("invite to group called");
+                        string characterID = (GetMmoComponent(ComponentID.Character) as MmoCharacterComponent).characterID;
+                        Debug.LogFormat("player who will be invited = {0}", characterID);
+                        SelectCharacterGame.Instance().InviteToGroup(characterID);
                     }
                 }
             };
@@ -272,10 +277,10 @@ namespace Nebula.Mmo.Items
 
                 if (G.Game != null && G.PlayerItem != null && playerGO)
                 {
-                    float optimalDistance = G.Game.Ship.Weapon.OptimalDistance;
-                    float range = G.Game.Ship.Weapon.Range;
+                    float optimalDistance = GameData.instance.ship.Weapon.OptimalDistance;
+                    float range = GameData.instance.ship.Weapon.Range;
                     float distance = Vector3.Distance(playerGO.transform.position, this.GetPosition());
-                    float playerMaxSpeed = G.Game.Ship.MaxLinearSpeed;
+                    float playerMaxSpeed = GameData.instance.ship.MaxLinearSpeed;
                     return GameBalance.ComputeHitProb(optimalDistance, range, distance, playerMaxSpeed, this.Ship.Speed);
                 }
                 return 0f;

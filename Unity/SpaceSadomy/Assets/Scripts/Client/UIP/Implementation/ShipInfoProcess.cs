@@ -3,6 +3,7 @@ using System.Collections;
 using Client.UIC;
 using Nebula.Client;
 using Nebula.Resources;
+using Nebula;
 
 namespace Client.UIP.Implementation
 {
@@ -17,7 +18,7 @@ namespace Client.UIP.Implementation
 
         public void UpdateAllModulesInfo()
         {
-            ClientShipCombatStats info = G.Game.CombatStats;
+            ClientShipCombatStats info = GameData.instance.stats; //G.Game.CombatStats;
             names = string.Empty;
             values = string.Empty;
 
@@ -34,32 +35,32 @@ namespace Client.UIP.Implementation
 
         public void UpdateCBInfo()
         {
-            ClientShipModule info = G.Game.Ship.ShipModel.cb.Module;
+            ClientShipModule info = GameData.instance.ship.ShipModel.cb.Module;
             UpdateModuleInfo(info);
         }
         public void UpdateDFInfo()
         {
-            ClientShipModule info = G.Game.Ship.ShipModel.df.Module;
+            ClientShipModule info = GameData.instance.ship.ShipModel.df.Module;
             UpdateModuleInfo(info);
         }
         public void UpdateDMInfo()
         {
-            ClientShipModule info = G.Game.Ship.ShipModel.dm.Module;
+            ClientShipModule info = GameData.instance.ship.ShipModel.dm.Module;
             UpdateModuleInfo(info);
         }
         public void UpdateCMInfo()
         {
-            ClientShipModule info = G.Game.Ship.ShipModel.cm.Module;
+            ClientShipModule info = GameData.instance.ship.ShipModel.cm.Module;
             UpdateModuleInfo(info);
         }
         public void UpdateESInfo()
         {
-            ClientShipModule info = G.Game.Ship.ShipModel.es.Module;
+            ClientShipModule info = GameData.instance.ship.ShipModel.es.Module;
             UpdateModuleInfo(info);
         }
         public void UpdateWeaponInfo()
         {
-            ClientPlayerShipWeapon info = G.Game.Ship.Weapon;
+            ClientPlayerShipWeapon info = GameData.instance.ship.Weapon;
 
             names = string.Empty;
             values = string.Empty;

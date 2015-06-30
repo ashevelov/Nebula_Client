@@ -50,7 +50,7 @@
 
         void UpdateModules() {
 
-            if(G.Game.Station == null ) {
+            if(GameData.instance.station == null ) {
                 return;
             }
 
@@ -59,7 +59,7 @@
 
             Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
             Hashtable moduleObjectsHash = null;
-            if(G.Game.Station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash)) {
+            if(GameData.instance.station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash)) {
                 foreach(DictionaryEntry entry in moduleObjectsHash) {
                     moduleObjects.Add(entry.Key.ToString(), entry.Value as IStationHoldableObject);
                 }

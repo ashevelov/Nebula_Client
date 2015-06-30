@@ -4,6 +4,7 @@
 
     public enum NebulaGameDisconnectAction {
         None,
-        ChangeWorld
+        ChangeWorld,
+        Menu
     }
 }

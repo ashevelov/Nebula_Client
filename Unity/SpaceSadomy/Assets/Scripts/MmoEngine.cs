@@ -44,7 +44,7 @@ public class MmoEngine : Singleton<MmoEngine>
             Application.runInBackground = true;
             Settings settings = Settings.GetDefaultSettings();
             var forceLoadResources = DataResources.Instance;
-            GameData = new Nebula.GameData();
+            GameData = GameData.instance;
 
             nebulaGame = new NetworkGame(this, settings);
             var peer = new GamePeer(nebulaGame, ConnectionProtocol.Udp);
@@ -57,7 +57,7 @@ public class MmoEngine : Singleton<MmoEngine>
 #if LOCAL
             masterGame.Connect("192.168.1.107", 5105, "Master");
 #else
-            masterGame.Connect("52.10.78.38", 5105, "Master");
+            masterGame.Connect("104.207.135.55", 5105, "Master");
 #endif
             SetActiveGame(GameType.Master);
 
@@ -105,16 +105,26 @@ public class MmoEngine : Singleton<MmoEngine>
     }
 
     private void Events_GameStateChanged(GameState pState, GameState nState) {
+
+        Debug.LogFormat("Game State Changed, old = {0} => new = {1}", pState, nState);
+
         if(pState == GameState.NebulaGameWaitingConnect && nState == GameState.NebulaGameConnected) {
             var character = SelectCharacterGame.PlayerCharacters.SelectedCharacter();
             if (NebulaGame.DisconnectAction == NebulaGameDisconnectAction.None) {
                 NebulaGame.EnterWorld(character.World, character.World);
             } else if(NebulaGame.DisconnectAction == NebulaGameDisconnectAction.ChangeWorld) {
-                NebulaGame.EnterWorld(NebulaGame.WorldTransition.PrevWorld, NebulaGame.WorldTransition.NextWorld);
+                NebulaGame.EnterWorld(GameData.worldTransition.PrevWorld, GameData.worldTransition.NextWorld);
             }
             Debug.LogFormat("entering to world {0}", character.World);
         }
         
+        //if(nState == GameState.NebulaGameDisconnected) {
+        //    if(NebulaGame.DisconnectAction == NebulaGameDisconnectAction.Menu ) {
+        //        NebulaGame.SetDisconnectAction(NebulaGameDisconnectAction.None);
+        //        SetActiveGame(GameType.SelectCharacter);
+        //        LoadScenes.Load("select_character");
+        //    }
+        //}
     }
 
 
@@ -237,7 +247,8 @@ public class MmoEngine : Singleton<MmoEngine>
             var selectCharacterServer = MasterGame.GetServer(ServerType.character);
             SelectCharacterGame.Connect(selectCharacterServer.IpAddress, selectCharacterServer.Port, selectCharacterServer.Application);
 
-            Application.LoadLevel("select_character");
+            //Application.LoadLevel("select_character");
+            LoadScenes.Load("select_character");
         }
     }
 
@@ -251,7 +262,7 @@ public class MmoEngine : Singleton<MmoEngine>
     /// Setter active game type 
     /// </summary>
     /// <param name="gameType"></param>
-    private void SetActiveGame(GameType gameType) {
+    public void SetActiveGame(GameType gameType) {
         Debug.LogFormat("MmoEngine set active game {0}", ActiveGame);
         activeGame = gameType;
     }
@@ -260,7 +271,7 @@ public class MmoEngine : Singleton<MmoEngine>
     public void OnAddToInventoryFromCurrentContainer(string containerItemID, byte containerItemType, List<ClientInventoryItem> inventoryItems) {
         if(GameData.CurrentObjectContainer.IsSelectedContainerItem(containerItemID, containerItemType)) {
             foreach(var item in inventoryItems) {
-                NebulaGame.Inventory.ReplaceItem(item);
+                GameData.inventory.ReplaceItem(item);
             }
         }
     }
@@ -283,14 +294,28 @@ public class MmoEngine : Singleton<MmoEngine>
         NebulaGame.Connect();
     }
 
+    public void ExitMenu() {
+        NebulaGame.SetDisconnectAction(Nebula.Mmo.Games.NebulaGameDisconnectAction.None);
+        NebulaGame.SetStrategy(Nebula.GameState.NebulaGameDisconnected);
+        NebulaGame.Disconnect();
+        SetActiveGame(Nebula.Mmo.Games.GameType.SelectCharacter);
+        GameData.instance.Clear();
+        LoadScenes.Load("select_character");
+    }
+
     void OnGUI() {
         //DrawAvatarProperties();
         //DrawWeaponProperties();
         //DrawShipProperties();
         //DrawBonuses();
         //DrawSkills();
-        DrawChat();
+        //DrawChat();
+        DrawGroup();
+
         GUI.Label(new Rect(5, Screen.height - 30, 0, 0), "loaded scene: " + Application.loadedLevelName, skin.GetStyle("font_upper_left"));
+        if (NebulaGame != null) {
+            GUI.Label(new Rect(5, Screen.height - 60, 0, 0), "game strategy: " + NebulaGame.CurrentStrategy, skin.GetStyle("font_upper_left"));
+        }
     }
 
     private void DrawGameStates() {
@@ -322,14 +347,14 @@ public class MmoEngine : Singleton<MmoEngine>
         if(NebulaGame.Avatar == null) {
             return;
         }
-        if(NebulaGame.Ship == null ) {
+        if(GameData.ship == null ) {
             return;
         }
-        if(NebulaGame.Ship.Weapon == null ) {
+        if(GameData.ship.Weapon == null ) {
             return;
         }
 
-        var weapon = NebulaGame.Ship.Weapon;
+        var weapon = GameData.ship.Weapon;
         Dictionary<SPC, object> weaponProperties = new Dictionary<SPC, object> {
             { SPC.HasWeapon , weapon.HasWeapon},
             { SPC.HitProb, weapon.HitProb},
@@ -350,11 +375,11 @@ public class MmoEngine : Singleton<MmoEngine>
         if (NebulaGame.Avatar == null) {
             return;
         }
-        if (NebulaGame.Ship == null) {
+        if (GameData.ship == null) {
             return;
         }
 
-        var ship = NebulaGame.Ship;
+        var ship = GameData.ship;
         Dictionary<string, object> shipProperties = new Dictionary<string, object> {
             { "Current Health", ship.Health },
             { "Max Health", ship.MaxHealth },
@@ -380,13 +405,13 @@ public class MmoEngine : Singleton<MmoEngine>
         if (NebulaGame.Avatar == null) {
             return;
         }
-        if(NebulaGame.Bonuses == null ) {
+        if(GameData.bonuses == null ) {
             return;
         }
 
         GUIStyle labelStyle = skin.GetStyle("font_upper_left");
         Rect rect = new Rect(500, 0, Screen.width, 20);
-        foreach(var bonusPair in NebulaGame.Bonuses.Bonuses) {
+        foreach(var bonusPair in GameData.bonuses.Bonuses) {
             string content = string.Format("{0}={1}", bonusPair.Key, bonusPair.Value);
             GUI.Label(rect, content, labelStyle);
             rect = rect.addOffset(0, 10);
@@ -397,12 +422,12 @@ public class MmoEngine : Singleton<MmoEngine>
         GUIStyle labelStyle = skin.GetStyle("font_upper_left");
         Rect rect = new Rect(10, 10, 0, 0);
         if(NebulaGame == null ) { return;  }
-        if(NebulaGame.Skills == null ) { return; }
-        if(NebulaGame.Skills.Skills == null ) { return; }
+        if(GameData.skills == null ) { return; }
+        if(GameData.skills.Skills == null ) { return; }
 
         float x = 300;
         float y = 10;
-        foreach(var pair in NebulaGame.Skills.Skills) {
+        foreach(var pair in GameData.skills.Skills) {
             GUI.Label(new Rect(x, y, 0, 0), string.Format("Skill at {0} = {1:X0}", pair.Key, pair.Value.Id), labelStyle);
             y += 25;
         }
@@ -417,6 +442,21 @@ public class MmoEngine : Singleton<MmoEngine>
         for(int i = GameData.Chat.messages.Count - 1; i >= Mathf.Max(0, GameData.Chat.messages.Count - 10); --i) {
             GUI.Label(rect, GameData.Chat.messages[i].DecoratedMessage, labelStyle);
             rect = new Rect(rect.x, rect.y + 20, 0, 0);
+        }
+    }
+
+    private void DrawGroup() {
+        GUIStyle labelStyle = skin.GetStyle("font_upper_left");
+
+        if (!GameData.group.has) {
+            return;
+        }
+
+        float x = 10;
+        float y = 10;
+        foreach(var member in GameData.group.members) {
+            GUI.Label(new Rect(x, y, 0, 0), member.Value.ToString(), labelStyle);
+            y += 20;
         }
     }
 }

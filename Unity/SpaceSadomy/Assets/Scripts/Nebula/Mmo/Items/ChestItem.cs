@@ -103,6 +103,7 @@
 					{
 						Debug.Log("Collect chest content");
 						MainCanvas.Get.Show(CanvasPanelType.InventorySourceView, this);
+                        MainCanvas.Get.Destroy(CanvasPanelType.SelectedObjectContextMenuView);
 					}
                 }
             };

@@ -139,8 +139,8 @@ namespace Nebula {
                 float speed = (_targetItem is IDamagable) ? ((IDamagable)_targetItem).GetSpeed() : 0;
                 //float hitProb = GameBalance.ComputeHitProb(avatar.Ship.Weapon.RangeMin, avatar.Ship.Weapon.RangeMax, avatar.Ship.Weapon.MinHitProb, distance);
                 float hitProb = 0.0f;
-                if (game.Ship.Weapon.HasWeapon) {
-                    hitProb = GameBalance.ComputeHitProb(game.Ship.Weapon.WeaponObject.OptimalDistance, game.Ship.Weapon.Range, distance, 0, 0);
+                if (GameData.instance.ship.Weapon.HasWeapon) {
+                    hitProb = GameBalance.ComputeHitProb(GameData.instance.ship.Weapon.WeaponObject.OptimalDistance, GameData.instance.ship.Weapon.Range, distance, 0, 0);
                 }
 
                 if (_targetItem is IDamagable) {

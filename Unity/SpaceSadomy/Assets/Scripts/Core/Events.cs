@@ -16,7 +16,7 @@
         public static event System.Action<StatusCode> ClientStatusCodeChanged;
         public static event System.Action<GameState, GameState> GameStateChanged;
         public static event System.Action<ChatMessage> ChatMessageReceived;
-        public static event System.Action<ClientCooperativeGroup> CooperativeGroupUpdated;
+        public static event System.Action<Group> CooperativeGroupUpdated;
         public static event System.Action PlayerCharactersReceived;
         public static event System.Action<IInventoryItemsSource> InventoryItemSourceUpdated;
 
@@ -96,7 +96,7 @@
             }
         }
 
-        public static void EvtCooperativeGroupUpdated(ClientCooperativeGroup group) {
+        public static void EvtCooperativeGroupUpdated(Group group) {
             if(CooperativeGroupUpdated != null ) {
                 CooperativeGroupUpdated(group);
             }

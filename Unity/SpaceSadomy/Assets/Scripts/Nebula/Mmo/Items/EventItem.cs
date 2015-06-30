@@ -39,12 +39,12 @@ namespace Nebula.Mmo.Items {
         #region ISelectedObjectContextMenuViewSource implementation
         public SelectedObjectContextMenuView.InputData ContextViewData() {
             var entries = new List<SelectedObjectContextMenuView.InputEntry> {
-                new SelectedObjectContextMenuView.InputEntry {
-                    ButtonText = "View Info",
-                    ButtonAction = () => {
-                        Debug.Log("Here need show popup message window with event description".Color("green"));
-                    }
-                }
+                //new SelectedObjectContextMenuView.InputEntry {
+                //    ButtonText = "View Info",
+                //    ButtonAction = () => {
+                //        Debug.Log("Here need show popup message window with event description".Color("green"));
+                //    }
+                //}
             };
             return new SelectedObjectContextMenuView.InputData { TargetItem = this, Inputs = entries };
         }

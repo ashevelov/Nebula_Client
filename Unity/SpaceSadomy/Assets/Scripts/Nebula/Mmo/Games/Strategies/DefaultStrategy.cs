@@ -22,7 +22,7 @@ namespace Nebula.Mmo.Games.Strategies {
             if(eventHandlers.ContainsKey(eventData.Code)) {
                 eventHandlers[eventData.Code].Handle(game, eventData);
             } else {
-                Debug.LogFormat("strategy {0} don't contains event handler {1}", State, eventData.Code);
+                Debug.LogFormat("strategy {0} don't contains event handler {1}", State, (SelectCharacterEventCode)eventData.Code);
             }
         }
 

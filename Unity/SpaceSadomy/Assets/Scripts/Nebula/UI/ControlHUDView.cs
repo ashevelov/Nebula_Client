@@ -112,8 +112,8 @@ namespace Nebula.UI {
         }
 
         private void UpdateProgresses() {
-            this.HpSlider.value = G.Game.Ship.Health01;
-            this.EnSlider.value = G.Game.Ship.Energy01;
+            this.HpSlider.value = GameData.instance.ship.Health01;
+            this.EnSlider.value = GameData.instance.ship.Energy01;
         }
 
         private void UpdatePlayerInfo() {
@@ -131,10 +131,10 @@ namespace Nebula.UI {
             }
             this.WorldPositionText.text = string.Format("{0},Coord:{1}", stringCache.String(CurrentZone().DisplayName(), CurrentZone().DisplayName()).Color("orange"), coordStr);
             this.HpEnText.text = string.Format("HP:{0}/{1},EN:{2}/{3},EXP:{4}/{5}",
-                Mathf.RoundToInt(G.Game.CombatStats.CurrentHP),
-                Mathf.RoundToInt(G.Game.CombatStats.MaxHP),
-                Mathf.RoundToInt(G.Game.CombatStats.CurrentEnergy),
-                Mathf.RoundToInt(G.Game.CombatStats.MaxEnergy),
+                Mathf.RoundToInt(GameData.instance.stats.CurrentHP),
+                Mathf.RoundToInt(GameData.instance.stats.MaxHP),
+                Mathf.RoundToInt(GameData.instance.stats.CurrentEnergy),
+                Mathf.RoundToInt(GameData.instance.stats.MaxEnergy),
                 Mathf.RoundToInt(PlayerInfo().Exp),
                 ""/*DataResources.Instance.Leveling.ExpForLevel(PlayerInfo().Level + 1)*/);
         }
@@ -160,7 +160,7 @@ namespace Nebula.UI {
 
             if (this.MoveToggle.isOn) {
                 G.PlayerItem.RequestMoveDirection();
-                G.PlayerItem.RequestLinearSpeed(G.Game.Ship.MaxLinearSpeed);
+                G.PlayerItem.RequestLinearSpeed(GameData.instance.ship.MaxLinearSpeed);
             } else {
                 G.PlayerItem.RequestStop();
             }
@@ -193,7 +193,7 @@ namespace Nebula.UI {
         private ClientPlayerInfo PlayerInfo() {
             if (G.Game == null)
                 return null;
-            return G.Game.PlayerInfo;
+            return GameData.instance.playerInfo;
         }
 
         private ResZoneInfo CurrentZone() {

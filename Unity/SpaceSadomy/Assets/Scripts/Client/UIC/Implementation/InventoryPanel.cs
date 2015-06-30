@@ -47,8 +47,6 @@ namespace Client.UIC.Implementation
             int index = 0;
             for (int i = 0; i < items.Count; i++)
             {
-                Debug.Log("remove item = " + id);
-                Debug.Log("remove items[i].id = " + items[i].id);
                 if (items[i].id == id)
                 {
                     index = i;
@@ -136,14 +134,40 @@ namespace Client.UIC.Implementation
             int index = 0;
             if(actions != null)
             {
-                foreach (KeyValuePair<string, System.Action<string>> action in actions)
+                if (actions["del"] != null)
                 {
-                    Debug.Log("action.Key --------------" +action.Key);
                     actionButtons[index].interactable = true;
-                    actionButtons[index].onClick.AddListener(() => action.Value(ItemID));
-                    actionButtons[index].GetComponentInChildren<Text>().text = action.Key;
+                    actionButtons[index].onClick.RemoveAllListeners();
+                    actionButtons[index].onClick.AddListener(() => actions["del"](ItemID));
+                    actionButtons[index].GetComponentInChildren<Text>().text = "del";
                     index++;
                 }
+                if (actions["move"] != null)
+                {
+                    actionButtons[index].interactable = true;
+                    actionButtons[index].onClick.RemoveAllListeners();
+                    actionButtons[index].onClick.AddListener(() => actions["move"](ItemID));
+                    actionButtons[index].GetComponentInChildren<Text>().text = "move";
+                    index++;
+                }
+                if (actions["equip"] != null)
+                {
+                    actionButtons[index].interactable = true;
+                    actionButtons[index].onClick.RemoveAllListeners();
+                    actionButtons[index].onClick.AddListener(() => actions["equip"](ItemID));
+                    actionButtons[index].GetComponentInChildren<Text>().text = "equip";
+                    index++;
+                }
+
+                //foreach (KeyValuePair<string, System.Action<string>> action in actions)
+                //{
+                //    Debug.Log("action.Key --------------" +action.Key);
+                //    actionButtons[index].interactable = true;
+                //    actionButtons[index].onClick.RemoveAllListeners();
+                //    actionButtons[index].onClick.AddListener(() => action.Value(ItemID));
+                //    actionButtons[index].GetComponentInChildren<Text>().text = action.Key;
+                //    index++;
+                //}
             }
             while (index < actionButtons.Length)
             {

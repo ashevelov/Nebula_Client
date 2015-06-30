@@ -170,6 +170,7 @@
                     ButtonAction = ()=> {
                           Debug.LogFormat("Show asteroid content with number items: {0}", this.Items.Count);
                           MainCanvas.Get.Show(CanvasPanelType.InventorySourceView, this);
+                          MainCanvas.Get.Destroy(CanvasPanelType.SelectedObjectContextMenuView);
                       }
                     //ButtonAction = ()=> {Debug.Log("Collect asteroid content"); }
                 }

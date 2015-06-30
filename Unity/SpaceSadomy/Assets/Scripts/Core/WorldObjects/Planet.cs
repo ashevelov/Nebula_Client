@@ -127,7 +127,7 @@ public class Planet : BaseSpaceObject
 
     public override void OnDestroy()
     {
-        Debug.Log("planet {0} OnDestroy()".f(((PlanetItem)this.Item).PlanetInfo().Id));
+        //Debug.Log("planet {0} OnDestroy()".f(((PlanetItem)this.Item).PlanetInfo().Id));
     }
 
     //private bool enterToStation;

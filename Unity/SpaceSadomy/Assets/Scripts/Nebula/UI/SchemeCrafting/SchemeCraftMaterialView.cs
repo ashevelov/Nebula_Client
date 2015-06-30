@@ -43,7 +43,7 @@
         }
 
         private int PlayerCount(string materialId) {
-            return G.Game.Inventory.ItemCount(Common.InventoryObjectType.Material, materialId);
+            return GameData.instance.inventory.ItemCount(Common.InventoryObjectType.Material, materialId);
         }
     }
 }

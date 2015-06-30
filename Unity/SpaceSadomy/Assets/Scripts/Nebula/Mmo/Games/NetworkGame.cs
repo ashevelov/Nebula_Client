@@ -28,62 +28,15 @@ namespace Nebula.Mmo.Games {
         private MyItem _avatar;
         private readonly Dictionary<byte, Dictionary<string, Item>> _itemCache = new Dictionary<byte, Dictionary<string, Item>>();
         private readonly Dictionary<byte, InterestArea> interestAreas = new Dictionary<byte, InterestArea>();
-        
-        private readonly ClientInventory _inventory;
-        private readonly WorldTransitionInfo _worldTransitionInfo;
-        private readonly ActorBonuses actorBonuses;
-        private readonly IServiceMessageReceiver serviceMessageReceiver;
-        private readonly ClientWorkhouseStation station;
-        private readonly ClientWorld clientWorld;
-        //private readonly ClientWorldEventConnection worldEventConnection;
-        private readonly ClientPlayerSkills skills;
-        private readonly ClientShipCombatStats combatStats;
-        private readonly DebugClientActionExecutor debugRPCExecutor;
-        //private readonly ClientMailBox mailBox = new ClientMailBox();
-        private readonly ClientCooperativeGroup cooperativeGroup = new ClientCooperativeGroup();
-        private readonly ClientSearchGroupsResult searchGroupsResult = new ClientSearchGroupsResult();
-        private Vector3 lastPosition = Vector3.zero;
-        private PlayerShip _ship;
-        private readonly ClientPlayerInfo playerInfo;
+                
 
+        private Vector3 lastPosition = Vector3.zero;
         private ServerInfo connectionServer = null;
         private NebulaGameDisconnectAction disconnectAction = NebulaGameDisconnectAction.None;
         
         public NetworkGame(MmoEngine engine, Settings settings)
             : base(engine, settings)
         {
-            //_chat = new Chat(Settings.MAX_CHAT_MESSAGES_COUNT);
-            //_currentObjectContainer = new CurrentObjectContainer();
-            _inventory = new ClientInventory(10);
-            _worldTransitionInfo = new WorldTransitionInfo(settings.DefaultZones[Race.Humans], settings.DefaultZones[Race.Humans]);
-            actorBonuses = new ActorBonuses();
-            serviceMessageReceiver = new ServiceMessageReceiver(100);
-            this.station = new ClientWorkhouseStation(new Hashtable());
-            this.playerInfo = new ClientPlayerInfo();
-
-            this.playerInfo.SetExpChanged((oldExp, newExp) =>
-                {
-                    if (this.CurrentStrategy == GameState.NebulaGameWorldEntered && (oldExp != newExp))
-                    {
-                        //G.UI.PlayerInfo.OnExpChanged(oldExp, newExp);
-                        if (MainCanvas.Get == null) {
-                            return;
-                        }
-                        if (MainCanvas.Get.Exists(CanvasPanelType.ControlHUDView)) {
-                            var hud = MainCanvas.Get.GetView(CanvasPanelType.ControlHUDView);
-                            if (hud) {
-                                hud.GetComponentInChildren<ControlHUDView>().OnExpChanged(oldExp, newExp);
-                            }
-                        }
-                    }
-                });
-            //this.userInfo = new ClientUserInfo();
-            this.clientWorld = new ClientWorld();
-            //this.worldEventConnection = new ClientWorldEventConnection();
-            this.skills = new ClientPlayerSkills();
-            this.combatStats = new ClientShipCombatStats();
-            this.debugRPCExecutor = new DebugClientActionExecutor(this);
-
             strategies = new Dictionary<GameState, IGameStrategy> {
                 {GameState.NebulaGameChangingWorld, new NebulaGameChangingWorldStrategy() },
                 {GameState.NebulaGameConnected, new NebulaGameConnectedStrategy()  },
@@ -97,7 +50,6 @@ namespace Nebula.Mmo.Games {
 
         public void CreateAvatar(string gameRefId) {
             _avatar = new MyItem(gameRefId, (byte)ItemType.Avatar, this, "", new object[] { });
-            _ship = new PlayerShip(_avatar);
             _avatar.AddVisibleInterestArea(0);
             AddItem(_avatar);
             interestAreas[0] = new InterestArea(0, this, _avatar);
@@ -118,11 +70,11 @@ namespace Nebula.Mmo.Games {
                 throw new NebulaException("target transition world must be not null");
             }
 
-            WorldTransition.SetPrevAndNextWorld(fromWorldId, toWorldId);
+            GameData.instance.worldTransition.SetPrevAndNextWorld(fromWorldId, toWorldId);
             if(Avatar != null ) {
                 Avatar.DestroyView();
             }
-            Engine.GameData.SetNewWorld(WorldTransition.NextWorld, Settings.WorldCornerMin, Settings.WorldCornerMax, Settings.TileDimensions, LevelType.Space);
+            Engine.GameData.SetNewWorld(GameData.instance.worldTransition.NextWorld, Settings.WorldCornerMin, Settings.WorldCornerMax, Settings.TileDimensions, LevelType.Space);
             ClearItemCache();
             AddItem(Avatar);
 
@@ -282,21 +234,21 @@ namespace Nebula.Mmo.Games {
         }
 
 
-        public ClientInventory Inventory
-        {
-            get
-            {
-                return _inventory;
-            }
-        }
+        //public ClientInventory Inventory
+        //{
+        //    get
+        //    {
+        //        return _inventory;
+        //    }
+        //}
 
-        public ActorBonuses Bonuses
-        {
-            get
-            {
-                return actorBonuses;
-            }
-        }
+        //public ActorBonuses Bonuses
+        //{
+        //    get
+        //    {
+        //        return actorBonuses;
+        //    }
+        //}
 
         public bool ExistAvatarView
         {
@@ -306,99 +258,6 @@ namespace Nebula.Mmo.Games {
             }
         }
 
-        /// <summary>
-        /// Contains player info( level, exp, group, workshop, etc). Updated from server
-        /// </summary>
-        public ClientPlayerInfo PlayerInfo
-        {
-            get
-            {
-                return this.playerInfo;
-            }
-        }
-
-        /// <summary>
-        /// Hold information about previous and next world which player moves
-        /// </summary>
-        public WorldTransitionInfo WorldTransition
-        {
-            get
-            {
-                return _worldTransitionInfo;
-            }
-        }
-
-        public IServiceMessageReceiver ServiceMessageReceiver
-        {
-            get
-            {
-                return serviceMessageReceiver;
-            }
-        }
-
-        public PlayerShip Ship
-        {
-            get
-            {
-                return _ship;
-            }
-        }
-
-        public ClientWorkhouseStation Station
-        {
-            get
-            {
-                return this.station;
-            }
-        }
-
-        //public LoginInfo LoginInfo
-        //{
-        //    get
-        //    {
-        //        return this.loginInfo;
-        //    }
-        //}
-
-        public ClientWorld ClientWorld
-        {
-            get
-            {
-                return this.clientWorld;
-            }
-        }
-
-        //public ClientWorldEventConnection WorldEventConnection
-        //{
-        //    get
-        //    {
-        //        return this.worldEventConnection;
-        //    }
-        //}
-
-        public ClientPlayerSkills Skills
-        {
-            get
-            {
-                return this.skills;
-            }
-        }
-
-        public ClientShipCombatStats CombatStats
-        {
-            get
-            {
-                return this.combatStats;
-            }
-        }
-
-        public DebugClientActionExecutor DebugRPC
-        {
-            get
-            {
-                return this.debugRPCExecutor;
-            }
-        }
 
         public override GameType GameType {
             get {
@@ -406,18 +265,6 @@ namespace Nebula.Mmo.Games {
             }
         }
 
-        //public ClientMailBox MailBox()
-        //{
-        //    return this.mailBox;
-        //}
-
-        public ClientSearchGroupsResult SearchGroupsResult() {
-            return this.searchGroupsResult;
-        }
-
-        public ClientCooperativeGroup CooperativeGroup() {
-            return this.cooperativeGroup;
-        }
 
         public ServerInfo ConnectionServer {
             get {
@@ -440,28 +287,21 @@ namespace Nebula.Mmo.Games {
             return Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacterId;
         }
 
-        public ClientPlayerSkill PlayerSkill(int index)
-        {
-            return this.Skills.Skill(index);
-        }
+        //public ClientPlayerSkill PlayerSkill(int index)
+        //{
+        //    return this.Skills.Skill(index);
+        //}
 
 
+        //public void SetPlayerInfo(Hashtable info)
+        //{
+        //    this.PlayerInfo.ParseInfo(info);
+        //}
 
-        public float ShipEnergy()
-        {
-            return this.Ship.Energy;
-        }
-
-
-        public void SetPlayerInfo(Hashtable info)
-        {
-            this.PlayerInfo.ParseInfo(info);
-        }
-
-        public void SetSkills(Hashtable skillsInfo)
-        {
-            this.Skills.ParseInfo(skillsInfo);
-        }
+        //public void SetSkills(Hashtable skillsInfo)
+        //{
+        //    this.Skills.ParseInfo(skillsInfo);
+        //}
 
         public void SetShipDestroyed(byte itemType, string itemId, bool shipDestroyed)
         {
@@ -605,7 +445,7 @@ namespace Nebula.Mmo.Games {
             if(currentState == GameState.NebulaGameWorldEntered) {
                 if(Time.time > nextUpdateModelTime) {
                     nextUpdateModelTime = Time.time + Settings.REQUEST_PLAYER_MODEL_INTERVAL_AT_WORLD;
-                    if(Avatar != null && Ship != null && (!Ship.ShipModel.HasAllModules()) ) {
+                    if(Avatar != null && GameData.instance.ship != null && (!GameData.instance.ship.ShipModel.HasAllModules()) ) {
                         NRPC.RequestShipModel();
                     }
                 }
@@ -720,11 +560,11 @@ namespace Nebula.Mmo.Games {
                             if (moduleHashtable != null && moduleHashtable.Count > 0)
                             {
                                 ClientShipModule module = new ClientShipModule(moduleHashtable);
-                                game.Ship.ShipModel.SetModule(module);
+                                GameData.instance.ship.ShipModel.SetModule(module);
                             }
                             else
                             {
-                                game.Ship.ShipModel.RemoveModule(ShipModelSlotType.CB);
+                                GameData.instance.ship.ShipModel.RemoveModule(ShipModelSlotType.CB);
                             }
                         }
                         break;
@@ -736,11 +576,11 @@ namespace Nebula.Mmo.Games {
                             if (moduleHashtable != null && moduleHashtable.Count > 0)
                             {
                                 ClientShipModule module = new ClientShipModule(moduleHashtable);
-                                game.Ship.ShipModel.SetModule(module);
+                                GameData.instance.ship.ShipModel.SetModule(module);
                             }
                             else
                             {
-                                game.Ship.ShipModel.RemoveModule(ShipModelSlotType.CM);
+                                GameData.instance.ship.ShipModel.RemoveModule(ShipModelSlotType.CM);
                             }
                         }
                         break;
@@ -752,11 +592,11 @@ namespace Nebula.Mmo.Games {
                             if (moduleHashtable != null && moduleHashtable.Count > 0)
                             {
                                 ClientShipModule module = new ClientShipModule(moduleHashtable);
-                                game.Ship.ShipModel.SetModule(module);
+                                GameData.instance.ship.ShipModel.SetModule(module);
                             }
                             else
                             {
-                                game.Ship.ShipModel.RemoveModule(ShipModelSlotType.DF);
+                                GameData.instance.ship.ShipModel.RemoveModule(ShipModelSlotType.DF);
                             }
                         }
                         break;
@@ -768,11 +608,11 @@ namespace Nebula.Mmo.Games {
                             if (moduleHashtable != null && moduleHashtable.Count > 0)
                             {
                                 ClientShipModule module = new ClientShipModule(moduleHashtable);
-                                game.Ship.ShipModel.SetModule(module);
+                                GameData.instance.ship.ShipModel.SetModule(module);
                             }
                             else
                             {
-                                game.Ship.ShipModel.RemoveModule(ShipModelSlotType.DM);
+                                GameData.instance.ship.ShipModel.RemoveModule(ShipModelSlotType.DM);
                             }
                         }
                         break;
@@ -784,11 +624,11 @@ namespace Nebula.Mmo.Games {
                             if (moduleHashtable != null && moduleHashtable.Count > 0)
                             {
                                 ClientShipModule module = new ClientShipModule(moduleHashtable);
-                                game.Ship.ShipModel.SetModule(module);
+                                GameData.instance.ship.ShipModel.SetModule(module);
                             }
                             else
                             {
-                                game.Ship.ShipModel.RemoveModule(ShipModelSlotType.ES);
+                                GameData.instance.ship.ShipModel.RemoveModule(ShipModelSlotType.ES);
                             }
                         }
                         break;
@@ -798,7 +638,7 @@ namespace Nebula.Mmo.Games {
 
         public static void OnStationHoldUpdated(NetworkGame game, Hashtable holdInfo)
         {
-            game.Station.LoadInfo(holdInfo);
+            GameData.instance.station.LoadInfo(holdInfo);
         }
 
         /// <summary>
@@ -809,9 +649,7 @@ namespace Nebula.Mmo.Games {
         public static void OnInventoryUpdated(NetworkGame game, Hashtable inventoryInfo)
         {
             ClientInventory clientInv = new ClientInventory(inventoryInfo);
-            game.Inventory.Replace(clientInv);
-
-
+            GameData.instance.inventory.Replace(clientInv);
         }
 
         /// <summary>
@@ -842,7 +680,7 @@ namespace Nebula.Mmo.Games {
 
         public void OnWeaponReceived(Hashtable weaponInfo)
         {
-            this.Ship.Weapon.ParseInfo(weaponInfo);
+            GameData.instance.ship.Weapon.ParseInfo(weaponInfo);
         }
 
         public void SetSpawnPosition(Item item)
@@ -874,7 +712,7 @@ namespace Nebula.Mmo.Games {
             var game = NetworkGame.Instance();
             if(game.ConnectionServer.ContainsLocation(targetWorld)) {
                 game.SetDisconnectAction(NebulaGameDisconnectAction.None);
-                game.WorldTransition.SetNextWorld(targetWorld);
+                GameData.instance.worldTransition.SetNextWorld(targetWorld);
                 Operations.ExitWorld(game);
             } else {
                 var newServer = MmoEngine.Get.MasterGame.GetGameServer(targetWorld);
@@ -882,7 +720,7 @@ namespace Nebula.Mmo.Games {
                     throw new NebulaException(string.Format("Not found server for world {0}", targetWorld));
                 }
                 game.SetDisconnectAction(NebulaGameDisconnectAction.ChangeWorld);
-                game.WorldTransition.SetNextWorld(targetWorld);
+                GameData.instance.worldTransition.SetNextWorld(targetWorld);
                 game.SetConnectionServer(newServer);
                 game.Peer.Disconnect();
             }

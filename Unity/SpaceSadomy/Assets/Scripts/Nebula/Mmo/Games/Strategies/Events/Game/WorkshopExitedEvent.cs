@@ -19,7 +19,8 @@ namespace Nebula.Mmo.Games.Strategies.Events.Game {
             var position = Position(eventData);
             game.Avatar.SetPositions(position, position, game.Avatar.Rotation, game.Avatar.Rotation, 0);
             game.SetStrategy(GameState.NebulaGameWorldEntered);
-            Application.LoadLevel(DataResources.Instance.ZoneForId(game.ClientWorld.Id).Scene());
+            //Application.LoadLevel(DataResources.Instance.ZoneForId(game.ClientWorld.Id).Scene());
+            LoadScenes.Load(DataResources.Instance.ZoneForId(GameData.instance.clientWorld.Id).Scene());
         }
 
         private float[] Position(EventData eventData) {

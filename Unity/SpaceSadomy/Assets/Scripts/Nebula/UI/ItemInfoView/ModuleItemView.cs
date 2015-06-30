@@ -68,7 +68,7 @@ namespace Nebula.UI {
             string workshopName = StringCache.Workshop(module.workshop);
             string raceName = StringCache.Race(DataResources.Instance.ResRaces().RaceForWorkshop(module.workshop));
             string fullName = "{0}({1})".f(workshopName, raceName);
-            if( G.Game.PlayerInfo.Workshop != module.workshop) {
+            if( GameData.instance.playerInfo.Workshop != module.workshop) {
                 this.WorkshopText.color = Color.red;
             } else {
                 this.WorkshopText.color = Color.white;

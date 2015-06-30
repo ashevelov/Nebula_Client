@@ -56,7 +56,8 @@
                             LevelType levelType = (LevelType)(byte)operationResponse.Parameters[(byte)ParameterCode.LevelType];
                             Hashtable worldContent = operationResponse.Parameters[ParameterCode.WorldContent.toByte()] as Hashtable;
                             if (worldContent != null) {
-                                ((NetworkGame)game).ClientWorld.ParseInfo(worldContent);
+                                //((NetworkGame)game).ClientWorld.ParseInfo(worldContent);
+                                GameData.instance.clientWorld.ParseInfo(worldContent);
                                 worldContent.Print(1);
                             } else {
                                 Debug.Log("WaitingForChangeWorld: world content is null");

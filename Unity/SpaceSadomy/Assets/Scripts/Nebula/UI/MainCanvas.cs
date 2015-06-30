@@ -76,7 +76,7 @@ namespace Nebula.UI {
 
         void OnEnable() { 
             Events.GameStateChanged += Events_GameStateChanged;
-            Events.CooperativeGroupUpdated += Events_CooperativeGroupUpdated;
+            //Events.CooperativeGroupUpdated += Events_CooperativeGroupUpdated;
             Events.GameBehaviourChanged += Events_GameBehaviourChanged;
         }
 
@@ -84,7 +84,7 @@ namespace Nebula.UI {
 
         void OnDisable() {
             Events.GameStateChanged -= Events_GameStateChanged;
-            Events.CooperativeGroupUpdated -= Events_CooperativeGroupUpdated;
+            //Events.CooperativeGroupUpdated -= Events_CooperativeGroupUpdated;
             Events.GameBehaviourChanged -= Events_GameBehaviourChanged;
         }
         private void Events_GameBehaviourChanged(Mmo.Games.GameType gameType, GameState gameState) {
@@ -116,17 +116,17 @@ namespace Nebula.UI {
             }
         }
 
-        private void Events_CooperativeGroupUpdated(Client.ClientCooperativeGroup obj) {
-            //if(obj.HasGroup()) {
-            //    if (!Exists(CanvasPanelType.GroupView)) {
-            //        Show(CanvasPanelType.GroupView);
-            //    }
-            //} else {
-            //    if (Exists(CanvasPanelType.GroupView)) {
-            //        Destroy(CanvasPanelType.GroupView);
-            //    }
-            //}
-        }
+        //private void Events_CooperativeGroupUpdated(Client.ClientCooperativeGroup obj) {
+        //    //if(obj.HasGroup()) {
+        //    //    if (!Exists(CanvasPanelType.GroupView)) {
+        //    //        Show(CanvasPanelType.GroupView);
+        //    //    }
+        //    //} else {
+        //    //    if (Exists(CanvasPanelType.GroupView)) {
+        //    //        Destroy(CanvasPanelType.GroupView);
+        //    //    }
+        //    //}
+        //}
 
 
         public Canvas Canvas() {

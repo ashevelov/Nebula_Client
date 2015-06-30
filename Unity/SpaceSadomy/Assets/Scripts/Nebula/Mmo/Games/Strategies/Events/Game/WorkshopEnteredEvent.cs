@@ -17,7 +17,7 @@ namespace Nebula.Mmo.Games.Strategies.Events.Game {
             {
                 Debug.LogError("station data is null...");
             }
-            game.Station.LoadInfo(Info(eventData));
+            GameData.instance.station.LoadInfo(Info(eventData));
 
             if (game.Avatar != null && game.Avatar.ExistsView)
             {
@@ -27,16 +27,15 @@ namespace Nebula.Mmo.Games.Strategies.Events.Game {
             game.RemoveAvatar();
             //game.ClearCameras();
 
-            if (WorkshopType(eventData) == WorkshopStrategyType.Angar)
-                Application.LoadLevel("Angar");
-            else if (WorkshopType(eventData) == WorkshopStrategyType.Planet)
-            {
-                if (G.Game.ClientWorld.Zone.Id == "E7")
-                {
+            if (WorkshopType(eventData) == WorkshopStrategyType.Angar) {
+
+                //Application.LoadLevel("Angar");
+                LoadScenes.Load("Angar");
+
+            } else if (WorkshopType(eventData) == WorkshopStrategyType.Planet) {
+                if (GameData.instance.clientWorld.Zone.Id == "E7") {
                     Application.LoadLevel("Demo - Colorized Red 1");
-                }
-                else
-                {
+                } else {
                     Application.LoadLevel("Demo - Colorized Red");
                 }
             }

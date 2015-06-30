@@ -35,7 +35,7 @@
             string workshopName = StringCache.Workshop(scheme.Workshop);
             string raceName = StringCache.Race(DataResources.Instance.ResRaces().RaceForWorkshop(scheme.Workshop));
             string fullName = "{0}({1})".f(workshopName, raceName);
-            if(G.Game.PlayerInfo.Workshop != scheme.Workshop) {
+            if(GameData.instance.playerInfo.Workshop != scheme.Workshop) {
                 this.SchemeWorkshopText.color = Color.red;
             } else {
                 this.SchemeWorkshopText.color = Color.white;

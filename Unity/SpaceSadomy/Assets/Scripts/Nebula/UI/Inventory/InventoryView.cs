@@ -90,7 +90,7 @@
             if (this.InventoryType == InventoryType.ship) {
                 newItems = G.Inventory().OrderedItems();
             } else {
-                newItems = G.Game.Station.StationInventory.OrderedItems();
+                newItems = GameData.instance.station.StationInventory.OrderedItems();
             }
 
             
@@ -140,9 +140,9 @@
 
         private ClientInventory TargetInventory() {
             if(this.InventoryType == InventoryType.ship) {
-                return G.Game.Inventory;
+                return GameData.instance.inventory;
             } else {
-                return G.Game.Station.StationInventory;
+                return GameData.instance.station.StationInventory;
             }
         }
 

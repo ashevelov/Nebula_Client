@@ -25,14 +25,14 @@
                 }
             }
 
-            if (G.Game.CooperativeGroup().HasGroup()) {
-                this.JoinButton.gameObject.SetActive(false);
-            }
+            //if (G.Game.CooperativeGroup().HasGroup()) {
+            //    this.JoinButton.gameObject.SetActive(false);
+            //}
         }
 
         //Handler Join Button
         public void OnJoinOpenedGroupButtonClick() {
-            NRPC.JoinToOpenedGroup(group.Id());
+            //NRPC.JoinToOpenedGroup(group.Id());
         }
     }
 }

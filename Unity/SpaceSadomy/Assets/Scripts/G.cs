@@ -10,10 +10,7 @@ public class G
 {
 
     public static ClientInventory Inventory() {
-        if(Game == null ) {
-            return null;
-        }
-        return Game.Inventory;
+        return GameData.instance.inventory;
     }
 
     public static NetworkGame Game
@@ -59,8 +56,8 @@ public class G
     {
         if(IsPlayerValid())
         {
-            return GameBalance.ComputeHitProb(Game.Ship.Weapon.OptimalDistance,
-                Game.Ship.Weapon.Range, DistanceTo(damagable), Game.Ship.MaxLinearSpeed, damagable.GetSpeed());
+            return GameBalance.ComputeHitProb(GameData.instance.ship.Weapon.OptimalDistance,
+                GameData.instance.ship.Weapon.Range, DistanceTo(damagable), GameData.instance.ship.MaxLinearSpeed, damagable.GetSpeed());
         }
         return 0f;
     }
@@ -130,7 +127,7 @@ public class G
 
     public static ClientPlayerSkill GamePlayerSkill(int index)
     {
-        return Game.PlayerSkill(index);
+        return GameData.instance.skills.Skill(index);
     }
 
     //public static void RequestFireShot(ShotType shotType )
@@ -170,6 +167,6 @@ public class G
 
     public static float GamePlayerShipEnergy()
     {
-        return Game.ShipEnergy();
+        return GameData.instance.ship.Energy;
     }
 }

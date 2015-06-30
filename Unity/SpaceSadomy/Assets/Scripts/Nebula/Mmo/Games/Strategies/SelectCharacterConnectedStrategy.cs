@@ -10,6 +10,8 @@
             AddEventHandler((byte)SelectCharacterEventCode.CharactersUpdate, new UpdateCharacterEvent());
             AddEventHandler((byte)SelectCharacterEventCode.GuildUpdate, new GuildUpdateEvent());
             AddEventHandler((byte)SelectCharacterEventCode.ChatMessageEvent, new ChatMessageEvent());
+            AddEventHandler((byte)SelectCharacterEventCode.GroupUpdateEvent, new GroupUpdateEvent());
+            AddEventHandler((byte)SelectCharacterEventCode.GroupRemovedEvent, new GroupRemovedEvent());
 
             //operation handlers
             AddOperationHandler((byte)SelectCharacterOperationCode.GetCharacters, new GetCharactersOperation());

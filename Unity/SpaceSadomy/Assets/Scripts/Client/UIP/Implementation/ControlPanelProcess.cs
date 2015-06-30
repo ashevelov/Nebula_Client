@@ -71,7 +71,7 @@ namespace Client.UIP.Implementation
             if (accelerate)
             {
                 G.PlayerItem.RequestMoveDirection();
-                G.PlayerItem.RequestLinearSpeed(G.Game.Ship.MaxLinearSpeed);
+                G.PlayerItem.RequestLinearSpeed(GameData.instance.ship.MaxLinearSpeed);
             }
             else
             {
@@ -96,7 +96,7 @@ namespace Client.UIP.Implementation
 
         public bool CheckCondition()
         {
-            if (G.Game == null || G.Game.PlayerInfo == null || G.PlayerComponent == null)
+            if (G.Game == null || GameData.instance.playerInfo == null || G.PlayerComponent == null)
                 return false;
             return true;
         }

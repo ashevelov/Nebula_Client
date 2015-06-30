@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Common;
 using Game.Space;
+using Nebula;
 
 public class HangarShip : Singleton<HangarShip>
 {
@@ -14,7 +15,7 @@ public class HangarShip : Singleton<HangarShip>
 
     void Start()
     {
-        this.slots = G.Game.Ship.ShipModel.SlotPrefabs();
+        this.slots = GameData.instance.ship.ShipModel.SlotPrefabs();
         this.RebuildModel();
     }
 
@@ -50,9 +51,9 @@ public class HangarShip : Singleton<HangarShip>
                 transform.eulerAngles -= new Vector3(0, delta.x * Time.deltaTime * speed, 0);
                 oldPos = Input.mousePosition;
             }
-            if (false == this.CompareSlots(G.Game.Ship.ShipModel.SlotPrefabs()))
+            if (false == this.CompareSlots(GameData.instance.ship.ShipModel.SlotPrefabs()))
             {
-                this.slots = G.Game.Ship.ShipModel.SlotPrefabs();
+                this.slots = GameData.instance.ship.ShipModel.SlotPrefabs();
                 this.RebuildModel();
             }
         }

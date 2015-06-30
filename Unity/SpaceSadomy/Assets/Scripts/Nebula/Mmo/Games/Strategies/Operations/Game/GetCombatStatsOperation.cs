@@ -8,7 +8,7 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
         }
         private void HandleOperation(NetworkGame game, OperationResponse response)
         {
-            G.Game.CombatStats.ParseInfo(Result(response));
+            GameData.instance.stats.ParseInfo(Result(response));
         }
     }
 }

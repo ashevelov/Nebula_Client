@@ -57,7 +57,7 @@ namespace Nebula.UI {
             string raceName = StringCache.Race(DataResources.Instance.ResRaces().RaceForWorkshop(weaponTemplate.Workshop));
 
             string fullName = workshopName + "(" + raceName + ")";
-            if(G.Game.PlayerInfo.Workshop != weaponTemplate.Workshop) {
+            if(GameData.instance.playerInfo.Workshop != weaponTemplate.Workshop) {
                 WorkshopText.color = Color.red;
             } else {
                 WorkshopText.color = Color.white;

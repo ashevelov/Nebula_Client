@@ -113,7 +113,7 @@ public class MyPlayer : BaseSpaceObject {
         if (_targetDirection == Vector3.zero)
             _targetDirection = transform.forward;
         float angle = Quaternion.Angle(transform.rotation, Quaternion.LookRotation(_targetDirection));
-        float aSpd = game.Ship.AngleSpeed * 50;
+        float aSpd = GameData.instance.ship.AngleSpeed * 50;
         _angleSpeed = ((aSpd < angle) ? aSpd : angle);
         _angleSpeed = (angle > 0.1f) ? angle : 0;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(_targetDirection), Time.deltaTime * _angleSpeed);
@@ -134,7 +134,7 @@ public class MyPlayer : BaseSpaceObject {
 
         ////_rigidbody.velocity += transform.forward * Game.Ship.LinearSpeed * Time.deltaTime;
         ////_rigidbody.velocity -= (_rigidbody.velocity / 2) * Time.deltaTime;
-        _velocity += transform.forward * Game.Ship.LinearSpeed * Time.deltaTime;
+        _velocity += transform.forward * GameData.instance.ship.LinearSpeed * Time.deltaTime;
         _velocity -= (_velocity ) * Time.deltaTime;
         transform.position += _velocity * Time.deltaTime;
 
@@ -160,7 +160,7 @@ public class MyPlayer : BaseSpaceObject {
 
     private void Idle() 
     {
-        transform.position += transform.forward * Game.Ship.LinearSpeed * Time.deltaTime;
+        transform.position += transform.forward * GameData.instance.ship.LinearSpeed * Time.deltaTime;
     }
 
     private void EndIdle() { 
@@ -178,9 +178,9 @@ public class MyPlayer : BaseSpaceObject {
         {
             //print(string.Format("STATE JUMP2TARGET, lin speed: {0} rot speed: {1}", _linearSpeed, myItem.Ship.AngleSpeed));
             Vector3 dir = (myItem.Target.Item.View.transform.position - transform.position).normalized;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * Game.Ship.AngleSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * GameData.instance.ship.AngleSpeed);
             //_linearSpeed = Mathf.Lerp(_linearSpeed, Game.Ship.LinearSpeed, Time.deltaTime * Game.Ship.Acceleration);
-            transform.position += transform.forward * Game.Ship.LinearSpeed * Time.deltaTime;
+            transform.position += transform.forward * GameData.instance.ship.LinearSpeed * Time.deltaTime;
             float distanceToTarget = Vector3.Distance(transform.position, myItem.Target.Item.View.transform.position);
             if (distanceToTarget <= 500)
             {
@@ -212,8 +212,8 @@ public class MyPlayer : BaseSpaceObject {
         _angPhi = Mathf.Atan2(diff.y, diff.x);
         float orbitLength = 2.0f * Mathf.PI * dist;
         float period = 0.0f;
-        if (Game.Ship.LinearSpeed != 0.0f)
-            period = orbitLength / Game.Ship.LinearSpeed;
+        if (GameData.instance.ship.LinearSpeed != 0.0f)
+            period = orbitLength / GameData.instance.ship.LinearSpeed;
         else
             period = orbitLength;
         _orbitAngleSpeed = 2.0f * Mathf.PI / period;
@@ -238,9 +238,9 @@ public class MyPlayer : BaseSpaceObject {
             else
             {
                 Vector3 dir = (Game.Avatar.Target.Item.View.transform.position - transform.position).normalized;
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * Game.Ship.AngleSpeed);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * GameData.instance.ship.AngleSpeed);
                 //_linearSpeed = Mathf.Lerp(_linearSpeed, Game.Ship.LinearSpeed, Time.deltaTime * Game.Ship.Acceleration);
-                transform.position += transform.forward * Game.Ship.LinearSpeed * Time.deltaTime;
+                transform.position += transform.forward * GameData.instance.ship.LinearSpeed * Time.deltaTime;
             }
         }
         else
@@ -422,10 +422,6 @@ public class MyPlayer : BaseSpaceObject {
 
 
     #endregion
-
-
-
-    public float LinearSpeed { get { return Game.Ship.LinearSpeed; } }
 
 
     public void MoveToDirection(Vector3 direction)

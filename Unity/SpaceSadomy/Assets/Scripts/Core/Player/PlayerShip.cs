@@ -1,5 +1,6 @@
 ﻿using Common;
 using Nebula.Client;
+using Nebula.Mmo.Games;
 using Nebula.Mmo.Items;
 using System.Collections;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine;
 namespace Nebula {
     public class PlayerShip : IServerPropertyParser
     {
-        private MyItem _owner;
+        //private MyItem _owner;
         private float _currentHealth;
         private float _maxHealth;
         private float _linearSpeed;
@@ -22,9 +23,6 @@ namespace Nebula {
         private float _minLinearSpeed;
         //max linear speed of moving in not VARP mode
         private float _maxLinearSpeed;
-
-		private PlayerBonuses _bonuses;
-		//private PlayerSkills _skills;
         private ClientShipModel _shipModel;
 
         private float _energy;
@@ -32,22 +30,14 @@ namespace Nebula {
 
         private bool needRespawnFlagSetted = false;
 
-        public void SetOwner(MyItem item)
-        {
-            this._owner = item;
-        }
-
         public void Clear() {
             if(this._shipModel != null ) {
                 this._shipModel.Clear();
             }
         }
 
-		public PlayerShip(MyItem owner)
+		public PlayerShip()
 		{
-            _owner = owner;
-			_bonuses = new PlayerBonuses();
-			//_skills = new PlayerSkills();
             this.weapon = new ClientPlayerShipWeapon();
             _shipModel = new ClientShipModel();
 
@@ -69,19 +59,13 @@ namespace Nebula {
 		{
             get 
             { 
-                if(Owner() == null)
-                {
+                if(NetworkGame.Instance().Avatar == null ) {
                     return false;
                 }
-                return this.Owner().ShipDestroyed;
+                return NetworkGame.Instance().Avatar.ShipDestroyed;
             }
 		}
 
-        private MyItem Owner()
-        {
-            return this._owner;
-        }
-		
 
         public float Acceleration { get { return _acceleration; } }
 
@@ -99,16 +83,6 @@ namespace Nebula {
 				}
 			}
 		}
-
-		public PlayerBonuses Bonuses
-		{
-			get{ return _bonuses; }
-		}
-
-        //public PlayerSkills Skills
-        //{
-        //    get{ return _skills; }
-        //}
 
         public ClientPlayerShipWeapon Weapon
         {
@@ -169,13 +143,9 @@ namespace Nebula {
         }
         #endregion
 
-
-       
-
-
         public void ParseProp(byte propName, object value )
         {
-            if(this.Owner() == null )
+            if(NetworkGame.Instance().Avatar == null )
             {
                 Debug.LogError("Not setted owner for PlayerShip");
                 return;
@@ -197,21 +167,21 @@ namespace Nebula {
                     break;
                 case PS.Destroyed:
                     {
-                        this.Owner().SetShipDestroyed((bool)value);
+                        NetworkGame.Instance().Avatar.SetShipDestroyed((bool)value);
 
-                        if(((bool)value) && this.Owner().ExistsView && this.Owner().View.activeSelf)
+                        if(((bool)value) && NetworkGame.Instance().Avatar.ExistsView && NetworkGame.Instance().Avatar.View.activeSelf)
                         {
-                            this.Owner().SetShipDestroyed(true);
+                            NetworkGame.Instance().Avatar.SetShipDestroyed(true);
                         }
                         else if(!((bool)value))
                         {
                             if(NeedRespawn())
                             {
                                 ResetRespawnFlag();
-                                Owner().Respawn();
+                                NetworkGame.Instance().Avatar.Respawn();
                             }
                         }
-                        Debug.Log("<color=orange>Received player destroyed: {0}</color>".f(this.Owner().ShipDestroyed));
+                        Debug.Log("<color=orange>Received player destroyed: {0}</color>".f(NetworkGame.Instance().Avatar.ShipDestroyed));
                     }
                     break;
 

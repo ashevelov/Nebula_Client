@@ -14,7 +14,7 @@
                 Debug.Log("Player info properties is null");
                 return;
             }
-            game.SetPlayerInfo(Properties(eventData));
+            GameData.instance.playerInfo.ParseInfo(Properties(eventData));
         }
     } 
 }

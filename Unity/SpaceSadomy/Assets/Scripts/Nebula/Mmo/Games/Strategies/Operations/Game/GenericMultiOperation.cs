@@ -222,7 +222,7 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
 
         public static void HandleRequestOpenedGroups(NetworkGame game, OperationResponse response) {
             Hashtable serachGroups = response.Parameters[(byte)ParameterCode.Result] as Hashtable;
-            G.Game.SearchGroupsResult().ParseInfo(serachGroups);
+            GameData.instance.searchGroupResult.ParseInfo(serachGroups);
             global::Nebula.Events.EvtSearchGroupResultUpdated();
         }
 

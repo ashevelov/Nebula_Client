@@ -42,11 +42,11 @@
             if(G.Game == null ) {
                 return;
             }
-            if(G.Game.Bonuses == null ) {
+            if(GameData.instance.bonuses == null ) {
                 return;
             }
 
-            foreach(var pBuff in G.Game.Bonuses.Bonuses ) {
+            foreach(var pBuff in GameData.instance.bonuses.Bonuses ) {
                 if(pBuff.Value > 0.0f ) {
                     if(this.currentBuffs.ContainsKey(pBuff.Key)) {
                         this.changes.Add(new ObjectChange<BuffData> {
@@ -84,7 +84,7 @@
             }
 
             foreach(var cBuff in this.currentBuffs) {
-                if(G.Game.Bonuses.IsNon(cBuff.Key)) {
+                if(GameData.instance.bonuses.IsNon(cBuff.Key)) {
                     this.changes.Add(new ObjectChange<BuffData> {
                         ChangeType = ChangeType.REMOVE,
                         TargetObject = new BuffData {

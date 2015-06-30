@@ -115,7 +115,7 @@
         }
 
         public void TakeAttachment(string messageId, string attachmentId) {
-            if(NetworkGame.Instance().Inventory.SlotsUsed >= NetworkGame.Instance().Inventory.MaxSlots) {
+            if(GameData.instance.inventory.SlotsUsed >= GameData.instance.inventory.MaxSlots) {
                 Debug.LogError("no free space in inventory");
                 return;
             }
@@ -338,8 +338,20 @@
                 targetCharacterID,
                 linkHash } );
         }
+
+        public void InviteToGroup(string targetCharacterID) {
+            object[] parameters = new object[] { Engine.LoginGame.GameRefId, playerCharacters.SelectedCharacterId, Engine.LoginGame.login, targetCharacterID };
+            Operations.InvokeMethod("InviteToGroup", parameters);
+        }
+
+        public void RequestToGroup(string groupID) {
+            object[] parameters = new object[] { groupID, Engine.LoginGame.GameRefId, playerCharacters.SelectedCharacterId, Engine.LoginGame.login };
+            Operations.InvokeMethod("RequestToGroup", parameters);
+        }
+
         //====================================
         public static class Operations {
+
 
             public static void ChangeGuildMemberStatus(string guildID, string sourceCharacterID, string targetCharacterID, GuildMemberStatus status) {
                 Dictionary<byte, object> parameters = new Dictionary<byte, object> {

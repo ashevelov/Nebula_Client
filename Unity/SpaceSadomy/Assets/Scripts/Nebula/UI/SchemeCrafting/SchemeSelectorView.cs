@@ -14,18 +14,18 @@
 
         public override void Setup(object objData) {
 
-            Debug.LogFormat("Player workshop: {0}", G.Game.PlayerInfo.Workshop);
+            Debug.LogFormat("Player workshop: {0}", GameData.instance.playerInfo.Workshop);
 
             base.Setup(objData);
 
             ShipModelSlotType slotType = (ShipModelSlotType)objData;
             Dictionary<string, ClientInventoryItem> typedItems;
 
-            if(!G.Game.Inventory.Items.ContainsKey(InventoryObjectType.Scheme)) {
+            if(!GameData.instance.inventory.Items.ContainsKey(InventoryObjectType.Scheme)) {
                 Debug.LogWarning("Not found scheme items");
                 return;
             } else {
-                typedItems = G.Game.Inventory[InventoryObjectType.Scheme];
+                typedItems = GameData.instance.inventory.GetTypedDict(InventoryObjectType.Scheme);
             }
 
             List<ClientInventoryItem> slottedItems = new List<ClientInventoryItem>();
@@ -33,7 +33,7 @@
                 var scheme = pItem.Value.Object as SchemeInventoryObjectInfo;
                 var module = DataResources.Instance.ModuleData(scheme.TargetTemplateId);
 
-                if( module.SlotType == slotType && module.Workshop == G.Game.PlayerInfo.Workshop) {
+                if( module.SlotType == slotType && module.Workshop == GameData.instance.playerInfo.Workshop) {
                     slottedItems.Add(pItem.Value);
                 }
             }

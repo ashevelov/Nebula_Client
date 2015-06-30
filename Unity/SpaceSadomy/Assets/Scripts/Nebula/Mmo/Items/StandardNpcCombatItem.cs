@@ -145,10 +145,10 @@ namespace Nebula.Mmo.Items {
 
         public SelectedObjectContextMenuView.InputData ContextViewData() {
             var entries = new List<SelectedObjectContextMenuView.InputEntry> {
-                new SelectedObjectContextMenuView.InputEntry {
-                     ButtonText = "Info",
-                      ButtonAction = ()=> { Debug.Log("Show chest info"); }
-                },
+                //new SelectedObjectContextMenuView.InputEntry {
+                //     ButtonText = "Info",
+                //      ButtonAction = ()=> { Debug.Log("Show chest info"); }
+                //},
             };
             return new SelectedObjectContextMenuView.InputData {
                 TargetItem = this,

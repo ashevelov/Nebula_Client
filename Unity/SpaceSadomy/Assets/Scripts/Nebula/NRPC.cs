@@ -31,33 +31,7 @@ namespace Nebula {
             return true;
         }
 
-        //Request fire from player to target
-        //public static void RequestFire() {
-        //    NetworkGame game = null;
-        //    MyItem player = null;
-        //    if(false == CheckGameAndPlayer(out game, out player)) {
-        //        Debug.Log("FIRE: check Game And Player Not succedd");
-        //        return;
-        //    }
 
-        //    if(game.CurrentStrategy != GameState.NebulaGameWorldEntered) {
-        //        Debug.Log("FIRE: check strategy fail");
-        //        return;
-        //    }
-        //    if(false == player.Target.HasTargetAndTargetGameObjectValid) {
-        //        Debug.Log("FIRE: check target fail");
-        //        return;
-        //    }
-
-        //    Hashtable fireProperties = new Hashtable {
-        //        {(int)SPC.Source, player.Id },
-        //        {(int)SPC.SourceType, player.Type },
-        //        {(int)SPC.Target, player.Target.Item.Id },
-        //        {(int)SPC.TargetType, player.Target.Item.Type },
-        //    };
-
-        //    Operations.RaiseGenericEvent(game, player.Id, player.Type, (byte)CustomEventCode.Fire, fireProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
-        //}
 
         public static void RequestUseSkill(int index) {
             Debug.LogFormat("request use skill at index = {0}", index);
@@ -143,16 +117,6 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "GetPlayerInfo", new object[] { });
         }
 
-        /// <summary>
-        /// Request world events
-        /// </summary>
-        /*public static void RequestEvents() {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "RequestWorldEvents", new object[] { });
-        }*/
 
         /// <summary>
         /// Request from server current skill binding
@@ -266,23 +230,6 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "GetStation", new object[] { });
         }
 
-        //public static void SelectCharacter(string characterId, string login, string password) {
-        //    NetworkGame game = null;
-        //    if (false == CheckGame(out game)) {
-        //        return;
-        //    }
-        //    Operations.SelectCharacter(game, characterId, login, password);
-        //}
-
-        //public static void AddCharacter(Race race, Workshop workshop) {
-        //    NetworkGame game = null;
-        //    if (false == CheckGame(out game)) {
-        //        return;
-        //    }
-        //    Operations.AddCharacter(game, race.toByte(), workshop);
-        //}
-
-
 
         /// <summary>
         /// Call activate function on activator in which player touch
@@ -315,27 +262,10 @@ namespace Nebula {
             if (false == CheckGame(out game)) {
                 return;
             }
-            game.WorldTransition.SetNextWorld(string.Empty);
+            GameData.instance.worldTransition.SetNextWorld(string.Empty);
             Operations.ExitWorld(game);
         }
 
-        //public static void SendChatMessage(ChatGroup chatGroup, string message, string receiverLogin) {
-        //    NetworkGame game = null;
-        //    if (false == CheckGame(out game)) {
-        //        return;
-        //    }
-
-        //    Hashtable chatMessageProperties = new Hashtable
-        //    {
-        //        {(int)SPC.ChatMessageGroup, (byte)chatGroup},
-        //        {(int)SPC.ChatMessage, message },
-        //        {(int)SPC.ChatSourceLogin, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
-        //        {(int)SPC.ChatSourceName, game.Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacter().CharacterName },
-        //        {(int)SPC.ChatMessageId, System.Guid.NewGuid().ToString() },
-        //        {(int)SPC.ChatReceiverLogin, receiverLogin }
-        //    };
-        //    Operations.RaiseGenericEvent(game, game.AvatarId, ItemType.Avatar.toByte(), (byte)CustomEventCode.ChatMessage, chatMessageProperties, (byte)3, EventReceiver.OwnerAndSubscriber);
-        //}
 
         public static void GetChatUpdate() {
             NetworkGame game = null;
@@ -625,14 +555,14 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "SendTestMailFromServerToPlayer", new object[] { title, body });
         }
 
-        public static void SendTestMailFromServerToPlayerWithAttachments() {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
+        //public static void SendTestMailFromServerToPlayerWithAttachments() {
+        //    NetworkGame game = null;
+        //    if (false == CheckGame(out game)) {
+        //        return;
+        //    }
 
-            Operations.ExecAction(game, game.AvatarId, "SendTestMailFromServerToPlayerWithAttachments", new object[] { });
-        }
+        //    Operations.ExecAction(game, game.AvatarId, "SendTestMailFromServerToPlayerWithAttachments", new object[] { });
+        //}
 
         /// <summary>
         /// Send request and adding to player all buffs as Timed Buffs on interval 10 min
@@ -643,87 +573,6 @@ namespace Nebula {
                 return;
             }
             Operations.ExecAction(game, game.AvatarId, "TestBuffs", new object[] { });
-        }
-
-        public static void SendInviteToGroup(string itemId ) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "SendInviteToGroup", new object[] { itemId });
-        }
-
-        public static void ResponseToGroupRequest(bool accept, Hashtable requestInfo ) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "ResponseToGroupRequest", new object[] { accept, requestInfo });
-        }
-
-        //Exit me from current group
-        public static void ExitFromCurrentGroup() {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "ExitFromCurrentGroup", new object[] { });
-        }
-
-        //Free group if me is leader of group
-        public static void FreeGroup() {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "FreeGroup", new object[] { });
-        }
-
-        //set group member with character id as leader
-        public static void SetLeaderToCharacter(string characterId ) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "SetLeaderToCharacter", new object[] { characterId });
-        }
-
-        public static void VoteForExclude(string characterId, string characterDisplayName ) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "VoteForExclude", new object[] { characterId, characterDisplayName });
-        }
-
-        /// <summary>
-        /// If current user is group leader, than this call change visibility group 
-        /// </summary>
-        public static void SetGroupOpened(bool opened) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "SetGroupOpened", new object[] { opened });
-        }
-
-        /// <summary>
-        /// Request list of opened groups from server
-        /// </summary>
-        public static void RequestOpenedGroups() {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "RequestOpenedGroups", new object[] {});
-        }
-
-        public static void JoinToOpenedGroup(string groupId ) {
-            NetworkGame game = null;
-            if (false == CheckGame(out game)) {
-                return;
-            }
-            Operations.ExecAction(game, game.AvatarId, "JoinToOpenedGroup", new object[] { groupId });
         }
 
         public static void CraftItEasy() {

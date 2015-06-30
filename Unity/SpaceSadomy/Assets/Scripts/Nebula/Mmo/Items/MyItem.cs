@@ -140,7 +140,7 @@ namespace Nebula.Mmo.Items {
         public void Respawn() {
 
             if (false == ExistsView) {
-                var prefabs = this.Game.Ship.ShipModel.SlotPrefabs();
+                var prefabs = GameData.instance.ship.ShipModel.SlotPrefabs();
                 Debug.Log("Prefabs before creation");
                 foreach (var prefabPair in prefabs) {
                     Debug.Log("{0}:{1}".f(prefabPair.Key, prefabPair.Value));
@@ -184,7 +184,7 @@ namespace Nebula.Mmo.Items {
         }
 
         public void RequestLinearSpeed(float speed) {
-            speed = Mathf.Clamp(speed, Game.Ship.MinLinearSpeed, Game.Ship.MaxLinearSpeed);
+            speed = Mathf.Clamp(speed, GameData.instance.ship.MinLinearSpeed, GameData.instance.ship.MaxLinearSpeed);
             Operations.ExecAction(Game, Id, "ChangeLinearSpeed", new object[] { speed });
         }
 
@@ -222,7 +222,7 @@ namespace Nebula.Mmo.Items {
                 case PS.AngleSpeed:
                 case PS.CurrentEnergy:
                 case PS.MaxEnergy:
-                    Game.Ship.ParseProp(key, newValue);
+                    GameData.instance.ship.ParseProp(key, newValue);
                     break;
                 case PS.TargetId:
                 case PS.HasTarget:
@@ -250,7 +250,7 @@ namespace Nebula.Mmo.Items {
 
 
         public bool IsDead() {
-            return Game.Ship.Destroyed;
+            return GameData.instance.ship.Destroyed;
         }
 
 
@@ -258,25 +258,25 @@ namespace Nebula.Mmo.Items {
 
 
         public float GetHealth() {
-            return Game.Ship.Health;
+            return GameData.instance.ship.Health;
         }
 
         public float GetMaxHealth() {
-            return Game.Ship.MaxHealth;
+            return GameData.instance.ship.MaxHealth;
         }
 
 
 
         public float GetMinHitProb() {
-            return Game.Ship.Weapon.HitProb;
+            return GameData.instance.ship.Weapon.HitProb;
         }
 
 
 
         public float GetHealth01() {
-            if (Game.Ship.MaxHealth == 0.0f)
+            if (GameData.instance.ship.MaxHealth == 0.0f)
                 return 0.0f;
-            return Mathf.Clamp01(Game.Ship.Health / Game.Ship.MaxHealth);
+            return Mathf.Clamp01(GameData.instance.ship.Health / GameData.instance.ship.MaxHealth);
         }
 
 
@@ -292,13 +292,13 @@ namespace Nebula.Mmo.Items {
 
 
         public float GetOptimalDistance() {
-            if (Game.Ship.Weapon.HasWeapon)
-                return Game.Ship.Weapon.WeaponObject.OptimalDistance;
+            if (GameData.instance.ship.Weapon.HasWeapon)
+                return GameData.instance.ship.Weapon.WeaponObject.OptimalDistance;
             return 0.0f;
         }
 
         public float GetRange() {
-            return Game.Ship.Weapon.Range;
+            return GameData.instance.ship.Weapon.Range;
         }
 
 
@@ -309,7 +309,7 @@ namespace Nebula.Mmo.Items {
 
 
         public float GetSpeed() {
-            return Game.Ship.LinearSpeed;
+            return GameData.instance.ship.LinearSpeed;
         }
 
 

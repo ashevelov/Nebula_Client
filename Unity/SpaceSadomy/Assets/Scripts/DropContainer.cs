@@ -28,7 +28,7 @@ public class DropContainer : MonoBehaviour {
 
                         var player = G.Game.Avatar;
 
-                        if (!game.Ship.Destroyed && !player.ShipDestroyed)
+                        if (!GameData.instance.ship.Destroyed && !player.ShipDestroyed)
                         {
         //                    UIEntity containerUI = UIManager.Get.GetLayout("container");
         //                    if (containerUI._visible == false)

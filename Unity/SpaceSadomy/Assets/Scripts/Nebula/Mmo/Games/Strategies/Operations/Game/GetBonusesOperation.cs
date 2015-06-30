@@ -9,7 +9,7 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
 
         private void HandleOperation(NetworkGame game, OperationResponse response)
         {
-            game.Bonuses.Replace(Result(response));
+            GameData.instance.bonuses.Replace(Result(response));
         }
     }
 }

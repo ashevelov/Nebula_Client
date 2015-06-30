@@ -16,6 +16,7 @@ namespace Nebula.Mmo.Games.Strategies {
     using Nebula.Mmo.Games.Strategies.Operations;
     using Nebula.Mmo.Games.Strategies.Operations.Game;
     using Nebula.Resources;
+    using UnityEngine;
 
     public class NebulaGameWorldEnteredStrategy : DefaultStrategy
     {
@@ -54,8 +55,8 @@ namespace Nebula.Mmo.Games.Strategies {
             //generic.AddStrategy(CustomEventCode.MailBoxUpdated, new MailBoxUpdatedEvent());
 
             GenericMultiEvent multiEvent = new GenericMultiEvent();
-            generic.AddStrategy(CustomEventCode.CooperativeGroupRequest, multiEvent);
-            generic.AddStrategy(CustomEventCode.CooperativeGroupUpdate, multiEvent);
+            //generic.AddStrategy(CustomEventCode.CooperativeGroupRequest, multiEvent);
+            //generic.AddStrategy(CustomEventCode.CooperativeGroupUpdate, multiEvent);
             AddEventHandler((byte)EventCode.ItemGeneric, generic);
 
             AddOperationHandler((byte)OperationCode.RemoveInterestArea, new RemoveInterestAreaOperation());
@@ -144,6 +145,7 @@ namespace Nebula.Mmo.Games.Strategies {
 
         public override void OnPeerStatusChanged(BaseGame game, StatusCode statusCode) {
             base.OnPeerStatusChanged(game, statusCode);
+
             switch (statusCode) {
                 case StatusCode.Disconnect:
                 case StatusCode.DisconnectByServer:
@@ -155,7 +157,7 @@ namespace Nebula.Mmo.Games.Strategies {
                         if (((NetworkGame)game).DisconnectAction == NebulaGameDisconnectAction.ChangeWorld) {
                             game.SetPeer(new GamePeer(game, ConnectionProtocol.Udp));
                             (game as NetworkGame).Connect();
-                        }
+                        } 
                         break;
                     }
 
@@ -165,6 +167,14 @@ namespace Nebula.Mmo.Games.Strategies {
                         break;
                     }
             }
+
+            //var ngame = game as NetworkGame;
+            //if(ngame.DisconnectAction == NebulaGameDisconnectAction.Menu) {
+            //    Debug.Log("try exit menu");
+            //    MmoEngine.Get.SetActiveGame(GameType.SelectCharacter);
+            //    ngame.SetDisconnectAction(NebulaGameDisconnectAction.None);
+            //    LoadScenes.Load("select_character");
+            //}
         }
 
     }

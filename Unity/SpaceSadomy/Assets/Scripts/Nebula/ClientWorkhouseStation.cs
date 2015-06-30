@@ -33,5 +33,10 @@ namespace Nebula.Client {
         public ClientInventory StationInventory {
             get { return this.stationInventory; }
         }
+
+        public void Clear() {
+            hold.Clear();
+            stationInventory.Clear();
+        }
     }
 }

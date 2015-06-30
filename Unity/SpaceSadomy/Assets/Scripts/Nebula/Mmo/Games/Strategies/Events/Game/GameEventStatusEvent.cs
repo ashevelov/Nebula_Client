@@ -14,8 +14,8 @@
             string eventId = (string)gameEventParameters[(int)SPC.Id];
             bool active = (bool)gameEventParameters[(int)SPC.Active];
 
-            if(ngame.ClientWorld.Id != MmoEngine.Get.GameData.World.Name) {
-                Debug.LogErrorFormat("client world = {0} and game data world = {1} don't same", ngame.ClientWorld.Id, MmoEngine.Get.GameData.World.Name);
+            if(GameData.instance.clientWorld.Id != MmoEngine.Get.GameData.World.Name) {
+                Debug.LogErrorFormat("client world = {0} and game data world = {1} don't same", GameData.instance.clientWorld.Id, MmoEngine.Get.GameData.World.Name);
             }
             Debug.LogFormat("received status of game event in world = {0}, game event id = {1}", MmoEngine.Get.GameData.World.Name, eventId);
 

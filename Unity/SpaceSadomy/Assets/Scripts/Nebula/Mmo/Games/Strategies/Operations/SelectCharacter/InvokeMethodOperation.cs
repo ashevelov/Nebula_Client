@@ -13,6 +13,9 @@
             mHandlers = new Dictionary<string, System.Action<SelectCharacterGame, OperationResponse>>();
             mHandlers.Add("SetYesNoNotification", HandleSetYesNoNotification);
             mHandlers.Add("FindGuilds", HandleFindGuilds);
+            mHandlers.Add("InviteToGroup", HandleInviteToGroup);
+            mHandlers.Add("RequestToGroup", HandleRequestToGroup);
+            mHandlers.Add("SetGroupOpened", HandleSetGroupOpened);
         }
 
         public override void Handle(BaseGame game, OperationResponse response) {
@@ -34,6 +37,21 @@
                 return;
             }
             Debug.LogFormat("found {0} guilds", guilds.Count);
+        }
+
+        private void HandleInviteToGroup(SelectCharacterGame game, OperationResponse response) {
+            ReturnCode returnCode = (ReturnCode)ReturnValue<int>(response);
+            Debug.LogFormat("Invite to group return code = {0}", returnCode);
+        }
+
+        private void HandleRequestToGroup(SelectCharacterGame game, OperationResponse response) {
+            ReturnCode returnCode = (ReturnCode)ReturnValue<int>(response);
+            Debug.LogFormat("Request To Group return code = {0}", returnCode);
+        }
+
+        private void HandleSetGroupOpened(SelectCharacterGame game, OperationResponse response) {
+            ReturnCode returnCode = (ReturnCode)ReturnValue<int>(response);
+            Debug.LogFormat("Set Group Opened return code = {0}", returnCode);
         }
 
         private T ReturnValue<T>(OperationResponse response) {

@@ -119,7 +119,7 @@
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\CGInclude\PlanetAtmosphere.cginc" />
      <None Include="Assets\Resources\Data\Zones\E12.xml" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
-     <None Include="Assets\ThirdPartyAssets\SpaceUnity\Read First (Planet Expansion Pack 01).txt" />
+     <None Include="Assets\SpaceUnity\Read First (Planet Expansion Pack 01).txt" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantNormal.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Thruster\Flame.shader" />
@@ -191,7 +191,7 @@
      <None Include="Assets\Resources\Data\Zones\N2.xml" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\Resources\Data\Zones\E13.xml" />
-     <None Include="Assets\ThirdPartyAssets\SpaceUnity\Read First.txt" />
+     <None Include="Assets\SpaceUnity\Read First.txt" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\ThirdPartyAssets\Realistic Effects Pack\Shaders\Distortion\Free\FreeDistortionCullBack.shader" />
      <None Include="Assets\Shaders\Nebula_Nebula.shader" />
@@ -215,7 +215,7 @@
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetClouds\VariantPlanetShadow.shader" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
-     <None Include="Assets\ThirdPartyAssets\SpaceUnity\Shaders\PlanetRings.shader" />
+     <None Include="Assets\SpaceUnity\Shaders\PlanetRings.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\CGInclude\StarAtmosphere.cginc" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereOuterNormalSpecularPlanetShadowDetail.shader" />
      <None Include="Assets\ThirdPartyAssets\Realistic Effects Pack\Shaders\IceShaderDistortion.shader" />
@@ -426,7 +426,7 @@
      <None Include="Assets\ThirdPartyAssets\Landscapes part1\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetAtmosphere\VariantOuterRingShadow.shader" />
      <None Include="Assets\Resources\UI\Data\fps_view.xml" />
-     <None Include="Assets\ThirdPartyAssets\SpaceUnity\Shaders\PlanetSelfIllum.shader" />
+     <None Include="Assets\SpaceUnity\Shaders\PlanetSelfIllum.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJumpDistortion.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Resources\Data\object_icons.xml" />
@@ -452,7 +452,7 @@
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Corona\VariantPerPixelRing.shader" />
      <None Include="Assets\Resources\DataClient\Strings\buff_strings.xml" />
-     <None Include="Assets\ThirdPartyAssets\SpaceUnity\Shaders\PlanetStandard.shader" />
+     <None Include="Assets\SpaceUnity\Shaders\PlanetStandard.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Ring\VariantLit.shader" />
      <None Include="Assets\Resources\Data\Zones\B6.xml" />
      <None Include="Assets\ThirdPartyAssets\Realistic Effects Pack\Shaders\MultiplyDouble.shader" />
@@ -469,7 +469,7 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\NebulaStaticBoard.shader" />
      <None Include="Assets\Resources\Data\Zones\H7.xml" />
      <None Include="Assets\ThirdPartyAssets\Realistic Effects Pack\Shaders\Distortion\DistortionParticles.shader" />
-     <None Include="Assets\ThirdPartyAssets\SpaceUnity\Shaders\PlanetAtmosphere.shader" />
+     <None Include="Assets\SpaceUnity\Shaders\PlanetAtmosphere.shader" />
      <None Include="Assets\Shaders\InterestArea.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Nebula\Subtractive.shader" />
@@ -481,7 +481,7 @@
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Holographic.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\CGInclude\Starfield.cginc" />
-     <None Include="Assets\ThirdPartyAssets\SpaceUnity\Shaders\Resources\AsteroidTransparent.shader" />
+     <None Include="Assets\SpaceUnity\Shaders\Resources\AsteroidTransparent.shader" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Resources\Data\Zones\B7.xml" />

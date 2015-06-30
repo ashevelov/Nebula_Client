@@ -9,7 +9,7 @@
         }
 
         private void HandleEvent(NetworkGame game, EventData eventData) {
-            game.SetSkills(Properties(eventData));
+            GameData.instance.skills.ParseInfo(Properties(eventData));
         }
     }
 

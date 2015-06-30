@@ -74,34 +74,34 @@
   <module id="DM000011" name="DM000011_NAME" description="MODULE_DESC" workshop="Lerjees"  type="DM" set="S001"  model="Prefabs/Ships/Modules/B_HZ0001_DM" />
                                              
   <!--Criptizides-->                         
-  <module id="ES000012" name="ES000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES"  />
-  <module id="CB000012" name="CB000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" />
-  <module id="DF000012" name="DF000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" />
-  <module id="CM000012" name="CM000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" />
-  <module id="DM000012" name="DM000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" />
+  <module id="ES000012" name="ES000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="ES" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_ES"  />
+  <module id="CB000012" name="CB000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="CB" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CB" />
+  <module id="DF000012" name="DF000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="DF" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DF" />
+  <module id="CM000012" name="CM000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="CM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CM" />
+  <module id="DM000012" name="DM000012_NAME" description="MODULE_DESC" workshop="Yshuar"  type="DM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DM" />
                                              
-  <module id="ES000013" name="ES000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES"  />
-  <module id="CB000013" name="CB000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" />
-  <module id="DF000013" name="DF000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" />
-  <module id="CM000013" name="CM000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" />
-  <module id="DM000013" name="DM000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" />
+  <module id="ES000013" name="ES000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="ES" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_ES"  />
+  <module id="CB000013" name="CB000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="CB" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CB" />
+  <module id="DF000013" name="DF000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="DF" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DF" />
+  <module id="CM000013" name="CM000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="CM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CM" />
+  <module id="DM000013" name="DM000013_NAME" description="MODULE_DESC" workshop="KrolRo"  type="DM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DM" />
                                              
-  <module id="ES000014" name="ES000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES"  />
-  <module id="CB000014" name="CB000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" />
-  <module id="DF000014" name="DF000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" />
-  <module id="CM000014" name="CM000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" />
-  <module id="DM000014" name="DM000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" />
+  <module id="ES000014" name="ES000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="ES" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_ES"  />
+  <module id="CB000014" name="CB000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="CB" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CB" />
+  <module id="DF000014" name="DF000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="DF" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DF" />
+  <module id="CM000014" name="CM000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="CM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CM" />
+  <module id="DM000014" name="DM000014_NAME" description="MODULE_DESC" workshop="Arlen"  type="DM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DM" />
                                              
-  <module id="ES000015" name="ES000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES"  />
-  <module id="CB000015" name="CB000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" />
-  <module id="DF000015" name="DF000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" />
-  <module id="CM000015" name="CM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" />
-  <module id="DM000015" name="DM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" />
+  <module id="ES000015" name="ES000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="ES" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_ES"  />
+  <module id="CB000015" name="CB000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="CB" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CB" />
+  <module id="DF000015" name="DF000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="DF" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DF" />
+  <module id="CM000015" name="CM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="CM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CM" />
+  <module id="DM000015" name="DM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="DM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DM" />
                                              
-  <module id="ES000016" name="ES000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="ES" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_ES"  />
-  <module id="CB000016" name="CB000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CB" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CB" />
-  <module id="DF000016" name="DF000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DF" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DF" />
-  <module id="CM000016" name="CM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_CM" />
+  <module id="ES000016" name="ES000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="ES" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_ES"  />
+  <module id="CB000016" name="CB000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CB" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CB" />
+  <module id="DF000016" name="DF000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DF" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DF" />
+  <module id="CM000016" name="CM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CM" />
   <module id="DM000016" name="DM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" />
 
 </modules>

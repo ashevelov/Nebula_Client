@@ -15,6 +15,7 @@ Shader "Nebula/Ship" {
 		_MainTex("Base (RGB) Gloss (A)", 2D) = "white" {}
 		_BumpMap("Normalmap", 2D) = "bump" {}
 		_Illum("Illumin", 2D) = "white" {}
+		_Emission("Emission", float) = 1
 		
 	}
 		SubShader{
@@ -41,6 +42,7 @@ Shader "Nebula/Ship" {
 		sampler2D _Illum;
 		fixed4 _Color;
 		half _Shininess;
+		float _Emission;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -52,7 +54,7 @@ Shader "Nebula/Ship" {
 			fixed4 tex = tex2D(_MainTex, IN.uv_MainTex);
 			fixed4 c = tex * _Color;
 			o.Albedo = c.rgb;
-			o.Emission = c.rgb * tex2D(_Illum, IN.uv_Illum).a;
+			o.Emission = c.rgb * (tex2D(_Illum, IN.uv_Illum).rgb*_Emission);
 			o.Gloss = tex.a;
 			o.Alpha = c.a;
 			o.Specular = _Shininess;

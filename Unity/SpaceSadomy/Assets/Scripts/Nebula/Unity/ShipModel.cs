@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class ShipModel : MonoBehaviour {
 
-    private GameObject[] _shipModules = new GameObject[5];
+	private ArrayList m_shipModules = new ArrayList();
     private string newWorkshop = "DT";
     private bool hungar = false;
     private bool engineParticles = true;
@@ -16,6 +16,7 @@ public class ShipModel : MonoBehaviour {
     { ShipModelSlotType.DM, "Prefabs/Ships/Modules/H_DT0002_DM"},
     { ShipModelSlotType.CM, "Prefabs/Ships/Modules/H_DT0001_CM"},
     { ShipModelSlotType.ES, "Prefabs/Ships/Modules/H_DT0002_ES"} };
+	
 
     // TEST METHOD!!! load first workshop and first ship modules group
     public static GameObject Init(bool isPlayer)
@@ -50,6 +51,7 @@ public class ShipModel : MonoBehaviour {
         _shipModel.engineParticles = engineParticles;
         //Rigidbody _rigidBody = _ship.AddComponent<Rigidbody>();
         SphereCollider _collider = _ship.AddComponent<SphereCollider>();
+
         //_collider.isTrigger = true;
         //_ship.layer = LayerMask.NameToLayer("Player");
         //_rigidBody.useGravity = false;
@@ -116,7 +118,7 @@ public class ShipModel : MonoBehaviour {
 
     private void CreateModule(ShipModelSlotType type, Transform parent, int index)
     {
-        //Debug.Log("_modulesID[type] = " + _modulesID[type]);
+        Debug.Log("_modulesID[type] = " + _modulesID[type]+ "indx "+index);
         string t = _modulesID[type];
         t = t.Replace("DT", newWorkshop);
 		if (!hungar)
@@ -152,24 +154,42 @@ public class ShipModel : MonoBehaviour {
             }
         }
         go.GetComponentInChildren<MeshRenderer>().gameObject.AddComponent<PlayerModuleType>().SetSlotType(type);
-        _shipModules[index] = go;
+
+
+		m_shipModules.Insert(index,new ShipModule(go));
+
     }
+
+	public ShipModule 	GetModule(int indx)
+	{
+		Debug.Log("Get module "+indx);
+		if (indx >= 0 && indx < m_shipModules.Count)
+			return (ShipModule)m_shipModules[indx];
+		else return null;
+	}
+	public ArrayList	 GetModules(){ return m_shipModules; }
 
     public void UpdateModulesPos()
     {
-        for (int i = 1; i < 5; i++)
+		for (int i = 1; i < m_shipModules.Count; i++)
         {
             string _soketName = "soket_" + (i).ToString() + "_" + (i + 1).ToString();
-            Transform _soket1 = _shipModules[i].transform.Find(_soketName);
-            Transform _soket2 = _shipModules[i - 1].transform.Find(_soketName);
+			Transform _soket1 = GetModule(i).GetModel().transform.Find(_soketName);
+			Transform _soket2 = GetModule(i - 1).GetModel().transform.Find(_soketName);
             Vector3 delta = _soket2.position - _soket1.position;
-            _shipModules[i].transform.localPosition = delta;
+			GetModule(i).GetModel().transform.localPosition = delta;
         }
-        Vector3 offset = _shipModules[2].transform.localPosition;
-        for (int i = 0; i < 5; i++)
-        {
-            _shipModules[i].transform.localPosition -= offset;
-        }
+
+		if (m_shipModules.Count>2)
+		{
+			Vector3 offset = GetModule(2).GetModel().transform.localPosition;
+
+			for (int i = 0; i < m_shipModules.Count; i++)
+			{
+				GetModule(i).GetModel().transform.localPosition -= offset;
+			}
+		}
+
     }
 
 }

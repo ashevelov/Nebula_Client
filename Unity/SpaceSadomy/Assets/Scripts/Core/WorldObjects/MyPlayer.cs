@@ -294,7 +294,7 @@ public class MyPlayer : BaseSpaceObject {
 
             this.controlFSM.Update();
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR|| UNITY_STANDALONE
             if (Input.GetMouseButtonDown(1))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

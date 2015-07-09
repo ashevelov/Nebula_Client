@@ -45,6 +45,7 @@
 
         void Update() {
             if (AllOk() == false) {
+                Destroy(this.gameObject);
                 return;
             }
 

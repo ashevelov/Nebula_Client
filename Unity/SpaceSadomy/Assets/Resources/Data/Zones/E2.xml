@@ -1,12 +1,69 @@
-﻿<zones>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
   <zone id="E2" name="E2_NAME" level="2" owned_race="2">
-    <npc_groups>
-      <npc_group id="C_NPC_G_2_COMMON" />
-    </npc_groups>
-    <npcs></npcs>
-    <asteroids></asteroids>
-    <activators></activators>
-    <events></events>
-    <inputs></inputs>
+    <planets />
+    <npc_groups />
+    <npcs>
+      <npc id="PS001" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="33,67,-819" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS002" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="-243,71,-286" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS003" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="-467,55,-585" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS004" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="139,75,-597" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS005" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="433,333,480" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="hard" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS006" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="431,505,479" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS007" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="576,300,387" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS008" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="330,300,618" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="PS009" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="666,-1392,-887" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="PS010" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="958,-1392,-604" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="PS011" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="978,-1635,-596" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="hard" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="PS012" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="673,-1682,-890" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="hard" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="PS013" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="898,-1490,-831" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="boss" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+    </npcs>
+    <asteroids>
+      <asteroid index="1" force_create="True" respawn="200" data_id="CraftAsteroid0001" model="AST01" position="-387,19,-1109" rotation="0,0,0" />
+      <asteroid index="2" force_create="True" respawn="200" data_id="CraftAsteroid0002" model="AST01" position="-253,-60,-1158" rotation="0,0,0" />
+      <asteroid index="3" force_create="True" respawn="200" data_id="CraftAsteroid0001" model="AST01" position="-373,125,-1188" rotation="0,0,0" />
+      <asteroid index="4" force_create="True" respawn="200" data_id="CraftAsteroid0002" model="AST01" position="-814,45,-873" rotation="0,0,0" />
+      <asteroid index="5" force_create="True" respawn="200" data_id="CraftAsteroid0002" model="AST01" position="-589,86,-911" rotation="0,0,0" />
+      <asteroid index="6" force_create="True" respawn="200" data_id="CraftAsteroid0002" model="AST01" position="-637,26,-1043" rotation="0,0,0" />
+      <asteroid index="7" force_create="True" respawn="200" data_id="CraftAsteroid0001" model="AST01" position="-526,217,-1027" rotation="0,0,0" />
+      <asteroid index="8" force_create="True" respawn="200" data_id="CraftAsteroid0003" model="AST01" position="326,-1685,-1263" rotation="0,0,0" />
+      <asteroid index="9" force_create="True" respawn="200" data_id="CraftAsteroid0003" model="AST01" position="423,-1798,-1307" rotation="0,0,0" />
+      <asteroid index="10" force_create="True" respawn="200" data_id="CraftAsteroid0003" model="AST01" position="158,-1685,-1441" rotation="0,0,0" />
+      <asteroid index="11" force_create="True" respawn="200" data_id="CraftAsteroid0003" model="AST01" position="274,-1685,-1362" rotation="0,0,0" />
+      <asteroid index="12" force_create="True" respawn="200" data_id="CraftAsteroid0003" model="AST01" position="354,-1745,-1429" rotation="0,0,0" />
+      <asteroid index="13" force_create="True" respawn="200" data_id="CraftAsteroid0003" model="AST01" position="235,-1759,-1467" rotation="0,0,0" />
+    </asteroids>
+    <events />
+    <inputs>
+      <input key="zone_min" value="-200,-200,-200" type="vector" />
+      <input key="zone_max" value="200,200,200" type="vector" />
+      <input key="reach_radius" value="5" type="float" />
+    </inputs>
   </zone>
 </zones>

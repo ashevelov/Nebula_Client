@@ -165,6 +165,10 @@
                     {
                         return inventoryItemSprites.GetObject(itemObj.Type, "UI/Textures/schemes_Sprite");
                     }
+                //case InventoryObjectType.credits:
+                //    {
+                //        return inventoryItemSprites.GetObject(itemObj.Type, "credits");
+                //    }
                 default:
                     {
                         return materialSprites.GetObject("SPRITE_NOT_EXIST", "UI/Textures/schemes_Sprite");

@@ -8,6 +8,8 @@ using UnityEngine;
 using System.Collections;
 using Nebula.Mmo.Games;
 using Nebula.UI;
+using Nebula.Client.Store;
+using Nebula.Client.Auction;
 
 namespace Nebula {
 
@@ -30,6 +32,8 @@ namespace Nebula {
         public IServiceMessageReceiver sericeMessages { get; private set; }
         public ClientWorld clientWorld { get; private set; }
         public ClientSearchGroupsResult searchGroupResult { get; private set; }
+        public PlayerStore store { get; private set; }
+        public AuctionRequest auction { get; private set; }
 
         private GameData() {
             mailBox = new MailBox();
@@ -49,6 +53,8 @@ namespace Nebula {
             sericeMessages = new ServiceMessageReceiver(100);
             clientWorld = new ClientWorld();
             searchGroupResult = new ClientSearchGroupsResult();
+            store = new PlayerStore();
+            auction = new AuctionRequest();
         }
 
         public void Clear() {

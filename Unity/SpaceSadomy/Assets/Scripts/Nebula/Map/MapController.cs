@@ -140,8 +140,8 @@ public class MapController : MonoBehaviour {
         //});
         Vector3 tapPos;
 
-#if !UNITY_EDITOR
-        if(Input.touchCount != 0)
+#if !UNITY_EDITOR|| UNITY_STANDALONE
+        if (Input.touchCount != 0)
         {
 			if(Input.touches[0].phase == TouchPhase.Began)
 			{

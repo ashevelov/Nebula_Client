@@ -349,9 +349,110 @@
             Operations.InvokeMethod("RequestToGroup", parameters);
         }
 
+        public void DeleteGuild() {
+            if(!GameData.instance.guild.has) {
+                Debug.Log("no guild");
+                return;
+            }
+            if(!GameData.instance.guild.IsOwner(PlayerCharacters.SelectedCharacterId)) {
+                Debug.Log("not allow delete guild not owner");
+                return;
+            }
+            Operations.DeleteGuild(PlayerCharacters.SelectedCharacterId);
+        }
+
+        public void GetPlayerStore() {
+            Operations.GetPlayerStore(Engine.LoginGame.login, Engine.LoginGame.GameRefId, PlayerCharacters.SelectedCharacterId);
+        }
+
+        public void PutStore(InventoryType inventoryType, string itemID, int count) {
+            object[] parameters = new object[] { Engine.LoginGame.login, PlayerCharacters.SelectedCharacterId, Engine.LoginGame.GameRefId,
+            count, (byte)inventoryType, itemID};
+            Operations.InvokeMethod("PutStore", parameters);
+        }
+
+        public void SellToNPC(InventoryType inventoryType, string itemID, int count ) {
+            if(count <= 0) {
+                Debug.Log("count must be greater than zero");
+                return;
+            }
+            object[] parameters = new object[] { Engine.LoginGame.login, Engine.LoginGame.GameRefId, PlayerCharacters.SelectedCharacterId,
+            count, (byte)inventoryType, itemID };
+            Operations.InvokeMethod("SellToNPC", parameters);
+        }
+
+        public void PutToAuction(string itemID, InventoryType inventoryType, int count, int price) {
+            object[] parameters = new object[] {
+                Engine.LoginGame.login,
+                Engine.LoginGame.GameRefId,
+                PlayerCharacters.SelectedCharacterId,
+                count,
+                (byte)inventoryType,
+                itemID,
+                price
+            };
+            Operations.InvokeMethod("PutToAuction", parameters);
+        }
+
+        public void GetCurrentAuctionPage(bool reset) {
+            object[] parameters = new object[] {
+                PlayerCharacters.SelectedCharacterId,
+                reset,
+                GameData.instance.auction.FilterHash()
+            };
+            Operations.InvokeMethod("GetCurrentAuctionPage", parameters);
+        }
+
+        public void GetNextAuctionPage() {
+            object[] parameters = new object[] {
+                PlayerCharacters.SelectedCharacterId
+            };
+            Operations.InvokeMethod("GetNextAuctionPage", parameters);
+        }
+
+        public void GetPrevAuctionPage() {
+            object[] parameters = new object[] {
+                PlayerCharacters.SelectedCharacterId
+            };
+            Operations.InvokeMethod("GetPrevAuctionPage", parameters);
+        }
+
+        public void TestPutItemToAuction() {
+            Dictionary<string, ClientInventoryItem> filtered = null;
+            if(GameData.instance.inventory.Items.TryGetValue(InventoryObjectType.Material, out filtered) ) {
+                if(filtered.Count > 0 ) {
+                    ClientInventoryItem firstItem = null;
+                    foreach(var pair in filtered) {
+                        firstItem = pair.Value;
+                        break;
+                    }
+
+                    if(firstItem != null ) {
+                        PutToAuction(firstItem.Object.Id, InventoryType.ship, firstItem.Count, 200);
+                        Debug.Log("try putted item to auction");
+                    }
+                }
+            }
+        }
+
         //====================================
         public static class Operations {
 
+            public static void GetPlayerStore(string login, string gameRefID, string characterID ) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.Login, login },
+                    { (byte)ParameterCode.GameRefId, gameRefID },
+                    { (byte)ParameterCode.CharacterId, characterID }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.GetPlayerStore, parameters, true, Settings.ItemChannel);
+            }
+
+            public static void DeleteGuild(string ownerCharacterID ) {
+                Dictionary<byte, object> parameters = new Dictionary<byte, object> {
+                    { (byte)ParameterCode.SourceCharacterId, ownerCharacterID }
+                };
+                SelectCharacterGame.Instance().SendOperation((byte)SelectCharacterOperationCode.DeleteGuild, parameters, true, Settings.ItemChannel);
+            }
 
             public static void ChangeGuildMemberStatus(string guildID, string sourceCharacterID, string targetCharacterID, GuildMemberStatus status) {
                 Dictionary<byte, object> parameters = new Dictionary<byte, object> {

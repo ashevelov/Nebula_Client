@@ -57,4 +57,43 @@ public class ShipModuleInfoPanel : MonoBehaviour, IShipModuleInfo {
         this.allModulesNames.text = names;
         this.allModulesValues.text = values;
     }
+
+    public Text nameRaceWorkshop;
+    public void SetNameRaceWorkshop(string text)
+    {
+        nameRaceWorkshop.text = text;
+    }
+
+    public Image CB;
+    public Image DF;
+    public Image DM;
+    public Image CM;
+    public Image ES;
+
+    public void UpdateModuleIcon(string moduleType, Sprite icon) 
+    {
+        Debug.Log("type " + moduleType +" icon " + icon);
+        if (icon != null)
+        {
+            switch (moduleType)
+            {
+                case "CB":
+                    CB.sprite = icon;
+                    return;
+                case "DF":
+                    DF.sprite = icon;
+                    return;
+                case "DM":
+                    DM.sprite = icon;
+                    return;
+                case "CM":
+                    CM.sprite = icon;
+                    return;
+                case "ES":
+                    ES.sprite = icon;
+                    return;
+            }
+        }
+    }
+
 }

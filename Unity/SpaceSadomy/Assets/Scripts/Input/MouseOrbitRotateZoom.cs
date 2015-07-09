@@ -162,8 +162,8 @@ public class MouseOrbitRotateZoom : Singleton<MouseOrbitRotateZoom>
         if(SU_SpaceSceneCamera.Get ) {
             SU_SpaceSceneCamera.Get.CameraUpdate();
         }
-#if UNITY_EDITOR
-        if(G.IsPlayerValid () ) {
+#if UNITY_EDITOR|| UNITY_STANDALONE
+        if (G.IsPlayerValid () ) {
             if(CrossPlatformInput.IsButton(1)) {
                 G.PlayerComponent.SetTargetDirection(transform.forward);
             }

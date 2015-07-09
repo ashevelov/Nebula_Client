@@ -21,16 +21,29 @@ namespace Client.UIP.Implementation
             ClientShipCombatStats info = GameData.instance.stats; //G.Game.CombatStats;
             names = string.Empty;
             values = string.Empty;
-
-
-            AddInfo("HP", (int)info.MaxHP);
-            AddInfo("Energy", (int)info.MaxEnergy);
-            AddInfo("Speed", (int)info.MaxSpeed);
-            AddInfo("Damage", (int)info.damage);
-            AddInfo("Resist", (int)info.DamageResist);
-            AddInfo("Optimal Distance", (int)info.WeaponOptimalDistance);
-
+            AddInfo(Nebula.Resources.StringCache.Get("HP"), (int)info.MaxHP);
+            AddInfo(Nebula.Resources.StringCache.Get("ENERGY"), (int)info.MaxEnergy);
+            AddInfo(Nebula.Resources.StringCache.Get("SPEED"), (int)info.MaxSpeed);
+            AddInfo(Nebula.Resources.StringCache.Get("DAMAGE"), (int)info.damage);
+            AddInfo(Nebula.Resources.StringCache.Get("RESIST"), (int)info.DamageResist);
+            AddInfo(Nebula.Resources.StringCache.Get("OPTIMAL"), (int)info.WeaponOptimalDistance);
+            if (uicPanel == null)
+            {
+                Debug.Log("uicPanel == null");
+                uicPanel = GetComponent<IShipModuleInfo>();
+            }
             uicPanel.SetAllParams(names, values);
+
+            string nameRaceWorkshop = GameData.instance.playerInfo.Name;
+            nameRaceWorkshop += "  /  " + GameData.instance.playerInfo.Race;
+            nameRaceWorkshop += "  /  " + GameData.instance.playerInfo.Workshop;
+            uicPanel.SetNameRaceWorkshop(nameRaceWorkshop);
+
+            uicPanel.UpdateModuleIcon("CB", SpriteCache.SpriteModule("ShipInfoModules/" + GameData.instance.ship.ShipModel.cb.Module.templateId));
+            uicPanel.UpdateModuleIcon("DF", SpriteCache.SpriteModule("ShipInfoModules/" + GameData.instance.ship.ShipModel.df.Module.templateId));
+            uicPanel.UpdateModuleIcon("DM", SpriteCache.SpriteModule("ShipInfoModules/" + GameData.instance.ship.ShipModel.dm.Module.templateId));
+            uicPanel.UpdateModuleIcon("CM", SpriteCache.SpriteModule("ShipInfoModules/" + GameData.instance.ship.ShipModel.cm.Module.templateId));
+            uicPanel.UpdateModuleIcon("ES", SpriteCache.SpriteModule("ShipInfoModules/" + GameData.instance.ship.ShipModel.es.Module.templateId));
         }
 
         public void UpdateCBInfo()
@@ -66,12 +79,12 @@ namespace Client.UIP.Implementation
             values = string.Empty;
 
 
-            AddInfo("damage", info.damage);
-            AddInfo("level", info.critDamage);
-            AddInfo("HitProb", (int)info.HitProb);
-            AddInfo("Range", (int)info.Range);
-            AddInfo("Level", (int)info.WeaponObject.Level);
-            AddInfo("Color", (int)info.WeaponObject.Color);
+            AddInfo(Nebula.Resources.StringCache.Get("HP"), info.damage);
+            AddInfo(Nebula.Resources.StringCache.Get("CRIT"), info.critDamage);
+            AddInfo(Nebula.Resources.StringCache.Get("HIT"), (int)info.HitProb);
+            AddInfo(Nebula.Resources.StringCache.Get("RANGE"), (int)info.Range);
+            AddInfo(Nebula.Resources.StringCache.Get("LEVEL"), (int)info.WeaponObject.Level);
+            AddInfo(Nebula.Resources.StringCache.Get("COLOR"), (int)info.WeaponObject.Color);
 
             uicPanel.SetParams(names, values);
 
@@ -79,7 +92,7 @@ namespace Client.UIP.Implementation
             uicPanel.SetIcon(icon);
 
             Sprite skillIcon = null;
-            string skillDesc = ""; //SpriteCache.SpriteSkill("H" + info.skill.ToString("X8"));
+            string skillDesc = "No Skill";
             uicPanel.SetSkill(skillIcon, skillDesc);
         }
 
@@ -92,25 +105,30 @@ namespace Client.UIP.Implementation
             values = string.Empty;
 
 
-            AddInfo("Name", info.name);
-            AddInfo("level", info.level);
-            AddInfo("hp", (int)info.hp);
-            AddInfo("energy", (int)info.energy);
-            AddInfo("resist", (int)info.resist);
-            AddInfo("speed", (int)info.speed);
-            AddInfo("damageBonus", (int)info.damageBonus);
-            AddInfo("critChance", (int)info.critChance);
-            AddInfo("critDamage", (int)info.critDamage);
-            AddInfo("hold", (int)info.hold);
-            AddInfo("color", (int)info.color);
+            AddInfo(Nebula.Resources.StringCache.Get("NAME"), info.name);
+            AddInfo(Nebula.Resources.StringCache.Get("LEVEL"), info.level);
+            AddInfo(Nebula.Resources.StringCache.Get("HP"), (int)info.hp);
+            AddInfo(Nebula.Resources.StringCache.Get("ENERGY"), (int)info.energy);
+            AddInfo(Nebula.Resources.StringCache.Get("RESIST"), (int)info.resist);
+            AddInfo(Nebula.Resources.StringCache.Get("SPEED"), (int)info.speed);
+            AddInfo(Nebula.Resources.StringCache.Get("DAMAGE"), (int)info.damageBonus);
+            AddInfo(Nebula.Resources.StringCache.Get("CRIT_CHANCE"), (int)info.critChance);
+            AddInfo(Nebula.Resources.StringCache.Get("CRIT_DAMAGE"), (int)info.critDamage);
+            AddInfo(Nebula.Resources.StringCache.Get("HOLD"), (int)info.hold);
+            AddInfo(Nebula.Resources.StringCache.Get("COLOR"), (int)info.color);
 
             uicPanel.SetParams(names, values);
 
             Sprite icon = SpriteCache.SpriteModule(info.templateId);
             uicPanel.SetIcon(icon);
 
-            Sprite skillIcon = SpriteCache.SpriteSkill("H" + info.skill.ToString("X8"));
-            string skillDesc = StringCache.Get("H" + info.skill.ToString("X8")); //SpriteCache.SpriteSkill("H" + info.skill.ToString("X8"));
+            Sprite skillIcon = null;
+            string skillDesc = "No Skill";
+            if (info.HasSkill)
+            {
+                skillIcon = SpriteCache.SpriteSkill("H" + info.skill.ToString("X8"));
+                skillDesc = StringCache.Get("H" + info.skill.ToString("X8")); //SpriteCache.SpriteSkill("H" + info.skill.ToString("X8"));
+            }
             uicPanel.SetSkill(skillIcon, skillDesc);
         }
 

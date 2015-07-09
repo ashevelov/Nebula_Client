@@ -65,7 +65,17 @@ namespace Client.UIC.Implementation
         public Image itemIcon;
         public Sprite Icon
         {
-            set { itemIcon.sprite = value; }
+            set {
+                if (value != null)
+                {
+                    itemIcon.gameObject.SetActive(true);
+                    itemIcon.sprite = value;
+                }
+                else
+                {
+                    itemIcon.gameObject.SetActive(false);
+                }
+            }
         }
 
         public string Color

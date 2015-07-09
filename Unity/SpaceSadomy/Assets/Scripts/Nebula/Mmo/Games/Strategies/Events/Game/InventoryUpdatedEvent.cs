@@ -2,6 +2,7 @@
     using ExitGames.Client.Photon;
     using Nebula.Mmo.Games;
     using Nebula.UI;
+    using UnityEngine;
 
     public class InventoryUpdatedEvent : BaseGenericEvent {
 
@@ -14,6 +15,7 @@
             //update inventory if opened
             InventoryView.UpdateView();
             global::Nebula.Events.EvtPlayerInventoryUpdated();
+            Debug.Log("inventory update received event".Color("orange"));
         }
     } 
 }

@@ -95,6 +95,10 @@
 
             //make new items as current items
             this.currentItems = newItems;
+            if (this.currentItems.Count == 0)
+            {
+                OnCloseButtonClick();
+            }
         }
 
         private string TitleString() {

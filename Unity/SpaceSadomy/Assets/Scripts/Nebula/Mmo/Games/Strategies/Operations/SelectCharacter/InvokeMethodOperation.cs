@@ -16,6 +16,10 @@
             mHandlers.Add("InviteToGroup", HandleInviteToGroup);
             mHandlers.Add("RequestToGroup", HandleRequestToGroup);
             mHandlers.Add("SetGroupOpened", HandleSetGroupOpened);
+            mHandlers.Add("PutToAuction", HandlePutToAuction);
+            mHandlers.Add("GetCurrentAuctionPage", HandleGetCurrentAuctionPage);
+            mHandlers.Add("GetNextAuctionPage", HandleGetNextAuctionPage);
+            mHandlers.Add("GetPrevAuctionPage", HandleGetPrevAuctionPage);
         }
 
         public override void Handle(BaseGame game, OperationResponse response) {
@@ -24,6 +28,26 @@
             if(mHandlers.ContainsKey(methodName)) {
                 mHandlers[methodName](scgame, response);
             }
+        }
+
+        private void HandleGetCurrentAuctionPage(SelectCharacterGame game, OperationResponse response) {
+            Hashtable ret = ReturnValue<Hashtable>(response);
+            GameData.instance.auction.ParseInfo(ret);
+        }
+
+        private void HandleGetNextAuctionPage(SelectCharacterGame game, OperationResponse response) {
+            Hashtable ret = ReturnValue<Hashtable>(response);
+            GameData.instance.auction.ParseInfo(ret);
+        }
+
+        private void HandleGetPrevAuctionPage(SelectCharacterGame game, OperationResponse response) {
+            Hashtable ret = ReturnValue<Hashtable>(response);
+            GameData.instance.auction.ParseInfo(ret);
+        }
+
+        private void HandlePutToAuction(SelectCharacterGame game, OperationResponse response) {
+            bool success = ReturnValue<bool>(response);
+            Debug.LogFormat("HandlePutToAuction: return value = {0}", success);
         }
 
         private void HandleSetYesNoNotification(SelectCharacterGame game, OperationResponse response) {

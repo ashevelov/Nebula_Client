@@ -226,18 +226,30 @@ namespace Nebula.Mmo.Items
                 //     ButtonText = "Info",
                 //      ButtonAction = ()=> { Debug.Log("Show chest info"); }
                 //},
-                new SelectedObjectContextMenuView.InputEntry {
-                    ButtonText = "Invite To Group",
-                    ButtonAction = () => {
-                        //here send invite
-                        Debug.Log("invite to group called");
-                        string characterID = (GetMmoComponent(ComponentID.Character) as MmoCharacterComponent).characterID;
-                        Debug.LogFormat("player who will be invited = {0}", characterID);
-                        SelectCharacterGame.Instance().InviteToGroup(characterID);
-                    }
-                }
+                //new SelectedObjectContextMenuView.InputEntry {
+                //    ButtonText = Nebula.Resources.StringCache.Get("INVITE_TO_GROUP"),
+                //    ButtonAction = () => {
+                //        //here send invite
+                //        Debug.Log("invite to group called");
+                //        string characterID = (GetMmoComponent(ComponentID.Character) as MmoCharacterComponent).characterID;
+                //        Debug.LogFormat("player who will be invited = {0}", characterID);
+                //        SelectCharacterGame.Instance().InviteToGroup(characterID);
+                //    }
+                //}
             };
-            return new SelectedObjectContextMenuView.InputData {
+
+            if (GameData.instance.guild.has 
+                && GameData.instance.guild.GetMember(SelectCharacterGame.Instance().PlayerCharacters.SelectedCharacterId).GrantedAddMember() 
+                && (false == GameData.instance.guild.IsMember(character.characterID))) {
+                var entry = new SelectedObjectContextMenuView.InputEntry {
+                    ButtonText = Nebula.Resources.StringCache.Get("INVITE_TO_GUILD"),
+                    ButtonAction = () => {
+                        SelectCharacterGame.Instance().InviteToGuild();
+                    }
+                };
+                entries.Add(entry);
+            } 
+                return new SelectedObjectContextMenuView.InputData {
                 TargetItem = this,
                 Inputs = entries
             };

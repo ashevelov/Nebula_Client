@@ -9,6 +9,7 @@ using Nebula.Resources;
 using Client.UIC.Implementation;
 using Client.UIC;
 using Nebula.Client;
+using Nebula.UI;
 
 namespace Client.UIP.Implementation
 {
@@ -30,15 +31,12 @@ namespace Client.UIP.Implementation
         {
             if (CheckCondition())
             {
-                Debug.Log("UpdateInfo2");
                 UpdateItems();
                 if (inventoryPanelType == InventoryType.station)
                 {
-                    Debug.Log("UpdateInfo3");
                     UpdateModules();
                 }
             }
-            Debug.Log("UpdateInfo1");
             yield return new WaitForSeconds(0.5f);
             StartCoroutine(UpdateInfo());
         }
@@ -85,11 +83,10 @@ namespace Client.UIP.Implementation
             this.currentItems = newItems;
         }
 
-        private List<ClientShipModule> newModules = new List<ClientShipModule>();
         private List<ClientShipModule> currentModules = new List<ClientShipModule>();
         void UpdateModules()
         {
-
+            List<ClientShipModule> newModules = new List<ClientShipModule>();
             Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
             Hashtable moduleObjectsHash = null;
                // newItems = G.Game.//G.StationInventory.OrderedItems();
@@ -125,7 +122,7 @@ namespace Client.UIP.Implementation
                     uicPanel.RemoveItem(module.id);
                 }
             }
-            //this.currentModules = this.newModules;
+            this.currentModules = newModules;
         }
 
         public bool CheckCondition()
@@ -143,14 +140,46 @@ namespace Client.UIP.Implementation
         {
 
             string id = clientItem.id;
-            string name = "name hz";
-            string type = clientItem.Type.ToString();
+            string name = clientItem.type.ToString();// "name hz";
+            string type = clientItem.type.ToString();
             string color = clientItem.color.ToString();
             int count = 1;
             IItemInfo info = new ItemInfo();
-            info.Icon = SpriteCache.SpriteModule(clientItem.templateId);
+            string iconPath = "ShipInfoModules/" + clientItem.templateId; //.prefab.Replace("Prefabs/Ships/Modules/","");
+            Debug.Log(iconPath);
+            info.Icon = SpriteCache.SpriteModule(iconPath);
             Dictionary<string, System.Action<string>> actions = new Dictionary<string, System.Action<string>>();
             Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+
+            actions.Add("del", (itemId) =>
+                {
+                    Debug.Log("del item " + itemId);
+                    NRPC.DestroyModule(itemId);
+                });
+
+            //parameters.Add("ID", clientItem.Id);
+            parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), clientItem.workshop.ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("LEVEL"), clientItem.level.ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("HP"), ((int)clientItem.hp).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("RESIST"), ((int)clientItem.resist).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("SPEED"), ((int)clientItem.speed).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("CRIT_CHANCE"), ((int)clientItem.critChance).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("CRIT_DAMAGE"), ((int)clientItem.critDamage).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("DAMAGE_BONUS"), ((int)clientItem.damageBonus).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("DISTANS_BONUS"), ((int)clientItem.distanceBonus).ToString());
+            name = clientItem.name;
+            info.Parametrs = parameters;
+
+            info.SkillIcon = SpriteCache.SpriteSkill("H" + clientItem.skill.ToString("X8"));
+            info.SkillDescription = StringCache.Get("H" + clientItem.skill.ToString("X8"));
+
+            actions.Add("equip", (itemId) =>
+            {
+                Debug.Log("equip item " + itemId);
+                NRPC.EquipModuleFromHoldToShip(itemId);
+            });
+
             uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info, actions));
 
         }
@@ -170,14 +199,12 @@ namespace Client.UIP.Implementation
 
             actions.Add("del", (itemId) =>
                 {
-                    Debug.Log("del  item : " + itemId);
                     NRPC.DestroyInventoryItem(inventoryPanelType, currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
                 });
 
 
             actions.Add("move", (itemId) =>
             {
-                Debug.Log("move  item : " + itemId);
                 if (inventoryPanelType == InventoryType.station)
                 {
                     NRPC.MoveItemFromStationToInventory(currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
@@ -193,7 +220,7 @@ namespace Client.UIP.Implementation
             if(clientItem.Object is MaterialInventoryObjectInfo)
             {
                 MaterialInventoryObjectInfo objectInfo = clientItem.Object as MaterialInventoryObjectInfo;
-                parameters.Add("Name", objectInfo.Name);
+                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), objectInfo.Name);
                 name = objectInfo.Name;
                 info.Parametrs = parameters;
             }else if (clientItem.Object is WeaponInventoryObjectInfo)
@@ -201,18 +228,17 @@ namespace Client.UIP.Implementation
                 WeaponInventoryObjectInfo objectInfo = clientItem.Object as WeaponInventoryObjectInfo;
                 var weaponTemplate = DataResources.Instance.Weapon(objectInfo.Template);
 
-                parameters.Add("Name", weaponTemplate.Name);
-                parameters.Add("Workshop", weaponTemplate.Workshop.ToString());
-                parameters.Add("Damage", objectInfo.damage.ToString());
-                parameters.Add("Level", objectInfo.Level.ToString());
-                parameters.Add("Range", objectInfo.Range.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), weaponTemplate.Name);
+                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), weaponTemplate.Workshop.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("DAMAGE"), objectInfo.damage.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("LEVEL"), objectInfo.Level.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("RANGE"), objectInfo.Range.ToString());
                 name = weaponTemplate.Name;
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get(weaponTemplate.Description);
 
                 actions.Add("equip", (itemId) =>
                 {
-                    Debug.Log("equip = " + itemId);
                     NRPC.EquipWeapon(inventoryPanelType, itemId);
                 });
             }
@@ -220,22 +246,41 @@ namespace Client.UIP.Implementation
             {
                 SchemeInventoryObjectInfo objectInfo = clientItem.Object as SchemeInventoryObjectInfo;
 
-                parameters.Add("Name", "Scheme");
-                parameters.Add("Workshop", objectInfo.Workshop.ToString());
-                parameters.Add("Level", objectInfo.Level.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), Nebula.Resources.StringCache.Get("SCHEME"));
+                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), objectInfo.Workshop.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("LEVEL"), objectInfo.Level.ToString());
 
                 var module = DataResources.Instance.ModuleData(objectInfo.TargetTemplateId);
-                parameters.Add("Module type", StringCache.Get(module.NameId.Remove(2)));
+                parameters.Add(Nebula.Resources.StringCache.Get("MODULE_TYPE"), StringCache.Get(module.NameId.Remove(2)));
 
                 foreach(var material in objectInfo.CraftMaterials)
                 {
                     var materialData = DataResources.Instance.OreData(material.Key);
                     parameters.Add(StringCache.Get(materialData.Name), material.Value.ToString());
                 }
-                name = "Scheme";
+                name = Nebula.Resources.StringCache.Get("SCHEME");
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get("SCHEME_DESC");
+
+                if (inventoryPanelType == InventoryType.station)
+                {
+                    actions.Add("craft", (itemId) =>
+                    {
+                        CraftModele(itemId);
+                        //NRPC.EquipWeapon(inventoryPanelType, itemId);
+                    });
+                }
             }
+            //else if (clientItem.Object is CreditsObjectInfo)
+            //{
+            //    CreditsObjectInfo objectInfo = clientItem.Object as CreditsObjectInfo;
+
+            //    parameters.Add("Name", "Credits");
+            //    parameters.Add("Count", objectInfo.Count().ToString());
+            //    name = "Credits";
+            //    info.Parametrs = parameters;
+            //    info.Description = StringCache.Get("SCHEME_DESC");
+            //}
             //else if (clientItem.Object is hol)
             //{
             //    MaterialInventoryObjectInfo objectInfo = clientItem.Object as MaterialInventoryObjectInfo;
@@ -249,5 +294,53 @@ namespace Client.UIP.Implementation
             uicPanel.AddItem(new InventoryItem(id, info.Icon, color, name, type, count, 0, info, new Dictionary<string, System.Action<string>>(actions)));
             actions = null;
         }
+
+        private void CraftModele(string itemId)
+        {
+            SchemeInventoryObjectInfo scheme = currentItems.Find(m => m.Object.Id == itemId).Object as SchemeInventoryObjectInfo;
+            if (scheme == null)
+            {
+                return;
+            }
+
+            if (PlayerHasMaterials(scheme))
+            {
+                ActionProgressView.DataObject data = new ActionProgressView.DataObject
+                {
+                    ActionText = Nebula.Resources.StringCache.Get("CRAFTING"),
+                    Duration = 1f,
+                    CompleteAction = () =>
+                    {
+                        //if (MainCanvas.Get.Exists(CanvasPanelType.SchemeCraftView))
+                        //{
+                            NRPC.TransformInventoryObjectAndMoveToStationHold(scheme.Type, scheme.Id);
+                            Debug.Log("Crafting");
+                        //}
+                    }
+                };
+
+                MainCanvas.Get.Show(CanvasPanelType.ActionProgressView, data);
+            }
+            else
+            {
+                G.Game.Engine.GameData.Chat.PastLocalMessage("You don't has required materials for crafting modules...");
+            }
+        }
+
+        private bool PlayerHasMaterials(SchemeInventoryObjectInfo scheme)
+        {
+            bool hasAll = true;
+            foreach (var pMaterial in scheme.CraftMaterials)
+            {
+                if (GameData.instance.station.StationInventory.ItemCount(InventoryObjectType.Material, pMaterial.Key) < pMaterial.Value)
+                {
+                    hasAll = false;
+                    break;
+                }
+            }
+            return hasAll;
+        }
     }
+
+
 }

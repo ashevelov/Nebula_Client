@@ -18,6 +18,8 @@
                 return;
             }
 
+            Debug.Log(guildHash.ToHashString());
+
             game.Engine.GameData.guild.ParseInfo(guildHash);
         }
     }

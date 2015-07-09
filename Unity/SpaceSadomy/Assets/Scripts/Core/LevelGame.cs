@@ -36,6 +36,7 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
     }
 
 
+
     private IEnumerator CreatePlayerShip()
     {
         Debug.Log("<color=orange>Starting Coroutine for CREATING MY PLAYER SHIP</color>");
@@ -202,23 +203,23 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
 
     private void CreateActivator(Item item)
     {
-        var activatorItem = item as WorldActivatorItem;
+        //var activatorItem = item as WorldActivatorItem;
 
-        switch(activatorItem.ActivatorType)
-        {
-            case ActivatorType.SPACE_SCHEME:
-                {
-                    //Debug.Log("Create Data activator");
-                    activatorItem.Create(Instantiate(PrefabCache.Get("Prefabs/WorldObjects/data")) as GameObject);
-                }
-                break;
-            default:
-                {
-                    //Debug.Log("Create default activator");
-                    activatorItem.Create(Instantiate(PrefabCache.Get("Prefabs/WorldObjects/WorldActivator")) as GameObject);
-                }
-                break;
-        }
+        //switch(activatorItem.ActivatorType)
+        //{
+        //    case ActivatorType.SPACE_SCHEME:
+        //        {
+        //            //Debug.Log("Create Data activator");
+        //            activatorItem.Create(Instantiate(PrefabCache.Get("Prefabs/WorldObjects/data")) as GameObject);
+        //        }
+        //        break;
+        //    default:
+        //        {
+        //            //Debug.Log("Create default activator");
+        //            activatorItem.Create(Instantiate(PrefabCache.Get("Prefabs/WorldObjects/WorldActivator")) as GameObject);
+        //        }
+        //        break;
+        //}
 
     }
 

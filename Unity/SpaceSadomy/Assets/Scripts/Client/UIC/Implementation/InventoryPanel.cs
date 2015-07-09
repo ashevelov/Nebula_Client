@@ -134,7 +134,7 @@ namespace Client.UIC.Implementation
             int index = 0;
             if(actions != null)
             {
-                if (actions["del"] != null)
+                if (actions.ContainsKey("del"))
                 {
                     actionButtons[index].interactable = true;
                     actionButtons[index].onClick.RemoveAllListeners();
@@ -142,7 +142,7 @@ namespace Client.UIC.Implementation
                     actionButtons[index].GetComponentInChildren<Text>().text = "del";
                     index++;
                 }
-                if (actions["move"] != null)
+                if (actions.ContainsKey("move"))
                 {
                     actionButtons[index].interactable = true;
                     actionButtons[index].onClick.RemoveAllListeners();
@@ -150,12 +150,20 @@ namespace Client.UIC.Implementation
                     actionButtons[index].GetComponentInChildren<Text>().text = "move";
                     index++;
                 }
-                if (actions["equip"] != null)
+                if (actions.ContainsKey("equip"))
                 {
                     actionButtons[index].interactable = true;
                     actionButtons[index].onClick.RemoveAllListeners();
                     actionButtons[index].onClick.AddListener(() => actions["equip"](ItemID));
                     actionButtons[index].GetComponentInChildren<Text>().text = "equip";
+                    index++;
+                }
+                if (actions.ContainsKey("craft"))
+                {
+                    actionButtons[index].interactable = true;
+                    actionButtons[index].onClick.RemoveAllListeners();
+                    actionButtons[index].onClick.AddListener(() => actions["craft"](ItemID));
+                    actionButtons[index].GetComponentInChildren<Text>().text = "craft";
                     index++;
                 }
 

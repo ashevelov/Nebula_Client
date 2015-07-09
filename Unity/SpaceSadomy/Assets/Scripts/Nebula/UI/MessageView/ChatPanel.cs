@@ -102,17 +102,17 @@ namespace Nebula.UI {
 
         private bool ComputeCommand(string command) {
             switch (command.Trim().ToLower()) {
-                case "$addore": {
+                case "addore": {
                         NRPC.CmdAddOres();
                         G.Game.Engine.GameData.Chat.PastLocalMessage("Command: #add_ore");
                         return true;
                     }
-                case "$tgm": {
+                case "tgm": {
                         Operations.ExecAction(G.Game, G.Game.AvatarId, "TGM", new object[] { });
                         //G.Game.Chat.PastLocalMessage("Command: #tgm");
                         return true;
                     }
-                case "$mtt":{
+                case "mtt":{
                         if(G.Game.Avatar == null || (!G.Game.Avatar.Target.HasTarget) || (G.Game.Avatar.Target.Item == null) ||
                             (G.Game.Avatar.Target.Item.View == null )) {
                             return true;
@@ -122,46 +122,61 @@ namespace Nebula.UI {
                         G.Game.Engine.GameData.Chat.PastLocalMessage("Command: #mtt");
                         return true;
                     }
-                case "$testbuffs":
+                case "testbuffs":
                     {
                         NRPC.TestBuffs();
                         return true;
                     }
-                case "$addscheme": {
+                case "addscheme": {
                         NRPC.EA_AddScheme();
                         return true;
                     }
-                case "$sselector":
+                case "sselector":
                     {
                         MainCanvas.Get.Show(CanvasPanelType.SchemeSelectorView, CommonUtils.RandomSlotType());
                         return true;
                     }
-                case "$craft":
+                case "craft":
                     {
                         MainCanvas.Get.Show(CanvasPanelType.SchemeCraftView);
                         return true;
                     }
-                case "$addslots":
+                case "addslots":
                     {
                         NRPC.AddInventorySlots();
                         return true;
                     }
-                case "$station":
+                case "station":
                     {
                         G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
                         return true;
                     }
-                case "$menu":
+                case "menu":
                     {
                         NRPC.ExitToSelectCharacterMenu();
                         return true;
                     }
-                case "$buff":
+                case "buff":
                     {
                         NetworkGame.SetRandomBuff();
                         return true;
                     }
                 case "notify": { SelectCharacterGame.Instance().InvokeMethod("SetYesNoNotification", null);
+                        return true;
+                    }
+                case "putstore":
+                    {
+                        SelectCharacterGame.Instance().PutStore(InventoryType.ship, "CraftOre0004", 1);
+                        return true;
+                    }
+                case "credits":
+                    {
+                        NetworkGame.Instance().TestAddCredits(100);
+                        return true;
+                    }
+                case "putauction":
+                    {
+                        SelectCharacterGame.Instance().TestPutItemToAuction();
                         return true;
                     }
                 default:

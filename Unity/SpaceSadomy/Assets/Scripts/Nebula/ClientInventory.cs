@@ -239,11 +239,11 @@
                             AddItem(InventoryObjectInfoFactory.GetClientDrillSchemeObject(itemTable), itemCount);
                             break;
                         }
-                    case InventoryObjectType.credits:
-                        {
-                            AddItem(InventoryObjectInfoFactory.GetCreditsObject(itemTable), itemCount);
-                            break;
-                        }
+                    //case InventoryObjectType.credits:
+                    //    {
+                    //        AddItem(InventoryObjectInfoFactory.GetCreditsObject(itemTable), itemCount);
+                    //        break;
+                    //    }
                 }
             }
         }

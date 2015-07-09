@@ -33,7 +33,7 @@ namespace Nebula.UI {
 
         private void SelectRace(Race race) {
             this.selectedRace = DataResources.Instance.ResRaces().Races()[race];
-            this.RaceImage.overrideSprite = SpriteCache.RaceSprite(this.selectedRace.Id);
+            //this.RaceImage.overrideSprite = SpriteCache.RaceSprite(this.selectedRace.Id);
             this.RaceDescriptionText.text = stringRes.String(this.selectedRace.DescriptionStringId, this.selectedRace.DescriptionStringId);
         }
 

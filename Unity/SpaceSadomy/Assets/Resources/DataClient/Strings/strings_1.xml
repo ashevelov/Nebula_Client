@@ -1,267 +1,321 @@
 ﻿<strings>
-  <string key="EVM1_NAME">
-    Invasion
-  </string>
-  <string key="EVM1_DESCRIPTION" />
-  <string key="S0_EVM1_START">
-    Warning! The system is being attacked! Warning! The avant-garde O'Shali ships were seen at the periphery. Caution while flying.
-  </string>
-  <string key="S10_EVM1_START">
-    O'Shali scouts are trying to establish a portable gates in a system for transportation of assault party. You must stop them before reinforcements arrive.
-  </string>
-  <string key="S10_EVM1_TASK">
-    Destroy 5 O'Shali scouts in the system {world_name}. Destroyed {kill_counter_1}/5 of ships
-  </string>
-  <string key="S20_EVM1_START">
-    Allies failed to stop O'Shali's scouts, and now all the forces thrown at neutralization of invader's assault party. Some more time, and the system will be occupied by Borgu'zands.
-  </string>
-  <string key="S20_EVM1_TASK">
-    Destroy 12 ships of O'Shali's assault fleet in the system {world_name}. Destroyed {kill_counter_2}/12 of ships.
-  </string>
-  <string key="S30_EVM1_START">
-    Thanks to the combined efforts of the Allies, O'Shali's vanguard retreated. System safe again.
-  </string>
-  <string key="S40_EVM1_START">
-    The mothership with a lot of warships on board invaded in {world_name}, occupied by O'Shali. Until it isn't too late, you must destroy it - this is the last chance to keep the system in the Human's Federation.
-  </string>
-  <string key="S40_EVM1_TASK">
-    Destroy the O'Shali mothership in {world_name} system.
-  </string>
-  <string key="S50_EVM1_START">
-    Assault force destroyed. O'Shali received a decent rebuff and will not dare to turn up here for a long time.
-  </string>
-  <string key="S60_EVM1_START">
-    This is the end. With the mothership O'Shali will spread their influence on the system for a few days. We are not prepared to fight them now. We'll have to wait and gain power.
-  </string>
-  <string key="S70_EVM1_START">
-    Mothership has fallen, and most O'Shali warships destroyed along with it. Through considerable effort Borgu'zands were pushed to the boundaries of Human's territories again .
-  </string>
-  <string key="EV0002_NAME">
-    Warning! Wanted!
-  </string>
-  <string key="EV0002_DESCRIPTION"/>
-  <string key="S0_EV0002_START">
-    Be careful! A large group of space pirates, terrorizing the inhabitants, operates in {world_name} system. The Security Service can not cope with them, so far.
-  </string>
-  <string key="S10_EV0002_START">
-    Help! To anyone who hears this signal - I was attacked by space pirates! They... [message breaks]
-  </string>
-  <string key="S10_EV0002_TASK">
-    Destroy {pirates_killed}/10 pirats
-  </string>
-  <string key="S30_EV0002_START">
-    Thank U! Now these bastards will be afraid to attack defenseless pilots in {world_name}
+  <string key="EVM1_NAME"
+    en = "Invasion"
+    ru = "инвасион"
+  />
+  <string key="EVM1_DESCRIPTION"
+    en = ""    ru = ""  />
+  <string key="S0_EVM1_START"
+    en = "Warning! The system is being attacked! Warning! The avant-garde O'Shali ships were seen at the periphery. Caution while flying.
+"    ru = ""  />
+  <string key="S10_EVM1_START"
+    en = "O'Shali scouts are trying to establish a portable gates in a system for transportation of assault party. You must stop them before reinforcements arrive.
+"    ru = ""  />
+  <string key="S10_EVM1_TASK"
+    en = "Destroy 5 O'Shali scouts in the system {world_name}. Destroyed {kill_counter_1}/5 of ships
+"    ru = ""  />
+  <string key="S20_EVM1_START"
+    en = "Allies failed to stop O'Shali's scouts, and now all the forces thrown at neutralization of invader's assault party. Some more time, and the system will be occupied by Borgu'zands.
+"    ru = ""  />
+  <string key="S20_EVM1_TASK"
+    en = "Destroy 12 ships of O'Shali's assault fleet in the system {world_name}. Destroyed {kill_counter_2}/12 of ships.
+"    ru = ""  />
+  <string key="S30_EVM1_START"
+    en = "Thanks to the combined efforts of the Allies, O'Shali's vanguard retreated. System safe again.
+"    ru = ""  />
+  <string key="S40_EVM1_START"
+    en = "The mothership with a lot of warships on board invaded in {world_name}, occupied by O'Shali. Until it isn't too late, you must destroy it - this is the last chance to keep the system in the Human's Federation.
+"    ru = ""  />
+  <string key="S40_EVM1_TASK"
+    en = "Destroy the O'Shali mothership in {world_name} system.
+"    ru = ""  />
+  <string key="S50_EVM1_START"
+    en = "Assault force destroyed. O'Shali received a decent rebuff and will not dare to turn up here for a long time.
+"    ru = ""  />
+  <string key="S60_EVM1_START"
+    en = "This is the end. With the mothership O'Shali will spread their influence on the system for a few days. We are not prepared to fight them now. We'll have to wait and gain power.
+"    ru = ""  />
+  <string key="S70_EVM1_START"
+    en = "Mothership has fallen, and most O'Shali warships destroyed along with it. Through considerable effort Borgu'zands were pushed to the boundaries of Human's territories again .
+"    ru = ""  />
+  <string key="EV0002_NAME"
+    en = "Warning! Wanted!
+"    ru = ""  />
+  <string key="EV0002_DESCRIPTION"
+    en = ""
+    ru = ""
+  />
+  <string key="S0_EV0002_START"
+    en = "Be careful! A large group of space pirates, terrorizing the inhabitants, operates in {world_name} system. The Security Service can not cope with them, so far.
+"    ru = ""  />
+  <string key="S10_EV0002_START"
+    en = "Help! To anyone who hears this signal - I was attacked by space pirates! They... [message breaks]
+"    ru = ""  />
+  <string key="S10_EV0002_TASK"
+    en = "Destroy {pirates_killed}/10 pirats
+"    ru = ""  />
+  <string key="S30_EV0002_START"
+    en = "Thank U! Now these bastards will be afraid to attack defenseless pilots in {world_name}
     Reinforcements required! Operation to liquidate warehouses with the illegal production was jeopardized. It was a trap! Space pirates are coming!
-  </string>
-  <string key="S30_EV0002_TASK">
-    Destroyed {station_destroyed}/3 warehouses and {security_killed}/6 pirats
-  </string>
-  <string key="S50_EV0002_START">
-    Lair of pirates was destroyed. Finally, it will be calm in the system.
-  </string>
-  <string key="S40_EV0002_START">
-    Alert! The head of a gang of space pirates was seen in the system. Appeal for everyone to be careful.
-  </string>
-  <string key="S40_EV0002_TASK">
-    Destroy Thone Higren
-  </string>
-  <string key="S70_EV0002_START">
-    Space Pirates lost their leader. Their morale broken, and there is no new leader: Thone Higren not encourages the competition.
-  </string>
-  <string key="S60_EV0002_START">
-    Thone Higren was failed to destroy. Perhaps now it will often appear in {world_name}, but the criminal unattainable for justice system so far.
-  </string>
-  <string key="EV0003_NAME">
-    Stolen technology
-  </string>
-  <string key="EV0003_DESCRIPTION">
-  </string>
-  <string key="S0_EV0003_START">
-  </string>
-  <string key="S10_EV0003_START">
-    From the Anligia Laboratory's scientific base  was kidnapped an important information about the development in the field of spatiotemporal movements. Data storage should not fall into the hands of competitors. Find them immediately!
-  </string>
-  <string key="S10_EV0003_TASK">
-    {data_collected}/100 data carriers collected. Time left {stage_timer}.
-  </string>
-  <string key="S20_EV0003_START">
-    Catastrophe! Most of the media data is lost, recovery will take a long time.
-  </string>
-  <string key="S30_EV0003_START">
-    Problem with the large generator of spatial distortions led to the hole to another area of the galaxy near the branch of scientific base, from which O'Shali began to appear massively.
-  </string>
-  <string key="S30_EV0003_TASK">
-    Destroy {killed_counter}/20 Borgu'zands
-  </string>
-  <string key="EV0003_T30_SUCCESS">
-    Hole is unstable! O'Shali attack repulsed, but this is only the beginning ...
-  </string>
-  <string key="S40_EV0003_START">
-    The raw material base at Anligia Laboratory was partially destroyed during the O'Shali attack. Further work of Big Generator of spatial distortion is in jeopardy due to lack of raw materials, needed for its continuous operation.
-  </string>
-  <string key="S40_EV0003_TASK">
-    Collected {collected_CraftOre0001}/100 units. of Gern, {collected_CraftOre0002}/100 units. of Shooksad, {collected_CraftOre0003}/100 units. of Violen, {collected_CraftOre0004}/100 units. of Riapal, {collected_CraftOre0005}/100 units. of Lopen, {collected_CraftOre0006}/100 units. of Znerid
-  </string>
-  <string key="S70_EV003_START">
-    Finally, everything is back to normal and the system is not in danger.
-  </string>
-  <string key="S50_EV0003_START">
-    Space breakthrough provoked a new wave of  O'Shali invasions. It is necessary to protect the scientific base in no matter what! Several waves of invasions are expected, be careful.
-  </string>
-  <string key="S50_EV0003_TASK">
-    Destroyed {kill_wave_1}/2, {kill_wave_2}/5, {kill_wave_3}/7, {kill_wave_4}/12, {kill_wave_5}/3 Borgu'zands
-  </string>
-  <string key="S60_EV0003_START">
-    The science base is destroyed all but completely, and O'Shali are operating in the system. This is a big step backwards in research and serious fail in the work of the Security Service.
-  </string>
-  <string key="MISSING_STRING">MISSING STRING</string>
-  <string key="CHAT_GROUP_ALL">All</string>
-  <string key="CHAT_GROUP_ALLIANCE">Alliance</string>
-  <string key="CHAT_GROUP_GROUP">Group</string>
-  <string key="CHAT_GROUP_GUILD">Guild</string>
-  <string key="CHAT_GROUP_ME">Me</string>
-  <string key="CHAT_GROUP_WHISPER">Whisper</string>
-  <string key="CHAT_GROUP_ZONE">Zone</string>
-  <string key="CHAT_GROUP_ZONEALLIANCE">Zone And Alliance</string>
+"    ru = ""  />
+  <string key="S30_EV0002_TASK"
+    en = "Destroyed {station_destroyed}/3 warehouses and {security_killed}/6 pirats
+"    ru = ""  />
+  <string key="S50_EV0002_START"
+    en = "Lair of pirates was destroyed. Finally, it will be calm in the system.
+"    ru = ""  />
+  <string key="S40_EV0002_START"
+    en = "Alert! The head of a gang of space pirates was seen in the system. Appeal for everyone to be careful.
+"    ru = ""  />
+  <string key="S40_EV0002_TASK"
+    en = "Destroy Thone Higren
+"    ru = ""  />
+  <string key="S70_EV0002_START"
+    en = "Space Pirates lost their leader. Their morale broken, and there is no new leader: Thone Higren not encourages the competition.
+"    ru = ""  />
+  <string key="S60_EV0002_START"
+    en = "Thone Higren was failed to destroy. Perhaps now it will often appear in {world_name}, but the criminal unattainable for justice system so far.
+"    ru = ""  />
+  <string key="EV0003_NAME"
+    en = "Stolen technology
+"    ru = ""  />
+  <string key="EV0003_DESCRIPTION"
+    en = ""    ru = ""  />
+  <string key="S0_EV0003_START"
+    en = ""    ru = ""  />
+  <string key="S10_EV0003_START"
+    en = "From the Anligia Laboratory's scientific base  was kidnapped an important information about the development in the field of spatiotemporal movements. Data storage should not fall into the hands of competitors. Find them immediately!
+"    ru = ""  />
+  <string key="S10_EV0003_TASK"
+    en = "{data_collected}/100 data carriers collected. Time left {stage_timer}.
+"    ru = ""  />
+  <string key="S20_EV0003_START"
+    en = "Catastrophe! Most of the media data is lost, recovery will take a long time.
+"    ru = ""  />
+  <string key="S30_EV0003_START"
+    en = "Problem with the large generator of spatial distortions led to the hole to another area of the galaxy near the branch of scientific base, from which O'Shali began to appear massively.
+"    ru = ""  />
+  <string key="S30_EV0003_TASK"
+    en = "Destroy {killed_counter}/20 Borgu'zands
+"    ru = ""  />
+  <string key="EV0003_T30_SUCCESS"
+    en = "Hole is unstable! O'Shali attack repulsed, but this is only the beginning ...
+"    ru = ""  />
+  <string key="S40_EV0003_START"
+    en = "The raw material base at Anligia Laboratory was partially destroyed during the O'Shali attack. Further work of Big Generator of spatial distortion is in jeopardy due to lack of raw materials, needed for its continuous operation.
+"    ru = ""  />
+  <string key="S40_EV0003_TASK"
+    en = "Collected {collected_CraftOre0001}/100 units. of Gern, {collected_CraftOre0002}/100 units. of Shooksad, {collected_CraftOre0003}/100 units. of Violen, {collected_CraftOre0004}/100 units. of Riapal, {collected_CraftOre0005}/100 units. of Lopen, {collected_CraftOre0006}/100 units. of Znerid
+"    ru = ""  />
+  <string key="S70_EV003_START"
+    en = "Finally, everything is back to normal and the system is not in danger.
+"    ru = ""  />
+  <string key="S50_EV0003_START"
+    en = "Space breakthrough provoked a new wave of  O'Shali invasions. It is necessary to protect the scientific base in no matter what! Several waves of invasions are expected, be careful.
+"    ru = ""  />
+  <string key="S50_EV0003_TASK"
+    en = "Destroyed {kill_wave_1}/2, {kill_wave_2}/5, {kill_wave_3}/7, {kill_wave_4}/12, {kill_wave_5}/3 Borgu'zands
+"    ru = ""  />
+  <string key="S60_EV0003_START"
+    en = "The science base is destroyed all but completely, and O'Shali are operating in the system. This is a big step backwards in research and serious fail in the work of the Security Service.
+"    ru = ""  />
+  <string key="MISSING_STRING"
+    en = "MISSING STRING"    ru = ""  />
+  <string key="CHAT_GROUP_ALL"
+    en = "All"    ru = ""  />
+  <string key="CHAT_GROUP_ALLIANCE"
+    en = "Alliance"    ru = ""  />
+  <string key="CHAT_GROUP_GROUP"
+    en = "Group"    ru = ""  />
+  <string key="CHAT_GROUP_GUILD"
+    en = "Guild"    ru = ""  />
+  <string key="CHAT_GROUP_ME"
+    en = "Me"    ru = ""  />
+  <string key="CHAT_GROUP_WHISPER"
+    en = "Whisper"    ru = ""  />
+  <string key="CHAT_GROUP_ZONE"
+    en = "Zone"    ru = ""  />
+  <string key="CHAT_GROUP_ZONEALLIANCE"
+    en = "Zone And Alliance"    ru = ""  />
 
-  <string key="WP0001_NAME">
-    Darth Tribe Weapon
-  </string>
-  <string key="WP0002_NAME">
-    Equilibrium Weapon
-  </string>
-  <string key="WP0003_NAME">
-    Red Eye Weapon
-  </string>
-  <string key="WP0004_NAME">
-    Darth Tribe Weapon 2
-  </string>
-  <string key="WP0005_NAME">
-    Evasive Weapon
-  </string>
-  <string key="WP0006_NAME">
-    Serenity Weapon
-  </string>
-  <string key="WP0007_NAME">
-    Big Bang Weapon
-  </string>
-  <string key="WP0008_NAME">
-    Rakhgals Weapon
-  </string>
-  <string key="WP0009_NAME">
-    Phelpars Weapon
-  </string>
-  <string key="WP0010_NAME">
-    Zoards Weapon
-  </string>
-  <string key="WP0011_NAME">
-    Lerjees Weapon
-  </string>
-  <string key="WP0012_NAME">
-    Yshuar Weapon
-  </string>
-  <string key="WP0013_NAME">
-    Krol Ro Weapon
-  </string>
-  <string key="WP0014_NAME">
-    Arlen Weapon
-  </string>
-  <string key="WP0015_NAME">
-    Dyneira Weapon
-  </string>
-  <string key="WP0016_NAME">
-    Molvice Weapon
-  </string>
-  <string key="W_DESC">
-    Weapon must be plugged at ship, this is make damage or heal to other players, for weapon ship must have slots
-  </string>
-  <string key="LAD_FMT">
-    Light Attack Damage: {0}
-  </string>
-  <string key="LAC_FMT">
-    Light Attack Cooldown: {0:F1}
-  </string>
-  <string key="LACD_FMT">
-    Light Attack Crit Damage: {0}
-  </string>
-  <string key="HAD_FMT">
-    Heavy Attack Damage: {0}
-  </string>
-  <string key="HAC_FMT">
-    Heavy Attack Cooldown: {0:F1}
-  </string>
-  <string key="HACD_FMT">
-    Heavy Attack Crit Damage: {0}
-  </string>
-  <string key="HAE_FMT">
-    Energy Per Heavy Attacl: {0}
-  </string>
-  <string key="CC_FMT">
-    Critical Chance: {0:F1}
-  </string>
-  <string key="OD_FMT">
-    Optimal Distance: {0:F1} n.u.
-  </string>
-  <string key="R_FMT">
-    Range: {0} n.u.
-  </string>
-  <string key="COUNT_FMT">
-    Count: {0}
-  </string>
-  <string key="SCHEME_DESC">
-    На основе схем, которые вы находите в мире вы можете создавать различные корабельные модули в мастерской, имея достаточное количество необходимых материалов
-  </string>
-  <string key="ORE_DESC">
-    Руда, которая встречается в многочисленных астероидах в космосе. Используется в производстве модулей для кораблей.
-  </string>
-  <string key="MODULE_DESC">
-    Модуль является составной частью корабля. Модули обладают различным набором характеристик, которые напрямую влияют на боеспособность корабля. Модули можно менять в мастерской.
-  </string>
-  <string key="CB_NAME">Коммандный модуль</string>
-  <string key="CM_NAME">Служебный модуль</string>
-  <string key="DF_NAME">Реакторный модуль</string>
-  <string key="DM_NAME">Орудийный модуль</string>
-  <string key="ES_NAME">Ходовой модуль</string>
-  <string key="WSC_FMT">Slots For Weapon: {0}</string>
-  <string key="HP_FMT">Health: {0:F1}</string>
-  <string key="SP_FMT">Speed: {0:F1}</string>
-  <string key="RES_FMT">Resistance: {0:F1}</string>
-  <string key="HOLD_FMT">Slots For Inventory: {0}</string>
-  <string key="DMGBON_FMT">Damage Bonus: {0:F1}</string>
-  <string key="CDBON_FMT">Cooldown Bonus: {0:F1}</string>
-  <string key="ODBON_FMT">Optimal Distance Bonus: {0:F1}</string>
-  <string key="CRDMG_FMT">Critical Damage: {0:F1}</string>
-  <string key="EN_FMT">Energy: {0:F1}</string>
-  <string key="ENREST_FMT">Energy Restoration: {0:F1}</string>
+  <string key="WP0001_NAME"
+    en = "Darth Tribe Weapon
+"    ru = ""  />
+  <string key="WP0002_NAME"
+    en = "Equilibrium Weapon
+"    ru = ""  />
+  <string key="WP0003_NAME"
+    en = "Red Eye Weapon
+"    ru = ""  />
+  <string key="WP0004_NAME"
+    en = "Darth Tribe Weapon 2
+"    ru = ""  />
+  <string key="WP0005_NAME"
+    en = "Evasive Weapon
+"    ru = ""  />
+  <string key="WP0006_NAME"
+    en = "Serenity Weapon
+"    ru = ""  />
+  <string key="WP0007_NAME"
+    en = "Big Bang Weapon
+"    ru = ""  />
+  <string key="WP0008_NAME"
+    en = "Rakhgals Weapon
+"    ru = ""  />
+  <string key="WP0009_NAME"
+    en = "Phelpars Weapon
+"    ru = ""  />
+  <string key="WP0010_NAME"
+    en = "Zoards Weapon
+"    ru = ""  />
+  <string key="WP0011_NAME"
+    en = "Lerjees Weapon
+"    ru = ""  />
+  <string key="WP0012_NAME"
+    en = "Yshuar Weapon
+"    ru = ""  />
+  <string key="WP0013_NAME"
+    en = "Krol Ro Weapon
+"    ru = ""  />
+  <string key="WP0014_NAME"
+    en = "Arlen Weapon
+"    ru = ""  />
+  <string key="WP0015_NAME"
+    en = "Dyneira Weapon
+"    ru = ""  />
+  <string key="WP0016_NAME"
+    en = "Molvice Weapon
+"    ru = ""  />
+  <string key="W_DESC"
+    en = "Weapon must be plugged at ship, this is make damage or heal to other players, for weapon ship must have slots
+"    ru = ""  />
+  <string key="LAD_FMT"
+    en = "Light Attack Damage: {0}
+"    ru = ""  />
+  <string key="LAC_FMT"
+    en = "Light Attack Cooldown: {0:F1}
+"    ru = ""  />
+  <string key="LACD_FMT"
+    en = "Light Attack Crit Damage: {0}
+"    ru = ""  />
+  <string key="HAD_FMT"
+    en = "Heavy Attack Damage: {0}
+"    ru = ""  />
+  <string key="HAC_FMT"
+    en = "Heavy Attack Cooldown: {0:F1}
+"    ru = ""  />
+  <string key="HACD_FMT"
+    en = "Heavy Attack Crit Damage: {0}
+"    ru = ""  />
+  <string key="HAE_FMT"
+    en = "Energy Per Heavy Attacl: {0}
+"    ru = ""  />
+  <string key="CC_FMT"
+    en = "Critical Chance: {0:F1}
+"    ru = ""  />
+  <string key="OD_FMT"
+    en = "Optimal Distance: {0:F1} n.u.
+"    ru = ""  />
+  <string key="R_FMT"
+    en = "Range: {0} n.u.
+"    ru = ""  />
+  <string key="COUNT_FMT"
+    en = "Count: {0}
+"    ru = ""  />
+  <string key="SCHEME_DESC"
+    en = "На основе схем, которые вы находите в мире вы можете создавать различные корабельные модули в мастерской, имея достаточное количество необходимых материалов
+"    ru = ""  />
+  <string key="ORE_DESC"
+    en = "Руда, которая встречается в многочисленных астероидах в космосе. Используется в производстве модулей для кораблей.
+"    ru = ""  />
+  <string key="MODULE_DESC"
+    en = "Модуль является составной частью корабля. Модули обладают различным набором характеристик, которые напрямую влияют на боеспособность корабля. Модули можно менять в мастерской.
+"    ru = ""  />
+  <string key="CB_NAME"
+    en = "Коммандный модуль"    ru = ""  />
+  <string key="CM_NAME"
+    en = "Служебный модуль"    ru = ""  />
+  <string key="DF_NAME"
+    en = "Реакторный модуль"    ru = ""  />
+  <string key="DM_NAME"
+    en = "Орудийный модуль"    ru = ""  />
+  <string key="ES_NAME"
+    en = "Ходовой модуль"    ru = ""  />
+  <string key="WSC_FMT"
+    en = "Slots For Weapon: {0}"    ru = ""  />
+  <string key="HP_FMT"
+    en = "Health: {0:F1}"    ru = ""  />
+  <string key="SP_FMT"
+    en = "Speed: {0:F1}"    ru = ""  />
+  <string key="RES_FMT"
+    en = "Resistance: {0:F1}"    ru = ""  />
+  <string key="HOLD_FMT"
+    en = "Slots For Inventory: {0}"    ru = ""  />
+  <string key="DMGBON_FMT"
+    en = "Damage Bonus: {0:F1}"    ru = ""  />
+  <string key="CDBON_FMT"
+    en = "Cooldown Bonus: {0:F1}"    ru = ""  />
+  <string key="ODBON_FMT"
+    en = "Optimal Distance Bonus: {0:F1}"    ru = ""  />
+  <string key="CRDMG_FMT"
+    en = "Critical Damage: {0:F1}"    ru = ""  />
+  <string key="EN_FMT"
+    en = "Energy: {0:F1}"    ru = ""  />
+  <string key="ENREST_FMT"
+    en = "Energy Restoration: {0:F1}"    ru = ""  />
 
-  <string key="BT_HAD">Increase Heavy Attack Damage on {0}</string>
-  <string key="BT_CC">Increase Critical Chance on {0}%</string>
-  <string key="BT_HP">Increase Health on {0}</string>
-  <string key="BT_ISC">Increase Inventory on {0}</string>
-  <string key="BT_CRDAM">Increase Critical Damage on {0}%</string>
-  <string key="BT_RES">Increase Resistance on {0}</string>
-  <string key="BT_OD">Increase Optimal Distance on {0}</string>
-  <string key="BT_HEAL">Increase Healing on {0}</string>
-  <string key="BT_SPEED">Increase Speed on {0}</string>
+  <string key="BT_HAD"
+    en = "Increase Heavy Attack Damage on {0}"    ru = ""  />
+  <string key="BT_CC"
+    en = "Increase Critical Chance on {0}%"    ru = ""  />
+  <string key="BT_HP"
+    en = "Increase Health on {0}"    ru = ""  />
+  <string key="BT_ISC"
+    en = "Increase Inventory on {0}"    ru = ""  />
+  <string key="BT_CRDAM"
+    en = "Increase Critical Damage on {0}%"    ru = ""  />
+  <string key="BT_RES"
+    en = "Increase Resistance on {0}"    ru = ""  />
+  <string key="BT_OD"
+    en = "Increase Optimal Distance on {0}"    ru = ""  />
+  <string key="BT_HEAL"
+    en = "Increase Healing on {0}"    ru = ""  />
+  <string key="BT_SPEED"
+    en = "Increase Speed on {0}"    ru = ""  />
   
-  <string key="H000003E9">Запуск лёгкой ракеты с электромагнитным зарядом, замедляющим корабль противника на 10% от максимальной скорости вашего корабля на 10 секунд</string>
-  <string key="K000003E9">Выстрел малого гравидеструктора наносит урон и замедляет корабль противника на 10% от максимальной скорости вашего корабля на 10 секунд</string>
-  <string key="B000003E9">Плевок слабой разъедающей кислоты, замедляющей корабль противника на 10% от максимальной скорости вашего корабля на 10 секунд</string>
+  <string key="H000003E9"
+    en = "Запуск лёгкой ракеты с электромагнитным зарядом, замедляющим корабль противника на 10% от максимальной скорости вашего корабля на 10 секунд"    ru = ""  />
+  <string key="K000003E9"
+    en = "Выстрел малого гравидеструктора наносит урон и замедляет корабль противника на 10% от максимальной скорости вашего корабля на 10 секунд"    ru = ""  />
+  <string key="B000003E9"
+    en = "Плевок слабой разъедающей кислоты, замедляющей корабль противника на 10% от максимальной скорости вашего корабля на 10 секунд"    ru = ""  />
   
-  <string key="H000003EE">Запуск тяжёлой ракеты с кинетическим зарядом, ослабляющим прочность корабля противника. Ваш урон по цели увеличится на 25% на 3 секунды</string>
-  <string key="K000003EE">Выстрел большого гравидеструктора, ослабляющий прочность корабля противника. Ваш урон по цели увеличится на 25% на 3 секунды</string>
-  <string key="B000003EE">Плевок концентрированной кислоты, ослабляющей прочность корабля противника. Ваш урон по цели увеличится на 25% на 3 секунды</string>
+  <string key="H000003EE"
+    en = "Запуск тяжёлой ракеты с кинетическим зарядом, ослабляющим прочность корабля противника. Ваш урон по цели увеличится на 25% на 3 секунды"    ru = ""  />
+  <string key="K000003EE"
+    en = "Выстрел большого гравидеструктора, ослабляющий прочность корабля противника. Ваш урон по цели увеличится на 25% на 3 секунды"    ru = ""  />
+  <string key="B000003EE"
+    en = "Плевок концентрированной кислоты, ослабляющей прочность корабля противника. Ваш урон по цели увеличится на 25% на 3 секунды"    ru = ""  />
   
-  <string key="H000003F5">Экстренный ремонт обшивки корабля устраняет 10% повреждений</string>
-  <string key="K000003F5">Мощность ядра используется для мгновенного восстановления 10% стабильности системы</string>
-  <string key="B000003F5">Скачок регенерации восстанавливает до 10% прочности покровов</string>
+  <string key="H000003F5"
+    en = "Экстренный ремонт обшивки корабля устраняет 10% повреждений"    ru = ""  />
+  <string key="K000003F5"
+    en = "Мощность ядра используется для мгновенного восстановления 10% стабильности системы"    ru = ""  />
+  <string key="B000003F5"
+    en = "Скачок регенерации восстанавливает до 10% прочности покровов"    ru = ""  />
   
-  <string key="H000003FB">Активация защитных щитов, полностью блокирующих входящий урон на 6 секунд. Энергозатраты щитов снижают эффективность стрельбы на 40%</string>
-  <string key="K000003FB">Использование стабилизатором вероятностей значительных мощностей ядра позволяет блокировать весь входящий урон на протяжении 6 секунд. Урон вашего корабля в это время снижается на 40% из-за нарушений работы материализатора</string>
-  <string key="B000003FB">Концентрация психоволн особой частоты, позволяющих полностью блокировать входящий урон на 6 секунд. Урон вашего корабля в это время снижается на 40%</string>
+  <string key="H000003FB"
+    en = "Активация защитных щитов, полностью блокирующих входящий урон на 6 секунд. Энергозатраты щитов снижают эффективность стрельбы на 40%"    ru = ""  />
+  <string key="K000003FB"
+    en = "Использование стабилизатором вероятностей значительных мощностей ядра позволяет блокировать весь входящий урон на протяжении 6 секунд. Урон вашего корабля в это время снижается на 40% из-за нарушений работы материализатора"    ru = ""  />
+  <string key="B000003FB"
+    en = "Концентрация психоволн особой частоты, позволяющих полностью блокировать входящий урон на 6 секунд. Урон вашего корабля в это время снижается на 40%"    ru = ""  />
   
-  <string key="H00000400">Включение форсажной камеры позволяет кораблю развить скорость, на треть превышающую обычную, сроком на 15 секунд</string>
-  <string key="K00000400">Раздражение двигательных придатков корабля увеличивает скорость на 30% на 15 секунд</string>
-  <string key="B00000400">Генератор подпространства использует значительную часть мощности ядра, увеличивая скорость перемещения на 30% на 15 секунд</string>
+  <string key="H00000400"
+    en = "Включение форсажной камеры позволяет кораблю развить скорость, на треть превышающую обычную, сроком на 15 секунд"    ru = ""  />
+  <string key="K00000400"
+    en = "Раздражение двигательных придатков корабля увеличивает скорость на 30% на 15 секунд"    ru = ""  />
+  <string key="B00000400"
+    en = "Генератор подпространства использует значительную часть мощности ядра, увеличивая скорость перемещения на 30% на 15 секунд"    ru = ""  />
 
 </strings>

@@ -169,4 +169,6 @@ public class G
     {
         return GameData.instance.ship.Energy;
     }
+	
+	//public ShipModel GetShipModel(){return G.PlayerItem.GetShipModel;}
 }

@@ -12,6 +12,7 @@
             AddEventHandler((byte)SelectCharacterEventCode.ChatMessageEvent, new ChatMessageEvent());
             AddEventHandler((byte)SelectCharacterEventCode.GroupUpdateEvent, new GroupUpdateEvent());
             AddEventHandler((byte)SelectCharacterEventCode.GroupRemovedEvent, new GroupRemovedEvent());
+            AddEventHandler((byte)SelectCharacterEventCode.PlayerStoreUpdate, new PlayerStoreUpdateEvent());
 
             //operation handlers
             AddOperationHandler((byte)SelectCharacterOperationCode.GetCharacters, new GetCharactersOperation());
@@ -31,6 +32,8 @@
             AddOperationHandler((byte)SelectCharacterOperationCode.ExitGuild, new ExitGuildOperation());
             AddOperationHandler((byte)SelectCharacterOperationCode.SetGuildDescription, new SetGuildDescriptionOperation());
             AddOperationHandler((byte)SelectCharacterOperationCode.ChangeGuildMemberStatus, new ChangeGuildMemberStatusOperation());
+            AddOperationHandler((byte)SelectCharacterOperationCode.DeleteGuild, new DeleteGuildOperation());
+            AddOperationHandler((byte)SelectCharacterOperationCode.GetPlayerStore, new GetPlayerStoreOperation());
         }
 
         public override GameState State {

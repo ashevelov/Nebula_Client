@@ -79,9 +79,9 @@ public class MapCamera : MonoBehaviour {
 
     void FixedUpdate()
     {
-#if !UNITY_EDITOR
+#if !UNITY_EDITOR || UNITY_STANDALONE
 
-		if(Input.touchCount ==1 && newTarget)
+        if (Input.touchCount ==1 && newTarget)
 		{
 			Touch tch = Input.touches[0];
 			if(tch.phase == TouchPhase.Began)

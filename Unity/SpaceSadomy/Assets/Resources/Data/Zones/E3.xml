@@ -1,12 +1,50 @@
-﻿<zones>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
   <zone id="E3" name="E3_NAME" level="3" owned_race="2">
-    <npc_groups>
-      <npc_group id="C_NPC_G_3_COMMON" />
-    </npc_groups>
-    <npcs></npcs>
-    <asteroids></asteroids>
-    <activators></activators>
-    <events></events>
-    <inputs></inputs>
+    <planets />
+    <npc_groups />
+    <npcs>
+      <npc id="CS001" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="1584,392,177" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+      <npc id="CS002" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="1693,-28,177" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+      <npc id="CS003" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="1035,76,177" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+      <npc id="CS004" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="-140,63,-1331" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+      <npc id="CS005" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="1272,-308,-1331" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+      <npc id="CS006" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="-561,-132,-87" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+      <npc id="CS007" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="592,-572,-122" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+      <npc id="CS008" name="RACE_CRIPTIZIDS" level="3" race="Criptizoids" position="-111,598,930" rotation="0,0,0" respawn_interval="180" workshop="Arlen" difficulty="boss" fraction="PlayerCriptizids">
+        <ai name="OrbitAroundPoint" chase="True" phi_speed="40" theta_speed="40" radius="700" />
+      </npc>
+    </npcs>
+    <asteroids>
+      <asteroid index="1" force_create="False" respawn="180" data_id="CraftAsteroid0004" model="AST01" position="-919,-72,-627" rotation="4,55,110" />
+      <asteroid index="2" force_create="False" respawn="180" data_id="CraftAsteroid0004" model="AST01" position="-919,-100,108" rotation="57,247,180" />
+      <asteroid index="3" force_create="False" respawn="180" data_id="CraftAsteroid0003" model="AST01" position="-747,-585,-129" rotation="90,224,0" />
+      <asteroid index="4" force_create="False" respawn="180" data_id="CraftAsteroid0003" model="AST01" position="-226,-187,-358" rotation="35,79,45" />
+      <asteroid index="5" force_create="False" respawn="180" data_id="CraftAsteroid0002" model="AST01" position="-442,-36,194" rotation="270,90,0" />
+      <asteroid index="6" force_create="False" respawn="180" data_id="CraftAsteroid0003" model="AST01" position="258,-328,247" rotation="71,4,220" />
+      <asteroid index="7" force_create="False" respawn="180" data_id="CraftAsteroid0003" model="AST01" position="506,-77,-263" rotation="315,230,290" />
+      <asteroid index="8" force_create="False" respawn="180" data_id="CraftAsteroid0003" model="AST01" position="252,69,-534" rotation="9,310,260" />
+      <asteroid index="9" force_create="False" respawn="180" data_id="CraftAsteroid0002" model="AST01" position="-21,-223,-701" rotation="65,65,25" />
+    </asteroids>
+    <events />
+    <inputs>
+      <input key="zone_min" value="-200,-200,-200" type="vector" />
+      <input key="zone_max" value="200,200,200" type="vector" />
+      <input key="reach_radius" value="5" type="float" />
+    </inputs>
   </zone>
 </zones>

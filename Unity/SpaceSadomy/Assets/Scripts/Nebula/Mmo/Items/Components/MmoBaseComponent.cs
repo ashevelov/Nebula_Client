@@ -30,6 +30,7 @@
                 case ComponentID.Skills: return new MmoSkillsComponent();
                 case ComponentID.Target: return new MmoTargetComponent();
                 case ComponentID.Weapon: return new MmoWeaponComponent();
+                case ComponentID.Movable: return new MmoMovableComponent();
                 default: return null;
             }
         }
@@ -40,6 +41,6 @@
             this.item = item;
         }
 
-
+        public virtual void Update() { }
     }
 }

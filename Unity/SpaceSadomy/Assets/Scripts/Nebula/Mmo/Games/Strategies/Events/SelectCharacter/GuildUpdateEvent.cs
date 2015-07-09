@@ -11,6 +11,9 @@
                 Debug.Log("GuildUpdateEvent: guild hash is null");
                 return;
             }
+
+            Debug.Log(guildHash.ToHashString());
+
             game.Engine.GameData.guild.ParseInfo(guildHash);
         }
     }

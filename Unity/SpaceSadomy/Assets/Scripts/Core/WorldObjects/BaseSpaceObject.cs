@@ -529,19 +529,27 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                 Debug.LogError("skill target item don't have view");
                 return;
             }
-            GameObject effectInstance = Instantiate(PrefabCache.Get("Effects/Beam"), transform.position, transform.rotation) as GameObject;
-            effectInstance.GetComponent<Beam>().StartEffect(gameObject, targetItem.View, 5);
+
+			PlayerSkillList.HumanSkill2(this,item,targetItem.View);
+
         }
 
-        if("000003F5".FromHex() == skillId ) {
-            Debug.Log("3F5 skill used");
-            GameObject effectInstance = Instantiate(PrefabCache.Get("Effects/AddHP_3F5"), transform.position, transform.rotation) as GameObject;
-            effectInstance.transform.parent = transform;
-            effectInstance.transform.localPosition = Vector3.zero;
-            effectInstance.transform.localRotation = Quaternion.identity;
-        }
+		if("000003ee".FromHex() == skillId ) {
 
-        if("000003FB".FromHex() == skillId) {
+			Item targetItem = null;
+			if (!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
+				Debug.LogError("skill target item not founded");
+				return;
+			}
+			if (!targetItem.View) {
+				Debug.LogError("skill target item don't have view");
+				return;
+			}
+			
+			PlayerSkillList.HumanSkill1(item,targetItem.View);
+		}
+		
+		if("000003FB".FromHex() == skillId) {
             Item targetItem = null;
             if (!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
                 Debug.LogError("skill target item not founded");
@@ -552,10 +560,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                 return;
             }
 
-            Debug.Log("3FB skill used");
-            GameObject effectInstance = Instantiate(PrefabCache.Get("Effects/Beam_3FB"), transform.position, transform.rotation) as GameObject;
-            effectInstance.GetComponent<Beam3FB>().StartEffect(gameObject, targetItem.View, 5);
-            effectInstance.transform.parent = transform;
+			//PlayerSkillList.HumanSkill1(item,targetItem.View);
         }
 
         /*
@@ -820,35 +825,36 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
             switch (sourceWorkshop.toEnum<Workshop>())
             {
 			case Workshop.DarthTribe:
-                    if ("000003EE".FromHex() == skillID) {
+                   /* if ("000003EE".FromHex() == skillID) {
                         StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
                     } else {
                         StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
-                    }
+                    }*/
                     break;
 				case Workshop.Equilibrium:
-                    if ("000003EE".FromHex() == skillID) {
+                   /* if ("000003EE".FromHex() == skillID) {
                         StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
                         
                     } else {
                         StartCoroutine(cor_LaunchPlasma(0.2f, "Prefabs/Effects/PlasmaLight", target, 3, isHitted));
-                    }
+                    }*/
                     break;
                 case Workshop.RedEye:
-                    if ("000003EE".FromHex() == skillID) {
+                  /*  if ("000003EE".FromHex() == skillID) {
                         StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
                         
                     } else {
                         StartCoroutine(cor_LaunchLaser(5f, "Prefabs/Effects/NLaser", target, 1, isHitted));
-                    }
+                    }*/
                     break;
 			default:
                     {
                         if ("000003EE".FromHex() == skillID) {
-                            StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
+                          //  StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
                         } else {
                             Debug.LogErrorFormat("Not realized shot for workshop: {0}", sourceWorkshop.toEnum<Workshop>());
-                            StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
+
+							PlayerSkillList.HumanSkill1(item,target.gameObject);
                         }
                     }
                     break;

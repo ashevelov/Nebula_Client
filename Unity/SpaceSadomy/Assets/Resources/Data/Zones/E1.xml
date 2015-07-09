@@ -1,26 +1,38 @@
-﻿<zones>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
   <zone id="E1" name="E1_NAME" level="1" owned_race="2">
-    <npc_groups>
-
-    </npc_groups>
+    <planets />
+    <npc_groups />
     <npcs>
-
+      <npc id="CS001" name="RACE_CRIPTIZIDS" level="30" race="Criptizoids" position="339,-34,318" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CS002" name="RACE_CRIPTIZIDS" level="30" race="Criptizoids" position="345,121,321" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CS003" name="RACE_CRIPTIZIDS" level="30" race="Criptizoids" position="-471,101,11" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CS004" name="RACE_CRIPTIZIDS" level="30" race="Criptizoids" position="-382,-38,-9" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CS005" name="RACE_CRIPTIZIDS" level="30" race="Criptizoids" position="-415,108,-325" rotation="0,0,0" respawn_interval="60" workshop="Arlen" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
     </npcs>
     <asteroids>
-
+      <asteroid index="1" force_create="False" respawn="200" data_id="CraftAsteroid0001" model="AST01" position="43,7,-646" rotation="0,0,0" />
+      <asteroid index="2" force_create="False" respawn="200" data_id="CraftAsteroid0002" model="AST01" position="-504,7,552" rotation="0,0,0" />
+      <asteroid index="3" force_create="False" respawn="200" data_id="CraftAsteroid0001" model="AST01" position="-688,320,13" rotation="0,0,0" />
+      <asteroid index="4" force_create="False" respawn="200" data_id="CraftAsteroid0002" model="AST01" position="403,-439,-400" rotation="0,0,0" />
+      <asteroid index="5" force_create="False" respawn="200" data_id="CraftAsteroid0001" model="AST01" position="105,-539,434" rotation="0,0,0" />
+      <asteroid index="6" force_create="False" respawn="200" data_id="CraftAsteroid0002" model="AST01" position="-435,337,-522" rotation="0,0,0" />
     </asteroids>
-    <activators>
-
-    </activators>
-    <events>
-
-    </events>
-
+    <events />
     <inputs>
-      <input key="zone_min" value="-200.0,-200.0,-200.0" type="vector"  />
-      <input key="zone_max" value="200.0,200.0,200.0" type="vector"     />
-      <input key="number_dummies" value="20"          type="int"        />
-      <input key="reach_radius" value="5.0" type="float" />
+      <input key="zone_min" value="-200,-200,-200" type="vector" />
+      <input key="zone_max" value="200,200,200" type="vector" />
+      <input key="reach_radius" value="5" type="float" />
     </inputs>
   </zone>
 </zones>

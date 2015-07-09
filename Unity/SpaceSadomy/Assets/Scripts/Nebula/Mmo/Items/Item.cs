@@ -10,6 +10,7 @@ namespace Nebula.Mmo.Items
     using Nebula.Mmo.Items.Components;
     using Nebula.Resources;
     using Nebula.UI;
+    using Nebula.Mmo.Objects;
 
     public abstract class Item : IObjectInfo
     {
@@ -32,6 +33,20 @@ namespace Nebula.Mmo.Items
         private bool _shipDestroyed;
         private float movedSpeed = 0f;
         public ComponentID[] componentIDS { get; private set; }
+
+
+        public MmoBonusesComponent bonuses { get; private set; }
+        public MmoBotComponent bot { get; private set; }
+        public MmoCharacterComponent character { get; private set; }
+        public MmoDamagableComponent damagable { get; private set; }
+        public MmoEnergyComponent energy { get; private set; }
+        public MmoModelComponent model { get; private set; }
+        public MmoPlayerAIComponent playerAI { get; private set; }
+        public MmoRaceableComponent raceable { get; private set; }
+        public MmoShipComponent ship { get; private set; }
+        public MmoTargetComponent target { get; private set; }
+        public MmoMovableComponent movable { get; private set; }
+
 
 
         public Race Race
@@ -167,7 +182,7 @@ namespace Nebula.Mmo.Items
         }
 
 
-        protected Dictionary<ComponentID, MmoBaseComponent> components { get; set; }
+        public Dictionary<ComponentID, MmoBaseComponent> components { get; set; }
 
         protected Item(string id, byte type, NetworkGame game, string name, object[] inComponents)
         {
@@ -195,6 +210,19 @@ namespace Nebula.Mmo.Items
                 if (component != null) {
                     components.Add(cID, component);
                     component.SetItem(this);
+                    switch(cID) {
+                        case ComponentID.Bonuses: bonuses = component as MmoBonusesComponent; break;
+                        case ComponentID.Bot: bot = component as MmoBotComponent; break;
+                        case ComponentID.Character: character = component as MmoCharacterComponent; break;
+                        case ComponentID.Damagable: damagable = component as MmoDamagableComponent; break;
+                        case ComponentID.Energy: energy = component as MmoEnergyComponent; break;
+                        case ComponentID.Model: model = component as MmoModelComponent; break;
+                        case ComponentID.PlayerAI: playerAI = component as MmoPlayerAIComponent; break;
+                        case ComponentID.Raceable: raceable = component as MmoRaceableComponent; break;
+                        case ComponentID.Ship: ship = component as MmoShipComponent; break;
+                        case ComponentID.Target: target = component as MmoTargetComponent; break;
+                        case ComponentID.Movable: movable = component as MmoMovableComponent; break;
+                    }
                 }
             }
         }
@@ -297,7 +325,7 @@ namespace Nebula.Mmo.Items
                 this.Moved(this);
             }
         }
-
+		private ShipModel mShipModel;
         public virtual void Create(GameObject obj)
         {
             if (false == this.ExistsView)
@@ -307,6 +335,8 @@ namespace Nebula.Mmo.Items
                 _view = obj;
                 _view.name = "A_player" + (this.IsMine ? "MY" : this.Id.Substring(0, 3)) + "(" + this.Type.toItemType().ToString() + ")";
                 _transformInterpolation = _view.AddComponent<NetworkTransformInterpolation>();
+                _view.AddComponent<MmoComponentUpdater>().SetItem(this);
+				mShipModel = _view.GetComponent<ShipModel>();
             }
         }
 
@@ -403,5 +433,10 @@ namespace Nebula.Mmo.Items
         }
 
         public abstract void AdditionalUpdate();
+
+		public ShipModel GetShipModel()
+		{
+			return mShipModel;
+		}
     }
 }

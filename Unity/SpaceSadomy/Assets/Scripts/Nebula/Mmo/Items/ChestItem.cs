@@ -98,7 +98,7 @@
 //                      }
 //                },
                 new SelectedObjectContextMenuView.InputEntry {
-                    ButtonText = "Collect",
+                    ButtonText = Nebula.Resources.StringCache.Get("COLLECT"),
                     ButtonAction = ()=> 
 					{
 						Debug.Log("Collect chest content");

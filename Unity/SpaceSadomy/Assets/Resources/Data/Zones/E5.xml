@@ -1,12 +1,67 @@
-﻿<zones>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
   <zone id="E5" name="E5_NAME" level="5" owned_race="2">
-    <npc_groups>
-      <npc_group id="C_NPC_G_5_COMMON" />
-    </npc_groups>
-    <npcs></npcs>
-    <asteroids></asteroids>
-    <activators></activators>
-    <events></events>
-    <inputs></inputs>
+    <planets />
+    <npc_groups />
+    <npcs>
+      <npc id="CP001" name="RACE_CRIPTIZIDS" level="5" race="Criptizoids" position="-167,-8,138" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="CP002" name="RACE_CRIPTIZIDS" level="5" race="Criptizoids" position="162,-8,138" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="CP003" name="RACE_CRIPTIZIDS" level="5" race="Criptizoids" position="162,-8,-140" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="CP004" name="RACE_CRIPTIZIDS" level="5" race="Criptizoids" position="-165,-8,-140" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="CP005" name="RACE_CRIPTIZIDS" level="5" race="Criptizoids" position="7,215,-1" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="CP006" name="RACE_CRIPTIZIDS" level="5" race="Criptizoids" position="7,-241,-1" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+      </npc>
+      <npc id="CP007" name="RACE_CRIPTIZIDS" level="10" race="Criptizoids" position="369,11,-5" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="150" />
+      </npc>
+      <npc id="CP008" name="RACE_CRIPTIZIDS" level="10" race="Criptizoids" position="-8,412,0" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="150" />
+      </npc>
+      <npc id="CP009" name="RACE_CRIPTIZIDS" level="10" race="Criptizoids" position="0,-4,381" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="none" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="150" />
+      </npc>
+      <npc id="CP010" name="RACE_CRIPTIZIDS" level="15" race="Criptizoids" position="819,345,386" rotation="0,0,0" respawn_interval="240" workshop="Dyneira" difficulty="boss" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CP011" name="RACE_CRIPTIZIDS" level="10" race="Criptizoids" position="754,345,317" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="hard" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CP012" name="RACE_CRIPTIZIDS" level="10" race="Criptizoids" position="754,345,461" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="hard" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CP013" name="RACE_CRIPTIZIDS" level="10" race="Criptizoids" position="885,345,461" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="hard" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+      <npc id="CP014" name="RACE_CRIPTIZIDS" level="10" race="Criptizoids" position="885,345,316" rotation="0,0,0" respawn_interval="120" workshop="Dyneira" difficulty="hard" fraction="Pirate">
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+      </npc>
+    </npcs>
+    <asteroids>
+      <asteroid index="1" force_create="True" respawn="120" data_id="CraftAsteroid0004" model="AST01" position="-416,573,-440" rotation="0,0,0" />
+      <asteroid index="2" force_create="True" respawn="120" data_id="CraftAsteroid0005" model="AST01" position="-533,45,197" rotation="0,0,0" />
+      <asteroid index="3" force_create="True" respawn="120" data_id="CraftAsteroid0004" model="AST01" position="123,335,675" rotation="0,0,0" />
+      <asteroid index="4" force_create="True" respawn="120" data_id="CraftAsteroid0005" model="AST01" position="81,-171,-678" rotation="0,0,0" />
+      <asteroid index="5" force_create="True" respawn="120" data_id="CraftAsteroid0004" model="AST01" position="516,233,-481" rotation="0,0,0" />
+      <asteroid index="6" force_create="True" respawn="240" data_id="CraftAsteroid0006" model="AST01" position="874,334,438" rotation="0,0,0" />
+      <asteroid index="7" force_create="True" respawn="240" data_id="CraftAsteroid0006" model="AST01" position="916,390,406" rotation="0,0,0" />
+      <asteroid index="8" force_create="True" respawn="240" data_id="CraftAsteroid0006" model="AST01" position="910,353,348" rotation="0,0,0" />
+    </asteroids>
+    <events />
+    <inputs>
+      <input key="zone_min" value="-200,-200,-200" type="vector" />
+      <input key="zone_max" value="200,200,200" type="vector" />
+      <input key="reach_radius" value="5" type="float" />
+    </inputs>
   </zone>
 </zones>

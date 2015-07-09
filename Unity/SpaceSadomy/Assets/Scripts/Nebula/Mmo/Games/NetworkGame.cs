@@ -233,23 +233,6 @@ namespace Nebula.Mmo.Games {
             }
         }
 
-
-        //public ClientInventory Inventory
-        //{
-        //    get
-        //    {
-        //        return _inventory;
-        //    }
-        //}
-
-        //public ActorBonuses Bonuses
-        //{
-        //    get
-        //    {
-        //        return actorBonuses;
-        //    }
-        //}
-
         public bool ExistAvatarView
         {
             get
@@ -286,22 +269,6 @@ namespace Nebula.Mmo.Games {
         public string CharacterId() {
             return Engine.SelectCharacterGame.PlayerCharacters.SelectedCharacterId;
         }
-
-        //public ClientPlayerSkill PlayerSkill(int index)
-        //{
-        //    return this.Skills.Skill(index);
-        //}
-
-
-        //public void SetPlayerInfo(Hashtable info)
-        //{
-        //    this.PlayerInfo.ParseInfo(info);
-        //}
-
-        //public void SetSkills(Hashtable skillsInfo)
-        //{
-        //    this.Skills.ParseInfo(skillsInfo);
-        //}
 
         public void SetShipDestroyed(byte itemType, string itemId, bool shipDestroyed)
         {
@@ -728,6 +695,10 @@ namespace Nebula.Mmo.Games {
 
         public static void SetRandomBuff() {
             Operations.ExecAction(MmoEngine.Get.NebulaGame, MmoEngine.Get.NebulaGame.AvatarId, "SetRandomBonus", new object[] { });
+        }
+
+        public void TestAddCredits(int credits) {
+            Operations.ExecAction(this, AvatarId, "AddCredits", new object[] { credits });
         }
     }
 

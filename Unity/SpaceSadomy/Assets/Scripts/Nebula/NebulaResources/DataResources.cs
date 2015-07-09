@@ -12,6 +12,7 @@
     // Copyright (c) 2014 KomarGames. All rights reserved.
     //
     using UnityEngine;
+    using System.Xml.Linq;
 
     public class DataResources {
 
@@ -104,13 +105,38 @@
             try {
                 foreach (var asset in assets) {
                     Debug.Log("load string asset: {0}".f(asset.name).Color(Color.yellow));
-                    result.AddRange(ResLoader.LoadStrings(asset.text));
+                    result.AddRange(LoadStrings(asset.text));
                 }
             } catch (System.ArgumentException e) {
                 Debug.LogError(e.Message);
                 Debug.LogError(e.ParamName);
             }
             return result;
+        }
+
+
+
+        private static Dictionary<string, string> LoadStrings(string xml)
+        {
+            XDocument document = XDocument.Parse(xml);
+            Dictionary<string, string> strings = new Dictionary<string, string>();
+            foreach (var e in document.Element("strings").Elements("string"))
+            {
+                string key = e.Attribute("key").Value;
+                string content = e.Attribute(Language()).Value; ;
+                strings.Add(key, content);
+            }
+            return strings;
+        }
+
+        private static string Language()
+        {
+            switch(Application.systemLanguage)
+            {
+                case SystemLanguage.Russian:
+                    return "ru";
+            }
+            return "en";
         }
 
         public ResModuleData ModuleData(string id) {

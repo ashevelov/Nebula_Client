@@ -1,103 +1,130 @@
 ﻿<strings>
-  <string key="container">
-    Space container
-  </string>
-  <string key="resource_guard">
-    Resources security
-  </string>
-  <string key="raider">
-    Raider
-  </string>
-  <string key="wanderer">
-    Spase inhabitant
-  </string>
-  <string key="oshali_scout">
-    O'Shali scout
-  </string>
-  <string key="oshali_attacker">
-    O'Shali assault ship
-  </string>
-  <string key="oshali_mothership">
-    O'Shali mothership
-  </string>
-  <string key="pirate_ship">
-    Pirate ship
-  </string>
-  <string key="pirate_security_ship">
-    Pirate's warehouse security
-  </string>
-  <string key="pirate_hold">
-    Pirate's warehouse
-  </string>
-  <string key="pirate_leader">
-    The pirate's leader
-  </string>
-  <string key="EV0003_BORG_NAME">
-    Wild Borgu'zands
-  </string>
-  <string key="EV0003_DATA_NAME">
-    Data carrier
-  </string>
-  <string key="H1_NPC_G_1_NAME">
-    Test Group Npc
-  </string>
-  <string key="RACE_HUMANS">
-    Humans
-  </string>
-  <string key="RACE_BORGUZANDS">
-    Borguzands
-  </string>
-  <string key="RACE_CRIPTIZIDS">
-    Criptizids
-  </string>
-  <string key="RACE_NONE"></string>
-  
-  <string key="WORKSHOP_DARTHTRIBE">
-    Darth Tribe
-  </string>
-  <string key="WORKSHOP_REDEYE">
-    Red Eye
-  </string>
-  <string key="WORKSHOP_EQUILIBRIUM">
-    Equilibrium
-  </string>
-  <string key="WORKSHOP_EVASIVE">
-    Evasive
-  </string>
-  <string key="WORKSHOP_BIGBANG">
-    Big Bang
-  </string>
-  <string key="WORKSHOP_SERENITY">
-    Serenity
-  </string>
-  <string key="WORKSHOP_RAKHGALS">
-    Rakhgals
-  </string>
-  <string key="WORKSHOP_PHELPARS">
-    Phelpars
-  </string>
-  <string key="WORKSHOP_ZOARDS">
-    Zoards
-  </string>
-  <string key="WORKSHOP_LERJEES">
-    Lerjees
-  </string>
-  <string key="WORKSHOP_YSHUAR">
-    Yshuar
-  </string>
-  <string key="WORKSHOP_KROLRO">
-    Krol Ro
-  </string>
-  <string key="WORKSHOP_ARLEN">
-    Arlen
-  </string>
-  <string key="WORKSHOP_DYNEIRA">
-    Dyneira
-  </string>
-  <string key="WORKSHOP_MOLVICE">
-    Molvice
-  </string>
-  
-  <string key="P001_NAME">Foltan</string>
-  <string key="P002_NAME">Khross'da</string>
+  <string key="container"
+  en = "Space container"
+  ru = "Космический контейнер" 
+  />
+  <string key="resource_guard"
+  en = "Resources security"
+  ru = "Безопасность ресурсов" 
+  />
+  <string key="raider"
+  en = "Space pirate"
+  ru = "Космический пират" 
+  />
+  <string key="wanderer"
+  en = "Space dweller"
+  ru = "Обитатель космоса" 
+  />
+  <string key="oshali_scout"
+  en = "O'Shali Scout"
+  ru = "Разведчик О’Шали" 
+  />
+  <string key="oshali_attacker"
+  en = "O'Shali assault ship"
+  ru = "Корабль штурмового флота О'шали" 
+  />
+  <string key="oshali_mothership"
+  en = "O'Shali mothership"
+  ru = "Корабль-носитель О'Шали" 
+  />
+  <string key="pirate_ship"
+  en = "Pirate ship"
+  ru = "Корабль пиратов" 
+  />
+  <string key="pirate_security_ship"
+  en = "Pirate's Warehouse security"
+  ru = "Пиратский склад безопасности" 
+  />
+  <string key="pirate_hold"
+  en = "Pirate Warehouse"
+  ru = "Пиратский склад" 
+  />
+  <string key="pirate_leader"
+  en = "Pirate leader"
+  ru = "Лидер пиратов" 
+  />
+  <string key="EV0003_BORG_NAME"
+  en = "Wild Borguzands"
+  ru = "Дикий боргу'занд" 
+  />
+  <string key="EV0003_DATA_NAME"
+  en = "Data Holder"
+  ru = "Носитель данных" 
+  />
+  <string key="H1_NPC_G_1_NAME"
+  en = "Test Group Npc"
+  ru = "Тестовая группа NPC" 
+  />
+  <string key="RACE_HUMANS"
+  en = "Humans"
+  ru = "Люди" 
+  />
+  <string key="RACE_BORGUZANDS"
+  en = "Borguzands"
+  ru = "Боргу'занды" 
+  />
+  <string key="RACE_CRIPTIZIDS"
+  en = "Kriptizids"
+  ru = "Криптизиды" 
+  />
+  <string key="RACE_NONE"
+  en = ""
+  ru = "" 
+  />
+  <string key="WORKSHOP_DARTHTRIBE"
+  en = "Darth Tribe"
+  ru = "Darth Tribe" 
+  />
+  <string key="WORKSHOP_REDEYE"
+  en = "Red Eye"
+  ru = "Red Eye" 
+  />
+  <string key="WORKSHOP_EQUILIBRIUM"
+  en = "Equilibrium"
+  ru = "Equilibrium" 
+  />
+  <string key="WORKSHOP_BIGBANG"
+  en = "Big Bang"
+  ru = "Big Bang" 
+  />
+  <string key="WORKSHOP_RAKHGALS"
+  en = "Rakhgals"
+  ru = "Рахгалы" 
+  />
+  <string key="WORKSHOP_PHELPARS"
+  en = "Phelpars"
+  ru = "Фелпары" 
+  />
+  <string key="WORKSHOP_ZOARDS"
+  en = "Zoards"
+  ru = "Зорды" 
+  />
+  <string key="WORKSHOP_LERJEES"
+  en = "Lerjees"
+  ru = "Лержи" 
+  />
+  <string key="WORKSHOP_YSHUAR"
+  en = "Yshuar"
+  ru = "Ишуар" 
+  />
+  <string key="WORKSHOP_KROLRO"
+  en = "Krol Ro"
+  ru = "Крол Ро" 
+  />
+  <string key="WORKSHOP_ARLEN"
+  en = "Arlen"
+  ru = "Арлен" 
+  />
+  <string key="WORKSHOP_DYNEIRA"
+  en = "Dyneira"
+  ru = "Динейра" 
+  />
+  <string key="P001_NAME"
+  en = "Foltan"
+  ru = "Фолтан" 
+  />
+  <string key="P002_NAME"
+  en = "Khross'da"
+  ru = "Хросс'да" 
+  />
 </strings>

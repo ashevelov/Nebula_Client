@@ -412,6 +412,14 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "RequestContainer", new object[] { id, (byte)type });
         }
 
+        public static void AddAll(string containerItemID, byte containerItemType) {
+            if(containerItemType == (byte)ItemType.Chest) {
+                AddAllFromContainer(containerItemID, containerItemType);
+            } else if( containerItemType == (byte)ItemType.Asteroid) {
+                RequestMoveAsteroidToInventory(containerItemID);
+            }
+        }
+
 
         public static void AddAllFromContainer(string containerItemId, byte containerItemType) {
             NetworkGame game = null;

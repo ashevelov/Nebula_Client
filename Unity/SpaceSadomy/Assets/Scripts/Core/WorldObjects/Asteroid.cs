@@ -87,7 +87,7 @@ public class Asteroid : BaseSpaceObject {
         System.Text.StringBuilder sb = new StringBuilder();
         sb.AppendLine("ASTEROID: " + aItem.Name);
         foreach (var c in aItem.Content) {
-            sb.AppendLine(string.Format("{0}:{1}-{2}", c.Material.MaterialType, c.Material.Name, c.Count));
+            sb.AppendLine(string.Format("{0}:{1}-{2}", c.Material.MaterialType, Nebula.Resources.StringCache.Get(c.Material.Id + "_desc"), c.Count));
         }
         return sb.ToString();
     }

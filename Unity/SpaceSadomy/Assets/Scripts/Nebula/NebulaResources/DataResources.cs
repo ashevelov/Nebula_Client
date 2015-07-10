@@ -101,7 +101,7 @@
 
         private Dictionary<string, string> LoadAllStringFromFiles(string directoryPath) {
             Dictionary<string, string> result = new Dictionary<string, string>();
-            TextAsset[] assets = Resources.LoadAll<TextAsset>("DataClient/Strings");
+            TextAsset[] assets = Resources.LoadAll<TextAsset>("DataClient/Strings"); 
             try {
                 foreach (var asset in assets) {
                     Debug.Log("load string asset: {0}".f(asset.name).Color(Color.yellow));

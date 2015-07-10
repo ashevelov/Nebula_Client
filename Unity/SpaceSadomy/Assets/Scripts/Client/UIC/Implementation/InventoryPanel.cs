@@ -139,7 +139,7 @@ namespace Client.UIC.Implementation
                     actionButtons[index].interactable = true;
                     actionButtons[index].onClick.RemoveAllListeners();
                     actionButtons[index].onClick.AddListener(() => actions["del"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Text>().text = "del";
+                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/delete11");
                     index++;
                 }
                 if (actions.ContainsKey("move"))
@@ -147,7 +147,7 @@ namespace Client.UIC.Implementation
                     actionButtons[index].interactable = true;
                     actionButtons[index].onClick.RemoveAllListeners();
                     actionButtons[index].onClick.AddListener(() => actions["move"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Text>().text = "move";
+                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/move1");
                     index++;
                 }
                 if (actions.ContainsKey("equip"))
@@ -155,7 +155,7 @@ namespace Client.UIC.Implementation
                     actionButtons[index].interactable = true;
                     actionButtons[index].onClick.RemoveAllListeners();
                     actionButtons[index].onClick.AddListener(() => actions["equip"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Text>().text = "equip";
+                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/equip1");
                     index++;
                 }
                 if (actions.ContainsKey("craft"))
@@ -163,7 +163,7 @@ namespace Client.UIC.Implementation
                     actionButtons[index].interactable = true;
                     actionButtons[index].onClick.RemoveAllListeners();
                     actionButtons[index].onClick.AddListener(() => actions["craft"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Text>().text = "craft";
+                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/craft1");
                     index++;
                 }
 
@@ -181,6 +181,7 @@ namespace Client.UIC.Implementation
             {
                 actionButtons[index].interactable = false;
                 actionButtons[index].GetComponentInChildren<Text>().text = "";
+                actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("transparent");
                 index++;
             }
         }

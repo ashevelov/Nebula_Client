@@ -1,60 +1,234 @@
 ﻿<strings>
-  <string key="H1_NAME">Tirla</string>
-  <string key="H2_NAME">Luden</string>
-  <string key="H3_NAME">Ponievy</string>
-  <string key="H4_NAME">Unchante</string>
-  <string key="H5_NAME">Heryn</string>
-  <string key="H6_NAME">Moakkin</string>
-  <string key="H7_NAME">Rossk</string>
-  <string key="H8_NAME">Ityrs</string>
-  <string key="H9_NAME">Viela</string>
-  <string key="H10_NAME">Gabroj</string>
-  <string key="H11_NAME">Xerei</string>
-  <string key="H12_NAME">Okle</string>
-  <string key="H13_NAME">Olad</string>
-  <string key="H14_NAME">Akke</string>
-  <string key="H15_NAME">Xaya</string>
-  <string key="H16_NAME">Lyll</string>
-  <string key="H17_NAME">Laek</string>
-  <string key="H18_NAME">Kade</string>
-  <string key="H19_NAME">Zalyx</string>
-  <string key="H20_NAME">Toyte</string>
-  <string key="H21_NAME">Koldo</string>
-  <string key="H22_NAME">Akeky</string>
-  <string key="H23_NAME">Oelaty</string>
-  <string key="H24_NAME">Hakeld</string>
-  <string key="H25_NAME">Tozada</string>
-  <string key="B1_NAME">Hok'zar</string>
-  <string key="B2_NAME">Azidi'</string>
-  <string key="B3_NAME">Kyzyk'ha</string>
-  <string key="B4_NAME">Xorr'gry</string>
-  <string key="B5_NAME">Greeryk'ta</string>
-  <string key="B6_NAME">Vraz'lyk</string>
-  <string key="B7_NAME">Ranna'r</string>
-  <string key="B8_NAME">Khag'dur</string>
-  <string key="B9_NAME">Nalkh</string>
-  <string key="B10_NAME">Lodar</string>
-  <string key="B11_NAME">Ssanaar't</string>
-  <string key="B12_NAME">Ler'muni</string>
-  <string key="B13_NAME">Detig'red</string>
-  <string key="B14_NAME">Noor'grad</string>
-  <string key="B15_NAME">Kerid'nez</string>
-  <string key="E1_NAME">Oor</string>
-  <string key="E2_NAME">Nak</string>
-  <string key="E3_NAME">Zyt</string>
-  <string key="E4_NAME">Ely</string>
-  <string key="E5_NAME">Zom</string>
-  <string key="E6_NAME">Yed</string>
-  <string key="E7_NAME">Noa</string>
-  <string key="E8_NAME">Lyn</string>
-  <string key="E9_NAME">Eel</string>
-  <string key="E10_NAME">Kon</string>
-  <string key="E11_NAME">Eri</string>
-  <string key="E12_NAME">Ren</string>
-  <string key="E13_NAME">Iti</string>
-  <string key="E14_NAME">Lae</string>
-  <string key="E15_NAME">Jer</string>
-  <string key="N1_NAME">Loonyn</string>
-  <string key="N2_NAME">Kravo'i</string>
-  <string key="N3_NAME">Dovata</string>
+  <string key="H1_NAME"
+  en = "Tirla"
+  ru = "Тирла" 
+  />
+  <string key="H2_NAME"
+  en = "Luden"
+  ru = "Люден" 
+  />
+  <string key="H3_NAME"
+  en = "Ponievy"
+  ru = "Поневи" 
+  />
+  <string key="H4_NAME"
+  en = "Unchante"
+  ru = "Анчанте" 
+  />
+  <string key="H5_NAME"
+  en = "Heryn"
+  ru = "Херин" 
+  />
+  <string key="H6_NAME"
+  en = "Moakkin"
+  ru = "Моаккин" 
+  />
+  <string key="H7_NAME"
+  en = "Rossk"
+  ru = "Росск" 
+  />
+  <string key="H8_NAME"
+  en = "Ityrs"
+  ru = "Итис" 
+  />
+  <string key="H9_NAME"
+  en = "Viela"
+  ru = "Виела" 
+  />
+  <string key="H10_NAME"
+  en = "Gabroj"
+  ru = "Габродж" 
+  />
+  <string key="H11_NAME"
+  en = "Xerei"
+  ru = "Ксерия" 
+  />
+  <string key="H12_NAME"
+  en = "Okle"
+  ru = "Оукл" 
+  />
+  <string key="H13_NAME"
+  en = "Olad"
+  ru = "Олад" 
+  />
+  <string key="H14_NAME"
+  en = "Akke"
+  ru = "Акка" 
+  />
+  <string key="H15_NAME"
+  en = "Xaya"
+  ru = "Ксайя" 
+  />
+  <string key="H16_NAME"
+  en = "Lyll"
+  ru = "Лил" 
+  />
+  <string key="H17_NAME"
+  en = "Laek"
+  ru = "Лаек" 
+  />
+  <string key="H18_NAME"
+  en = "Kade"
+  ru = "Кейд" 
+  />
+  <string key="H19_NAME"
+  en = "Zalyx"
+  ru = "Заликс" 
+  />
+  <string key="H20_NAME"
+  en = "Toyte"
+  ru = "Тойт" 
+  />
+  <string key="H21_NAME"
+  en = "Koldo"
+  ru = "Колдо" 
+  />
+  <string key="H22_NAME"
+  en = "Akeky"
+  ru = "Акеки" 
+  />
+  <string key="H23_NAME"
+  en = "Oelaty"
+  ru = "Олата" 
+  />
+  <string key="H24_NAME"
+  en = "Hakeld"
+  ru = "Хакелд" 
+  />
+  <string key="H25_NAME"
+  en = "Tozada"
+  ru = "Тозада" 
+  />
+  <string key="B1_NAME"
+  en = "Hok'zar"
+  ru = "Хок'зар" 
+  />
+  <string key="B2_NAME"
+  en = "Azidi'"
+  ru = "Азиди" 
+  />
+  <string key="B3_NAME"
+  en = "Kyzyk'ha"
+  ru = "Кизик'ха" 
+  />
+  <string key="B4_NAME"
+  en = "Xorr'gry"
+  ru = "Хорр'гри" 
+  />
+  <string key="B5_NAME"
+  en = "Greeryk'ta"
+  ru = "Грирук'та" 
+  />
+  <string key="B6_NAME"
+  en = "Vraz'lyk"
+  ru = "Враз'лик" 
+  />
+  <string key="B7_NAME"
+  en = "Ranna'r"
+  ru = "Ранна'р" 
+  />
+  <string key="B8_NAME"
+  en = "Khag'dur"
+  ru = "Кхад'дур" 
+  />
+  <string key="B9_NAME"
+  en = "Nalkh"
+  ru = "Налк" 
+  />
+  <string key="B10_NAME"
+  en = "Lodar"
+  ru = "Лодар" 
+  />
+  <string key="B11_NAME"
+  en = "Ssanaar't"
+  ru = "Саанаар'т" 
+  />
+  <string key="B12_NAME"
+  en = "Ler'muni"
+  ru = "Лер'муни" 
+  />
+  <string key="B13_NAME"
+  en = "Detig'red"
+  ru = "Детиг'ред" 
+  />
+  <string key="B14_NAME"
+  en = "Noor'grad"
+  ru = "Нур'град" 
+  />
+  <string key="B15_NAME"
+  en = "Kerid'nez"
+  ru = "Керид'нез" 
+  />
+  <string key="E1_NAME"
+  en = "Oor"
+  ru = "Оор" 
+  />
+  <string key="E2_NAME"
+  en = "Nak"
+  ru = "Нак" 
+  />
+  <string key="E3_NAME"
+  en = "Zyt"
+  ru = "Зит" 
+  />
+  <string key="E4_NAME"
+  en = "Ely"
+  ru = "Или" 
+  />
+  <string key="E5_NAME"
+  en = "Zom"
+  ru = "Зом" 
+  />
+  <string key="E6_NAME"
+  en = "Yed"
+  ru = "Йед" 
+  />
+  <string key="E7_NAME"
+  en = "Noa"
+  ru = "Ноа" 
+  />
+  <string key="E8_NAME"
+  en = "Lyn"
+  ru = "Лин" 
+  />
+  <string key="E9_NAME"
+  en = "Eel"
+  ru = "Иил" 
+  />
+  <string key="E10_NAME"
+  en = "Kon"
+  ru = "Кон" 
+  />
+  <string key="E11_NAME"
+  en = "Eri"
+  ru = "Эри" 
+  />
+  <string key="E12_NAME"
+  en = "Ren"
+  ru = "Рен" 
+  />
+  <string key="E13_NAME"
+  en = "Iti"
+  ru = "Ити" 
+  />
+  <string key="E14_NAME"
+  en = "Lae"
+  ru = "Лаэ" 
+  />
+  <string key="E15_NAME"
+  en = "Jer"
+  ru = "Йер" 
+  />
+  <string key="N1_NAME"
+  en = "Loonyn"
+  ru = "Лунин" 
+  />
+  <string key="N2_NAME"
+  en = "Kravo'i"
+  ru = "Краво'и" 
+  />
+  <string key="N3_NAME"
+  en = "Dovata"
+  ru = "Довата" 
+  />
 </strings>

@@ -1,5 +1,6 @@
 ﻿<strings>
-  <string key="E001_DESC">
-    Вторгшийся пират и темных пространств, нужно срочно ликвидировать
-  </string>
+  <string key="E001_DESC"
+  en = "Pirate, an intruder from dark space. Subject to immediate termination."
+  ru = "Пират, вторгшийся из темных пространств. Подлежит немедленной ликвидации." 
+  />
 </strings>

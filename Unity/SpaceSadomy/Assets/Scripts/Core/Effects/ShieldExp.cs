@@ -7,7 +7,7 @@ public class ShieldExp : MonoBehaviour {
     public float speed = 0.2f;
     public Transform effect;
 
-    public static void Init(Transform target, Transform tParent)
+    public static void Init(Transform target, Transform tParent, float Scale)
     {
         GameObject go = Resources.Load("Prefabs/Effects/Shields/shieldExp") as GameObject;
         if (go != null)
@@ -16,6 +16,7 @@ public class ShieldExp : MonoBehaviour {
             inst.transform.parent = tParent;
             inst.transform.localPosition = Vector3.zero;
             inst.transform.LookAt(target);
+			inst.transform.localScale*=Scale;
             Destroy(inst, 4);
         }
         else 
@@ -28,6 +29,6 @@ public class ShieldExp : MonoBehaviour {
     {
         _startColor.a -= speed * Time.deltaTime * (1.1f - _startColor.a);
         effect.GetComponent<Renderer>().material.color = _startColor;
-        transform.position += transform.forward * Time.deltaTime*1f;
+       // transform.position += transform.forward * Time.deltaTime*1f;
     }
 }

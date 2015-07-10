@@ -22,7 +22,7 @@ namespace Client.UIP.Implementation
 
         private List<ClientInventoryItem> currentItems = new List<ClientInventoryItem>();
 
-        void Start()
+        void OnEnable()
         {
             StartCoroutine(UpdateInfo());
         }
@@ -220,8 +220,8 @@ namespace Client.UIP.Implementation
             if(clientItem.Object is MaterialInventoryObjectInfo)
             {
                 MaterialInventoryObjectInfo objectInfo = clientItem.Object as MaterialInventoryObjectInfo;
-                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), objectInfo.Name);
-                name = objectInfo.Name;
+                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), Nebula.Resources.StringCache.Get(objectInfo.Id + "_desc"));
+                name = Nebula.Resources.StringCache.Get(objectInfo.Id + "_desc");
                 info.Parametrs = parameters;
             }else if (clientItem.Object is WeaponInventoryObjectInfo)
             {

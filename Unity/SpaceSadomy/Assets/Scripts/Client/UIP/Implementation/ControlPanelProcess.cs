@@ -10,7 +10,7 @@ namespace Client.UIP.Implementation
 
         public IControlPanel controlPanel;
 
-        void Start()
+        void OnEnable()
         {
             StartCoroutine(UpdateInfo());
         }

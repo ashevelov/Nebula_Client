@@ -13,7 +13,7 @@ namespace Client.UIP.Implementation
 
         public IPlayerInfo playerInfo;
 
-        void Start()
+        void OnEnable()
         {
             StartCoroutine(UpdateInfo());
         }

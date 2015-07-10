@@ -21,6 +21,12 @@
         public static event System.Action<IInventoryItemsSource> InventoryItemSourceUpdated;
 
         /// <summary>
+        /// Subscribe this to auction update event
+        /// </summary>
+        public static event System.Action AuctionUpdated;
+
+
+        /// <summary>
         /// Fire when receive response from Request Search Groups
         /// </summary>
         public static event System.Action SearchGroupResultUpdated;
@@ -123,6 +129,15 @@
         public static void EvtInventoryItemSourceUpdated(IInventoryItemsSource source) {
             if(InventoryItemSourceUpdated != null) {
                 InventoryItemSourceUpdated(source);
+            }
+        }
+
+        /// <summary>
+        /// Send auction update event ( fire when uaction cur, next, prev pages load operation completes)
+        /// </summary>
+        public static void EvtAuctionUpdated() {
+            if(AuctionUpdated != null) {
+                AuctionUpdated();
             }
         }
     }

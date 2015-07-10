@@ -55,6 +55,12 @@
                             Vector3 tileDimensions = ((float[])operationResponse.Parameters[(byte)ParameterCode.TileDimensions]).toVector();
                             LevelType levelType = (LevelType)(byte)operationResponse.Parameters[(byte)ParameterCode.LevelType];
                             Hashtable worldContent = operationResponse.Parameters[ParameterCode.WorldContent.toByte()] as Hashtable;
+
+                            object[] components = null;
+                            if (operationResponse.Parameters.ContainsKey((byte)ParameterCode.Components)) {
+                                components = operationResponse.Parameters[(byte)ParameterCode.Components] as object[];
+                            }
+
                             if (worldContent != null) {
                                 //((NetworkGame)game).ClientWorld.ParseInfo(worldContent);
                                 GameData.instance.clientWorld.ParseInfo(worldContent);
@@ -71,6 +77,10 @@
                             var position = new float[] { 0, 0, Settings.START_Z };
                             ngame.Avatar.SetPositions(position, position, null, null, 0);
                             ngame.SetDisconnectAction(NebulaGameDisconnectAction.None);
+                            if(components != null) {
+                                ngame.Avatar.ReplaceComponents(components);
+                                Debug.Log(string.Format("Player components count = {0}", components.Length).Color("orange"));
+                            }
 
                             Debug.Log("ENTERED TO WORLD" + ngame.Engine.GameData.World.Name);
 

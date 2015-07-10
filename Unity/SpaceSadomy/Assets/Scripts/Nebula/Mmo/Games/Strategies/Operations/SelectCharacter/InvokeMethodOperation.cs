@@ -32,17 +32,26 @@
 
         private void HandleGetCurrentAuctionPage(SelectCharacterGame game, OperationResponse response) {
             Hashtable ret = ReturnValue<Hashtable>(response);
+            //parse new auction data
             GameData.instance.auction.ParseInfo(ret);
+            //send auction update event
+            Nebula.Events.EvtAuctionUpdated();
         }
 
         private void HandleGetNextAuctionPage(SelectCharacterGame game, OperationResponse response) {
             Hashtable ret = ReturnValue<Hashtable>(response);
+            //parse new auction data
             GameData.instance.auction.ParseInfo(ret);
+            //send auction update event
+            Nebula.Events.EvtAuctionUpdated();
         }
 
         private void HandleGetPrevAuctionPage(SelectCharacterGame game, OperationResponse response) {
             Hashtable ret = ReturnValue<Hashtable>(response);
+            //pasre new auction data
             GameData.instance.auction.ParseInfo(ret);
+            //send auction update event
+            Nebula.Events.EvtAuctionUpdated();
         }
 
         private void HandlePutToAuction(SelectCharacterGame game, OperationResponse response) {

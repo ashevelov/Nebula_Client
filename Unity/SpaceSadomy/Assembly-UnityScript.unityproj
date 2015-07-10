@@ -123,6 +123,7 @@
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantNormal.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Thruster\Flame.shader" />
+     <None Include="Assets\Resources\DataClient\Strings\game_events_strings.xml" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereOuterNormalSpecularDetail.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJump.shader" />
@@ -179,6 +180,7 @@
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\Resources\UI\Data\tree_view_test.xml" />
      <None Include="Assets\Shaders\GradientGlow2.shader" />
+     <None Include="Assets\Resources\DataClient\Strings\error_messages.xml" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Resources\Data\Drop\module_settings.xml" />
@@ -200,6 +202,7 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Heat.shader" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Resources\Data\Drop\module_set.xml" />
+     <None Include="Assets\Resources\DataClient\Strings\race_description.xml" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
      <None Include="Assets\Resources\DataClient\Strings\strings_1.xml" />
      <None Include="Assets\ThirdPartyAssets\Realistic Effects Pack\Shaders\Particles.shader" />
@@ -220,6 +223,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
      <None Include="Assets\Shaders\FutileGlow.shader" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+     <None Include="Assets\Resources\DataClient\Strings\zone_names.xml" />
      <None Include="Assets\Shaders\SpaceGlowAdditiveTwoColor.shader" />
      <None Include="Assets\Resources\Data\Zones\H5.xml" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\Projectors\Guidelines.txt" />
@@ -276,6 +280,7 @@
      <None Include="Assets\ThirdPartyAssets\Realistic Effects Pack\Shaders\Distortion\Distortion.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Corona\VariantPerPixel.shader" />
+     <None Include="Assets\Resources\DataClient\Strings\strings_2.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereNormalSpecular.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantSpecularDetail.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\GasGiant\VariantPlanetShadow.shader" />
@@ -305,6 +310,7 @@
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Resources\Data\Zones\N1.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\PlanetSurface\VariantAtmosphereOuterNormalSpecularPlanetShadow.shader" />
+     <None Include="Assets\Resources\DataClient\Strings\help_strings.xml" />
      <None Include="Assets\Resources\UI\Data\test_view.xml" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\CGInclude\PlanetClouds.cginc" />
      <None Include="Assets\Resources\UI\Data\inventory_hold.xml" />
@@ -446,6 +452,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
      <None Include="Assets\[SF]WeaponEffectPack\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Corona\VariantPerPixelRing.shader" />
+     <None Include="Assets\Resources\DataClient\Strings\buff_strings.xml" />
      <None Include="Assets\SpaceUnity\Shaders\PlanetStandard.shader" />
      <None Include="Assets\ThirdPartyAssets\SpaceGraphicsToolkit\Required\Shaders\Resources\Ring\VariantLit.shader" />
      <None Include="Assets\Resources\Data\Zones\B6.xml" />

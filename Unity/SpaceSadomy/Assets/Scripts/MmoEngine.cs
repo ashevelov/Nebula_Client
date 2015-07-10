@@ -312,10 +312,26 @@ public class MmoEngine : Singleton<MmoEngine>
         //DrawChat();
         DrawGroup();
 
+        /*
         GUI.Label(new Rect(5, Screen.height - 30, 0, 0), "loaded scene: " + Application.loadedLevelName, skin.GetStyle("font_upper_left"));
         if (NebulaGame != null) {
             GUI.Label(new Rect(5, Screen.height - 60, 0, 0), "game strategy: " + NebulaGame.CurrentStrategy, skin.GetStyle("font_upper_left"));
+        }*/
+
+        /*
+        if (NebulaGame.Avatar.target != null) {
+            GUI.Label(new Rect(100, 80, 0, 0), string.Format("Target=(ID={0}, TYPE={1}, HAS={2})", NebulaGame.Avatar.target.targetID,
+                (ItemType)NebulaGame.Avatar.target.targetType,
+                NebulaGame.Avatar.target.hasTarget), skin.GetStyle("font_upper_left"));
+        } else {
+            GUI.Label(new Rect(100, 80, 0, 0), "Target component is (NULL)", skin.GetStyle("font_upper_left"));
         }
+
+        if (GUI.Button(new Rect(100, 100, 100, 50), "Move Target")) {
+
+            NRPC.AddAll(NebulaGame.Avatar.target.targetID, NebulaGame.Avatar.target.targetType);
+        }*/
+
     }
 
     private void DrawGameStates() {

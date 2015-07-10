@@ -15,7 +15,7 @@ namespace Client.UIP.Implementation
 
         private IObjectInfo objectInfo;
 
-        void Start()
+        void OnEnable()
         {
             StartCoroutine(UpdateInfo());
         }
@@ -24,6 +24,17 @@ namespace Client.UIP.Implementation
         {
             this.objectInfo = objectInfo;
             this.gameObject.SetActive(this.objectInfo != null);
+
+            if (this.objectInfo is IIconObjectInfo)
+            {
+                if (uicPanel == null)
+                {
+                    uicPanel = FindObjectOfType<TargetInfo>();
+                }
+                uicPanel.MaxHP = 50000;
+                uicPanel.CurentHP = 50000;
+                uicPanel.Icon = (this.objectInfo as IIconObjectInfo).Icon;
+            }
         }
 
         private void CombatUpdate(ICombatObjectInfo info)
@@ -66,7 +77,6 @@ namespace Client.UIP.Implementation
                     uicPanel.MaxHP = 50000;
                     uicPanel.CurentHP = 50000;
                 }
-
                 if (objectInfo is ICombatObjectInfo)
                 {
                     CombatUpdate(objectInfo as ICombatObjectInfo);

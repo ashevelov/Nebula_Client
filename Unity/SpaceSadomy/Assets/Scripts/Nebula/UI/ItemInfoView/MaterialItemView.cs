@@ -17,7 +17,7 @@
 
             var data = DataResources.Instance.OreData(material.TemplateId);
 
-            this.NameText.text = StringCache.Get(material.Name);
+            this.NameText.text = StringCache.Get(Nebula.Resources.StringCache.Get(material.Id + "_desc"));
             this.DescriptionText.text = StringCache.Get(data.Description);
 
 

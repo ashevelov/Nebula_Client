@@ -195,9 +195,13 @@ namespace Nebula.Mmo.Items
             this.subscribedInterestAreas = new List<byte>();
             properties = new Dictionary<byte, object>();
 
+            ReplaceComponents(inComponents);
+        }
+
+        public void ReplaceComponents(object[] inComponents) {
             if (inComponents != null) {
                 componentIDS = new ComponentID[inComponents.Length];
-                for(int i = 0; i < inComponents.Length; i++ ) {
+                for (int i = 0; i < inComponents.Length; i++) {
                     componentIDS[i] = (ComponentID)(int)inComponents[i];
                 }
             } else {
@@ -205,12 +209,12 @@ namespace Nebula.Mmo.Items
             }
 
             components = new Dictionary<ComponentID, MmoBaseComponent>();
-            foreach(var cID in componentIDS) {
+            foreach (var cID in componentIDS) {
                 var component = MmoBaseComponent.CreateNew(cID);
                 if (component != null) {
                     components.Add(cID, component);
                     component.SetItem(this);
-                    switch(cID) {
+                    switch (cID) {
                         case ComponentID.Bonuses: bonuses = component as MmoBonusesComponent; break;
                         case ComponentID.Bot: bot = component as MmoBotComponent; break;
                         case ComponentID.Character: character = component as MmoCharacterComponent; break;

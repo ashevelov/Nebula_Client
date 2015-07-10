@@ -108,7 +108,7 @@ public class Missile : MonoBehaviour {
             {
                 if (_shieldExp && (target.GetComponents<NetworkTransformInterpolation>().Length > 0))
                 {
-                    ShieldExp.Init(transform, target);
+                    ShieldExp.Init(transform, target,1);
                 }
                 TimeoutExplode();
             }

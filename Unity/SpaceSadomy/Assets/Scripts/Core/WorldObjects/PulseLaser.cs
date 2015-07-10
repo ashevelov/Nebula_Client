@@ -76,7 +76,7 @@ public class PulseLaser : MonoBehaviour {
                 length -= Time.deltaTime * _speed;
                 if (_powerShield && _hit && !shildexp)
                 {
-                    ShieldExp.Init(_laser_turrel, _target);
+                    ShieldExp.Init(_laser_turrel, _target,1);
                     shildexp = true;
                 }
                 if (_hit)

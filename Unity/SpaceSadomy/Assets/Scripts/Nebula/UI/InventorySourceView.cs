@@ -169,6 +169,13 @@
             }
         }
 
+        public void OnTakeAllButtonClick()
+        {
+            Debug.Log("NRPC.AddAll(source.Id, source.SourceType.toByte()); ");
+            NRPC.AddAll(source.Id, source.SourceType.toByte());
+            MainCanvas.Get.Destroy(CanvasPanelType.InventorySourceView);        
+        }
+
         //Handler for show Info button
         //Show info for selected item if any
         public void OnShowInfoButtonClick() {

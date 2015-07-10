@@ -205,7 +205,7 @@ private void TapInStar(RaycastHit hit)
         }
         else
         {
-            ConfirmationDialog.Setup("jump to", () =>
+            ConfirmationDialog.Setup(Nebula.Resources.StringCache.Get("YOURLOCATION"), () =>
             {
                 MyPlayer mp = FindObjectOfType<MyPlayer>();
                 mp.transform.position = hit.transform.position * 600 + new Vector3(0, 80, 0);
@@ -280,7 +280,7 @@ private void TapInStar(RaycastHit hit)
                     string zoneNameStringId = DataResources.Instance.ZoneForId(s._id).DisplayName();
                     if (curentSS != null)
                     {
-                        GUI.Label(Utils.WorldPos2ScreenRect(s.pos, new Vector2(150, 30), _camera), stringSubCache.String(zoneNameStringId, zoneNameStringId) + ((curentSS._id == s._id) ? "  (You are here)" : ""));
+                        GUI.Label(Utils.WorldPos2ScreenRect(s.pos, new Vector2(150, 30), _camera), stringSubCache.String(zoneNameStringId, zoneNameStringId) + ((curentSS._id == s._id) ? "  " + Nebula.Resources.StringCache.Get("YOURLOCATION") : ""));
                     }
                     else
                     {

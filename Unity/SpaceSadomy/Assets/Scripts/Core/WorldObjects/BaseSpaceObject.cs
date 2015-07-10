@@ -22,7 +22,9 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     //Self transform cached for optimization
     protected Transform selfTransform;
     //Shield object
-    protected GameObject shield;
+	private ShieldEffect mShield;
+	public ShieldEffect GetShield(){ return mShield; }
+
     //Screen view gui class for this object
     //protected ObjectScreenSelection screenView;
 
@@ -64,7 +66,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         this.selfTransform = transform;
         this.childrensActive = true;
 
-        BonusEffectMaker speedDebuffMaker = (parent) => {
+       /* BonusEffectMaker speedDebuffMaker = (parent) => {
             GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/SpeedDebuff")) as GameObject;
             inst.transform.parent = parent.transform;
             inst.transform.localPosition = Vector3.zero;
@@ -109,7 +111,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         bonusEffectViewManager.SetEffectMaker(BonusType.increase_speed_on_pc, speedBuffMaker);
         bonusEffectViewManager.SetEffectMaker(BonusType.increase_damage_on_cnt, damageBuffMaker);
         bonusEffectViewManager.SetEffectMaker(BonusType.increase_damage_on_pc, damageBuffMaker);
-
+*/
         //bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt, BonusEffectMaker)
         //bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt)
         /*
@@ -459,7 +461,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <summary>
     /// Create shiled on this object, make overrides by derived classes
     /// </summary>
-    public virtual void CreateShield()
+   /* public virtual void CreateShield()
     {
         if (this.shield)
         {
@@ -482,7 +484,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
             this.shield = null;
         }
     }
-
+*/
     /// <summary>
     /// Use skill by this space object(yet not implemented)
     /// </summary>
@@ -550,18 +552,23 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 		}
 		
 		if("000003FB".FromHex() == skillId) {
-            Item targetItem = null;
-            if (!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
-                Debug.LogError("skill target item not founded");
-                return;
-            }
-            if (!targetItem.View) {
-                Debug.LogError("skill target item don't have view");
-                return;
-            }
-
+          
+			mShield = 
+			PlayerSkillList.HumanSkill3(item);
 			//PlayerSkillList.HumanSkill1(item,targetItem.View);
         }
+
+		if("00000400".FromHex() == skillId) {
+
+			PlayerSkillList.HumanSkill4(item);
+			//PlayerSkillList.HumanSkill1(item,targetItem.View);
+		}
+
+		if("000003f5".FromHex() == skillId) {
+			
+			PlayerSkillList.HumanSkill5(item);
+			//PlayerSkillList.HumanSkill1(item,targetItem.View);
+		}
 
         /*
         switch(skillId)
@@ -791,7 +798,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         } 
     }
 
-    /// <summary>
+   /* /// <summary>
     /// Currently exist or not power shield on this object
     /// </summary>
     public bool PowerFieldExist
@@ -801,7 +808,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
             return this.shield;
         }
     }
-
+*/
     /// <summary>
     /// Get position
     /// </summary>

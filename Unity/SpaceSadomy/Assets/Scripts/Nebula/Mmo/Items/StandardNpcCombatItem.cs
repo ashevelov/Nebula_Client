@@ -11,16 +11,16 @@ namespace Nebula.Mmo.Items {
     public class StandardNpcCombatItem : NpcItem, IDamagable, IBonusHolder, Nebula.UI.ICombatObjectInfo, Nebula.UI.ISelectedObjectContextMenuViewSource {
 
         private BaseSpaceObject component;
-        private ForeignShip ship;
-        private ActorBonuses bonuses;
+        private ForeignShip mShip;
+        private ActorBonuses mBonuses;
         private int level;
         private TextureSubCache<string> texSubCache = new TextureSubCache<string>();
         private ClientItemEventInfo eventInfo;
 
         public StandardNpcCombatItem(string id, byte type, NetworkGame game, BotItemSubType subType, string name, object[] inComponents)
             : base(id, type, game, subType, name, inComponents) {
-            this.ship = new ForeignShip(this);
-            this.bonuses = new ActorBonuses();
+            this.mShip = new ForeignShip(this);
+            this.mBonuses = new ActorBonuses();
             this.eventInfo = ClientItemEventInfo.Default;
         }
 
@@ -33,10 +33,15 @@ namespace Nebula.Mmo.Items {
         public override void OnPropertySetted(byte key, object oldValue, object newValue) {
             switch((PS)key) {
                 case PS.Ship:
-                    ship.ParseInfo(newValue as Hashtable);
+                    mShip.ParseInfo(newValue as Hashtable);
                     break;
                 case PS.Bonuses:
-                    bonuses.Replace(newValue as Hashtable);
+                    if (newValue is Hashtable) {
+                        Debug.Log((newValue as Hashtable).ToStringBuilder().ToString());
+                        mBonuses.Replace(newValue as Hashtable);
+                    } else {
+                        Debug.LogErrorFormat("invalid bonuses type = {0}", newValue.GetType().Name);
+                    }
                     break;
                 case PS.Level:
                     level = (int)newValue;
@@ -55,7 +60,7 @@ namespace Nebula.Mmo.Items {
                 case PS.MaxHealth:
                 case PS.Destroyed:
                 case PS.Workshop:
-                    ship.ParseProp(key, newValue);
+                    mShip.ParseProp(key, newValue);
                     break;
             }
         }
@@ -66,11 +71,11 @@ namespace Nebula.Mmo.Items {
         }
 
         public ForeignShip Ship {
-            get { return this.ship; }
+            get { return mShip; }
         }
 
         public bool IsDead() {
-            return this.ship.Destroyed;
+            return mShip.Destroyed;
         }
 
         public bool IsPowerShieldEnabled() {
@@ -79,48 +84,48 @@ namespace Nebula.Mmo.Items {
 
         public float GetHealth() {
             if (this.ship != null)
-                return this.ship.Health;
+                return mShip.Health;
             return 0f;
         }
 
         public float GetMaxHealth() {
             if (this.ship != null)
-                return this.ship.MaxHealth;
+                return mShip.MaxHealth;
             return float.MaxValue;
         }
 
         public float GetHealth01() {
-            if (this.ship.MaxHealth == 0.0f)
+            if (mShip.MaxHealth == 0.0f)
                 return 0.0f;
-            return Mathf.Clamp01(this.ship.Health / this.ship.MaxHealth);
+            return Mathf.Clamp01(mShip.Health / mShip.MaxHealth);
         }
 
         public float GetOptimalDistance() {
-            return this.ship.Weapon.OptimalDistance;
+            return mShip.Weapon.OptimalDistance;
         }
 
         public float GetRange() {
-            return this.ship.Weapon.Range;
+            return mShip.Weapon.Range;
         }
 
         public float GetFarHitProb() {
-            return this.ship.Weapon.FarProb;
+            return mShip.Weapon.FarProb;
         }
 
         public float GetNearHitProb() {
-            return this.ship.Weapon.NearProb;
+            return mShip.Weapon.NearProb;
         }
 
         public float GetMaxHitSpeed() {
-            return this.ship.Weapon.MaxHitSpeed;
+            return mShip.Weapon.MaxHitSpeed;
         }
 
         public float GetMaxFireDistance() {
-            return this.ship.Weapon.MaxFireDistance;
+            return mShip.Weapon.MaxFireDistance;
         }
 
         public float GetSpeed() {
-            return this.ship.Speed;
+            return mShip.Speed;
         }
 
 
@@ -136,7 +141,7 @@ namespace Nebula.Mmo.Items {
         }
 
         public ActorBonuses Bonuses {
-            get { return this.bonuses; }
+            get { return mBonuses; }
         }
 
         public override void AdditionalUpdate() {

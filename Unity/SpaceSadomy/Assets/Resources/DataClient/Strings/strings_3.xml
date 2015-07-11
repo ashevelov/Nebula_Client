@@ -1,0 +1,351 @@
+﻿<strings>
+  <string key="LOGIN"
+    en = "Login"
+    ru = "Войти"
+  />
+  <string key="ENTER_LOGIN"
+    en = "Enter login..."
+    ru = "Введите логин..."
+  />
+  <string key="CREAT_NEW"
+    en = "Create"
+    ru = "Создать"
+  />
+  <string key="PLAY"
+    en = "Play"
+    ru = "Играть"
+  />
+  <string key="DELETE"
+    en = "Delete"
+    ru = "Удалить"
+  />
+  <string key="NEXT"
+    en = "Next"
+    ru = "Далее"
+  />
+  <string key="BACK"
+    en = "Back"
+    ru = "Назад"
+  />
+  <string key="COLLECT"
+    en = "Collect"
+    ru = "Собрать"
+  />
+  <string key="TAKE"
+    en = "Collect"
+    ru = "Собрать"
+  />
+  <string key="TAKE_ALL"
+    en = "Collect all"
+    ru = "Собрать все"
+  />
+  <string key="INVITE_TO_GROUP"
+    en = "Invite to group"
+    ru = "Пригласить в группу"
+  />
+  <string key="INVITE_TO_GUILD"
+    en = "Invite to guild"
+    ru = "Пригласить в гильдию"
+  />
+  <string key="SETTINGS"
+    en = "Settings"
+    ru = "Настройки"
+  />
+  <string key="JUMP"
+    en = "Jump to the system?"
+    ru = "Вы хотите совершить прыжок в систему?"
+  />
+  <string key="YOURLOCATION"
+    en = "You are here"
+    ru = "Вы находитесь здесь"
+  />
+  <string key="type_weapon"
+    en = "weapon"
+    ru = "оружие"
+  />
+  <string key="type_scheme"
+    en = "scheme"
+    ru = "схема"
+  />
+  <string key="type_material"
+    en = "material"
+    ru = "материал"
+  />
+  <string key="type_module"
+    en = "module"
+    ru = "модуль"
+  />
+  <string key="hum_inventoryHP"
+    en = "Hull integrity: "
+    ru = "Целостность обшивки: "
+  />
+  <string key="hum_inventoryresistance"
+    en = "Damage resistance: "
+    ru = "Сопротивление урону: "
+  />
+  <string key="inventorydamagebonus"
+    en = "Damage bonus: "
+    ru = "Бонус к урону: "
+  />
+  <string key="hum_inventoryholdbonus"
+    en = "Hold capacity bonus: "
+    ru = "Бонус к вместимости трюма: "
+  />
+  <string key="hum_inventoryenergybonus"
+    en = "Energy bonus: "
+    ru = "Бонус к количеству энергии: "
+  />
+  <string key="inventoryspeedbonus"
+    en = "Speed bonus: "
+    ru = "Бонус к скорости: "
+  />
+  <string key="inventoryspeed"
+    en = "Speed: "
+    ru = "Скорость: "
+  />
+  <string key="hum_inventoryhold"
+    en = "Hold capacity: "
+    ru = "Вместимость трюма: "
+  />
+  <string key="inventorycritchance"
+    en = "Critical hit chance: "
+    ru = "Шанс критического удара: "
+  />
+  <string key="inventorycritdamage"
+    en = "Critical hit damage: "
+    ru = "Величина критического урона: "
+  />
+  <string key="hum_inventoryenegyrepl"
+    en = "Energy replenishment speed: "
+    ru = "Скорость восстановления энергии: "
+  />
+  <string key="inventorydamage"
+    en = "Damage: "
+    ru = "Урон: "
+  />
+  <string key="inventoryoptimal"
+    en = "Optimal distance: "
+    ru = "Оптимальная дальность: "
+  />
+  <string key="CraftOre0001_desc"
+    en = "Gern"
+    ru = "Герн"
+  />
+  <string key="CraftOre0002_desc"
+    en = "Fazin"
+    ru = "Фазин"
+  />
+  <string key="CraftOre0003_desc"
+    en = "Shuksad"
+    ru = "Шуксад"
+  />
+  <string key="CraftOre0004_desc"
+    en = "Riapal"
+    ru = "Риапал"
+  />
+  <string key="CraftOre0005_desc"
+    en = "Lopen"
+    ru = "Лопен"
+  />
+  <string key="CraftOre0006_desc"
+    en = "Znerid"
+    ru = "Знерид"
+  />
+  <string key="CraftOre0007_desc"
+    en = "Centar"
+    ru = "Центар"
+  />
+  <string key="CraftOre0008_desc"
+    en = "Violen"
+    ru = "Виолен"
+  />
+  <string key="CraftOre0009_desc"
+    en = "Likmez"
+    ru = "Ликмез"
+  />
+  <string key="CraftOre0010_desc"
+    en = "Diren"
+    ru = "Дирен"
+  />
+  <string key="CraftOre0011_desc"
+    en = "Clampaz"
+    ru = "Клампаз"
+  />
+  <string key="CraftOre0012_desc"
+    en = "Tianor"
+    ru = "Тианор"
+  />
+  <string key="CraftOre0013_desc"
+    en = "Velin"
+    ru = "Велин"
+  />
+  <string key="CraftOre0014_desc"
+    en = "Cariot"
+    ru = "Кариот"
+  />
+  <string key="CraftOre0015_desc"
+    en = "Tricer"
+    ru = "Трицер"
+  />
+  <string key="CraftOre0016_desc"
+    en = "Paklam"
+    ru = "Паклам"
+  />
+  <string key="CraftOre0017_desc"
+    en = "Pirin"
+    ru = "Пирин"
+  />
+   <string key="CraftOre0018_desc"
+    en = "Vapinar"
+    ru = "Вапинар"
+  />
+   <string key="CraftOre0019_desc"
+    en = "Colomen"
+    ru = "Коломен"
+  />
+   <string key="CraftOre0020_desc"
+    en = "Rekicin"
+    ru = "Рекицин"
+  />
+   <string key="CraftOre0021_desc"
+    en = "Alamast"
+    ru = "Аламаст"
+  />
+   <string key="CraftOre0022_desc"
+    en = "Ogamel"
+    ru = "Огамел"
+  />
+   <string key="CraftOre0023_desc"
+    en = "Tazidor"
+    ru = "Тазидор"
+  />
+   <string key="CraftOre0024_desc"
+    en = "Losgen"
+    ru = "Лосген"
+  />
+   <string key="CraftOre0025_desc"
+    en = "Fematin"
+    ru = "Фематин"
+  />
+   <string key="CraftOre0026_desc"
+    en = "Tamal"
+    ru = "Тамал"
+  />
+   <string key="CraftOre0027_desc"
+    en = "Zhinar"
+    ru = "Жинар"
+  />
+   <string key="CraftOre0028_desc"
+    en = "Zolen"
+    ru = "Золен"
+  />
+   <string key="CraftOre0029_desc"
+    en = "Situr"
+    ru = "Ситур"
+  />
+   <string key="CraftOre0030_desc"
+    en = "Hen"
+    ru = "Хен"
+  />
+   <string key="CraftAsteroid0001_desc"
+    en = "Gernit asteroid"
+    ru = "Гернитовый астероид"
+  />
+   <string key="CraftAsteroid0002_desc"
+    en = "Riapal asteroid"
+    ru = "Риапаловый астероид"
+  />
+   <string key="CraftAsteroid0003_desc"
+    en = "Centar asteroid"
+    ru = "Центаровый астероид"
+  />
+   <string key="CraftAsteroid0004_desc"
+    en = "Diren asteroid"
+    ru = "Диреновый астероид"
+  />
+  <string key="CraftAsteroid0005_desc"
+    en = "Velin asteroid"
+    ru = "Велиновый астероид"
+  />
+   <string key="CraftAsteroid0006_desc"
+    en = "Paclam asteroid"
+    ru = "Пакламовый астероид"
+  />
+   <string key="CraftAsteroid0007_desc"
+    en = "Colomen asteroid"
+    ru = "Коломеновый астероид"
+  />
+   <string key="CraftAsteroid0008_desc"
+    en = "Ogamel asteroid"
+    ru = "Огамеловый астероид"
+  />
+  <string key="CraftAsteroid0009_desc"
+    en = "Fematin asteroid"
+    ru = "Фематиновый астероид"
+  />
+   <string key="CraftAsteroid0010_desc"
+    en = "Zolen asteroid"
+    ru = "Золеновый астероид"
+  />
+  <string key="inventory_name"
+    en = "Name"
+    ru = "Название"
+  />
+  <string key="inventory_type"
+    en = "Type"
+    ru = "Тип"
+  />
+  <string key="inventory_count"
+    en = "Count"
+    ru = "Количество"
+  />
+  <string key="inventory_price"
+    en = "Price"
+    ru = "Цена"
+  />
+  <string key="space_container"
+    en = "Container:"
+    ru = "Контейнер:"
+  />
+  <string key="chat_window"
+    en = "Chat:"
+    ru = "Чат"
+  />
+  <string key="chat_window_message"
+    en = "Enter text..."
+    ru = "Введите текст..."
+  />
+  <string key="inventory_level"
+    en = "Level: "
+    ru = "Уровень: "
+  />
+  <string key="station_entrance_desc"
+    en = "Go to station?"
+    ru = "Войти в станцию?"
+  />
+  <string key="SETTINGS_VIDEO"
+    en = "Video Settings"
+    ru = "Настройки видео"
+  />
+  <string key="SETTINGS_AUDIO"
+    en = "Audio Settings"
+    ru = "Настройки звука"
+  />
+  <string key="SETTINGS_SELECTCHARACTER"
+    en = "Select Character"
+    ru = "Выбор персонажа"
+  />
+  <string key="SETTINGS_QUIT"
+    en = "Quit"
+    ru = "Выход"
+  />
+  <string key="inventory_noskill"
+    en = "No skill on weapon"
+    ru = "Нет активного умения"
+  />
+  <string key="cargohold"
+    en = "Hold"
+    ru = "Трюм"
+  />
+ 
+</strings>

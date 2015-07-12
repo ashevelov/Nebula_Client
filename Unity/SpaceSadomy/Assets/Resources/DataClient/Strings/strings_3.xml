@@ -91,6 +91,10 @@
     en = "Hold capacity bonus: "
     ru = "Бонус к вместимости трюма: "
   />
+  <string key="hum_inventoryenergy"
+    en = "Energy: "
+    ru = "Энергия: "
+  />
   <string key="hum_inventoryenergybonus"
     en = "Energy bonus: "
     ru = "Бонус к количеству энергии: "
@@ -113,7 +117,7 @@
   />
   <string key="inventorycritdamage"
     en = "Critical hit damage: "
-    ru = "Величина критического урона: "
+    ru = "Критический урон: "
   />
   <string key="hum_inventoryenegyrepl"
     en = "Energy replenishment speed: "
@@ -346,6 +350,18 @@
   <string key="cargohold"
     en = "Hold"
     ru = "Трюм"
+  />
+  <string key="stationhold"
+    en = "Station hold"
+    ru = "Трюм станции"
+  />
+  <string key="CLOSE"
+    en = "Close"
+    ru = "Отмена"
+  />
+  <string key="OK"
+    en = "Ok"
+    ru = "Да"
   />
  
 </strings>

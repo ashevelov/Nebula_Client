@@ -24,7 +24,7 @@ public class Station : MonoBehaviour
             var uiPrefab = MainCanvas.Get.GetMiscPrefab("Prefabs/UI/LocalScreen_Object_View");
             uiInstance = Instantiate(uiPrefab);
             uiInstance.GetComponent<Nebula.UI.LocalScreenObjectView>().Setup(this.transform, "Station", ItemTypeName.STATION, () => {
-                ConfirmationDialog.Setup("Go to station?", () =>
+                ConfirmationDialog.Setup(Nebula.Resources.StringCache.Get("station_entrance_desc"), () =>
                 {
                     G.Game.EnterWorkshop(WorkshopStrategyType.Angar);
                 });

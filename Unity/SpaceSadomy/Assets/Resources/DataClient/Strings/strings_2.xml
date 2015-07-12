@@ -71,21 +71,25 @@
   en = ""
   ru = "" 
   />
+  <string key="WORKSHOP"
+  en = "Workshop"
+  ru = "Мастерская"
+  />
   <string key="WORKSHOP_DARTHTRIBE"
   en = "Darth Tribe"
-  ru = "Darth Tribe" 
+  ru = "Дарт Трайб" 
   />
   <string key="WORKSHOP_REDEYE"
   en = "Red Eye"
-  ru = "Red Eye" 
+  ru = "Ред Ай" 
   />
   <string key="WORKSHOP_EQUILIBRIUM"
   en = "Equilibrium"
-  ru = "Equilibrium" 
+  ru = "Эквилибриум" 
   />
   <string key="WORKSHOP_BIGBANG"
   en = "Big Bang"
-  ru = "Big Bang" 
+  ru = "Биг Бенг" 
   />
   <string key="WORKSHOP_RAKHGALS"
   en = "Rakhgals"

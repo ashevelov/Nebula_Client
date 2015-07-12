@@ -136,53 +136,52 @@ namespace Client.UIC.Implementation
             {
                 if (actions.ContainsKey("del"))
                 {
-                    actionButtons[index].interactable = true;
-                    actionButtons[index].onClick.RemoveAllListeners();
-                    actionButtons[index].onClick.AddListener(() => actions["del"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/delete11");
+                    UpdateButton(actions, ItemID, index, "icons/delete11", "del");
                     index++;
                 }
                 if (actions.ContainsKey("move"))
                 {
-                    actionButtons[index].interactable = true;
-                    actionButtons[index].onClick.RemoveAllListeners();
-                    actionButtons[index].onClick.AddListener(() => actions["move"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/move1");
+                    UpdateButton(actions, ItemID, index, "icons/move1", "move");
                     index++;
                 }
                 if (actions.ContainsKey("equip"))
                 {
-                    actionButtons[index].interactable = true;
-                    actionButtons[index].onClick.RemoveAllListeners();
-                    actionButtons[index].onClick.AddListener(() => actions["equip"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/equip1");
+                    UpdateButton(actions, ItemID, index, "icons/equip1", "equip");
                     index++;
                 }
                 if (actions.ContainsKey("craft"))
                 {
-                    actionButtons[index].interactable = true;
-                    actionButtons[index].onClick.RemoveAllListeners();
-                    actionButtons[index].onClick.AddListener(() => actions["craft"](ItemID));
-                    actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("icons/craft1");
+                    UpdateButton(actions, ItemID, index, "icons/craft1", "craft");
                     index++;
                 }
-
-                //foreach (KeyValuePair<string, System.Action<string>> action in actions)
-                //{
-                //    Debug.Log("action.Key --------------" +action.Key);
-                //    actionButtons[index].interactable = true;
-                //    actionButtons[index].onClick.RemoveAllListeners();
-                //    actionButtons[index].onClick.AddListener(() => action.Value(ItemID));
-                //    actionButtons[index].GetComponentInChildren<Text>().text = action.Key;
-                //    index++;
-                //}
             }
             while (index < actionButtons.Length)
             {
                 actionButtons[index].interactable = false;
                 actionButtons[index].GetComponentInChildren<Text>().text = "";
-                actionButtons[index].GetComponentInChildren<Image>().sprite = Nebula.Resources.SpriteCache.GetObject("transparent");
+                UpdateButtonIcon(index, "transparent");
                 index++;
+            }
+        }
+
+        private void UpdateButton(Dictionary<string, System.Action<string>> actions, string ItemID, int index, string iconPath, string actionKey)
+        {
+            actionButtons[index].interactable = true;
+            actionButtons[index].onClick.RemoveAllListeners();
+            actionButtons[index].onClick.AddListener(() => actions[actionKey](ItemID));
+            UpdateButtonIcon(index, iconPath);
+            
+        }
+
+        private void UpdateButtonIcon(int index, string iconPath)
+        {
+            Image[] childImages = actionButtons[index].GetComponentsInChildren<Image>();
+            foreach (var eventIcon in childImages)
+            {
+                if (eventIcon.gameObject != actionButtons[index].gameObject)
+                {
+                    eventIcon.sprite = Nebula.Resources.SpriteCache.GetObject(iconPath);
+                }
             }
         }
     }

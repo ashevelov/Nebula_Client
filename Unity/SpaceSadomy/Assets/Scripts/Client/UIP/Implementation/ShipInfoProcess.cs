@@ -21,12 +21,12 @@ namespace Client.UIP.Implementation
             ClientShipCombatStats info = GameData.instance.stats; //G.Game.CombatStats;
             names = string.Empty;
             values = string.Empty;
-            AddInfo(Nebula.Resources.StringCache.Get("HP"), (int)info.MaxHP);
-            AddInfo(Nebula.Resources.StringCache.Get("ENERGY"), (int)info.MaxEnergy);
-            AddInfo(Nebula.Resources.StringCache.Get("SPEED"), (int)info.MaxSpeed);
-            AddInfo(Nebula.Resources.StringCache.Get("DAMAGE"), (int)info.damage);
-            AddInfo(Nebula.Resources.StringCache.Get("RESIST"), (int)info.DamageResist);
-            AddInfo(Nebula.Resources.StringCache.Get("OPTIMAL"), (int)info.WeaponOptimalDistance);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryHP"), (int)info.MaxHP);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryenergy"), (int)info.MaxEnergy);
+            AddInfo(Nebula.Resources.StringCache.Get("inventoryspeed"), (int)info.MaxSpeed);
+            AddInfo(Nebula.Resources.StringCache.Get("inventorydamage"), (int)info.damage);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryresistance"), (int)info.DamageResist);
+            AddInfo(Nebula.Resources.StringCache.Get("inventoryoptimal"), (int)info.WeaponOptimalDistance);
             if (uicPanel == null)
             {
                 Debug.Log("uicPanel == null");
@@ -35,8 +35,8 @@ namespace Client.UIP.Implementation
             uicPanel.SetAllParams(names, values);
 
             string nameRaceWorkshop = GameData.instance.playerInfo.Name;
-            nameRaceWorkshop += "  /  " + GameData.instance.playerInfo.Race;
-            nameRaceWorkshop += "  /  " + GameData.instance.playerInfo.Workshop;
+            nameRaceWorkshop += "  /  " + Nebula.Resources.StringCache.Get("RACE_"+GameData.instance.playerInfo.Race.ToString().ToUpper());
+            nameRaceWorkshop += "  /  " + Nebula.Resources.StringCache.Get("WORKSHOP_" + GameData.instance.playerInfo.Workshop.ToString().Replace(" ", "").ToUpper());
             uicPanel.SetNameRaceWorkshop(nameRaceWorkshop);
 
             uicPanel.UpdateModuleIcon("CB", SpriteCache.SpriteModule("ShipInfoModules/" + GameData.instance.ship.ShipModel.cb.Module.templateId));
@@ -79,12 +79,11 @@ namespace Client.UIP.Implementation
             values = string.Empty;
 
 
-            AddInfo(Nebula.Resources.StringCache.Get("HP"), info.damage);
-            AddInfo(Nebula.Resources.StringCache.Get("CRIT"), info.critDamage);
-            AddInfo(Nebula.Resources.StringCache.Get("HIT"), (int)info.HitProb);
-            AddInfo(Nebula.Resources.StringCache.Get("RANGE"), (int)info.Range);
-            AddInfo(Nebula.Resources.StringCache.Get("LEVEL"), (int)info.WeaponObject.Level);
-            AddInfo(Nebula.Resources.StringCache.Get("COLOR"), (int)info.WeaponObject.Color);
+            AddInfo(Nebula.Resources.StringCache.Get("inventorydamage"), info.damage);
+            AddInfo(Nebula.Resources.StringCache.Get("inventorycritdamage"), info.critDamage);
+            AddInfo(Nebula.Resources.StringCache.Get("inventoryoptimal"), (int)info.Range);
+            AddInfo(Nebula.Resources.StringCache.Get("inventory_level"), (int)info.WeaponObject.Level);
+            //AddInfo(Nebula.Resources.StringCache.Get("COLOR"), (int)info.WeaponObject.Color);
 
             uicPanel.SetParams(names, values);
 
@@ -92,7 +91,7 @@ namespace Client.UIP.Implementation
             uicPanel.SetIcon(icon);
 
             Sprite skillIcon = null;
-            string skillDesc = "No Skill";
+            string skillDesc = Nebula.Resources.StringCache.Get("inventory_noskill");
             uicPanel.SetSkill(skillIcon, skillDesc);
         }
 
@@ -105,17 +104,17 @@ namespace Client.UIP.Implementation
             values = string.Empty;
 
 
-            AddInfo(Nebula.Resources.StringCache.Get("NAME"), info.name);
-            AddInfo(Nebula.Resources.StringCache.Get("LEVEL"), info.level);
-            AddInfo(Nebula.Resources.StringCache.Get("HP"), (int)info.hp);
-            AddInfo(Nebula.Resources.StringCache.Get("ENERGY"), (int)info.energy);
-            AddInfo(Nebula.Resources.StringCache.Get("RESIST"), (int)info.resist);
-            AddInfo(Nebula.Resources.StringCache.Get("SPEED"), (int)info.speed);
-            AddInfo(Nebula.Resources.StringCache.Get("DAMAGE"), (int)info.damageBonus);
-            AddInfo(Nebula.Resources.StringCache.Get("CRIT_CHANCE"), (int)info.critChance);
-            AddInfo(Nebula.Resources.StringCache.Get("CRIT_DAMAGE"), (int)info.critDamage);
-            AddInfo(Nebula.Resources.StringCache.Get("HOLD"), (int)info.hold);
-            AddInfo(Nebula.Resources.StringCache.Get("COLOR"), (int)info.color);
+            AddInfo(Nebula.Resources.StringCache.Get("inventory_name"), Nebula.Resources.StringCache.Get(info.type+"_NAME"));
+            AddInfo(Nebula.Resources.StringCache.Get("inventory_level"), info.level);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryHP"), (int)info.hp);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryenergybonus"), (int)info.energy);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryresistance"), (int)info.resist);
+            AddInfo(Nebula.Resources.StringCache.Get("inventoryspeedbonus"), (int)info.speed);
+            AddInfo(Nebula.Resources.StringCache.Get("inventorydamagebonus"), (int)info.damageBonus);
+            AddInfo(Nebula.Resources.StringCache.Get("inventorycritchance"), (int)info.critChance);
+            AddInfo(Nebula.Resources.StringCache.Get("inventorycritdamage"), (int)info.critDamage);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryhold"), (int)info.hold);
+            //AddInfo(Nebula.Resources.StringCache.Get("COLOR"), (int)info.color);
 
             uicPanel.SetParams(names, values);
 

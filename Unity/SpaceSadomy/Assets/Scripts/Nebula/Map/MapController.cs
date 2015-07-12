@@ -140,7 +140,7 @@ public class MapController : MonoBehaviour {
         //});
         Vector3 tapPos;
 
-#if !UNITY_EDITOR|| UNITY_STANDALONE
+#if !UNITY_EDITOR|| !UNITY_STANDALONE
         if (Input.touchCount != 0)
         {
 			if(Input.touches[0].phase == TouchPhase.Began)
@@ -181,7 +181,7 @@ private void TapInStar(RaycastHit hit)
             if (ss != null)
             {
                 {
-                    ConfirmationDialog.Setup("You want to jump", () =>
+                    ConfirmationDialog.Setup(Nebula.Resources.StringCache.Get("JUMP"), () =>
                     {
                         var game = G.Game;
 

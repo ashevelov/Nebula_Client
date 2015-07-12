@@ -140,8 +140,8 @@ namespace Client.UIP.Implementation
         {
 
             string id = clientItem.id;
-            string name = clientItem.type.ToString();// "name hz";
-            string type = clientItem.type.ToString();
+            string name = Nebula.Resources.StringCache.Get("type_" + clientItem.type.ToString().ToLower());// "name hz";
+            string type = Nebula.Resources.StringCache.Get("type_" + clientItem.type.ToString().ToLower());
             string color = clientItem.color.ToString();
             int count = 1;
             IItemInfo info = new ItemInfo();
@@ -159,15 +159,14 @@ namespace Client.UIP.Implementation
                 });
 
             //parameters.Add("ID", clientItem.Id);
-            parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), clientItem.workshop.ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("LEVEL"), clientItem.level.ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("HP"), ((int)clientItem.hp).ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("RESIST"), ((int)clientItem.resist).ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("SPEED"), ((int)clientItem.speed).ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("CRIT_CHANCE"), ((int)clientItem.critChance).ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("CRIT_DAMAGE"), ((int)clientItem.critDamage).ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("DAMAGE_BONUS"), ((int)clientItem.damageBonus).ToString());
-            parameters.Add(Nebula.Resources.StringCache.Get("DISTANS_BONUS"), ((int)clientItem.distanceBonus).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), Nebula.Resources.StringCache.Get("WORKSHOP_"+clientItem.workshop.ToString().ToUpper()));
+            parameters.Add(Nebula.Resources.StringCache.Get("inventory_level"), clientItem.level.ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("hum_inventoryHP"), ((int)clientItem.hp).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("hum_inventoryresistance"), ((int)clientItem.resist).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("inventoryspeed"), ((int)clientItem.speed).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("inventorycritchance"), ((int)clientItem.critChance).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("inventorycritdamage"), ((int)clientItem.critDamage).ToString());
+            parameters.Add(Nebula.Resources.StringCache.Get("inventorydamagebonus"), ((int)clientItem.damageBonus).ToString());
             name = clientItem.name;
             info.Parametrs = parameters;
 
@@ -187,8 +186,8 @@ namespace Client.UIP.Implementation
         private void AddInventoryItem(ClientInventoryItem clientItem)
         {
             string id = clientItem.Object.Id;
-            string name = "name hz";
-            string type = clientItem.Object.Type.ToString();
+            string name = Nebula.Resources.StringCache.Get("type_" + clientItem.Object.Type.ToString().ToLower());
+            string type = Nebula.Resources.StringCache.Get("type_"+clientItem.Object.Type.ToString().ToLower());
             string color = clientItem.Object.MyColor().ToString();
             int count = clientItem.Count;
             IItemInfo info = new ItemInfo();
@@ -220,7 +219,7 @@ namespace Client.UIP.Implementation
             if(clientItem.Object is MaterialInventoryObjectInfo)
             {
                 MaterialInventoryObjectInfo objectInfo = clientItem.Object as MaterialInventoryObjectInfo;
-                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), Nebula.Resources.StringCache.Get(objectInfo.Id + "_desc"));
+                parameters.Add(Nebula.Resources.StringCache.Get("inventory_name"), Nebula.Resources.StringCache.Get(objectInfo.Id + "_desc"));
                 name = Nebula.Resources.StringCache.Get(objectInfo.Id + "_desc");
                 info.Parametrs = parameters;
             }else if (clientItem.Object is WeaponInventoryObjectInfo)
@@ -228,11 +227,11 @@ namespace Client.UIP.Implementation
                 WeaponInventoryObjectInfo objectInfo = clientItem.Object as WeaponInventoryObjectInfo;
                 var weaponTemplate = DataResources.Instance.Weapon(objectInfo.Template);
 
-                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), weaponTemplate.Name);
-                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), weaponTemplate.Workshop.ToString());
-                parameters.Add(Nebula.Resources.StringCache.Get("DAMAGE"), objectInfo.damage.ToString());
-                parameters.Add(Nebula.Resources.StringCache.Get("LEVEL"), objectInfo.Level.ToString());
-                parameters.Add(Nebula.Resources.StringCache.Get("RANGE"), objectInfo.Range.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventory_name"), weaponTemplate.Name);
+                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), Nebula.Resources.StringCache.Get("WORKSHOP_" + weaponTemplate.Workshop.ToString().ToUpper()));
+                parameters.Add(Nebula.Resources.StringCache.Get("inventorydamage"), objectInfo.damage.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventory_level"), objectInfo.Level.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventoryoptimal"), objectInfo.Range.ToString());
                 name = weaponTemplate.Name;
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get(weaponTemplate.Description);
@@ -246,19 +245,19 @@ namespace Client.UIP.Implementation
             {
                 SchemeInventoryObjectInfo objectInfo = clientItem.Object as SchemeInventoryObjectInfo;
 
-                parameters.Add(Nebula.Resources.StringCache.Get("NAME"), Nebula.Resources.StringCache.Get("SCHEME"));
-                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), objectInfo.Workshop.ToString());
-                parameters.Add(Nebula.Resources.StringCache.Get("LEVEL"), objectInfo.Level.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventory_name"), Nebula.Resources.StringCache.Get("type_" + clientItem.Object.Type.ToString().ToLower()));
+                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), Nebula.Resources.StringCache.Get("WORKSHOP_" + objectInfo.Workshop.ToString().ToUpper()));
+                parameters.Add(Nebula.Resources.StringCache.Get("inventory_level"), objectInfo.Level.ToString());
 
                 var module = DataResources.Instance.ModuleData(objectInfo.TargetTemplateId);
-                parameters.Add(Nebula.Resources.StringCache.Get("MODULE_TYPE"), StringCache.Get(module.NameId.Remove(2)));
+                parameters.Add(Nebula.Resources.StringCache.Get("inventory_type"), StringCache.Get(module.NameId.Remove(2)));
 
                 foreach(var material in objectInfo.CraftMaterials)
                 {
                     var materialData = DataResources.Instance.OreData(material.Key);
                     parameters.Add(StringCache.Get(materialData.Name), material.Value.ToString());
                 }
-                name = Nebula.Resources.StringCache.Get("SCHEME");
+                name = Nebula.Resources.StringCache.Get("type_" + clientItem.Object.Type.ToString().ToLower());
                 info.Parametrs = parameters;
                 info.Description = StringCache.Get("SCHEME_DESC");
 

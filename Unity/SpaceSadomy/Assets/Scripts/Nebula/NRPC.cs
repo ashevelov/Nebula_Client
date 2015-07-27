@@ -591,6 +591,14 @@ namespace Nebula {
             Operations.ExecAction(game, game.AvatarId, "CraftItEasy", new object[] { });
         }
 
+        public static void TestAddOreAndSchemesToStation(int oreCount, int schemeCount) {
+            NetworkGame game = null;
+            if (false == CheckGame(out game)) {
+                return;
+            }
+            Operations.ExecAction(game, game.AvatarId, "TestAddOreAndSchemesToStation", new object[] { oreCount, schemeCount });
+        }
+
         //---------------MASTER OPERATIONS---------------------
         public static void GetServerList(BaseGame game) {
             game.SendOperation((byte)OperationCode.GetServerList, new Dictionary<byte, object>(), true, Settings.ItemChannel);

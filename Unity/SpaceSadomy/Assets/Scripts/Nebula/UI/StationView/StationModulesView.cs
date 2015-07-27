@@ -57,17 +57,17 @@
             newModules.Clear();
             changes.Clear();
 
-            Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
-            Hashtable moduleObjectsHash = null;
-            if(GameData.instance.station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash)) {
-                foreach(DictionaryEntry entry in moduleObjectsHash) {
-                    moduleObjects.Add(entry.Key.ToString(), entry.Value as IStationHoldableObject);
-                }
-            }
+            //Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
+            //Hashtable moduleObjectsHash = null;
+            //if(GameData.instance.station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash)) {
+            //    foreach(DictionaryEntry entry in moduleObjectsHash) {
+            //        moduleObjects.Add(entry.Key.ToString(), entry.Value as IStationHoldableObject);
+            //    }
+            //}
 
-            foreach(var moduleObj in moduleObjects) {
-                newModules.Add(moduleObj.Value as ClientShipModule);
-            }
+            //foreach(var moduleObj in moduleObjects) {
+            //    newModules.Add(moduleObj.Value as ClientShipModule);
+            //}
 
             foreach(var module in newModules) {
                 var foundedModule = this.currentModules.Find(m => m.Id == module.Id);

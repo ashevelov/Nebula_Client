@@ -44,7 +44,8 @@
                 Debug.LogFormat("asteroid subscribed at position {0},{1},{2}", position[0], position[1], position[2]);
             }
             if((ItemType)itemType == ItemType.Bot) {
-                Debug.LogFormat("BOT subscribed of sub type: {0}", (BotItemSubType)subType);
+                Debug.Log(string.Format("bot = {0} subscribed", itemId).Color("orange"));
+                //Debug.LogFormat("BOT subscribed of sub type: {0}", (BotItemSubType)subType);
             }
 
 
@@ -124,6 +125,12 @@
                             case BotItemSubType.Activator:
                                 {
                                     CreateActivator(itemId, itemType, game, displayName, position, rotation, cameraId, components);
+                                }
+                                break;
+                            default:
+                                {
+                                    Debug.Log("CREATE MMO ITEM");
+                                    CreateMmoItem(itemId, itemType, game, displayName, position, rotation, cameraId, itemProperties, components);
                                 }
                                 break;
 

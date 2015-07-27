@@ -56,8 +56,8 @@ public class G
     {
         if(IsPlayerValid())
         {
-            return GameBalance.ComputeHitProb(GameData.instance.ship.Weapon.OptimalDistance,
-                GameData.instance.ship.Weapon.Range, DistanceTo(damagable), GameData.instance.ship.MaxLinearSpeed, damagable.GetSpeed());
+            return GameBalance.ComputeHitProb(GameData.instance.ship.Weapon.optimalDistance,
+                DistanceTo(damagable));
         }
         return 0f;
     }
@@ -73,7 +73,7 @@ public class G
 
     public static bool IsPlayerValid()
     {
-        return Game != null && G.PlayerItem != null && G.PlayerComponent && (!G.PlayerItem.ShipDestroyed);
+        return Game != null && G.PlayerItem != null && G.PlayerComponent && (!G.PlayerItem.ShipDestroyed) && G.PlayerItem.ExistsView;
     }
 
     public static bool IsPlayerTargetValid()

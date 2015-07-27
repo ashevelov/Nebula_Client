@@ -14,6 +14,8 @@
 
         public GenericMultiEvent() {
             this.handlers = new Dictionary<CustomEventCode, System.Action<BaseGame, EventData>>();
+            handlers.Add(CustomEventCode.TargetUpdate, OnTargetUpdate);
+
             //this.handlers.Add(CustomEventCode.CooperativeGroupRequest, HandleCooperativeGroupRequest);
             //this.handlers.Add(CustomEventCode.CooperativeGroupUpdate, HandleCooperativeGroupUpdate);
         }
@@ -22,6 +24,18 @@
             CustomEventCode code = (CustomEventCode)(byte)eventData.Parameters[(byte)ParameterCode.CustomEventCode];
             if (this.handlers.ContainsKey(code)) {
                 this.handlers[code](game, eventData);
+            }
+        }
+
+        void OnTargetUpdate(BaseGame game, EventData eventData) {
+            Hashtable targetHash = eventData.Parameters[(byte)ParameterCode.EventData] as Hashtable;
+
+            bool hasTarget = targetHash.Value<bool>((byte)PS.HasTarget, false);
+            string targetID = targetHash.Value<string>((byte)PS.TargetId, string.Empty);
+            byte targetType = targetHash.Value<byte>((byte)PS.TargetType, (byte)ItemType.Avatar);
+            if(NetworkGame.Instance().Avatar != null ) {
+                Debug.Log(string.Format("Target update event {0}:{1}:{2}", hasTarget, targetID, (ItemType)targetType));
+                NetworkGame.Instance().Avatar.Target.SetTarget(hasTarget, targetID, targetType);
             }
         }
 

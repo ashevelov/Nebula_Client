@@ -150,8 +150,16 @@ namespace Nebula.Mmo.Items {
                 this.Create(obj);
                 Debug.Log(this.View.name);
 
-                G.Game.SetSpawnPosition(this);
+                //G.Game.SetSpawnPosition(this);
+                //G.Game.Avatar.SetPositions
+                var pos = Game.GetSpawnPosition();
+                var posArr = new float[] { pos.x, pos.y, pos.z };
+                SetPositions(posArr, posArr, Rotation, Rotation, 0);
+                if(ExistsView) { View.transform.position = pos;  }
+
                 MouseOrbitRotateZoom.Get.SetTarget(this.View.transform);
+                
+                //SetPositions()
 
                 if(Game.CurrentStrategy == GameState.NebulaGameWorldEntered) {
                     //additional actions when ship respawned
@@ -180,6 +188,12 @@ namespace Nebula.Mmo.Items {
         }
 
         public void RequestTarget(string targetId, byte targetType, bool hasTarget) {
+            if(!hasTarget) {
+                targetId = string.Empty;
+            }
+            if(string.IsNullOrEmpty(targetId)) {
+                hasTarget = false;
+            }
             Operations.ExecAction(Game, Id, "SetTarget", new object[] { hasTarget, targetId, targetType });
         }
 
@@ -265,26 +279,11 @@ namespace Nebula.Mmo.Items {
             return GameData.instance.ship.MaxHealth;
         }
 
-
-
-        public float GetMinHitProb() {
-            return GameData.instance.ship.Weapon.HitProb;
-        }
-
-
-
         public float GetHealth01() {
             if (GameData.instance.ship.MaxHealth == 0.0f)
                 return 0.0f;
             return Mathf.Clamp01(GameData.instance.ship.Health / GameData.instance.ship.MaxHealth);
         }
-
-
-
-
-
-
-
 
         public void SetNewRandomSlotModule(ShipModelSlotType type) {
             Operations.ExecAction(Game, Id, "SetNewRandomSlotModule", new object[] { type.toByte() });
@@ -296,11 +295,6 @@ namespace Nebula.Mmo.Items {
                 return GameData.instance.ship.Weapon.WeaponObject.OptimalDistance;
             return 0.0f;
         }
-
-        public float GetRange() {
-            return GameData.instance.ship.Weapon.Range;
-        }
-
 
 
         public float GetMaxHitSpeed() {

@@ -23,6 +23,7 @@ namespace Nebula.Effects
 		private Renderer mRender;
 		private bool 	mHit = false;
 		private float 	mRadius = 3;
+		private Color 	mColor;
 
 
 		public void Hit(Transform parent, Transform trg)
@@ -33,18 +34,19 @@ namespace Nebula.Effects
 
 		public float GetRadius() { return mRadius; }
 
- 		public void Init(float radius) 
+ 		public void Init(float _radius, Color _color) 
 		{
 			mRender =  gameObject.GetComponent<Renderer>();
-			gameObject.transform.localScale *= radius;
+			gameObject.transform.localScale *= _radius;
 
-			mRadius = radius;
+			mRadius = _radius;
 
 			if (mRender == null)
 				Debug.Log("erropr");
 			else
 			{
-				mRender.material.SetColor("_TintColor", new Color(0.3f,0.5f,1,0));
+				mColor = _color;
+				mRender.material.SetColor("_TintColor", mColor);
 			}
 
 			Destroy(gameObject, 6);
@@ -78,7 +80,8 @@ namespace Nebula.Effects
 
 			}
 
-			mRender.material.SetColor("_TintColor", new Color(0.3f,0.5f,1,mStr));
+			mColor.a = mStr;
+			mRender.material.SetColor("_TintColor", mColor);
 		}
 	}
 }

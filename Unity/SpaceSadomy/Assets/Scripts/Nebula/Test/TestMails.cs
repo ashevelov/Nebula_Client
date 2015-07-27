@@ -140,12 +140,14 @@
                         //take attachment
                         SelectCharacterGame.Instance().TakeAttachment(message.id, attachment.id);
                     }
-                } else if (obj.placingType == (int)PlacingType.Station) {
-                    if (GUI.Button(new Rect(pos.x, pos.y, 20, 20), "M")) {
-                        IStationHoldableObject stationObject = obj as IStationHoldableObject;
-                        SelectCharacterGame.Instance().TakeAttachment(message.id, attachment.id);
-                    }
-                } else {
+                }
+//                else if (obj.placingType == (int)PlacingType.Station) {
+//                    if (GUI.Button(new Rect(pos.x, pos.y, 20, 20), "M")) {
+//                        IStationHoldableObject stationObject = obj as IStationHoldableObject;
+//                        SelectCharacterGame.Instance().TakeAttachment(message.id, attachment.id);
+//                    }
+//                }
+                else {
                     Debug.LogError("unsupported object");
                 }
             } catch (System.Exception exception) {

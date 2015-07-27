@@ -60,7 +60,7 @@ public class LevelGame : Game.Space.Singleton<LevelGame> {
             throw new System.Exception("must be all 5 modules!!");
         }
         G.Game.Avatar.Create(ShipModel.Init(prefabs, true));
-        G.Game.SetSpawnPosition(G.PlayerItem);
+        //G.Game.SetSpawnPosition(G.PlayerItem);
         MouseOrbitRotateZoom.Get.SetTarget(G.Game.Avatar.View.transform);
     }
 

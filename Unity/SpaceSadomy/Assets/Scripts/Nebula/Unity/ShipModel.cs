@@ -5,7 +5,9 @@ using System.Collections.Generic;
 
 public class ShipModel : MonoBehaviour {
 
-	private ArrayList m_shipModules = new ArrayList();
+	private ArrayList m_shipModules							 = new ArrayList();
+	private ArrayList m_shipModulesWithFireSlot				 = new ArrayList();
+
     private string newWorkshop = "DT";
     private bool hungar = false;
     private bool engineParticles = true;
@@ -155,8 +157,12 @@ public class ShipModel : MonoBehaviour {
         }
         go.GetComponentInChildren<MeshRenderer>().gameObject.AddComponent<PlayerModuleType>().SetSlotType(type);
 
+		ShipModule mod = new ShipModule(go);
+		m_shipModules.Insert(index,mod);
 
-		m_shipModules.Insert(index,new ShipModule(go));
+		if (mod.GetFireSlots().Count != 0)
+			m_shipModulesWithFireSlot.Add(mod);
+
 
     }
 
@@ -167,7 +173,15 @@ public class ShipModel : MonoBehaviour {
 			return (ShipModule)m_shipModules[indx];
 		else return null;
 	}
+	public ShipModule 	GetModuleFireSlot(int indx)
+	{
+		Debug.Log("Get module "+indx);
+		if (indx >= 0 && indx < m_shipModulesWithFireSlot.Count)
+			return (ShipModule)m_shipModulesWithFireSlot[indx];
+		else return null;
+	}
 	public ArrayList	 GetModules(){ return m_shipModules; }
+	public ArrayList	 GetModulesFireSlot(){return m_shipModulesWithFireSlot;}
 
     public void UpdateModulesPos()
     {

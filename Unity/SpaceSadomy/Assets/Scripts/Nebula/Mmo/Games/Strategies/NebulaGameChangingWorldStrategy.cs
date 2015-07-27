@@ -23,7 +23,8 @@
                     case OperationCode.CreateWorld:
                         {
                             Debug.Log("world created");
-                            var position = new float[] { 0.0f, 0.0f, Settings.START_Z };
+                            var pos = ngame.GetSpawnPosition();
+                            var position = new float[] { pos.x, pos.y, pos.z };
                             ngame.Avatar.SetPositions(position, position, null, null, 0);
                             var properties = new Hashtable {
                                 {(byte)PS.InterestAreaAttached, ngame.Avatar.InterestAreaAttached },
@@ -74,7 +75,8 @@
                             ngame.Engine.GameData.SetNewWorld(worldData);
                             ngame.SetStrategy(GameState.NebulaGameWorldEntered);
                             global::Nebula.Operations.SetViewDistance(ngame, ngame.Settings.ViewDistanceEnter, ngame.Settings.ViewDistanceExit);
-                            var position = new float[] { 0, 0, Settings.START_Z };
+                            var pos = ngame.GetSpawnPosition();
+                            var position = new float[] { pos.x, pos.y, pos.z };
                             ngame.Avatar.SetPositions(position, position, null, null, 0);
                             ngame.SetDisconnectAction(NebulaGameDisconnectAction.None);
                             if(components != null) {

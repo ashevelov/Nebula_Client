@@ -60,6 +60,16 @@
             }
         }
 
+        public ClientInventoryItem GetItem(string id) {
+            foreach(var entry in mEntries) {
+                if(entry.objectID == id) {
+                    return entry.item;
+                }
+            }
+            Debug.LogError("Object not found in inventory");
+            return null;
+        }
+
         public bool TryGetItem(InventoryObjectType type, string id, out ClientInventoryItem item) {
             item = null;
             foreach(var  entry in mEntries ) {
@@ -239,6 +249,12 @@
                             AddItem(InventoryObjectInfoFactory.GetClientDrillSchemeObject(itemTable), itemCount);
                             break;
                         }
+                    case InventoryObjectType.Module:
+                        {
+                            AddItem(InventoryObjectInfoFactory.GetClientShipModuleObject(itemTable), itemCount);
+                            break;
+                        }
+
                     //case InventoryObjectType.credits:
                     //    {
                     //        AddItem(InventoryObjectInfoFactory.GetCreditsObject(itemTable), itemCount);

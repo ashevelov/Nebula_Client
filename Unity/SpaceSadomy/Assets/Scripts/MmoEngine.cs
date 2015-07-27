@@ -18,6 +18,9 @@ using Nebula.Mmo.Items;
 public class MmoEngine : Singleton<MmoEngine>
 {
     public GUISkin skin;
+    public Vector3 humansSpawnPoint;
+    public Vector3 borguzandsSpawnPoint;
+    public Vector3 criptizidsSpawnPoint;
 
     private static bool created = false;
 
@@ -55,7 +58,7 @@ public class MmoEngine : Singleton<MmoEngine>
             var masterPeer = new MasterPeer(masterGame, ConnectionProtocol.Udp);
             masterGame.SetPeer(masterPeer);
 #if LOCAL
-            masterGame.Connect("192.168.1.107", 5105, "Master");
+            masterGame.Connect("192.168.1.102", 5105, "Master");
 #else
             masterGame.Connect("104.207.135.55", 5105, "Master");
 #endif
@@ -332,6 +335,14 @@ public class MmoEngine : Singleton<MmoEngine>
             NRPC.AddAll(NebulaGame.Avatar.target.targetID, NebulaGame.Avatar.target.targetType);
         }*/
 
+        /*
+        if(GUI.Button(new Rect(100, 100, 100, 50), "Add ores and schemes")) {
+            NRPC.TestAddOreAndSchemesToStation(20, 10);
+        }*/
+
+//        if (NebulaGame.Avatar != null) {
+//            GUI.Label(new Rect(100, 100, 0, 0), string.Format("Player Race = {0}", NebulaGame.Avatar.Race).Color("orange"), skin.GetStyle("font_upper_left"));
+//        }
     }
 
     private void DrawGameStates() {
@@ -373,9 +384,9 @@ public class MmoEngine : Singleton<MmoEngine>
         var weapon = GameData.ship.Weapon;
         Dictionary<SPC, object> weaponProperties = new Dictionary<SPC, object> {
             { SPC.HasWeapon , weapon.HasWeapon},
-            { SPC.HitProb, weapon.HitProb},
-            { SPC.OptimalDistance, weapon.OptimalDistance},
-            { SPC.Range, weapon.Range},
+            //{ SPC.HitProb, weapon.HitProb},
+            //{ SPC.OptimalDistance, weapon.OptimalDistance},
+            //{ SPC.Range, weapon.Range},
         };
 
         GUIStyle labelStyle = skin.GetStyle("font_upper_left");

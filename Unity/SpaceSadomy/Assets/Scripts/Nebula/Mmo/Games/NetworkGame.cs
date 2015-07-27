@@ -60,6 +60,25 @@ namespace Nebula.Mmo.Games {
 
         public void RemoveAvatar() { _avatar = null; }
 
+
+        public UnityEngine.Vector3 GetSpawnPosition() {
+            var race = (Race)(byte)SelectCharacterGame.Instance().PlayerCharacters.SelectedCharacter().Race;
+            Vector3 pos = Vector3.zero;
+            switch(race) {
+                case Race.Borguzands:
+                    pos = Engine.borguzandsSpawnPoint;
+                    break;
+                case Race.Criptizoids:
+                    pos = Engine.criptizidsSpawnPoint;
+                    break;
+                case Race.Humans:
+                    pos = Engine.humansSpawnPoint;
+                    break;
+            }
+            Debug.Log(string.Format("set spawn position {0} = {1}", race, pos).Color("orange"));
+            return pos;
+        }
+
         public void EnterWorld(string fromWorldId, string toWorldId) {
 
             if(Avatar == null ) {
@@ -78,8 +97,9 @@ namespace Nebula.Mmo.Games {
             ClearItemCache();
             AddItem(Avatar);
 
-            var position = new float[] { 0.0f, 0.0f, Settings.START_Z };
-            Avatar.SetPositions(position, position, null, null, 0);
+            var pos = GetSpawnPosition();
+            float[] posArr = new float[] { pos.x, pos.y, pos.z };
+            Avatar.SetPositions(posArr, posArr, null, null, 0);
 
             SetStrategy(GameState.NebulaGameChangingWorld);
 
@@ -288,6 +308,7 @@ namespace Nebula.Mmo.Games {
                 typedItems = new Dictionary<string, Item>();
                 Items.Add(item.Type, typedItems);
             }
+            Debug.Log(string.Format("GAME: add item {0}:{1}", (ItemType)item.Type, item.Id).Color("green"));
             typedItems.Add(item.Id, item);
             Engine.CreateActor(this, item);
         }
@@ -313,10 +334,14 @@ namespace Nebula.Mmo.Games {
             byte sourceType = (byte)properties[(int)SPC.SourceType];
             string targetId = (string)properties[(int)SPC.Target];
             byte targetType = (byte)properties[(int)SPC.TargetType];
+            float hitProb = properties.Value<float>((int)SPC.HitProb, 0f);
+            bool isHitted = properties.Value<bool>((int)SPC.IsHitted, false);
 
             if(sourceId == AvatarId) {
                 Debug.Log("PLAYER SHOT RECEIVED");
             }
+
+            Debug.Log(string.Format("FIRE[{4}={5}]: [{0}:{1}]==>>>>[{2}:{3}]", (ItemType)sourceType, sourceId, (ItemType)targetType, targetId, isHitted, (int)(hitProb * 100)).Color("purple"));
 
             Item sourceItem = null;
             Item targetItem = null;
@@ -347,12 +372,17 @@ namespace Nebula.Mmo.Games {
             {
                 if (typedItems.Remove(item.Id))
                 {
+                    Debug.Log(string.Format("GAME: remove item {0}:{1}", (ItemType)item.Type, item.Id).Color("green"));
+
                     if (typedItems.Count == 0)
                     {
                         _itemCache.Remove(item.Type);
                     }
-                    if(item.ExistsView && item.View) {
+                    if(item.ExistsView) {
+                        Debug.Log(string.Format("GAME: destroy item view {0}:{1}", (ItemType)item.Type, item.Id).Color("green"));
                         item.DestroyView();
+                    } else {
+                        Debug.Log(string.Format("GAME: error destoying item view (not exist view) {0}:{1}", (ItemType)item.Type, item.Id).Color("green"));
                     }
                     return true;
                 }
@@ -645,32 +675,28 @@ namespace Nebula.Mmo.Games {
             }
         }
 
-        public void OnWeaponReceived(Hashtable weaponInfo)
-        {
-            GameData.instance.ship.Weapon.ParseInfo(weaponInfo);
-        }
 
-        public void SetSpawnPosition(Item item)
-        {
-            if (item.View && item.Race != Common.Race.None)
-            {
-                SpawnPoint point = null;
-                var spawnPoints = GameObject.FindObjectsOfType<SpawnPoint>();
-                foreach (var sp in spawnPoints)
-                {
-                    if (sp.race == item.Race)
-                    {
-                        point = sp;
-                        break;
-                    }
-                }
+        //public void SetSpawnPosition(Item item)
+        //{
+        //    if (item.View && item.Race != Common.Race.None)
+        //    {
+        //        SpawnPoint point = null;
+        //        var spawnPoints = GameObject.FindObjectsOfType<SpawnPoint>();
+        //        foreach (var sp in spawnPoints)
+        //        {
+        //            if (sp.race == item.Race)
+        //            {
+        //                point = sp;
+        //                break;
+        //            }
+        //        }
 
-                if (point)
-                {
-                    item.View.transform.position = point.transform.position;
-                }
-            }
-        }
+        //        if (point)
+        //        {
+        //            item.View.transform.position = point.transform.position;
+        //        }
+        //    }
+        //}
         #endregion
         //===================================================================================================================
 

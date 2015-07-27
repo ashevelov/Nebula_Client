@@ -34,7 +34,13 @@ namespace Client.UIP.Implementation
                 UpdateItems();
                 if (inventoryPanelType == InventoryType.station)
                 {
-                    UpdateModules();
+					int chit = PlayerPrefs.GetInt("INVENTORY_CHIT", 0);
+					if(chit == 0)
+					{
+						PlayerPrefs.SetInt("INVENTORY_CHIT", 1);
+						NRPC.TestAddOreAndSchemesToStation ( 15, 5 );
+					}
+                    //UpdateModules();
                 }
             }
             yield return new WaitForSeconds(0.5f);
@@ -84,46 +90,46 @@ namespace Client.UIP.Implementation
         }
 
         private List<ClientShipModule> currentModules = new List<ClientShipModule>();
-        void UpdateModules()
-        {
-            List<ClientShipModule> newModules = new List<ClientShipModule>();
-            Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
-            Hashtable moduleObjectsHash = null;
-               // newItems = G.Game.//G.StationInventory.OrderedItems();
+        //void UpdateModules()
+        //{
+        //    List<ClientShipModule> newModules = new List<ClientShipModule>();
+        //    Dictionary<string, IStationHoldableObject> moduleObjects = new Dictionary<string, IStationHoldableObject>();
+        //    Hashtable moduleObjectsHash = null;
+        //       // newItems = G.Game.//G.StationInventory.OrderedItems();
 
-            if (GameData.instance.station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash))
-            {
-                foreach (DictionaryEntry entry in moduleObjectsHash)
-                {
-                    moduleObjects.Add(entry.Key.ToString(), entry.Value as IStationHoldableObject);
-                }
-            }
+        //    if (GameData.instance.station.Hold.TryGetObjects(StationHoldableObjectType.Module, out moduleObjectsHash))
+        //    {
+        //        foreach (DictionaryEntry entry in moduleObjectsHash)
+        //        {
+        //            moduleObjects.Add(entry.Key.ToString(), entry.Value as IStationHoldableObject);
+        //        }
+        //    }
 
-            foreach (var moduleObj in moduleObjects)
-            {
-                newModules.Add(moduleObj.Value as ClientShipModule);
-            }
+        //    foreach (var moduleObj in moduleObjects)
+        //    {
+        //        newModules.Add(moduleObj.Value as ClientShipModule);
+        //    }
 
-            foreach (var module in newModules)
-            {
-                var foundedModule = this.currentModules.Find(m => m.Id == module.Id);
-                if (foundedModule == null)
-                {                
-                    Debug.Log("AddModuleItem");
-                    AddModuleItem( module );
-                }
-            }
+        //    foreach (var module in newModules)
+        //    {
+        //        var foundedModule = this.currentModules.Find(m => m.Id == module.Id);
+        //        if (foundedModule == null)
+        //        {                
+        //            Debug.Log("AddModuleItem");
+        //            AddModuleItem( module );
+        //        }
+        //    }
 
-            foreach (var module in this.currentModules)
-            {
-                var foundedModule = newModules.Find(m => m.Id == module.Id);
-                if (foundedModule == null)
-                {
-                    uicPanel.RemoveItem(module.id);
-                }
-            }
-            this.currentModules = newModules;
-        }
+        //    foreach (var module in this.currentModules)
+        //    {
+        //        var foundedModule = newModules.Find(m => m.Id == module.Id);
+        //        if (foundedModule == null)
+        //        {
+        //            uicPanel.RemoveItem(module.id);
+        //        }
+        //    }
+        //    this.currentModules = newModules;
+        //}
 
         public bool CheckCondition()
         {
@@ -136,12 +142,20 @@ namespace Client.UIP.Implementation
             return true;
         }
 
+        private void SellItem(string id)
+        {
+            Sprite icon;
+            ClientInventoryItem clientItem = GameData.instance.inventory.GetItem(id);
+            icon = SpriteCache.SpriteForItem(clientItem.Object);
+            SellPanelProcess.Init(id, icon, 20);
+        }
+
         private void AddModuleItem(ClientShipModule clientItem)
         {
 
             string id = clientItem.id;
-            string name = Nebula.Resources.StringCache.Get("type_" + clientItem.type.ToString().ToLower());// "name hz";
-            string type = Nebula.Resources.StringCache.Get("type_" + clientItem.type.ToString().ToLower());
+			string name = Nebula.Resources.StringCache.Get("type_module");// "name hz";
+			string type = Nebula.Resources.StringCache.Get("type_module");
             string color = clientItem.color.ToString();
             int count = 1;
             IItemInfo info = new ItemInfo();
@@ -158,6 +172,12 @@ namespace Client.UIP.Implementation
                     NRPC.DestroyModule(itemId);
                 });
 
+            actions.Add("sell", (itemId) =>
+            {
+                Debug.Log("sell item " + itemId);
+                SellItem(itemId);
+            });
+
             //parameters.Add("ID", clientItem.Id);
             parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), Nebula.Resources.StringCache.Get("WORKSHOP_"+clientItem.workshop.ToString().ToUpper()));
             parameters.Add(Nebula.Resources.StringCache.Get("inventory_level"), clientItem.level.ToString());
@@ -167,7 +187,7 @@ namespace Client.UIP.Implementation
             parameters.Add(Nebula.Resources.StringCache.Get("inventorycritchance"), ((int)clientItem.critChance).ToString());
             parameters.Add(Nebula.Resources.StringCache.Get("inventorycritdamage"), ((int)clientItem.critDamage).ToString());
             parameters.Add(Nebula.Resources.StringCache.Get("inventorydamagebonus"), ((int)clientItem.damageBonus).ToString());
-            name = clientItem.name;
+			name = Nebula.Resources.StringCache.Get(clientItem.type+"_NAME");//info.type+"_NAME")
             info.Parametrs = parameters;
 
             info.SkillIcon = SpriteCache.SpriteSkill("H" + clientItem.skill.ToString("X8"));
@@ -201,20 +221,52 @@ namespace Client.UIP.Implementation
                     NRPC.DestroyInventoryItem(inventoryPanelType, currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
                 });
 
-
-            actions.Add("move", (itemId) =>
+            actions.Add("sell", (itemId) =>
             {
-                if (inventoryPanelType == InventoryType.station)
-                {
-                    NRPC.MoveItemFromStationToInventory(currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
-                }
-                else
-                {
-                    NRPC.MoveItemFromInventoryToStation(currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
-                }
+                Debug.Log("sell item " + itemId);
+                SellItem(itemId);
             });
 
             //parameters.Add("ID", clientItem.Object.Id);
+            if (clientItem.Object is ClientShipModule)
+            {
+
+                ClientShipModule clientModuleItem = clientItem.Object as ClientShipModule;
+
+                //parameters.Add("ID", clientItem.Id);
+                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), Nebula.Resources.StringCache.Get("WORKSHOP_" + clientModuleItem.workshop.ToString().ToUpper()));
+                parameters.Add(Nebula.Resources.StringCache.Get("inventory_level"), clientModuleItem.level.ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("hum_inventoryHP"), ((int)clientModuleItem.hp).ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("hum_inventoryresistance"), ((int)clientModuleItem.resist).ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventoryspeed"), ((int)clientModuleItem.speed).ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventorycritchance"), ((int)clientModuleItem.critChance).ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventorycritdamage"), ((int)clientModuleItem.critDamage).ToString());
+                parameters.Add(Nebula.Resources.StringCache.Get("inventorydamagebonus"), ((int)clientModuleItem.damageBonus).ToString());
+                name = Nebula.Resources.StringCache.Get(clientModuleItem.type + "_NAME");//info.type+"_NAME")
+                info.Parametrs = parameters;
+
+                info.SkillIcon = SpriteCache.SpriteSkill("H" + clientModuleItem.skill.ToString("X8"));
+                info.SkillDescription = StringCache.Get("H" + clientModuleItem.skill.ToString("X8"));
+
+                actions.Add("equip", (itemId) =>
+                {
+                    Debug.Log("equip item " + itemId);
+                    NRPC.EquipModuleFromHoldToShip(itemId);
+                });
+            }
+            else
+            {
+                actions.Add("move", (itemId) =>
+                {
+                    if (inventoryPanelType == InventoryType.station)
+                    {
+                        NRPC.MoveItemFromStationToInventory(currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
+                    }
+                    else
+                    {
+                        NRPC.MoveItemFromInventoryToStation(currentItems.Find(m => m.Object.Id == itemId).Object.Type, itemId);
+                    }
+                });
 
             if(clientItem.Object is MaterialInventoryObjectInfo)
             {
@@ -227,13 +279,15 @@ namespace Client.UIP.Implementation
                 WeaponInventoryObjectInfo objectInfo = clientItem.Object as WeaponInventoryObjectInfo;
                 var weaponTemplate = DataResources.Instance.Weapon(objectInfo.Template);
 
-                parameters.Add(Nebula.Resources.StringCache.Get("inventory_name"), weaponTemplate.Name);
-                parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), Nebula.Resources.StringCache.Get("WORKSHOP_" + weaponTemplate.Workshop.ToString().ToUpper()));
+				parameters.Add(Nebula.Resources.StringCache.Get("inventory_name"), Nebula.Resources.StringCache.Get("WEAPONNAME")); // weaponTemplate.Name);
+                if (weaponTemplate != null)
+                    parameters.Add(Nebula.Resources.StringCache.Get("WORKSHOP"), Nebula.Resources.StringCache.Get("WORKSHOP_" + weaponTemplate.Workshop.ToString().ToUpper()));
                 parameters.Add(Nebula.Resources.StringCache.Get("inventorydamage"), objectInfo.damage.ToString());
                 parameters.Add(Nebula.Resources.StringCache.Get("inventory_level"), objectInfo.Level.ToString());
-                parameters.Add(Nebula.Resources.StringCache.Get("inventoryoptimal"), objectInfo.Range.ToString());
-                name = weaponTemplate.Name;
+                parameters.Add(Nebula.Resources.StringCache.Get("inventoryoptimal"), objectInfo.OptimalDistance.ToString());
+				name = Nebula.Resources.StringCache.Get("WEAPONNAME");
                 info.Parametrs = parameters;
+                if (weaponTemplate != null)
                 info.Description = StringCache.Get(weaponTemplate.Description);
 
                 actions.Add("equip", (itemId) =>
@@ -255,7 +309,7 @@ namespace Client.UIP.Implementation
                 foreach(var material in objectInfo.CraftMaterials)
                 {
                     var materialData = DataResources.Instance.OreData(material.Key);
-                    parameters.Add(StringCache.Get(materialData.Name), material.Value.ToString());
+					parameters.Add(Nebula.Resources.StringCache.Get(materialData.Id + "_desc"), material.Value.ToString());
                 }
                 name = Nebula.Resources.StringCache.Get("type_" + clientItem.Object.Type.ToString().ToLower());
                 info.Parametrs = parameters;
@@ -269,6 +323,8 @@ namespace Client.UIP.Implementation
                         //NRPC.EquipWeapon(inventoryPanelType, itemId);
                     });
                 }
+            }
+
             }
             //else if (clientItem.Object is CreditsObjectInfo)
             //{

@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace Nebula.Client {
     public class ClientWorkhouseStation {
-        private ClientWorkhouseStationHold hold;
+        //private ClientWorkhouseStationHold hold;
         private ClientInventory stationInventory;
 
 
@@ -14,10 +14,10 @@ namespace Nebula.Client {
 
         public void LoadInfo(Hashtable info) {
             //int holdMaxSlots = info.GetValue<int>(GenericEventProps.hold_max_slots, 0);
-            if (this.hold == null)
-                this.hold = new ClientWorkhouseStationHold(0);
-            this.hold.Clear();
-            this.hold.ParseInfo(info.GetValue<Hashtable>((int)SPC.Hold, new Hashtable()));
+            //if (this.hold == null)
+            //    this.hold = new ClientWorkhouseStationHold(0);
+            //this.hold.Clear();
+            //this.hold.ParseInfo(info.GetValue<Hashtable>((int)SPC.Hold, new Hashtable()));
 
             if (this.stationInventory == null)
                 this.stationInventory = new ClientInventory();
@@ -26,16 +26,16 @@ namespace Nebula.Client {
         }
 
 
-        public ClientWorkhouseStationHold Hold {
-            get { return this.hold; }
-        }
+        //public ClientWorkhouseStationHold Hold {
+        //    get { return this.hold; }
+        //}
 
         public ClientInventory StationInventory {
             get { return this.stationInventory; }
         }
 
         public void Clear() {
-            hold.Clear();
+            //hold.Clear();
             stationInventory.Clear();
         }
     }

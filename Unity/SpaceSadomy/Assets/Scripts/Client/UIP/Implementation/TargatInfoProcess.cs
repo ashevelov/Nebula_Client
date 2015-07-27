@@ -10,7 +10,6 @@ namespace Client.UIP.Implementation
 {
     public class TargatInfoProcess : MonoBehaviour
     {
-
         public ITargetInfo uicPanel;
 
         private IObjectInfo objectInfo;
@@ -40,7 +39,6 @@ namespace Client.UIP.Implementation
         private void CombatUpdate(ICombatObjectInfo info)
         {
             uicPanel.Name = info.Name;
-
             float maxHealth, currentHealth;
             TryGetHP(info, out currentHealth, out maxHealth);
             uicPanel.MaxHP = (int)maxHealth;            //(int)info.MaxHealth;
@@ -57,13 +55,13 @@ namespace Client.UIP.Implementation
             var damagable = item.GetMmoComponent(Common.ComponentID.Damagable) as MmoDamagableComponent;
             if (damagable == null) { return; }
             ch = damagable.health;
-            mh = damagable.maxHealth;
+			mh = damagable.maxHealth;
         }
 
 
         private void AsteroidUpdate(IAsteroidObjectInfo info)
         {
-            uicPanel.Name = info.Name;
+			uicPanel.Name = Nebula.Resources.StringCache.Get("ASTEROID"); //info.Name;
             uicPanel.Distance = info.DistanceTo(G.Game.Avatar);
         }
 

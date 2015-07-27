@@ -24,18 +24,27 @@ namespace Nebula.Effects
 		private BaseSpaceObject mBase;
 		private float mTimer = 16;
 
- 		public void Init(GameObject baseItem) 
+		private bool mAlways = false;
+		private float mSpeed = 0;
+
+ 		public void Init(GameObject baseItem, bool isAlways = false) 
 		{
 			mBase = baseItem.GetComponent<BaseSpaceObject>();
 			mPart = GetComponent<ParticleSystem>();
-			mPart.startSpeed = 0;
+
+			if (mPart != null)
+				mPart.startSpeed = 0;
 
 			mPart2 = gameObject.GetChildrenWithName("SkillSpeed2").GetComponent<ParticleSystem>();
-			mPart2.startSpeed = 0;
+			if (mPart2 != null)
+				mPart2.startSpeed = 0;
 
 			mRender =  gameObject.GetComponent<Renderer>();
 			mRender2 = gameObject.GetChildrenWithName("SkillSpeed2").GetComponent<Renderer>();
 		
+			mAlways = isAlways;
+
+			mSpeed = 0;
 		}
 
 		private void End()
@@ -58,35 +67,62 @@ namespace Nebula.Effects
 		{
 			float speed = SpeedCutter(mBase.Speed());	
 
-			if (mTimer>0 && mTimer<1)
+			if (mSpeed<speed)
+				mSpeed+=0.25f;
+			else if (mSpeed != speed)
+				mSpeed-=0.25f;
+
+
+			if (mTimer>0 && mTimer<1 && mAlways == false)
 			{
-				Color renderColor = mRender.material.GetColor("_TintColor");
-				Color render2Color = mRender2.material.GetColor("_TintColor");
+				Color renderColor;
+				Color render2Color;
 
-				if (render2Color.a>0)
+				if (mRender != null) 
 				{
-					render2Color.a-=0.01f;
-					if (render2Color.a<=0) render2Color.a=0;
+					renderColor = mRender.material.GetColor("_TintColor");
+
+					if (renderColor.a>0)
+					{
+						renderColor.a-=0.01f;
+						if (renderColor.a<=0) renderColor.a=0;
+					}
+
+					mRender.material.SetColor("_TintColor", renderColor);
 				}
 
-				if (renderColor.a>0)
+				if (mRender2 != null)  
 				{
-					renderColor.a-=0.01f;
-					if (renderColor.a<=0) renderColor.a=0;
+					render2Color = mRender2.material.GetColor("_TintColor");
+
+					if (render2Color.a>0)
+					{
+						render2Color.a-=0.01f;
+						if (render2Color.a<=0) render2Color.a=0;
+					}
+
+					mRender2.material.SetColor("_TintColor", render2Color);
 				}
 
-				mRender.material.SetColor("_TintColor", renderColor);
-				mRender2.material.SetColor("_TintColor", render2Color);
 
 			}
 
-			if (mTimer>0)
+			if (mAlways == false) 
 			{
-				mTimer-=Time.deltaTime;
-			}else End();
+				if (mTimer>0)
+				{
+					mTimer-=Time.deltaTime;
+				}else	End();
+			}
 
-			mPart2.startSpeed = speed*2;
-			mPart.startSpeed = speed;
+
+			if (mPart2 != null)
+			{
+				mPart2.startSpeed = mSpeed*2;
+			}
+
+			if (mPart != null)
+				mPart.startSpeed = mSpeed;
 		}
 	}
 }

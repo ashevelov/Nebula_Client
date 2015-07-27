@@ -24,5 +24,10 @@
         /// Race which owned zone at start
         /// </summary>
         public Race race;
+
+        /// <summary>
+        /// Initial world type
+        /// </summary>
+        public WorldType worldType;
     }
 }

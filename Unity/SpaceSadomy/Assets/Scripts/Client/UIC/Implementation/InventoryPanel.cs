@@ -8,77 +8,108 @@ namespace Client.UIC.Implementation
 {
     public class InventoryPanel : MonoBehaviour, IInventoryPanel {
 
-        // scroll list inventory items
-
-        public RectTransform scrollContent;
-        private ToggleGroup toggleGroup;
-
-        private List<InventoryPanelItem> items = new List<InventoryPanelItem>();
-
-        public void AddItem(IInventoryItem item)
+        void Start()
         {
-            if (toggleGroup == null)
-            {
-                toggleGroup = scrollContent.GetComponent<ToggleGroup>();
-            }
-            InventoryPanelItem invItem = InventoryPanelItem.Create(item);
-            RectTransform rctTransform = invItem.transform as RectTransform;
-            rctTransform.parent = scrollContent;
-            rctTransform.localScale = Vector3.one;
-            Toggle toggle = invItem.GetComponent<Toggle>();
-            toggle.group = toggleGroup;
-            toggle.onValueChanged.AddListener((b)=>{this. UpdateInfo(invItem);});
-            items.Add(invItem);
-            UpdatePositions();
-        }
-        public void ModifiedItem(string id, int count)
-        {
-            for (int i = 0; i < items.Count; i++)
-            {
-                if (items[i].id == id)
-                {
-                    items[i].Count = count;
-                }
-            }
+            ItemsScroll.updateinfo = UpdateInfo;
         }
 
-        public void RemoveItem(string id)
+		#region IInventoryPanel implementation
+
+        InventoryItemsScroll _itemsScroll;
+        InventoryItemsScroll ItemsScroll
         {
-            int index = 0;
-            for (int i = 0; i < items.Count; i++)
+            get
             {
-                if (items[i].id == id)
-                {
-                    index = i;
-                }
+                if (_itemsScroll == null)
+                    _itemsScroll = GetComponentInChildren<InventoryItemsScroll>();
+                return _itemsScroll;
             }
-            InventoryPanelItem item = items[index];
-            items.RemoveAt(index);
-            Destroy(item.gameObject);
-            item = null;
-            UpdatePositions();
         }
+		public void AddItem (IInventoryItem item)
+		{
+            ItemsScroll.AddItem(item);
+		}
+		public void ModifiedItem (string id, int count)
+		{
+            ItemsScroll.ModifiedItem(id, count);
+		}
+		public void RemoveItem (string id)
+		{
+            ItemsScroll.RemoveItem(id);
+		}
+		#endregion
 
-        private void UpdatePositions()
-        {
-            if(items.Count != 0)
-            {
-                Vector3 pos = Vector3.zero;
-                float ySize = (items[0].transform as RectTransform).sizeDelta.y;
-                Vector3 scrollViewSize = scrollContent.sizeDelta;
-                scrollViewSize.y = Mathf.Max((scrollContent.parent as RectTransform).sizeDelta.y, items.Count * ySize);
-                scrollContent.sizeDelta = scrollViewSize;
-
-                for (int i = 0; i < items.Count; i++ )
-                {
-                    RectTransform rctTransform = items[i].transform as RectTransform;
-                    pos.y = -i * ySize;
-                    rctTransform.anchoredPosition = pos;
-                }
-
-            }
-            
-        }
+//        // scroll list inventory items
+//
+//        public RectTransform scrollContent;
+//        private ToggleGroup toggleGroup;
+//
+//        private List<InventoryPanelItem> items = new List<InventoryPanelItem>();
+//
+//        public void AddItem(IInventoryItem item)
+//        {
+//            if (toggleGroup == null)
+//            {
+//                toggleGroup = scrollContent.GetComponent<ToggleGroup>();
+//            }
+//            InventoryPanelItem invItem = InventoryPanelItem.Create(item);
+//            RectTransform rctTransform = invItem.transform as RectTransform;
+//            rctTransform.parent = scrollContent;
+//            rctTransform.localScale = Vector3.one;
+//            Toggle toggle = invItem.GetComponent<Toggle>();
+//            toggle.group = toggleGroup;
+//            toggle.onValueChanged.AddListener((b)=>{this. UpdateInfo(invItem);});
+//            items.Add(invItem);
+//            UpdatePositions();
+//        }
+//        public void ModifiedItem(string id, int count)
+//        {
+//            for (int i = 0; i < items.Count; i++)
+//            {
+//                if (items[i].id == id)
+//                {
+//                    items[i].Count = count;
+//                }
+//            }
+//        }
+//
+//        public void RemoveItem(string id)
+//        {
+//            int index = 0;
+//            for (int i = 0; i < items.Count; i++)
+//            {
+//                if (items[i].id == id)
+//                {
+//                    index = i;
+//                }
+//            }
+//            InventoryPanelItem item = items[index];
+//            items.RemoveAt(index);
+//            Destroy(item.gameObject);
+//            item = null;
+//            UpdatePositions();
+//        }
+//
+//        private void UpdatePositions()
+//        {
+//            if(items.Count != 0)
+//            {
+//                Vector3 pos = Vector3.zero;
+//                float ySize = (items[0].transform as RectTransform).sizeDelta.y;
+//                Vector3 scrollViewSize = scrollContent.sizeDelta;
+//                scrollViewSize.y = Mathf.Max((scrollContent.parent as RectTransform).sizeDelta.y, items.Count * ySize);
+//                scrollContent.sizeDelta = scrollViewSize;
+//
+//                for (int i = 0; i < items.Count; i++ )
+//                {
+//                    RectTransform rctTransform = items[i].transform as RectTransform;
+//                    pos.y = -i * ySize;
+//                    rctTransform.anchoredPosition = pos;
+//                }
+//
+//            }
+//            
+//        }
         
         // item info
 
@@ -92,6 +123,7 @@ namespace Client.UIC.Implementation
         public void UpdateInfo(InventoryPanelItem inventoryItem)
         {
             //InventoryItem inventoryItem = new InventoryItem("", null, "", "", "", 0, 0, null);
+            itemIcon.gameObject.SetActive(true);
             itemIcon.sprite = inventoryItem.itemInfo.Icon;
             descroption.text = inventoryItem.itemInfo.Description;
             
@@ -152,6 +184,11 @@ namespace Client.UIC.Implementation
                 if (actions.ContainsKey("craft"))
                 {
                     UpdateButton(actions, ItemID, index, "icons/craft1", "craft");
+                    index++;
+                }
+                if (actions.ContainsKey("sell"))
+                {
+                    UpdateButton(actions, ItemID, index, "icons/sell1", "sell");
                     index++;
                 }
             }

@@ -5,9 +5,9 @@
       <workshop id="DarthTribe"     name="WORKSHOP_DARTHTRIBE"     description="darthtribe_description" />
       <workshop id="RedEye"         name="WORKSHOP_REDEYE"         description="redeye_description" />
       <workshop id="Equilibrium"    name="WORKSHOP_EQUILIBRIUM"    description="equilibrium_description" />
-      <workshop id="Evasive"        name="WORKSHOP_EVASIVE"        description="evasive_description" />
+      <!--<workshop id="Evasive"        name="WORKSHOP_EVASIVE"        description="evasive_description" />-->
       <workshop id="BigBang"        name="WORKSHOP_BIGBANG"        description="bigbang_description" />
-      <workshop id="Serenity"       name="WORKSHOP_SERENITY"       description="serenity_description" />
+      <!--<workshop id="Serenity"       name="WORKSHOP_SERENITY"       description="serenity_description" />-->
     </workshops>
   </race>
   <race id="Borguzands" name="RACE_BORGUZANDS" description="borguzands_description">
@@ -24,7 +24,7 @@
       <workshop id="KrolRo"       name="WORKSHOP_KROLRO"          description="krolro_description" />
       <workshop id="Arlen"        name="WORKSHOP_ARLEN"           description="arlen_description" />
       <workshop id="Dyneira"      name="WORKSHOP_DYNEIRA"         description="dyneira_description" />
-      <workshop id="Molvice"      name="WORKSHOP_MOLVICE"         description="molvice_description" />
+      <!--<workshop id="Molvice"      name="WORKSHOP_MOLVICE"         description="molvice_description" />-->
     </workshops>
   </race>
 </races>

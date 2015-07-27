@@ -2,6 +2,7 @@
 using Nebula.Mmo.Games;
 using Nebula.Mmo.Items.Components;
 using Nebula.Resources;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -179,6 +180,23 @@ namespace Nebula.UI {
                         SelectCharacterGame.Instance().TestPutItemToAuction();
                         return true;
                     }
+                case "addos":
+                    {
+                        NRPC.TestAddOreAndSchemesToStation(40, 10);
+                        return true;
+                    }
+                case "sinv":
+                    {
+                        Dictionary<InventoryObjectType, int> dict = new Dictionary<InventoryObjectType, int>();
+                        foreach(var entry in GameData.instance.station.StationInventory.Items) {
+                            dict.Add(entry.Key, entry.Value.Count);
+                        }
+
+                        var builder = dict.toHash().ToStringBuilder();
+                        Debug.Log(builder.ToString());
+                        return true;
+                    }
+                    break;
                 default:
                     return false;
             }

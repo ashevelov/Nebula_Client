@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <zones>
-  <zone id="E2" name="E2_NAME" level="2" owned_race="2">
+  <zone id="E2" name="E2_NAME" level="2" owned_race="2" world_type="source">
     <planets />
     <npc_groups />
     <npcs>
       <npc id="PS001" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="33,67,-819" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS002" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="-243,71,-286" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS003" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="-467,55,-585" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS004" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="139,75,-597" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS005" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="433,333,480" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="hard" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS006" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="431,505,479" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS007" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="576,300,387" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS008" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="330,300,618" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="100" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="100" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS009" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="666,-1392,-887" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS010" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="958,-1392,-604" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="none" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS011" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="978,-1635,-596" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="hard" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS012" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="673,-1682,-890" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="hard" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" attack_moving_type="AttackPurchase"/>
       </npc>
       <npc id="PS013" name="RACE_CRIPTIZIDS" level="2" race="Criptizoids" position="898,-1490,-831" rotation="0,0,0" respawn_interval="300" workshop="KrolRo" difficulty="boss" fraction="Pirate">
-        <ai name="FreeFlyNearPoint" chase="True" radius="200" />
+        <ai name="FreeFlyNearPoint" chase="True" radius="200" attack_moving_type="AttackPurchase"/>
       </npc>
     </npcs>
     <asteroids>

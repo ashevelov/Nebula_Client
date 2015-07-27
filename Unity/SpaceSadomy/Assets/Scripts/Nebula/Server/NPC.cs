@@ -2,7 +2,8 @@
     using UnityEngine;
     using System.Collections;
     using Common;
-
+    using System.Collections.Generic;
+    using System.Linq;
 
     [AddComponentMenu("Server/Objects/NPC")]
     public class NPC : MonoBehaviour {
@@ -22,6 +23,22 @@
         public PatrolAIType patrolAIType;
         public NoneAIType noneAIType;
 
+
+        [SerializeField]
+        public AttackMovingType pathAttackType;
+        [SerializeField]
+        public Transform[] path;
+
+        public FollowPathAIType GetFollowPathAIType() {
+            List<Vector3> lstPath = new List<Vector3>();
+            if(path != null ) {
+                foreach(var t in path) {
+                    lstPath.Add(t.position);
+                }
+            }
+            return new FollowPathAIType { battleMovingType = pathAttackType, path = lstPath.Select(p => new GameMath.Vector3(p.x, p.y, p.z)).ToArray() };
+        }
+
         void OnDrawGizmos() {
             switch(movingType) {
                 case MovingType.FreeFlyAtBox:
@@ -39,7 +56,26 @@
                 case MovingType.None:
                     DrawNoneGizmos();
                     break;
+                case MovingType.FollowPathCombat:
+                    DrawFollowPathCombatAIGizmos();
+                    break;
             }
+        }
+
+
+        void DrawFollowPathCombatAIGizmos() {
+            if (path == null || path.Length == 0) { return; }
+            Gizmos.color = Color.green;
+            for (int i = 0; i < path.Length; i++) {
+                Gizmos.DrawSphere(path[i].position, 1);
+                if (i < path.Length - 1) {
+                    Gizmos.DrawLine(path[i].position, path[i + 1].position);
+                } else if (i == path.Length - 1) {
+                    Gizmos.DrawLine(path[i].position, path[0].position);
+                }
+            }
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, path[0].position);
         }
 
         void DrawFreeFlyAtBoxGizmos() {
@@ -87,4 +123,5 @@
             Gizmos.DrawSphere(transform.position, 1);
         }
     }
+
 }

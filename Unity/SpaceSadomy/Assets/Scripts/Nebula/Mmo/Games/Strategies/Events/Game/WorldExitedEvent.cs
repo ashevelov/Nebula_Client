@@ -24,7 +24,9 @@
                 ngame.ClearItemCache();
                 ngame.AddItem(ngame.Avatar);
 
-                var position = new float[] { 0.0f, 0.0f, Settings.START_Z };
+                var pos = ngame.GetSpawnPosition();
+                var position = new float[] { pos.x, pos.y, pos.z };
+
                 ngame.Avatar.SetPositions(position, position, null, null, 0);
                 var properties = new Hashtable {
                         {(byte)PS.InterestAreaAttached, ngame.Avatar.InterestAreaAttached },

@@ -140,7 +140,7 @@ namespace Nebula {
                 //float hitProb = GameBalance.ComputeHitProb(avatar.Ship.Weapon.RangeMin, avatar.Ship.Weapon.RangeMax, avatar.Ship.Weapon.MinHitProb, distance);
                 float hitProb = 0.0f;
                 if (GameData.instance.ship.Weapon.HasWeapon) {
-                    hitProb = GameBalance.ComputeHitProb(GameData.instance.ship.Weapon.WeaponObject.OptimalDistance, GameData.instance.ship.Weapon.Range, distance, 0, 0);
+                    hitProb = GameBalance.ComputeHitProb(GameData.instance.ship.Weapon.WeaponObject.OptimalDistance,  distance);
                 }
 
                 if (_targetItem is IDamagable) {
@@ -174,7 +174,7 @@ namespace Nebula {
             if (false == (this._targetItem is IDamagable))
                 return 0.0f;
 
-            return GameBalance.ComputeHitProb(((MyItem)this._owner).GetOptimalDistance(), ((MyItem)this._owner).GetRange(), this.DistanceTo(), ((MyItem)this._owner).GetMaxHitSpeed(), ((IDamagable)this._targetItem).GetSpeed());
+            return GameBalance.ComputeHitProb(((MyItem)this._owner).GetOptimalDistance(), this.DistanceTo());
         }
 
     }

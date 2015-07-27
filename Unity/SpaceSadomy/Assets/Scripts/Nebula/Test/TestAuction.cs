@@ -93,5 +93,24 @@ namespace Nebula.Test {
             }
             return false;
         }
+
+        public void OnReloadClick() {
+            //SelectCharacterGame.Instance().GetCurrentAuctionPage()
+            bool reset = GameData.instance.auction.filtersChanged;
+
+            SelectCharacterGame.Instance().GetCurrentAuctionPage(reset);
+            if(reset) {
+                GameData.instance.auction.ResetChanged();
+            }
+
+        }
+
+        public void OnNextPageClick() {
+            SelectCharacterGame.Instance().GetNextAuctionPage();
+        }
+
+        public void OnPrevPageClick() {
+            SelectCharacterGame.Instance().GetPrevAuctionPage();
+        }
     }
 }

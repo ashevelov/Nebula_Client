@@ -44,11 +44,12 @@
                 } else if(data.Data is MaterialInventoryObjectInfo) {
                     contentPrefab = this.MaterialContentPrefab;
                 }
-            } else if(data.Data is IStationHoldableObject) {
-                if(data.Data is ClientShipModule) {
-                    contentPrefab = this.ModuleContentPrefab;
-                }
             }
+            //else if(data.Data is IStationHoldableObject) {
+            //    if(data.Data is ClientShipModule) {
+            //        contentPrefab = this.ModuleContentPrefab;
+            //    }
+            //}
 
             if( contentPrefab == null ) {
                 Debug.LogError("Content prefab is null for type: {0}".f(data.Data.GetType().Name));

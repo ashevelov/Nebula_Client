@@ -363,5 +363,22 @@
     en = "Ok"
     ru = "Да"
   />
+  <string key="ASTEROID"
+    en = "Asteroid"
+    ru = "Астероид"
+  />
+  <string key="TEST_BOT"
+    en = "Bot"
+    ru = "бот"
+  />
+  <string key="WEAPONNAME"
+    en = "Rocket launcher"
+    ru = "Ракетная установка"
+  />
+  <string key="CRAFTING"
+    en = "Crafting..."
+    ru = "Создание..."
+  />
+  
  
 </strings>

@@ -10,6 +10,8 @@ using Nebula.Test;
 using Nebula.Resources;
 using Nebula.Mmo.Items;
 using Nebula.Effects;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
 {
@@ -24,13 +26,15 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     //Shield object
 	private ShieldEffect mShield;
 	public ShieldEffect GetShield(){ return mShield; }
-
+	public void SetShield(ShieldEffect eff){mShield = eff;}
     //Screen view gui class for this object
     //protected ObjectScreenSelection screenView;
 
     private BonusEffectViewManager bonusEffectViewManager = new BonusEffectViewManager();
 
     private bool childrensActive = true;
+
+	public string GetItemID(){return item.Id;}
 
     private string[] explosionPath = new string[]
     {
@@ -50,13 +54,13 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         return prefabSubCache.Prefab(explosionPath, explosionPath);
     }
 
-    /*
+    
     //Skill effects, which drived by this object
     private Dictionary<string, GameObject> skillEffects = new Dictionary<string, GameObject>();
 
     //Bonuses effects drived by this objects
     private Dictionary<BonusType, GameObject> bonusesEffects = new Dictionary<BonusType, GameObject>();
-    */
+   
     #region Public Members
     /// <summary>
     /// Virtual start, overrides by derived classes
@@ -67,10 +71,8 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         this.childrensActive = true;
 
        /* BonusEffectMaker speedDebuffMaker = (parent) => {
-            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/SpeedDebuff")) as GameObject;
-            inst.transform.parent = parent.transform;
-            inst.transform.localPosition = Vector3.zero;
-            return inst;
+			PlayerSkillList.UseBuff("000003f5".FromHex());
+			return inst;
         };
 
         BonusEffectMaker damageDebuffMaker = (parent) => {
@@ -79,37 +81,32 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
             inst.transform.localPosition = Vector3.zero;
             return inst;
         };
-
+*/
         BonusEffectMaker damageImmunityMaker = (parent) => {
-            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/DamageImmunity")) as GameObject;
-            inst.transform.parent = parent.transform;
-            inst.transform.localPosition = Vector3.zero;
-            return inst;
+			PlayerSkillList.UseSkill(null,item,"000003FB".FromHex());
+			return null;
         };
 
         BonusEffectMaker speedBuffMaker = (parent) => {
-            GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/SpeedBuff")) as GameObject;
-            inst.transform.parent = parent.transform;
-            inst.transform.localPosition = Vector3.zero;
-            inst.transform.localRotation = Quaternion.identity;
-            return inst;
-        };
-
-        BonusEffectMaker damageBuffMaker = (parent) => {
+			PlayerSkillList.UseSkill(null,item,"00000400".FromHex());
+			return null;
+		};
+		
+		/*   BonusEffectMaker damageBuffMaker = (parent) => {
             GameObject inst = GameObject.Instantiate(PrefabCache.Get("Effects/DamageBuff")) as GameObject;
             inst.transform.parent = parent.transform;
             inst.transform.localPosition = Vector3.zero;
             return inst;
-        };
+        };*/
 
-        bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt, speedDebuffMaker);
+      /*  bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt, speedDebuffMaker);
         bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_pc, speedDebuffMaker);
         bonusEffectViewManager.SetEffectMaker(BonusType.decrease_damage_on_cnt, damageDebuffMaker);
-        bonusEffectViewManager.SetEffectMaker(BonusType.decrease_damage_on_pc, damageDebuffMaker);
+        bonusEffectViewManager.SetEffectMaker(BonusType.decrease_damage_on_pc, damageDebuffMaker);*/
         bonusEffectViewManager.SetEffectMaker(BonusType.damage_immunity, damageImmunityMaker);
         bonusEffectViewManager.SetEffectMaker(BonusType.increase_speed_on_cnt, speedBuffMaker);
         bonusEffectViewManager.SetEffectMaker(BonusType.increase_speed_on_pc, speedBuffMaker);
-        bonusEffectViewManager.SetEffectMaker(BonusType.increase_damage_on_cnt, damageBuffMaker);
+      /*  bonusEffectViewManager.SetEffectMaker(BonusType.increase_damage_on_cnt, damageBuffMaker);
         bonusEffectViewManager.SetEffectMaker(BonusType.increase_damage_on_pc, damageBuffMaker);
 */
         //bonusEffectViewManager.SetEffectMaker(BonusType.decrease_speed_on_cnt, BonusEffectMaker)
@@ -278,10 +275,19 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         this.item = item;
         this.game = game;
 
-        //if (false == item.IsMine)
-        //{
-        //    InitializeUI();
-        //}
+        if (item.IsMine)
+        {
+			ShipModel shipModel = item.GetShipModel();
+			
+			GameObject effectInstance =
+				(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/SkillSpeedAlways"),shipModel.transform.position, shipModel.transform.rotation)) as GameObject;
+			
+			
+			SpeedEffect speed = effectInstance.GetComponentInChildren<SpeedEffect>();
+			speed.Init(item.View,true);
+			speed.transform.parent = shipModel.gameObject.transform;
+			speed.transform.Rotate(new Vector3(1,0,0),180.0f,UnityEngine.Space.Self);
+        }
     }
 
     public string GetItemTypeName() {
@@ -369,12 +375,19 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     public virtual void Fire(BaseSpaceObject target, Hashtable fireProperties)
     {
         float damage = fireProperties.GetValue<float>((int)SPC.ActualDamage, 0.0f);
-        bool hitted = fireProperties.GetValue<bool>((int)SPC.IsHitted, false);
+        bool hitted = fireProperties.GetValue<bool>((int)SPC.IsHitted, true);
+
         byte workshop = fireProperties.GetValue<byte>((int)SPC.Workshop, Workshop.DarthTribe.toByte());
         int skillID = fireProperties.Value<int>((int)SPC.Skill, -1);
 
-        this.EmitAmmo(target.transform, hitted, damage, workshop, skillID);
-        StartCoroutine(AddDamageMassage(target, damage, 1, 0.2f, Color.white, hitted));
+		bool isCrit = fireProperties.Value<bool>((int)SPC.IsCritical, false);
+
+		this.EmitAmmo(fireProperties, hitted, damage, workshop, skillID);
+		AddDamageMassage(target, damage, hitted,false,isCrit);
+
+        if(Item.IsMine) {
+            DebugView.Get.SetShot(fireProperties);
+        }
     }
 
     //called when item ship destroyed
@@ -485,90 +498,27 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
         }
     }
 */
+
     /// <summary>
     /// Use skill by this space object(yet not implemented)
     /// </summary>
     /// <param name="skillProperties"></param>
     public virtual void UseSkill(Hashtable skillProperties)
-    {
-        //Здесь возвращается информация данных скила из ресурсов( на самом деле это не очень надо, потому что ресурсы со скилами мы можем парсить на клиенте прямо из XML)
-        //фактически это дублирование информации
-        Hashtable skillData         = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
+    {	
+		Hashtable skillData         = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
 
-        //id скила
-        int skillId                 = skillData.GetValue<int>((int)SPC.Id, -1);
+		int skillId                 = skillData.Value<int>((int)SPC.Id, -1);
 
-        //ID объекта цель скила ( если )
-        string targetId             = skillProperties.GetValue<string>((int)SPC.Target, string.Empty);
-        //Тип объекта цель скила
-        byte targetType = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
-        //По ID и типу мы всегда можем найти в сцене этот объект и создать нужный графический эффект скила, 
-        //если скил действуют на себя, то ID и тип таргета будут ID итема, который владеет этим BaseSpaceObject
-        
-        //Для разовых скилов isOn == false, для поддерживаем true\false в зависимости от включен\вфключен
-        bool isOn                   = skillProperties.GetValue<bool>((int)SPC.IsOn, true);
-
-        //успешно или нет скил скастовался (например false возвращается если недостаточно энергии или цель далеко), если успешно то true
-        bool success                = skillProperties.GetValue<bool>((int)SPC.IsSuccess, false);
-
-        //если скил скастовался неуспешно то в message иногда возвращается информация о причине неуспешного каста( но не всегда )
-        string message = skillProperties.Value<string>((int)SPC.Message);
-
-        if(!success) {
-            Debug.Log("SKILL NOT SUCCESS");
-            return;
-        }
-
-        Debug.LogFormat("Skill used = {0}, success = {1}", skillId.ToString("X8"), success);
-        
-        if("000003E9".FromHex() == skillId) {
-            Item targetItem = null;
-            if(!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
-                Debug.LogError("skill target item not founded");
-                return;
-            }
-            if(!targetItem.View) {
-                Debug.LogError("skill target item don't have view");
-                return;
-            }
-
-			PlayerSkillList.HumanSkill2(this,item,targetItem.View);
-
-        }
-
-		if("000003ee".FromHex() == skillId ) {
-
-			Item targetItem = null;
-			if (!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
-				Debug.LogError("skill target item not founded");
-				return;
-			}
-			if (!targetItem.View) {
-				Debug.LogError("skill target item don't have view");
-				return;
-			}
-			
-			PlayerSkillList.HumanSkill1(item,targetItem.View);
+		if (skillId != -1 && PlayerSkillList.GetSkillType(skillId) == PlayerSkillList.SkillType.Support)
+		{
+			Debug.LogFormat("UseSkill used2 = {0}", skillId.ToString("X8"));
+			PlayerSkillList.UseSkill(skillProperties,item,skillId);
 		}
+
+       if(Item.IsMine) {
+            DebugView.Get.SetSkill(skillProperties);
+        }
 		
-		if("000003FB".FromHex() == skillId) {
-          
-			mShield = 
-			PlayerSkillList.HumanSkill3(item);
-			//PlayerSkillList.HumanSkill1(item,targetItem.View);
-        }
-
-		if("00000400".FromHex() == skillId) {
-
-			PlayerSkillList.HumanSkill4(item);
-			//PlayerSkillList.HumanSkill1(item,targetItem.View);
-		}
-
-		if("000003f5".FromHex() == skillId) {
-			
-			PlayerSkillList.HumanSkill5(item);
-			//PlayerSkillList.HumanSkill1(item,targetItem.View);
-		}
 
         /*
         switch(skillId)
@@ -822,52 +772,21 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <summary>
     /// Make emitting action. overrides derived classes if needed
     /// </summary>
-    protected virtual void EmitAmmo(Transform target, bool isHitted, float damage, byte sourceWorkshop, int skillID = -1)
+	protected virtual void EmitAmmo(Hashtable skillProperties, bool isHitted, float damage, byte sourceWorkshop, int skillID = -1)
     {
-        //print(string.Format("Emit Ammo with damage: {0}", damage).Bold().Color("orange"));
+		/*
+        string targetID = skillProperties.Value<string>((int)SPC.Target, string.Empty);
+        byte targetType = skillProperties.Value<byte>((int)SPC.TargetType, (byte)ItemType.Avatar);
+        byte sourceType = skillProperties.Value<byte>((int)SPC.SourceType, (byte)ItemType.Avatar);
+*/
+		int skillId                 = skillProperties.Value<int>((int)SPC.Skill, -1);
 
-        //Debug.Log("EmitAmmo");
-        if (target.gameObject != null && target.gameObject.activeSelf)
-        {
-            switch (sourceWorkshop.toEnum<Workshop>())
-            {
-			case Workshop.DarthTribe:
-                   /* if ("000003EE".FromHex() == skillID) {
-                        StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
-                    } else {
-                        StartCoroutine(cor_Launch(0.1f, "Prefabs/Items/Weapons/Missiles/Missile", target, 3, isHitted));
-                    }*/
-                    break;
-				case Workshop.Equilibrium:
-                   /* if ("000003EE".FromHex() == skillID) {
-                        StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
-                        
-                    } else {
-                        StartCoroutine(cor_LaunchPlasma(0.2f, "Prefabs/Effects/PlasmaLight", target, 3, isHitted));
-                    }*/
-                    break;
-                case Workshop.RedEye:
-                  /*  if ("000003EE".FromHex() == skillID) {
-                        StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
-                        
-                    } else {
-                        StartCoroutine(cor_LaunchLaser(5f, "Prefabs/Effects/NLaser", target, 1, isHitted));
-                    }*/
-                    break;
-			default:
-                    {
-                        if ("000003EE".FromHex() == skillID) {
-                          //  StartCoroutine(cor_Launch(0.1f, "Effects/Missile_3EE", target, 3, isHitted));
-                        } else {
-                            Debug.LogErrorFormat("Not realized shot for workshop: {0}", sourceWorkshop.toEnum<Workshop>());
+		if (skillId == -1 || PlayerSkillList.GetSkillType(skillId) == PlayerSkillList.SkillType.Weapon)
+		{
+			Debug.LogFormat("EmminAmmo used2 = {0}", skillID.ToString("X8"));
+			PlayerSkillList.UseSkill(skillProperties,item,skillId);
+		}
 
-							PlayerSkillList.HumanSkill1(item,target.gameObject);
-                        }
-                    }
-                    break;
-            }
-
-        }
     }
     #endregion
 
@@ -936,7 +855,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                 if (Item.IsMine)
                 {
                     //i use skill
-                    EmitAmmo(targetItem.Component.transform, true, damage, Workshop.DarthTribe.toByte());
+                    EmitAmmo(skillProperties, true, damage, Workshop.DarthTribe.toByte());
 
                 }
                 else
@@ -947,7 +866,7 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
                         case ItemType.Avatar:
                             {
                                 ForeignPlayerItem foreignItem = Item as ForeignPlayerItem;
-                                EmitAmmo(targetItem.Component.transform, true, damage, Workshop.DarthTribe.toByte());
+								EmitAmmo(skillProperties, true, damage, Workshop.DarthTribe.toByte());
                             }
                             break;
                     }
@@ -1141,30 +1060,45 @@ public abstract class BaseSpaceObject : MonoBehaviour, ICachedPosition
     /// <summary>
     /// Add damage gui text
     /// </summary>
-    private IEnumerator AddDamageMassage(BaseSpaceObject targetComponent, float damage, int count, float time, Color color, bool isHitted)
+	public IEnumerator AddDamageMassage(BaseSpaceObject targetComponent, float damage,bool isHitted, bool isHeal = false,bool isCrit = false)
     {
-        yield break;
 
-        if (this.Item.Type == (byte)ItemType.Avatar)
-        {
-            //if (targetComponent.screenView != null)
-            //{
+		string msg;
+		Color _color;
 
-            //    for (int i = 0; i < count; i++)
-            //    {
+	
+		if (damage == 0 && isHitted)
+		{
+			msg = "RESIST";
+			_color = new Color(1,1,0,1);
+		}else
+		{
+			if (isHeal)
+			{
+				msg = "+"+damage.ToString();
+				_color = new Color(0,1,0,1);
+			}
+			else
+			{
+				if (!isHitted)
+				{
+					msg = "MISS";
+					_color = new Color(1,1,0,1);
+				}else
+				{
+					msg = "-"+damage.ToString("0.0");
+					_color = new Color(1,0,0,1);
+				}
+			}
+		}
 
-            //        if (isHitted)
-            //        {
-            //            targetComponent.screenView.AddMassage(((int)damage).ToString(), color);
-            //        }
-            //        else
-            //        {
-            //            targetComponent.screenView.AddMassage("miss", color);
-            //        }
-            //        yield return new WaitForSeconds(time);
-            //    }
-            //}
-        }
+
+		SkillMessage.AddMessage(msg,targetComponent,_color,isCrit);
+			
+		return null;
+           // yield return new WaitForSeconds(time);
+        
+            
     }
     #endregion
 

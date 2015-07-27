@@ -18,21 +18,28 @@ public class HealEffect : MonoBehaviour
 	float mTiles = 1;
 	ArrayList mRenders;
 	float mTimer = 2.5f;
+	private Color mColor;
 
- 	public void Init(Item item) 
+ 	public void Init(Item item, Color _color, string res) 
 	{
-		Material mat = new Material(Resources.Load("Effects/SkillHeal") as Material);
-		Color _col = mat.GetColor("_TintColor");
-		_col.a = 0;
-		mat.SetColor("_TintColor",_col);
+		mColor = _color;
+		Material mat = new Material(Resources.Load(res) as Material);
+	
+		mat.SetColor("_TintColor",mColor);
 
 		ShipModel shipModel   = item.GetShipModel();
 		ArrayList shipModules =  shipModel.GetModules();
 		mRenders = new ArrayList(shipModules.Count);
-
+		Debug.Log("Heal arr"+mRenders.Count);
 		for (int i=0;i<shipModules.Count;i++)
 		{
-			Renderer objR = shipModel.GetModule(i).GetModel().GetChildrenWithName("model").GetComponent<Renderer>();
+			GameObject obj = shipModel.GetModule(i).GetModel().GetChildrenWithName("model");
+			Renderer objR; 
+
+			if ( obj != null)
+				objR = shipModel.GetModule(i).GetModel().GetChildrenWithName("model").GetComponent<Renderer>();
+			else
+				objR = shipModel.GetModule(i).GetModel().GetComponent<Renderer>();
 				
 			Material[] newMat = new Material[objR.materials.Length+1];
 				
@@ -69,33 +76,29 @@ public class HealEffect : MonoBehaviour
 			mTiles =0;
 		}
 
+		if (mTimer<=1)
+		{
+			if (mColor.a>0)
+			{
+				mColor.a-=0.05f;
+				if (mColor.a<=0) mColor.a=0;
+			}
+			
+		}else
+		{
+			if (mColor.a<1)
+			{
+				mColor.a+=0.05f;
+				if (mColor.a>=1) mColor.a=1;
+			}
+		}
+		
 		for (int i=0;i<mRenders.Count;i++)
 		{
 			Renderer objR = mRenders[i] as Renderer;
 
 			objR.materials[1].mainTextureOffset = new Vector2(1,mTiles);
-
-
-			if (mTimer<=1)
-			{
-				Color _col = objR.materials[1].GetColor("_TintColor");
-				if (_col.a>0)
-				{
-					_col.a-=0.05f;
-					if (_col.a<=0) _col.a=0;
-				}
-				objR.materials[1].SetColor("_TintColor",_col);
-
-			}else
-			{
-				Color _col = objR.materials[1].GetColor("_TintColor");
-				if (_col.a<1)
-				{
-					_col.a+=0.05f;
-					if (_col.a>=1) _col.a=1;
-				}
-				objR.materials[1].SetColor("_TintColor",_col);
-			}
+			objR.materials[1].SetColor("_TintColor",mColor);
 		}
 
 		if (mTimer>0)

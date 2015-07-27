@@ -81,7 +81,7 @@ namespace Client.UIP.Implementation
 
             AddInfo(Nebula.Resources.StringCache.Get("inventorydamage"), info.damage);
             AddInfo(Nebula.Resources.StringCache.Get("inventorycritdamage"), info.critDamage);
-            AddInfo(Nebula.Resources.StringCache.Get("inventoryoptimal"), (int)info.Range);
+            AddInfo(Nebula.Resources.StringCache.Get("inventoryoptimal"), (int)info.optimalDistance);
             AddInfo(Nebula.Resources.StringCache.Get("inventory_level"), (int)info.WeaponObject.Level);
             //AddInfo(Nebula.Resources.StringCache.Get("COLOR"), (int)info.WeaponObject.Color);
 
@@ -107,7 +107,7 @@ namespace Client.UIP.Implementation
             AddInfo(Nebula.Resources.StringCache.Get("inventory_name"), Nebula.Resources.StringCache.Get(info.type+"_NAME"));
             AddInfo(Nebula.Resources.StringCache.Get("inventory_level"), info.level);
             AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryHP"), (int)info.hp);
-            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryenergybonus"), (int)info.energy);
+            AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryenergybonus"), (int)info.energyBonus);
             AddInfo(Nebula.Resources.StringCache.Get("hum_inventoryresistance"), (int)info.resist);
             AddInfo(Nebula.Resources.StringCache.Get("inventoryspeedbonus"), (int)info.speed);
             AddInfo(Nebula.Resources.StringCache.Get("inventorydamagebonus"), (int)info.damageBonus);

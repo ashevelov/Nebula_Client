@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEditor;
+﻿using Common;
 using Nebula.Server;
-using Common;
+using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(Nebula.Server.NPC))]
 public class NPCEditor : Editor {
@@ -39,7 +38,7 @@ public class NPCEditor : Editor {
         switch (npc.movingType) {
             case MovingType.FreeFlyAtBox:
                 EditorGUILayout.BeginFadeGroup(1);
-                npc.freeFlyAtBoxAIType.purchaseEnemy = EditorGUILayout.Toggle("Chase Enemy?", npc.freeFlyAtBoxAIType.purchaseEnemy);
+                npc.freeFlyAtBoxAIType.battleMovingType = (AttackMovingType)EditorGUILayout.EnumPopup("Battle moving type", npc.freeFlyAtBoxAIType.battleMovingType);
                 Vector3 cornerMin = new Vector3(npc.freeFlyAtBoxAIType.corners.min.X, npc.freeFlyAtBoxAIType.corners.min.Y, npc.freeFlyAtBoxAIType.corners.min.Z);
                 Vector3 cornerMax = new Vector3(npc.freeFlyAtBoxAIType.corners.max.X, npc.freeFlyAtBoxAIType.corners.max.Y, npc.freeFlyAtBoxAIType.corners.max.Z);
                 cornerMin = EditorGUILayout.Vector3Field("Corner Min", cornerMin);
@@ -51,13 +50,13 @@ public class NPCEditor : Editor {
                 break;
             case MovingType.FreeFlyNearPoint:
                 EditorGUILayout.BeginFadeGroup(1);
-                npc.freeFlyNearPointAIType.purchaseEnemy = EditorGUILayout.Toggle("Chase Enemy?", npc.freeFlyNearPointAIType.purchaseEnemy);
+                npc.freeFlyNearPointAIType.battleMovingType = (AttackMovingType)EditorGUILayout.EnumPopup("Battle moving type", npc.freeFlyNearPointAIType.battleMovingType);
                 npc.freeFlyNearPointAIType.radius = EditorGUILayout.FloatField("Radius: ", npc.freeFlyNearPointAIType.radius);
                 EditorGUILayout.EndFadeGroup();
                 break;
             case MovingType.OrbitAroundPoint:
                 EditorGUILayout.BeginFadeGroup(1);
-                npc.orbitAroundPointAIType.purchaseEnemy = EditorGUILayout.Toggle("Chase Enemy?", npc.orbitAroundPointAIType.purchaseEnemy);
+                npc.orbitAroundPointAIType.battleMovingType = (AttackMovingType)EditorGUILayout.EnumPopup("Batlle moving type", npc.orbitAroundPointAIType.battleMovingType);
                 npc.orbitAroundPointAIType.phiSpeed = EditorGUILayout.FloatField("PHI speed: ", npc.orbitAroundPointAIType.phiSpeed);
                 npc.orbitAroundPointAIType.thetaSpeed = EditorGUILayout.FloatField("THETA speed: ", npc.orbitAroundPointAIType.thetaSpeed);
                 npc.orbitAroundPointAIType.radius = EditorGUILayout.FloatField("Radius: ", npc.orbitAroundPointAIType.radius);
@@ -65,7 +64,7 @@ public class NPCEditor : Editor {
                 break;
             case MovingType.Patrol:
                 EditorGUILayout.BeginFadeGroup(1);
-                npc.patrolAIType.purchaseEnemy = EditorGUILayout.Toggle("Chase Enemy?", npc.patrolAIType.purchaseEnemy);
+                npc.patrolAIType.battleMovingType = (AttackMovingType)EditorGUILayout.EnumPopup("Battle moving type", npc.patrolAIType.battleMovingType);
                 Vector3 firstPoint = new Vector3(npc.patrolAIType.firstPoint.X, npc.patrolAIType.firstPoint.Y, npc.patrolAIType.firstPoint.Z);
                 Vector3 secondPoint = new Vector3(npc.patrolAIType.secondPoint.X, npc.patrolAIType.secondPoint.Y, npc.patrolAIType.secondPoint.Z);
                 firstPoint = EditorGUILayout.Vector3Field("First Point:", firstPoint);
@@ -77,8 +76,23 @@ public class NPCEditor : Editor {
                 break;
             case MovingType.None:
                 EditorGUILayout.BeginFadeGroup(1);
-                npc.noneAIType.purchaseEnemy = EditorGUILayout.Toggle("Purchase Enemy?", npc.noneAIType.purchaseEnemy);
+                npc.noneAIType.battleMovingType = (AttackMovingType)EditorGUILayout.EnumPopup("Battle moving type", npc.noneAIType.battleMovingType);
                 EditorGUILayout.EndFadeGroup();
+                break;
+            case MovingType.FollowPathCombat:
+                EditorGUILayout.BeginFadeGroup(1);
+                npc.pathAttackType = (AttackMovingType)EditorGUILayout.EnumPopup("Battle moving type", npc.pathAttackType);
+                SerializedProperty tps = serializedObject.FindProperty("path");
+                EditorGUI.BeginChangeCheck();
+                EditorGUILayout.PropertyField(tps, new GUIContent("Path"), true);
+                if(EditorGUI.EndChangeCheck()) {
+                    serializedObject.ApplyModifiedProperties();
+                }
+                EditorGUIUtility.LookLikeControls();
+                EditorGUILayout.EndFadeGroup();
+                break;
+            case MovingType.FollowPathNonCombat:
+                GUILayout.Label(new GUIContent("UNSUPPORTED BEHAVIOUR"));
                 break;
 
         }
@@ -86,5 +100,6 @@ public class NPCEditor : Editor {
         if(GUI.changed) {
             EditorUtility.SetDirty(target);
         }
+        
     }
 }

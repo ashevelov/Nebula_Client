@@ -8,7 +8,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Nebula.Mmo.Items {
-    public class StandardNpcCombatItem : NpcItem, IDamagable, IBonusHolder, Nebula.UI.ICombatObjectInfo, Nebula.UI.ISelectedObjectContextMenuViewSource {
+    public class StandardNpcCombatItem : NpcItem, IDamagable, 
+        IBonusHolder, Nebula.UI.ICombatObjectInfo, 
+        Nebula.UI.ISelectedObjectContextMenuViewSource {
 
         private BaseSpaceObject component;
         private ForeignShip mShip;

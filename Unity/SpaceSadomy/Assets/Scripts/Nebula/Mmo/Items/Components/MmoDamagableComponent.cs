@@ -1,8 +1,5 @@
 ﻿namespace Nebula.Mmo.Items.Components {
-    using UnityEngine;
-    using System.Collections;
     using Common;
-    using Nebula.UI;
 
     public class MmoDamagableComponent : MmoBaseComponent {
 
@@ -39,6 +36,30 @@
                     }
                 }
                 return false;
+            }
+        }
+
+        public bool ignoreDamage {
+            get {
+                if(item != null ) {
+                    bool ignore = false;
+                    if(item.TryGetProperty<bool>((byte)PS.IgnoreDamage, out ignore)) {
+                        return ignore;
+                    }
+                }
+                return false;
+            }
+        }
+
+        public float ignoreDamageTimer {
+            get {
+                if(item != null ) {
+                    float timer = 0f;
+                    if(item.TryGetProperty<float>((byte)PS.IgnoreDamageTimer, out timer)) {
+                        return timer;
+                    }
+                }
+                return 0f;
             }
         }
     }

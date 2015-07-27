@@ -1,5 +1,5 @@
 ﻿<zones>
-  <zone id="H2" name="H2_NAME" level="2" owned_race="0">
+  <zone id="H2" name="H2_NAME" level="2" owned_race="0" world_type="source">
     <npc_groups>
       <npc_group id="H_NPC_G_2_COMMON" />
     </npc_groups>

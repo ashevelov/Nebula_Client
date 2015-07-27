@@ -9,7 +9,7 @@ public interface IDamagable {
     float GetHealth01();
 
     float GetOptimalDistance();
-    float GetRange();
+
 
     float GetMaxHitSpeed();
     float GetSpeed();

@@ -19,12 +19,7 @@ namespace Nebula.Mmo.Items
         private List<byte> subscribedInterestAreas;
         private readonly byte type;
         private readonly List<byte> visibleInterestAreas;
-        public float[] Position { get; private set; }
-        public float[] Rotation { get; private set; }
-        public float[] PreviousPosition { get; private set; }
-        public float[] PreviousRotation { get; private set; }
-        public int PropertyRevision { get; set; }
-        public event Action<Item> Moved;
+
         private Dictionary<byte, object> properties;
         protected GameObject _view;
         protected NetworkTransformInterpolation _transformInterpolation;
@@ -32,9 +27,15 @@ namespace Nebula.Mmo.Items
         private string _name;
         private bool _shipDestroyed;
         private float movedSpeed = 0f;
+        private ShipModel mShipModel;
+
+        public float[] Position { get; private set; }
+        public float[] Rotation { get; private set; }
+        public float[] PreviousPosition { get; private set; }
+        public float[] PreviousRotation { get; private set; }
+        public int PropertyRevision { get; set; }
+        public event Action<Item> Moved;
         public ComponentID[] componentIDS { get; private set; }
-
-
         public MmoBonusesComponent bonuses { get; private set; }
         public MmoBotComponent bot { get; private set; }
         public MmoCharacterComponent character { get; private set; }
@@ -46,20 +47,93 @@ namespace Nebula.Mmo.Items
         public MmoShipComponent ship { get; private set; }
         public MmoTargetComponent target { get; private set; }
         public MmoMovableComponent movable { get; private set; }
+        public bool InterestAreaAttached { get; private set; }
+        public bool IsDestroyed { get; set; }
+        public abstract bool IsMine { get; }
+        public Dictionary<ComponentID, MmoBaseComponent> components { get; set; }
+        public abstract ObjectInfoType InfoType { get; }
+        public abstract string Description { get; }
+        public virtual BaseSpaceObject Component { get; private set; }
 
-
-
-        public Race Race
-        {
-            get
-            {
-                if(ContainsProperty((byte)PS.Race)) {
-                    return (Race)GetProperty<byte>((byte)PS.Race);
-                } else {
-                    return Race.None;
-                }
+        public NetworkGame Game {
+            get {
+                return this.game;
             }
         }
+
+        public Race Race {
+            get {
+
+                if (character != null) {
+                    return character.race;
+                } else if (raceable != null) {
+                    return raceable.race;
+                }
+                return Race.None;
+            }
+        }
+
+        public string Id {
+            get {
+                return this.id;
+            }
+        }
+
+        public byte Type {
+            get {
+                return this.type;
+            }
+        }
+
+
+        public Hashtable RawProperties {
+            get {
+                Hashtable result = new Hashtable();
+                foreach (var pair in properties) {
+                    result.Add(pair.Key, pair.Value);
+                }
+                return result;
+            }
+        }
+
+        public Dictionary<byte, object> props {
+            get {
+                return properties;
+            }
+        }
+
+        public bool ExistsView {
+            get {
+                return this._view;
+            }
+        }
+
+        public GameObject View {
+            get {
+                return _view;
+            }
+        }
+
+        public bool Subscribed {
+            get {
+                return _subscribed;
+            }
+        }
+
+        public string Name {
+            get {
+                return _name;
+            }
+        }
+
+        public bool ShipDestroyed {
+            get {
+                return _shipDestroyed;
+            }
+        }
+
+        
+
 
         public void ReplaceName(string nm)
         {
@@ -122,67 +196,16 @@ namespace Nebula.Mmo.Items
             return false;
         }
 
-        public NetworkGame Game
-        {
-            get
-            {
-                return this.game;
-            }
-        }
 
-        public string Id
-        {
-            get
-            {
-                return this.id;
-            }
-        }
 
-        public bool InterestAreaAttached { get; private set; }
-        public bool IsDestroyed { get; set; }
-        public abstract bool IsMine { get; }
 
-        public bool IsVisible
-        {
-            get
-            {
-                return this.visibleInterestAreas.Count > 0;
-            }
-        }
-
-        public byte Type
-        {
-            get
-            {
-                return this.type;
-            }
-        }
 
         /*
         public float[] ViewDistanceEnter { get; private set; }
         public float[] ViewDistanceExit { get; private set; }
         */
 
-        public Hashtable RawProperties
-        {
-            get
-            {
-                Hashtable result = new Hashtable();
-                foreach(var pair in properties) {
-                    result.Add(pair.Key, pair.Value);
-                }
-                return result;
-            }
-        }
 
-        public Dictionary<byte, object> props {
-            get {
-                return properties;
-            }
-        }
-
-
-        public Dictionary<ComponentID, MmoBaseComponent> components { get; set; }
 
         protected Item(string id, byte type, NetworkGame game, string name, object[] inComponents)
         {
@@ -329,7 +352,7 @@ namespace Nebula.Mmo.Items
                 this.Moved(this);
             }
         }
-		private ShipModel mShipModel;
+		
         public virtual void Create(GameObject obj)
         {
             if (false == this.ExistsView)
@@ -354,29 +377,11 @@ namespace Nebula.Mmo.Items
                 }
                 GameObject.Destroy(_view);
                 _view = null;
+                Debug.Log(string.Format("Item.DestroyView(): success {0}:{1}", (ItemType)Type, Id).Color("green"));
+            } else {
+                Debug.Log("Item.DestroyView(): fail not exist view".Color("green"));
             }
         }
-
-        public bool ExistsView 
-        { 
-            get 
-            {
-                return this._view;
-            } 
-        }
-
-        public GameObject View { 
-            get { 
-                return _view;  
-            } 
-        }
-
-        public bool HasView()
-        {
-            return (bool)this._view;
-        }
-
-        public virtual BaseSpaceObject Component { get; private set; }
 
         public void SetComponent(BaseSpaceObject spaceObject )
         {
@@ -398,29 +403,7 @@ namespace Nebula.Mmo.Items
             return new Vector3(Position[0], Position[1], Position[2]);
         }
 
-        public bool Subscribed {
-            get {
-                return _subscribed;
-            }
-        }
 
-        public string Name {
-            get {
-                return _name;
-            }
-        }
-
-        public bool ShipDestroyed 
-        {
-            get 
-            {
-                return _shipDestroyed;
-            }
-        }
-
-        public abstract ObjectInfoType InfoType { get; }
-
-        public abstract string Description { get; }
 
         public virtual void SetShipDestroyed(bool shipDetroyed)
         {

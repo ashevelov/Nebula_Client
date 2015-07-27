@@ -75,7 +75,7 @@ namespace Nebula.Mmo.Items {
 
         private void OnActivatorRadiusPropertyReceived()
         {
-            if(this.HasView())
+            if(ExistsView)
             {
                 var sphereCollider = this.View.GetComponent<SphereCollider>();
                 if(!sphereCollider)

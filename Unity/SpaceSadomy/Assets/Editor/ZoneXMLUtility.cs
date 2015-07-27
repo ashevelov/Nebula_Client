@@ -4,6 +4,7 @@ using UnityEditor;
 using Nebula.Server;
 using System.Xml.Linq;
 using System.Linq;
+using Nebula.Server.Components;
 
 public class ZoneXMLUtility : MonoBehaviour {
 
@@ -23,6 +24,7 @@ public class ZoneXMLUtility : MonoBehaviour {
         zoneElement.SetAttributeValue("name", zone.zoneName);
         zoneElement.SetAttributeValue("level", zone.level.ToString());
         zoneElement.SetAttributeValue("owned_race", ((int)zone.race).ToString());
+        zoneElement.SetAttributeValue("world_type", zone.worldType.ToString());
 
         XElement planets = new XElement("planets");
         zoneElement.Add(planets);
@@ -39,7 +41,9 @@ public class ZoneXMLUtility : MonoBehaviour {
         }
 
         foreach(var npcObj in npcObjects) {
-            WriteNPC(npcObj, npcs);
+            if (npcObj.gameObject.activeSelf) {
+                WriteNPC(npcObj, npcs);
+            }
         }
 
         XElement asteroids = new XElement("asteroids");
@@ -49,14 +53,22 @@ public class ZoneXMLUtility : MonoBehaviour {
             return;
         }
         foreach(var aObject in asteroidObjects) {
-            WriteASTEROID(aObject, asteroids);
+            if (aObject.gameObject.activeSelf) {
+                WriteASTEROID(aObject, asteroids);
+            }
         }
+
+        XElement objectsElement = new XElement("nebula_objects");
+        zoneElement.Add(objectsElement);
+        WriteNebulaObjects(objectsElement, zone.transform);
 
         XElement events = new XElement("events");
         zoneElement.Add(events);
         var eventObjects = zone.GetComponentsInChildren<EVENT>();
         foreach(var evtObj in eventObjects) {
-            WriteEVENT(evtObj, events);
+            if (evtObj.gameObject.activeSelf) {
+                WriteEVENT(evtObj, events);
+            }
         }
 
         XElement inputs = new XElement("inputs");
@@ -68,6 +80,31 @@ public class ZoneXMLUtility : MonoBehaviour {
         Debug.Log(fullPath);
         AssetDatabase.Refresh(ImportAssetOptions.Default);
 
+    }
+
+    private static void WriteNebulaObjects(XElement objectsElement, Transform parent ) {
+        foreach (Transform t in parent) {
+            if (t.gameObject.activeSelf) {
+                Nebula.Server.Components.ServerComponent[] serverComponents = t.GetComponents<Nebula.Server.Components.ServerComponent>();
+                if (serverComponents.Length > 0) {
+                    XElement objectElement = new XElement("nebula_object");
+                    objectElement.SetAttributeValue("id", t.name);
+                    objectElement.SetAttributeValue("position", FormatVector3(t.position));
+                    objectElement.SetAttributeValue("rotation", FormatVector3(t.rotation.eulerAngles));
+                    if (t.GetComponent<ServerNebulaObjectComponent>()) {
+                        objectElement.SetAttributeValue("script", t.GetComponent<ServerNebulaObjectComponent>().script);
+                    } else {
+                        objectElement.SetAttributeValue("script", string.Empty);
+                    }
+                    foreach (var servComp in serverComponents) {
+                        objectElement.Add(servComp.ToXElement());
+                    }
+                    objectsElement.Add(objectElement);
+                }
+
+                WriteNebulaObjects(objectsElement, t);
+            }
+        }
     }
 
     private static bool CheckNPCDuplicates(NPC[] npcArr) {
@@ -160,18 +197,18 @@ public class ZoneXMLUtility : MonoBehaviour {
         ai.SetAttributeValue("name", npc.movingType.ToString());
         switch(npc.movingType) {
             case MovingType.FreeFlyAtBox:
-                ai.SetAttributeValue("chase", npc.freeFlyAtBoxAIType.purchaseEnemy.ToString());
+                ai.SetAttributeValue("attack_moving_type", npc.freeFlyAtBoxAIType.battleMovingType.ToString());
                 Vector3 min = new Vector3(npc.freeFlyAtBoxAIType.corners.min.X, npc.freeFlyAtBoxAIType.corners.min.Y, npc.freeFlyAtBoxAIType.corners.min.Z);
                 Vector3 max = new Vector3(npc.freeFlyAtBoxAIType.corners.max.X, npc.freeFlyAtBoxAIType.corners.max.Y, npc.freeFlyAtBoxAIType.corners.max.Z);
                 ai.SetAttributeValue("min", FormatVector3(min));
                 ai.SetAttributeValue("max", FormatVector3(max));
                 break;
             case MovingType.FreeFlyNearPoint:
-                ai.SetAttributeValue("chase", npc.freeFlyNearPointAIType.purchaseEnemy.ToString());
+                ai.SetAttributeValue("attack_moving_type", npc.freeFlyNearPointAIType.battleMovingType.ToString());
                 ai.SetAttributeValue("radius", ((int)npc.freeFlyNearPointAIType.radius).ToString());
                 break;
             case MovingType.OrbitAroundPoint:
-                ai.SetAttributeValue("chase", npc.orbitAroundPointAIType.purchaseEnemy.ToString());
+                ai.SetAttributeValue("attack_moving_type", npc.orbitAroundPointAIType.battleMovingType.ToString());
                 ai.SetAttributeValue("phi_speed", npc.orbitAroundPointAIType.phiSpeed.ToString());
                 ai.SetAttributeValue("theta_speed", npc.orbitAroundPointAIType.thetaSpeed.ToString());
                 ai.SetAttributeValue("radius", ((int)npc.orbitAroundPointAIType.radius).ToString());
@@ -179,20 +216,46 @@ public class ZoneXMLUtility : MonoBehaviour {
             case MovingType.Patrol:
                 Vector3 firstPoint = new Vector3(npc.patrolAIType.firstPoint.X, npc.patrolAIType.firstPoint.Y, npc.patrolAIType.firstPoint.Z);
                 Vector3 secondPoint = new Vector3(npc.patrolAIType.secondPoint.X, npc.patrolAIType.secondPoint.Y, npc.patrolAIType.secondPoint.Z);
-                ai.SetAttributeValue("chase", npc.patrolAIType.purchaseEnemy.ToString());
+                ai.SetAttributeValue("attack_moving_type", npc.patrolAIType.battleMovingType.ToString());
                 ai.SetAttributeValue("first", FormatVector3(firstPoint));
                 ai.SetAttributeValue("second", FormatVector3(secondPoint));
                 break;
             case MovingType.None:
-                ai.SetAttributeValue("chase", npc.noneAIType.purchaseEnemy.ToString());
+                ai.SetAttributeValue("attack_moving_type", npc.noneAIType.battleMovingType.ToString());
+                break;
+            case MovingType.FollowPathCombat:
+                var data = npc.GetFollowPathAIType();
+                ai.SetAttributeValue("attack_moving_type", data.battleMovingType.ToString());
+                ai.SetAttributeValue("path", PathString(npc.path));
+                CheckPath(npc);
                 break;
         }
         npcElement.Add(ai);
         parent.Add(npcElement);
     }
 
+    private static void CheckPath(NPC npc) {
+        if(npc.path == null || npc.path.Length < 2) {
+            EditorUtility.DisplayDialog("ERROR", string.Format("NPC {0} not has valid path, path length must be greater or equal 2", npc.npcID), "Ok");
+
+        }
+    }
+
     private static string FormatVector3(Vector3 v) {
         return string.Format("{0},{1},{2}", (int)v.x, (int)v.y, (int)v.z);
+    }
+
+    private static string PathString(Transform[] path) {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        for (int i = 0; i < path.Length; i++) {
+            if (path[i] != null) {
+                sb.Append(FormatVector3(path[i].position));
+                if (i != (path.Length - 1)) {
+                    sb.Append(";");
+                }
+            }
+        }
+        return sb.ToString();
     }
 
 }

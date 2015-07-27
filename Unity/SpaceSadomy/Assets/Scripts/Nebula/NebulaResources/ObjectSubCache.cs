@@ -77,14 +77,11 @@
             {Workshop.DarthTribe,   "Workshops/DarthTribe" },
             {Workshop.Dyneira,      "Workshops/Dyneira" },
             {Workshop.Equilibrium,  "Workshops/Equilibrium"},
-            {Workshop.Evasive,      "Workshops/Evasive" },
             {Workshop.KrolRo,       "Workshops/KrolRo"},
             {Workshop.Lerjees,      "Workshops/Lerjees"},
-            {Workshop.Molvice,      "Workshops/Molvice"},
             {Workshop.Phelpars,     "Workshops/Phelpars"},
             {Workshop.Rakhgals,     "Workshops/Rakhgals"},
             {Workshop.RedEye,       "Workshops/RedEye"},
-            {Workshop.Serenity,     "Workshops/Serenity"},
             {Workshop.Yshuar,       "Workshops/Yshuar"},
             {Workshop.Zoards,       "Workshops/Zoards"}
         };

@@ -1,9 +1,5 @@
 ﻿namespace Nebula.Mmo.Items.Components {
-    using UnityEngine;
-    using System.Collections;
     using Common;
-    using System;
-    using System.Collections.Generic;
 
     public class MmoBaseComponent  {
 
@@ -31,6 +27,8 @@
                 case ComponentID.Target: return new MmoTargetComponent();
                 case ComponentID.Weapon: return new MmoWeaponComponent();
                 case ComponentID.Movable: return new MmoMovableComponent();
+                case ComponentID.Outpost: return new MmoOutpostComponent();
+                case ComponentID.Respawnable: return new MmoRespawnableComponent();
                 default: return null;
             }
         }

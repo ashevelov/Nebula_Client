@@ -10,6 +10,7 @@ using Nebula.Mmo.Games;
 using Nebula.UI;
 using Nebula.Client.Store;
 using Nebula.Client.Auction;
+using Nebula.Client.Worlds;
 
 namespace Nebula {
 
@@ -34,6 +35,7 @@ namespace Nebula {
         public ClientSearchGroupsResult searchGroupResult { get; private set; }
         public PlayerStore store { get; private set; }
         public AuctionRequest auction { get; private set; }
+        public WorldCollection worlds { get; private set; }
 
         private GameData() {
             mailBox = new MailBox();
@@ -55,6 +57,7 @@ namespace Nebula {
             searchGroupResult = new ClientSearchGroupsResult();
             store = new PlayerStore();
             auction = new AuctionRequest();
+            worlds = new WorldCollection();
         }
 
         public void Clear() {
@@ -69,6 +72,7 @@ namespace Nebula {
             stats.Clear();
             sericeMessages.Clear();
             searchGroupResult.Clear();
+            worlds.Clear();
         }
 
         public void SetNewWorld(string worldID, Vector3 cornerMin, Vector3 cornerMax, Vector3 tileDimensions, LevelType levelType) {

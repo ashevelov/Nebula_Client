@@ -51,7 +51,7 @@ public class HitChanceExplorer : EditorWindow
             {
                 //float prob = GameBalance.ComputeHitProb(this.optimalDistance, this.range, this.farDist, this.farProb, this.nearDist, this.nearProb, this.maxSpeed, this.targetSpeed, t);
 
-                float prob = GameBalance.ComputeHitProb(this.optimalDistance, this.range, t, this.maxSpeed, this.targetSpeed);
+                float prob = GameBalance.ComputeHitProb(this.optimalDistance,  t);
                 this.curve.AddKey(new Keyframe(t, prob));
             }
         }

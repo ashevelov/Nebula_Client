@@ -76,18 +76,18 @@ namespace Nebula.UI {
             this.WorkshopText.text = fullName;
             this.DescriptionText.text = StringCache.Get(moduleData.DescriptionId);
             this.ModuleTypeText.text = StringCache.ModuleType(module.type);
-            this.WeaponSlotsText.text = StringCache.Get("WSC_FMT").f(module.weaponSlotsCount);
+            //this.WeaponSlotsText.text = StringCache.Get("WSC_FMT").f(module.weaponSlotsCount);
             this.HealthText.text = StringCache.Get("HP_FMT").f(module.hp);
             this.SpeedText.text = StringCache.Get("SP_FMT").f(module.speed);
             this.ResistText.text = StringCache.Get("RES_FMT").f(module.resist);
             this.InventorySlotsCountText.text = StringCache.Get("HOLD_FMT").f(module.hold);
             this.DamageBonusText.text = StringCache.Get("DMGBON_FMT").f(module.damageBonus);
-            this.CooldownBonusText.text = StringCache.Get("CDBON_FMT").f(module.cooldownBonus);
-            this.OptimalDistanceBonusText.text = StringCache.Get("ODBON_FMT").f(module.distanceBonus);
+            //this.CooldownBonusText.text = StringCache.Get("CDBON_FMT").f(module.cooldownBonus);
+            //this.OptimalDistanceBonusText.text = StringCache.Get("ODBON_FMT").f(module.distanceBonus);
             this.CritChanceText.text = StringCache.Get("CC_FMT").f(module.critChance);
             this.CritDamageText.text = StringCache.Get("CRDMG_FMT").f(module.critDamage);
-            this.EnergyText.text = StringCache.Get("EN_FMT").f(module.energy);
-            this.EnergyRestorationText.text = StringCache.Get("ENREST_FMT").f(module.energyRestoration);
+            //this.EnergyText.text = StringCache.Get("EN_FMT").f(module.energy);
+            //this.EnergyRestorationText.text = StringCache.Get("ENREST_FMT").f(module.energyRestoration);
 
             //follow skill and set block
             if(!module.HasSkill) {

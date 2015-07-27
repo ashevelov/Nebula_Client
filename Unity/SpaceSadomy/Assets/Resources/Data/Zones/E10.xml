@@ -1,5 +1,5 @@
 ﻿<zones>
-  <zone id="E10" name="E10_NAME" level="10" owned_race="2">
+  <zone id="E10" name="E10_NAME" level="10" owned_race="2" world_type="neutral">
     <npc_groups>
       <npc_group id="C_NPC_G_10_COMMON" />
     </npc_groups>

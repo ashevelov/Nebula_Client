@@ -3,8 +3,9 @@ using Game.Space;
 using Nebula.Client;
 
 namespace Nebula {
-using Common;
-using System.Collections.Generic;
+    using Common;
+    using Nebula.Client.Inventory;
+    using System.Collections.Generic;
 
     public static class NoLinqUtils {
 
@@ -29,9 +30,9 @@ using System.Collections.Generic;
         //    return result;
         //}
 
-        public static List<IStationHoldableObject> FilterByHoldType(List<IStationHoldableObject> inputs, StationHoldableObjectType type) {
-            List<IStationHoldableObject> result = new List<IStationHoldableObject>();
-            foreach (IStationHoldableObject obj in inputs) {
+        public static List<IInventoryObjectInfo> FilterByHoldType(List<IInventoryObjectInfo> inputs, InventoryObjectType type) {
+            List<IInventoryObjectInfo> result = new List<IInventoryObjectInfo>();
+            foreach (IInventoryObjectInfo obj in inputs) {
                 if (obj.Type == type) {
                     result.Add(obj);
                 }
@@ -39,9 +40,9 @@ using System.Collections.Generic;
             return result;
         }
 
-        public static List<IStationHoldableObject> FilterByPredicate(List<IStationHoldableObject> inputs, System.Func<IStationHoldableObject, bool> predicate) {
-            List<IStationHoldableObject> result = new List<IStationHoldableObject>();
-            foreach (IStationHoldableObject obj in inputs) {
+        public static List<IInventoryObjectInfo> FilterByPredicate(List<IInventoryObjectInfo> inputs, System.Func<IInventoryObjectInfo, bool> predicate) {
+            List<IInventoryObjectInfo> result = new List<IInventoryObjectInfo>();
+            foreach (IInventoryObjectInfo obj in inputs) {
                 if (predicate(obj)) {
                     result.Add(obj);
                 }
@@ -49,9 +50,9 @@ using System.Collections.Generic;
             return result;
         }
 
-        public static List<ClientShipModule> CastToModuleType(List<IStationHoldableObject> inputs) {
+        public static List<ClientShipModule> CastToModuleType(List<IInventoryObjectInfo> inputs) {
             List<ClientShipModule> result = new List<ClientShipModule>();
-            foreach (IStationHoldableObject obj in inputs) {
+            foreach (IInventoryObjectInfo obj in inputs) {
                 if (obj is ClientShipModule) {
                     result.Add(obj as ClientShipModule);
                 }

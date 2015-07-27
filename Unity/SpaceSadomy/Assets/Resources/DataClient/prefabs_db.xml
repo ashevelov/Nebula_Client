@@ -1,4 +1,10 @@
 ﻿<prefabs>
   <prefab id="PS01" path="Prefabs/PirateStation"  />
   <prefab id="AST01" path="Prefabs/Asteroid"      />
+  <prefab id="TEST" path="Prefabs/test"           />
+  <prefab id="HUMAN_OUTPOST"  path="Prefabs/HumanOutpost" />
+  <prefab id="HUMAN_TURRET"   path="Prefabs/HumanTurret" />
+  <prefab id="CRIPTIZID_OUTPOST" path="Prefabs/Station/Criptizids/CriptizidOutpost" />
+  <prefab id="CRIPTIZID_TURRET" path="Prefabs/Station/Criptizids/CriptizidDefensiveTower" />
+  <prefab id="CRIPTIZID_FORTIFICATION" path="Prefabs/Station/Criptizids/CriptizidFortification" />
 </prefabs>

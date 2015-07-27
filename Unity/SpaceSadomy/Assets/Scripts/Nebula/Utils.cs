@@ -272,10 +272,20 @@ namespace Nebula {
                 angle -= 360;
             return Mathf.Clamp(angle, min, max);
         }
+
+        public static GUISkin LoadDebugSkin() {
+            return UnityEngine.Resources.Load<GUISkin>("UI/Skins/game");
+        }
+
+        public static GUIStyle LoadDebugLabelStyle() {
+            return LoadDebugSkin().GetStyle("font_upper_left");
+        }
     }
 
 	public static class Extensions
 	{
+        //public static float[] ToArray(this UnityEngine.Vector3 v) { return new float[] { v.x, v.y, v.z }; }
+
 		public static Vector2 mul( this Vector2 orig, float mulx , float muly )
 		{
 			Vector2 f = orig;
@@ -299,6 +309,10 @@ namespace Nebula {
 			f.y+=to.y;
 			return f;
 		}
+
+        public static Rect moveVert(this Rect source, float y) {
+            return new Rect(source.x, source.y + y, source.width, source.height);
+        }
 		
 		public static Rect addPos( this Rect from, Rect to )
 		{

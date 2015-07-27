@@ -35,12 +35,17 @@ namespace Nebula.Mmo.Games.Strategies.Operations.Game {
             this.handlers.Add("CraftItEasy", HandleCraftItEasy);
             this.handlers.Add("DestroyInventoryItems", HandleDestroyInventoryItems);
             this.handlers.Add("AddInventoryItem", HandleAddInventoryItem);
+            handlers.Add("TestAddOreAndSchemesToStation", HandleTestAddOreAndSchemesToStation);
         }
 
         public override void Handle(BaseGame game, OperationResponse response) {
             HandleOperation((NetworkGame)game, response);
         }
 
+
+        private void HandleTestAddOreAndSchemesToStation(NetworkGame game, OperationResponse response) {
+            Debug.Log("TestAddOreAndSchemesToStation response called");
+        }
 
         private void HandleOperation(NetworkGame game, OperationResponse response) {
             if (this.handlers.ContainsKey(Action(response))) {

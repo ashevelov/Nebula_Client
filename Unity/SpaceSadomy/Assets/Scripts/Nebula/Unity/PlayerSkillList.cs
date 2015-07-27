@@ -19,87 +19,207 @@ using Nebula.Test;
 using Nebula.Resources;
 using Nebula.Mmo.Items;
 using Nebula.Effects;
-
+using System.Collections.Generic;
 
 public class PlayerSkillList
 {
+	const int RacesCount = 3;
+
+	public enum SkillType
+	{
+		None,
+		Weapon,
+		Support,
+		Buff
+	};
+
+	private readonly string[] SkillsIds = 
+	{
+		"000003EE",
+		"000003E9",
+		"000003FB",
+		"00000400",
+		"000003F5",
+	};
+	
+	private static Dictionary<int,SkillType> SkillSeparateListByWeapon = new Dictionary<int,SkillType>();
+
+	private void BuildSkillSeparate()
+	{
+		if (SkillSeparateListByWeapon.Count > 0 )return;
+		
+		SkillSeparateListByWeapon.Add(SkillsIds[0].FromHex(),SkillType.Weapon);
+		SkillSeparateListByWeapon.Add(SkillsIds[1].FromHex(),SkillType.Weapon);
+		SkillSeparateListByWeapon.Add(SkillsIds[2].FromHex(),SkillType.Buff);
+		SkillSeparateListByWeapon.Add(SkillsIds[3].FromHex(),SkillType.Buff);
+		SkillSeparateListByWeapon.Add(SkillsIds[4].FromHex(),SkillType.Support);
+	}
+
+
 	private struct TransUnion
 	{
-		public TransUnion(Vector3 p, Quaternion r)
+		public TransUnion(Vector3 p, Quaternion r, GameObject obj = null)
 		{
 			mPos = p;
 			mRot = r;
+			mObj = obj;
 		}
 		public Vector3    GetPos()		 {return mPos;}
 		public Quaternion GetRot() 	     {return mRot;}
+		public GameObject GetObj()		 {return mObj;}
 
 		private Vector3 	mPos;
 		private Quaternion  mRot;
+		private GameObject  mObj;
+	}
+
+	private static PlayerSkillList Get()
+	{ 
+		if (_class == null) 
+		{
+			_class = new PlayerSkillList();
+			_class.BuildSkillList();
+		}
+		return _class;
+	}
+
+	private static PlayerSkillList _class = null;
+
+	private delegate void _delegate(Item item, Hashtable skillProperties);
+	private static Dictionary<int,_delegate>[] _RacesDelegates = new Dictionary<int,_delegate>[RacesCount];
+
+	private static Dictionary<int,_delegate> GetSkillDelegates(Race race) 
+	{
+		Get();
+
+		if (race == Race.Humans)
+			return _RacesDelegates[0];
+		else if (race == Race.Criptizoids)
+			return _RacesDelegates[1];
+		else if (race == Race.Borguzands)
+			return _RacesDelegates[2];
+
+		return null;
+
+	}
+
+	private static _delegate GetSkillDelegate(Race race, int skillId)
+	{
+		_delegate _del = null;
+
+		Debug.Log("Get skill for race " +race);
+		if (race == Race.None)
+		{
+			Debug.LogError("Race not found");
+			race = Race.Humans;
+		}
+		Dictionary<int,_delegate> dict = GetSkillDelegates(race);
+
+		if (dict.ContainsKey(skillId))
+			_del = dict[skillId] as _delegate;
+				
+		return _del;
+	}
+
+	private static ShipModule GetRandModule(ShipModel shipModel)
+	{
+		ArrayList tmpList = shipModel.GetModulesFireSlot(); 
+
+		int 	  randX  	= Random.Range(0,tmpList.Count);
+		ShipModule module	= shipModel.GetModuleFireSlot(randX);
+
+		return module;
 	}
 
 	private static GameObject GetFireSlot(ShipModel shipModel, Vector3 targ)
 	{
-		int 	  randX  	= Random.Range(0,shipModel.GetModules().Count);
-		
-		ShipModule module	= shipModel.GetModule(4);
-		
+		ShipModule module 	= GetRandModule(shipModel);
+
 		if (module == null)
 			return null;
 		
-		GameObject fireSlot = module.GetFireSlot(targ);
+		GameObject fireSlot;
+
+		fireSlot =	module.GetFireSlot(targ);
 		
 		return fireSlot;
 	}
 
-	private static TransUnion GetFireTransform(ShipModel shipModel, Vector3 targ)
+	private static TransUnion GetFireTransform(Item _shipModel, Vector3 targ)
 	{
-		GameObject fireSlot = GetFireSlot(shipModel, targ);
-		
+		ShipModel shipModel = _shipModel.GetShipModel();
+		GameObject obj;
 		Vector3     startPos;
 		Quaternion  startRot;
-		
-		if (fireSlot == null)
+
+		if (shipModel != null)
 		{
-			startPos = shipModel.transform.position;
-			startRot = shipModel.transform.rotation;
+			GameObject fireSlot = GetFireSlot(shipModel, targ);
+		
+			if (fireSlot == null)
+			{
+				startPos = shipModel.transform.position;
+				startRot = shipModel.transform.rotation;
+				obj = shipModel.gameObject;
+			}else
+			{
+				startPos = fireSlot.transform.position;
+				startRot = fireSlot.transform.rotation;
+				obj = fireSlot;
+			}
+
 		}else
 		{
-			startPos = fireSlot.transform.position;
-			startRot = fireSlot.transform.rotation;
+			startPos = _shipModel.View.transform.position;
+			startRot = _shipModel.View.transform.rotation;
+			obj = _shipModel.View.gameObject;
 		}
 
-		TransUnion union = new TransUnion(startPos, startRot);
+		TransUnion union = new TransUnion(startPos, startRot,obj);
 
 		return union;
 	}
 
-	private static IEnumerator HumanSkill2T(float timer, Item item, GameObject targetItem, float angl)
+	private static IEnumerator HumanSkill2T(float timer, Item item, Hashtable skillProperties, float angl)
 	{
 		yield return new WaitForSeconds(timer);
-		HumanSkill2Call(item, targetItem,angl);
+		HumanSkill2Call(item, skillProperties, angl);
 	}
 
-	private static void HumanSkill2Call(Item item, GameObject targetItem, float angl)
+	private static void HumanSkill2Call(Item item, Hashtable skillProperties, float angl)
 	{
-		ShipModel shipModel = item.GetShipModel();
+		Item _item = null;
+		bool isMissed = false;
+
+		if (ParseSkillParam(skillProperties,out _item, out isMissed) == false)
+			return;
 		
+		GameObject targetItem = _item.View;
+
 		TransUnion trans =
-			GetFireTransform(shipModel, targetItem.transform.position);
-
+			GetFireTransform(item, targetItem.transform.position);
+		
 		GameObject effectInstance =
-		MonoBehaviour.Instantiate(PrefabCache.Get("Effects/Beam_pre3"), trans.GetPos(), trans.GetRot()) as GameObject;
-			
-		BulletSecondPhase secondPhase = effectInstance.GetComponentInChildren<BulletSecondPhase>();
-		secondPhase.Init(effectInstance.GetChildrenWithName("BulletSecondPhase"), BulletType.magnito);
-		secondPhase.SetTargetOffset(new Vector3(Random.Range(-2,2),Random.Range(-2,2),Random.Range(-2,2)));	
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/Beam_pre3"), trans.GetPos(), trans.GetRot())) as GameObject;
+		
+		BulletSecondPhaseHuman1 secondPhase = effectInstance.GetComponentInChildren<BulletSecondPhaseHuman1>();
+		secondPhase.Init(isMissed,BulletType.magnito);
+		secondPhase.SetEffect(effectInstance.GetChildrenWithName("BulletSecondPhase"));
+		//secondPhase.SetTargetOffset(new Vector3(Random.Range(-2,2),Random.Range(-2,2),Random.Range(-2,2)));	
 
+		if (secondPhase == null) Debug.LogError("second phase null");
+		
 		BulletFirstPhaseHuman1 firstPhase = effectInstance.GetComponentInChildren<BulletFirstPhaseHuman1>();
-		firstPhase.StartPhase(1.0f,secondPhase,1.5f,targetItem);
-		firstPhase.SetDelayToLook(0.5f);
+		firstPhase.StartPhase(2.0f,secondPhase,2.5f,targetItem);
+		firstPhase.SetDelayToLook(1.5f);
+		firstPhase.SetEffect(effectInstance.GetChildrenWithName("BulletFirstPhase"));
 		firstPhase.transform.Rotate(new Vector3(0,1,0),angl);
+
+		if (firstPhase == null) Debug.LogError("firstPhase phase null");
+			
 	}
 
-	public static void HumanSkill2(BaseSpaceObject baseClass, Item item, GameObject targetItem)
+	private static void HumanSkill2(Item item, Hashtable skillProperties)
 	{
 		float[] angls= new float[5];
 		int indx = 0;
@@ -111,50 +231,65 @@ public class PlayerSkillList
 			angls[indx] = i*27.5f;
 			indx++;
 		}
+		BaseSpaceObject baseClass = item.View.GetComponent<BaseSpaceObject>();
 
-		baseClass.StartCoroutine(HumanSkill2T(0.25f,item,targetItem,angls[0]));
-		baseClass.StartCoroutine(HumanSkill2T(0.40f,item,targetItem,angls[1]));
-		HumanSkill2Call(item,targetItem,angls[2]);
-		baseClass.StartCoroutine(HumanSkill2T(0.40f,item,targetItem,angls[3]));
-		baseClass.StartCoroutine(HumanSkill2T(0.25f,item,targetItem,angls[4]));
+		//baseClass.StartCoroutine(HumanSkill2T(0.25f,item,skillProperties,angls[0]));
+		//baseClass.StartCoroutine(HumanSkill2T(0.40f,item,skillProperties,angls[1]));
+		HumanSkill2Call(item,skillProperties,angls[2]);
+		//baseClass.StartCoroutine(HumanSkill2T(0.40f,item,skillProperties,angls[3]));
+		//baseClass.StartCoroutine(HumanSkill2T(0.25f,item,skillProperties,angls[4]));
 	}
 
-	public static void HumanSkill1( Item item, GameObject targetItem)
+	private static void HumanSkill1( Item item, Hashtable skillProperties)
 	{
-		ShipModel shipModel = item.GetShipModel();
+		Item _item = null;
+		bool isMissed = false;
+
+		if (ParseSkillParam(skillProperties,out _item,out isMissed) == false)
+			return;
+
+		GameObject targetItem = _item.View;
 	
 		TransUnion trans =
-		GetFireTransform(shipModel, targetItem.transform.position);
+		GetFireTransform(item, targetItem.transform.position);
 
 		GameObject effectInstance =
 			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/Beam_pre2"), trans.GetPos(), trans.GetRot())) as GameObject;
 			
 		BulletSecondPhase secondPhase = effectInstance.GetComponentInChildren<BulletSecondPhase>();
-		secondPhase.Init(effectInstance.GetChildrenWithName("BulletSecondPhase"),BulletType.explosion);
-			
+		secondPhase.Init(isMissed,BulletType.explosion);
+		secondPhase.SetEffect(effectInstance.GetChildrenWithName("BulletSecondPhase"));
+
+		if (secondPhase == null) Debug.LogError("second phase null");
+
 		BulletFirstPhaseHuman1 firstPhase = effectInstance.GetComponentInChildren<BulletFirstPhaseHuman1>();
-		firstPhase.StartPhase(1.0f,secondPhase,1.5f,targetItem);
-		firstPhase.SetDelayToLook(0.5f);
+		firstPhase.StartPhase(2.0f,secondPhase,2.5f,targetItem);
+		firstPhase.SetDelayToLook(1.5f);
+		firstPhase.SetEffect(effectInstance.GetChildrenWithName("BulletFirstPhase"));
+
+		if (firstPhase == null) Debug.LogError("firstPhase phase null");
 
 	}
 
-	public static ShieldEffect HumanSkill3( Item item)
+	private static void HumanSkill3( Item item, Hashtable skillProperties)
 	{
-		ShipModel shipModel = item.GetShipModel();
+		GameObject targetItem = item.View;
+		Debug.Log("shield on "+targetItem.name);
 
 		GameObject effectInstance =
-			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/SkillShield"),shipModel.transform.position, shipModel.transform.rotation)) as GameObject;
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/SkillShield"),targetItem.transform.position, targetItem.transform.rotation)) as GameObject;
 
 		ShieldEffect shield = effectInstance.GetComponentInChildren<ShieldEffect>();
-		shield.Init(10);
-		shield.transform.parent = shipModel.gameObject.transform;
+		shield.Init(10,new Color(0.3f,0.5f,1,0));
+
+		effectInstance.transform.parent = targetItem.gameObject.transform;
 		//secondPhase.Init(effectInstance.GetChildrenWithName("BulletSecondPhase"),BulletType.explosion);
 
-
-		return shield;
+		BaseSpaceObject baseClass = targetItem.GetComponent<BaseSpaceObject>();
+		baseClass.SetShield(shield);
 	}
 
-	public static void HumanSkill4( Item item)
+	private static void HumanSkill4( Item item, Hashtable skillProperties)
 	{
 		ShipModel shipModel = item.GetShipModel();
 		
@@ -170,25 +305,8 @@ public class PlayerSkillList
 
 	}
 
-	public static void HumanSkill5( Item item)
+	private static void HumanSkill5( Item item, Hashtable skillProperties)
 	{
-		/*Material mat = new Material(Resources.Load("Effects/SkillHeal") as Material);
-
-		ShipModel shipModel   = item.GetShipModel();
-		ArrayList shipModules =  shipModel.GetModules();
-
-		for (int i=0;i<shipModules.Count;i++)
-		{
-			Renderer objR = shipModel.GetModule(i).GetModel().GetChildrenWithName("model").GetComponent<Renderer>();
-
-			Material[] newMat = new Material[objR.materials.Length+1];
-			
-			objR.materials.CopyTo(newMat, 0);
-			newMat[1] = mat;
-			objR.materials = newMat;
-
-		}*/
-
 		ShipModel shipModel   = item.GetShipModel();
 
 		GameObject go = PrefabCache.Get("Effects/SkillHeal") as GameObject;
@@ -197,14 +315,373 @@ public class PlayerSkillList
 			GameObject inst = MonoBehaviour.Instantiate(go) as GameObject;
 			inst.transform.parent = shipModel.transform;
 			HealEffect _eff =  inst.GetComponent<HealEffect>();
-			_eff.Init(item);
+			_eff.Init(item, new Color(0.095974f, 0.3979813f, 0.5367529f,0),"Effects/SkillHeal");
+
+
+			BaseSpaceObject baseClass = item.View.GetComponent<BaseSpaceObject>();
+
+			float curHeal = item.Game.Avatar.GetMaxHealth()/10;
+
+			baseClass.AddDamageMassage(baseClass, curHeal, true,true);
+		}
+		else 
+		{
+			Debug.LogError("game object not found");
+		}
+
+
+	}
+
+	private static void CryptoSkill5( Item item, Hashtable skillProperties)
+	{
+		ShipModel shipModel   = item.GetShipModel();
+		
+		GameObject go = PrefabCache.Get("Effects/SkillHeal") as GameObject;
+		if (go != null)
+		{
+			GameObject inst = MonoBehaviour.Instantiate(go) as GameObject;
+			inst.transform.parent = shipModel.transform;
+			HealEffect _eff =  inst.GetComponent<HealEffect>();
+			_eff.Init(item, new Color(  0.5367529f,0.095974f,0.3979813f,0),"Effects/SkillHeal2");
+
+			BaseSpaceObject baseClass = item.View.GetComponent<BaseSpaceObject>();
+
+			float curHeal = item.Game.Avatar.GetMaxHealth()/10;
+
+			baseClass.AddDamageMassage(baseClass, curHeal, true,true);
 		}
 		else 
 		{
 			Debug.Log("game object not found");
 		}
+		
+		
+	}
+
+	private static void CryptoSkill2( Item item, Hashtable skillProperties)
+	{
+		Item _item = null;
+		bool isMissed = false;
+				
+		if (ParseSkillParam(skillProperties,out _item,out isMissed) == false)
+			return;
+		
+		GameObject targetItem = _item.View;
+		
+		TransUnion trans =
+			GetFireTransform(item, targetItem.transform.position);
+		
+		GameObject effectInstance =
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/Beam_pre"), trans.GetPos(), trans.GetRot())) as GameObject;
+		
+		BulletSecondPhase secondPhase = effectInstance.GetComponentInChildren<BulletSecondPhase>();
+		secondPhase.SetEffect(effectInstance.GetChildrenWithName("BulletSecondPhase"));
+		secondPhase.Init(isMissed,BulletType.gravi);
+
+		BulletFirstPhase firstPhase = effectInstance.GetComponentInChildren<BulletFirstPhase>();
+		firstPhase.SetEffect(effectInstance.GetChildrenWithName("BulletFirstPhase"),false);
+		firstPhase.StartPhase(0.6f,secondPhase,1.5f,targetItem);
+
+		effectInstance.transform.parent = trans.GetObj().transform;
+		effectInstance.GetChildrenWithName("BulletFirstPhase").transform.parent = trans.GetObj().transform;
+
+		firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.Translate(new Vector3(0,.5f,0)));
+		firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.SetParent(null));
+	
+	}
+
+	private static void CryptoSkill1( Item item, Hashtable skillProperties)
+	{
+		Item _item = null;
+		bool isMissed = false;
+		
+		if (ParseSkillParam(skillProperties,out _item,out isMissed) == false)
+			return;
+		
+		GameObject targetItem = _item.View;
+		
+		TransUnion trans =
+			GetFireTransform(item, targetItem.transform.position);
+		
+		GameObject effectInstance =
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/Beam_pre4"), trans.GetPos(), trans.GetRot())) as GameObject;
+		
+		BulletSecondPhase secondPhase = effectInstance.GetComponentInChildren<BulletSecondPhase>();
+		secondPhase.SetEffect(effectInstance.GetChildrenWithName("BulletSecondPhase"));
+		secondPhase.Init(isMissed,BulletType.gravi);
+		
+		BulletFirstPhase firstPhase = effectInstance.GetComponentInChildren<BulletFirstPhase>();
+		firstPhase.SetEffect(effectInstance.GetChildrenWithName("BulletFirstPhase"),true);
+		firstPhase.StartPhase(0.9f,secondPhase,1.5f,targetItem);
+		
+		effectInstance.transform.parent = trans.GetObj().transform;
+		effectInstance.GetChildrenWithName("BulletFirstPhase").transform.parent = trans.GetObj().transform;
+		
+		firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.Translate(new Vector3(0,.5f,0)));
+		firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.SetParent(null));
+		
+	}
+
+	private static void CryptoSkill3( Item item, Hashtable skillProperties)
+	{	
+		GameObject targetItem = item.View;
+		
+		GameObject effectInstance =
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/SkillShield2"),targetItem.transform.position, targetItem.transform.rotation)) as GameObject;
+		
+		ShieldEffect shield = effectInstance.GetComponentInChildren<ShieldEffect>();
+		shield.Init(10,new Color(1.0f,0.5f,0.3f,0));
+		
+		effectInstance.transform.parent = targetItem.gameObject.transform;
+		//secondPhase.Init(effectInstance.GetChildrenWithName("BulletSecondPhase"),BulletType.explosion);
+		
+		BaseSpaceObject baseClass = targetItem.GetComponent<BaseSpaceObject>();
+		baseClass.SetShield(shield);
+	}
+
+	private static void BorgSkill5( Item item, Hashtable skillProperties)
+	{
+		ShipModel shipModel   = item.GetShipModel();
+		
+		GameObject go = PrefabCache.Get("Effects/SkillHeal") as GameObject;
+		if (go != null)
+		{
+			GameObject inst = MonoBehaviour.Instantiate(go) as GameObject;
+			inst.transform.parent = shipModel.transform;
+			HealEffect _eff =  inst.GetComponent<HealEffect>();
+			_eff.Init(item, new Color(  0.095974f,0.5367529f,0.979813f,0),"Effects/SkillHeal3");
+
+			BaseSpaceObject baseClass = item.View.GetComponent<BaseSpaceObject>();
+
+			float curHeal = item.Game.Avatar.GetMaxHealth()/10;
+
+			baseClass.AddDamageMassage(baseClass, curHeal, true,true);
+		}
+		else 
+		{
+			Debug.Log("game object not found");
+		}
+		
+		
+	}
+
+	private static void BorgSkill3( Item item, Hashtable skillProperties)
+	{	
+		GameObject targetItem = item.View;
+		
+		GameObject effectInstance =
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/SkillShield3"),targetItem.transform.position, targetItem.transform.rotation)) as GameObject;
+		
+		ShieldEffect shield = effectInstance.GetComponentInChildren<ShieldEffect>();
+		shield.Init(10,new Color(0.3f,0.5f,1.0f,0));
+		
+		effectInstance.transform.parent = targetItem.gameObject.transform;
+		//secondPhase.Init(effectInstance.GetChildrenWithName("BulletSecondPhase"),BulletType.explosion);
+		
+		BaseSpaceObject baseClass = targetItem.GetComponent<BaseSpaceObject>();
+		baseClass.SetShield(shield);
+	}
+
+	private static void BorgSkill2( Item item, Hashtable skillProperties)
+	{
+		Item _item = null;
+		bool isMissed = false;
+		
+		if (ParseSkillParam(skillProperties,out _item,out isMissed) == false)
+			return;
+		
+		GameObject targetItem = _item.View;
+		
+		TransUnion trans =
+			GetFireTransform(item, targetItem.transform.position);
+		
+		GameObject effectInstance =
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/Beam_pre5"), trans.GetPos(), trans.GetRot())) as GameObject;
+		
+		BulletSecondPhase secondPhase = effectInstance.GetComponentInChildren<BulletSecondPhase>();
+		secondPhase.SetEffect(effectInstance.GetChildrenWithName("BulletSecondPhase"));
+		secondPhase.Init(isMissed,BulletType.poison2,true);
+		
+		BulletFirstPhase firstPhase = effectInstance.GetComponentInChildren<BulletFirstPhase>();
+		firstPhase.SetEffect(effectInstance.GetChildrenWithName("BulletFirstPhase"),false);
+		firstPhase.StartPhase(0.2f,secondPhase,2.5f,targetItem);
+		
+		firstPhase.GetEffect().transform.parent = trans.GetObj().transform;
+		//effectInstance.GetChildrenWithName("BulletFirstPhase").transform.parent = shipModel.gameObject.transform;
+		
+	//	firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.Translate(new Vector3(0,0.0f,0)));
+	//	firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.SetParent(null));
+		
+	}
+
+	private static void BorgSkill1( Item item, Hashtable skillProperties)
+	{
+		Item _item = null;
+		bool isMissed = false;
+		
+		if (ParseSkillParam(skillProperties,out _item,out isMissed) == false)
+			return;
+		
+		GameObject targetItem = _item.View;
+		
+		TransUnion trans =
+			GetFireTransform(item, targetItem.transform.position);
+		
+		GameObject effectInstance =
+			(MonoBehaviour.Instantiate(PrefabCache.Get("Effects/Beam_pre6"), trans.GetPos(), trans.GetRot())) as GameObject;
+		
+		BulletSecondPhase secondPhase = effectInstance.GetComponentInChildren<BulletSecondPhase>();
+		//secondPhase.SetEffect(effectInstance.GetChildrenWithName("BulletSecondPhase"));
+		secondPhase.Init(isMissed,BulletType.poison,true);
+		
+		BulletFirstPhase firstPhase = effectInstance.GetComponentInChildren<BulletFirstPhase>();
+		firstPhase.SetEffect(effectInstance.GetChildrenWithName("BulletFirstPhase"),false);
+		firstPhase.StartPhase(0.2f,secondPhase,2.5f,targetItem);
+		
+		firstPhase.GetEffect().transform.parent = trans.GetObj().transform;
+		//effectInstance.GetChildrenWithName("BulletFirstPhase").transform.parent = shipModel.gameObject.transform;
+		
+		//	firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.Translate(new Vector3(0,0.0f,0)));
+		//	firstPhase.SetOnEndPhaseEvent(() => effectInstance.transform.SetParent(null));
+		
+	}
 
 
+	private static bool ParseSkillParam(Hashtable skillProperties, out Item targetItem, out bool IsMissed)
+	{
+		//Здесь возвращается информация данных скила из ресурсов( на самом деле это не очень надо, потому что ресурсы со скилами мы можем парсить на клиенте прямо из XML)
+		//фактически это дублирование информации
+		//Hashtable skillData         = skillProperties.GetValue<Hashtable>((int)SPC.Data, new Hashtable());
+		
+		//id скила
+		//int skillId                 = skillProperties.Value<int>((int)SPC.Skill, -1);
+		
+		//ID объекта цель скила ( если )
+		string targetId             = skillProperties.GetValue<string>((int)SPC.Target, string.Empty);
+		//Тип объекта цель скила
+		byte targetType = skillProperties.GetValue<byte>((int)SPC.TargetType, (byte)0);
+		//По ID и типу мы всегда можем найти в сцене этот объект и создать нужный графический эффект скила, 
+		//если скил действуют на себя, то ID и тип таргета будут ID итема, который владеет этим BaseSpaceObject
+		
+		//Для разовых скилов isOn == false, для поддерживаем true\false в зависимости от включен\вфключен
+		bool isOn                   = skillProperties.GetValue<bool>((int)SPC.IsOn, true);
+		
+		//успешно или нет скил скастовался (например false возвращается если недостаточно энергии или цель далеко), если успешно то true
+		bool success                = true;//skillProperties.GetValue<bool>((int)SPC.IsSuccess, false);
+		
+		//если скил скастовался неуспешно то в message иногда возвращается информация о причине неуспешного каста( но не всегда )
+		string message = skillProperties.Value<string>((int)SPC.Message);
+
+		bool skillHit                 = skillProperties.GetValue<bool>((int)SPC.IsHitted, true);
+
+		IsMissed = !skillHit;
+
+		if (skillHit == false)
+			Debug.LogError("Hit Missed");
+		/*
+		if(!success) {
+			Debug.Log("SKILL NOT SUCCESS");
+			targetItem = null;
+			return false;
+		}*/
+		
+		//Debug.LogFormat("Skill used = {0}, success = {1}", skillId.ToString("X8"), success);
+
+		bool res = CheckIfSkillIsSuccess(targetType, targetId, out targetItem);
+
+		return true;
+	}
+
+	private static bool CheckIfSkillIsSuccess(byte targetType, string targetId, out Item targetItem)
+	{
+		if (!G.Game.TryGetItem(targetType, targetId, out targetItem)) {
+			Debug.LogError("skill target item not founded");
+			return false;
+		}
+		if (!targetItem.View) {
+			Debug.LogError("skill target item don't have view");
+			return false;
+		}
+
+		return true;
+		
+	}
+	
+
+	public static SkillType GetSkillType(int id)
+	{
+		Get();
+
+		SkillType type = SkillType.None;
+
+		if (SkillSeparateListByWeapon.ContainsKey(id))
+		{
+			type = SkillSeparateListByWeapon[id];
+		}
+
+		return type;
+	}
+
+
+	private void BuildSkillList()
+	{
+		BuildSkillSeparate();
+
+		if (_RacesDelegates[0] == null)
+			_RacesDelegates[0] = new Dictionary<int,_delegate>();
+		else
+			return ;
+
+		if (_RacesDelegates[1] == null)
+			_RacesDelegates[1] = new Dictionary<int,_delegate>();
+		else
+			return ;
+
+		if (_RacesDelegates[2] == null)
+			_RacesDelegates[2] = new Dictionary<int,_delegate>();
+		else
+			return ;
+
+		_RacesDelegates[0].Add(SkillsIds[0].FromHex(), new _delegate(HumanSkill1));
+		_RacesDelegates[0].Add(SkillsIds[1].FromHex(), new _delegate(HumanSkill2));
+		_RacesDelegates[0].Add(SkillsIds[2].FromHex(), new _delegate(HumanSkill3));
+		_RacesDelegates[0].Add(SkillsIds[3].FromHex(), new _delegate(HumanSkill4));
+		_RacesDelegates[0].Add(SkillsIds[4].FromHex(), new _delegate(HumanSkill5));
+
+		_RacesDelegates[1].Add(SkillsIds[0].FromHex(), new _delegate(CryptoSkill1));
+		_RacesDelegates[1].Add(SkillsIds[1].FromHex(), new _delegate(CryptoSkill2));
+		_RacesDelegates[1].Add(SkillsIds[2].FromHex(), new _delegate(CryptoSkill3));
+		_RacesDelegates[1].Add(SkillsIds[3].FromHex(), new _delegate(HumanSkill4));
+		_RacesDelegates[1].Add(SkillsIds[4].FromHex(), new _delegate(CryptoSkill5));
+
+		_RacesDelegates[2].Add(SkillsIds[0].FromHex(), new _delegate(BorgSkill1));
+		_RacesDelegates[2].Add(SkillsIds[1].FromHex(), new _delegate(BorgSkill2));
+		_RacesDelegates[2].Add(SkillsIds[2].FromHex(), new _delegate(BorgSkill3));
+		_RacesDelegates[2].Add(SkillsIds[3].FromHex(), new _delegate(HumanSkill4));
+		_RacesDelegates[2].Add(SkillsIds[4].FromHex(), new _delegate(BorgSkill5));
+	}
+	
+
+	public static void UseSkill(Hashtable skillProperties, Item item,int _skillId = -1)
+	{
+		int skillId;
+
+		if (_skillId != -1) 
+			skillId = _skillId;
+		else
+			skillId = skillProperties.Value<int>((int)SPC.Skill, -1);
+
+		_delegate skillDelegate = GetSkillDelegate(item.Race, skillId);
+
+		Debug.LogFormat("Skill used = {0}", skillId.ToString("X8"));
+
+		if (skillDelegate == null)
+		{
+			skillDelegate = GetSkillDelegate(item.Race, "000003ee".FromHex());
+			Debug.LogFormat("Skill not found  {0}", skillId.ToString("X8"));
+		}
+
+		skillDelegate(item, skillProperties);
 	}
 }
 

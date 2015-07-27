@@ -52,9 +52,11 @@ namespace Nebula.Mmo.Games.Strategies {
             generic.AddStrategy(CustomEventCode.PlayerInfoUpdated, new PlayerInfoUpdatedEvent());
             generic.AddStrategy(CustomEventCode.SkillsUpdated, new SkillsUpdatedEvent());
             generic.AddStrategy(CustomEventCode.ItemShipDestroyed, new ItemShipDestroyedEvent());
+            generic.AddStrategy(CustomEventCode.StationHoldUpdated, new StationHoldUpdatedEvent());
             //generic.AddStrategy(CustomEventCode.MailBoxUpdated, new MailBoxUpdatedEvent());
 
             GenericMultiEvent multiEvent = new GenericMultiEvent();
+            generic.AddStrategy(CustomEventCode.TargetUpdate, multiEvent);
             //generic.AddStrategy(CustomEventCode.CooperativeGroupRequest, multiEvent);
             //generic.AddStrategy(CustomEventCode.CooperativeGroupUpdate, multiEvent);
             AddEventHandler((byte)EventCode.ItemGeneric, generic);
@@ -64,6 +66,7 @@ namespace Nebula.Mmo.Games.Strategies {
             AddOperationHandler((byte)OperationCode.AttachInterestArea, new AttachInterestAreaOperation());
             AddOperationHandler((byte)OperationCode.DetachInterestArea, new DetachInterestAreaOperation());
             AddOperationHandler((byte)OperationCode.SpawnItem, new SpawnItemOperation());
+            AddOperationHandler((byte)OperationCode.GetWorlds, new GetWorldsOperation());
 
             GenericContainerOperation container = new GenericContainerOperation();
             GenericMultiOperation multiOp = new GenericMultiOperation();

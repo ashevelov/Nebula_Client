@@ -8,6 +8,7 @@ namespace Client.UIC.Implementation
     {
 
         public GameObject inventory;
+		public GameObject tutor;
 
         public void ShowPanel()
         {
@@ -22,5 +23,17 @@ namespace Client.UIC.Implementation
             MainCanvas.Get.Show(CanvasPanelType.TargetObjectView);
             MainCanvas.Get.Show(CanvasPanelType.ChatView);
         }
+
+		const string TUTTOR_KEY = "TUTTOR_KEY";
+		void Start()
+		{
+			if(PlayerPrefs.GetInt(TUTTOR_KEY, 0) == 0)
+			{
+				PlayerPrefs.SetInt(TUTTOR_KEY, 1);
+				tutor.SetActive(true);
+				ShowPanel();
+				gameObject.SetActive(false);
+			}
+		}
     }
 }

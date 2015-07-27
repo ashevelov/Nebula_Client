@@ -74,9 +74,9 @@ namespace Nebula.UI {
             //this.HeavyAttackCritDamageText.text = StringCache.Get("HACD_FMT").f(weapon.HeavyCritDamage);
             //this.HeavyAttackEnergyText.text = StringCache.Get("HAE_FMT").f(Mathf.RoundToInt(weapon.HeavyEnergy));
 
-            this.CriticalChanceText.text = StringCache.Get("CC_FMT").f(Mathf.RoundToInt(weapon.CritChance * 100));
+            //this.CriticalChanceText.text = StringCache.Get("CC_FMT").f(Mathf.RoundToInt(weapon.CritChance * 100));
             this.OptimalDistanceText.text = StringCache.Get("OD_FMT").f(Mathf.RoundToInt(weapon.OptimalDistance));
-            this.RangeText.text = StringCache.Get("R_FMT").f(Mathf.RoundToInt(weapon.Range));
+            //this.RangeText.text = StringCache.Get("R_FMT").f(Mathf.RoundToInt(weapon.Range));
 
             this.WorkshopHelp.onClick.RemoveAllListeners();
             this.LightAttackDamageHelp.onClick.RemoveAllListeners();

@@ -192,7 +192,7 @@ namespace Nebula
         }
 
         public const float CHAT_UPDATE_INTERVAL = 1.0f;
-        public const float START_Z = 0;
+        //public const float START_Z = 0;
         public const int MAX_CHAT_MESSAGES_COUNT = 100;
         public const float INVENTORY_UPDATE_INTERVAL = 5.0f;
         public const float EVENTS_UPDATE_INTERVAL = 5.0f;

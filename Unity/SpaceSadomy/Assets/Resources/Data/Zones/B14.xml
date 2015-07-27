@@ -1,6 +1,6 @@
 ﻿<zones>
 
-  <zone id="B14" name="B14_NAME" level="14" owned_race="1">
+  <zone id="B14" name="B14_NAME" level="14" owned_race="1" world_type="neutral">
     <npc_groups>
       <npc_group id="B_NPC_G_14_COMMON" />
     </npc_groups>

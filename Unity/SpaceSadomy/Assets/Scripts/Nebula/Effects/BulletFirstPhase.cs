@@ -6,13 +6,42 @@
 
 		private float mDelaySecondPhase;
 		protected BulletSecondPhase mSecondPhase; 
-		
+		private GameObject mEffectContainer;
+		private bool mEffectManualDisable = true;
+
+		private MyTools.ActionMethod onEndPhaseEvent = new MyTools.ActionMethod();
+
+
+		public void SetOnEndPhaseEvent(System.Action eventID)
+		{
+			onEndPhaseEvent.Add(eventID);
+		}
+
+
+		public void SetEffect(GameObject effect, bool manualDisable = true)
+		{
+			mEffectContainer = effect;
+			mEffectManualDisable = manualDisable; 
+		}
+
+		public GameObject GetEffect()
+		{
+			return mEffectContainer;
+		}
+
+		public void SetEnable(bool b)
+		{
+			enabled = b;
+			if (mEffectManualDisable == true && mEffectContainer != null)
+				mEffectContainer.SetActive(b);
+		}
+
 		public void StartPhase(float startDelayForSecondPhase, BulletSecondPhase second,float timerEnd,GameObject targ)
 		{
 			mDelaySecondPhase 	= startDelayForSecondPhase;
 			mSecondPhase 		= second;
 			mSecondPhase.SetTarget(targ);
-			mSecondPhase.gameObject.SetActive(false);
+			mSecondPhase.SetEnable(false);
 
 			StartCoroutine(TimedEnd(timerEnd));
 		}
@@ -22,8 +51,14 @@
 
 			if (mSecondPhase != null && mSecondPhase.GetTarget() == null)
 			{
-				mSecondPhase.gameObject.SetActive(true);
-				gameObject.SetActive(false);
+				if (!mSecondPhase.isStarted())
+				{
+					onEndPhaseEvent.Run();
+
+					SetEnable(false);
+					mSecondPhase.StartPhase();
+				}
+
 				mSecondPhase.EndEffect();
 				return ;
 			}
@@ -31,12 +66,9 @@
 
 			if (mDelaySecondPhase <= 0 && mSecondPhase!= null && !mSecondPhase.isStarted())
 			{
-				mSecondPhase.transform.position = transform.position;
-				mSecondPhase.transform.rotation = transform.rotation;
+				onEndPhaseEvent.Run();
 
-				mSecondPhase.gameObject.SetActive(true);
-				gameObject.SetActive(false);
-
+				SetEnable(false);
 				mSecondPhase.StartPhase();
 			}
 
@@ -49,8 +81,8 @@
 		private IEnumerator TimedEnd(float timer)
 		{
 			yield return new WaitForSeconds(timer);
-			Destroy(this.gameObject);
-
+			if (mEffectContainer != null)
+				Destroy(this.mEffectContainer);
 		}
 	}
 }

@@ -6,20 +6,26 @@
 	public enum BulletType
 	{
 		explosion,
-		magnito
+		magnito,
+		gravi,
+		poison,
+		poison2
 	};
 
     public class BulletSecondPhase : MonoBehaviour {
 
 		private bool  mStarted = false;
-        private GameObject mSource;
         private  GameObject mTarget;
 		protected Vector3 mTargetOffset;
+
         private float mSpeed = 1.0f;
         private bool mMoving = false;
 		private BulletType 	 mBulletType;
 
 		private ShieldEffect mTargetBuf;
+
+		private GameObject mLine;
+		private GameObject mEffectContainer;
 
 		public bool 	  isStarted()				 { return mStarted; }
 		public void 	SetTargetOffset(Vector3 offset){ mTargetOffset = offset;}
@@ -30,20 +36,48 @@
 			mTargetBuf = baseObj.GetShield();
 		}
 
+		public GameObject GetLine(){return mLine;}
+
+		public void InitLine(bool active = false)
+		{
+			mLine = gameObject.GetChildrenWithName("Line");
+			if (mLine != null)
+				mLine.SetActive(active);
+		}
+
 		public GameObject GetTarget()				 { return mTarget; }
 		public float 	  GetSpeed()			     { return mSpeed; }
 
-		public void Init(GameObject source, BulletType _type = BulletType.explosion)
+		public void SetEnable(bool b)
 		{
-			mSource = source;
+			enabled = b;
+			if (mEffectContainer != null)
+			{
+				mEffectContainer.SetActive(b);
+			}
+		}
+		public void SetEffect(GameObject effect)
+		{
+			mEffectContainer = effect;
+		}
+
+		public void Init(bool isMissed,BulletType _type = BulletType.explosion,bool LineActive = false)
+		{
 			mMoving = true;
 			mStarted = false;
 			mBulletType = _type;
+
+			InitLine(LineActive);
+
+			if (isMissed)
+				SetTargetOffset(new Vector3(Random.Range(-10,10),Random.Range(-10,10),Random.Range(-10,10)));
 		}
 		
 		public void StartPhase() 
 		{
 			mStarted = true;
+			SetEnable(true);
+			SetLookToTarget();
 		}
 		/*
 		private bool RaycastHit(out RaycastHit hit)
@@ -62,23 +96,31 @@
 
 			return false;
 		}*/
+		private void SetLookToTarget()
+		{
+			if (mTarget == null)
+				return;
 
+			Vector3 TargetP = mTarget.transform.position + mTargetOffset ;
+			Vector3 forw = (TargetP - transform.position).normalized; 
+			
+			transform.LookAt(TargetP);
+			transform.forward = forw;
+		}
+		
 		public virtual void FixedUpdate() 
 		{
 		
 			if (mStarted) 
 			{
-                if (!mSource) { EndEffect(); return; }
                 if (!mTarget) { EndEffect(); return; }
 				 
                 if (mMoving) 
 				{
-					Vector3 TargetP = mTarget.transform.position + mTargetOffset ;
-					Vector3 forw = (TargetP - mSource.transform.position).normalized; 
 
-					transform.LookAt(TargetP);
-                    transform.position += forw * mSpeed/* * Time.deltaTime*/;
- 					transform.forward = forw;
+					SetLookToTarget();
+
+					transform.Translate(new Vector3(0,0,mSpeed),Space.Self);
 
 					float targetMax = 5;
 
@@ -122,18 +164,33 @@
 
 			if (mBulletType == BulletType.explosion)
 				obj = MonoBehaviour.Instantiate(PrefabCache.Get("Effects/BulletExplosion"), transform.position, rot) as GameObject;
-			else
+			else if (mBulletType == BulletType.magnito)
 				obj = MonoBehaviour.Instantiate(PrefabCache.Get("Effects/BulletExplosionElectro"), transform.position, rot) as GameObject;
+			else  if (mBulletType == BulletType.gravi)
+				obj = MonoBehaviour.Instantiate(PrefabCache.Get("Effects/BulletExplosionGravi"), transform.position, rot) as GameObject;
+			else  if (mBulletType == BulletType.poison)
+				obj = MonoBehaviour.Instantiate(PrefabCache.Get("Effects/bulletExplosionPoison"), transform.position, rot) as GameObject;
+			else  if (mBulletType == BulletType.poison2)
+				obj = MonoBehaviour.Instantiate(PrefabCache.Get("Effects/bulletExplosionPoison2"), transform.position, rot) as GameObject;
+			else
+				obj = MonoBehaviour.Instantiate(PrefabCache.Get("Effects/BulletExplosion"), transform.position, rot) as GameObject;
 
 			obj.AddComponent<TimedObjectDestructorManual>().DestroyWithDelay(3.5f);
 
-            Destroy(gameObject);
-			Destroy(this.transform.parent.gameObject);
+			if (mEffectContainer != null)
+				mEffectContainer.SetActive(false);
+
+			MeshRenderer mesh = GetComponent<MeshRenderer>();
+			if (mesh!= null)
+				mesh.enabled = false;
+
+            Destroy(gameObject,0.5f);
+			Destroy(this.transform.parent.gameObject,0.5f);
         }
 
-		private float targetDistance {
+		protected float targetDistance {
             get {
-                return Vector3.Distance(mTarget.transform.position, mSource.transform.position);
+                return Vector3.Distance(mTarget.transform.position+mTargetOffset, transform.position);
             }
         }
 

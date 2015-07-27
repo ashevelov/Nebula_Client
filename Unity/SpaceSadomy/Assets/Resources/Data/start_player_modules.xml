@@ -22,13 +22,13 @@
         <module type="CM" id="CM000002" />
         <module type="DM" id="DM000002" />
       </workshop>
-      <workshop id="Evasive">
+      <!--<workshop id="Evasive">
         <module type="ES" id="ES000005" />
         <module type="CB" id="CB000005" />
         <module type="DF" id="DF000005" />
         <module type="CM" id="CM000005" />
         <module type="DM" id="DM000005" />
-      </workshop>
+      </workshop>-->
       <workshop id="BigBang">
         <module type="ES" id="ES000007" />
         <module type="CB" id="CB000007" />
@@ -36,13 +36,13 @@
         <module type="CM" id="CM000007" />
         <module type="DM" id="DM000007" />
       </workshop>
-      <workshop id="Serenity">
+      <!--<workshop id="Serenity">
         <module type="ES" id="ES000006" />
         <module type="CB" id="CB000006" />
         <module type="DF" id="DF000006" />
         <module type="CM" id="CM000006" />
         <module type="DM" id="DM000006" />
-      </workshop>
+      </workshop>-->
     </workshops>
   </race>
   <race id="Borguzands">
@@ -107,13 +107,13 @@
         <module type="CM" id="CM000015" />
         <module type="DM" id="DM000015" />
       </workshop>
-      <workshop id="Molvice">
+      <!--<workshop id="Molvice">
         <module type="ES" id="ES000016" />
         <module type="CB" id="CB000016" />
         <module type="DF" id="DF000016" />
         <module type="CM" id="CM000016" />
         <module type="DM" id="DM000016" />
-      </workshop>     
+      </workshop>-->     
     </workshops>
   </race>
 </races>

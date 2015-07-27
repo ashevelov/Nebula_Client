@@ -39,8 +39,12 @@ namespace Nebula.UI {
                 var workshopToggleInfo = targetControls.WorkshopToggles[i];
                 ClientRaceWorkshop workshopRes;
                 
+                foreach(var w in raceRes.Workshops) {
+                    Debug.LogFormat("race worksoop = {0}", w.Id);
+                }
+
                 if (!this.raceRes.TryGetWorkshop(workshopToggleInfo.WorkshopId, out workshopRes)) {
-                    Debug.LogError("Not founded workshop resource for: {0}".f(this.selectedWorkshop));
+                    Debug.LogError("Not founded workshop resource for: {0}".f(workshopToggleInfo.WorkshopId));
                     return;
                 }
                 workshopToggleInfo.WorkshopToggle.GetComponentInChildren<Text>().text = stringRes.String(workshopRes.NameStringId, workshopRes.NameStringId);

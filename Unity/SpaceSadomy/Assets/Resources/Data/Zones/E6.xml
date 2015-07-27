@@ -1,12 +1,359 @@
-﻿<zones>
-  <zone id="E6" name="E6_NAME" level="6" owned_race="2">
-    <npc_groups>
-      <npc_group id="C_NPC_G_6_COMMON" />
-    </npc_groups>
-    <npcs></npcs>
-    <asteroids></asteroids>
-    <activators></activators>
-    <events></events>
-    <inputs></inputs>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
+  <zone id="E6" name="E6_NAME" level="6" owned_race="2" world_type="populated">
+    <planets />
+    <npc_groups />
+    <npcs>
+      <npc id="CS001" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="812,302,427" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS002" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="708,302,415" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS003" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="763,302,508" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS004" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-730,315,506" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS005" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-785,315,413" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS006" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-681,315,425" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS007" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="53,-292,-757" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS008" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-51,-292,-769" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS009" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="4,-292,-676" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="none" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS010" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-4,500,938" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS011" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-127,500,730" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS012" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="130,500,731" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS013" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="937,-501,-476" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS014" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="683,-501,-478" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS015" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="796,-501,-265" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS016" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-796,-499,-288" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS017" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-917,-499,-488" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS018" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-674,-499,-489" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="hard" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="100" />
+      </npc>
+      <npc id="CS019" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="2,29,-49" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="boss" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="50" />
+      </npc>
+      <npc id="CS020" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="-55,29,33" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="boss" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="50" />
+      </npc>
+      <npc id="CS021" name="RACE_CRIPTIZIDS" level="6" race="Criptizoids" position="42,29,39" rotation="0,0,0" respawn_interval="120" workshop="Yshuar" difficulty="boss" fraction="PlayerCriptizids">
+        <ai name="FreeFlyNearPoint" attack_moving_type="AttackPurchase" radius="50" />
+      </npc>
+    </npcs>
+    <asteroids>
+      <asteroid index="1" force_create="False" respawn="240" data_id="CraftAsteroid0005" model="AST01" position="331,248,-401" rotation="9,40,80" />
+      <asteroid index="2" force_create="False" respawn="240" data_id="CraftAsteroid0005" model="AST01" position="-605,658,75" rotation="80,20,60" />
+      <asteroid index="3" force_create="False" respawn="240" data_id="CraftAsteroid0005" model="AST01" position="378,-168,415" rotation="0,50,120" />
+      <asteroid index="4" force_create="False" respawn="240" data_id="CraftAsteroid0005" model="AST01" position="-145,-324,-369" rotation="0,0,240" />
+      <asteroid index="5" force_create="False" respawn="240" data_id="CraftAsteroid0006" model="AST01" position="383,-399,-723" rotation="85,180,192" />
+      <asteroid index="6" force_create="False" respawn="240" data_id="CraftAsteroid0006" model="AST01" position="-288,-656,116" rotation="45,0,0" />
+      <asteroid index="7" force_create="True" respawn="240" data_id="CraftAsteroid0007" model="AST01" position="-918,-546,-585" rotation="300,10,100" />
+      <asteroid index="8" force_create="True" respawn="240" data_id="CraftAsteroid0007" model="AST01" position="838,-547,-444" rotation="30,280,25" />
+      <asteroid index="9" force_create="True" respawn="240" data_id="CraftAsteroid0007" model="AST01" position="226,640,527" rotation="90,320,0" />
+    </asteroids>
+    <nebula_objects>
+      <nebula_object id="CriptizidOutpost01" position="0,0,0" rotation="0,0,0" script="turret">
+        <component id="NebulaObject" item_type="Bot" badge="main_outpost" />
+        <component id="Model" model="CRIPTIZID_OUTPOST" />
+        <component id="MainOutpost" />
+        <component id="Bot" bot_sub_type="MainOutpost" />
+        <component id="Bonuses" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="300.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower01" position="0,-50,-150" rotation="0,0,0" script="turret">
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="Turret" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Bonuses" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Target" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="0.0,-50.0,-150.0;88.2,-50.0,-121.4;142.7,-50.0,-46.4;142.7,-50.0,46.4;88.2,-50.0,121.4;0.0,-50.0,150.0;-88.2,-50.0,121.4;-142.7,-50.0,46.4;-142.7,-50.0,-46.4;-88.2,-50.0,-121.4" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower02" position="127,-50,76" rotation="0,240,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="129.9,-50.0,75.0;61.0,-50.0,137.0;-31.2,-50.0,146.7;-111.5,-50.0,100.4;-149.2,-50.0,15.7;-129.9,-50.0,-75.0;-61.0,-50.0,-137.0;31.2,-50.0,-146.7;111.5,-50.0,-100.4;149.2,-50.0,-15.7" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower03" position="-127,-50,76" rotation="0,120,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="-127.5,-50.0,76.9;-146.8,-50.0,-13.8;-109.1,-50.0,-98.5;-28.8,-50.0,-144.8;63.4,-50.0,-135.2;132.3,-50.0,-73.1;151.6,-50.0,17.6;113.9,-50.0,102.2;33.6,-50.0,148.6;-58.6,-50.0,138.9" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidFortification01" position="0,500,800" rotation="0,0,0" script="turret">
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+        <component id="Model" model="CRIPTIZID_FORTIFICATION" />
+        <component id="Bot" bot_sub_type="Outpost" />
+        <component id="Bonuses" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="180.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="10.00" />
+        <component id="Outpost" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Respawnable" interval="3600.00" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower04" position="0,543,700" rotation="0,0,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="0.0,543.8,700.0;58.8,543.8,719.1;95.1,543.8,769.1;95.1,543.8,830.9;58.8,543.8,880.9;0.0,543.8,900.0;-58.8,543.8,880.9;-95.1,543.8,830.9;-95.1,543.8,769.1;-58.8,543.8,719.1" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower05" position="-87,500,850" rotation="0,120,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="-86.6,500.0,849.9;-99.5,500.0,789.5;-74.3,500.0,733.0;-20.8,500.0,702.1;40.7,500.0,708.6;86.6,500.0,749.9;99.4,500.0,810.4;74.3,500.0,866.9;20.8,500.0,897.8;-40.7,500.0,891.3" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower06" position="87,456,850" rotation="0,240,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="87.5,456.3,850.0;41.6,456.3,891.4;-19.9,456.3,897.8;-73.4,456.3,866.9;-98.6,456.3,810.5;-85.7,456.3,750.0;-39.8,456.3,708.6;21.7,456.3,702.2;75.2,456.3,733.1;100.3,456.3,789.5" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidFortification02" position="800,-500,-400" rotation="0,0,0" script="turret">
+        <component id="Respawnable" interval="3600.00" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Outpost" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="180.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="10.00" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Outpost" />
+        <component id="Model" model="CRIPTIZID_FORTIFICATION" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower07" position="800,-456,-500" rotation="0,0,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="800.0,-456.3,-500.0;858.8,-456.3,-480.9;895.1,-456.3,-430.9;895.1,-456.3,-369.1;858.8,-456.3,-319.1;800.0,-456.3,-300.0;741.2,-456.3,-319.1;704.9,-456.3,-369.1;704.9,-456.3,-430.9;741.2,-456.3,-480.9" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower08" position="712,-500,-350" rotation="0,120,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="713.4,-500.0,-350.1;700.5,-500.0,-410.5;725.7,-500.0,-467.0;779.2,-500.0,-497.9;840.7,-500.0,-491.4;886.6,-500.0,-450.1;899.4,-500.0,-389.6;874.3,-500.0,-333.1;820.8,-500.0,-302.2;759.3,-500.0,-308.7" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower09" position="887,-543,-350" rotation="0,240,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="887.5,-543.8,-350.0;841.6,-543.8,-308.6;780.1,-543.8,-302.2;726.6,-543.8,-333.1;701.4,-543.8,-389.5;714.3,-543.8,-450.0;760.2,-543.8,-491.4;821.7,-543.8,-497.8;875.2,-543.8,-466.9;900.3,-543.8,-410.5" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidFortification03" position="-800,-500,-400" rotation="0,0,0" script="turret">
+        <component id="Respawnable" interval="3600.00" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Outpost" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="180.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="10.00" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Outpost" />
+        <component id="Model" model="CRIPTIZID_FORTIFICATION" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower10" position="-800,-456,-500" rotation="0,0,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="-800.0,-456.3,-500.0;-741.2,-456.3,-480.9;-704.9,-456.3,-430.9;-704.9,-456.3,-369.1;-741.2,-456.3,-319.1;-800.0,-456.3,-300.0;-858.8,-456.3,-319.1;-895.1,-456.3,-369.1;-895.1,-456.3,-430.9;-858.8,-456.3,-480.9" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower11" position="-887,-500,-350" rotation="0,120,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="-886.6,-500.0,-350.1;-899.5,-500.0,-410.5;-874.3,-500.0,-467.0;-820.8,-500.0,-497.9;-759.3,-500.0,-491.4;-713.4,-500.0,-450.1;-700.6,-500.0,-389.6;-725.7,-500.0,-333.1;-779.2,-500.0,-302.2;-840.7,-500.0,-308.7" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower12" position="-712,-543,-350" rotation="0,240,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="-712.5,-543.8,-350.0;-758.4,-543.8,-308.6;-819.9,-543.8,-302.2;-873.4,-543.8,-333.1;-898.6,-543.8,-389.5;-885.7,-543.8,-450.0;-839.8,-543.8,-491.4;-778.3,-543.8,-497.8;-724.8,-543.8,-466.9;-699.7,-543.8,-410.5" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower13" position="178,693,-685" rotation="0,170,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="178.3,693.0,-685.0;41.9,693.0,-757.6;-25.8,693.0,-896.4;1.0,693.0,-1048.6;112.2,693.0,-1155.9;265.2,693.0,-1177.4;401.6,693.0,-1104.9;469.3,693.0,-966.0;442.5,693.0,-813.9;331.3,693.0,-706.5" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower14" position="178,150,-685" rotation="0,170,0" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="178.3,150.0,-685.0;41.9,150.0,-757.6;-25.8,150.0,-896.4;1.0,150.0,-1048.6;112.2,150.0,-1155.9;265.2,150.0,-1177.4;401.6,150.0,-1104.9;469.3,150.0,-966.0;442.5,150.0,-813.9;331.3,150.0,-706.5" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+      <nebula_object id="CriptizidDefensiveTower15" position="-112,427,-735" rotation="0,170,90" script="turret">
+        <component id="CombatAI" sub_type="ai_follow_path_combat" align_with_forward_direction="True" rotation_speed="0.500" attack_moving_type="AttackStay" path="-112.1,426.7,-735.8;-103.8,573.6,-782.8;-82.1,664.4,-905.9;-55.3,664.4,-1058.1;-33.6,573.6,-1181.2;-25.3,426.7,-1228.2;-33.6,279.7,-1181.2;-55.3,188.9,-1058.1;-82.1,188.9,-905.9;-103.8,279.7,-782.8" />
+        <component id="Respawnable" interval="60.00" />
+        <component id="Movable" sub_type="simple_movable" speed="10.00" />
+        <component id="Weapon" sub_type="weapon_simple" optimal_distance="200.00" damage="200.00" cooldown="4.00" use_target_hp="True" target_hp_percent="0.1500" />
+        <component id="Target" />
+        <component id="Character" sub_type="character_bot" workshop="Arlen" level="1" fraction="PlayerCriptizids" />
+        <component id="Raceable" race="Criptizoids" />
+        <component id="Damagable" sub_type="damagable_outpost" max_health="50.00" ignore_damage_at_start="True" ignore_damage_interval="60.00" create_chest_when_killed="False" fixed_input_damage="1.00" additional_hp="0.00" />
+        <component id="Bonuses" />
+        <component id="Bot" bot_sub_type="Turret" />
+        <component id="Turret" />
+        <component id="Model" model="CRIPTIZID_TURRET" />
+        <component id="NebulaObject" item_type="Bot" badge="outpost" />
+      </nebula_object>
+    </nebula_objects>
+    <events />
+    <inputs>
+      <input key="zone_min" value="-200,-200,-200" type="vector" />
+      <input key="zone_max" value="200,200,200" type="vector" />
+      <input key="reach_radius" value="5" type="float" />
+    </inputs>
   </zone>
 </zones>

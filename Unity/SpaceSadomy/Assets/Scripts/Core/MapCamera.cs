@@ -79,7 +79,7 @@ public class MapCamera : MonoBehaviour {
 
     void FixedUpdate()
     {
-#if !UNITY_EDITOR || !UNITY_STANDALONE
+#if !UNITY_EDITOR && !UNITY_STANDALONE
 
         if (Input.touchCount ==1 && newTarget)
 		{

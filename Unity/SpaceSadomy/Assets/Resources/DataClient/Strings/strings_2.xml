@@ -67,6 +67,10 @@
   en = "Kriptizids"
   ru = "Криптизиды" 
   />
+  <string key="RACE_CRIPTIZOIDS"
+  en = "Kriptizids"
+  ru = "Криптизиды" 
+  />
   <string key="RACE_NONE"
   en = ""
   ru = "" 

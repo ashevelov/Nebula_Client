@@ -289,11 +289,11 @@ namespace Nebula.Mmo.Items
 
                 if (G.Game != null && G.PlayerItem != null && playerGO)
                 {
-                    float optimalDistance = GameData.instance.ship.Weapon.OptimalDistance;
-                    float range = GameData.instance.ship.Weapon.Range;
+                    float optimalDistance = GameData.instance.ship.Weapon.optimalDistance;
+
                     float distance = Vector3.Distance(playerGO.transform.position, this.GetPosition());
                     float playerMaxSpeed = GameData.instance.ship.MaxLinearSpeed;
-                    return GameBalance.ComputeHitProb(optimalDistance, range, distance, playerMaxSpeed, this.Ship.Speed);
+                    return GameBalance.ComputeHitProb(optimalDistance, distance);
                 }
                 return 0f;
             }

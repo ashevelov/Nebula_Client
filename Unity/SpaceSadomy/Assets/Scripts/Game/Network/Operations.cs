@@ -79,6 +79,11 @@ namespace Nebula
             NetworkGame.SendOperation(OperationCode.AddInterestArea, data, true, Settings.ItemChannel);
         }
 
+        public static void GetWorlds(NetworkGame game ) {
+            var data = new Dictionary<byte, object>();
+            game.SendOperation(OperationCode.GetWorlds, data, true, Settings.ItemChannel);
+        }
+
         /// <summary>
         /// The attach camera.
         /// </summary>

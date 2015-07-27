@@ -72,9 +72,9 @@
         {Common.Workshop.DarthTribe, "WORKSHOP_DARTHTRIBE" },
         {Common.Workshop.RedEye, "WORKSHOP_REDEYE" },
         {Common.Workshop.Equilibrium, "WORKSHOP_EQUILIBRIUM"},
-        {Common.Workshop.Evasive, "WORKSHOP_EVASIVE"},
+        //{Common.Workshop.Evasive, "WORKSHOP_EVASIVE"},
         {Common.Workshop.BigBang, "WORKSHOP_BIGBANG"},
-        {Common.Workshop.Serenity, "WORKSHOP_SERENITY" },
+        //{Common.Workshop.Serenity, "WORKSHOP_SERENITY" },
         {Common.Workshop.Rakhgals, "WORKSHOP_RAKHGALS"},
         {Common.Workshop.Phelpars, "WORKSHOP_PHELPARS"},
         {Common.Workshop.Zoards, "WORKSHOP_ZOARDS"},
@@ -83,7 +83,7 @@
         {Common.Workshop.KrolRo, "WORKSHOP_KROLRO"},
         {Common.Workshop.Arlen, "WORKSHOP_ARLEN"},
         {Common.Workshop.Dyneira, "WORKSHOP_DYNEIRA"},
-        {Common.Workshop.Molvice, "WORKSHOP_MOLVICE"}
+        //{Common.Workshop.Molvice, "WORKSHOP_MOLVICE"}
     };
 
         private static readonly Dictionary<ChatGroup, string> chatGroupNameKeys = new Dictionary<ChatGroup, string> {

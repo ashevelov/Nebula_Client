@@ -28,18 +28,18 @@
   <module id="DM000003" name="DM000003_NAME" description="MODULE_DESC" workshop="Equilibrium"  type="DM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DM"  />
                                              
   <!--Evasive Modules-->                     
-  <module id="ES000005" name="ES000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="ES" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_ES"  />
+  <!--<module id="ES000005" name="ES000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="ES" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_ES"  />
   <module id="CB000005" name="CB000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="CB" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_CB"  />
   <module id="DF000005" name="DF000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="DF" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_DF"  />
   <module id="CM000005" name="CM000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="CM" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_CM"  />
-  <module id="DM000005" name="DM000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="DM" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_DM"  />
+  <module id="DM000005" name="DM000005_NAME" description="MODULE_DESC" workshop="Evasive"  type="DM" set="S004"  model="Prefabs/Ships/Modules/H_DT0002_DM"  />-->
                                             
   <!--Serenity Modules-->                    
-  <module id="ES000006" name="ES000006_NAME" description="MODULE_DESC" workshop="Serenity" type="ES" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_ES"  />
+  <!--<module id="ES000006" name="ES000006_NAME" description="MODULE_DESC" workshop="Serenity" type="ES" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_ES"  />
   <module id="CB000006" name="CB000006_NAME" description="MODULE_DESC" workshop="Serenity" type="CB" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_CB"  />
   <module id="DF000006" name="DF000006_NAME" description="MODULE_DESC" workshop="Serenity" type="DF" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DF"  />
   <module id="CM000006" name="CM000006_NAME" description="MODULE_DESC" workshop="Serenity" type="CM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_CM"  />
-  <module id="DM000006" name="DM000006_NAME" description="MODULE_DESC" workshop="Serenity" type="DM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DM"  />
+  <module id="DM000006" name="DM000006_NAME" description="MODULE_DESC" workshop="Serenity" type="DM" set="S003"  model="Prefabs/Ships/Modules/H_EQ0001_DM"  />-->
                                              
   <!--Big Bang Modules-->                    
   <module id="ES000007" name="ES000007_NAME" description="MODULE_DESC" workshop="BigBang"  type="ES" set="S002"  model="Prefabs/Ships/Modules/H_RE0001_ES"  />
@@ -98,10 +98,10 @@
   <module id="CM000015" name="CM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="CM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CM" />
   <module id="DM000015" name="DM000015_NAME" description="MODULE_DESC" workshop="Dyneira"  type="DM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DM" />
                                              
-  <module id="ES000016" name="ES000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="ES" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_ES"  />
+  <!--<module id="ES000016" name="ES000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="ES" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_ES"  />
   <module id="CB000016" name="CB000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CB" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CB" />
   <module id="DF000016" name="DF000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DF" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_DF" />
   <module id="CM000016" name="CM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="CM" set="S001"  model="Prefabs/Ships/Modules/K_KT1001_CM" />
-  <module id="DM000016" name="DM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" />
+  <module id="DM000016" name="DM000016_NAME" description="MODULE_DESC" workshop="Molvice"  type="DM" set="S001"  model="Prefabs/Ships/Modules/H_DT0001_DM" />-->
 
 </modules>
